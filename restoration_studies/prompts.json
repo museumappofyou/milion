@@ -1,0 +1,29 @@
+[
+  {
+    "id": "anastasis_restore",
+    "prompt": "Use case: identity-preserve. Edit target: the supplied full photograph of the Anastasis fresco. Make a VERY GENTLE digital restoration study of this exact photograph for an art exploration app. Preserve the exact entire framing, proportions, geometry, every person's pose, expression, gaze, age, Byzantine facial style, clothing, halos, Greek letters, stones, background, and border. Match the original wide 2048:1091 aspect. Improve legibility of EXISTING facial features, especially Christ, Adam, Eve and the two flanking groups: reduce minor surface stains and small distracting abrasions, make surviving eyes, nose, mouth and beard strokes a little clearer. Retain old pigment, restrained colors, patina and fresco grain. Only modest cleanup, no beautification, no modern realistic faces, no new faces in entirely lost areas, no invented anatomy or missing limbs, no replacement figures, no added marks, labels or watermark, no broad repainting. Keep major plaster losses and existing inscriptions. Keep all registration positions unchanged. Output one complete restored photograph, not a comparison sheet.",
+    "method": "built-in image_gen",
+    "generatedFile": "/Users/memre/.codex/generated_images/01a0dccd-df44-7af3-9801-351c5b4eca3f/exec-ddf4fc42-f8b4-405b-9ce7-617a76498f9e.png",
+    "savedFile": "assets/restoration/anastasis_scene_study.png"
+  },
+  {
+    "id": "judgment_restore",
+    "prompt": "Use case: identity-preserve. Edit target: the supplied full Last Judgment vault photograph. Produce a CONSERVATIVE digital restoration study, retaining the EXACT full framing, original 1600:1067 aspect, architecture, every painted figure's size/position/pose/expression, inscriptions and lower-right Caner Cangül photographer credit unchanged. Make only a little improvement to readability of surviving faces: Christ at center, Mary and John at his sides, and the rows of apostles with gold halos. Clarify surviving eyes, brows, mouths and beard strokes very gently; reduce small distracting surface grime, retain ancient fresco grain, muted original pigments, Byzantine style and patina. This should still look like an old damaged fresco, NOT a freshly repainted icon. Keep the broad cream-colored losses crossing the court and Christ EXACTLY as they are; keep upper missing-paint patches and all other major losses. Do not invent faces where paint is absent, reconstruct missing limbs, add figures, modernize anatomy, beautify, crop, shift perspective, or change the celestial scroll. Most pixels should appear unchanged. One complete restored photograph only, no comparison panels or captions.",
+    "method": "built-in image_gen",
+    "generatedFile": "/Users/memre/.codex/generated_images/01a0dccd-df44-7af3-9801-351c5b4eca3f/exec-869c78b4-eadc-4cd3-ab19-e9b9d6b36eb1.png",
+    "savedFile": "assets/restoration/last_judgment_scene_study.png"
+  },
+  {
+    "id": "anastasis_detail",
+    "prompt": "Use case: identity-preserve. Edit target: this exact close-up photograph of Christ in the Anastasis fresco. Make a subtle face-focused conservation-style digital restoration study. Keep exact source framing/aspect, all positions, Christ's Byzantine facial proportions, asymmetric eyes, gaze, age, expression, nose and beard shapes, hair, halo, robe folds, hands, background stars and surviving fresco texture. Improve clarity of the existing painted eyes/brows/nose/mouth and surviving beard strokes, gently reduce grime and tiny abrasion marks. Very mild, not a new painting; retain age and patina. No beauty retouching, modern photoreal skin or invented facial identity. Do not reconstruct absent imagery or add text, do not crop or move anything. Match the existing ochre and off-white colors. Deliver one complete edited photograph preserving its original composition.",
+    "method": "built-in image_gen",
+    "generatedFile": "/Users/memre/.codex/generated_images/01a0dccd-df44-7af3-9801-351c5b4eca3f/exec-7ef22cca-506b-44f1-a9b4-b9a99940aa4e.png",
+    "savedFile": "assets/restoration/anastasis_detail_study.png"
+  },
+  {
+    "id": "judgment_detail",
+    "method": "built-in image_gen",
+    "generatedFile": "/Users/memre/.codex/generated_images/01a0dccd-df44-7af3-9801-351c5b4eca3f/exec-8ee4ee8c-9d89-4953-8f9e-4008d8266a87.png",
+    "savedFile": "assets/restoration/last_judgment_detail_study.png"
+  }
+]

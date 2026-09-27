@@ -1,0 +1,463 @@
+{
+  "size": [
+    2048,
+    1091
+  ],
+  "grid": [
+    2048,
+    1091
+  ],
+  "controls": [
+    {
+      "name": "Christ inclines his head",
+      "parts": [
+        "christ",
+        "christ_halo"
+      ],
+      "center": [
+        970,
+        410
+      ],
+      "radius": [
+        90,
+        110
+      ],
+      "pivot": [
+        975,
+        476
+      ],
+      "degrees": -4,
+      "shift": [
+        1,
+        -2
+      ],
+      "timing": [
+        1,
+        0.12
+      ],
+      "head": true
+    },
+    {
+      "name": "Christ left shoulder reaches",
+      "parts": [
+        "christ"
+      ],
+      "center": [
+        936,
+        533
+      ],
+      "radius": [
+        122,
+        110
+      ],
+      "pivot": [
+        1002,
+        496
+      ],
+      "degrees": 3,
+      "shift": [
+        0,
+        -3
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Joined hands lift Adam",
+      "parts": [
+        "christ",
+        "adam"
+      ],
+      "center": [
+        833,
+        609
+      ],
+      "radius": [
+        130,
+        98
+      ],
+      "pivot": [
+        910,
+        549
+      ],
+      "degrees": 0,
+      "shift": [
+        7,
+        -16
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Adam rises from the tomb",
+      "parts": [
+        "adam"
+      ],
+      "center": [
+        638,
+        688
+      ],
+      "radius": [
+        208,
+        165
+      ],
+      "pivot": [
+        460,
+        806
+      ],
+      "degrees": 1.5,
+      "shift": [
+        3,
+        -9
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Adam looks toward Christ",
+      "parts": [
+        "adam"
+      ],
+      "center": [
+        693,
+        621
+      ],
+      "radius": [
+        61,
+        83
+      ],
+      "pivot": [
+        693,
+        682
+      ],
+      "degrees": 4,
+      "shift": [
+        1,
+        -3
+      ],
+      "timing": [
+        1,
+        0.1
+      ],
+      "head": true
+    },
+    {
+      "name": "Christ right elbow opens",
+      "parts": [
+        "christ"
+      ],
+      "center": [
+        1101,
+        518
+      ],
+      "radius": [
+        88,
+        85
+      ],
+      "pivot": [
+        1035,
+        471
+      ],
+      "degrees": -4,
+      "shift": [
+        1,
+        -2
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Joined hands draw Eve forward",
+      "parts": [
+        "christ",
+        "eve"
+      ],
+      "center": [
+        1137,
+        556
+      ],
+      "radius": [
+        105,
+        80
+      ],
+      "pivot": [
+        1180,
+        580
+      ],
+      "degrees": 0,
+      "shift": [
+        -8,
+        -10
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Eve bows toward Christ",
+      "parts": [
+        "eve"
+      ],
+      "center": [
+        1252,
+        565
+      ],
+      "radius": [
+        79,
+        79
+      ],
+      "pivot": [
+        1288,
+        618
+      ],
+      "degrees": -5,
+      "shift": [
+        -2,
+        -1
+      ],
+      "timing": [
+        1,
+        -0.15
+      ],
+      "head": true
+    },
+    {
+      "name": "Eve bends at the waist",
+      "parts": [
+        "eve"
+      ],
+      "center": [
+        1320,
+        648
+      ],
+      "radius": [
+        150,
+        115
+      ],
+      "pivot": [
+        1405,
+        758
+      ],
+      "degrees": -2,
+      "shift": [
+        -2,
+        -4
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Christ robe folds settle",
+      "parts": [
+        "christ"
+      ],
+      "center": [
+        1080,
+        738
+      ],
+      "radius": [
+        160,
+        118
+      ],
+      "pivot": [
+        1020,
+        633
+      ],
+      "degrees": 1,
+      "shift": [
+        5,
+        0
+      ],
+      "timing": [
+        0.35,
+        0.65
+      ],
+      "head": false
+    },
+    {
+      "name": "Eve trailing robe sways",
+      "parts": [
+        "eve"
+      ],
+      "center": [
+        1423,
+        736
+      ],
+      "radius": [
+        92,
+        61
+      ],
+      "pivot": [
+        1360,
+        710
+      ],
+      "degrees": -2,
+      "shift": [
+        2,
+        -2
+      ],
+      "timing": [
+        0.25,
+        -0.6
+      ],
+      "head": false
+    },
+    {
+      "name": "David turns his head",
+      "parts": [
+        "l_david"
+      ],
+      "center": [
+        469,
+        359
+      ],
+      "radius": [
+        70,
+        89
+      ],
+      "pivot": [
+        469,
+        412
+      ],
+      "degrees": 2.4,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        0.45,
+        0.45
+      ],
+      "head": true
+    },
+    {
+      "name": "Solomon turns his head",
+      "parts": [
+        "l_solomon"
+      ],
+      "center": [
+        562,
+        395
+      ],
+      "radius": [
+        70,
+        89
+      ],
+      "pivot": [
+        562,
+        448
+      ],
+      "degrees": -3,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        0.75,
+        -0.2
+      ],
+      "head": true
+    },
+    {
+      "name": "John turns his head",
+      "parts": [
+        "l_john"
+      ],
+      "center": [
+        685,
+        376
+      ],
+      "radius": [
+        70,
+        89
+      ],
+      "pivot": [
+        685,
+        429
+      ],
+      "degrees": 3,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        0.65,
+        0.3
+      ],
+      "head": true
+    },
+    {
+      "name": "Abel turns his head",
+      "parts": [
+        "r_abel"
+      ],
+      "center": [
+        1369,
+        388
+      ],
+      "radius": [
+        70,
+        89
+      ],
+      "pivot": [
+        1369,
+        441
+      ],
+      "degrees": -3,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        0.8,
+        -0.3
+      ],
+      "head": true
+    },
+    {
+      "name": "Right elder turns his head",
+      "parts": [
+        "r_ochre"
+      ],
+      "center": [
+        1545,
+        226
+      ],
+      "radius": [
+        70,
+        89
+      ],
+      "pivot": [
+        1545,
+        279
+      ],
+      "degrees": 2,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        0.35,
+        0.5
+      ],
+      "head": true
+    }
+  ]
+}

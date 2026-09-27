@@ -1,0 +1,77 @@
+{
+ "master": "assets/anastasis/conch_reference.jpg",
+ "size": [
+  2048,
+  1091
+ ],
+ "generator": "tool/build_anastasis_v5.py + tool/render_anastasis_v5_deliverables.py",
+ "camera": "centered orthographic, no parallax or animation",
+ "lighting": {
+  "direction": [
+   -0.45,
+   -0.601,
+   0.661
+  ],
+  "reliefLightClamp": [
+   0.88,
+   1.08
+  ],
+  "formula": "originalRGB * reliefLight * contactShadow * occlusion"
+ },
+ "partDepth": {
+  "pit": 24.0,
+  "hades": 27.0,
+  "gate_left": 30.0,
+  "gate_right": 31.09,
+  "l_rear_heads": 30.0,
+  "l_rear_halos": 30.0,
+  "l_lavender": 33.72,
+  "r_rear_heads": 30.0,
+  "r_tan": 30.0,
+  "l_greyband": 37.0,
+  "l_mauve": 41.2,
+  "l_redband": 44.51,
+  "l_david": 45.4,
+  "r_ochre": 37.0,
+  "r_abel": 37.0,
+  "mandorla": 40.0,
+  "ground_center": 42.6,
+  "tomb_left": 46.2,
+  "tomb_right": 47.22,
+  "l_solomon": 48.64,
+  "l_john": 51.95,
+  "r_brown": 44.0,
+  "r_riser": 44.0,
+  "adam": 56.0,
+  "eve": 56.0,
+  "christ_halo": 70.0,
+  "christ": 73.61
+ },
+ "views": [
+  {
+   "id": "relief",
+   "label": "Relief",
+   "file": "assets/anastasis/relief_v5/relief_front.jpg"
+  },
+  {
+   "id": "raking",
+   "label": "Raking light (debug)",
+   "file": "assets/anastasis/relief_v5/raking_debug.jpg"
+  },
+  {
+   "id": "semantic",
+   "label": "Semantic layers",
+   "file": "assets/anastasis/relief_v5/semantic_layers.png"
+  },
+  {
+   "id": "normals",
+   "label": "Normals",
+   "file": "assets/anastasis/relief_v5/normals.jpg"
+  },
+  {
+   "id": "depth",
+   "label": "Height",
+   "file": "assets/anastasis/relief_v5/height.jpg"
+  }
+ ]
+}

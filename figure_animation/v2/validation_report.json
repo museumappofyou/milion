@@ -1,0 +1,122 @@
+{
+  "application_tests": 35,
+  "visual_capture_tests": 2,
+  "chrome_renderer_regressions": 2,
+  "analysis": "passed: no issues",
+  "web_build": "passed",
+  "android_release_build": "passed",
+  "apk": "build/app/outputs/flutter-apk/app-release.apk",
+  "apk_bytes": 202702196,
+  "packaged_assets_compared": 398,
+  "original_scene_files_checked": 386,
+  "original_scene_files_changed": [],
+  "live_chrome": {
+    "scenes": [
+      "Anastasis",
+      "Last Judgment"
+    ],
+    "checks": [
+      "full restored playback",
+      "zoom during playback",
+      "image variants",
+      "pause",
+      "Still",
+      "pose scrub",
+      "movement intensity",
+      "detail selection",
+      "scene exit"
+    ],
+    "console_errors": [],
+    "console_warnings": []
+  },
+  "motion": {
+    "anastasis": {
+      "method": "rigid face/hand handles, ARAP cloth and local seam",
+      "vertices": 54891,
+      "animated_vertices": 21200,
+      "frames": 48,
+      "seconds": 6,
+      "minimum_triangle_area_ratio": 0.18170473252625546,
+      "max_displacement_source_pixels": 50.990196228027344,
+      "previous_max_displacement": 16.38514664988871,
+      "travel_increase": 3.1119767993271927,
+      "checked_interpolated_poses": 192,
+      "checked_intensities": [
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "pose_bytes": 8140800,
+      "textures_modified": 0
+    },
+    "last_judgment": {
+      "method": "rigid face/hand handles, ARAP cloth and local seam",
+      "vertices": 62220,
+      "animated_vertices": 20185,
+      "frames": 48,
+      "seconds": 6,
+      "minimum_triangle_area_ratio": 0.1021859102467176,
+      "max_displacement_source_pixels": 33.15805435180664,
+      "previous_max_displacement": 11.16518137832162,
+      "travel_increase": 2.9697730138255083,
+      "checked_interpolated_poses": 192,
+      "checked_intensities": [
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "pose_bytes": 7751040,
+      "textures_modified": 0
+    }
+  },
+  "movies": {
+    "anastasis_figures.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 960,
+          "nb_frames": "144"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    },
+    "last_judgment_figures.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 960,
+          "nb_frames": "144"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    },
+    "last_judgment_angel.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 960,
+          "nb_frames": "144"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    }
+  },
+  "limitations": [
+    "4K restorations are upscaled from native generated images; reconstructed facial details are interpretive.",
+    "Physical-device frame rate has not been measured."
+  ]
+}

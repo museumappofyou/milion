@@ -1,0 +1,578 @@
+{
+  "sceneId": "F05",
+  "title": "The Last Judgment",
+  "master": "assets/last_judgment/vault_reference.jpg",
+  "size": [
+    1600,
+    1067
+  ],
+  "generator": "tool/build_last_judgment_v5.py",
+  "camera": "centered orthographic; no animation or parallax",
+  "method": "one continuous authored height field, following Anastasis v5",
+  "lighting": {
+    "direction": [
+      -0.45,
+      -0.6,
+      0.66
+    ],
+    "reliefLightClamp": [
+      0.88,
+      1.08
+    ],
+    "formula": "originalRGB * reliefLight * contactShadow * occlusion"
+  },
+  "parts": [
+    {
+      "id": "left_seat",
+      "kind": "architecture",
+      "z": 12,
+      "pixels": 50802
+    },
+    {
+      "id": "right_seat",
+      "kind": "architecture",
+      "z": 12,
+      "pixels": 66974
+    },
+    {
+      "id": "river_of_fire",
+      "kind": "river",
+      "z": 9,
+      "pixels": 87612
+    },
+    {
+      "id": "upper_left_plaster",
+      "kind": "plaster",
+      "z": 5,
+      "pixels": 56683
+    },
+    {
+      "id": "upper_crown_plaster",
+      "kind": "plaster",
+      "z": 5,
+      "pixels": 153916
+    },
+    {
+      "id": "upper_right_plaster",
+      "kind": "plaster",
+      "z": 5,
+      "pixels": 44831
+    },
+    {
+      "id": "lower_left_plaster",
+      "kind": "plaster",
+      "z": 6,
+      "pixels": 72503
+    },
+    {
+      "id": "upper_left_group",
+      "kind": "heavens",
+      "z": 22,
+      "pixels": 27803
+    },
+    {
+      "id": "upper_crown_left",
+      "kind": "heavens",
+      "z": 20,
+      "pixels": 47947
+    },
+    {
+      "id": "upper_crown_right",
+      "kind": "heavens",
+      "z": 22,
+      "pixels": 46985
+    },
+    {
+      "id": "upper_bishops",
+      "kind": "heavens",
+      "z": 24,
+      "pixels": 27153
+    },
+    {
+      "id": "rolling_angel",
+      "kind": "heavens",
+      "z": 34,
+      "pixels": 17146
+    },
+    {
+      "id": "rolled_heaven",
+      "kind": "scroll",
+      "z": 42,
+      "pixels": 15963
+    },
+    {
+      "id": "heaven_scroll_lip",
+      "kind": "scroll",
+      "z": 45,
+      "pixels": 2027
+    },
+    {
+      "id": "rear_halo_00",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1585
+    },
+    {
+      "id": "rear_halo_01",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1801
+    },
+    {
+      "id": "rear_halo_02",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1585
+    },
+    {
+      "id": "rear_halo_03",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1585
+    },
+    {
+      "id": "rear_halo_04",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1585
+    },
+    {
+      "id": "rear_halo_05",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1191
+    },
+    {
+      "id": "rear_halo_06",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1067
+    },
+    {
+      "id": "rear_halo_07",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1191
+    },
+    {
+      "id": "rear_halo_08",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1191
+    },
+    {
+      "id": "rear_halo_09",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1067
+    },
+    {
+      "id": "rear_halo_10",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1067
+    },
+    {
+      "id": "rear_halo_11",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1191
+    },
+    {
+      "id": "rear_halo_12",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1191
+    },
+    {
+      "id": "rear_halo_13",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1307
+    },
+    {
+      "id": "rear_halo_14",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1191
+    },
+    {
+      "id": "rear_halo_15",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1959
+    },
+    {
+      "id": "rear_halo_16",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 1959
+    },
+    {
+      "id": "rear_halo_17",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 2193
+    },
+    {
+      "id": "rear_halo_18",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 2193
+    },
+    {
+      "id": "rear_halo_19",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 2193
+    },
+    {
+      "id": "rear_halo_20",
+      "kind": "rear",
+      "z": 24,
+      "pixels": 2373
+    },
+    {
+      "id": "left_court",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 6923
+    },
+    {
+      "id": "left_court_halo",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 2215
+    },
+    {
+      "id": "left_court_inner",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 3134
+    },
+    {
+      "id": "left_court_inner_halo",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 1445
+    },
+    {
+      "id": "right_court",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 4599
+    },
+    {
+      "id": "right_court_halo",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 2041
+    },
+    {
+      "id": "right_court_inner",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 3394
+    },
+    {
+      "id": "right_court_inner_halo",
+      "kind": "middle",
+      "z": 32,
+      "pixels": 1735
+    },
+    {
+      "id": "l1",
+      "kind": "front",
+      "z": 31,
+      "pixels": 6284
+    },
+    {
+      "id": "l1_halo",
+      "kind": "front",
+      "z": 31,
+      "pixels": 2121
+    },
+    {
+      "id": "l2",
+      "kind": "front",
+      "z": 34,
+      "pixels": 7705
+    },
+    {
+      "id": "l2_halo",
+      "kind": "front",
+      "z": 34,
+      "pixels": 2121
+    },
+    {
+      "id": "l3",
+      "kind": "front",
+      "z": 37,
+      "pixels": 6612
+    },
+    {
+      "id": "l3_halo",
+      "kind": "front",
+      "z": 37,
+      "pixels": 2121
+    },
+    {
+      "id": "l4",
+      "kind": "front",
+      "z": 40,
+      "pixels": 7604
+    },
+    {
+      "id": "l4_halo",
+      "kind": "front",
+      "z": 40,
+      "pixels": 2121
+    },
+    {
+      "id": "l5",
+      "kind": "front",
+      "z": 43,
+      "pixels": 6976
+    },
+    {
+      "id": "l5_halo",
+      "kind": "front",
+      "z": 43,
+      "pixels": 2121
+    },
+    {
+      "id": "l6",
+      "kind": "front",
+      "z": 46,
+      "pixels": 6550
+    },
+    {
+      "id": "l6_halo",
+      "kind": "front",
+      "z": 46,
+      "pixels": 2121
+    },
+    {
+      "id": "r1",
+      "kind": "front",
+      "z": 46,
+      "pixels": 3944
+    },
+    {
+      "id": "r1_halo",
+      "kind": "front",
+      "z": 46,
+      "pixels": 2287
+    },
+    {
+      "id": "r2",
+      "kind": "front",
+      "z": 43,
+      "pixels": 4975
+    },
+    {
+      "id": "r2_halo",
+      "kind": "front",
+      "z": 43,
+      "pixels": 2121
+    },
+    {
+      "id": "r3",
+      "kind": "front",
+      "z": 40,
+      "pixels": 4923
+    },
+    {
+      "id": "r3_halo",
+      "kind": "front",
+      "z": 40,
+      "pixels": 2121
+    },
+    {
+      "id": "r4",
+      "kind": "front",
+      "z": 37,
+      "pixels": 4793
+    },
+    {
+      "id": "r4_halo",
+      "kind": "front",
+      "z": 37,
+      "pixels": 2121
+    },
+    {
+      "id": "r5",
+      "kind": "front",
+      "z": 34,
+      "pixels": 5302
+    },
+    {
+      "id": "r5_halo",
+      "kind": "front",
+      "z": 34,
+      "pixels": 2121
+    },
+    {
+      "id": "r6",
+      "kind": "front",
+      "z": 31,
+      "pixels": 4596
+    },
+    {
+      "id": "r6_halo",
+      "kind": "front",
+      "z": 31,
+      "pixels": 2121
+    },
+    {
+      "id": "mandorla",
+      "kind": "mandorla",
+      "z": 43,
+      "pixels": 28327
+    },
+    {
+      "id": "mary",
+      "kind": "principal",
+      "z": 55,
+      "pixels": 5999
+    },
+    {
+      "id": "john",
+      "kind": "principal",
+      "z": 55,
+      "pixels": 4855
+    },
+    {
+      "id": "prepared_throne",
+      "kind": "throne",
+      "z": 28,
+      "pixels": 10563
+    },
+    {
+      "id": "left_kneeling",
+      "kind": "principal",
+      "z": 41,
+      "pixels": 7489
+    },
+    {
+      "id": "right_kneeling",
+      "kind": "principal",
+      "z": 41,
+      "pixels": 5326
+    },
+    {
+      "id": "lower_left_figures",
+      "kind": "lower",
+      "z": 25,
+      "pixels": 44236
+    },
+    {
+      "id": "lower_foreground",
+      "kind": "lower",
+      "z": 31,
+      "pixels": 5846
+    },
+    {
+      "id": "christ_halo",
+      "kind": "christ",
+      "z": 68,
+      "pixels": 1447
+    },
+    {
+      "id": "christ",
+      "kind": "christ",
+      "z": 72,
+      "pixels": 6897
+    }
+  ],
+  "views": [
+    {
+      "id": "relief",
+      "label": "Relief",
+      "file": "assets/last_judgment/relief_v5/relief_front.jpg"
+    },
+    {
+      "id": "raking",
+      "label": "Raking light",
+      "file": "assets/last_judgment/relief_v5/raking_debug.jpg"
+    },
+    {
+      "id": "semantic",
+      "label": "Semantic layers",
+      "file": "assets/last_judgment/relief_v5/semantic_layers.png"
+    },
+    {
+      "id": "normals",
+      "label": "Normals",
+      "file": "assets/last_judgment/relief_v5/normals.jpg"
+    },
+    {
+      "id": "depth",
+      "label": "Height",
+      "file": "assets/last_judgment/relief_v5/height.jpg"
+    },
+    {
+      "id": "side",
+      "label": "45\u00b0 surface",
+      "file": "assets/last_judgment/relief_v5/side45.jpg"
+    }
+  ],
+  "focus": [
+    {
+      "label": "Overview",
+      "rect": [
+        245.33,
+        0.0,
+        1376.0,
+        1067.0
+      ]
+    },
+    {
+      "label": "Whole vault",
+      "rect": null
+    },
+    {
+      "label": "Deesis",
+      "rect": [
+        309.33,
+        522.83,
+        1322.67,
+        810.92
+      ]
+    },
+    {
+      "label": "Christ",
+      "rect": [
+        643.2,
+        576.18,
+        962.13,
+        817.32
+      ]
+    },
+    {
+      "label": "Heavens",
+      "rect": [
+        327.47,
+        0.0,
+        1312.0,
+        566.58
+      ]
+    },
+    {
+      "label": "Throne",
+      "rect": [
+        629.33,
+        806.65,
+        1015.47,
+        1067.0
+      ]
+    }
+  ],
+  "sourceCredit": "Caner Cang\u00fcl \u00b7 supplied reference photographs",
+  "limitations": [
+    "Interpretive pictorial depth, not measured architecture.",
+    "Original plaster losses retained; no reconstructed faces or missing paint.",
+    "Fixed baked illumination; side view uses 1.5\u00d7 depth for inspection.",
+    "Masks approximate some robe edges and overlapping court figures."
+  ]
+}

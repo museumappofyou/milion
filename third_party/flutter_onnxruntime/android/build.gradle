@@ -1,0 +1,54 @@
+// Patched from flutter_onnxruntime 1.8.5: compiled by AGP 9 built-in Kotlin
+// (android.builtInKotlin=true in the app), so the Kotlin Gradle Plugin is
+// neither on the buildscript classpath nor applied here.
+group = "com.masicai.flutteronnxruntime"
+version = "1.0-SNAPSHOT"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.7.0")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+    namespace = "com.masicai.flutteronnxruntime"
+
+    compileSdk = 35
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+    }
+
+    defaultConfig {
+        minSdk = 21
+    }
+
+    dependencies {
+        implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.23.0'
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+    }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "scene": "anastasis",
+    "source": "assets/anastasis/conch_reference.jpg",
+    "native_file": "restoration_studies/v2/native/anastasis_restored.png",
+    "native_pixels": [
+      1718,
+      916
+    ],
+    "export_file": "assets/restoration/anastasis_restored_4k_v2.jpg",
+    "export_pixels": [
+      3840,
+      2046
+    ],
+    "method": "built-in image_gen restoration; sips resampling to 3840px width; JPEG quality 95",
+    "native_4k": false,
+    "interpretive": true,
+    "sha256": "d8bd7c2ea60fc24e7154b2b7dd6379423c9e41e0429f72593466ae7bf7ae11f1"
+  },
+  {
+    "scene": "last_judgment",
+    "source": "assets/last_judgment/vault_reference.jpg",
+    "native_file": "restoration_studies/v2/native/last_judgment_restored.png",
+    "native_pixels": [
+      1536,
+      1024
+    ],
+    "export_file": "assets/restoration/last_judgment_restored_4k_v2.jpg",
+    "export_pixels": [
+      3840,
+      2560
+    ],
+    "method": "built-in image_gen restoration; sips resampling to 3840px width; JPEG quality 95",
+    "native_4k": false,
+    "interpretive": true,
+    "sha256": "5774acff2ed8d8f15cfb73af12dead163649235049ff7796d51444eb5777d5b7"
+  }
+]

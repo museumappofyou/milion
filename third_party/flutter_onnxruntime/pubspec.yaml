@@ -1,0 +1,33 @@
+# Vendored flutter_onnxruntime 1.8.5 (MIT, see LICENSE), patched for AGP 9 built-in
+# Kotlin: android/build.gradle no longer applies the Kotlin Gradle Plugin.
+# Drop this copy and the dependency_overrides entry in the app's pubspec once
+# upstream ships the same change.
+name: flutter_onnxruntime
+description: "A lightweight plugin that provides native wrappers for running ONNX Runtime on multiple platforms"
+version: 1.8.5
+homepage: https://github.com/masicai/flutter_onnxruntime
+repository: https://github.com/masicai/flutter_onnxruntime
+
+environment:
+  sdk: ^3.7.0
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+   sdk: flutter
+  path_provider: ^2.1.5
+  plugin_platform_interface: ^2.0.2
+  web: ^1.1.1
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.masicai.flutteronnxruntime
+        pluginClass: FlutterOnnxruntimePlugin
+      web:
+        pluginClass: FlutterOnnxruntimeWebPlugin
+        fileName: web/flutter_onnxruntime_web_plugin.dart
+

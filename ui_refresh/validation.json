@@ -1,0 +1,55 @@
+{
+  "application_tests_passed": 37,
+  "visual_capture_tests_passed": 2,
+  "final_navigation_recheck_passed": 6,
+  "analysis": "no issues",
+  "web_build": "passed",
+  "android_release_build": "passed",
+  "apk": "build/app/outputs/flutter-apk/app-release.apk",
+  "apk_bytes": 203733062,
+  "packaged_fonts_restorations_and_rigs_verified": 10,
+  "original_scene_files_checked": 386,
+  "original_scene_files_changed": [],
+  "restoration_hashes_unchanged": true,
+  "viewports": [
+    [
+      360,
+      800
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1440,
+      1000
+    ]
+  ],
+  "text_scale": 1.5,
+  "live_chrome": {
+    "checks": [
+      "front page",
+      "collection",
+      "interactive filter",
+      "labelled scene dialog",
+      "open Last Judgment",
+      "restored animation at phone width"
+    ],
+    "console_errors": [],
+    "console_warnings": []
+  },
+  "fonts": [
+    {
+      "file": "assets/fonts/DMSans.ttf",
+      "sha256": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d"
+    },
+    {
+      "file": "assets/fonts/CormorantGaramond.ttf",
+      "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0"
+    }
+  ]
+}

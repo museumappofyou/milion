@@ -1,0 +1,573 @@
+{
+  "master": "assets/anastasis/conch_reference.jpg",
+  "size": [
+    2048,
+    1091
+  ],
+  "coordinateConvention": "master pixels from upper left; positive depth toward viewer",
+  "physicalVersion": 3,
+  "renderer": "Flutter Canvas.drawVertices, opaque ordered RGBA crops",
+  "lighting": {
+    "sourceRGB": "original master only",
+    "textureHeadroom": 1.015,
+    "defaultAngleDegrees": -20,
+    "displayMultiplier": [
+      0.83,
+      1.015
+    ],
+    "material": "matte painted plaster; no specular or metalness"
+  },
+  "layers": [
+    {
+      "id": "left_mountain_back",
+      "depth": 0.075,
+      "reliefStrength": 0.018,
+      "priority": 0,
+      "color": "#777e99",
+      "kind": "mountain",
+      "slope": [
+        -0.16,
+        0.1
+      ],
+      "crop": [
+        152,
+        130,
+        663,
+        251
+      ],
+      "mask": "assets/anastasis/relief_v3/left_mountain_back_mask.png",
+      "texture": "assets/anastasis/relief_v3/left_mountain_back.png",
+      "height": "assets/anastasis/relief_v3/left_mountain_back_height.png",
+      "normal": "assets/anastasis/relief_v3/left_mountain_back_normal.png",
+      "edge": "assets/anastasis/relief_v3/left_mountain_back_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/left_mountain_back_lit.png",
+      "ao": "assets/anastasis/relief_v3/left_mountain_back_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/left_mountain_back_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/left_mountain_back_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/left_mountain_back_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/left_mountain_back_shadow.png"
+    },
+    {
+      "id": "right_mountain_back",
+      "depth": 0.077,
+      "reliefStrength": 0.018,
+      "priority": 1,
+      "color": "#777e99",
+      "kind": "mountain",
+      "slope": [
+        0.15,
+        0.08
+      ],
+      "crop": [
+        1152,
+        131,
+        538,
+        228
+      ],
+      "mask": "assets/anastasis/relief_v3/right_mountain_back_mask.png",
+      "texture": "assets/anastasis/relief_v3/right_mountain_back.png",
+      "height": "assets/anastasis/relief_v3/right_mountain_back_height.png",
+      "normal": "assets/anastasis/relief_v3/right_mountain_back_normal.png",
+      "edge": "assets/anastasis/relief_v3/right_mountain_back_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/right_mountain_back_lit.png",
+      "ao": "assets/anastasis/relief_v3/right_mountain_back_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/right_mountain_back_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/right_mountain_back_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/right_mountain_back_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/right_mountain_back_shadow.png"
+    },
+    {
+      "id": "left_mountain_mid",
+      "depth": 0.112,
+      "reliefStrength": 0.018,
+      "priority": 2,
+      "color": "#bea568",
+      "kind": "mountain",
+      "slope": [
+        0.11,
+        0.2
+      ],
+      "crop": [
+        259,
+        130,
+        386,
+        157
+      ],
+      "mask": "assets/anastasis/relief_v3/left_mountain_mid_mask.png",
+      "texture": "assets/anastasis/relief_v3/left_mountain_mid.png",
+      "height": "assets/anastasis/relief_v3/left_mountain_mid_height.png",
+      "normal": "assets/anastasis/relief_v3/left_mountain_mid_normal.png",
+      "edge": "assets/anastasis/relief_v3/left_mountain_mid_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/left_mountain_mid_lit.png",
+      "ao": "assets/anastasis/relief_v3/left_mountain_mid_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/left_mountain_mid_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/left_mountain_mid_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/left_mountain_mid_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/left_mountain_mid_shadow.png"
+    },
+    {
+      "id": "right_mountain_mid",
+      "depth": 0.114,
+      "reliefStrength": 0.018,
+      "priority": 3,
+      "color": "#b6a275",
+      "kind": "mountain",
+      "slope": [
+        -0.12,
+        0.2
+      ],
+      "crop": [
+        1244,
+        131,
+        368,
+        192
+      ],
+      "mask": "assets/anastasis/relief_v3/right_mountain_mid_mask.png",
+      "texture": "assets/anastasis/relief_v3/right_mountain_mid.png",
+      "height": "assets/anastasis/relief_v3/right_mountain_mid_height.png",
+      "normal": "assets/anastasis/relief_v3/right_mountain_mid_normal.png",
+      "edge": "assets/anastasis/relief_v3/right_mountain_mid_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/right_mountain_mid_lit.png",
+      "ao": "assets/anastasis/relief_v3/right_mountain_mid_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/right_mountain_mid_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/right_mountain_mid_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/right_mountain_mid_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/right_mountain_mid_shadow.png"
+    },
+    {
+      "id": "left_mountain_front",
+      "depth": 0.153,
+      "reliefStrength": 0.02,
+      "priority": 4,
+      "color": "#e2ca77",
+      "kind": "mountain",
+      "slope": [
+        -0.19,
+        0.16
+      ],
+      "crop": [
+        474,
+        173,
+        340,
+        151
+      ],
+      "mask": "assets/anastasis/relief_v3/left_mountain_front_mask.png",
+      "texture": "assets/anastasis/relief_v3/left_mountain_front.png",
+      "height": "assets/anastasis/relief_v3/left_mountain_front_height.png",
+      "normal": "assets/anastasis/relief_v3/left_mountain_front_normal.png",
+      "edge": "assets/anastasis/relief_v3/left_mountain_front_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/left_mountain_front_lit.png",
+      "ao": "assets/anastasis/relief_v3/left_mountain_front_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/left_mountain_front_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/left_mountain_front_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/left_mountain_front_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/left_mountain_front_shadow.png"
+    },
+    {
+      "id": "right_mountain_front",
+      "depth": 0.155,
+      "reliefStrength": 0.02,
+      "priority": 5,
+      "color": "#e0c280",
+      "kind": "mountain",
+      "slope": [
+        0.21,
+        0.17
+      ],
+      "crop": [
+        1152,
+        173,
+        242,
+        160
+      ],
+      "mask": "assets/anastasis/relief_v3/right_mountain_front_mask.png",
+      "texture": "assets/anastasis/relief_v3/right_mountain_front.png",
+      "height": "assets/anastasis/relief_v3/right_mountain_front_height.png",
+      "normal": "assets/anastasis/relief_v3/right_mountain_front_normal.png",
+      "edge": "assets/anastasis/relief_v3/right_mountain_front_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/right_mountain_front_lit.png",
+      "ao": "assets/anastasis/relief_v3/right_mountain_front_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/right_mountain_front_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/right_mountain_front_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/right_mountain_front_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/right_mountain_front_shadow.png"
+    },
+    {
+      "id": "left_rear_group",
+      "depth": 0.19,
+      "reliefStrength": 0.006,
+      "priority": 6,
+      "color": "#766998",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        285,
+        170,
+        241,
+        182
+      ],
+      "mask": "assets/anastasis/relief_v3/left_rear_group_mask.png",
+      "texture": "assets/anastasis/relief_v3/left_rear_group.png",
+      "height": "assets/anastasis/relief_v3/left_rear_group_height.png",
+      "normal": "assets/anastasis/relief_v3/left_rear_group_normal.png",
+      "edge": "assets/anastasis/relief_v3/left_rear_group_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/left_rear_group_lit.png",
+      "ao": "assets/anastasis/relief_v3/left_rear_group_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/left_rear_group_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/left_rear_group_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/left_rear_group_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/left_rear_group_shadow.png"
+    },
+    {
+      "id": "right_rear_group",
+      "depth": 0.192,
+      "reliefStrength": 0.006,
+      "priority": 7,
+      "color": "#8b6b93",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        1347,
+        195,
+        284,
+        210
+      ],
+      "mask": "assets/anastasis/relief_v3/right_rear_group_mask.png",
+      "texture": "assets/anastasis/relief_v3/right_rear_group.png",
+      "height": "assets/anastasis/relief_v3/right_rear_group_height.png",
+      "normal": "assets/anastasis/relief_v3/right_rear_group_normal.png",
+      "edge": "assets/anastasis/relief_v3/right_rear_group_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/right_rear_group_lit.png",
+      "ao": "assets/anastasis/relief_v3/right_rear_group_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/right_rear_group_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/right_rear_group_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/right_rear_group_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/right_rear_group_shadow.png"
+    },
+    {
+      "id": "left_mid_group",
+      "depth": 0.232,
+      "reliefStrength": 0.008,
+      "priority": 8,
+      "color": "#537d9e",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        30,
+        223,
+        414,
+        443
+      ],
+      "mask": "assets/anastasis/relief_v3/left_mid_group_mask.png",
+      "texture": "assets/anastasis/relief_v3/left_mid_group.png",
+      "height": "assets/anastasis/relief_v3/left_mid_group_height.png",
+      "normal": "assets/anastasis/relief_v3/left_mid_group_normal.png",
+      "edge": "assets/anastasis/relief_v3/left_mid_group_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/left_mid_group_lit.png",
+      "ao": "assets/anastasis/relief_v3/left_mid_group_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/left_mid_group_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/left_mid_group_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/left_mid_group_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/left_mid_group_shadow.png"
+    },
+    {
+      "id": "right_mid_group",
+      "depth": 0.234,
+      "reliefStrength": 0.008,
+      "priority": 9,
+      "color": "#5e9e91",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        1288,
+        305,
+        357,
+        403
+      ],
+      "mask": "assets/anastasis/relief_v3/right_mid_group_mask.png",
+      "texture": "assets/anastasis/relief_v3/right_mid_group.png",
+      "height": "assets/anastasis/relief_v3/right_mid_group_height.png",
+      "normal": "assets/anastasis/relief_v3/right_mid_group_normal.png",
+      "edge": "assets/anastasis/relief_v3/right_mid_group_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/right_mid_group_lit.png",
+      "ao": "assets/anastasis/relief_v3/right_mid_group_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/right_mid_group_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/right_mid_group_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/right_mid_group_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/right_mid_group_shadow.png"
+    },
+    {
+      "id": "tomb_left",
+      "depth": 0.24,
+      "reliefStrength": 0.003,
+      "priority": 10,
+      "color": "#766d5d",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        317,
+        768,
+        417,
+        190
+      ],
+      "mask": "assets/anastasis/relief_v3/tomb_left_mask.png",
+      "texture": "assets/anastasis/relief_v3/tomb_left.png",
+      "height": "assets/anastasis/relief_v3/tomb_left_height.png",
+      "normal": "assets/anastasis/relief_v3/tomb_left_normal.png",
+      "edge": "assets/anastasis/relief_v3/tomb_left_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/tomb_left_lit.png",
+      "ao": "assets/anastasis/relief_v3/tomb_left_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/tomb_left_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/tomb_left_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/tomb_left_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/tomb_left_shadow.png"
+    },
+    {
+      "id": "tomb_right",
+      "depth": 0.241,
+      "reliefStrength": 0.003,
+      "priority": 11,
+      "color": "#766d5d",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        1226,
+        703,
+        431,
+        260
+      ],
+      "mask": "assets/anastasis/relief_v3/tomb_right_mask.png",
+      "texture": "assets/anastasis/relief_v3/tomb_right.png",
+      "height": "assets/anastasis/relief_v3/tomb_right_height.png",
+      "normal": "assets/anastasis/relief_v3/tomb_right_normal.png",
+      "edge": "assets/anastasis/relief_v3/tomb_right_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/tomb_right_lit.png",
+      "ao": "assets/anastasis/relief_v3/tomb_right_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/tomb_right_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/tomb_right_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/tomb_right_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/tomb_right_shadow.png"
+    },
+    {
+      "id": "lower_gates",
+      "depth": 0.245,
+      "reliefStrength": 0.003,
+      "priority": 12,
+      "color": "#4f5763",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        633,
+        799,
+        654,
+        214
+      ],
+      "mask": "assets/anastasis/relief_v3/lower_gates_mask.png",
+      "texture": "assets/anastasis/relief_v3/lower_gates.png",
+      "height": "assets/anastasis/relief_v3/lower_gates_height.png",
+      "normal": "assets/anastasis/relief_v3/lower_gates_normal.png",
+      "edge": "assets/anastasis/relief_v3/lower_gates_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/lower_gates_lit.png",
+      "ao": "assets/anastasis/relief_v3/lower_gates_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/lower_gates_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/lower_gates_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/lower_gates_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/lower_gates_shadow.png"
+    },
+    {
+      "id": "left_front_group",
+      "depth": 0.28,
+      "reliefStrength": 0.01,
+      "priority": 13,
+      "color": "#b86e67",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        304,
+        277,
+        496,
+        425
+      ],
+      "mask": "assets/anastasis/relief_v3/left_front_group_mask.png",
+      "texture": "assets/anastasis/relief_v3/left_front_group.png",
+      "height": "assets/anastasis/relief_v3/left_front_group_height.png",
+      "normal": "assets/anastasis/relief_v3/left_front_group_normal.png",
+      "edge": "assets/anastasis/relief_v3/left_front_group_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/left_front_group_lit.png",
+      "ao": "assets/anastasis/relief_v3/left_front_group_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/left_front_group_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/left_front_group_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/left_front_group_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/left_front_group_shadow.png"
+    },
+    {
+      "id": "right_front_group",
+      "depth": 0.282,
+      "reliefStrength": 0.01,
+      "priority": 14,
+      "color": "#bb805a",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        1470,
+        193,
+        493,
+        475
+      ],
+      "mask": "assets/anastasis/relief_v3/right_front_group_mask.png",
+      "texture": "assets/anastasis/relief_v3/right_front_group.png",
+      "height": "assets/anastasis/relief_v3/right_front_group_height.png",
+      "normal": "assets/anastasis/relief_v3/right_front_group_normal.png",
+      "edge": "assets/anastasis/relief_v3/right_front_group_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/right_front_group_lit.png",
+      "ao": "assets/anastasis/relief_v3/right_front_group_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/right_front_group_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/right_front_group_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/right_front_group_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/right_front_group_shadow.png"
+    },
+    {
+      "id": "mandorla",
+      "depth": 0.308,
+      "reliefStrength": 0.004,
+      "priority": 15,
+      "color": "#c8b893",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        785,
+        280,
+        450,
+        572
+      ],
+      "mask": "assets/anastasis/relief_v3/mandorla_mask.png",
+      "texture": "assets/anastasis/relief_v3/mandorla.png",
+      "height": "assets/anastasis/relief_v3/mandorla_height.png",
+      "normal": "assets/anastasis/relief_v3/mandorla_normal.png",
+      "edge": "assets/anastasis/relief_v3/mandorla_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/mandorla_lit.png",
+      "ao": "assets/anastasis/relief_v3/mandorla_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/mandorla_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/mandorla_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/mandorla_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/mandorla_shadow.png"
+    },
+    {
+      "id": "adam",
+      "depth": 0.352,
+      "reliefStrength": 0.013,
+      "priority": 16,
+      "color": "#527ec5",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        341,
+        556,
+        536,
+        302
+      ],
+      "mask": "assets/anastasis/relief_v3/adam_mask.png",
+      "texture": "assets/anastasis/relief_v3/adam.png",
+      "height": "assets/anastasis/relief_v3/adam_height.png",
+      "normal": "assets/anastasis/relief_v3/adam_normal.png",
+      "edge": "assets/anastasis/relief_v3/adam_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/adam_lit.png",
+      "ao": "assets/anastasis/relief_v3/adam_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/adam_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/adam_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/adam_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/adam_shadow.png"
+    },
+    {
+      "id": "eve",
+      "depth": 0.354,
+      "reliefStrength": 0.013,
+      "priority": 17,
+      "color": "#4da668",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        1106,
+        505,
+        410,
+        320
+      ],
+      "mask": "assets/anastasis/relief_v3/eve_mask.png",
+      "texture": "assets/anastasis/relief_v3/eve.png",
+      "height": "assets/anastasis/relief_v3/eve_height.png",
+      "normal": "assets/anastasis/relief_v3/eve_normal.png",
+      "edge": "assets/anastasis/relief_v3/eve_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/eve_lit.png",
+      "ao": "assets/anastasis/relief_v3/eve_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/eve_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/eve_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/eve_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/eve_shadow.png"
+    },
+    {
+      "id": "christ",
+      "depth": 0.438,
+      "reliefStrength": 0.018,
+      "priority": 18,
+      "color": "#c9474b",
+      "kind": "figure",
+      "slope": [
+        0,
+        0
+      ],
+      "crop": [
+        827,
+        353,
+        371,
+        497
+      ],
+      "mask": "assets/anastasis/relief_v3/christ_mask.png",
+      "texture": "assets/anastasis/relief_v3/christ.png",
+      "height": "assets/anastasis/relief_v3/christ_height.png",
+      "normal": "assets/anastasis/relief_v3/christ_normal.png",
+      "edge": "assets/anastasis/relief_v3/christ_edge.png",
+      "litTexture": "assets/anastasis/relief_v3/christ_lit.png",
+      "ao": "assets/anastasis/relief_v3/christ_ao.png",
+      "aoOverlay": "assets/anastasis/relief_v3/christ_ao_overlay.png",
+      "heightViz": "assets/anastasis/relief_v3/christ_height_viz.png",
+      "combinedViz": "assets/anastasis/relief_v3/christ_combined_viz.png",
+      "contactShadow": "assets/anastasis/relief_v3/christ_shadow.png"
+    }
+  ]
+}

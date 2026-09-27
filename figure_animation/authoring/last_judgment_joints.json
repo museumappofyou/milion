@@ -1,0 +1,724 @@
+{
+  "size": [
+    1600,
+    1067
+  ],
+  "grid": [
+    1500,
+    1000
+  ],
+  "controls": [
+    {
+      "name": "Christ nods",
+      "parts": [
+        "christ"
+      ],
+      "center": [
+        751,
+        600
+      ],
+      "radius": [
+        35,
+        42
+      ],
+      "pivot": [
+        752,
+        629
+      ],
+      "degrees": -4,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        1,
+        0.15
+      ],
+      "head": true
+    },
+    {
+      "name": "Christ left hand opens",
+      "parts": [
+        "christ"
+      ],
+      "center": [
+        711,
+        640
+      ],
+      "radius": [
+        44,
+        40
+      ],
+      "pivot": [
+        743,
+        634
+      ],
+      "degrees": 4,
+      "shift": [
+        -1,
+        -3
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Christ right hand opens",
+      "parts": [
+        "christ"
+      ],
+      "center": [
+        788,
+        646
+      ],
+      "radius": [
+        39,
+        34
+      ],
+      "pivot": [
+        761,
+        636
+      ],
+      "degrees": -4,
+      "shift": [
+        1,
+        -3
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Mary bows",
+      "parts": [
+        "mary"
+      ],
+      "center": [
+        669,
+        598
+      ],
+      "radius": [
+        40,
+        52
+      ],
+      "pivot": [
+        655,
+        649
+      ],
+      "degrees": -4,
+      "shift": [
+        -1,
+        0
+      ],
+      "timing": [
+        0.8,
+        0.2
+      ],
+      "head": true
+    },
+    {
+      "name": "Mary raises her hands",
+      "parts": [
+        "mary"
+      ],
+      "center": [
+        672,
+        638
+      ],
+      "radius": [
+        40,
+        40
+      ],
+      "pivot": [
+        651,
+        631
+      ],
+      "degrees": -4,
+      "shift": [
+        1,
+        -3
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "John bows",
+      "parts": [
+        "john"
+      ],
+      "center": [
+        823,
+        582
+      ],
+      "radius": [
+        40,
+        49
+      ],
+      "pivot": [
+        835,
+        633
+      ],
+      "degrees": 4,
+      "shift": [
+        -1,
+        1
+      ],
+      "timing": [
+        0.7,
+        -0.25
+      ],
+      "head": true
+    },
+    {
+      "name": "John gestures toward Christ",
+      "parts": [
+        "john"
+      ],
+      "center": [
+        815,
+        617
+      ],
+      "radius": [
+        40,
+        42
+      ],
+      "pivot": [
+        836,
+        610
+      ],
+      "degrees": 4,
+      "shift": [
+        -1,
+        -3
+      ],
+      "timing": [
+        1,
+        0
+      ],
+      "head": false
+    },
+    {
+      "name": "Angel left wing extends",
+      "parts": [
+        "rolling_angel"
+      ],
+      "center": [
+        693,
+        393
+      ],
+      "radius": [
+        70,
+        39
+      ],
+      "pivot": [
+        751,
+        381
+      ],
+      "degrees": -5,
+      "shift": [
+        -1,
+        -4
+      ],
+      "timing": [
+        0.75,
+        0.3
+      ],
+      "head": false
+    },
+    {
+      "name": "Angel right wing extends",
+      "parts": [
+        "rolling_angel"
+      ],
+      "center": [
+        851,
+        424
+      ],
+      "radius": [
+        56,
+        62
+      ],
+      "pivot": [
+        816,
+        392
+      ],
+      "degrees": 6,
+      "shift": [
+        2,
+        -3
+      ],
+      "timing": [
+        0.75,
+        0.3
+      ],
+      "head": false
+    },
+    {
+      "name": "Angel head inclines",
+      "parts": [
+        "rolling_angel"
+      ],
+      "center": [
+        790,
+        398
+      ],
+      "radius": [
+        32,
+        37
+      ],
+      "pivot": [
+        782,
+        376
+      ],
+      "degrees": -4,
+      "shift": [
+        0,
+        -1
+      ],
+      "timing": [
+        0.7,
+        -0.3
+      ],
+      "head": true
+    },
+    {
+      "name": "Angel trailing garments move",
+      "parts": [
+        "rolling_angel"
+      ],
+      "center": [
+        795,
+        326
+      ],
+      "radius": [
+        99,
+        46
+      ],
+      "pivot": [
+        751,
+        352
+      ],
+      "degrees": 2,
+      "shift": [
+        2,
+        -3
+      ],
+      "timing": [
+        0.3,
+        0.6
+      ],
+      "head": false
+    },
+    {
+      "name": "Left kneeling figure bows",
+      "parts": [
+        "left_kneeling"
+      ],
+      "center": [
+        710,
+        864
+      ],
+      "radius": [
+        41,
+        44
+      ],
+      "pivot": [
+        682,
+        904
+      ],
+      "degrees": -4,
+      "shift": [
+        0,
+        2
+      ],
+      "timing": [
+        0.75,
+        0.2
+      ],
+      "head": true
+    },
+    {
+      "name": "Right kneeling figure bows",
+      "parts": [
+        "right_kneeling"
+      ],
+      "center": [
+        822,
+        859
+      ],
+      "radius": [
+        40,
+        40
+      ],
+      "pivot": [
+        849,
+        895
+      ],
+      "degrees": 4,
+      "shift": [
+        0,
+        2
+      ],
+      "timing": [
+        0.6,
+        -0.2
+      ],
+      "head": true
+    },
+    {
+      "name": "l1 head and halo",
+      "parts": [
+        "l1",
+        "l1_halo"
+      ],
+      "center": [
+        365,
+        525
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        365,
+        554
+      ],
+      "degrees": 2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.45,
+        0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "l2 head and halo",
+      "parts": [
+        "l2",
+        "l2_halo"
+      ],
+      "center": [
+        420,
+        543
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        420,
+        572
+      ],
+      "degrees": 2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.6,
+        -0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "l3 head and halo",
+      "parts": [
+        "l3",
+        "l3_halo"
+      ],
+      "center": [
+        467,
+        550
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        467,
+        579
+      ],
+      "degrees": 2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.75,
+        0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "l4 head and halo",
+      "parts": [
+        "l4",
+        "l4_halo"
+      ],
+      "center": [
+        510,
+        574
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        510,
+        603
+      ],
+      "degrees": 2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.45,
+        -0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "l5 head and halo",
+      "parts": [
+        "l5",
+        "l5_halo"
+      ],
+      "center": [
+        552,
+        592
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        552,
+        621
+      ],
+      "degrees": 2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.6,
+        0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "l6 head and halo",
+      "parts": [
+        "l6",
+        "l6_halo"
+      ],
+      "center": [
+        589,
+        612
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        589,
+        641
+      ],
+      "degrees": 2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.75,
+        -0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "r1 head and halo",
+      "parts": [
+        "r1",
+        "r1_halo"
+      ],
+      "center": [
+        906,
+        596
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        906,
+        625
+      ],
+      "degrees": -2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.45,
+        0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "r2 head and halo",
+      "parts": [
+        "r2",
+        "r2_halo"
+      ],
+      "center": [
+        953,
+        587
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        953,
+        616
+      ],
+      "degrees": -2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.6,
+        -0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "r3 head and halo",
+      "parts": [
+        "r3",
+        "r3_halo"
+      ],
+      "center": [
+        987,
+        580
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        987,
+        609
+      ],
+      "degrees": -2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.75,
+        0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "r4 head and halo",
+      "parts": [
+        "r4",
+        "r4_halo"
+      ],
+      "center": [
+        1041,
+        578
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        1041,
+        607
+      ],
+      "degrees": -2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.45,
+        -0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "r5 head and halo",
+      "parts": [
+        "r5",
+        "r5_halo"
+      ],
+      "center": [
+        1084,
+        558
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        1084,
+        587
+      ],
+      "degrees": -2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.6,
+        0.24
+      ],
+      "head": true
+    },
+    {
+      "name": "r6 head and halo",
+      "parts": [
+        "r6",
+        "r6_halo"
+      ],
+      "center": [
+        1136,
+        555
+      ],
+      "radius": [
+        36,
+        45
+      ],
+      "pivot": [
+        1136,
+        584
+      ],
+      "degrees": -2.5,
+      "shift": [
+        0,
+        -0.8
+      ],
+      "timing": [
+        0.75,
+        -0.24
+      ],
+      "head": true
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "note": "V5 semantic depth clusters. Coordinates are master-photo pixels (assets/anastasis/conch_reference.jpg, 2048x1091). Each layer is one semantic depth cluster made of parts (individual figures). 'sam' lists authoring masks from sam/*.png; 'add'/'sub' are hand polygons or circles. Layers are painted in list order, so a later layer owns any pixel it shares with an earlier one; the order is the painted overlap order. Depth z is in master pixels toward the viewer. 'z' is the cluster's minimum base depth; a part is raised further when it must clear a part it overlaps. 'plane' is a [gx, gy] tilt in px/px; 'heads' are [x, y, r] soft domes. 'clear' limits which earlier layers a recessed layer must rise above (default: all).",
+  "field": [[0, 425], [50, 390], [100, 345], [150, 300], [200, 265], [250, 235], [300, 210], [350, 188], [400, 168], [450, 150], [500, 135], [600, 112], [700, 95], [800, 82], [900, 74], [1000, 70], [1100, 72], [1200, 80], [1300, 92], [1400, 110], [1500, 138], [1600, 172], [1700, 215], [1800, 288], [1850, 328], [1900, 378], [1950, 440], [1990, 500], [2000, 522], [1985, 542], [1905, 668], [1794, 779], [1711, 862], [1600, 912], [1500, 940], [1400, 963], [1300, 980], [1200, 995], [1100, 1005], [1000, 1012], [900, 1008], [800, 998], [700, 983], [600, 958], [500, 933], [400, 915], [350, 900], [300, 860], [250, 820], [200, 780], [100, 700], [0, 615]],
+  "layers": [
+    {
+      "id": "pit",
+      "kind": "lower",
+      "z": 24,
+      "parts": [
+        {
+          "id": "pit",
+          "sam": ["pit"],
+          "relief": {
+            "bevel": 0,
+            "body": 0
+          }
+        }
+      ],
+      "clear": []
+    },
+    {
+      "id": "hades",
+      "kind": "lower",
+      "z": 27,
+      "parts": [
+        {
+          "id": "hades",
+          "sam": ["hades"],
+          "relief": {
+            "bevel": 1.5,
+            "bevel_r": 4,
+            "body": 4,
+            "body_r": 14
+          }
+        }
+      ],
+      "clear": ["pit"]
+    },
+    {
+      "id": "gate_left",
+      "kind": "lower",
+      "z": 30,
+      "parts": [
+        {
+          "id": "gate_left",
+          "sam": ["gate_left"],
+          "plane": [0, -0.09],
+          "relief": {
+            "bevel": 2,
+            "bevel_r": 4,
+            "body": 0
+          }
+        }
+      ],
+      "clear": ["pit", "hades"]
+    },
+    {
+      "id": "gate_right",
+      "kind": "lower",
+      "z": 30,
+      "parts": [
+        {
+          "id": "gate_right",
+          "sam": ["gate_right"],
+          "plane": [0, -0.1],
+          "relief": {
+            "bevel": 2,
+            "bevel_r": 4,
+            "body": 0
+          }
+        }
+      ],
+      "clear": ["pit", "hades"]
+    },
+    {
+      "id": "left_figures_rear",
+      "kind": "figure",
+      "z": 30,
+      "relief": {
+        "bevel": 2.0,
+        "bevel_r": 4,
+        "body": 3.0,
+        "body_r": 26,
+        "head": 2.5
+      },
+      "parts": [
+        {
+          "id": "l_rear_heads",
+          "sam": ["l_rear_heads"]
+        },
+        {
+          "id": "l_rear_halos",
+          "sam": ["l_rear_halos"]
+        },
+        {
+          "id": "l_lavender",
+          "sam": ["l_lavender"]
+        }
+      ]
+    },
+    {
+      "id": "right_figures_rear",
+      "kind": "figure",
+      "z": 30,
+      "relief": {
+        "bevel": 2.0,
+        "bevel_r": 4,
+        "body": 3.0,
+        "body_r": 26,
+        "head": 2.5
+      },
+      "parts": [
+        {
+          "id": "r_rear_heads",
+          "sam": ["r_rear_heads"]
+        },
+        {
+          "id": "r_tan",
+          "sam": ["r_tan"]
+        }
+      ]
+    },
+    {
+      "id": "left_figures_middle",
+      "kind": "figure",
+      "z": 37,
+      "relief": {
+        "bevel": 2.0,
+        "bevel_r": 4,
+        "body": 3.0,
+        "body_r": 26,
+        "head": 2.5
+      },
+      "parts": [
+        {
+          "id": "l_greyband",
+          "add": [
+            {
+              "poly": [[300, 425], [337, 432], [318, 467], [281, 533], [244, 583], [262, 640], [240, 648], [195, 640], [183, 600], [195, 570], [228, 533], [276, 467]]
+            }
+          ]
+        },
+        {
+          "id": "l_mauve",
+          "sam": ["l_mauve"]
+        },
+        {
+          "id": "l_redband",
+          "sam": ["l_redband"]
+        },
+        {
+          "id": "l_david",
+          "sam": ["l_david", "l_david_head"],
+          "heads": [[470, 362, 22]]
+        }
+      ]
+    },
+    {
+      "id": "right_figures_middle",
+      "kind": "figure",
+      "z": 37,
+      "relief": {
+        "bevel": 2.0,
+        "bevel_r": 4,
+        "body": 3.0,
+        "body_r": 26,
+        "head": 2.5
+      },
+      "parts": [
+        {
+          "id": "r_ochre",
+          "sam": ["r_ochre", "r_ochre_hem"],
+          "heads": [[1545, 222, 22]]
+        },
+        {
+          "id": "r_abel",
+          "sam": ["r_abel"],
+          "heads": [[1372, 392, 22]]
+        }
+      ]
+    },
+    {
+      "id": "mandorla",
+      "kind": "mandorla",
+      "z": 40,
+      "parts": [
+        {
+          "id": "mandorla",
+          "sam": ["mandorla"],
+          "relief": {
+            "bevel": 3.0,
+            "bevel_r": 10,
+            "body": 2.0,
+            "body_r": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": "ground_center",
+      "kind": "ground",
+      "z": 38,
+      "parts": [
+        {
+          "id": "ground_center",
+          "sam": ["ground_center", "ground_left"],
+          "plane": [0, 0.05],
+          "relief": {
+            "bevel": 2.5,
+            "bevel_r": 6,
+            "body": 1.5,
+            "body_r": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "tomb_left",
+      "kind": "tomb",
+      "z": 40,
+      "parts": [
+        {
+          "id": "tomb_left",
+          "sam": ["tomb_left"],
+          "plane": [0, 0.04],
+          "relief": {
+            "bevel": 2.5,
+            "bevel_r": 5,
+            "body": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "tomb_right",
+      "kind": "tomb",
+      "z": 40,
+      "parts": [
+        {
+          "id": "tomb_right",
+          "sam": ["tomb_right"],
+          "plane": [0, 0.04],
+          "relief": {
+            "bevel": 2.5,
+            "bevel_r": 5,
+            "body": 0
+          },
+          "add": [
+            {
+              "poly": [[1257, 840], [1575, 858], [1640, 858], [1668, 845], [1711, 862], [1600, 912], [1500, 940], [1400, 963], [1300, 980], [1262, 988]]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "left_figures_front",
+      "kind": "figure",
+      "z": 44,
+      "relief": {
+        "bevel": 2.0,
+        "bevel_r": 4,
+        "body": 3.0,
+        "body_r": 26,
+        "head": 2.5
+      },
+      "parts": [
+        {
+          "id": "l_solomon",
+          "sam": ["l_solomon"],
+          "add": [
+            {
+              "circle": [562, 378, 43]
+            }
+          ],
+          "heads": [[563, 392, 24]]
+        },
+        {
+          "id": "l_john",
+          "sam": ["l_john"],
+          "heads": [[690, 392, 27]]
+        }
+      ]
+    },
+    {
+      "id": "right_figures_front",
+      "kind": "figure",
+      "z": 44,
+      "relief": {
+        "bevel": 2.0,
+        "bevel_r": 4,
+        "body": 3.0,
+        "body_r": 26,
+        "head": 2.5
+      },
+      "parts": [
+        {
+          "id": "r_brown",
+          "sam": ["r_brown"],
+          "add": [
+            {
+              "poly": [[1632, 598], [1644, 623], [1661, 641], [1686, 646], [1712, 636], [1738, 624], [1762, 609], [1778, 592], [1760, 585], [1730, 605], [1688, 617], [1652, 606], [1636, 590]]
+            }
+          ]
+        },
+        {
+          "id": "r_riser",
+          "sam": ["r_riser"]
+        }
+      ]
+    },
+    {
+      "id": "adam",
+      "kind": "principal",
+      "z": 56,
+      "relief": {
+        "bevel": 2.5,
+        "bevel_r": 5,
+        "body": 5.0,
+        "body_r": 34,
+        "head": 3.5
+      },
+      "parts": [
+        {
+          "id": "adam",
+          "sam": ["adam"],
+          "heads": [[702, 625, 28]]
+        }
+      ]
+    },
+    {
+      "id": "eve",
+      "kind": "principal",
+      "z": 56,
+      "relief": {
+        "bevel": 2.5,
+        "bevel_r": 5,
+        "body": 5.0,
+        "body_r": 34,
+        "head": 3.5
+      },
+      "parts": [
+        {
+          "id": "eve",
+          "sam": ["eve"],
+          "sub": [
+            {
+              "poly": [[1330, 775], [1455, 770], [1460, 802], [1330, 802]]
+            }
+          ],
+          "heads": [[1197, 575, 20]]
+        }
+      ]
+    },
+    {
+      "id": "christ",
+      "kind": "christ",
+      "z": 70,
+      "relief": {
+        "bevel": 2.5,
+        "bevel_r": 5,
+        "body": 6.0,
+        "body_r": 38,
+        "head": 4.0
+      },
+      "parts": [
+        {
+          "id": "christ_halo",
+          "add": [
+            {
+              "circle": [968, 398, 52]
+            }
+          ],
+          "relief": {
+            "bevel": 2.0,
+            "bevel_r": 5,
+            "body": 0
+          }
+        },
+        {
+          "id": "christ",
+          "sam": ["christ", "christ_hand_l"],
+          "add": [
+            {
+              "ellipse": [967, 406, 31, 46]
+            },
+            {
+              "poly": [[915, 795], [930, 797], [932, 828], [924, 833], [905, 835], [885, 838], [880, 833], [888, 826], [905, 818], [916, 812]]
+            },
+            {
+              "poly": [[1128, 790], [1142, 788], [1150, 800], [1162, 815], [1170, 825], [1176, 842], [1165, 848], [1150, 847], [1140, 838], [1133, 815]]
+            }
+          ],
+          "heads": [[968, 418, 30]],
+          "sub": [
+            {
+              "circle": [968, 398, 52]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

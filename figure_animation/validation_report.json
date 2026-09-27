@@ -1,0 +1,41 @@
+{
+  "application_tests_passed": 33,
+  "visual_capture_tests_passed": 2,
+  "final_marker_behavior_tests_passed": 2,
+  "analysis": "No issues found",
+  "web_build": "passed",
+  "android_release_build": "passed",
+  "original_assets_unchanged": 386,
+  "bundle_checks": {
+    "android": {
+      "verified_assets": 392,
+      "mismatches": []
+    },
+    "web": {
+      "verified_assets": 392,
+      "mismatches": []
+    }
+  },
+  "apk_bytes": 182146808,
+  "web_lifetime_fix": {
+    "baseline_chrome_test": "failed: first frame disposed shared image",
+    "fixed_chrome_test": "passed: 24 frames and cleanup preserve caller-owned textures",
+    "live_chrome_scenes": [
+      "Anastasis",
+      "Last Judgment"
+    ],
+    "live_chrome_operations": [
+      "play",
+      "pause",
+      "zoom",
+      "Original/Relief/Restored",
+      "Still",
+      "close scene"
+    ],
+    "live_chrome_console_errors": 0,
+    "live_chrome_console_warnings": 0,
+    "asset_widget_suite_in_chrome": "Asset loading timed out in web test harness; verified scene interactions in the actual debug app",
+    "web_release_build": "passed",
+    "android_release_build": "passed"
+  }
+}
