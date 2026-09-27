@@ -1,0 +1,1036 @@
+{
+  "pageid": 6259411,
+  "ns": 0,
+  "title": "Q6442920",
+  "lastrevid": 2537095535,
+  "modified": "2026-08-27T14:56:05Z",
+  "type": "item",
+  "id": "Q6442920",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Kuleli Military High School"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Kuleli Askeri Lisesi"
+    },
+    "el": {
+      "language": "el",
+      "value": "Στρατιωτικό λύκειο του Κουλελί"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "former military high school in Turkey an Ottoman Empire"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'da eski bir askerî lise"
+    }
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "8e61b1b0f49b7131356c2d0227a94f863fd78377",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8576825,
+              "id": "Q8576825"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$979AB9C9-47BD-412A-B832-F9A87F9DC922",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "220923ce90a118be851a8e7b7e29b15e65cba0d0",
+          "datavalue": {
+            "value": {
+              "latitude": 41.05861111,
+              "longitude": 29.05472222,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6442920$82402628-48DA-4155-971D-CE9573C388DB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b9326e53001a6f665ede49992475a00a0f98c245",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12808582,
+              "id": "Q12808582"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$b02746aa-4756-8fac-c22c-475f333e459f",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "db30cc49fca68669135ffbe5ebe20ab4291309ac",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 96086516,
+              "id": "Q96086516"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$9d42ba35-4299-fbf1-a57b-0f86979411f5",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "97ad7cff089558d552333885d0fe3f497145aa82",
+          "datavalue": {
+            "value": "Kuleli Military High School",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6442920$67B6AA11-0858-4610-A159-82B251AD6F1E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$CF989016-16A6-4559-914A-87EE8AE6E052",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "b56267f542a5002e0a9dad176fd833f1187d1f55",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "130b08b5b01fdd742593c56db2d24309dac48614",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/uskudar",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "98bdbfde4a1ce1c53ec2c58c6b204a86080463a0",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ddaeb86f5cace959c5fd5e4bc2ff703aef8d660a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kuleli-askeri-lisesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "3b79e889bd8cc182dbdebb0b733e7907b7bee100",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12560,
+              "id": "Q12560"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$cfb38e72-40da-4419-33d5-549396ecec13",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "be7aa82124ca2485c7e1e5ac5ef38f3e586caa32",
+          "datavalue": {
+            "value": "http://www.kkk.tsk.tr/Okullar/kuleli/MyBtWebPages/anasayfa.html",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 256,
+                  "id": "Q256"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q6442920$B2EE6DD9-AC88-4A55-BCDA-BC13F8DD9A61",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "5b9f96b36bef9a082421205d798a88e92f022d14",
+          "datavalue": {
+            "value": {
+              "time": "+1845-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q6442920$1EF518A4-B2CF-4DB0-A02A-B9668EB92E9D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3417",
+          "hash": "fd3f539bc07c6de7a7ffd1d239339d947e29c200",
+          "datavalue": {
+            "value": "Kuleli-Military-High-School",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$4B535B0C-5625-429A-BD3A-CBD96D21BF83",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 51711,
+                      "id": "Q51711"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3876": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3876",
+          "hash": "52a4e68ce3c2acf627474d5f81b6ef70363e9cb1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8576826,
+              "id": "Q8576826"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$79C8408A-83D3-402D-884A-6BBD8F627E26",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "f27ec8233d5abf357fbee4d71fc416ed92a0b7fc",
+          "datavalue": {
+            "value": "Exterior view of Kuleli Askeri Lisesi from the Bosphorus (2).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6442920$674D1717-855D-4E31-9AA1-0447EFE5C2B4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0d492dcece36e49ec26f04295d4ff1ade602e4a9",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "39278ca081a463b93e7103e151f049825c406bb5",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Lycée_militaire_Kuleli&oldid=150586437",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6117": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6117",
+          "hash": "db800caab455a0876ac2dc0ffb7d9b6dc0eeac5d",
+          "datavalue": {
+            "value": "49575",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$6ae68152-4607-03a1-07f7-bda331d05acf",
+        "rank": "normal"
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "ffa06a6be30187bf339656fc334e58eb3657ba7f",
+          "datavalue": {
+            "value": "4465498",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$2AF77F5C-CB11-4C34-991E-BEA8B754C9CE",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "fd66849669ad9d43079870a944cce09b45072183",
+          "datavalue": {
+            "value": "no2008133612",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$8170B150-268D-4451-B205-6902B81F3F6F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-03-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "109b60f51e924d715323150f6b6b461b48094a01",
+          "datavalue": {
+            "value": "kuleli-askeri-lisesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$e72017d6-4f83-fd5d-7cff-e90c1ebabcea",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "98bdbfde4a1ce1c53ec2c58c6b204a86080463a0",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ddaeb86f5cace959c5fd5e4bc2ff703aef8d660a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kuleli-askeri-lisesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "e325a620a5524c8ea18c59928a4ee511311869b4",
+          "datavalue": {
+            "value": "149315998",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$A5AC6487-42A3-4DB0-956F-D2486D5B39F7",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "f42426fdbae91ab788f8e49c682f30d0392323c9",
+          "datavalue": {
+            "value": "/m/0869qf",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$2C93C46A-9BEB-4D29-A08E-455C0AEAA8CC",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "d7d0b52d8217d055a817a0cc05ea7534d9657847",
+          "datavalue": {
+            "value": "8375",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$661E8D4B-477F-481F-9DDF-3299E037CFD8",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "34bcf1dbe3f22584f1d79cdb4cc70b49c20c0e68",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 326339,
+              "id": "Q326339"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$EF4B076E-A811-4845-99C2-85F40AA7C4FC",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "097149e005e96dbb4a9be26a96ffc7556a538222",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6046548,
+              "id": "Q6046548"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$752e98e4-4e08-de90-3837-7f8f74358491",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$7E976DEC-96AF-4E8B-B2CB-14B03D7C0DB1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b56267f542a5002e0a9dad176fd833f1187d1f55",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "130b08b5b01fdd742593c56db2d24309dac48614",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/uskudar",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "98bdbfde4a1ce1c53ec2c58c6b204a86080463a0",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ddaeb86f5cace959c5fd5e4bc2ff703aef8d660a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kuleli-askeri-lisesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$F1F5A6C7-81F7-46A6-8496-3CB4BA3B0437",
+        "rank": "normal"
+      }
+    ],
+    "P576": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P576",
+          "hash": "fb610269dd0476b53e05cc3945ddd045c348a5d9",
+          "datavalue": {
+            "value": {
+              "time": "+2016-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q6442920$98392918-45c0-49a3-809c-6d556c4ee21c",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$C098A399-D4E4-4344-9025-C7762FF2093B",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "851d816a9dd8a73d8c1893d38580a67f4c42b8f0",
+          "datavalue": {
+            "value": "group/eecd2c75-9979-4bc4-b012-c96289e0f006",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$79B5B8C0-AAB1-4B4A-B536-FDEED12A0838",
+        "rank": "normal"
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "ad4e621ec39240cd40daba463c7d9f49167b74cc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3072081,
+              "id": "Q3072081"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6442920$67a3e93d-4f5a-e7b7-4d11-59a56ddb1540",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "2bc8c9fcb17fe0b179bd470a45d59167a5178ebe",
+          "datavalue": {
+            "value": "826",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$1C6C5C2E-642E-4C78-AB63-EDB89DCFB00D",
+        "rank": "normal"
+      }
+    ],
+    "P13204": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13204",
+          "hash": "d4f6c66f1664f371f3203a292f08512c409e8146",
+          "datavalue": {
+            "value": "b2k6rytq",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6442920$C433744F-0573-43A6-BC28-F3259A0876ED",
+        "rank": "normal"
+      }
+    ],
+    "P6375": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6375",
+          "hash": "30b360c996d58afd2d0bf8df9105c39a87d4d23b",
+          "datavalue": {
+            "value": {
+              "text": "Kuleli Caddesi, Kuleli 34684 Üsküdar Istanbul",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q6442920$f41499b5-421b-cf9b-310c-875ed82f6f6f",
+        "rank": "normal"
+      }
+    ],
+    "P281": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P281",
+          "hash": "2c506fcf4643e15f4c75f1325f6c8682708920fb",
+          "datavalue": {
+            "value": "34684",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6442920$83d4f999-4b87-d0d1-5093-65fe6cb450d0",
+        "rank": "normal"
+      }
+    ],
+    "P3451": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3451",
+          "hash": "85314a8c19f30c0b5debfde05ecf9cb13369f4bd",
+          "datavalue": {
+            "value": "Geceleyin Kuleli Askeri Lisesi.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6442920$cae7ece5-4583-6590-7d65-40a41cdac79c",
+        "rank": "normal"
+      }
+    ]
+  }
+}

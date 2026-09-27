@@ -1,0 +1,176 @@
+{
+  "pageid": 125434735,
+  "ns": 0,
+  "title": "Q131523725",
+  "lastrevid": 2405835392,
+  "modified": "2025-09-16T07:02:54Z",
+  "type": "item",
+  "id": "Q131523725",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Satyros Manastırı"
+    },
+    "en": {
+      "language": "en",
+      "value": "Monastery of Satyros"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "monastery in Maltepe District"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Maltepe'de manastır"
+    }
+  },
+  "claims": {
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "bc509320dc1bdca27a38a3a5d6a939971e7704d2",
+          "datavalue": {
+            "value": "17519",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q131523725$BA3CD6BF-BAB6-47B5-954F-6B5AD4A69D19",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q131523725$2F690E5A-0C60-469D-82A1-20D25B0FA671",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "81fdd30287463538aa3795cc548dc67fa61318aa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 739547,
+              "id": "Q739547"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q131523725$75D088FD-04C8-4C98-A106-A07D04D0F2CD",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "950a882e8d067e72cfad2ca0ae7702bc7ef9563d",
+          "datavalue": {
+            "value": {
+              "latitude": 40.9435463,
+              "longitude": 29.1154442,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q131523725$943DFA16-CF6F-4A02-B256-6753B3154C45",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "81ecce0b5979f715b1029fe4041c584cbfeac915",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 44613,
+              "id": "Q44613"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q131523725$27BB39EB-8F64-417D-8B10-61668E9487C6",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q131523725$34DA4F13-F3C2-44B2-974B-BFEEB9B954C5",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q131523725$B5B67D2B-B29E-4039-99BA-348D5D077B2E",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "pageid": 19739984,
+  "ns": 0,
+  "title": "Q18210713",
+  "lastrevid": 2549758428,
+  "modified": "2026-09-26T19:18:06Z",
+  "type": "item",
+  "id": "Q18210713",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Cistern of Mocius"
+    },
+    "el": {
+      "language": "el",
+      "value": "Κινστέρνα του Μωκίου"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Hagios Mokios Sarnıcı"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te sarnıç"
+    },
+    "en": {
+      "language": "en",
+      "value": "byzantine open-sky water reservoir built in the city of Constantinople"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "9a889ab0173f8b82d4c3f319f87a37eb7aa807e3",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0103,
+              "longitude": 28.9347,
+              "altitude": null,
+              "precision": 0.011904654777288,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q18210713$581D1A9A-32C9-481A-A3D3-CD3A6F778F0F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "e5428d65d6dcebffe698ebb92e92ade7b18feff1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 93429857,
+              "id": "Q93429857"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$faec526c-4915-acdb-5ac9-6507f2ef174b",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$03535B35-E755-4E97-BA03-3B675BF0A3CE",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "c2d32f102aa09ba628cb5a1ed48cb6e46d1d9228",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6072820,
+              "id": "Q6072820"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$473df13d-43a3-620e-9230-17569de07fc8",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "7fe39c5b03b27aff86148bbf44160b6fd4e7ccaa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 47591,
+              "id": "Q47591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$d3fcc951-442b-1844-d5a1-5528645786a5",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$9902F4AC-67D8-432B-B890-CB37F8D65546",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "84cbe619c152daf9f2fc47ccd5311d71fd4397ac",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "3ca97412500d53fc7ebb4dfa4731aca698f8c350",
+                  "datavalue": {
+                    "value": "https://tr.wikipedia.org/w/index.php?title=Hagios_Mokios_Sarnıcı&oldid=20646035",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "0eed334fd4e5a81da09d79700db391104187090c",
+          "datavalue": {
+            "value": "/m/011sr4w0",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q18210713$4EDD441B-1DD9-43BA-BDA2-CEAF884CD9F0",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "de2abfeb767d12fe0a41f6cad2f7ff011994af31",
+          "datavalue": {
+            "value": "Cistern of Mocius",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q18210713$0ed93c4f-e705-49fb-a3f7-c3b31a132baf",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "f5ff5313d4972d32fea22466e36f7340e4a5e5bb",
+          "datavalue": {
+            "value": "7365",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q18210713$423C4699-D530-48D0-91EC-F2A52AF31977",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "ff415bca0e2ebab08d7bea73e9f860adc29938c3",
+          "datavalue": {
+            "value": "Cistern of Mocius.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "1993f0532c40d966288e6a207354ace1d1425309",
+              "datavalue": {
+                "value": {
+                  "text": "La cisterna oggi utilizzata come area per attività sportive e sociali",
+                  "language": "it"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q18210713$27FAE64B-8743-48BD-BB97-B5F2EAF32045",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$FAC28C4F-786B-497A-8E62-212DE5013064",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q18210713$BBB189E3-228A-40F9-B0DA-2C6E234098C1",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "2078db6d6a2bf938c10230f52144159fc39ded79",
+          "datavalue": {
+            "value": "4714",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q18210713$19994B6A-088A-4F14-9AA6-D1DAEFB1E713",
+        "rank": "normal"
+      }
+    ]
+  }
+}

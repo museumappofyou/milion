@@ -1,0 +1,210 @@
+{
+  "pageid": 30292583,
+  "ns": 0,
+  "title": "Q28599952",
+  "lastrevid": 2350386311,
+  "modified": "2025-05-19T23:07:54Z",
+  "type": "item",
+  "id": "Q28599952",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Florence Nightingale Museum, Istanbul"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Florence Nightingale Müzesi"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Üsküdar'da müze"
+    }
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28599952$28dd91bc-4a46-b602-a5c1-82c09bd81e48",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28599952$5e146c5f-4650-509e-cf2e-65f8e3e363a0",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "40c46a5c123e4a5c2a7e3a407f93320d6a99f77f",
+          "datavalue": {
+            "value": {
+              "latitude": 41.005246,
+              "longitude": 29.016064,
+              "altitude": null,
+              "precision": 1e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q28599952$6943f2d4-4113-ee16-b346-6c50d43452b2",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "72b7c341923d5ca1d6a7268ce4c49175db33c6b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 534799,
+              "id": "Q534799"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28599952$c3aa5bb9-4cf9-93e5-efab-7d721ceecb99",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "9e3d8e7b2397a688960de9f9450a9968a3d12c5d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 37103,
+              "id": "Q37103"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28599952$e4ed184c-4fcd-2870-4071-596ee06b1c6d",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "d6cf798118418ef803c1e94c782224879ac966f3",
+          "datavalue": {
+            "value": "/g/122y0ccx",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q28599952$C1B0BC6D-8EE9-410A-B957-4D78D5A31D96",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "80a8acc552b29d64eb45761df355a8cb532ceb44",
+          "datavalue": {
+            "value": "4168",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q28599952$8ded89e9-44ee-92cc-f5b8-bfcd430fa00e",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28599952$6F9032ED-70C9-4F32-9D8F-B6A15E6058F0",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28599952$C9300BCA-5A65-41B9-9D2E-2D06775A72DE",
+        "rank": "normal"
+      }
+    ]
+  }
+}

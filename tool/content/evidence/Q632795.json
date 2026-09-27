@@ -1,0 +1,828 @@
+{
+  "pageid": 595211,
+  "ns": 0,
+  "title": "Q632795",
+  "lastrevid": 2521617914,
+  "modified": "2026-07-23T12:09:21Z",
+  "type": "item",
+  "id": "Q632795",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Επταπύργιο"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Yedikule Hisarı"
+    },
+    "en": {
+      "language": "en",
+      "value": "Yedikule Fortress"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "fortress in Istanbul, Turkey"
+    },
+    "el": {
+      "language": "el",
+      "value": "φρούριο στην Κωνσταντινούπολη"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te kale"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "5ffdbadb955de80da00129389402ba83b9cec3d9",
+          "datavalue": {
+            "value": "Yedikule Fortress",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q632795$73F5FE0C-2B33-4A4C-9216-FD5DCC4869C0",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "351379aba85e71d1258053f396b61947662324f0",
+          "datavalue": {
+            "value": {
+              "latitude": 40.99305556,
+              "longitude": 28.92333333,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q632795$72645962-C5BD-471B-80C9-BE04767F2D2A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "906f6b4f59ff7e4174bdff6de95cd5c645000f6c",
+          "datavalue": {
+            "value": "/m/0pb8kcg",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$41B26C1C-9951-4A1D-8BB5-0A1917DE2AC6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "81aedf16095cd2f253117cdbd331d66670946f48",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img57 Yedikule.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q632795$3b928ca5-47d3-4ba9-d281-32e3db90b445",
+        "rank": "preferred"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$9b059e8d-4fcf-1dff-1b18-3b3cc7022d41",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "86dfc5e0feb6798a047d84f2534adc77786ac671",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "e2ae3acfb6cbce9545c145304d1dddbb7e87146b",
+                  "datavalue": {
+                    "value": "12981",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-31T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "cbeaf2223221ca8690f00655dd773dc67dd5d68a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 57831,
+              "id": "Q57831"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$575b84a9-4214-16a5-08dc-9071943d0d07",
+        "rank": "normal"
+      }
+    ],
+    "P5383": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5383",
+          "hash": "e2ae3acfb6cbce9545c145304d1dddbb7e87146b",
+          "datavalue": {
+            "value": "12981",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$0021BBFC-2780-4AB2-9A4A-D05484709318",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fc5c0700e4ea82f652ee81db5553c3a44446a105",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                  "datavalue": {
+                    "value": "https://www.archinform.net/service/wd_aipro.php",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "775e4bc3406f34d4db423a7a92abe6c7af78a5e1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-02T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$F968DE3D-5538-40EE-919E-C98B0F619AFB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "86dfc5e0feb6798a047d84f2534adc77786ac671",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "e2ae3acfb6cbce9545c145304d1dddbb7e87146b",
+                  "datavalue": {
+                    "value": "12981",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-31T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$78BBF9F1-385B-4E74-B1AF-9C9F0FCA0396",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3623f972071aa1f3ae9e51662a703e8c9f85f594",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "b7f8bea3bb10c237323eb448dc4798948923bd5c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11921,
+                      "id": "Q11921"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "1f601c8292414286a02e12b5db865a609ef89df0",
+                  "datavalue": {
+                    "value": "https://pt.wikipedia.org/w/index.php?title=Fortaleza_de_Yedikule&oldid=54852656",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1889": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "6f98434217110476dc56d85fc7f1b0ad1ac7c602",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5991829,
+              "id": "Q5991829"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$df1079a2-497b-372a-7e0d-bc3f39355c84",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "d70207694dad050b26091057bae3827491452ada",
+          "datavalue": {
+            "value": {
+              "time": "+1458-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q632795$39BFD16B-9F0B-4707-849C-63BF0581B70F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "596e0bc684b93e6b15837feb00f2e55b47ca0fc6",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "b00789998647bb5c8a4b903bd98aab4fe44da9a9",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Yedikule_Fortress&oldid=926792259",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "ef77e755c8142c8844dc6a4beb52850783ed99c9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 34503,
+              "id": "Q34503"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$68751195-0477-443E-B1F9-C35313CE198D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "596e0bc684b93e6b15837feb00f2e55b47ca0fc6",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "b00789998647bb5c8a4b903bd98aab4fe44da9a9",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Yedikule_Fortress&oldid=926792259",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "7947bde8ee3ae6fd4fbe2b853ae84f69960ba01a",
+          "datavalue": {
+            "value": "Entity[\"Castle\", \"YedikuleHisari\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$3880642A-7F3E-406B-8992-00DF4F0E0F9F",
+        "rank": "normal"
+      }
+    ],
+    "P8592": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8592",
+          "hash": "6848a3a9b631f322dac4feb16dbb81fd80f5f4f6",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img61 Yedikule.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q632795$6e478a67-4f62-3140-e80c-eaa78864d700",
+        "rank": "normal"
+      }
+    ],
+    "P8517": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8517",
+          "hash": "e101d060ef3f1ac08e8577c4d1ee2f36bd078b15",
+          "datavalue": {
+            "value": "Istanbul - Castell de Yedikule i mar de Màrmara.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q632795$73a2658b-4b2e-d56a-7b60-2d86ff4c792e",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "11c975364fb32a56a52e20f147e59e66e3183268",
+          "datavalue": {
+            "value": "3071",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$B4DDF17C-32CD-42C6-B3BB-26D0A5418ABE",
+        "rank": "normal"
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "8b83419e3f034e1e65d0da9622cbb2830d95cade",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 115865022,
+              "id": "Q115865022"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2699": [
+            {
+              "snaktype": "value",
+              "property": "P2699",
+              "hash": "9618eb393da8246633aa59de01e86628b8012fd4",
+              "datavalue": {
+                "value": "http://www.starforts.com/yedikule.html",
+                "type": "string"
+              },
+              "datatype": "url"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2699"
+        ],
+        "id": "Q632795$4FEE069F-1743-41D4-980A-880C8E64F8EF",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "50db165aee2a5357a85a3273d4fe5061754f90eb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 117841865,
+              "id": "Q117841865"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$E2680CA8-E08F-472E-A6B0-3D8418D2EF94",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q632795$E2E6B090-1681-4EB9-8E15-A50856819658",
+        "rank": "normal"
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "a218c9a85ce581efc42584ca644d6964bc026440",
+          "datavalue": {
+            "value": "20318937",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$bfdc9797-4e0f-1bf4-3ad5-f115599a25cf",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "58777c5bba97a0e827230f8e795dc84c253b5e39",
+          "datavalue": {
+            "value": "292",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$50243249-14E1-4068-8215-91B35EE45FEB",
+        "rank": "normal"
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "634b2564db1c88ab36e56906a15dfb4728680576",
+          "datavalue": {
+            "value": "Q294286",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q632795$E704F541-C2EA-4B59-8319-318985FD09F5",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1384 @@
+{
+  "pageid": 93484,
+  "ns": 0,
+  "title": "Q91274",
+  "lastrevid": 2531388814,
+  "modified": "2026-08-14T17:09:23Z",
+  "type": "item",
+  "id": "Q91274",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Πύργος Γαλατά"
+    },
+    "en": {
+      "language": "en",
+      "value": "Galata Tower"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Galata Kulesi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "historical tower in İstanbul"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Beyoğlu ilçesinde tarihi kule"
+    }
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q91274$FE258AC7-984E-4C96-AD86-D9A73EA0FAFF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a9b9773ee1a2ba552b8ee23f0ffd8eff0f6d017",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "658a2a72d282029615a7ccfa227b97166be10f27",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/galata-kulesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "7ee6026fca0f719ca558cbf8957e5447acdfc2e8",
+          "datavalue": {
+            "value": "Galata Tower",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q91274$96B73273-13E6-451D-A1C6-B69E3BAC9788",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "1996a915a8cdae187f547072c2e9585af2ec7b15",
+          "datavalue": {
+            "value": {
+              "latitude": 41.02563232486636,
+              "longitude": 28.974153190722507,
+              "altitude": null,
+              "precision": 1e-08,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q91274$C9B46C2D-9664-45D6-A33F-AE583316A869",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "86ff22a867ef325059bce3a8bf94ccc8858cc66d",
+          "datavalue": {
+            "value": "/m/01fhxb",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$36D87581-6EED-49FC-AA19-4D256448DA5A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "e7e17b3618f5cef12b5456f54b66ca0c1d676d83",
+          "datavalue": {
+            "value": "Istanbul asv2020-02 img48 Galata Tower.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "825301fdcd5ac84c00eb1fd056dd4f8c5534c084",
+              "datavalue": {
+                "value": {
+                  "text": "Изглед към кулата",
+                  "language": "bg"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q91274$1DBF494D-A63B-4A42-8ED7-5E740B2E7C5A",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "93bac5b998c9ff1c53677544d9b6dcfada7f996d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12518,
+              "id": "Q12518"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$E2504014-155E-42D0-9DD3-37A05C38E850",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$A8035BB3-BA43-4891-8FCF-15FBFB939DC2",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "0f180c70f93d7bb4e7f210eee12fcb712bf82e40",
+          "datavalue": {
+            "value": "6947662",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$2AADDC6B-595B-4D11-B514-3FEBED78EDBA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "432023240c3b98b2140b29dd165d0649d6b47819",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 217411,
+              "id": "Q217411"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$93FBDD38-7B90-44E6-9BF5-7A11D13163DE",
+        "rank": "normal"
+      }
+    ],
+    "P3417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3417",
+          "hash": "7317604614bf675c506d845da5c122cf4deba394",
+          "datavalue": {
+            "value": "Galata-Kulesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$6F4A932C-E4EE-4C5E-AD70-7939B545FF1C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 51711,
+                      "id": "Q51711"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6117": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6117",
+          "hash": "55ccf83abb2653c5c3c3491d8680038556ca4d17",
+          "datavalue": {
+            "value": "20304",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$80A3A078-BA6E-4A47-A726-58F0C7B6F138",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2887c218c56d944aa00c4e13a99a15389b4577cc",
+            "snaks": {
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "ed95c59be64e4629ecd1ea3bc00bcfee1037c037",
+                  "datavalue": {
+                    "value": "https://www.wikidata.org/w/index.php?title=Wikidata:Property_proposal/Envanter.gov.tr_Monument_ID&oldid=788619415",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "e39d8dd3c319ad00e021921446f3dfa9ab874c0a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 501817,
+              "id": "Q501817"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$74df45ba-43fd-77f4-6005-f1bd556c695a",
+        "rank": "normal"
+      }
+    ],
+    "P3451": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3451",
+          "hash": "35c8d94fd2444832e5779cfd9734e814b95a3327",
+          "datavalue": {
+            "value": "Istanbul Feb 2020 11 28 05 783000.jpeg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q91274$1513e806-4992-ea3d-3a80-49ca1ed91b68",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "0a55740f3ffbbe1c640f40cc76b2bca6e2a26a16",
+          "datavalue": {
+            "value": "https://muze.gov.tr/muze-detay?SectionId=GLT04&DistId=MRK",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1860,
+                  "id": "Q1860"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q91274$cb22e928-47bc-fb85-586a-70717c35f16f",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "36bab8da281eef6f9bea9c17afa52a4ecb832aa7",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "c60ff6958b296682e7d5f424dbec24ea1ca0a07b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 24237997,
+                      "id": "Q24237997"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "3a55fa7b157c9f30888958105283fcdc2cf37278",
+                  "datavalue": {
+                    "value": "https://it.wikivoyage.org/wiki/Beyoğlu?oldid=780127",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8933": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8933",
+          "hash": "5b072eb7842f8a935a6cc270d2c75d746fd3410a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104233532,
+              "id": "Q104233532"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$a11c1a1a-18b6-49f0-add4-47c190e22eeb",
+        "rank": "normal"
+      }
+    ],
+    "P8596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8596",
+          "hash": "5788b1870d05a5374e1a19e0b4848121453b9a03",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104549402,
+              "id": "Q104549402"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$1e8e0f3e-c667-43ab-8165-0afc96cbf9c7",
+        "rank": "normal"
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "14a40d26abb00a7de852e504cc15f9c156a3dd19",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104554561,
+              "id": "Q104554561"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$02d10d51-6406-4a42-8759-7d333dcbd553",
+        "rank": "normal"
+      }
+    ],
+    "P1889": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "e0c903130582faec003e6d45551a667f74bc99ab",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2845903,
+              "id": "Q2845903"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$030cf664-4cf2-3f8a-e9dc-28dcc2e0677c",
+        "rank": "normal"
+      }
+    ],
+    "P127": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P127",
+          "hash": "e6e42c6b453e2d803f5490f1e5749b436b2dee17",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6060233,
+              "id": "Q6060233"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "c3a166f323705ae3a56cf6dc5ff43925f88af0a8",
+              "datavalue": {
+                "value": {
+                  "time": "+2019-05-13T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q91274$b59972d5-492d-62a6-c75d-37e68f8d74c5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a115923ca07f34dff5ac107bdb90b50e25b36735",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "cfe5920e605780a7359902cf2cefa22855c44039",
+                  "datavalue": {
+                    "value": "https://www.haberturk.com/ibb-den-alinip-vakiflar-a-devredilen-galata-kulesi-nin-arka-plani-2595195",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P127",
+          "hash": "e5728672bd6d518a63cd467387e6ab74200e0f63",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6085390,
+              "id": "Q6085390"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "65032e1ccd1effa26f76225cd7cb41ebf93cf625",
+              "datavalue": {
+                "value": {
+                  "time": "+2019-05-13T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P582"
+        ],
+        "id": "Q91274$d19b8e05-42dc-a019-841a-04107803c255",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a115923ca07f34dff5ac107bdb90b50e25b36735",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "cfe5920e605780a7359902cf2cefa22855c44039",
+                  "datavalue": {
+                    "value": "https://www.haberturk.com/ibb-den-alinip-vakiflar-a-devredilen-galata-kulesi-nin-arka-plani-2595195",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2184": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2184",
+          "hash": "c0b202bdc5a2e7f643f614383e2ce20198ccb496",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6091308,
+              "id": "Q6091308"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$9c99ddea-4761-822b-3395-766b7fd2e864",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "5f5eb0e46a999037e47fdd168c04ff18ab13f531",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 64735573,
+              "id": "Q64735573"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$9afed9fd-4283-bfa0-37f5-63d19242e68c",
+        "rank": "normal"
+      }
+    ],
+    "P1416": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1416",
+          "hash": "13c6fb8eeddf41dc498c68358065741c39cda9d7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 108564972,
+              "id": "Q108564972"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$803B6B6E-0B1A-4B2F-A83B-7C0D9FD1CDE7",
+        "rank": "normal"
+      }
+    ],
+    "P935": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P935",
+          "hash": "2afa6071b7ee393fe32fcd72d78602b76be2cc89",
+          "datavalue": {
+            "value": "Galata Kulesi",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q91274$919531BC-F77C-4682-B043-2E2A16EA67D5",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "3d43805dfffc6de32d200b312b8ee57397dcb8d1",
+          "datavalue": {
+            "value": "Galata Tower - panoramio (5).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q91274$aa07c146-4de8-3941-f4f6-b7207a23689e",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "2e502b766fdbd22898e1652cbac5e8cf1d13b75c",
+          "datavalue": {
+            "value": {
+              "time": "+1349-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q91274$98489c53-46c2-7470-7e82-faf4da498c69",
+        "rank": "normal"
+      }
+    ],
+    "P3173": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3173",
+          "hash": "51d89e39ef0364ca62ee0c83b8b918f49fe1956e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 179839,
+              "id": "Q179839"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$3d203682-4a43-201c-a3b7-c1f436d4ea62",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3173",
+          "hash": "b963cba30ae98d60b6438fe6c2b728d7eec64574",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35958,
+              "id": "Q35958"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$f13b57e5-4eb4-23ef-2519-891e3f7ce635",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3173",
+          "hash": "dea01cbe97d6edae1b86d887520cb5c89deb1a1a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170495,
+              "id": "Q170495"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$7d007203-4e39-b71b-ea0b-197c321d24bc",
+        "rank": "normal"
+      }
+    ],
+    "P8517": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8517",
+          "hash": "74942399f62fade36fba12006ce9c8bbc71a11c4",
+          "datavalue": {
+            "value": "Topkapi Serail.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q91274$4962b18f-4bc7-31d9-6a47-6d5eda1b7a01",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "3f9ce7fb85f8e2d51adbaccf335a0c59cfd4fe39",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 46261,
+              "id": "Q46261"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$5ad2afd2-4354-3c61-642c-2a48f2683cc0",
+        "rank": "normal"
+      }
+    ],
+    "P2044": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2044",
+          "hash": "d8701e1c54604c6ad4043b81a16790876d0043bf",
+          "datavalue": {
+            "value": {
+              "amount": "+35",
+              "unit": "http://www.wikidata.org/entity/Q11573"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q91274$7fc098bf-4e69-5cef-e45f-394e5dbcd193",
+        "rank": "normal"
+      }
+    ],
+    "P2048": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2048",
+          "hash": "92d47ed2aa54bd7e2be2a55d1b0e5af952aa4671",
+          "datavalue": {
+            "value": {
+              "amount": "+62.59",
+              "unit": "http://www.wikidata.org/entity/Q11573"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q91274$a146b082-403d-6f2f-e69b-a3d87d5942d2",
+        "rank": "normal"
+      }
+    ],
+    "P2386": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2386",
+          "hash": "596dd12a9fe16a04f23cfb2bbe16eb846a47dd95",
+          "datavalue": {
+            "value": {
+              "amount": "+16.45",
+              "unit": "http://www.wikidata.org/entity/Q11573"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q91274$1219173a-4f33-357e-392d-6c3abebaf62a",
+        "rank": "normal"
+      }
+    ],
+    "P186": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P186",
+          "hash": "d32466f99ef8e17050871a083ca841da8072e0ff",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 22731,
+              "id": "Q22731"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$c34e5724-4a2c-108b-dbf5-29e31f2297e0",
+        "rank": "normal"
+      }
+    ],
+    "P1101": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1101",
+          "hash": "3db1a6771d9983c93c0496d484c1dc5049e8cc16",
+          "datavalue": {
+            "value": {
+              "amount": "+9",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q91274$95dd29a2-49e3-48d8-b7b1-a8b157c0ee44",
+        "rank": "normal"
+      }
+    ],
+    "P1139": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1139",
+          "hash": "ce5eb6602a410a8bd775633e3eeadce97a66c2f7",
+          "datavalue": {
+            "value": {
+              "amount": "+1",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q91274$e3474f98-4266-96b2-0dc3-b63faffdefbe",
+        "rank": "normal"
+      }
+    ],
+    "P2046": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2046",
+          "hash": "67aff5256fd9d9555af2523926e8e3b74dc813fa",
+          "datavalue": {
+            "value": {
+              "amount": "+208",
+              "unit": "http://www.wikidata.org/entity/Q25343"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q91274$ca8e7932-4e53-9989-3888-431fa3bbcd96",
+        "rank": "normal"
+      }
+    ],
+    "P454": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P454",
+          "hash": "867a2b35fe42481f0805fe48c9293e71612a7c02",
+          "datavalue": {
+            "value": "20038052",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$76D25884-BD8F-4A6F-B768-ACD9FA39FD66",
+        "rank": "normal"
+      }
+    ],
+    "P1617": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1617",
+          "hash": "51b3050648e51c1959773bc0b2b605e00e7ffabe",
+          "datavalue": {
+            "value": "41e78aa3-3de2-4bca-9e52-8f5c86197a1b",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$BC578D92-3220-4B80-B12D-6212B9A4B6B8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8582d8416671f1f2567247201bac753552435ca5",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 18336371,
+                      "id": "Q18336371"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "d53d261234a6d5a6a3a29842ddf9f1878ab2062f",
+          "datavalue": {
+            "value": "8367",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$390EA02D-5194-4C51-AD0D-195639744808",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "3700654a4ab37c171a0f8d114a407d1a8a37db48",
+          "datavalue": {
+            "value": "23236783",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$81934845-620B-4831-857F-321B1F8AE4F8",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "9a1fa18a000192732e65052b04bc29848761c148",
+          "datavalue": {
+            "value": "galata-kulesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$b7387038-444b-84e4-7afa-8c75720abe1a",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a9b9773ee1a2ba552b8ee23f0ffd8eff0f6d017",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "658a2a72d282029615a7ccfa227b97166be10f27",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/galata-kulesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$9075A5F6-05BD-4D6D-997D-0F245A8E379C",
+        "rank": "normal"
+      }
+    ],
+    "P1699": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1699",
+          "hash": "92acbba315cd20827b401146cf1a1787064a260d",
+          "datavalue": {
+            "value": "11101",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$87FB21B8-9057-4F62-8803-0F76720305FB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "77701ab94b5d7c977b67de286dbf9c6ac5c41dbe",
+            "snaks": {
+              "P887": [
+                {
+                  "snaktype": "value",
+                  "property": "P887",
+                  "hash": "cc0aed3cd9279f5c1a96e248e23f6e7c49a4c127",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 134479201,
+                      "id": "Q134479201"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P887"
+            ]
+          }
+        ]
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$233A423A-C2CE-4408-89BB-BE885DB5F19E",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "1d53c12f1405f6ef653b51021b444a0353627671",
+          "datavalue": {
+            "value": "5",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$278CB95D-2AB7-43FF-8236-4E2C852D5193",
+        "rank": "normal"
+      }
+    ],
+    "P1552": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1552",
+          "hash": "9cc68c5f46ce8a75e0d0168cfb75e64d390252b2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 570116,
+              "id": "Q570116"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91274$4F654371-D782-4BC2-94F2-B9BBB5F7C41C",
+        "rank": "normal"
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "a11f250db9755a0e687dad76d31a628d07c7edbd",
+          "datavalue": {
+            "value": "Q294245",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$229E6B1D-BE3E-46E7-ABD0-09FD27C0364E",
+        "rank": "normal"
+      }
+    ],
+    "P3749": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3749",
+          "hash": "ee551c6b0e5f99d7303a669eb9334cffd0c7d0c3",
+          "datavalue": {
+            "value": "5509819058466009867",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91274$52628E2E-BF22-4556-9A5F-14352254813D",
+        "rank": "normal"
+      }
+    ]
+  }
+}

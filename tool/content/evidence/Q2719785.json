@@ -1,0 +1,902 @@
+{
+  "pageid": 2613875,
+  "ns": 0,
+  "title": "Q2719785",
+  "lastrevid": 2485960072,
+  "modified": "2026-05-01T02:46:38Z",
+  "type": "item",
+  "id": "Q2719785",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Pertevniyal Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Pertevniyal Valide Sultan Camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τέμενος Περτεβνιάλ Βαλιντέ Σουλτάν"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde tarihi cami"
+    },
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "b570a46b9d5a095f0962f101a8ddffe7a30a9a61",
+          "datavalue": {
+            "value": "Pertevniyal Valide Sultan Mosque",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q2719785$77087433-AA3C-483C-8BCA-DCB03A14D242",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "6a474c2acdc8270cbf37d5bdae0ce582c3534497",
+          "datavalue": {
+            "value": {
+              "latitude": 41.01,
+              "longitude": 28.953055555556,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q2719785$EBC5D6DD-CBE9-487B-B9E4-130A7BF22FB0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q2719785$9967EE9F-8E6F-4213-97E6-67789F2E8ED5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "a5047c0de4ac33863eb06d32bf6e5be255948589",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "5e974a4d685a433d061771fff722dc6971c890b9",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/pertevniyal-valide-sultan-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "0925e630b0b3808f7d5cddd414ec78a0fee93935",
+          "datavalue": {
+            "value": "/m/03m98d2",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$F0710EE7-BA18-4222-8AFB-E97DE19C4D08",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$475e1f8f-4429-21c2-4855-1331457e2b14",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$08A7A740-8FF9-4517-9ED1-41E2A1A83905",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$CAEEC3E6-EE98-4844-9FCC-F991F4DE8D02",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "578a12739b8b304c28a24e2828b3e408a4f841f6",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img28 Aksaray PVS Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2719785$db7f2949-4cd1-9726-9d61-1fd4404d4501",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$12f2ba67-43db-6394-3c51-b460c767dfc2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a5047c0de4ac33863eb06d32bf6e5be255948589",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "5e974a4d685a433d061771fff722dc6971c890b9",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/pertevniyal-valide-sultan-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "06d43032add4a862a5fb7d9b8c0fc97b50c84090",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 434159,
+              "id": "Q434159"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$16087741-46a2-3f4e-403a-b0bbd7f7c39e",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$D2934645-DD6F-4752-86FB-6D23C16618FA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "d6bd6dc984d6f537396173e071795dbdff848e98",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 25403203,
+              "id": "Q25403203"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$18BDEA22-6170-4F76-8B91-C58B6B1D8F6E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "35041eb20582986fb560a1ff8a79bd41274be074",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "b972d51ff9c3326b7eee3c2f81d54f4fd4b086b6",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Moschea_di_Pertevniyal_Valide_Sultan&oldid=102520854",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "2bd47c9c85c26ad22c830a66d5929a1df4e111c1",
+          "datavalue": {
+            "value": {
+              "time": "+1871-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2719785$5C87803C-586D-4D98-9791-AE43E9E0162C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fe09ed41885ccefca2441f9cc9a2a11a20c04262",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "65efa73fb9fa627beb9c62f1a0354bd7b06af19f",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Moschea_di_Pertevniyal_Valide_Sultan&oldid=106288274",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "752c034b63e6cef91bde364e420c995284103a5d",
+          "datavalue": {
+            "value": "239177150",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$A9A57CDC-33EE-4619-B6F8-184CD41E829C",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "3b294023cc76a78689a88126547280baf41f1f51",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img30 Aksaray PVS Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2719785$060e4466-4d14-dc78-8622-a103b38fedde",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "0f4ee441474b4aa4057705f30777547ddda79ce5",
+          "datavalue": {
+            "value": "7625",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$8BDE85C7-B204-4D84-84DC-41163933CA3A",
+        "rank": "normal"
+      }
+    ],
+    "P9721": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9721",
+          "hash": "3bad99707c06bf01e45ae0644c59eafebbd4e98b",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img29 Aksaray PVS Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2719785$ac6a3866-4054-6ba3-1618-2eb6e59cd5d6",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "7f601a939827b795c95d0a81d096e9a3bf917c71",
+          "datavalue": {
+            "value": "no2019060886",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$A0FC36C0-8D8D-4955-A775-762343A54481",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2ea7d9cf6569a6790a1abd706c97a06fdef003c3",
+            "snaks": {
+              "P11797": [
+                {
+                  "snaktype": "value",
+                  "property": "P11797",
+                  "hash": "395c2c5dc64a74fb596f0b959e9ac6c9307e2068",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 76630151,
+                      "id": "Q76630151"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P11797"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "55cd8162e010c7414fa36bad6e3254a6c5833025",
+          "datavalue": {
+            "value": "316903985",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$1879D0E5-ED13-45C9-9AED-9BB8EEDCE603",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$41D352A4-995F-4D78-8302-51E625A25E5E",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "b030248051da1f90bfcd24e7ea43bed28091c751",
+          "datavalue": {
+            "value": "pertevniyal-valide-sultan-kulliyesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$55575E69-FBE3-42FF-A902-2B27F9CFF1BC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a5047c0de4ac33863eb06d32bf6e5be255948589",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "5e974a4d685a433d061771fff722dc6971c890b9",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/pertevniyal-valide-sultan-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$F07D4155-32CA-41DF-9995-B5A5765EEBA0",
+        "rank": "normal"
+      }
+    ],
+    "P1699": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1699",
+          "hash": "82c15d57c1e6e23a1763f07f530c5e29a69bd272",
+          "datavalue": {
+            "value": "108587",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$ED6F9820-13A1-408E-91D8-2641C5A668D7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "77701ab94b5d7c977b67de286dbf9c6ac5c41dbe",
+            "snaks": {
+              "P887": [
+                {
+                  "snaktype": "value",
+                  "property": "P887",
+                  "hash": "cc0aed3cd9279f5c1a96e248e23f6e7c49a4c127",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 134479201,
+                      "id": "Q134479201"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P887"
+            ]
+          }
+        ]
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2719785$5226A77A-6DD1-4E99-BFF7-243553EFC0E4",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "a523139eaed67e3f7b9b3dea8fbfc29978674f17",
+          "datavalue": {
+            "value": "5325",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$BEBE5CBF-BD71-4518-A394-FEFBFDA73950",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "7992cffe5c7c467ba710d0445e9701c658c958cc",
+          "datavalue": {
+            "value": "Entity[\"Building\", \"PertevniyalValideSultanMosque::z3wzq\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2719785$87C0A972-0158-4289-8DAD-97861C835032",
+        "rank": "normal"
+      }
+    ]
+  }
+}

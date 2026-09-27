@@ -1,0 +1,908 @@
+{
+  "pageid": 556005,
+  "ns": 0,
+  "title": "Q590900",
+  "lastrevid": 2549141244,
+  "modified": "2026-09-25T02:26:21Z",
+  "type": "item",
+  "id": "Q590900",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Laleli Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Laleli Camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τζαμί Λαλελί"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mosque in Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "1760-1763 yıllarında III. Mustafa tarafından inşa ettirilmiş camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τζαμί Λαλελί στην Κωνσταντινούπολη"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "79593bdaaae4d691ffc411c4fd430ef6afbe46d1",
+          "datavalue": {
+            "value": "Laleli Mosque (Istanbul)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q590900$83E7BDF1-AB1B-44DA-8A71-301B3EA2C1C2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "8fd715cb1eefe25c067d90e0b6909b5097104707",
+          "datavalue": {
+            "value": {
+              "latitude": 41.01,
+              "longitude": 28.956666666667,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q590900$36221C37-E6E5-44AA-A29B-3D4EE9FD9F76",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q590900$0BFC72D8-4F78-4F6C-A71D-5DB19D024861",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "a89cd29c3bd8f5ef75cfeeb4b87ecfead8a2411d",
+          "datavalue": {
+            "value": "/m/02885yp",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$34C76295-D150-4B6F-89CE-D31CCCEB31F1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "c409b64e70c67740efae5b8322206235bfcea866",
+          "datavalue": {
+            "value": "6947673",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$CB53E5FA-046E-4CDF-A142-929E5AFE305C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$9FA6DF9A-DC48-42CC-99A1-9A9684DAE9A4",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$04AB1029-C7EB-4A09-B20E-3C9B4CD3ACC7",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$62F5C4D9-1857-43C9-BDD9-5DFC134F5CD3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$5c2ed821-4f74-61de-b5a7-6bfbdca944e0",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "41bc041776de9acd4f27afbba9466715584da5b4",
+          "datavalue": {
+            "value": "Istanbul asv2020-02 img06 Laleli Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "db0fbe6063ce837346525c9c4eb1384e61d5b067",
+              "datavalue": {
+                "value": {
+                  "text": "Mešita Laleli",
+                  "language": "cs"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q590900$2CEEA455-6FCE-4EBA-8873-6043CD949615",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$900b7a2c-4899-bec0-b72a-33b566cd0776",
+        "rank": "normal"
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "9ac910a37f9a74c8a25724d82a7af23e3cbc5267",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6062280,
+              "id": "Q6062280"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$2670f550-4dd0-7dff-0306-096717c49c9c",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "afb960e62c041e5d9976daae39a9f2e036b77953",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 199484,
+              "id": "Q199484"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$c92cf1f8-4464-659e-d2f6-4f3d1b85af51",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "ac1c3d42a2e1b6265eb3ad9361035daad0211a0e",
+          "datavalue": {
+            "value": {
+              "text": "Laleli Camii",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q590900$5f4b2131-4739-b5a3-5e29-e766b9f37307",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6117": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6117",
+          "hash": "63f6bbdf709a01514c519758c13f80ebdb870314",
+          "datavalue": {
+            "value": "14256",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$8897cc47-4e7a-a06a-7f3c-ecd0eb466b37",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "b9ade80bbd3a04b23df4374279ced7d24b546966",
+          "datavalue": {
+            "value": {
+              "time": "+1763-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q590900$85939322-6948-4AF2-8B58-0ECE9CA6587E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5e922800537f2688f23c9142cc0d289e1ee8cf5e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "611d8c73a007d8f360b5370c0d1c2fb6a4a665e7",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Mosquée_Laleli&oldid=147965414",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P186": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P186",
+          "hash": "71c0a337ee28128cb282b08ddeed8bbafddb2d42",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 41177,
+              "id": "Q41177"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$EEA7E85F-3D34-43E9-BC32-0A479FB18215",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "536418880385f6f5a95e43249d245f6c14caf64a",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "361ed982d8991034f977a948e6b369534d0ba2f5",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Laleli_Mosque&oldid=905377690",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "e9cc4945921f274a839d4436cfd1963cc64141e8",
+          "datavalue": {
+            "value": "Istanbul asv2020-02 img07 Laleli Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q590900$e20b31eb-4a79-5f8a-cc44-549cba6ffde9",
+        "rank": "normal"
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "7bc5e791708eff36773e965f0026c182d690d300",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104557374,
+              "id": "Q104557374"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$9886a876-8138-42f4-bb64-eb9788096198",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "db11b966cca2f2d48e0e55348aa01559639e9de3",
+          "datavalue": {
+            "value": "7767",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$0EF764A8-3290-4927-B46D-15546274A5A1",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "c549230778ab4268ef35c1d31b9d823904adcfb3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6056074,
+              "id": "Q6056074"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$e131803d-4e64-dbfb-962e-b28c8401c820",
+        "rank": "normal"
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "a60e4a11096a84958071b94e9e755ac12c81e521",
+          "datavalue": {
+            "value": "7328116",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$F0E3CDBD-B9E0-4781-87CA-54AA37B118E7",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$4DEB8E16-2805-4D08-96CE-03885315B75A",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$EBEF946F-4F00-4F84-A739-874AE5E99DB1",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$2A7AEAD8-D825-480F-8242-B553A1DFC379",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$99146C2A-BB67-4880-91F9-1F3D83D2B2FB",
+        "rank": "normal"
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "4f1f7c7be10d7457fdbc596b242d7a09fc05d070",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 133462433,
+              "id": "Q133462433"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q590900$04A90407-DB14-4E9A-AA50-EC2E4717C870",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "e226cf8414e24bd6e40a2a102214c316df3595f6",
+          "datavalue": {
+            "value": "310",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$21529E8D-B98E-4527-A317-D41984612086",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "462ec6a1da01b96a77851a5c51bfdb052b1e6bff",
+          "datavalue": {
+            "value": "Entity[\"Building\", \"LaleliMosque::c2pz6\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q590900$8670F39D-75F7-49E3-965D-047F81399D26",
+        "rank": "normal"
+      }
+    ]
+  }
+}

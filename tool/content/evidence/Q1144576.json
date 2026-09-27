@@ -1,0 +1,1356 @@
+{
+  "pageid": 1091201,
+  "ns": 0,
+  "title": "Q1144576",
+  "lastrevid": 2521620287,
+  "modified": "2026-07-23T12:12:58Z",
+  "type": "item",
+  "id": "Q1144576",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Little Hagia Sophia"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Küçük Ayasofya Camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τέμενος Κιουτσούκ Αγιασόφια"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "former Greek Eastern Orthodox church in Istanbul converted to a mosque"
+    },
+    "el": {
+      "language": "el",
+      "value": "πρώην βυζαντινός ναός στην Κωνσταντινούπολη"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde kiliseden çevrilmiş cami"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "454dc60204950b2920e416f4604f06560125eced",
+          "datavalue": {
+            "value": "Sergius and Bacchus Church",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q1144576$17DCF84A-6941-42B0-AFE0-089846F0A473",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "e264648480b6b235a3eef7c133722d2dda0c86b5",
+          "datavalue": {
+            "value": "Sergius and Bacchus.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "q1144576$C17798C1-6D38-4538-9CDF-DE5D23C8D432",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "7bece0acd12e84dbe3db8659da14a624d6598ff4",
+          "datavalue": {
+            "value": {
+              "latitude": 41.002778,
+              "longitude": 28.971944,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q1144576$DBA8A502-F094-49A2-8201-E50BCD8FE57C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 10000,
+                      "id": "Q10000"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "cd385dc962dfe8143bf9fd8040f3f2d95218adda",
+          "datavalue": {
+            "value": "/m/0270w0f",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$00A5311B-9904-4E70-9979-D42FFE12D56E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "fe3e98790529edca4e494c5b753fa3abef71052c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16970,
+              "id": "Q16970"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$AA00A60D-958A-4050-8196-657163BDAE4E",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$3fe17862-4ba7-75fd-9378-f37534929cab",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b9719946ee1a34ce13ad09fd68775221b5969818",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 71974,
+              "id": "Q71974"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$04E2701E-B526-4474-921B-ED681F26BAC0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "db7ef6151652b37250ec4029e288029c2162a329",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c14cbe530fe0a97f8a693b1c11c8f7c8b750e39a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kucuk-ayasofya-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$09ED35D5-3106-4F60-9645-EDE1729E684C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "db7ef6151652b37250ec4029e288029c2162a329",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c14cbe530fe0a97f8a693b1c11c8f7c8b750e39a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kucuk-ayasofya-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "af6508871822ffbe797f0244518c66ceb3f3b0ad",
+          "datavalue": {
+            "value": "4763902-7",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$31D34269-1733-4AEF-ACED-A359F6B8953C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "7fe39c5b03b27aff86148bbf44160b6fd4e7ccaa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 47591,
+              "id": "Q47591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$ABBE11C6-D4DE-4ACA-B6EB-34C1A09A0E29",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$AC221BF5-420F-4F8C-ACE9-1E7E32C2A117",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "db7ef6151652b37250ec4029e288029c2162a329",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c14cbe530fe0a97f8a693b1c11c8f7c8b750e39a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kucuk-ayasofya-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "4528f38bfa50cba510935a51894bf426c8d55afa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 310028,
+              "id": "Q310028"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$B6414E49-B506-4F1F-80F2-07D3770C1DAF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P454": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P454",
+          "hash": "be0285a2e0bd23b4622de603f256137beff62b33",
+          "datavalue": {
+            "value": "20029549",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$3AC7FED3-2ACF-4A4B-92CE-51FA5E87CE65",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$86F824D7-6B95-4974-B6AA-E489CDC6A847",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$ad19c258-4b79-8e24-8e7a-5c5bcab34f1b",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "afed37fa8c588faccd6e8a6b5fbf1abe4d09f74b",
+          "datavalue": {
+            "value": {
+              "time": "+0526-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "a41817dbea7473d944791336932491ac77c3f8d3",
+              "datavalue": {
+                "value": {
+                  "time": "+0526-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "eca64bd996883c53f2f9bd72c25c07c6515fb984",
+              "datavalue": {
+                "value": {
+                  "time": "+0536-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582"
+        ],
+        "id": "Q1144576$6EFB2832-4D3F-44B0-9F9B-7389EE1C1D8D",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "c7949714325911fe6d3bc1137a1a3eeb749f9449",
+          "datavalue": {
+            "value": {
+              "text": "Küçük Ayasofya Camii",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1144576$1f914c38-43c8-fdbb-3a15-a29685ac2cd2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2924": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2924",
+          "hash": "ccd706c4bae78321c871d25e16df180095d8429b",
+          "datavalue": {
+            "value": "3542278",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "70addc481641f833e72e3a47974532f51a20ff6d",
+              "datavalue": {
+                "value": "СВЯТЫХ СЕРГИЯ И ВАКХА ЦЕРКОВЬ",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q1144576$370b0b12-420c-bb25-8488-6b8ec6d9bc8b",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "898c029a2b7badce792cbca41c0e0d09c83b9966",
+          "datavalue": {
+            "value": "Entity[\"HistoricalSite\", \"LittleHagiaSophia::2knw5\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$32751B10-A30F-40A8-A99C-953785D70BCD",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "1fd3047c2cb3a2cf762f45cb626a3c258e37b866",
+          "datavalue": {
+            "value": "Entity[\"Building\", \"LittleHagiaSophia::s4vs6\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$A252FA2B-DCC4-4C3A-A156-37B3344A5CE7",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "f5c5e851017962687531311517ebb84361d69dc0",
+          "datavalue": {
+            "value": "238792496",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$703534a4-4980-a51d-46a4-8fe46b21551a",
+        "rank": "normal"
+      }
+    ],
+    "P1017": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1017",
+          "hash": "b96bfc6bc177887eae38d1e19c991a0a7b41f583",
+          "datavalue": {
+            "value": "ADV11563535",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$8b36b3b7-4c63-0fd0-aac8-867230f54c9c",
+        "rank": "normal"
+      }
+    ],
+    "P825": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P825",
+          "hash": "b7fe77d69e21b54a29e50f657cd1a748c327a489",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 140013,
+              "id": "Q140013"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$8466a035-4a04-8585-77ae-9896196c5387",
+        "rank": "normal"
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "772247c12d92cbc977b55d017a76aad77cbaeaeb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12544,
+              "id": "Q12544"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$fafc0fa4-46f7-b63f-bb22-4ddbac9b0b1c",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "b7b4710f02cd4fd607a6028dda4ce2bbf743bded",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 140013,
+              "id": "Q140013"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$43b63d8e-8eb9-4aff-b7cb-d7f45fb9f3cd",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8449,
+                      "id": "Q8449"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$E0869174-99BE-4488-9BAC-6E3FC01B37C7",
+        "rank": "normal"
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "9128278db4d347e7fbccf077fdd9b0e2ad6b07f9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 41866,
+              "id": "Q41866"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$7bc399d2-4ca8-a36f-a369-87dbb8b81cb6",
+        "rank": "normal"
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "5087ae85f97b62e87b029f37aead11426885bd0a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 75131010,
+              "id": "Q75131010"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$DCCA9366-A87C-40E7-B650-D077CB7A82C9",
+        "rank": "normal"
+      }
+    ],
+    "P186": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P186",
+          "hash": "22b57518d66fba974a1517d872ebc7a581074439",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 40089,
+              "id": "Q40089"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$554E198F-05EA-48DE-9B0D-EFCAA654B2D1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "339b905242eb0a0f599a131ed45d0790ed5f7c0b",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "db57a23a3fbbf47148b7bf6ad5df97844d3378d3",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Little_Hagia_Sophia&oldid=936108164",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8068": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8068",
+          "hash": "aa2061397d167742a0a8cc87afb68d091654db51",
+          "datavalue": {
+            "value": "410290ESeB",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$027EC325-2295-48D9-BDE4-F882E288B421",
+        "rank": "normal"
+      }
+    ],
+    "P8034": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8034",
+          "hash": "f11b10df5977b4b6ff4fda9a5c63b7dd04bc2d8a",
+          "datavalue": {
+            "value": "494/15975",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$FBAA56EA-25D0-48B3-A728-C3ACB5B9BB7E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "4f4b550ddd422acc6c9f170a4cad329dd908e0d8",
+            "snaks": {
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "f5c5e851017962687531311517ebb84361d69dc0",
+                  "datavalue": {
+                    "value": "238792496",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "7a831359297f79929234eb1417fbb59cb7622f07",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-07-16T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P214",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8596",
+          "hash": "6dd9cb3c85419b2817c5e102d754017a52d0cafb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104580323,
+              "id": "Q104580323"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$d8b7aa1a-3e6f-4faf-b27d-8cf60f58ab49",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "f1f93881cabaf9ad12c9b2920728cec650a2f18a",
+          "datavalue": {
+            "value": "7599",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$BF17EA9F-21AF-4E8F-A028-424ED25CFE31",
+        "rank": "normal"
+      }
+    ],
+    "P3311": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3311",
+          "hash": "4dd83e83ed25441665de9fde74675acd50f2351b",
+          "datavalue": {
+            "value": "Plan.eglise.Sergius.Constantinople.svg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q1144576$96866f28-780d-42a0-8e0f-46d50c1fe4e8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8449,
+                      "id": "Q8449"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "a6de2fb6249d45369e85721bb4bb89eeb2c4e55a",
+          "datavalue": {
+            "value": "303179753",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$A2934C3F-0CA1-46BD-A104-63C4F12C1B3B",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$F440D5FF-B370-4FFD-A5DF-3957BD64208B",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "9dd98a510f7899f13438d56e5374c63a38a040a5",
+          "datavalue": {
+            "value": "kucuk-ayasofya-kulliyesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$881DB789-2B72-4744-8AE4-9B5FC6996F5B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "db7ef6151652b37250ec4029e288029c2162a329",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c14cbe530fe0a97f8a693b1c11c8f7c8b750e39a",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/kucuk-ayasofya-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$37A01B99-1FC0-464F-BAF5-442EAAC1EEFA",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$D0B180FD-827D-4A5A-8E21-9B3C075C774F",
+        "rank": "normal"
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "4f1f7c7be10d7457fdbc596b242d7a09fc05d070",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 133462433,
+              "id": "Q133462433"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$0F1F9CF3-241A-49ED-B33C-789A192C8854",
+        "rank": "normal"
+      }
+    ],
+    "P5002": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5002",
+          "hash": "11092684e11f5e7bdabe0f0451f61ddfeb5bef53",
+          "datavalue": {
+            "value": "2662840",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$73913dba-4cd4-ea4e-8913-695455ffac96",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "75517f813a025d9e541a09ff3572a82634902017",
+          "datavalue": {
+            "value": "920",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$AD48BE78-239A-40DC-91F6-17C9E48F778D",
+        "rank": "normal"
+      }
+    ],
+    "P1552": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1552",
+          "hash": "9cc68c5f46ce8a75e0d0168cfb75e64d390252b2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 570116,
+              "id": "Q570116"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1144576$E788B4C4-6DE3-4DDE-A62C-93D0028D5BF2",
+        "rank": "normal"
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "ae3213255c287106f13e130dd52f403020dc277a",
+          "datavalue": {
+            "value": "Q294654",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1144576$B2FF9C72-6DB4-4999-A617-59D47A733C41",
+        "rank": "normal"
+      }
+    ]
+  }
+}

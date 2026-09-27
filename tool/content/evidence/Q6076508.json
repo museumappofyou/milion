@@ -1,0 +1,416 @@
+{
+  "pageid": 5864864,
+  "ns": 0,
+  "title": "Q6076508",
+  "lastrevid": 2549772675,
+  "modified": "2026-09-26T19:51:43Z",
+  "type": "item",
+  "id": "Q6076508",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Çukurbostan"
+    },
+    "en": {
+      "language": "en",
+      "value": "Cistern of Aspar"
+    },
+    "el": {
+      "language": "el",
+      "value": "Κιστέρνα του Άσπαρος"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "cistern of Byzantine Constantinople"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te sarnıç"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "3352b1880f65688ec27343cfc72137519c29f0ef",
+          "datavalue": {
+            "value": {
+              "latitude": 41.02595,
+              "longitude": 28.94986,
+              "altitude": null,
+              "precision": 0.0001,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6076508$27BA7B06-5178-424F-979D-825F3B1BA78C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "e5428d65d6dcebffe698ebb92e92ade7b18feff1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 93429857,
+              "id": "Q93429857"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$a51fedbb-4787-e70b-3f07-585b088177c2",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$fdd026a3-4000-7489-03fa-fe08298b7e42",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "78eed48782041b64e5075bd196f1dcd478bcd0b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 178004,
+              "id": "Q178004"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$3b4a0172-46f5-aa83-e38a-42a5646b113a",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$54574C3D-2A35-47B4-860D-B47D6595E090",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ad5bb6f546e60ee38e54c510b0d853ca3121fdf8",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "c1fdc1d70cbfba3970cdfefccd9ccc2c271f433a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2015-04-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "4e7e5ae19bafc069c8f235793766fce4aacb0669",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12544,
+              "id": "Q12544"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$644db2a0-4cd8-3b69-c979-f7d4c118f895",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "3b79e889bd8cc182dbdebb0b733e7907b7bee100",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12560,
+              "id": "Q12560"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$e5b1339a-4132-6745-a862-049af7e6fb62",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "023f55de2a06cd73854aa5ed80baab9116b04a6f",
+          "datavalue": {
+            "value": "Cistern of Aspar November 2013.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "1993f0532c40d966288e6a207354ace1d1425309",
+              "datavalue": {
+                "value": {
+                  "text": "La cisterna oggi utilizzata come area per attività sportive e sociali",
+                  "language": "it"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q6076508$c236ae98-4a2c-2d17-9245-b116fff75de2",
+        "rank": "normal"
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "3e4a538127c2e900d5d62c1142013a4a4cc23507",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3678788,
+              "id": "Q3678788"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$63ef0ada-460e-da10-c6d8-e42d51ff954a",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "37ddb763c65f647b74b4c71035036ce663a579bf",
+          "datavalue": {
+            "value": "/m/011sm57x",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6076508$FAEB1535-4E38-49D9-84DF-0CB6B7C62C9E",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "285668864e0a4efb587a43eedeefd0108a2997b9",
+          "datavalue": {
+            "value": "7356",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6076508$0DC2575E-3F33-4132-A50B-D4A7B82FAED0",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "948244046170ce398564db73d297fb2cee662c64",
+          "datavalue": {
+            "value": "309052085",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6076508$df10048c-4908-6e91-6ad7-a29366592a71",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6076508$A50B7A12-4416-41A8-9A09-1443BCE08F91",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "ae9b6b88d8f7a73f4c615dced989d0a8823a9bef",
+          "datavalue": {
+            "value": "Cistern of Aspar",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6076508$A95D5EDF-BA74-4AED-8B27-EBDC6639FEA1",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "05d5f9f61bc9865cdcd81c7fc8ec5ea12093f562",
+          "datavalue": {
+            "value": "5876",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6076508$938DF805-014E-4000-97CE-0E14881FE153",
+        "rank": "normal"
+      }
+    ]
+  }
+}

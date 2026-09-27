@@ -1,0 +1,284 @@
+{
+  "pageid": 55679070,
+  "ns": 0,
+  "title": "Q55698753",
+  "lastrevid": 2528205053,
+  "modified": "2026-08-06T17:53:28Z",
+  "type": "item",
+  "id": "Q55698753",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Hurrem Sultan Tomb"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Hürrem Sultan Türbesi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mausoleum complex in İstanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te türbe"
+    }
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "5985af4a49d3d957dc5e05fef9f5061d20659315",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 838159,
+              "id": "Q838159"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$eeba2f65-403f-a8e2-2776-f4b1a09ef967",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "870cc6092f7ac17a96d47ee9e3c75e8c3f3cd9ff",
+          "datavalue": {
+            "value": {
+              "latitude": 41.015643,
+              "longitude": 28.964833,
+              "altitude": null,
+              "precision": 1e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q55698753$16635e9b-4899-7862-42f6-1deb5209d927",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "908646730f8b8d0e771a278584106189e8c07e6d",
+          "datavalue": {
+            "value": "Mausoleum of Roxelana",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q55698753$08ae43a3-f7b5-4910-a2db-4a3dcb927083",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "d8cfb42e853b104a47123ef573bf80e40d7fc2e7",
+          "datavalue": {
+            "value": "Hürrem Sultan Türbesi - panoramio.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q55698753$969625E4-5101-4FFA-8C82-B0490863BB82",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "687d2287bd4781f7282837f66e979ed937150b5a",
+          "datavalue": {
+            "value": "8309",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q55698753$367D2F21-6B2A-4E48-8CB9-1EE550738399",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$DBD72A34-72B6-44BF-A002-FBA579814693",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$BE9BFB8C-3263-4800-B00F-9D9F78BA378E",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$359A6365-74BF-45B0-9083-0CEC787C0EBE",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$224F0B27-7BF7-48C3-BB70-ECA2EAA2428D",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$F790307A-995C-46CD-9E12-C476B34B18DA",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "2aa6aa4b7077c6139f87fa9ed89f2afeb16ef67f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 178643,
+              "id": "Q178643"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q55698753$4719F517-B5FD-46CD-9613-96A166D5EA1E",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "c29dbdc42fdfbcfe09d0378e6bdc49f8a171e0ab",
+          "datavalue": {
+            "value": "Mausoleum of Roxelana 3.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q55698753$2bcf2da5-41f9-c3d5-e0b6-820d501098d8",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "700526effeeb4b70ab18bec9f3a2f3d3d3298ad7",
+          "datavalue": {
+            "value": "340",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q55698753$CE74C3E9-3254-4BC3-B622-A49904210019",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,803 @@
+{
+  "pageid": 717669,
+  "ns": 0,
+  "title": "Q763854",
+  "lastrevid": 2521617226,
+  "modified": "2026-07-23T12:08:22Z",
+  "type": "item",
+  "id": "Q763854",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Οβελίσκος του Θεοδόσιου Α΄"
+    },
+    "en": {
+      "language": "en",
+      "value": "Obelisk of Theodosius"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Dikilitaş"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Sultanahmet Meydanı'nın güneyindeki Antik Mısır yapımı dikilitaş"
+    },
+    "en": {
+      "language": "en",
+      "value": "ancient Egyptian obelisk of Pharaoh Thutmose III re-erected in the Hippodrome of Constantinople (known today as At Meydanı or Sultanahmet Meydanı, in the modern city of Istanbul, Turkey) by the Roman emperor Theodosius I in the 4th century AD"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "e4eb5efdaecfc67c6921a5b0a90a7c75d2c4ad07",
+          "datavalue": {
+            "value": "Obelisk of Theodosius",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q763854$47C73ED7-8FDC-4C8B-BD88-D8CBE031D963",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "3bb42b3abe86685ae3d207542bb9cfc415e3bc1e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 387548,
+              "id": "Q387548"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "f75d7e20a97995282c534b8ce8cb2d31770552f6",
+              "datavalue": {
+                "value": {
+                  "time": "+0390-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "q763854$537a45d2-489d-c828-31e9-e9f8d4e7e48a",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "2339eea641821f626e21c8e06064bb9ace573afc",
+          "datavalue": {
+            "value": {
+              "latitude": 41.006055555555555,
+              "longitude": 28.97538888888889,
+              "altitude": null,
+              "precision": 2.777777777777778e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q763854$826D0061-2EB2-431D-99E0-1A5D98E86F1E",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "1f084d8d1580b8b72ff494b54316b02a0bd09137",
+          "datavalue": {
+            "value": "/m/04jhl0s",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$FC651C68-6374-4214-9A7A-84C40516F0C3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "1af7ad6a0248e730af05c5fd73ff50e6e8670605",
+          "datavalue": {
+            "value": "Obelisco de Teodosio, Estambul, Turquía, 2024-09-28, DD 129.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q763854$63127DA4-DBBF-41B3-8FB4-67E6FD9680C7",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "39a225cf97b6eebf5105a48484b6b38ae83d85cc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170980,
+              "id": "Q170980"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$89e1f8be-4e4e-80aa-ad99-286a670110f1",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$03449B94-3E1F-4AC3-807A-6C857185427B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1936": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1936",
+          "hash": "db725258aa63f8a6f9b3cb3ad5b0402fd32d73d9",
+          "datavalue": {
+            "value": "23789",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$5851BD93-24B7-4D8E-8DF5-51F4C70F0B14",
+        "rank": "normal"
+      }
+    ],
+    "P1584": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1584",
+          "hash": "8436eb0ab3bb4985a05b2a4384ef63df06d139e2",
+          "datavalue": {
+            "value": "820631036",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$302FB340-6DF0-494F-BBE1-11FD2173F82D",
+        "rank": "normal"
+      }
+    ],
+    "P1684": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1684",
+          "hash": "f6e558d31fae743a0d9bfe0636b439a982fb9104",
+          "datavalue": {
+            "value": {
+              "text": "DIFFICILIS QVONDAM DOMINIS PARERE SERENISIVSSVS ET EXTINCTIS PALMAM PORTARE TYRANNISOMNIA THEODOSIO CEDVNT SVBOLIQVE PERENNITER DENIS SIC VICTVS EGO DOMITVSQVE DIEBVSIVDICE SVB PROCLO SVPERAS ELATVS AD AVRAS",
+              "language": "la"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "a793ff44bd72361987bc339912d379e650462d64",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 397,
+                  "id": "Q397"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q763854$851DDD46-AD90-4F96-A7AA-343068C2EE1E",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1684",
+          "hash": "cec667085da9bd3a2abb2061c54f030f2ea962c4",
+          "datavalue": {
+            "value": {
+              "text": "KIONA TETPAΠΛEYPON AEI XΘONI KEIMENON AXΘOCMOYNOC ANACTHCAI ΘEYΔOCIOC BACIΛEYCTOΛMHCAC ΠPOKΛOC EΠEKEKΛETO KAI TOCOC ECTHKIΩN HEΛIOIC EN TPIAKONTA ΔYO",
+              "language": "el"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "aa40ac0fc0003ed8059595d5cc2d79d23a742d15",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 36387,
+                  "id": "Q36387"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q763854$275DD984-08E4-47C8-B968-65DF7FFEC386",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "9991382a5ffd859fafe8cd60bb292c90875895cb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2147870,
+              "id": "Q2147870"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$72e94f1a-4eb1-0d06-d0a3-183d6cdeea45",
+        "rank": "preferred"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$7943d957-433c-63fb-e0fb-2af241823c81",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "72b7c341923d5ca1d6a7268ce4c49175db33c6b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 534799,
+              "id": "Q534799"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$d623f45b-4e1b-1b40-3af6-eb8f9372fc0e",
+        "rank": "normal"
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "5dfd576b4c17c401c22fb5acdbbf705e0254f1e2",
+          "datavalue": {
+            "value": "place/obelisk-of-Theodosius",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "f088b7197bca70b9c5e82782ce55c39cdff8da2d",
+              "datavalue": {
+                "value": "obelisk of Theodosius",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q763854$0A80837A-1DA5-4BD6-9DBA-11D3E7F7321C",
+        "rank": "normal"
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "772247c12d92cbc977b55d017a76aad77cbaeaeb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12544,
+              "id": "Q12544"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$fb6ded7c-4fc1-a951-a566-b26e307c129d",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "9949a71572272752fa0487e17b8908797ebe97a6",
+          "datavalue": {
+            "value": "235741376",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$a07a51f9-4b9b-00df-1b31-a8633138caa0",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "190e172b61dbcad941f22748cb754e576ba81c24",
+          "datavalue": {
+            "value": "7724550-7",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$77e8d024-42a2-5bfc-7b40-5ea94f0a75d5",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "18040a6ac92d1f564616f23b1728d44502e8bd2e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 46696,
+              "id": "Q46696"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$2b95cc37-4d75-5955-6937-9fff663863bc",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "4085853c05fd6208819b159c10c2a9c7053cd684",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 157899,
+              "id": "Q157899"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$dfe8aaf1-4c22-eb68-2b1f-60b26a97c4f8",
+        "rank": "normal"
+      }
+    ],
+    "P7772": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7772",
+          "hash": "c506a81a9f452f0a05aaad56b61df5c51b915094",
+          "datavalue": {
+            "value": "obelisk-of-theodosius",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$296b3014-4ebb-f45a-f23a-87eb1a4e0a84",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "5fe2c5c213345d8f2e842f4ed6b498bb6d56cee8",
+          "datavalue": {
+            "value": {
+              "text": "Dikilitaş",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q763854$5246a072-42a7-4cc8-244e-4f4eab7a1cee",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "556a3bfb9e682ea18024a4739fb40a6bc4814463",
+          "datavalue": {
+            "value": {
+              "time": "-1500-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 7,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q763854$50ced88a-48a6-7726-4293-68fabf3ccb58",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "2c95ac493d18ff97f97591adc15387d658836143",
+          "datavalue": {
+            "value": "8743",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$5B50132D-29E7-44D5-AE6F-10BF5D5C91C5",
+        "rank": "normal"
+      }
+    ],
+    "P12800": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12800",
+          "hash": "36f386e9e2de1c19db46eb35e80304180739c51d",
+          "datavalue": {
+            "value": "fr:Obélisque_de_Théodose",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$A5264873-9C26-4DD3-8879-7868AE24FF96",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "aa26601b0b19e97e4d707eda965207883dbf0d23",
+          "datavalue": {
+            "value": "1120852417",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$F4E75785-6BD9-4121-8228-50496C4CFF46",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$E6E799B7-5B24-4E7B-A02A-09B088CE1328",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$67D2255F-CF96-41E4-A419-DA2F7A0762EB",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "16fa6dbb74375abb06c1c5b0bfc6d75ad73d929e",
+          "datavalue": {
+            "value": "35",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$B7605C78-55CB-4782-80CF-58B4EB906E8B",
+        "rank": "normal"
+      }
+    ],
+    "P825": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P825",
+          "hash": "e07a744da5cbb3bb524d2fbd5ffcab5333d39153",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 157899,
+              "id": "Q157899"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q763854$1aeb8556-4af8-43c9-0355-77d9ea789ce5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "201df7fb903dd4aa5047cb006e294fa120fe30b2",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2bc438586ca707bd30d587823356c9734ac083c3",
+                  "datavalue": {
+                    "value": "https://pleiades.stoa.org/places/820631036",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "1e50fd6ed10b732138b26d3142fc37968e7f25fd",
+          "datavalue": {
+            "value": "Q294141",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q763854$8AD1396E-5EDF-4B39-BBD1-41A4B2B76888",
+        "rank": "normal"
+      }
+    ]
+  }
+}

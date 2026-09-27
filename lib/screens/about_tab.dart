@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+
+import 'registry_screen.dart';
 
 import '../theme/milion_theme.dart';
 
@@ -110,6 +113,22 @@ class AboutTab extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
+          Center(
+            child: GestureDetector(
+              key: const Key('about-version'),
+              onLongPress: kDebugMode
+                  ? () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const RegistryScreen(),
+                      ),
+                    )
+                  : null,
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text('Milion 1.0.0 · 1'),
+              ),
+            ),
+          ),
           TextButton(
             onPressed: () =>
                 showLicensePage(context: context, applicationName: 'Milion'),

@@ -1,0 +1,511 @@
+{
+  "pageid": 3009561,
+  "ns": 0,
+  "title": "Q3150393",
+  "lastrevid": 2350374704,
+  "modified": "2025-05-19T22:23:38Z",
+  "type": "item",
+  "id": "Q3150393",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Theodosius Cistern"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Şerefiye Sarnıcı"
+    },
+    "el": {
+      "language": "el",
+      "value": "Κιστέρνα του Θεοδοσίου"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Şerefiye Sarnıcı, İstanbul’un tarihi yarımada içerisinde bulunan en eski su yapılarından birisidir"
+    },
+    "en": {
+      "language": "en",
+      "value": "cistern in Istanbul, Turkey"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "827b4975ddcc698a8d9538f71c04013b2731037d",
+          "datavalue": {
+            "value": "Theodosius Cistern",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q3150393$F01B7390-D017-4E1E-9F44-BF89F40EB9DE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "c8e7b7faae9353f0dc4cbaf3f457dbff8287652a",
+          "datavalue": {
+            "value": {
+              "latitude": 41.00725,
+              "longitude": 28.9726,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q3150393$FE6FFF6E-1697-4BB3-9E7E-304B553BDA5F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "358d89f93a83802649261c721c4ea387ee8b8be5",
+          "datavalue": {
+            "value": "/m/03wfd7p",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3150393$A1B4D749-7DEF-4BAA-96EF-E1BFE610776A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "e5428d65d6dcebffe698ebb92e92ade7b18feff1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 93429857,
+              "id": "Q93429857"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$4f1728d7-47c7-8657-cb75-87ea5428ba0d",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$3E116DB1-E793-47A2-A546-B94ABF86767B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6b1ddeadceed82aab9b2697aac6bf39325da7294",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "2f39a453b0e1a1670e5dc92634f6793005c1bfc1",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 842341,
+                      "id": "Q842341"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "eba0ee6c328053d0ef0695692a3f553ea5e1b1b2",
+          "datavalue": {
+            "value": "Theodosius cistern 08.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q3150393$76D7C832-5225-4D00-8F73-EAA2291CC907",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$01f45ebb-445e-b009-4620-75fb50ed84e4",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "7fe39c5b03b27aff86148bbf44160b6fd4e7ccaa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 47591,
+              "id": "Q47591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$820d0b0c-488c-3ffa-ffd3-7bb282614468",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "337c6c57ee9d14d8cf673e5e0c024037b3de6f8b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$7c366f4f-4d25-a155-34e6-46e65cf6b0f4",
+        "rank": "normal"
+      }
+    ],
+    "P2795": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2795",
+          "hash": "154123a6dd078b13c3806178fe7668d5cfeda490",
+          "datavalue": {
+            "value": {
+              "text": "By tram T1: Sultanahmet",
+              "language": "en"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q3150393$95C67195-C63C-4DE5-B977-645B8488D593",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2902a19e481912bba03eec5795c7ff789419318",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "342852c6ea3be834528dad2b0808c542dc83626d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 19826574,
+                      "id": "Q19826574"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "a7af9538d1eca61c52ed1179473fd4b850cba17f",
+                  "datavalue": {
+                    "value": "https://en.wikivoyage.org/wiki/Istanbul/Sultanahmet-Old_City?oldid=3783123",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "05a7cdb306e7cecab77552d8f3eb12923de7f24e",
+          "datavalue": {
+            "value": "https://www.serefiyesarnici.istanbul/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 256,
+                  "id": "Q256"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q3150393$81b779d0-44da-c63d-d848-230a440db054",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "1ba603a0d35023521b73df0d1df0b249c0cb3e3a",
+          "datavalue": {
+            "value": "7369",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3150393$DB8EF2CF-136C-46C4-84B0-C1111FD0BD8A",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "6532b4909a2bb1c81598d9431dcec9f7c3bcae41",
+          "datavalue": {
+            "value": "1154702450",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3150393$460b3e2e-4a57-65a0-44d9-6d942147a418",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$7BF5AA08-29B3-4CDB-BA51-0AC7F8E185B3",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3150393$49325A67-4B90-461B-A659-A55D686C89F7",
+        "rank": "normal"
+      }
+    ]
+  }
+}

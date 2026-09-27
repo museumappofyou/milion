@@ -1,0 +1,303 @@
+{
+  "pageid": 85091919,
+  "ns": 0,
+  "title": "Q85817770",
+  "lastrevid": 2484644895,
+  "modified": "2026-04-25T17:10:07Z",
+  "type": "item",
+  "id": "Q85817770",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Tomb of Mimar Sinan"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Mimar Sinan Türbesi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "tomb of Ottoman architect Mimar Sinan"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te türbe"
+    }
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$d9261ab9-45eb-adb8-43b3-aa5a90b0305f",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$7418beb8-4ac4-14c3-192d-484a5992522c",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$B048D895-C892-459B-95EC-CFAE9B6C18AD",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "18036f686526031871efbd8228deaff65837a561",
+          "datavalue": {
+            "value": {
+              "latitude": 41.01727777777778,
+              "longitude": 28.96386111111111,
+              "altitude": null,
+              "precision": 2.777777777777778e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q85817770$6ffd00f5-441d-2450-e369-1c786fd6477a",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "b821494186f821ab12ad52de139d915ca642e68a",
+          "datavalue": {
+            "value": "The tomb of Mimar Sinan.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q85817770$c6fd5794-4a76-e62c-a3fa-e5ac0b95c6d5",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "a038abdb77a6cc1c46ee6ec94b04bf4128ed5bab",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5600,
+              "id": "Q5600"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$4b2a1731-4d24-45b1-1344-5c0f91b87f62",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "5985af4a49d3d957dc5e05fef9f5061d20659315",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 838159,
+              "id": "Q838159"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$CD5B48D2-31B9-4CD0-9658-9F199CF07C06",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "50078869a72d3f2e251fc1666639b361b420e617",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 162875,
+              "id": "Q162875"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$BC0ADC97-DE14-4D2C-B673-6C5F6C121233",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "7c91141d43959d1b3dd5aabbe7fef3a64ea98e67",
+          "datavalue": {
+            "value": "308598205",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q85817770$A4B6C5A6-36AC-48BF-8A7C-E57F2D3C80B1",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "b3b9218ce56e64a09f5663a0f05c7e5a3bb1b7a4",
+          "datavalue": {
+            "value": "7270",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q85817770$D4E08914-6A9C-4979-A4A9-AE956EA813CE",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$3C3EC18B-D82E-49A4-92CB-99933BF255F6",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q85817770$AFD257FE-9463-4645-84E2-3A450261C4E4",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "e435b2623f486871336025efbd66f08b90701a8d",
+          "datavalue": {
+            "value": "Tomb of Mimar Sinan",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q85817770$8d2e7fca-b1e2-4270-8990-b678a69f75c2",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "d4ef5a77c16a1f49749e38301cc553ef1460f060",
+          "datavalue": {
+            "value": "3090",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q85817770$4D577C7E-7AB5-4995-89CF-F26FD43D4E60",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "places": [
+    {
+      "id": "chora",
+      "names": {
+        "en": "Kariye Mosque",
+        "tr": "Kariye Camii"
+      },
+      "historicalNames": [
+        {
+          "name": {
+            "en": "Chora Church",
+            "tr": "Hora Kilisesi"
+          },
+          "era": "byzantine",
+          "greek": "Μονή της Χώρας"
+        }
+      ],
+      "categories": [
+        "byzantine",
+        "mosque"
+      ],
+      "eras": [
+        "byzantine",
+        "ottoman"
+      ],
+      "district": "fatih",
+      "coordinates": {
+        "lat": 41.031111,
+        "lng": 28.939167
+      },
+      "entrance": null,
+      "currentFunction": {
+        "en": "Not field-checked",
+        "tr": "Yerinde doğrulanmadı"
+      },
+      "status": {
+        "value": "unknown",
+        "checkedAt": null
+      },
+      "qid": "Q849489",
+      "tags": [
+        "seed"
+      ],
+      "hook": {
+        "en": "Chora in Fatih.",
+        "tr": "Fatih’te Kariye."
+      },
+      "review": "draft",
+      "wave": "byzantine",
+      "reviewPhase": "P11",
+      "outsideProvince": false,
+      "strata": [
+        {
+          "id": "chora-byzantine",
+          "fromYear": 1315,
+          "toYear": 1321,
+          "era": "byzantine",
+          "title": {
+            "en": "Painted chapel",
+            "tr": "Resimli şapel"
+          },
+          "body": {
+            "en": "A test stratum.",
+            "tr": "Bir test katmanı."
+          },
+          "media": [
+            "fixture-media"
+          ],
+          "sources": [
+            "fixture-source"
+          ]
+        }
+      ],
+      "sources": [
+        "fixture-source"
+      ]
+    }
+  ],
+  "artworks": [
+    {
+      "id": "F02",
+      "place": "chora",
+      "title": {
+        "en": "Anastasis",
+        "tr": "Anastasis"
+      },
+      "room": {
+        "en": "Parekklesion",
+        "tr": "Parekklesion"
+      },
+      "surface": {
+        "en": "dome",
+        "tr": "dome"
+      },
+      "position": {
+        "en": "In the apse semi-dome at the east end of the Parekklesion.",
+        "tr": "In the apse semi-dome at the east end of the Parekklesion."
+      },
+      "kind": "fresco",
+      "summary": {
+        "en": "Radiant Christ breaks the gates of death, binds Satan, and pulls Adam and Eve from their tombs as kings, prophets, and the righteous witness the act.",
+        "tr": null
+      },
+      "cues": [
+        {
+          "en": "broken gates",
+          "tr": "broken gates"
+        },
+        {
+          "en": "locks",
+          "tr": "locks"
+        },
+        {
+          "en": "chains",
+          "tr": "chains"
+        },
+        {
+          "en": "tombs",
+          "tr": "tombs"
+        },
+        {
+          "en": "mandorla",
+          "tr": "mandorla"
+        }
+      ],
+      "folder": "C__F02__Anastasis__dome__REF-8",
+      "sources": [
+        "fixture-source"
+      ],
+      "media": [
+        "fixture-media"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "id": "milestone-i",
+      "numeral": "I",
+      "title": {
+        "en": "Anastasis",
+        "tr": "Anastasis"
+      },
+      "places": [
+        "chora"
+      ],
+      "artworks": [
+        "F02"
+      ],
+      "techniques": [
+        "DP",
+        "GL",
+        "SB",
+        "WR"
+      ],
+      "honesty": [
+        "ORIGINAL",
+        "DEPTH",
+        "RECONSTRUCTION",
+        "IMAGINED"
+      ],
+      "status": "prototype",
+      "manifestPath": "assets/anastasis/relief_v5/manifest.json",
+      "packId": "chora-starter",
+      "sources": [
+        "fixture-source"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "fixture-source",
+      "title": {
+        "en": "Source",
+        "tr": "Kaynak"
+      },
+      "url": "https://www.wikidata.org/wiki/Q849489",
+      "author": {
+        "en": "Wikidata contributors",
+        "tr": "Wikidata katkıda bulunanları"
+      },
+      "accessedAt": "2026-09-27",
+      "licence": {
+        "en": "CC0",
+        "tr": "CC0"
+      }
+    }
+  ],
+  "media": [
+    {
+      "id": "fixture-media",
+      "path": "assets/anastasis/flat_reference.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Caner Cangül",
+        "tr": "Caner Cangül"
+      },
+      "source": "fixture-source",
+      "era": "modern",
+      "historicalPhoto": false
+    }
+  ],
+  "routes": [
+    {
+      "id": "fixture-route",
+      "title": {
+        "en": "Chora walk",
+        "tr": "Kariye yürüyüşü"
+      },
+      "body": {
+        "en": "One stop.",
+        "tr": "Bir durak."
+      },
+      "places": [
+        "chora"
+      ],
+      "sources": [
+        "fixture-source"
+      ]
+    }
+  ],
+  "hunts": [
+    {
+      "id": "fixture-hunt",
+      "title": {
+        "en": "Chora hunt",
+        "tr": "Kariye arayışı"
+      },
+      "route": "fixture-route",
+      "clues": [
+        {
+          "en": "Find the fresco.",
+          "tr": "Freski bulun."
+        }
+      ],
+      "artworks": [
+        "F02"
+      ],
+      "sources": [
+        "fixture-source"
+      ]
+    }
+  ]
+}

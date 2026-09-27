@@ -1,0 +1,1714 @@
+{
+  "pageid": 491904,
+  "ns": 0,
+  "title": "Q522862",
+  "lastrevid": 2544443645,
+  "modified": "2026-09-12T08:25:48Z",
+  "type": "item",
+  "id": "Q522862",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Karnak Temple Complex"
+    },
+    "el": {
+      "language": "el",
+      "value": "Καρνάκ"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Karnak tapınak kompleksi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "ancient Egyptian temple complex"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "antik mısır tapınak kompleksi"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "7ad8cfdff429bc247faee777180a6accf91bf987",
+          "datavalue": {
+            "value": "Karnak temple complex",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q522862$3BFF5DD3-6DBA-4437-AEEB-C5064B8D5BED",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "7bf9c4cd680d9122b1c90fdd14203a8c5c3f8fdc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 79,
+              "id": "Q79"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q522862$a07a29fb-46a7-8edd-e6bf-e739b665dfbf",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "9d2689da0f63106601764fe68744c2694ceedd71",
+          "datavalue": {
+            "value": {
+              "latitude": 25.718333333333334,
+              "longitude": 32.65833333333333,
+              "altitude": null,
+              "precision": 0.0002777777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q522862$969FC0AE-2EE0-4E7A-9CD9-F5077FDC7EEB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "02d1f4019a33dd6aa133930f547af90452005bb7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 189392,
+              "id": "Q189392"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q522862$d34cd578-4df4-b00e-d075-bc10c70fa515",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "84adc1f589caa245a278ffd00dcd14f19e911294",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 101583,
+              "id": "Q101583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$DE2E78EB-F56D-4FFA-B8EB-92A8073B5843",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "be0fbcd96c7c81140803f7ce301aad64e4649945",
+          "datavalue": {
+            "value": "Luxor, Egypt, Karnak.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q522862$16E9A32C-3B39-4D68-9F0F-FCE3BFC89368",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "53459cb0f0fead2f8c607a02ba9fac2da653e663",
+          "datavalue": {
+            "value": {
+              "time": "-1900-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q522862$187DF1D4-A9F0-4B33-BDAC-0E16C601A373",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "fa40c52abbbd80283750b664ab249d6ed1fc1b8c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 30797,
+              "id": "Q30797"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$FDB3DA66-5912-40D2-8004-612A4DB08698",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "3412dfbb50ac6675843e2ab995226d2fa0a55708",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 189392,
+              "id": "Q189392"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$9bc332e0-447e-a9f9-0787-d8284340e5fb",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dbb2fd41b3a0671eb597ca91127534e0fd69bf9c",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "3a3b04b50bc1a5028566cd8af9859c2fc415951d",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=116263138",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "323715db401b3eb1939c12e97fe0af1c5d95d8e2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 189392,
+              "id": "Q189392"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$EE34CF65-EB72-40BC-9A10-C7A155FEC9FF",
+        "rank": "normal"
+      }
+    ],
+    "P1936": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1936",
+          "hash": "6f7dd2ccaa8e83e6481cfa649a105a3773921f4f",
+          "datavalue": {
+            "value": "21108",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$0845E9D7-E850-4A2C-AB0E-44321D07F17D",
+        "rank": "normal"
+      }
+    ],
+    "P935": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P935",
+          "hash": "c6eb6fa9a959fccc76b8a1afee5fa1d5d69c12e0",
+          "datavalue": {
+            "value": "Karnak",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q522862$18B22E04-909B-4883-A5EB-98F9940E814C",
+        "rank": "normal"
+      }
+    ],
+    "P454": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P454",
+          "hash": "e8c5712626dc94c55a6e24309d32de7c3f7fc989",
+          "datavalue": {
+            "value": "10000255",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$D01098C6-00D9-422D-919B-C0402BDB2E8A",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4441c653c09b7127b7d39c2f526a738ab5fbd6a9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 839954,
+              "id": "Q839954"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$4F974689-0EE6-4599-A801-66E312788EBD",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "248f10b3c0f6683172ae965d50fe3a34c65820ef",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 44539,
+              "id": "Q44539"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$28611da9-49ad-c1fa-e655-0b6dcc13b407",
+        "rank": "normal"
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "88389772f86dcd7d415ddd029f601412e5cc894a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 602358,
+              "id": "Q602358"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "d5d3e44e60c5565410eaeb79b983031abf99372c",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 24436862,
+                  "id": "Q24436862"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q522862$6fc26782-4e35-69e2-f89e-a768d3eadde2",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "1e87e0f7d2db06ab0ef5ccabd7c6275641f36553",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 867541,
+              "id": "Q867541"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "34ed1de400f4d81ff083814d0b9c16b6168a9d15",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 84680153,
+                  "id": "Q84680153"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q522862$7788FFE0-4787-4693-9D60-4D2218C57CB8",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "b9298ad2260162aaa6d63bd3882e152ca2bb5f3f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16082057,
+              "id": "Q16082057"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "96ba4888c097faf55bdd443e22bca437043e215d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 124012433,
+                  "id": "Q124012433"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q522862$DC3E781F-7111-4AB2-84B7-BC3BF0636A8E",
+        "rank": "normal"
+      }
+    ],
+    "P2581": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2581",
+          "hash": "b865088c96c8dbb41b3a67a4eb95270c36e16d55",
+          "datavalue": {
+            "value": "00816413n",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$78835643-D689-4064-BB2F-57F781135BFF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 4837690,
+                      "id": "Q4837690"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "e4860a5b7394994b9ce8a6cd40ba85f2f5677267",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43113623,
+              "id": "Q43113623"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "71f97fca6dadc7b49738af6d09b148a246a2de5e",
+              "datavalue": {
+                "value": {
+                  "time": "+1979-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P361": [
+            {
+              "snaktype": "value",
+              "property": "P361",
+              "hash": "84adc1f589caa245a278ffd00dcd14f19e911294",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 101583,
+                  "id": "Q101583"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ],
+          "P1448": [
+            {
+              "snaktype": "value",
+              "property": "P1448",
+              "hash": "ebd1240c29d8e6a2f405ee1a2b3f689e7708546f",
+              "datavalue": {
+                "value": {
+                  "text": "Temple of Karnak",
+                  "language": "fr"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P361",
+          "P1448"
+        ],
+        "id": "Q522862$10195A65-6F90-4E78-9810-C0A3726861EC",
+        "rank": "normal"
+      }
+    ],
+    "P757": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P757",
+          "hash": "41b080b437f66328f9166e068a6df82f90b2159b",
+          "datavalue": {
+            "value": "87-001",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$38D4CB37-1BA7-4E5F-9A3A-164DAF2C8E94",
+        "rank": "normal"
+      }
+    ],
+    "P2046": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2046",
+          "hash": "b2d3c310a57c1989df6b0d364bced7e1e4b1caaa",
+          "datavalue": {
+            "value": {
+              "amount": "+69.86",
+              "unit": "http://www.wikidata.org/entity/Q35852"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P518": [
+            {
+              "snaktype": "value",
+              "property": "P518",
+              "hash": "a36e619e9e9474ed2f06d6b204a36f8a919a58a9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 9259,
+                  "id": "Q9259"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P518"
+        ],
+        "id": "Q522862$92F5B9D7-13D2-4A3E-9A97-7A3B13E83A97",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2046",
+          "hash": "6d0ee553736c6d1c2fa91e16bd29ee37ab0c14ea",
+          "datavalue": {
+            "value": {
+              "amount": "+443.55",
+              "unit": "http://www.wikidata.org/entity/Q35852"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P518": [
+            {
+              "snaktype": "value",
+              "property": "P518",
+              "hash": "5fcb1f5c115fa5c6b5f2942b01877eb305f49399",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 64364418,
+                  "id": "Q64364418"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P518"
+        ],
+        "id": "Q522862$AF78D1B8-93AC-4AD5-B53A-DB0A00CEFEEF",
+        "rank": "normal"
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "633595e3377276627d03331bc4a8ce60086e0c8a",
+          "datavalue": {
+            "value": "place/Karnak",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "542f5393e912bb808ad1160fdba72a5e597d5b32",
+              "datavalue": {
+                "value": "Karnak",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P2093": [
+            {
+              "snaktype": "value",
+              "property": "P2093",
+              "hash": "0f86c85a19caced5789afdfd21a2388d3a21e6d0",
+              "datavalue": {
+                "value": "Margaret Stefana Drower",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            {
+              "snaktype": "value",
+              "property": "P2093",
+              "hash": "44de89010e27e630e9d65f6a3283359f4752e3af",
+              "datavalue": {
+                "value": "Peter F. Dorman",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P2093"
+        ],
+        "id": "Q522862$2463CB36-E65F-4439-BF88-9F6A63731D41",
+        "rank": "normal"
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "af4d1cfca4b83bdbd50558fdbfa28fd5a202462c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11768,
+              "id": "Q11768"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$9E076029-6D3B-4084-BE43-BFE2F3C8A179",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "84394b39912af656658e5880baa7d50ea7d3d82e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "649001637b861c5d9dc5e43fa8bb3c5a09b3d076",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Complesso_templare_di_Karnak&oldid=108772627",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8408": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8408",
+          "hash": "7774e5b1c49965c2307dddba81de62fb475b4e62",
+          "datavalue": {
+            "value": "TempleOfKarnak",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$D192BFED-CC0F-4E8A-B9B1-DC2FA7863BA4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 64139102,
+                      "id": "Q64139102"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-07-09T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "9c5cec6112ebbaf4a38dbf7d9ec70cdc8912ca31",
+          "datavalue": {
+            "value": "/m/014wy4",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$1476C3CA-5AC4-40AA-A37C-30E8FA69D6D7",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "0632da74a1b09b59afcad31e81820fa184abd9ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7001162,
+              "id": "Q7001162"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$acf05480-409e-e398-9f8f-617a244c2826",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "378a5f359cf016a8e030648e0166901649905d76",
+          "datavalue": {
+            "value": "8259935",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "be25d9507d3be8c581d317203daab2daf1e1d382",
+              "datavalue": {
+                "value": "Karnak Temple Complex",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q522862$a8a6c19b-4525-a216-6a3b-a9d207790cf1",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "ce6b360ae58fe5f5f184fe07caf574dcc9d4fd74",
+          "datavalue": {
+            "value": "9073433",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "c78dfe00b2daf40cfb109bb97a3edb2a855728df",
+              "datavalue": {
+                "value": "Ma‘bad al Karnak",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P4970": [
+            {
+              "snaktype": "value",
+              "property": "P4970",
+              "hash": "2bd14f3314d261a6b08c04aa2fb11d8f3fe238ea",
+              "datavalue": {
+                "value": "Temple of Karnak",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            {
+              "snaktype": "value",
+              "property": "P4970",
+              "hash": "2896eaaa55b44da67e018afd92fc5ba7c1db7cf0",
+              "datavalue": {
+                "value": "معبد الكرنك",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P4970"
+        ],
+        "id": "Q522862$D9D419CF-C05B-4443-A825-23DEE5530FF7",
+        "rank": "normal"
+      }
+    ],
+    "P691": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P691",
+          "hash": "a451632002514dd502ebfefd9053c25ac377167e",
+          "datavalue": {
+            "value": "ge1118283",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "45a35e9ea8a5cd0345be7abde2b4ba9365af9bef",
+              "datavalue": {
+                "value": "Karnak (Egypt : archeologická lokalita)",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q522862$641BF655-1347-4853-95BF-4A7A3007D0E3",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "c305f5b55dcc85d4bdd34120fb2404f896d50fee",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 842352,
+              "id": "Q842352"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$7d8dc1c1-45cb-d421-43ef-f11d988abded",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dbb2fd41b3a0671eb597ca91127534e0fd69bf9c",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "3a3b04b50bc1a5028566cd8af9859c2fc415951d",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=116263138",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "150c2e8098cd9617c48932b96f6db45ded2e8c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18763,
+              "id": "Q18763"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q522862$6f271965-44c6-486f-6fed-254bd68aa8c3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dbb2fd41b3a0671eb597ca91127534e0fd69bf9c",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "3a3b04b50bc1a5028566cd8af9859c2fc415951d",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=116263138",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "c6abc4485999a0c7e5d24a1a8bbdb81c513c49c5",
+          "datavalue": {
+            "value": "14358790",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$3e9590f5-4489-73ab-9864-03939198b163",
+        "rank": "normal"
+      }
+    ],
+    "P8168": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8168",
+          "hash": "7250df01f9aa07ae0d0a496b88cef4d4e77db2c9",
+          "datavalue": {
+            "value": "Q389611",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$60AB3E82-CBC5-4F8D-8427-1E226D30EDD8",
+        "rank": "normal"
+      }
+    ],
+    "P5008": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5008",
+          "hash": "136e3fbe19158e73e4bfebf3f2d98a9df8638b7e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6173448,
+              "id": "Q6173448"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "7661f66dd5b82a1ea92515ddb16c09ce3088edea",
+              "datavalue": {
+                "value": {
+                  "time": "+2022-10-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585"
+        ],
+        "id": "Q522862$807A51C7-25AD-43C8-8DD8-5B042C4795E7",
+        "rank": "normal"
+      }
+    ],
+    "P1481": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1481",
+          "hash": "d32bc72d12d887f0594307ad04a2f7b195c32e8b",
+          "datavalue": {
+            "value": "56229",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$C43ED9BA-4BFB-4EC8-9297-04B24C117AA7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "234b4e197773e227a988bba712fd58a7c962c061",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "42519b5b8724da2bed9a413e0d06e181bc7fcd0e",
+                  "datavalue": {
+                    "value": "https://vici.org/vici/56229",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "a8c647ad6b10a57676431e56548a4d618eca35e8",
+          "datavalue": {
+            "value": {
+              "text": "الكرنك",
+              "language": "ar"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q522862$642ccf20-42c1-e72f-96eb-0314a22a25b9",
+        "rank": "normal"
+      }
+    ],
+    "P10565": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10565",
+          "hash": "6fa467fa8870215280b980fbb6a0c3f636da4032",
+          "datavalue": {
+            "value": "540597",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$73F0FD7F-D612-4424-AA21-EBCD98206E28",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10565",
+          "hash": "198f925d53aafec54ca984d2497842bba9771ae4",
+          "datavalue": {
+            "value": "373245",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$ec9480e3-4312-3554-1077-996deded896d",
+        "rank": "normal"
+      }
+    ],
+    "P4342": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4342",
+          "hash": "d78b5fbf50c14b3b2a2aa7253fdf1394042a7377",
+          "datavalue": {
+            "value": "Karnak",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$5DA49CE8-2B77-40DD-98E4-899A80415403",
+        "rank": "normal"
+      }
+    ],
+    "P2326": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2326",
+          "hash": "11ab51a74306686f9d6ffc79b1f0316db756caca",
+          "datavalue": {
+            "value": "11983619",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$28324247-DB10-4FFF-88DA-AC095810BEE4",
+        "rank": "normal"
+      }
+    ],
+    "P8593": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8593",
+          "hash": "7821cc79dfb66f9340e53b9ae5e05f8570ad5c38",
+          "datavalue": {
+            "value": "118549",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$099324c5-408d-e7ea-af8b-e7b3f5662399",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "8417ee69fd5c13e46193b4a047f6495519bd8046",
+          "datavalue": {
+            "value": "place/40d59afb-3ed2-46fd-afe4-ebda43cbb6f0",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$47E9DB1B-C3D2-46F0-B795-40D36E3EDF2B",
+        "rank": "normal"
+      }
+    ],
+    "P13906": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13906",
+          "hash": "66063a9a9963826c434a1ae31555f6414c9943d1",
+          "datavalue": {
+            "value": "1557932",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "c1ad9fe8b82a6911f5e81248e2925a46d3ee7046",
+              "datavalue": {
+                "value": "کرنک (مصر)",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "293f17beca0f8453073baba2fc068195eb95529e",
+              "datavalue": {
+                "value": "Karnak (Egypt)",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q522862$D75FD67B-BD55-45ED-9EAC-35184DCB5BAE",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "34f5f443e5244525c8da79dfdb093f3dc2f1d267",
+          "datavalue": {
+            "value": "300469",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$68339DE4-8D2F-49C1-95DD-0AAD812F69AA",
+        "rank": "normal"
+      }
+    ],
+    "P14541": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14541",
+          "hash": "2ccc6baaa3f49a5be89d91470ffc4d3d4a16738c",
+          "datavalue": {
+            "value": "vgENm",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "fb46afd39517ce430378187a637ff38e62fbb9e8",
+              "datavalue": {
+                "value": "卡纳克神庙遗址",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P5017": [
+            {
+              "snaktype": "value",
+              "property": "P5017",
+              "hash": "c987451346bbdfbfb66f11ec33e293c590f17ac5",
+              "datavalue": {
+                "value": {
+                  "time": "+2026-03-05T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P5017"
+        ],
+        "id": "Q522862$92C70741-F28C-42CE-9EFE-4018CA5D0541",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14541",
+          "hash": "8a8d46b1bb1651b5e1c53b5065417b1e68c747d5",
+          "datavalue": {
+            "value": "2tcgt",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "813a4790f70253e73c6604df9606abef4b093c27",
+              "datavalue": {
+                "value": "卡尔纳克神庙",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P5017": [
+            {
+              "snaktype": "value",
+              "property": "P5017",
+              "hash": "408dcb313b3e85be8edbb00aea16e1138f07408e",
+              "datavalue": {
+                "value": {
+                  "time": "+2022-12-26T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P5017"
+        ],
+        "id": "Q522862$1AE408B6-28D7-4545-B9A0-2C0EF8F7E7FE",
+        "rank": "normal"
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "2dabdf2d55fd4fe7b06739cbfc642b6b8b58efa9",
+          "datavalue": {
+            "value": "Q233807",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$F42EECAE-1B29-44B0-B284-90F3430DE8C9",
+        "rank": "normal"
+      }
+    ],
+    "P13772": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13772",
+          "hash": "895b8378709b561060aa2a20063fa8539009ca1d",
+          "datavalue": {
+            "value": "karnak-egypt",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q522862$04F84133-7199-4157-87A2-C3DC5ACCB8F9",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "pageid": 22222646,
+  "ns": 0,
+  "title": "Q20474042",
+  "lastrevid": 2418939887,
+  "modified": "2025-10-20T02:41:44Z",
+  "type": "item",
+  "id": "Q20474042",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Adalar Müzesi"
+    },
+    "en": {
+      "language": "en",
+      "value": "Museum of Princess Islands"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Adalar'da müze"
+    }
+  },
+  "claims": {
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "74340dec84eea495a661a768f2d125e9ec0a2d6c",
+          "datavalue": {
+            "value": "Adalar muzesi hangar binasi.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q20474042$2E330AD8-09D2-4565-B4E3-9693EA4CF19A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "91e1d1abae1ddd217adfd1759d12b825c03ecbb2",
+          "datavalue": {
+            "value": {
+              "latitude": 40.85611111,
+              "longitude": 29.12472222,
+              "altitude": null,
+              "precision": 0.011876903602424,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q20474042$3C154DD5-79A8-4738-A141-C679010216C7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$7e4aaa73-4b2a-1efe-d4ec-69da65a9d3db",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$2d50db0a-4ebe-4fdc-f38c-d3120f9e2b58",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "54d4f28ff13efdd9c6c0c90aa17c3d88a72117d1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1020668,
+              "id": "Q1020668"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$662d2528-4992-d356-0163-e8680738af8e",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "72b7c341923d5ca1d6a7268ce4c49175db33c6b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 534799,
+              "id": "Q534799"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$89e5c940-4dd5-b84d-6c19-683f49ec91b7",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "a2a639dfa0c9daa576d46ccc6a52ff4104222939",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1020668,
+              "id": "Q1020668"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$e0894698-481d-1c57-0720-d1d66786a109",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "09c2a5189f9bf84994c09b7d3b598a64d19a9c73",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 989883,
+              "id": "Q989883"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$c815c5a8-46a1-68c3-23ca-0533025ae597",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "081d284e92e1ca0b7a2388421c202c1cd6967a85",
+          "datavalue": {
+            "value": {
+              "time": "+2010-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q20474042$7FB5EBE2-04B8-4AA7-A42B-3A0A824F273B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "815567c5248726fbfabcefc55f5e1cb48a888ea5",
+            "snaks": {
+              "P3452": [
+                {
+                  "snaktype": "value",
+                  "property": "P3452",
+                  "hash": "cd419a6530c684b63cc17cc35b6a7f466f7b10d0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 6449827,
+                      "id": "Q6449827"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "83e1bb437cee07ffdc33edfd151df38851bd987d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-11-12T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P3452",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "eb56c7681e20d583e06a2afb85792bafc4f57096",
+          "datavalue": {
+            "value": "http://www.adalarmuzesi.org/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q20474042$FE56D8A3-BFF2-49DC-B637-9FE976F459C5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2816e65838b14e189bae0cebc4e542fd7742121e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "aa08fef5dafa92b785e8f76824e9d568f597e666",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Museum_of_the_Princes'_Islands&oldid=785115688",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "59e37182d7b4b603e1692909eb46a97029a7fbca",
+          "datavalue": {
+            "value": "no2013110231",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20474042$37B3BB29-2A69-4CC9-A8DD-62F2AD26E03B",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "1dda919cd4c9307ed4f02995bc859959465c2f53",
+          "datavalue": {
+            "value": "306354850",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20474042$705C42F8-1167-4208-97D8-628CB6AC5CF6",
+        "rank": "normal"
+      }
+    ],
+    "P154": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P154",
+          "hash": "499ee1969db960f5cd7d490f3451b04890e379e8",
+          "datavalue": {
+            "value": "Museum of the princes islands logo.png",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q20474042$0be48190-4d47-9fe6-d283-247d16d2128d",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "45825bca1b48875b5354d8a9314f2f4286933c1c",
+          "datavalue": {
+            "value": "Museum of the Princes' Islands",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q20474042$8ff7b0d4-4ccc-5529-779e-561576490ec1",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "b1d22d189af5afa91fdfb879ea185f9fa856ebf1",
+          "datavalue": {
+            "value": "/g/1yqccn4nx",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20474042$973411B6-529A-4DF3-8266-B611D5282068",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "dd110f7728d1ed03e71e4a085f93ef0eb8ebb184",
+          "datavalue": {
+            "value": "4132",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20474042$0B3F5652-A35E-4D98-A0F8-01F888182C2B",
+        "rank": "normal"
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "a028f5308ebae26d1e767feb3a76b3d74f6cd257",
+          "datavalue": {
+            "value": "987007575461305171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20474042$B4698B94-A92B-4240-8360-23835D46805C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106509962,
+                      "id": "Q106509962"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "35627f50361224cf611c5e6ab2c0e5c2398f2993",
+          "datavalue": {
+            "value": "1000250944",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20474042$B8D760A7-6E5D-4940-AD48-25D66FAA94D0",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$F0E4ADE1-3413-4970-865D-49D6CB26B8D4",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20474042$5E741DF4-BE1E-4D64-9B63-5C0E6B8BCC4F",
+        "rank": "normal"
+      }
+    ]
+  }
+}

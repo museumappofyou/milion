@@ -1,0 +1,163 @@
+{
+  "pageid": 3234968,
+  "ns": 0,
+  "title": "Q3394722",
+  "lastrevid": 2440247200,
+  "modified": "2025-12-09T21:43:03Z",
+  "type": "item",
+  "id": "Q3394722",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Κερκόπορτα"
+    },
+    "en": {
+      "language": "en",
+      "value": "Kerkoporta"
+    }
+  },
+  "descriptions": {},
+  "claims": {
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "8a6aebd6f676997631a96b5495592a3b6a00d451",
+          "datavalue": {
+            "value": "Constantinoplewalls1.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q3394722$0DE50623-DCC1-4937-8826-CF55F8958465",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6b1ddeadceed82aab9b2697aac6bf39325da7294",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "2f39a453b0e1a1670e5dc92634f6793005c1bfc1",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 842341,
+                      "id": "Q842341"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3394722$98E70616-B04F-4FCC-8419-860AB40DBA41",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d10b50a60266ae301d90dd7ef771ea1dc6e65ade",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "bb7b0ee491d457c8c1bf8870209325286ca5ccda",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/w/index.php?title=Керкопорта&oldid=98050347",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "b3dd78cf32feb66450504fc6466b0260ca10a08b",
+          "datavalue": {
+            "value": "/g/121fw6pw",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3394722$3E0EB819-DFB1-4135-B992-1330FE531BDB",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "13626bcf9b69f4f01d3e66d1973f69be77f9f19a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 53060,
+              "id": "Q53060"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3394722$ba9b6fc6-4bb9-e33a-7421-1b05368cdf06",
+        "rank": "normal"
+      }
+    ]
+  }
+}

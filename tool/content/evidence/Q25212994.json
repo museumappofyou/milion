@@ -1,0 +1,312 @@
+{
+  "pageid": 27171368,
+  "ns": 0,
+  "title": "Q25212994",
+  "lastrevid": 2437518478,
+  "modified": "2025-12-03T03:45:20Z",
+  "type": "item",
+  "id": "Q25212994",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Sadabad Pavilion"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Sadabad Sarayı"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Royal Ottoman complex in Istanbul"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Kağıthane ilçesinde tarihi yapı"
+    }
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q25212994$F8798F86-D0D4-42E8-9F38-E1C27BF8F29D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "cd48a7425a3fdf279b4e4975e44db205658e39e9",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "752f905e4b2278f8705933c6067a4965f11c32c8",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/sadabad",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "13e33e98a798ecf4ae603a8947ddd79fc353f77e",
+          "datavalue": {
+            "value": "/g/11bzv68g7n",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q25212994$3E88EDCF-9326-4125-BD9D-C4B9FEF76E75",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "6150ee11a9d419da5da9e427d6110823cfcdae8f",
+          "datavalue": {
+            "value": "/g/12bfg0vwn",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q25212994$B17387AC-88F2-411F-8D38-08FFB647717E",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "a9269c53b6be27acc2f06780b28d0bcf4b794bbb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16560,
+              "id": "Q16560"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q25212994$871466FF-775A-4D79-A4CC-5BD653C1BFE5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "cd48a7425a3fdf279b4e4975e44db205658e39e9",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "752f905e4b2278f8705933c6067a4965f11c32c8",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/sadabad",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "d6c4840577ba6c097ffaaf909de0a2afa5e881b9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56556915,
+              "id": "Q56556915"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q25212994$46430E8E-A98C-44A7-BAD3-DD460511CA0B",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "b6c1d9b74d9809a821b92dcee8cc23c5f523a461",
+          "datavalue": {
+            "value": "145788",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q25212994$17E67846-F8B4-47E2-9996-B12862E09DA4",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "5efad0aae9b4274686b7ef33411f1e384eee3c08",
+          "datavalue": {
+            "value": {
+              "latitude": 41.071583330555555,
+              "longitude": 28.963722219444445,
+              "altitude": null,
+              "precision": 2.777777777777778e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q25212994$70957009-DF44-4BDC-8853-EE376D769D5F",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "69217603e9627dcc259d26a1ffcf4d701210e909",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 284489,
+              "id": "Q284489"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q25212994$55DD3518-7792-4DD3-B54E-0C97FA829552",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q25212994$442C0F45-32F0-4A1C-9255-1B182C86C77A",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "f68268622c4807f3ced8a12d2e43c4fde425245d",
+          "datavalue": {
+            "value": "sadabad",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q25212994$66979C3B-9E84-40B2-9F66-3424C308ECD2",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q25212994$149EAFBE-825A-40A5-9094-B2C713AC0DD0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "cd48a7425a3fdf279b4e4975e44db205658e39e9",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "752f905e4b2278f8705933c6067a4965f11c32c8",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/sadabad",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

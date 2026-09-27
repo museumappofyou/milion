@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-09-27",
+  "records": [
+    {
+      "media": "anastasis-original",
+      "scene": "F02",
+      "source": {
+        "asset_id": "katman.asset.chora.F02.source-photo.01",
+        "bytes": 730334,
+        "height": 1067,
+        "local_path": "5-PAREKKLESION/C__F02__Anastasis__dome__REF-8/web-ke-01-CAN09421.jpg",
+        "sha256": "b946287312f5416973653f8fe9f935d533a8199df8a7b68e3dca26fb0cebc0c4",
+        "source_page": "https://kulturenvanteri.com/en/kariye-mozaikleri-rehberi/",
+        "source_url": "https://cdn.kulturenvanteri.com/wp-content/uploads/2019/11/CAN09421.jpg",
+        "status": "downloaded",
+        "width": 1600
+      },
+      "originalSha256Verified": "b946287312f5416973653f8fe9f935d533a8199df8a7b68e3dca26fb0cebc0c4",
+      "bundledPath": "assets/anastasis/flat_reference.jpg",
+      "bundledSha256": "eebbb219b3fdf05e2e7bd4b237102f1541143676d07e38853213715ffb286c53",
+      "note": "Original remains untouched in MILION_CAPTURES/chora-scenes; bundled reference is the pre-existing derivative."
+    },
+    {
+      "media": "judgment-original",
+      "scene": "F05",
+      "source": {
+        "asset_id": "katman.asset.chora.F05.source-photo.02",
+        "bytes": 1321298,
+        "height": 1067,
+        "local_path": "5-PAREKKLESION/C__F05__The-Last-Judgment__vault__REF-9/web-ke-02-Mahser.jpg",
+        "sha256": "f8782cc8db03d95f5539d20b8144e760780a8bd9977c218a41debac38f45a8fb",
+        "source_page": "https://kulturenvanteri.com/en/kariye-mozaikleri-rehberi/",
+        "source_url": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Mahser.jpg",
+        "status": "downloaded",
+        "width": 1600
+      },
+      "originalSha256Verified": "f8782cc8db03d95f5539d20b8144e760780a8bd9977c218a41debac38f45a8fb",
+      "bundledPath": "assets/last_judgment/vault_reference.jpg",
+      "bundledSha256": "51dbb640b2e20bb7ab5e803a11282e992c62fc892c1f73d80dd515571634eb38",
+      "note": "Original remains untouched in MILION_CAPTURES/chora-scenes; bundled reference is the pre-existing derivative."
+    }
+  ]
+}

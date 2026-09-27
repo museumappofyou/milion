@@ -1,0 +1,670 @@
+{
+  "pageid": 2255322,
+  "ns": 0,
+  "title": "Q2334536",
+  "lastrevid": 2475955044,
+  "modified": "2026-03-28T22:06:35Z",
+  "type": "item",
+  "id": "Q2334536",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Τέμενος Γκιουλ"
+    },
+    "en": {
+      "language": "en",
+      "value": "Gül Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Gül Camii"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde tarihi cami"
+    },
+    "el": {
+      "language": "el",
+      "value": "Βυζαντινός χριστιανικός ναός στην Κωνσταντινούπολη (σήμερα τζαμί)"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "fc072cf44131b9bc13a3219a64b7d50b229e879e",
+          "datavalue": {
+            "value": "Gül Mosque (Istanbul)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q2334536$21F6ECE2-79A8-4CD4-9012-DC92A2FB3E75",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "44f89c9e7bd4f9e1f0b7deec12caf6999ee4e03d",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0268245217904,
+              "longitude": 28.95617998507473,
+              "altitude": null,
+              "precision": 1e-08,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q2334536$D5D5A774-1AD0-4E4C-BE19-5416127D111D",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "51206db4fe2f251fbab04ec771ef9b2db28e170f",
+          "datavalue": {
+            "value": "/m/02r8178",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$0FEAFFAE-80E5-4C39-9C29-BBB5DE1C792E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "7fe39c5b03b27aff86148bbf44160b6fd4e7ccaa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 47591,
+              "id": "Q47591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$D360AC1B-1972-41C9-90B2-B04B77E215A4",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "3a95c99638d30e63b31422e20f959627d77072ab",
+          "datavalue": {
+            "value": "Gül Camii 01.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2334536$60FCEC70-693A-4625-8D6A-D1CAA4DAB013",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$3BF2CACB-BF39-4290-8370-3DE5069FCC7A",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "fe3e98790529edca4e494c5b753fa3abef71052c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16970,
+              "id": "Q16970"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$6650c550-4228-71f0-3091-a159b8c0d5ad",
+        "rank": "normal"
+      }
+    ],
+    "P3311": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3311",
+          "hash": "2899e38829f2a470dceedc28fe40a64c34dd0474",
+          "datavalue": {
+            "value": "StTheodosia FirstFloor.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2334536$e5924395-416e-c6e7-2162-fac714278272",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$1163924b-441f-9348-7ab8-84d27aa83fe1",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$9fbf0be9-4f51-2ff1-4d80-a2b17915fa30",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$756A056E-8886-41C8-A8ED-259F12948AA9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "772247c12d92cbc977b55d017a76aad77cbaeaeb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12544,
+              "id": "Q12544"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$9e8d31c1-4237-94e7-1d26-b8052443dfb9",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "93e21a93aec73b8fed1f54d59a25e94daaae1c11",
+          "datavalue": {
+            "value": "246162000",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$c3cbe76f-453f-b6b7-0e5d-de58982dc031",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "373a9b30367f497bcde35071711fa9beb83c5cfe",
+          "datavalue": {
+            "value": "4223552-2",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$04cf02e0-4f19-8818-7ba0-face80a58275",
+        "rank": "normal"
+      }
+    ],
+    "P973": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P973",
+          "hash": "84b9ad0e0ac3919cf06c0699570fa1ac7d51c102",
+          "datavalue": {
+            "value": "https://www.thebyzantinelegacy.com/hagia-theodosia",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q2334536$1f5a52b6-48e5-5530-d357-2742d29ca516",
+        "rank": "normal"
+      }
+    ],
+    "P186": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P186",
+          "hash": "22b57518d66fba974a1517d872ebc7a581074439",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 40089,
+              "id": "Q40089"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$E8E742F7-7F83-4178-B706-0F2A510423AB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9c944650f9658781efff6a3d5221beeddcb23d84",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "964293ff44750c3bf4a4f602092513987eae180f",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Gül_Mosque&oldid=896419838",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "d4726cf52912ab3eacd56d680b327b620407e7eb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$55ee7582-4ac4-6631-7ddb-2f52534b745f",
+        "rank": "normal"
+      }
+    ],
+    "P454": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P454",
+          "hash": "e9f2bb95704720b10a2c25926e58c21218d77f14",
+          "datavalue": {
+            "value": "20036496",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$709BE603-9FF3-4221-A559-D46072850786",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "6edcc690f622fe5cc1a553816d79a1af859ed07a",
+          "datavalue": {
+            "value": "7596",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$5E256FB0-5F1F-4D80-AF1E-927B7CFDBB2B",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "38506e69327417ee0e931951ba884b694d128245",
+          "datavalue": {
+            "value": "330645373",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$f5edbea8-4120-07ee-e85f-0be38cc4ce81",
+        "rank": "normal"
+      }
+    ],
+    "P6592": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6592",
+          "hash": "8cd3b8a58e5e9015be9bde8428779213ec9acda5",
+          "datavalue": {
+            "value": "10",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q2334536$eee720f3-4142-d666-7412-12e225974b46",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$EE55FDD6-9334-4C3E-9736-447B10521646",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$B6DEBB39-9E5B-4F9A-AF0F-8C86B1298A9E",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334536$42DB414B-E55F-4F59-8718-8C0F2BDA82E9",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "6d843a61601e0b4b3ec900fa7f47b7077978d150",
+          "datavalue": {
+            "value": "gul-camii",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$3534651B-E754-4F1C-B805-B1A2A2A92377",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "cf1e68705fd989348adae3b1807dce71a47a8afd",
+          "datavalue": {
+            "value": "939",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334536$07A17BB2-7946-4132-AB8D-E541500BD8DD",
+        "rank": "normal"
+      }
+    ]
+  }
+}

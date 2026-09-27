@@ -1,0 +1,264 @@
+{
+  "pageid": 90863025,
+  "ns": 0,
+  "title": "Q91682094",
+  "lastrevid": 2512703818,
+  "modified": "2026-07-01T18:50:13Z",
+  "type": "item",
+  "id": "Q91682094",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Şile Castle"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Şile Kalesi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "castle in Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Cezayirliler tarafından inşa edilmiştir. Şile Liman bölgesinde bulunur"
+    }
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "9f8f53c005e864670b86a082151ca0136325348c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 23413,
+              "id": "Q23413"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91682094$4ef5fef8-447c-744a-d3c9-76fb14860b15",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "45ba96906bd11843b78696b85691dbf1d642cfb5",
+          "datavalue": {
+            "value": "/g/11dylsrsqb",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91682094$6053F487-EE2A-49D3-A77F-8D17E321F06A",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "3961875dc7f5a6dda5f307b62b4536fcda88ee09",
+          "datavalue": {
+            "value": {
+              "latitude": 41.18144,
+              "longitude": 29.60912,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q91682094$e701aa7c-490a-4cbb-8583-8fa335de7dec",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "0443bafb342cbea27b79c01bb050a20910ade438",
+          "datavalue": {
+            "value": "Şile kalesi 3 (cropped).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q91682094$BAB274C2-F88F-4AC6-B21E-349810204937",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "88c8c81b821d95b666ecde60e5594dc8289a3a7b",
+          "datavalue": {
+            "value": "Şile Castle",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q91682094$04b27cca-34f9-4086-9c19-c61fc18fb9ba",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91682094$0cfd2ec5-4f59-e0b2-5a4d-906425eec2c1",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "b8953510801e6459d9168d8ebb47b7a0e880681c",
+          "datavalue": {
+            "value": "3105",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91682094$2D5976AA-550E-425D-AF06-B4F956E52102",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "745bb93d18594cf71e412f21a08f7415c271c771",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 241631,
+              "id": "Q241631"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91682094$2BEAF325-A7C3-4151-B69E-0291F4158A2B",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "ad43a26f0198a452ecaf9c31f1d7ee2a01237c83",
+          "datavalue": {
+            "value": "643467902",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q91682094$A4F7E63E-E8FF-4F63-9D54-DC05DFC4D048",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91682094$7109AD97-85C6-44D7-85BE-8F34CC5CAD20",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q91682094$B376C99C-BC46-4E77-9C4F-9DB715985704",
+        "rank": "normal"
+      }
+    ],
+    "P1813": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1813",
+          "hash": "b80bd963f75122fb2c77a4cdf2919863c9538949",
+          "datavalue": {
+            "value": {
+              "text": "Şile",
+              "language": "mul"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q91682094$F88A5E91-3A81-4C88-9EF3-93794D768481",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1654 @@
+{
+  "pageid": 1368621,
+  "ns": 0,
+  "title": "Q1430090",
+  "lastrevid": 2535728815,
+  "modified": "2026-08-24T08:09:56Z",
+  "type": "item",
+  "id": "Q1430090",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Nuruosmaniye Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Nuruosmaniye Camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τέμενος Νουρουοσμανιγιέ"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde barok üsluplu cami"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "d39b4ee3508e62a739551348fbee764ebfd9b1e4",
+          "datavalue": {
+            "value": "Nuruosmaniye Mosque",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q1430090$E2FC7180-DB26-48E0-B6D6-7CD51887CF32",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "6ecdbc98474a2f0d460a66166a02d96fc87e5e35",
+          "datavalue": {
+            "value": {
+              "latitude": 41.010277777778,
+              "longitude": 28.970277777778,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q1430090$B8ACDF36-FF34-47D8-BA42-948859EA9ABF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q1430090$72BF7FC7-E283-4965-B6A0-EDF687375919",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "97d4c8c3f27dc71eed62cf30ba1499cb3fa2c637",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "4d2ef3f1dd160fadc81369034c10bb748fab3863",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/nuruosmaniye-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P131": [
+            {
+              "snaktype": "value",
+              "property": "P131",
+              "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 406,
+                  "id": "Q406"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P131"
+        ],
+        "id": "Q1430090$094EC6FD-A09F-41D7-B704-2DCB6F34031C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "4a629b49dd3577f5783d43af0f2df35e49718acd",
+          "datavalue": {
+            "value": "/m/05znr6t",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$6747192B-9767-4E0F-BF83-D3CBE4CB8B8A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$62FEB1AE-42B1-47B2-8BFD-C8BBA86F38EA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$CC3124BF-F5B3-422D-94F4-0B15F8CDF76E",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "3b0ceae56eb00287e5c9011c42a42485058fa595",
+          "datavalue": {
+            "value": "6947678",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$3C5496D5-334A-4173-8415-FB9BF126D701",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "b00ff3bfe8f034cdd81567161ac256f1b658d794",
+          "datavalue": {
+            "value": "4199963-0",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$2664B5CA-E77C-48C8-B087-2881CD055B8A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "44c3f74e22a3a3ca834d05a9c659443708a1548e",
+          "datavalue": {
+            "value": "Nuruosmaniye Camii.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "509c3946985400789f4fed7cf458a70f4a5672e1",
+              "datavalue": {
+                "value": {
+                  "text": "Το τέμενος Νουρουοσμανιγιέ",
+                  "language": "el"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            },
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "6bd3994e2477560d2c2da05762f05bc8bd9393aa",
+              "datavalue": {
+                "value": {
+                  "text": "Nuruosmaniye Mosque",
+                  "language": "en"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q1430090$6802564B-39D6-4A2D-9C45-FA2CD5B23D04",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "e35da8b7c646d6b80e05f595b5fc098937e919c4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 199825,
+              "id": "Q199825"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$db12ea9c-47ef-b575-1458-6905e5f2943b",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "25307ad766c2cbabcd19b9f250c7a3f7fa53c34e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 199481,
+              "id": "Q199481"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$c0783810-4150-55dc-14b1-4a99a4767461",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "31790972c77d5a50ed12cacc77019dbf0d2150ea",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 199825,
+              "id": "Q199825"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$1c7e413e-40cc-9303-530c-9eeae9823fd7",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "73bc275e1508d883507ec55da759672ed1d2c09d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19666573,
+              "id": "Q19666573"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$53C0D68C-1302-4A01-807B-D249035973AA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "80b6ecb8dd2ccda51d8344ba916ae8fd9101b3e8",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "7a1580c2d1062e94c637861101fc8a4632ab262c",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/husreviyye-camii",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$1BCA3F4A-F303-403C-BFB8-B2ED3D9A82D5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P4171": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4171",
+          "hash": "32ad75a1e7ec2e3c3d70303747904319137d12bb",
+          "datavalue": {
+            "value": "6122",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$79f694b5-460b-25bf-aa4b-594b4fe91044",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$9A41765E-C870-440E-84E0-3E19288916D4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "97d4c8c3f27dc71eed62cf30ba1499cb3fa2c637",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "4d2ef3f1dd160fadc81369034c10bb748fab3863",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/nuruosmaniye-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "5f57018912f8386499e0166613c3d16baea879fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 108760735,
+              "id": "Q108760735"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$FA2684C4-F4FE-42CE-B2DC-818FBCC1CD40",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "57d29c52e4c74a8d5005c6fe094431c50318703e",
+          "datavalue": {
+            "value": "2145602446101361640",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$9703ad43-4695-93f7-c83a-f13bfdaf01a3",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "e81033c98f40b06318d03b75849694e910a07cf1",
+          "datavalue": {
+            "value": "n86034877",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$3B63F425-1A20-41F5-AB60-C3572FF30686",
+        "rank": "normal"
+      }
+    ],
+    "P2614": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2614",
+          "hash": "8a15757be66fb6392e3ea58d408565017dbb7532",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 23038976,
+              "id": "Q23038976"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$FEED603D-8DFD-4D94-B541-DBF9D7220E98",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2614",
+          "hash": "b93cf61b4cce497f573aa200ddc3f2a21f2c48d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 23038977,
+              "id": "Q23038977"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$9C0A7978-A3A8-4BE5-AD89-1023A3E4FAAE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2614",
+          "hash": "16b5f6994a5a2a152170b737b59af7d93b88c8fe",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 23038978,
+              "id": "Q23038978"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$60C64398-34A8-447B-8B19-B5310805CBBE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "864d7fd28790c7abd24ddc73ef82ce96896cbbde",
+          "datavalue": {
+            "value": {
+              "time": "+1755-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1430090$26BFCC91-0670-4D83-89E0-69C4402E25F6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f5b5821c9780ef0ccd65d8fc83f2543ab8acf73f",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "2be4a73ecbe9874d39025a98bcb279582dfd5fb9",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Moschea_di_Nuruosmaniye&oldid=106257630",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          },
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "9a36f52f9ca3181088c72d5cafcf7d3e1d8bfefe",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 75128770,
+              "id": "Q75128770"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$4E39257A-5E9B-4051-A274-1A40AA70E274",
+        "rank": "normal"
+      }
+    ],
+    "P3749": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3749",
+          "hash": "76fedb18f5f19335990eb5fab9505ede5658705f",
+          "datavalue": {
+            "value": "1637928957887913687",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$34f67383-4bc3-b393-3137-0e46ff1a70fb",
+        "rank": "normal"
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "a6b4a88355b71ab426d4c4d996f715aefcd2b654",
+          "datavalue": {
+            "value": "987007266023705171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$6C86E3B2-638C-4444-8F81-E8D556BB75F5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106509962,
+                      "id": "Q106509962"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "d572538f41f5f55c0a2f60316db9185a57dc7570",
+          "datavalue": {
+            "value": "nuruosmaniye-kulliyesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$0a5246e8-4242-ac20-14f4-0815d6411bbb",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "97d4c8c3f27dc71eed62cf30ba1499cb3fa2c637",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "4d2ef3f1dd160fadc81369034c10bb748fab3863",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/nuruosmaniye-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "61744c5e4796cda9e0ac346612090becaeb4e998",
+          "datavalue": {
+            "value": "7878",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$BF94126C-B369-4838-A448-DF9D3BAD6E69",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "141715dc90319ed9fef47a130d713b52fe18cdc6",
+          "datavalue": {
+            "value": "Mezquita de Nuruosmaniye, Estambul, Turquía, 2024-09-29, DD 11-13 HDR.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q1430090$ff4f9475-4c92-dd78-5b17-86d8f9005d53",
+        "rank": "normal"
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "d31aafa6bfa9138fe35d41accc5dd216b5d18fca",
+          "datavalue": {
+            "value": "18161438",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$D8052393-6661-41E1-9F1D-70690B263DBF",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$BC0F5122-90B0-4490-B996-E03EE9919842",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$CF40190F-34C5-4B27-B0BA-D54F5A7CEB33",
+        "rank": "normal"
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "edf0e5e5c9accbdf8130b766226264f0640d4d9a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 116615995,
+              "id": "Q116615995"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$283EC7F8-5AC4-47D6-9F03-751F31E33565",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P793": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P793",
+          "hash": "23db98c2dae78eaf160e2008602eed7c73f16ef8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 385378,
+              "id": "Q385378"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "06390f4311eed11e72f9821d36593566cab1f111",
+              "datavalue": {
+                "value": {
+                  "time": "+1749-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "2be3b5ad71cd16cff060c5061335de5e1150f86d",
+              "datavalue": {
+                "value": {
+                  "time": "+1755-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582"
+        ],
+        "id": "Q1430090$89CBCE09-A1EE-4987-A061-DB41245D68A4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "d1ae2f914bade38c64113e480fc4c470951be15f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1459900,
+              "id": "Q1459900"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "730784babaa1018625d3bceeafac45d7a7f23f94",
+              "datavalue": {
+                "value": {
+                  "time": "+2016-04-13T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q1430090$C277AA33-0DD7-4102-9A4A-4FBA1026178E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5840f4c783123f819614326bce4eb46a7dd12476",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ee5d079d1e99fcfb8cbfc4bbaee51a58d4135f19",
+                  "datavalue": {
+                    "value": "https://whc.unesco.org/en/tentativelists/6122/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "4f1f7c7be10d7457fdbc596b242d7a09fc05d070",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 133462433,
+              "id": "Q133462433"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$DBA3D99F-4E7B-449C-B078-3D29EC7C94ED",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$11C0B2C9-5352-4F0A-A174-73BEC81918EE",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "f19f9bef33a1a32b688d52e530699d119f9f5374",
+          "datavalue": {
+            "value": "group/03fb512a-9f48-44aa-9868-52c48058a5b7",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$CC0D7042-88D4-45B8-9A9E-7C8B05CCF8D3",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "6740648660c6fde8673819514f91e2917a0c3e9b",
+          "datavalue": {
+            "value": "253",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1430090$C6D7EEC4-74EA-45D8-AE0A-3644651D9C1A",
+        "rank": "normal"
+      }
+    ],
+    "P1552": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1552",
+          "hash": "9cc68c5f46ce8a75e0d0168cfb75e64d390252b2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 570116,
+              "id": "Q570116"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1430090$EE9543AD-1097-455D-941D-02A5433214C7",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "pageid": 5805946,
+  "ns": 0,
+  "title": "Q6023693",
+  "lastrevid": 2440367261,
+  "modified": "2025-12-10T06:56:56Z",
+  "type": "item",
+  "id": "Q6023693",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Divanyolu"
+    }
+  },
+  "descriptions": {},
+  "claims": {
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "8275bb97acb0c4408a70cf5c765befe98e25529c",
+          "datavalue": {
+            "value": "Istanbul, İstanbul, Turkey - panoramio (185).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6023693$FF80562E-05B9-42EB-AA40-261A7B258AE0",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "44affa12d203f942294eddedd62a2ca6ba02fbd5",
+          "datavalue": {
+            "value": "/g/122hczg7",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6023693$79B65774-119A-43C0-AA8D-F24F1243864F",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "5c1474386d54e75d97d749e15d78ce5e0bfeb425",
+          "datavalue": {
+            "value": "Divan Yolu Caddesi",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6023693$fa850464-48f7-1bfa-2eef-6f596cd5dc84",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "d6b703b982b2bd495f8b864353bf0ca9832ff62a",
+          "datavalue": {
+            "value": {
+              "latitude": 41.008151506372556,
+              "longitude": 28.974668421776386,
+              "altitude": null,
+              "precision": 1e-08,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6023693$3357d599-4410-2cca-cc4a-64f28a928d2c",
+        "rank": "normal"
+      }
+    ]
+  }
+}

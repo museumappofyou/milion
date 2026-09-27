@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "kind": "milestones",
+  "records": [
+    {
+      "id": "milestone-i",
+      "numeral": "I",
+      "title": {
+        "en": "Anastasis",
+        "tr": "Anastasis"
+      },
+      "places": [
+        "chora"
+      ],
+      "artworks": [
+        "F02"
+      ],
+      "techniques": [
+        "DP",
+        "GL",
+        "SB",
+        "WR"
+      ],
+      "honesty": [
+        "ORIGINAL",
+        "DEPTH",
+        "RECONSTRUCTION",
+        "IMAGINED"
+      ],
+      "status": "prototype",
+      "manifestPath": "assets/anastasis/relief_v5/manifest.json",
+      "packId": "chora-starter",
+      "sources": [
+        "chora-guide"
+      ]
+    },
+    {
+      "id": "milestone-ii",
+      "numeral": "II",
+      "title": {
+        "en": "The Last Judgment",
+        "tr": "Son Yargı"
+      },
+      "places": [
+        "chora"
+      ],
+      "artworks": [
+        "F05"
+      ],
+      "techniques": [
+        "DP",
+        "MM",
+        "GL",
+        "SB"
+      ],
+      "honesty": [
+        "ORIGINAL",
+        "DEPTH",
+        "RECONSTRUCTION",
+        "IMAGINED"
+      ],
+      "status": "prototype",
+      "manifestPath": "assets/last_judgment/relief_v5/manifest.json",
+      "packId": "chora-starter",
+      "sources": [
+        "chora-guide"
+      ]
+    }
+  ]
+}

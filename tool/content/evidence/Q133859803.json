@@ -1,0 +1,210 @@
+{
+  "pageid": 127731318,
+  "ns": 0,
+  "title": "Q133859803",
+  "lastrevid": 2413432393,
+  "modified": "2025-10-06T21:47:09Z",
+  "type": "item",
+  "id": "Q133859803",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Nakilbent Sarnıcı"
+    },
+    "en": {
+      "language": "en",
+      "value": "Nakilbent Cistern"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "cistern in Fatih, Istanbul Province, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te sarnıç"
+    }
+  },
+  "claims": {
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "1cbf6dc059503fb1e4f6d2f0c5eaf7f3f27ecb24",
+          "datavalue": {
+            "value": "194626",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q133859803$B378859B-A8E0-41EA-BB29-95A708FB91D2",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q133859803$8D920B90-74AC-4CBD-B121-6366F5637726",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q133859803$069AC14C-694C-4D73-B470-FEABF2C10E23",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "02a271bf0ab2cabfb2bbbde4241c464559b742d2",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0041466,
+              "longitude": 28.975153,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q133859803$6897D7E0-14FF-4E7E-A869-AA4CEE320FA1",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7edbf431c7f8610ccd0f581bb09dcc1c9aa1dddb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 838858,
+              "id": "Q838858"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q133859803$A406C2E2-63F9-4858-8662-EE2395B56867",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q133859803$96A46538-C5DB-4249-9552-416C5F4FB40C",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q133859803$2F930762-0E84-4552-923A-32C4A8D66950",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "7868b36bdc79644de52d5b51a1883901893b1951",
+          "datavalue": {
+            "value": "Nakilbent Cistern",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q133859803$7D288E61-6DA8-4036-BBEE-8C14990A3944",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "0ae2f08dbb57680752149840f9a2a7dbd8c2c3f4",
+          "datavalue": {
+            "value": "Nakilbent Sarnıcı 01.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q133859803$063AFC67-7EEC-4611-86C8-511DAA1D5823",
+        "rank": "normal"
+      }
+    ]
+  }
+}

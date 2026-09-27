@@ -1,0 +1,489 @@
+{
+  "pageid": 39617361,
+  "ns": 0,
+  "title": "Q38251235",
+  "lastrevid": 2486312345,
+  "modified": "2026-05-02T01:17:48Z",
+  "type": "item",
+  "id": "Q38251235",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Cave monastery of İnceğiz"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İnceğiz mağaraları"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "monastery in Çatalca, Istanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Çatalca'nın İnceğiz köyü yakınlarında mağaralar"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "c72f83f88569144c6c526c38453537654601af24",
+          "datavalue": {
+            "value": "Cave monastery of İnceğiz",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q38251235$FB19DFF6-9373-4010-B8E9-0C036A9CAE9A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "f9c0194429d1085dcaba592e14e8a486dd28e21d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 106435710,
+              "id": "Q106435710"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q38251235$b3052ce8-42eb-fffb-5d31-e9c372cdb544",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "fe3e98790529edca4e494c5b753fa3abef71052c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16970,
+              "id": "Q16970"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q38251235$969a59ca-4ba7-8b13-7867-5ca7a62e2222",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "81ecce0b5979f715b1029fe4041c584cbfeac915",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 44613,
+              "id": "Q44613"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q38251235$cc06ee8a-4a13-6ad5-7709-154c5424184e",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "090895a202345894c6be2066a9ea6e33a59bb895",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35509,
+              "id": "Q35509"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q38251235$69116D21-96F7-4019-916A-94BEE8D443D5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ca22f4acc2f463eec7f43b0f62ca3ed9119fb19f",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1194038,
+                      "id": "Q1194038"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-06-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P2326": [
+                {
+                  "snaktype": "value",
+                  "property": "P2326",
+                  "hash": "099aebc0e60e8df67d08014795b57e1d3ef02f4f",
+                  "datavalue": {
+                    "value": "11836156",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577",
+              "P2326"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q38251235$39fd5f45-4ae7-a934-96ea-a06a41cdc265",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ca22f4acc2f463eec7f43b0f62ca3ed9119fb19f",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1194038,
+                      "id": "Q1194038"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-06-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P2326": [
+                {
+                  "snaktype": "value",
+                  "property": "P2326",
+                  "hash": "099aebc0e60e8df67d08014795b57e1d3ef02f4f",
+                  "datavalue": {
+                    "value": "11836156",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577",
+              "P2326"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "ffbcd3fc1789bd823c7b7bf526902ee7798dd89d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 272681,
+              "id": "Q272681"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q38251235$01ab5cbb-4ed2-a0d3-b3fb-7c31331a33b9",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "b95053f682f17f4ef12b8156f03eebc1b61629e9",
+          "datavalue": {
+            "value": {
+              "latitude": 41.181667,
+              "longitude": 28.404167,
+              "altitude": null,
+              "precision": 1e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q38251235$10601653-43f5-cdb3-3f96-cd15216325ce",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "96100d1749f534abbde8880457ebc4009c27f476",
+          "datavalue": {
+            "value": "CaveMonasteryİnceğiz (1).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q38251235$dc60871d-49e0-406c-33e4-2c014c9912ac",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "4592ed75633431af2563525e4cd8778a6f77d404",
+          "datavalue": {
+            "value": "/g/11fxwmyz72",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q38251235$87A59EED-40A5-43B0-8CAE-EA85D70D9F5E",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "459d58777e1af63238100398b6228a117d8c9867",
+          "datavalue": {
+            "value": "8624075",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q38251235$EBC947DE-3E2E-4535-B65C-C137079E0F21",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "43a0088c51fd85e5a85d1b46412c3a635e6d4edc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d8fbf8671e3c630db61bfac691068cfb6857f243",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 837615,
+                      "id": "Q837615"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2326": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2326",
+          "hash": "099aebc0e60e8df67d08014795b57e1d3ef02f4f",
+          "datavalue": {
+            "value": "11836156",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q38251235$6234326F-FF4B-48EB-8F25-7AF09F95F18E",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "7c7b8aa9b41c3ff942aac5f692dcb2865c51144b",
+          "datavalue": {
+            "value": "487484996",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q38251235$6E33B649-78D5-49AF-8D82-120DB642A6FE",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "8559d890f69b0a8b6ca151427a98102ce9a2851e",
+          "datavalue": {
+            "value": "Entity[\"Cave\", \"IncegizMagaralari::4yxvz\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q38251235$CA17AC5F-EF74-4B1C-B3BF-C708EC360016",
+        "rank": "normal"
+      }
+    ]
+  }
+}

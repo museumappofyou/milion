@@ -1,0 +1,1191 @@
+{
+  "pageid": 3347271,
+  "ns": 0,
+  "title": "Q3515347",
+  "lastrevid": 2524128211,
+  "modified": "2026-07-29T00:06:16Z",
+  "type": "item",
+  "id": "Q3515347",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Hrisopolis"
+    },
+    "en": {
+      "language": "en",
+      "value": "Chrysopolis"
+    },
+    "el": {
+      "language": "el",
+      "value": "Χρυσόπολις"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "ancient city on the Bosphorus opposite Istanbul"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Üsküdar'da bulunan antik yerleşim"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "7b4b021662a825a206cdc2932db2cce16eb22af5",
+          "datavalue": {
+            "value": {
+              "latitude": 41.02638889,
+              "longitude": 29.01777778,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q3515347$A7A7F0B0-4471-40EC-8C3F-AAF65923E6C2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "ed79ffff178423c7eda90380daf93071f606ca2b",
+          "datavalue": {
+            "value": "/m/01ykx9",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3515347$3A55C31F-3C3A-4C3A-935C-882EBE1DC7E4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "5b0ef3d5413cd39d887fbe70d2d3b3f4a94ea9d8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1138524,
+              "id": "Q1138524"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "98414b058bfe5779179a85a384f462438e6936f0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 50966494,
+                  "id": "Q50966494"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q3515347$11CF0032-9936-45E7-80CB-376B32A67BF1",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "635d5ad896b402ade22ccbf034877598cf7beb66",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 15661340,
+              "id": "Q15661340"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3515347$a73cdea4-44f6-e7a1-f515-770a8c66ad8c",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 43,
+                  "id": "Q43"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P17"
+        ],
+        "id": "Q3515347$884c9d9d-465c-9f09-be86-e916cf07d03b",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c37e186763b8218b3957f1f7ff3329b9b55c9116",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "23a65c90ffc1dd356bb8a4c36c32da624ea83b6a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 87068904,
+                      "id": "Q87068904"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d646c32db7c697323f42e9fdd11d7d36cde74836",
+                  "datavalue": {
+                    "value": "https://topostext.org/place/410290UChr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "4e7e5ae19bafc069c8f235793766fce4aacb0669",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12544,
+              "id": "Q12544"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "39514777e6defd98fe6f9030164ef749f60175c6",
+              "datavalue": {
+                "value": {
+                  "time": "+0395-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "a93b9f4e043cfd241dd4effde7f8e86b7b367b2e",
+              "datavalue": {
+                "value": {
+                  "time": "+1200-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 7,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582"
+        ],
+        "id": "Q3515347$3650c745-401d-8c11-2cbf-771949e92984",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6b7a9f82e1ed0f3bd23778e5888923e8961156d3",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "9237200831449631ede2a99277aeea0d0994213c",
+                  "datavalue": {
+                    "value": "https://www.uskudar.bel.tr/en/main/pages/history-of-uskudar/313",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1584": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1584",
+          "hash": "fea4760ff057fde54d7bbc2916358a53af18d31f",
+          "datavalue": {
+            "value": "520995",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3515347$89ee8be0-46eb-503f-1ce2-c471444114a7",
+        "rank": "normal"
+      }
+    ],
+    "P8068": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8068",
+          "hash": "9f6a8bfef1bdab7cd03ba877c5e716364fa8ecd0",
+          "datavalue": {
+            "value": "410290UChr",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3515347$4f10a798-4e97-c4fd-6f6b-a139af81d4d4",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "d02e66dac89e708c59b95b6194e0da7bbf21d8ab",
+          "datavalue": {
+            "value": {
+              "text": "Χρυσόπολις",
+              "language": "grc"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q3515347$97695e44-4c01-599d-9b20-48fed5b57677",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c37e186763b8218b3957f1f7ff3329b9b55c9116",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "23a65c90ffc1dd356bb8a4c36c32da624ea83b6a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 87068904,
+                      "id": "Q87068904"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d646c32db7c697323f42e9fdd11d7d36cde74836",
+                  "datavalue": {
+                    "value": "https://topostext.org/place/410290UChr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "34bcf1dbe3f22584f1d79cdb4cc70b49c20c0e68",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 326339,
+              "id": "Q326339"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3515347$ede67211-48b5-110b-7159-79db75a621fd",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c37e186763b8218b3957f1f7ff3329b9b55c9116",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "23a65c90ffc1dd356bb8a4c36c32da624ea83b6a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 87068904,
+                      "id": "Q87068904"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d646c32db7c697323f42e9fdd11d7d36cde74836",
+                  "datavalue": {
+                    "value": "https://topostext.org/place/410290UChr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P206": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P206",
+          "hash": "7dcc588ebed29cf457394b4de62e4b9acbc9c906",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35958,
+              "id": "Q35958"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3515347$7f6e3a0a-40f8-7c21-6e32-0143a91b4f27",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d62a1fd0b6ad5b47c1c407fac67681ae7050df84",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bc5cdb7d4ca42a10b8c4f179ee4bcce071fa7681",
+                  "datavalue": {
+                    "value": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0064:entry=chrysopolis-geo",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P793": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P793",
+          "hash": "a2d5a9c668b3627cc50104f66e7b48c2605a5d57",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1264908,
+              "id": "Q1264908"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3515347$c55b104d-42e4-092c-5544-ba66b69469e2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1af2e805d55eb21e3b0b8ef924402e1140dd979d",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "f9a4e6a30491a43b5daf5db38329f9f9fd793e45",
+                  "datavalue": {
+                    "value": "https://istanbultarihi.ist/37-uskudar-savasi-ve-konstantinopolisin-dogusu",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1958": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1958",
+          "hash": "da33367ff76ca9de71fdefa8dc6ed6bf4501a32d",
+          "datavalue": {
+            "value": "41365",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3515347$64711802-4404-ebe7-c7c0-45933e674322",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ae6fbfed2a845d30330a6db991131fda3c29fda3",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "0537ce78f1df8ffbde355032230797b8b247364a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 22094624,
+                      "id": "Q22094624"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "1d9d89eb73b2a96df062f7e16feed7d7a0980d26",
+                  "datavalue": {
+                    "value": "https://www.trismegistos.org/place/41365",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "23b83ffe24ed5c844efe3632ce8934b1bcbef737",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 337381,
+              "id": "Q337381"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3515347$f6338a42-454b-b6a9-fecc-63ee704715c6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d62a1fd0b6ad5b47c1c407fac67681ae7050df84",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bc5cdb7d4ca42a10b8c4f179ee4bcce071fa7681",
+                  "datavalue": {
+                    "value": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0064:entry=chrysopolis-geo",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "9473a75930bc29c3a54b78a8f50e735c4f681a58",
+          "datavalue": {
+            "value": "4122696-3",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P4070": [
+            {
+              "snaktype": "value",
+              "property": "P4070",
+              "hash": "488a73989b13c345be98151f1c0c1ec609acc0a8",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 326339,
+                  "id": "Q326339"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ],
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "e79844c0f126a0f36972fd9f5947f3ce8ce880fa",
+              "datavalue": {
+                "value": "Chrysopolis",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P4070",
+          "P1810"
+        ],
+        "id": "Q3515347$151e3396-4da5-21ce-3916-513cb906970c",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "51a77ebc4fff80da708f589820e6624a9537fd8c",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "019a50b7de741e0068bde41c9d9955b22a5de47b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 36578,
+                      "id": "Q36578"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d025e8ec2464fdb41540b801c3636d4574da45fa",
+                  "datavalue": {
+                    "value": "https://d-nb.info/gnd/4122696-3",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1936": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1936",
+          "hash": "f80e9d27cf73868f1092df456e7f45a437f9625c",
+          "datavalue": {
+            "value": "22696",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P4070": [
+            {
+              "snaktype": "value",
+              "property": "P4070",
+              "hash": "488a73989b13c345be98151f1c0c1ec609acc0a8",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 326339,
+                  "id": "Q326339"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ],
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "4a93cef31293a84181caa7ca413661d1df0e8037",
+              "datavalue": {
+                "value": "Chrysopolis, Üsküdar",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P4070",
+          "P1810"
+        ],
+        "id": "Q3515347$3373f40a-4cac-1cd7-933e-3ddfc0679b0c",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e1ecddaf087a55f670ad65d53a06424b6133dd2e",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a0028e401338c0ef80e84bc24f5e2d2c1931ac22",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 24575107,
+                      "id": "Q24575107"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "f080e530cd596434c4be81c8e88ecb516531e733",
+                  "datavalue": {
+                    "value": "https://imperium.ahlfeldt.se/places/22696.html",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6885": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6885",
+          "hash": "c37be8eaab1850e9a1d7ed3733a9e67ea5444745",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 373189,
+              "id": "Q373189"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3515347$830148fa-4b2c-45a9-be93-8464cfbc515c",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c37e186763b8218b3957f1f7ff3329b9b55c9116",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "23a65c90ffc1dd356bb8a4c36c32da624ea83b6a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 87068904,
+                      "id": "Q87068904"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "738e0b0ad6b8799178e504d07b8effa172e27687",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-07-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d646c32db7c697323f42e9fdd11d7d36cde74836",
+                  "datavalue": {
+                    "value": "https://topostext.org/place/410290UChr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "8c5fa26bbe71586de3d407560146e54d29288b1e",
+          "datavalue": {
+            "value": "Chrysopolis (Bithynia)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q3515347$33de26eb-445c-2882-d89a-ca876a742377",
+        "rank": "normal"
+      }
+    ]
+  }
+}

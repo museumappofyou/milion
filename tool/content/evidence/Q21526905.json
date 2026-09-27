@@ -1,0 +1,273 @@
+{
+  "pageid": 23570466,
+  "ns": 0,
+  "title": "Q21526905",
+  "lastrevid": 2468733000,
+  "modified": "2026-03-02T14:32:56Z",
+  "type": "item",
+  "id": "Q21526905",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Sancaklar Camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τζαμί Σανκακλάρ"
+    },
+    "en": {
+      "language": "en",
+      "value": "Sancaklar mosque"
+    }
+  },
+  "descriptions": {
+    "el": {
+      "language": "el",
+      "value": "τζαμί στην Κωνσταντινούπολη"
+    },
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul Büyükçekmece'de yer alan cami"
+    }
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q21526905$1F563EAB-A534-417F-A0E2-EEEE3737CE68",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q21526905$293329E9-3C36-46AC-AA19-EF990C4F1083",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "c271b78278f6ddbcdc5f2593db1ba3d85aa6cc89",
+          "datavalue": {
+            "value": "11874781",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q21526905$16239f9e-403d-97f1-cdef-41abdda8e28c",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "93062d39e7a9caf5c33607368fac7b169ffe83da",
+          "datavalue": {
+            "value": {
+              "latitude": 41.089,
+              "longitude": 28.60158,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q21526905$a3599898-4a2d-db60-46c7-54b43c7b64dc",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "ad4fd25069865302138c7531e3ff84cb0a5adc86",
+          "datavalue": {
+            "value": "/g/11c3q1hlnv",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q21526905$8C293B44-0382-4E99-B2AB-C78F449764ED",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "9a5215fe0bd38930fdaae8cc9ca317ee285afff8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 840258,
+              "id": "Q840258"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q21526905$9fa5ecbc-42f8-e90f-644a-f2d81c338406",
+        "rank": "normal"
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "2a89f87857367706b08e3dde3d8e1fb85dafa94d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 20197529,
+              "id": "Q20197529"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q21526905$967963cb-49e0-7ffd-ccfd-27486077e921",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "34eda98ccb7f5d58ed401d71df649935a197101c",
+          "datavalue": {
+            "value": "Sancaklar Camii",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q21526905$6352e776-d084-4d0a-a559-a81746fdc277",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "51f5c0b95124de5274a83951b4464216d3619f11",
+          "datavalue": {
+            "value": "Sancaklar Mosque and its minaret.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q21526905$1d692a20-488b-8c77-9300-3818a8df8063",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "fff584a3d07fa1dd49e597d0764bf14419576e6b",
+          "datavalue": {
+            "value": "355941429",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q21526905$5D44D34A-4FD1-4839-8833-8D87FABDB548",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q21526905$4F62342D-4727-4D32-B3EC-BB5A92572BE0",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q21526905$D0C6D65A-55A9-47E0-B8A1-845320165EFB",
+        "rank": "normal"
+      }
+    ]
+  }
+}

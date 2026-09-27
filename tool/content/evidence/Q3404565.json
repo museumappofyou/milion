@@ -1,0 +1,788 @@
+{
+  "pageid": 3244192,
+  "ns": 0,
+  "title": "Q3404565",
+  "lastrevid": 2546452157,
+  "modified": "2026-09-16T00:39:48Z",
+  "type": "item",
+  "id": "Q3404565",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Rahmi M. Koç Museum"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Rahmi M. Koç Müzesi"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Beyoğlu, İstanbul, Türkiye'de müze"
+    },
+    "en": {
+      "language": "en",
+      "value": "private industrial museum in Istanbul, Turkey"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "abe8c14d28e3d875b4756a85d34d20c8d51161e4",
+          "datavalue": {
+            "value": {
+              "latitude": 41.04227,
+              "longitude": 28.94926,
+              "altitude": null,
+              "precision": 2.77777777778e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q3404565$44806A20-64C7-4F6F-8AED-E4D51B1F799C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "6415560303ece28f1f3d0515c93a3195f5960c9c",
+          "datavalue": {
+            "value": {
+              "time": "+1994-12-13T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3404565$E5BF110B-B82A-4B1A-B4C8-DFE415FB00EC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "43b3dbc7b7303191502e990714b1b6e8b2d76e8d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3302981,
+              "id": "Q3302981"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$ECF864F6-4FE6-45FA-8D26-7B5877ACF2B6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "595f45ba8fe8da2e295b39da4e45438a106d8e96",
+          "datavalue": {
+            "value": "http://www.rmk-museum.org.tr/english/index.html",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q3404565$FB7C15A0-86A5-44E8-A153-3E3CA231ACDF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P488": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P488",
+          "hash": "2f98f8c39127f5a529c858b092aae86ebb4fc6f1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7283539,
+              "id": "Q7283539"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$A3685701-B854-427C-AA00-6B130F618E30",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "5e056f20e94427ead8a057b15a63cd4d03312bd1",
+          "datavalue": {
+            "value": "Rahmi M. Koç Museum",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q3404565$BF314582-F145-40F0-B9A3-F05AF47C7874",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$B43C0318-E9A0-4DB5-B40E-7FD2666777BE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e347ed74d5f73f36205d274a20452f79a384b0e4",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "2e8cd9b0cf326816ec447bea7951359ad21549f9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2015-04-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "55a6eb9958d217d3db4907df8a48d163dc2e8b51",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img15 Rahmi Koç Museum.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "05e2f0f58cead268561e6901dd3951b3f5e79ff9",
+              "datavalue": {
+                "value": {
+                  "text": "Muzeum Rahmi M.Koçe v Istanbulu",
+                  "language": "cs"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q3404565$D33EB50A-24FA-4487-A0BE-FF757255AB87",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$4be4a8a1-424e-1289-d3f0-f2cd7a926ffe",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "9647a0e9648d764f58331307b070cc164b7881ce",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 614316,
+              "id": "Q614316"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$50e66f96-4ead-e3ec-52ce-98e2011d3056",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b5017653c96b1e5f6a1ac1b54d5ed55bcacd46fb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18704634,
+              "id": "Q18704634"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$49ff5db0-4184-e9be-6c95-05188b4beab9",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "a34c5e418dbf80b55fdf307e3cfd7793ebccd89d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2516357,
+              "id": "Q2516357"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$c3249673-4b39-17fc-a3d1-8cba31789eda",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "d9c03b6002e8ea5cceb36b6f52d4f126e11337a7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7283539,
+              "id": "Q7283539"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$77b50309-49eb-1e3c-69b9-e7c90d03dcbb",
+        "rank": "normal"
+      }
+    ],
+    "P1612": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1612",
+          "hash": "91ebc478ddcd2f782370c02d8a8cff26ebdc4f22",
+          "datavalue": {
+            "value": "Rahmi M. Koç Museum",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q3404565$0DE21AE8-F9C0-4DE4-98F0-4D41C85AED67",
+        "rank": "normal"
+      }
+    ],
+    "P6155": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6155",
+          "hash": "a4dea72d190a21943cf0759c40c9f806e70b49b9",
+          "datavalue": {
+            "value": "rahmi-m-koc-museum",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$5E37D46E-22D2-4E6E-817C-58F3A14BD6DD",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "5217c548ab5b791cb39efe51c7022062da295179",
+          "datavalue": {
+            "value": "no98111620",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$BA37EA10-5736-4658-8624-49704401F0CE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-03-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "f2050869bc922f36a9649794dc5073fb9371b21d",
+          "datavalue": {
+            "value": "132844987",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$4E8B2A45-D4BD-4AEB-8C0B-845ED4176294",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "5db778e6764969005416ef5905ef75cb83999c96",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3302981,
+              "id": "Q3302981"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3404565$AE51FA1E-0E3B-44BD-8971-B970C53784A6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "edc43a4b81693c8b3215cc8256e6736560687b8b",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "3ed9c1fd75484996aa0cf2dd7978aee87bed1ca5",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Rahmi_M._Koç_Museum&oldid=907316226",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "268cf461fe36429bc0f92dcf1d18ad41caf5d5c9",
+          "datavalue": {
+            "value": "/m/084jzl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$1AF3A9CD-9C7B-4E61-820B-C05465499D20",
+        "rank": "normal"
+      }
+    ],
+    "P269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P269",
+          "hash": "a6786b060f29b7bd9fcb2a96adf265b8c319f4e5",
+          "datavalue": {
+            "value": "176146733",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$32E1E957-EB8B-43E8-87B8-E826112EA676",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1d667c5369ca26afcf1461735902c3bdb762665a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-07-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "f2050869bc922f36a9649794dc5073fb9371b21d",
+                  "datavalue": {
+                    "value": "132844987",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P214"
+            ]
+          }
+        ]
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "cb8554a987913333cd2c8e37787f342102dec520",
+          "datavalue": {
+            "value": "4297527",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$9F8BD120-B808-421F-88C4-6CA75BD5760D",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "7d62dab1fbbe0659dcb0b2d9366c48a4e6afbdf1",
+          "datavalue": {
+            "value": "9986",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3404565$812C11EB-FE68-4E57-A490-3C1F4C2077D5",
+        "rank": "normal"
+      }
+    ]
+  }
+}

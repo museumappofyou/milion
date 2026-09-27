@@ -373,6 +373,7 @@ Phase P05 — Place page: the dig. Workspace: /Users/memre/Desktop/milion. Andro
 Read PHASES.md and PROGRESS.md first. Depends on P04.
 
 Goal: every place is a vertical archaeological section; scrolling down goes back in time.
+Use the P02 registry and its reviewed-place filter. Replace the temporary `sceneForArtwork` adapter as artwork widgets become typed; do not reintroduce catalogue data into the classifier.
 1. Composition:
    - The top is the present: today's photo, current name and function, status with its checked date, mil distance, and "Go", which opens Google Maps walking directions by intent.
    - Scrolling down passes through only the relevant strata: Republic, Late Ottoman, Classical Ottoman, Late Byzantine, Middle Byzantine, Early Byzantine, Roman/Byzantion, Prehistory.
@@ -579,7 +580,7 @@ Read PHASES.md and PROGRESS.md first. Depends on P05, P07, P09.
 
 Goal: the most complete Chora guide that exists on a phone.
 1. An interactive plan of Chora (a kit model or a plan drawing): the naos, inner and outer narthex, and parekklesion. Tapping a room shows its artworks on their walls, vaults and domes.
-2. All 103 artworks, each with:
+2. Complete the 103 typed Artworks from `assets/content/artworks/chora.json`, retaining every ID (including M49_1–M49_4) and resolving the 863 missing TR fields recorded in P02. Each needs:
    - EN+TR title and three things to look for.
    - A story, and inscriptions (Greek, transliteration, translation) where present.
    - Condition notes and sources.
@@ -690,6 +691,7 @@ Goal: the land walls as one continuous object, and the siege told fairly.
 1. Milestone XVIII, the Land Walls strip: a horizontally scrolling wall from the Golden Gate / Yedikule on the Marmara to Blachernae on the Golden Horn.
    - A layered cross-section in Drawing style: moat, outer wall, peribolos, inner wall, towers.
    - The gates as stops: Golden Gate, Belgrade, Silivri, Mevlanakapı, Topkapı/St Romanus, Edirnekapı, Tekfur/Blachernae, and the Kerkoporta legend.
+   - Survey the actual gate/entrance points: P02 quarter QIDs are draft context, not gate entrances. Kerkoporta is a mapped marker with a disputed historical location; preserve that distinction (O21).
    - Strip position ↔ Atlas position ↔ GPS: on site, the strip scrolls to where you stand.
 2. Milestone XIX, 1453 in 53 days (TM, SB): an animated map sequence covering the camp, Orban's cannon, the chain, the ships hauled overland on 22 April and the 29 May assault.
    - Neutral and sourced, with Byzantine, Venetian and Ottoman accounts attributed.
@@ -801,7 +803,7 @@ Goal: collecting that turns into a real artwork.
    - Season 2 (Mosques): a Rüstem Paşa tile panel.
    - Season 3 (Museums): the Alexander Sarcophagus hunt scene.
 3. Milestone book (passport): one page per Milestone with a stamp (date, place, mil distance), your notes (migrate the existing scene notes) and optional photos.
-4. Storage: local only, drift/SQLite with schema migrations. Export and import a zip (JSON plus images); "Delete everything".
+4. Storage: local only, drift/SQLite with schema migrations. Import P02 notes schema v1 (and unstamped v0) from the unchanged `scene_note_<artworkId>` keys, preserving all 103 legacy IDs and text. Export and import a zip (JSON plus images); "Delete everything".
 Acceptance: tests cover the progress maths, the SharedPreferences migration and the export/import round trip; the Mosaic renders 1,000+ tesserae at 60 fps.
 Hook: a time-lapse of a season's mosaic filling in.
 
@@ -1137,6 +1139,7 @@ Goal: all 39 districts of Istanbul are on the map with real content, and there a
    - Never fabricate heritage. Where a district's layer is modern (industry, a cemetery, a waterside, a district museum), say so honestly.
 2. A Bosphorus chapter (yalıs, Kuleli, Küçüksu, the fortresses) with a ferry-based route.
 3. Coverage audit: the content validator fails if any district has zero reviewed places, and the Atlas shows a district heat layer.
+   - P02 has drafts in 22/39 districts; retain one identity for multi-district walls/waterways and add segment/shore access geometry. A representative coordinate and chapter-anchor district do not describe the whole feature (O21).
 Acceptance: 39/39 districts and ≥ 110 reviewed places in the counters.
 Hook: "every district has a layer", a district-by-district flip clip.
 
@@ -1276,7 +1279,7 @@ Goal: regressions are caught before a human sees them.
    - Unit: content, distance, astronomy, prayer times, search, progress.
    - Widget and golden: design components and key screens in EN/TR and light/dark.
    - integration_test flows: first run, playing a Milestone, the dig, the Atlas offline, share export, the Daily, Mosaic persistence, pack download.
-2. CI: GitHub Actions (needs O06) running analyze, tests, content validation, the ARB check and the APK/AAB build, with cached Flutter and Gradle and artifacts retained.
+2. CI: GitHub Actions (needs O06) running analyze, tests, `dart run tool/content/validate.dart`, `python3 tool/content/audit_evidence.py`, the ARB check and the APK/AAB build, with cached Flutter and Gradle and artifacts retained. Include the invalid content fixture as an expected non-zero check.
 3. Device matrix:
    - The Samsung A52s (Android 14).
    - An API 26 low-RAM emulator and an API 35 large-screen emulator.
@@ -1351,26 +1354,27 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 
 | ID | What is needed from you (or outside) | Why / what it blocks | Needed by | Status |
 | --- | --- | --- | --- | --- |
-| O01 | Connect the Samsung Galaxy A52s over USB with USB debugging on, and keep it unlocked while a phase runs device checks. | Every performance, gyroscope, camera and TalkBack claim stays *unverified* without a physical device. | P06 | Resolved 2026-09-26: SM-A528B (Android 14) is listed by adb and runs the release build. It must be unlocked for automated UI checks. |
+| O01 | Connect the Samsung Galaxy A52s over USB with USB debugging on, and keep it unlocked while a phase runs device checks. | Every performance, gyroscope, camera and TalkBack claim stays *unverified* without a physical device. | P06 | Resolved 2026-09-26: SM-A528B (Android 14) is listed by adb and runs the release build. It must be unlocked for automated UI checks. No device connected during P02; those checks remain unverified. |
 | O02 | Decide whether the 5.3 GB Chora capture corpus (`~/Desktop/chora-ar/captures`) stays outside the repo (via `MILION_CAPTURES`) or is copied in with LFS. | Reproducible plate and recognition builds. | P01 | Resolved 2026-09-27: stays outside the repo; `MILION_CAPTURES` replaces the hard-coded paths (default: `../chora-ar/captures` next to the repo) and the three preparation scripts fail with a clear message when it is missing. |
 | O03 | On-site photos: current-day photos of each ghost-lens viewpoint, and real-light photos of key mosaics and tiles for recognition. | The P20 lens and P23 recognition quality. | P20 | Open |
 | O04 | A Google Play Console developer account and ownership of the listing. | Internal testing (P39) and release (P40). | P39 | Open |
 | O05 | Create the upload keystore, store it safely outside the repo, and fill in `android/key.properties`. | Signed release builds. | P39 | Open (P01: release builds read `android/key.properties` when present and otherwise print a loud Gradle warning and fall back to the debug key; no change until the keystore exists). |
 | O06 | A private GitHub repository (for CI), and optionally a domain (e.g. milion.app) for App Links. | P38 CI and P17 https deep links (a custom scheme works meanwhile). | P17 / P38 | Partly resolved 2026-09-27: `github.com/museumappofyou/milion` exists and `origin` pushes over SSH. CI (P38) and the optional domain remain open. |
 | O07 | Taste check: pick direction A or B from the P03 design sheet (5 minutes). | Non-blocking; P03 picks a default. | P03 | Open |
-| O08 | Language review: you review the Turkish copy; a native English reader reviews the English. | P34 acceptance. | P34 | Open |
+| O08 | Language review: you review the Turkish copy; a native English reader reviews the English. | P34 acceptance. | P34 | Open — P02 seeds have EN/TR names and hooks, all draft; 863 legacy Chora fields still need Turkish (P11). Registry UI moves to ARB with P03. |
 | O09 | Narration: accept Android TTS, or record human narration (you or a voice artist). | P22 quality level. | P22 | Open |
 | O10 | Field trial: 5–10 people and 3 half-days in Istanbul. | P23 recognition footage and P39. | P39 | Open |
 | O11 | Rights and licensing for images, fonts, 3D references, audio, Panorama 1453 and trademarks. Deferred by your decision. | Public release only. | P40 | Deferred |
 | O12 | Crash-reporting provider (Firebase Crashlytics needs a Firebase project; Sentry needs an account). Optionally Firebase Test Lab. | P37 and P38. | P37 | Open |
 | O13 | Hosting for content packs, only if Play Asset Delivery proves insufficient. | P36 fallback. | P36 | Open (probably not needed) |
 | O14 | Impulse responses: permission to use published Hagia Sophia measurements, or an on-site recording. | XI authenticity (a synthetic IR is the fallback). | P22 | Open |
-| O15 | On-site verification of mosque visiting rules and museum hours shortly before release. | Freshness of the visit cards. | P39 | Open |
+| O15 | On-site verification of mosque visiting rules and museum hours shortly before release. | Freshness of the visit cards. | P39 | Open — P02 deliberately stores unknown status, null checkedAt and null entrance for unverified drafts. Wave reviews must fill dated evidence before promotion. |
 | O16 | Old installs of "chora_scene_finder" and "İzvoya" on your phone are separate apps with separate notes and cannot be migrated automatically. Export anything you need, then uninstall them. | Avoids confusion during device testing. | P01 | Open |
 | O17 | A support or feedback email address for "Report a change" and the store listing. | P05 visit card and P40 listing. | P05 | Open |
 | O18 | Business model: free, paid, tip jar or paid chapters (you said you will decide later). | P40 listing and any billing work. | P40 | Open |
 | O19 | Upstream `flutter_onnxruntime` (masicai) still has the line `apply plugin: "kotlin-android"`, which Flutter flags as KGP use. Optional: file the issue using Flutter's template (docs.flutter.dev, migrate-to-built-in-kotlin). | Until upstream changes, the app uses the patched copy in `third_party/flutter_onnxruntime`. Remove it when a fixed release exists. | P01 check | Open — checked 2026-09-27: pub.dev's latest is still 1.8.5 (published 2026-09-08), so the patched copy and the `dependency_overrides` entry stay. Re-check before P38. |
 | O20 | Install git-lfs on this machine and migrate the large binaries (`*.jpg *.png *.bin *.onnx *.mp4`) when convenient, or keep the repository private and exclude it from CI caches. | The repo carries roughly 250 MB of binaries inside normal git objects; clone and CI costs grow every phase. P01 captured a plain baseline because git-lfs was not installed. | P38 | Open |
+| O21 | Survey gate entrances and clarify conflicting/site-spanning geography: Kerkoporta marker versus disputed gate, quarter points at Silivri/Mevlana/Topkapı/Edirnekapı, Hisart’s Şişli description versus Kağıthane map point, and access points for walls/waterways. | Draft representative points are unsuitable as walking destinations; `tool/content/verification.json` records each exception. | P15 / P30 / P32 / P39 | Open — needs field observations or authoritative institutional confirmation. |
 
 ## 9. Decisions
 
@@ -1389,3 +1393,11 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 - **2026-09-27: release signing rule.** Read `android/key.properties` when present; otherwise print a loud Gradle warning at configuration time and sign with the debug key so local release testing still works (O05 unchanged).
 - **2026-09-27: local installs are per-ABI APKs; the AAB stays the release artifact.** `tool/build_android.sh` builds both.
 - **2026-09-27: git without LFS for now.** `git-lfs` is not installed on this machine, so the baseline holds the binaries as ordinary objects (O20); the repository stays private.
+
+- **2026-09-27, P02: one versioned content registry.** Schema 1 JSON under `assets/content/`, pure-Dart models/repository/validator in `lib/content/`, with injected loading for Flutter or CLI. IDs and references are globally validated; all 39 districts are enumerated, EN is required and missing TR counted. Drafts stay out of default public place queries. The existing Chora artwork preview continues; the temporary Scene adapter is UI compatibility, not a second catalogue. The classifier reads only the output-index → artwork-ID map when Scan opens.
+- **2026-09-27, P02: preserve identity and notes.** All 103 legacy scene IDs and English text are migrated exactly, including M49_1–M49_4. F02 and F05 reference prototype Milestones I and II; neither is approved. Notes keep their `scene_note_<id>` keys and bytes, with an idempotent schema-v1 stamp; P19 imports v0/v1 into SQLite. The test suite checks every legacy note and protects future-version stores.
+- **2026-09-27, P02: mile zero is the surviving Milion fragment.** Fixed origin **41.008043° N, 28.978066° E**, from [Wikidata Q1187329](https://www.wikidata.org/wiki/Q1187329); the exact source revision is pinned in the registry. A Roman mile uses **1,480 m**, the approximate ancient value in [Calderini, “Miglio”, Enciclopedia Italiana (1934)](https://www.treccani.it/enciclopedia/miglio_(Enciclopedia-Italiana)/). Distances are spherical great circles (mean radius 6,371.0088 km), not historical road or walking distances; bearings are initial true bearings. Roman miles round to the nearest integer, sub-half-mile distances display `< I`, and only the origin displays zero. TR/EN km formatting is shared. Two destinations are tested against GeographicLib 2.1 and independent 3D vector calculations.
+- **2026-09-27, P02: verified draft geography is distinct from a visit review.** 155 places have canonical QIDs, coordinates, category, district (or explicit outside-province flag), EN/TR names/hooks and a review phase. Wikidata exports and hashes, OSM exceptions and phase-name coverage live in `tool/content/`. Redirected Sokollu Q18361069 was resolved to Q1572472; the Fatih mosque selection was corrected to Istanbul Q756189. The province bounding rectangle comes from [OSM relation 223474](https://www.openstreetmap.org/relation/223474); it is not a polygon test. Nine outside-province records have no fabricated Istanbul district. Entrances/current functions/status remain explicitly unverified, with null dates, until checked; promotion requires a verified entrance and dated status.
+- **2026-09-27, P02: aliases, interiors and long features.** One layered identity covers each historic/current name pair; building rooms and ensemble components stay attached to their parent (`phase_place_coverage.json`). Land/sea walls share a record; Golden Gate belongs to Yedikule. Waterways, bridges, walls and Via Egnatia use tagged representative points; a single chapter-anchor district does not imply that their whole extent lies there. Gate quarters and the contested Kerkoporta marker are not surveyed gate entrances (O21). P15/P32 will add actual segment/access geometry.
+- **2026-09-27, P02: keep review debt visible.** 863 legacy artwork fields lack TR; new seed place names/hooks are bilingual but still need O08 review. There are 201 sources and two credited Media references with original/derivative hashes. No place or Milestone gained reviewed/approved status. Three Daily and three On-this-day drafts are authoring inputs in `tool/content/editorial_seeds.json`; P18 owns publication and the runtime feature.
+- **2026-09-27, P02: visible debug inspection.** Debug builds expose Registry by long-pressing the About version. Distance-sorted rows and expandable category/district counts work in EN/TR, with vertical widget captures in `studio/captures/P02/`. No new cards, chip navigation, decorative textures or gradients; existing theme fonts remain a P03 replacement. P03 moves Registry UI text into ARB. No device was attached for P02: physical performance, TalkBack and on-site accuracy remain unverified. Release APKs and AAB build with the existing O05 signing fallback.

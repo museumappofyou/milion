@@ -10,6 +10,8 @@ import 'package:flutter_onnxruntime/flutter_onnxruntime.dart';
 import 'package:image/image.dart' as img;
 
 import '../models/scene.dart';
+import '../content/bundled_content.dart';
+import '../content/prediction_map.dart';
 
 class SceneMatch {
   const SceneMatch(this.scene, this.probability);
@@ -28,8 +30,6 @@ class LivePrediction {
 class Classifier {
   static const String modelAsset = 'assets/model/chora_scene_classifier.onnx';
   static const String classesAsset = 'assets/model/classes.json';
-  static const String mapAsset = 'assets/model/class_map.json';
-  static const String infoAsset = 'assets/data/scene_info.json';
 
   static const String _inputName = 'image';
   static const String _outputName = 'logits';
@@ -42,46 +42,26 @@ class Classifier {
 
   OnnxRuntime? _ort;
   OrtSession? _session;
-  List<Scene> _scenes = const [];
+  List<Scene> _predictionScenes = const [];
   bool _ready = false;
-  Future<void>? _catalogLoading;
 
   bool get isReady => _ready;
-  List<Scene> get scenes => _scenes;
+  Scene sceneAtPrediction(int index) => _predictionScenes[index];
 
-  Future<void> loadCatalog() => _catalogLoading ??= _readCatalog();
-
-  Future<void> _readCatalog() async {
-    final classes = (jsonDecode(
-      await rootBundle.loadString(classesAsset),
-    ) as List).cast<String>();
-    final records = (jsonDecode(await rootBundle.loadString(mapAsset)) as List)
-        .cast<Map<String, dynamic>>();
-    final info = (jsonDecode(await rootBundle.loadString(infoAsset)) as Map)
-        .cast<String, dynamic>();
-    final byId = {
-      for (final record in records) record['scene_id'] as String: record,
-    };
-
-    _scenes = [
-      for (final id in classes)
-        Scene(
-          id: id,
-          title: (byId[id]?['title'] as String?) ?? id,
-          room: (byId[id]?['room'] as String?) ?? '',
-          surface: (byId[id]?['surface'] as String?) ?? '',
-          folder: (byId[id]?['scene_folder'] as String?) ?? '',
-          summary: (info[id]?['summary'] as String?) ?? '',
-          cues: ((info[id]?['cues'] as List?) ?? const []).cast<String>(),
-          position: (info[id]?['position'] as String?) ?? '',
-          artworkType: (info[id]?['artwork_type'] as String?) ?? '',
-        ),
-    ];
+  Future<void> _loadPredictionMap() async {
+    final registry = await bundledContent.load();
+    final ids = (jsonDecode(await rootBundle.loadString(classesAsset)) as List)
+        .cast<String>();
+    final mapping = PredictionMap(ids, registry);
+    _predictionScenes = List.unmodifiable([
+      for (final id in mapping.artworkIds)
+        sceneForArtwork(registry.artwork(id)),
+    ]);
   }
 
   Future<void> load() async {
     if (_ready) return;
-    await loadCatalog();
+    await _loadPredictionMap();
     _ort = OnnxRuntime();
     try {
       // On web the session takes a URL, and Flutter serves bundled assets
@@ -295,10 +275,16 @@ class Classifier {
   }
 
   List<SceneMatch> _topMatches(List<double> probabilities) {
+    if (probabilities.length != _predictionScenes.length) {
+      throw const FormatException(
+        'Model output does not match artwork mapping',
+      );
+    }
     final order = List<int>.generate(probabilities.length, (i) => i)
       ..sort((a, b) => probabilities[b].compareTo(probabilities[a]));
     return [
-      for (final i in order.take(3)) SceneMatch(_scenes[i], probabilities[i]),
+      for (final i in order.take(3))
+        SceneMatch(_predictionScenes[i], probabilities[i]),
     ];
   }
 }

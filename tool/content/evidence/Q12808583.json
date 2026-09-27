@@ -1,0 +1,748 @@
+{
+  "pageid": 14213823,
+  "ns": 0,
+  "title": "Q12808583",
+  "lastrevid": 2461628059,
+  "modified": "2026-02-07T21:34:58Z",
+  "type": "item",
+  "id": "Q12808583",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Istanbul Military Museum"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Askeri Müze"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "museum in Istanbul"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Harbiye'de bulunan askerî müze"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "ba2cc393fe0cab7f6eec76718bc61801442e69a9",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0484,
+              "longitude": 28.9883,
+              "altitude": null,
+              "precision": 2.77777777778e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q12808583$D1C0DC3C-99D3-4A8F-8026-50048EECB3EE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c2657efc2ac59d6fc840e8183d479a754c6d1090",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2772772,
+              "id": "Q2772772"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$0B521549-F218-4B49-8529-9D6860E14553",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$4D7CA762-C6D5-4B79-9D65-73E664618C81",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "611ce9e95d460aa499d61ca2009f8573ddaf5ca4",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ec21abf530ffcdaf388751949a1836dc9a409039",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/askeri-muze",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "1846cdfa6b4ead72e2c1b3f6a05fc6566408192b",
+          "datavalue": {
+            "value": "Askeri Müze 970.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q12808583$95CC8183-AD37-480A-80F2-12AF32956796",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "e3de7670e34b1811ff63a46075afcc482e927bb2",
+          "datavalue": {
+            "value": "Istanbul Military Museum cannon 02.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q12808583$237A783E-C017-4AB7-B1A4-218484DEFFCA",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "55c034997f381b1a3e708e0947b0c33e2dd2f324",
+          "datavalue": {
+            "value": "7626449",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$BBC6A9FB-0C61-4673-9205-4B8D40C6FF54",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "34faf9fc7171b7bc93b53abf64ea6c85a6567b1a",
+          "datavalue": {
+            "value": "Istanbul Military Museum",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q12808583$BD4180E1-5214-45D5-AC5D-CFE091D43612",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$148D746F-9454-41B8-9928-BE239AC8DC4E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8f08ac3e0839bdbc4c6eb8d671e772deb12ba423",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "250b03083f7971a02473af3e43115ef521b1440d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 465,
+                      "id": "Q465"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "611ce9e95d460aa499d61ca2009f8573ddaf5ca4",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ec21abf530ffcdaf388751949a1836dc9a409039",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/askeri-muze",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "9488bf5a94ef7447ccb880f162b1318cb58b04a7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 390637,
+              "id": "Q390637"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$dcb5d3d7-4816-cbe2-e285-a79458af3dcc",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "61e452733efcaee9d0a6817ecd2fde3ac77aa116",
+          "datavalue": {
+            "value": {
+              "time": "+1846-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q12808583$44e631d2-4715-76f8-7494-bb7dc2880318",
+        "rank": "normal"
+      }
+    ],
+    "P213": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P213",
+          "hash": "670d9ccfadd25ee8be16f758891847cd9e29dbc4",
+          "datavalue": {
+            "value": "0000000122048281",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$3285978B-06BD-4FE0-8575-6B8F09F49CF9",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "95fb205b7850ede797c52c5c86886e29df197194",
+          "datavalue": {
+            "value": "n88218441",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$4DB08446-C19F-423F-9E6B-CBC316EB5E47",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "c091114f792724afc9191f66857d973ba245eb95",
+          "datavalue": {
+            "value": "168676025",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$7E3BB23D-4373-43A0-8D88-355B8D2DF513",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "0f8866678023d0ad7f138369105f910c1b297a45",
+          "datavalue": {
+            "value": "/m/08gwhx",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$102685D9-D3D9-4B54-897D-AAB49723BFA8",
+        "rank": "normal"
+      }
+    ],
+    "P2013": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2013",
+          "hash": "91cb0cf2c2c8ccce7b30a37c045d4e7eeb90e302",
+          "datavalue": {
+            "value": "askerimuzemehter",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$2F9B7137-BCD8-4EBF-B0CC-82279DCA783D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0e732d833b02d8e5654b32571ff55d2d3b40f398",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "c60ff6958b296682e7d5f424dbec24ea1ca0a07b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 24237997,
+                      "id": "Q24237997"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "e485fe75717181186e049676e54353e0586bfa3a",
+                  "datavalue": {
+                    "value": "https://it.wikivoyage.org/wiki/Città_nuova_(Istanbul)?oldid=701721",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "386172d6be57f70435cc07caa5a79768fe340eea",
+          "datavalue": {
+            "value": "987007568394005171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$4FDB2D3C-EDB7-4818-88C5-D5EFC01749E5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106509962,
+                      "id": "Q106509962"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "6b5eb7f26469c8298df1aebb5e0bfcc3ffd357a8",
+          "datavalue": {
+            "value": "117776",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$9B6A8FDB-3134-45AE-950B-A69486567B2C",
+        "rank": "normal"
+      }
+    ],
+    "P11693": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11693",
+          "hash": "0c9dc545920d5ed28788a203da78acfb6b2a482c",
+          "datavalue": {
+            "value": "1346157990",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$9A606EC5-FD1B-4422-89E8-7B37EF055014",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "7976b8e4395487fc234d23fec9d447596a014617",
+          "datavalue": {
+            "value": "askeri-muze",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q12808583$1F0DFFE0-E93B-41F1-8237-26E87F53CFC9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "611ce9e95d460aa499d61ca2009f8573ddaf5ca4",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ec21abf530ffcdaf388751949a1836dc9a409039",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/askeri-muze",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$D32AC3A9-AD70-4047-832A-EC802E2AD3EF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "611ce9e95d460aa499d61ca2009f8573ddaf5ca4",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ec21abf530ffcdaf388751949a1836dc9a409039",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/askeri-muze",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$9AA7AA85-56C8-44D9-A466-1F146E631492",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$1158F72E-F6C1-450A-8D54-68B9BD45B5EA",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "e484d6844e38fa8d93d4abcfaf27cf658c4ed20e",
+          "datavalue": {
+            "value": "https://askerimuze.msb.gov.tr/ing/index.html",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q12808583$D600A1AA-A666-4114-B182-3B96FC4F61F0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e119d9d3dfea72a827fe5316e61d22307cfd3b7f",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "c60ff6958b296682e7d5f424dbec24ea1ca0a07b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 24237997,
+                      "id": "Q24237997"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "b0940a278fe3261ab6b3d769c28257149e7c6cee",
+                  "datavalue": {
+                    "value": "https://it.wikivoyage.org/wiki/Città_nuova_(Istanbul)?oldid=904783",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "ad4e621ec39240cd40daba463c7d9f49167b74cc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3072081,
+              "id": "Q3072081"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q12808583$6e599f2b-4c80-486e-b49a-333115adb0f6",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,897 @@
+{
+  "pageid": 2013006,
+  "ns": 0,
+  "title": "Q2086068",
+  "lastrevid": 2485955343,
+  "modified": "2026-05-01T02:16:41Z",
+  "type": "item",
+  "id": "Q2086068",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Ντολμά Μπαχτσέ Τζαμί"
+    },
+    "en": {
+      "language": "en",
+      "value": "Dolmabahçe Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Dolmabahçe Camii"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Beşiktaş ilçesinde tarihi cami"
+    },
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    }
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$8820a221-424f-d923-b48c-3bbcefb25126",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a3b2dfe078c4976bd8e7918376fa70bfc1812f0f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "87f09ac6376643af1eaa61169b7fafa1c5996114",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/dolmabahce-camii",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "b43299859bad9a255c4d3e83c525fc418c0dd46e",
+          "datavalue": {
+            "value": {
+              "latitude": 41.03672778,
+              "longitude": 28.99528889,
+              "altitude": null,
+              "precision": 2.77777777778e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q2086068$5730DD28-B230-4F4E-B44C-D30FC232DE2A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "a4dfc1ddbdf6f8d8dab0dbd717798479cb83e842",
+          "datavalue": {
+            "value": "/m/05p54s4",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2086068$D890BF2D-CDF7-4F49-B096-637AFC30A0B3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$3BE0C8E8-2826-40B6-BC02-69E617D0F56F",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$D46C38BE-DBE5-4D30-BB6D-A812C400391B",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "432023240c3b98b2140b29dd165d0649d6b47819",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 217411,
+              "id": "Q217411"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$f1834b84-4b7a-0f73-e566-84fc7f7b5ee3",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "1911787ff979048854a570194c803dbb3acf7f63",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 840829,
+              "id": "Q840829"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$5a1bb48b-45b8-466c-7c15-9790fe473124",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$8C7CA4C8-C2BA-40F5-818B-ACD934788A2C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a3b2dfe078c4976bd8e7918376fa70bfc1812f0f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "87f09ac6376643af1eaa61169b7fafa1c5996114",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/dolmabahce-camii",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "ad4e621ec39240cd40daba463c7d9f49167b74cc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3072081,
+              "id": "Q3072081"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$002437cc-4ed7-4dba-36a5-b4434175f89f",
+        "rank": "normal"
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "2beb491b2e5adeec99e4fad0d476db1d22084eda",
+          "datavalue": {
+            "value": {
+              "time": "+1853-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2086068$6080267e-47bf-2e16-587c-1629aa68cc62",
+        "rank": "normal"
+      }
+    ],
+    "P729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P729",
+          "hash": "1e538ad76e32367aac58aa9521b86ba959fd3824",
+          "datavalue": {
+            "value": {
+              "time": "+1855-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2086068$916895a2-49c1-d86f-ee35-1d0cb1fef4db",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "ac573341687d1cbdfde77474a18130f4267b6706",
+          "datavalue": {
+            "value": "Dolmabahçe Mosque",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q2086068$BD20B555-D84A-43D8-BB32-AFA1C58F0CAD",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "746b107b7d10dffa9e65b93cc2e22d81485d2474",
+          "datavalue": {
+            "value": "Dolmabahçe Mosque Mars 2013.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "377a5ecb66d61ebb874c6fa1873cfe2686d22648",
+              "datavalue": {
+                "value": {
+                  "text": "Dolmabahçe Mosque in 2013",
+                  "language": "en"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q2086068$8DC368DB-7D04-4388-A006-C5ABEBDDC5BE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "38e17ec2d452e1c6b39bb4ca8d1be8eed2cfea76",
+          "datavalue": {
+            "value": {
+              "time": "+1855-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2086068$C7F60DAB-C3A4-4C76-8998-E47653CF2810",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2ed58e95ca58b1c82b227b1f8e508552f2e1f91e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "13bec797d6d1870ff73c196932154b5c17cc3399",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Moschea_di_Dolmabahçe&oldid=107212865",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "8cd25fcca12e789463ec787a78bd07ba8c5a8230",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 86115082,
+              "id": "Q86115082"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$E05B98D9-9980-4E88-86F2-0EC83CD39783",
+        "rank": "normal"
+      }
+    ],
+    "P8596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8596",
+          "hash": "7c9f06a8960490758d39b8e75fc2e69aebaab4cc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104551570,
+              "id": "Q104551570"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$53cb087a-4a91-4a4c-8f85-ce75d49c6ea9",
+        "rank": "normal"
+      }
+    ],
+    "P8989": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8989",
+          "hash": "812673988a120dea5036875c81d2ad0b7da7673c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 105740246,
+              "id": "Q105740246"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$de6f8a40-95b1-4e0f-8bd3-a4cca66e7581",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "924ab53fade8d37a4a08a8696680629d4ea0d1c7",
+          "datavalue": {
+            "value": {
+              "text": "Dolmabahçe Camii",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q2086068$5f4a0be8-4445-19e6-75e3-774cd219e0c2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ea0f40a97884015af8f033752b5af6b376f39e05",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0d29a88d28761ae9e5098432feec6737a40f16cd",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=121079279",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2046": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2046",
+          "hash": "24df1d0fb7d5edf3bc7386671324f01fc49bfeed",
+          "datavalue": {
+            "value": {
+              "amount": "+625",
+              "unit": "http://www.wikidata.org/entity/Q25343"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q2086068$d294639b-4830-320e-fe05-5b5927378d72",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ea0f40a97884015af8f033752b5af6b376f39e05",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0d29a88d28761ae9e5098432feec6737a40f16cd",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=121079279",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "c783da5b104b77f40edde729476ec53590cf600a",
+          "datavalue": {
+            "value": "7582",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2086068$B0E69640-6471-48F8-A6ED-522AABE9C9AA",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "499b2cf425dd1c87327d004e8f7387db11268f42",
+          "datavalue": {
+            "value": "dolmabahce-camii",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2086068$f892482d-489e-e881-3b2f-314e90e2a6e5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a3b2dfe078c4976bd8e7918376fa70bfc1812f0f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "87f09ac6376643af1eaa61169b7fafa1c5996114",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/dolmabahce-camii",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "9cd09ecf73b5915d65f8a950c1e10d2f1884b8a8",
+          "datavalue": {
+            "value": "498861874",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2086068$C97D9D05-5475-4839-A44E-E89BF0883127",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$9A0CADC2-ABD8-4DDF-84AE-94EC4503C863",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$004EEDBE-108C-4CD8-A070-43F6A27EE4BE",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$9360CE76-CC7C-432E-B8EE-3E43FF50D7C9",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2086068$B30A1F13-3A6E-4AA6-B434-4893B7920C97",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "401a4d123db25aff7c8a3270f56411e5800963ae",
+          "datavalue": {
+            "value": "250",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2086068$093BE1C9-9DF6-46DA-9C2E-CAFAF2DEC927",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "521a975a05b5aa47bd2b26f6b9dc6781957fc989",
+          "datavalue": {
+            "value": "Entity[\"Building\", \"DolmabahceMosque::d8hn2\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2086068$5F71690A-F5E3-4B92-AEB4-A4E763F80480",
+        "rank": "normal"
+      }
+    ]
+  }
+}

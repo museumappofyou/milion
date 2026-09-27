@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "kind": "media",
+  "records": [
+    {
+      "id": "anastasis-original",
+      "path": "assets/anastasis/flat_reference.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Caner Cangül / Kültür Envanteri",
+        "tr": "Caner Cangül / Kültür Envanteri"
+      },
+      "source": "anastasis-photo",
+      "era": "modern",
+      "historicalPhoto": false
+    },
+    {
+      "id": "judgment-original",
+      "path": "assets/last_judgment/vault_reference.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Caner Cangül / Kültür Envanteri",
+        "tr": "Caner Cangül / Kültür Envanteri"
+      },
+      "source": "judgment-photo",
+      "era": "modern",
+      "historicalPhoto": false
+    }
+  ]
+}

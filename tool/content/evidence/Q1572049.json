@@ -1,0 +1,837 @@
+{
+  "pageid": 1507991,
+  "ns": 0,
+  "title": "Q1572049",
+  "lastrevid": 2485957639,
+  "modified": "2026-05-01T02:31:02Z",
+  "type": "item",
+  "id": "Q1572049",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Kara Ahmed Pasha Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Gazi Ahmet Paşa Camii"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde tarihi cami (1558)"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "5bedc317b5e5ed7b9d8ce98f0e2369ba7f70c447",
+          "datavalue": {
+            "value": {
+              "latitude": 41.021116490454084,
+              "longitude": 28.929223436127696,
+              "altitude": null,
+              "precision": 1e-08,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q1572049$BBA74249-EFE8-4B33-9CD5-2A676D577BE0",
+        "rank": "normal"
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "66ae19eee43b4bf2ba4211529c6fd710a8bea74a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5600,
+              "id": "Q5600"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$98B06893-55D6-49C3-8F5F-9F04848BD7EB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$CF404388-8FC5-4BF8-82D4-1A5F2A2DCCFB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1284beaafdca0972b7c9ed5c8d6691bf47c4bb79",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "0750309d8a5205bcc61c68ede015ae38b105ae42",
+                  "datavalue": {
+                    "value": "76019",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "1c2aeb96b78dfc88934ce3c410e36af4c25e7c8a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-30T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          },
+          {
+            "hash": "1d8fac17386a32ae45b33f0502bdc6dbf81370ea",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "32cc5c4665a299a735d6bef1fae1b76a8faebe5c",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/ahmed-pasa-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "82302c2a533bddeffdca3c12e77510d6672d2020",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "88118de1bb84a982b95b1fa801e0ffb47e894a13",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/hafiz-ahmed-pasa-camii-ve-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "6a40fd3fc8bbef55d70bd1e6b751cfa3e5402885",
+          "datavalue": {
+            "value": "Kara Ahmed Pasha Mosque",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1572049$B12DB921-2A8F-4C3E-BFC8-D379A1FC8318",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$791962F6-EE9B-4733-A8CC-50D91E91A342",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$1fc33bc8-412d-d96c-df06-807955db0ca0",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "2f9d41dc8fabe70a71c1dd7a1fa82b86d052bc6e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6080282,
+              "id": "Q6080282"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$cc12af57-47f8-5874-c7dd-0773e88a0c3f",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$70B99C3F-7F65-4B06-B1CD-6B1FA1D2A487",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "1d8fac17386a32ae45b33f0502bdc6dbf81370ea",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "32cc5c4665a299a735d6bef1fae1b76a8faebe5c",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/ahmed-pasa-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "82302c2a533bddeffdca3c12e77510d6672d2020",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "88118de1bb84a982b95b1fa801e0ffb47e894a13",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/hafiz-ahmed-pasa-camii-ve-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5383": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5383",
+          "hash": "0750309d8a5205bcc61c68ede015ae38b105ae42",
+          "datavalue": {
+            "value": "76019",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$22963B23-4FA1-4240-B723-4E1D79DDCEF1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5d595572bed0bb3e3d4c8d727736916185b0fd7",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                  "datavalue": {
+                    "value": "https://www.archinform.net/service/wd_aipro.php",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "79336cd6a2a7de751fe8400a070acfc1b1b9fe8c",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-14T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4aeb3bb37530ed5350b58641db031cfdf94f8f80",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1454820,
+              "id": "Q1454820"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$35BC8575-F5D5-4FD0-93E6-88128F3C8383",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d95936213c75cf7c2fe948b3e6d3d5e4a9ca2e70",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "0750309d8a5205bcc61c68ede015ae38b105ae42",
+                  "datavalue": {
+                    "value": "76019",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "4e0ff144406f4443ab3242b9a897cd784f1bc46f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-14T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "77a7548d8323009c0a132f851932db83485194c1",
+          "datavalue": {
+            "value": {
+              "time": "+1572-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1572049$24759C07-C98A-415D-A90E-D198984AF644",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "71502c1abd717c5a156be6ba4ad5dc901f089232",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "20430d907234c96d83762feaa1263e2fa7bcf04d",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Kara_Ahmed_Pasha_Mosque&oldid=896488804",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "a9836735923c2443027c3d991ee027616119d0aa",
+          "datavalue": {
+            "value": "Kara Ahmet Pasha Camii DSCF7434.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q1572049$e24aa6ce-4eb3-0482-c56f-f62de83d034d",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "910d26ff89845fc366d61d256403e2c8ee27e9b2",
+          "datavalue": {
+            "value": "/m/06w5rm3",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$BD326226-E48A-4FEE-88C4-E8D21011CF42",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "046175c7827d54253658dc370fea0e6bc443f75f",
+          "datavalue": {
+            "value": "11259",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$349F0C92-927B-425A-9ED5-CD668DA3E361",
+        "rank": "normal"
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "c6ab2123428428c029de9f68490509634fed155d",
+          "datavalue": {
+            "value": "7318631",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$5b6eb417-4dc4-62eb-3541-559eb4c1c4e0",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "6faa6a63a5c72efb759f8d98abf7229e3ca6c17b",
+          "datavalue": {
+            "value": "ahmed-pasa-kulliyesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$1D75BD07-D000-43F5-89A0-737DEA53D4D3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1d8fac17386a32ae45b33f0502bdc6dbf81370ea",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "32cc5c4665a299a735d6bef1fae1b76a8faebe5c",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/ahmed-pasa-kulliyesi",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$554EE7DF-7069-45A0-B8C6-9DA0FA5B2763",
+        "rank": "normal"
+      }
+    ],
+    "P5817": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5817",
+          "hash": "3a5c47216c1ed20dc4a40d9bcde91e515d6a6966",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 55654238,
+              "id": "Q55654238"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$231ce83d-4aeb-51c3-f43d-1f5750be57a4",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$ef3c861b-471e-ed14-73e9-5964e2814718",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1572049$3068C3E2-E7CD-4A37-AA1E-9FA9EBC4652B",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "57e42c31bc366492cc66fc14a132f87136086a73",
+          "datavalue": {
+            "value": "5113",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$C963EEB8-AD8F-4B03-9B17-A9B1214E90BA",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "7364cfbd3ff359b13c47f74608d3b7868b8269ef",
+          "datavalue": {
+            "value": "Entity[\"Building\", \"KaraAhmedPashaMosque::9d43p\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1572049$82EAF6BE-C6F8-44C0-B0B8-08DEFFE77E36",
+        "rank": "normal"
+      }
+    ]
+  }
+}

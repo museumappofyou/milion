@@ -1,0 +1,222 @@
+{
+  "pageid": 100468932,
+  "ns": 0,
+  "title": "Q105078358",
+  "lastrevid": 2187762739,
+  "modified": "2024-06-24T17:23:35Z",
+  "type": "item",
+  "id": "Q105078358",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Walls of Galata"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Galata Surları"
+    },
+    "az": {
+      "language": "az",
+      "value": "Qalata müdafiə divarları"
+    }
+  },
+  "descriptions": {},
+  "aliases": {},
+  "claims": {
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "053aafe3cc8e5b36bebab5a48cc228642c20ab87",
+          "datavalue": {
+            "value": "/g/11lt484s58",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q105078358$40832BA5-DDC8-4E12-84EB-6F68C3E9AF7E",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b2c0eefd1ab36af440f4b378b39407578ef51ed6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 57346,
+              "id": "Q57346"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q105078358$4ee3682e-4a1f-e454-d740-f25405ccb86b",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q105078358$b352151f-4967-f573-4882-db2d677e21cf",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q105078358$b242fca2-4bef-297a-eb34-607acce75372",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "4f6ddbc3b47f5450d5f80c8ef2dfa77549f45c73",
+          "datavalue": {
+            "value": "Ruins of the Galata Walls (1).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q105078358$2358004b-4dcd-6df6-4330-7585efe8f6da",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "4c06124a89ab2a8d8503c0a57a1b896b42d6d519",
+          "datavalue": {
+            "value": {
+              "text": "Galata Surları",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q105078358$f672f5f0-4f10-9213-61d3-8a7bcbb86ffb",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "0952df38d737c36cdac7e3bc569ce758f2738e41",
+          "datavalue": {
+            "value": {
+              "text": "Ceneviz Surları",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q105078358$709595d3-4704-e252-dd05-58786954faf3",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "f60a29904ef9becf192306297e23415707ac089a",
+          "datavalue": {
+            "value": {
+              "latitude": 41.024965023042185,
+              "longitude": 28.968932066802218,
+              "altitude": null,
+              "precision": 1e-08,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q105078358$600b4f48-41d3-6156-6ea2-b4078e563e97",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "67ba1ea683dd49cfaef104af9d48af2b11970b59",
+          "datavalue": {
+            "value": "Walls of Galata",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q105078358$68d18fbf-6301-44b0-a7dc-e539b43226bd",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Walls of Galata",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Walls_of_Galata"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Galata Surları",
+      "badges": [],
+      "url": "https://tr.wikipedia.org/wiki/Galata_Surlar%C4%B1"
+    },
+    "azwiki": {
+      "site": "azwiki",
+      "title": "Qalata müdafiə divarları",
+      "badges": [],
+      "url": "https://az.wikipedia.org/wiki/Qalata_m%C3%BCdafi%C9%99_divarlar%C4%B1"
+    }
+  }
+}

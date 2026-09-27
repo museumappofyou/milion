@@ -1,0 +1,1061 @@
+{
+  "pageid": 475742,
+  "ns": 0,
+  "title": "Q505954",
+  "lastrevid": 2550004725,
+  "modified": "2026-09-27T12:20:08Z",
+  "type": "item",
+  "id": "Q505954",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Grand Bazaar"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Kapalıçarşı"
+    },
+    "el": {
+      "language": "el",
+      "value": "Το Μεγάλο Παζάρι"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "bazaar in Istanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Dünyanın en eski kapalı alışveriş merkezi"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "4e1e9bfc2bd6e2962061c50d316ccdfe74393989",
+          "datavalue": {
+            "value": "Grand Bazaar, Istanbul",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q505954$BE4A461E-1639-4509-B3CC-40BDBC27C6DC",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "2277a16e0811e3895fd0ac769cadc822a854a649",
+          "datavalue": {
+            "value": {
+              "latitude": 41.010580555556,
+              "longitude": 28.967933333333,
+              "altitude": null,
+              "precision": null,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q505954$AAA701C0-8D15-4E2D-99D2-BD84FE87E462",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "f3edc7f60180e32b78a3b89bb0352f359c03a5c1",
+          "datavalue": {
+            "value": "/m/01ym_8",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$595CC101-1EB0-4298-AADD-543F61770FAC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "90b2f486c2246d1dcf3cf3c5227773328065fbb7",
+          "datavalue": {
+            "value": "7302385",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$486A9F78-0CFC-4882-AA49-A6498EB192EA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$E0D4D9BB-8A47-40D1-94C4-783EBA588DB8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "bd88be86331a774b17e9265c4ca06cb8d71aff0a",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "7b6d16776b63935b3b720d82fcd74199589c9138",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/buyuk-carsi--istanbul",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "d873b7d626ca33f0ca7125082824a38bf682d8d4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 219760,
+              "id": "Q219760"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$67a0b3ec-418e-e333-b73e-57f9b8d20214",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "adf47bfbd2e3146e69372bfb4609f21b5493a09e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2080521,
+              "id": "Q2080521"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$011ba3df-46fa-81a0-1055-afca1997bc8c",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "6439832c59906463006d11d58b34c56764cb4094",
+          "datavalue": {
+            "value": "Ворота Beyazıt .jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q505954$95001288-4475-479F-95D6-79C36CF78448",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "337c6c57ee9d14d8cf673e5e0c024037b3de6f8b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$96666922-D8DF-4DD8-A123-3F07367D915B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$39CB9B34-54D2-4BA3-8818-BED861892235",
+        "rank": "normal"
+      }
+    ],
+    "P825": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P825",
+          "hash": "cd627a9fb28debe7190467b116bc67da63367727",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 34503,
+              "id": "Q34503"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$B5CCAC32-4E97-43DB-9C14-CD8CDC6F90EE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "4623afde202d90c0010ebb9be2b274e41c559e6f",
+          "datavalue": {
+            "value": "http://www.kapalicarsi.org.tr/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q505954$4EF6387D-8A45-4931-ABB8-990A7ED436B4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P935": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P935",
+          "hash": "5bfcc97032ef84d9d8c09ef45fb5c5d87629ab33",
+          "datavalue": {
+            "value": "Kapalı Çarşı",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q505954$2E69BE55-F2E0-4D60-AD91-61FB36AD9016",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "1a417b212c364e550b894902eeeb9a2281afbf27",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 55304146,
+              "id": "Q55304146"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$DCD2983A-8555-4B85-8C2B-D3D6696B175B",
+        "rank": "normal"
+      }
+    ],
+    "P6117": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6117",
+          "hash": "60de907c85492d1af56f21419f6b1954100696b8",
+          "datavalue": {
+            "value": "50049",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$f745cb8d-4221-1073-a0df-db62aeb2172f",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "5ccb9645f8accab04b66949e62013323d65a940f",
+          "datavalue": {
+            "value": "n87844786",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$98CDE2C3-27CA-46CF-8546-9967EAEB7AD2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-03-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "267ec89eee63d7f49ef323e46f15e1683828f620",
+          "datavalue": {
+            "value": "129100461",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$BD858548-DF1F-4DD0-B6C7-EB8981802EA9",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "8006bbc7c13f912dc71d2ee34f9c8c10ee8d3274",
+          "datavalue": {
+            "value": {
+              "text": "Kapalıçarşı",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q505954$221247a2-4431-db97-1fc8-9679c53289cd",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "ef77e755c8142c8844dc6a4beb52850783ed99c9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 34503,
+              "id": "Q34503"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$EFD04F13-EE54-4AE5-B9BB-1988116F6294",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6bfa624c7bacfc372c5da401472ab1829e7bdfac",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "183d074dab8af5041cd489bd4276f7a1fc92c851",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Grande_Bazar_d'Istanbul&oldid=112132767",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "a8f7ce55ada5033b3ff1b95f6e8b091917687b78",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img41 Grand Bazaar.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q505954$afe81913-4123-0ab6-f3bf-5d2826641621",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$48DD43AF-296E-43A9-8BA9-8607394ED4AE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "bd88be86331a774b17e9265c4ca06cb8d71aff0a",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "7b6d16776b63935b3b720d82fcd74199589c9138",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/buyuk-carsi--istanbul",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "e0f45ff861535524e17d73661d533d367ea7e1b3",
+          "datavalue": {
+            "value": "8374",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$66C4596D-B077-4A81-ABD7-DADC1CC85CAE",
+        "rank": "normal"
+      }
+    ],
+    "P8593": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8593",
+          "hash": "e12c13bcba4dbe9af290f71a74a21e5a5b0a21a9",
+          "datavalue": {
+            "value": "41478",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$c233ce1f-4555-4dfa-f893-ce9f61ec3b58",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "b123a3bbdda27e5f7fa5c32d23e76495ecc7ede2",
+          "datavalue": {
+            "value": "303807317",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$00C7A03C-44FC-4FCA-86AD-390C712ACB81",
+        "rank": "normal"
+      }
+    ],
+    "P9721": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9721",
+          "hash": "3adcf4c51dabc6aea5e12f2482621aff63d859b8",
+          "datavalue": {
+            "value": "Gran Bazar, Estambul, Turquía, 2024-09-29, DD 04.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q505954$a0084d39-4159-981d-2f70-0d54df979247",
+        "rank": "normal"
+      }
+    ],
+    "P11924": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11924",
+          "hash": "6163a48d236a4922f29303e41e3b73de02f4f8e5",
+          "datavalue": {
+            "value": "grand-bazaar-istanbul",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$b95bfe61-4056-d1ab-7630-4d93a7aff1ae",
+        "rank": "normal"
+      }
+    ],
+    "P8406": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8406",
+          "hash": "980f6893a47708e22591e52ef0da04c4ac324935",
+          "datavalue": {
+            "value": "90000369861",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$831B296F-DFA6-4369-BA63-D82D359DC688",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "77247baa751a0fab44cb20c104eacbd8b8e1655f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d5c5ca7efd868e48c2dd9ba4b699ea29b694b169",
+                  "datavalue": {
+                    "value": "https://doi.org/10.1093/oao/9781884446054.013.90000369861",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "045678d6f934cfce6fc5d26d371a225cf4d51eeb",
+          "datavalue": {
+            "value": "buyuk-carsi--istanbul",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$1CDB724B-1B19-42DC-B9CD-9B6963CB1036",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "bd88be86331a774b17e9265c4ca06cb8d71aff0a",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "7b6d16776b63935b3b720d82fcd74199589c9138",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/buyuk-carsi--istanbul",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "50db165aee2a5357a85a3273d4fe5061754f90eb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 117841865,
+              "id": "Q117841865"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$A25CD1DB-1AE5-444A-8BD6-B1E90558677B",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$0AF08557-61E3-430C-A214-1E542B60665B",
+        "rank": "normal"
+      }
+    ],
+    "P9906": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9906",
+          "hash": "53ec9375c4106fd4091a6f823cd01c15f0272749",
+          "datavalue": {
+            "value": "Büyük Çarşı (Kapalı Çarşı) Nuruosmaniye Kapı Kitabesi 1. Fotoğraf.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q505954$754F1BFF-7AAD-4145-B19A-919342DA15BF",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "020aef22520cfca7afea8d27abaaebc5493da131",
+          "datavalue": {
+            "value": "824",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$21D70A9A-DAD9-45C2-A9D5-E442F1542410",
+        "rank": "normal"
+      }
+    ],
+    "P1552": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1552",
+          "hash": "9cc68c5f46ce8a75e0d0168cfb75e64d390252b2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 570116,
+              "id": "Q570116"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q505954$7F562273-C119-4564-B973-F5EA967653AD",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "087f9bb08147f72e0a6650bebd48eb6315dd52a0",
+          "datavalue": {
+            "value": {
+              "time": "+1455-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q505954$9e6382b1-42e6-cefa-9b2f-33c004da7919",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "85532f91e156d64b864a979bb1d1c91e026f8b1f",
+          "datavalue": {
+            "value": "7630623-9",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q505954$3804A99B-5D80-4378-A21E-B35C2B6F3733",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dff07e3ba5f1c42c9c205801803e8eb4a6942c8e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "36d558700354b596f79376aa110f264256571b6d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-09-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "milion": {
+    "en": "Milion",
+    "hook": {
+      "en": "A Byzantine mile marker is Istanbul’s point of departure.",
+      "tr": "Bizans’ın mil taşı, İstanbul’un başlangıç noktası."
+    },
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Milion",
+          "tr": "Milion"
+        },
+        "era": "byzantine",
+        "greek": "Μίλιον"
+      }
+    ]
+  },
+  "chora": {
+    "en": "Kariye Mosque (Chora)",
+    "eras": [
+      "byzantine",
+      "ottoman",
+      "modern"
+    ],
+    "hook": {
+      "en": "Chora’s church and Kariye’s mosque occupy the same building.",
+      "tr": "Hora Kilisesi ile Kariye Camii aynı yapının iki adı."
+    },
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Chora Church",
+          "tr": "Hora Kilisesi"
+        },
+        "era": "byzantine",
+        "greek": "Μονή της Χώρας"
+      }
+    ]
+  },
+  "hagia-sophia": {
+    "en": "Hagia Sophia Mosque",
+    "eras": [
+      "byzantine",
+      "ottoman",
+      "modern"
+    ],
+    "hook": {
+      "en": "Church, museum, mosque: three uses in one building.",
+      "tr": "Kilise, müze, cami: tek yapının üç farklı kullanımı."
+    },
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Hagia Sophia",
+          "tr": "Ayasofya"
+        },
+        "era": "byzantine",
+        "greek": "Αγία Σοφία"
+      }
+    ]
+  },
+  "fethiye": {
+    "en": "Fethiye Mosque and Museum",
+    "eras": [
+      "byzantine",
+      "ottoman",
+      "modern"
+    ],
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Pammakaristos Church",
+          "tr": "Pammakaristos Kilisesi"
+        },
+        "era": "byzantine",
+        "greek": "Μονή Παμμακάριστου"
+      }
+    ]
+  },
+  "zeyrek": {
+    "eras": [
+      "byzantine",
+      "ottoman"
+    ],
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Pantokrator Monastery",
+          "tr": "Pantokrator Manastırı"
+        },
+        "era": "byzantine",
+        "greek": "Μονή του Παντοκράτορος"
+      }
+    ]
+  },
+  "dolmabahce-mosque": {
+    "district": "beyoglu",
+    "note": "Wikidata P131 is Beyoğlu (Q217411); mosque and palace are on different sides of the district boundary."
+  },
+  "asiyan": {
+    "district": "besiktas",
+    "note": "Aşiyan Museum is in Bebek, Beşiktaş; it is not in Sarıyer."
+  },
+  "hisart": {
+    "district": "kagithane",
+    "note": "Wikidata describes Şişli; OSM places the supplied P625 point in Hürriyet Mahallesi, Kağıthane. The district follows OSM; P30 must field-check the institution’s address."
+  },
+  "hippodrome": {
+    "en": "Sultanahmet Square (Hippodrome)",
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Hippodrome of Constantinople",
+          "tr": "Konstantinopolis Hipodromu"
+        },
+        "era": "byzantine",
+        "greek": "Ιππόδρομος της Κωνσταντινούπολης"
+      }
+    ]
+  },
+  "kucukyali-arkeopark": {
+    "en": "Küçükyalı Arkeopark",
+    "historicalNames": [
+      {
+        "name": {
+          "en": "Monastery of Satyros (proposed identification)",
+          "tr": "Satyros Manastırı (önerilen tanımlama)"
+        },
+        "era": "byzantine",
+        "greek": null
+      }
+    ]
+  },
+  "divanyolu": {
+    "en": "Divanyolu"
+  },
+  "land-walls": {
+    "en": "Walls of Constantinople",
+    "note": "One Q89917 layered record for land and sea walls. Point is a representative location, not an entrance or the whole wall geometry."
+  },
+  "silivri-gate": {
+    "en": "Silivrikapı",
+    "note": "Wikidata identifies the named quarter. P15 must place the gate stop with a separate surveyed entrance; the quarter point is not a gate entrance.",
+    "hook": {
+      "en": "Silivrikapı names a quarter beside the land walls.",
+      "tr": "Silivrikapı, kara surlarının yanındaki semte adını veriyor."
+    }
+  },
+  "mevlana-gate": {
+    "en": "Mevlanakapı",
+    "note": "Wikidata identifies the named quarter. P15 must place the gate stop with a separate surveyed entrance; the quarter point is not a gate entrance.",
+    "hook": {
+      "en": "Mevlanakapı names a quarter beside the land walls.",
+      "tr": "Mevlanakapı, kara surlarının yanındaki semte adını veriyor."
+    }
+  },
+  "topkapi-gate": {
+    "en": "Topkapı quarter",
+    "note": "Wikidata identifies the named quarter. P15 must place the gate stop with a separate surveyed entrance; the quarter point is not a gate entrance.",
+    "hook": {
+      "en": "Topkapı quarter names a quarter beside the land walls.",
+      "tr": "Topkapı semti, kara surlarının yanındaki semte adını veriyor."
+    }
+  },
+  "edirnekapi": {
+    "en": "Edirnekapı",
+    "note": "Fatih quarter Q140042770 selected over Q647228, whose point falls in Eyüpsultan. Quarter point is not the gate entrance; P15 must survey the gate stop.",
+    "hook": {
+      "en": "Edirnekapı names a quarter beside the land walls.",
+      "tr": "Edirnekapı, kara surlarının yanındaki semte adını veriyor."
+    }
+  },
+  "kerkoporta": {
+    "en": "Kerkoporta (mapped marker)",
+    "coordinates": {
+      "lat": 41.0326453,
+      "lng": 28.9386926
+    },
+    "coordinateSource": "https://www.openstreetmap.org/node/14062639301",
+    "note": "OSM tourism=artwork marker labelled Kerkoporta, not evidence of the historical gate location. Location disputed; P15 must review.",
+    "hook": {
+      "en": "A marker names the Kerkoporta; the historical gate’s location is disputed.",
+      "tr": "Bir işaret Kerkoporta adını taşıyor; tarihî kapının yeri tartışmalı."
+    },
+    "tags": [
+      "location-contested",
+      "legend"
+    ]
+  },
+  "anastasian-wall": {
+    "district": "silivri",
+    "tags": [
+      "multi-district",
+      "representative-point"
+    ],
+    "note": "OSM places this Wikidata representative point in Akören, Silivri. The linear monument also crosses Çatalca; P16/P32 need segment geometry, not duplicate place identities."
+  },
+  "belgrade-gate": {
+    "district": "zeytinburnu",
+    "note": "OSM places the Wikidata gate point on the Kazlıçeşme, Zeytinburnu side of the wall. Entrance not surveyed."
+  },
+  "bosphorus": {
+    "tags": [
+      "multi-district",
+      "representative-point"
+    ],
+    "note": "Waterway spanning multiple districts; Sarıyer is the chapter anchor. Wikidata P625 is an indicative strait point, not a visitor entrance; OSM reverse over water falls back to Istanbul city, not a district. P32 must use shore access points."
+  },
+  "galata-bridge": {
+    "tags": [
+      "multi-district",
+      "representative-point"
+    ],
+    "note": "Bridge joins Fatih and Beyoğlu; Beyoğlu is the northern chapter anchor. Wikidata P625 marks the bridge, not an entrance; P20 must survey the lens viewpoint."
+  },
+  "golden-horn": {
+    "tags": [
+      "multi-district",
+      "representative-point"
+    ],
+    "note": "Waterway spanning districts; Fatih is the chapter anchor. The representative water point is not a visitor entrance."
+  },
+  "basilica-cistern": {
+    "coordinates": {
+      "lat": 41.0084795,
+      "lng": 28.9783826
+    },
+    "coordinateSource": "https://www.openstreetmap.org/node/11006008339",
+    "note": "OSM historic=cistern point preferred to the Wikidata point just west of Milion. This is a mapped site point; visitor entrance remains unverified.",
+    "hook": {
+      "en": "A Byzantine water reservoir beneath Sultanahmet.",
+      "tr": "Sultanahmet’in altında bir Bizans su deposu."
+    }
+  },
+  "via-egnatia": {
+    "coordinates": {
+      "lat": 40.9767858,
+      "lng": 24.2110531
+    },
+    "coordinateSource": "https://www.openstreetmap.org/relation/9383200",
+    "tags": [
+      "multi-region",
+      "representative-point"
+    ],
+    "hook": {
+      "en": "Via Egnatia: a Roman road west of Constantinople.",
+      "tr": "Egnatia Yolu: Konstantinopolis’in batısına uzanan Roma yolu."
+    },
+    "note": "Representative OSM relation bounding-box centre, not a road access point. This linear road crosses several countries; P13 must author the actual route geometry."
+  },
+  "galata-walls": {
+    "tags": [
+      "representative-point"
+    ],
+    "hook": {
+      "en": "Galata’s walls belong to the Genoese city across the Golden Horn.",
+      "tr": "Galata surları, Haliç’in karşı kıyısındaki Ceneviz yerleşimini çevreliyordu."
+    }
+  }
+}

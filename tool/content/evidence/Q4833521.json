@@ -1,0 +1,644 @@
+{
+  "pageid": 4619678,
+  "ns": 0,
+  "title": "Q4833521",
+  "lastrevid": 2546450052,
+  "modified": "2026-09-16T00:32:37Z",
+  "type": "item",
+  "id": "Q4833521",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Aşiyan Museum"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Aşiyan Müzesi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "museum in Beşiktaş, İstanbul, European Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Beşiktaş, İstanbul, Türkiye'de müze"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "9dc3592b450ff677307ae6d034ad449c12975f59",
+          "datavalue": {
+            "value": {
+              "latitude": 41.08265,
+              "longitude": 29.05345,
+              "altitude": null,
+              "precision": 2.77777777778e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q4833521$3B0B264B-6B0F-457A-8083-8E30D3B2FD11",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "ef1d6bba24807858dade96927bc959b1414f02a4",
+          "datavalue": {
+            "value": {
+              "time": "+1945-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q4833521$C20D2A94-72EB-41AF-952F-BF2D13F5030B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "265da709ecafcf3fc7f2e040691259c4cd6ffbad",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 459495,
+              "id": "Q459495"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$268CB74E-495E-42AE-A197-C67FAD7724DB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b50871bddbedd95a70e0ffcac81471fc8a898b40",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2087181,
+              "id": "Q2087181"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$DEA5CBE2-AC36-4A68-8730-2CFCF487DF58",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$A20BA686-C8A3-4DFE-9E41-759ECA9A1069",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$867DC736-B59D-4DD1-956E-451BC8186CF7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e347ed74d5f73f36205d274a20452f79a384b0e4",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 830106,
+                      "id": "Q830106"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "2e8cd9b0cf326816ec447bea7951359ad21549f9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2015-04-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "4944f89bdf4677f4dd1ad553cf25f400a4515bea",
+          "datavalue": {
+            "value": "Asiyan Museum 2.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q4833521$F9C4A69E-D470-46DE-8ACB-57E0C672BBE2",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "94217eb5d63323fc71b07abca4359d04c8959f80",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4833523,
+              "id": "Q4833523"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$5e76bd8d-40b5-56ee-3f78-452cdb3f8dd2",
+        "rank": "normal"
+      }
+    ],
+    "P6155": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6155",
+          "hash": "b2e5511dd94c574c52cbce76f7b5cd586861677d",
+          "datavalue": {
+            "value": "asiyan-muzesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4833521$6393B9C9-DB0D-4762-90AD-CFDF4067A027",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "26da02779c5ad96e0104b7ada4c67900fda574ce",
+          "datavalue": {
+            "value": {
+              "text": "Aşiyan Müzesi",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q4833521$febd041c-44b7-a781-c38a-6d42a0e2019d",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1fa37c2b53256bf61b72afa937df19b582aaaccc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "49f805de87fb910225cfb818bf8622253f39514d",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=82797565",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "6d012bd7ac6a31fab6a15525d37e829d8fe895ce",
+          "datavalue": {
+            "value": "http://asiyanmuzesi.com/index.php/en/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q4833521$4F08017F-6814-430E-B281-83C1BB351C3A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d815156db7845e6f49c499bc4f498fafc4dbb775",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "c4acc101c8351e38457d96c67dae277d5c89bf2f",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/w/index.php?title=Музей_Ашиян&oldid=82797565",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "b4179b293338ba6ba44388101d8f76b80d49092e",
+          "datavalue": {
+            "value": "/m/0g9y5mm",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4833521$75FDCA39-22F9-4136-A54E-6616799B2C33",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "9d425f4469f3c6add03542d20454e5bfda198c47",
+          "datavalue": {
+            "value": "746788646",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4833521$A0A5E5E7-DFB5-4254-AE2D-C33163C9D127",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "4ca87d8867dcea90eaf9ccd39ba39293a3c70c8f",
+          "datavalue": {
+            "value": "Aşiyan Museum",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q4833521$f0b16778-f662-455a-b847-a08606c0bc4a",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "261696f1f139439d8088f2930a5b74e139ad394b",
+          "datavalue": {
+            "value": "Entity[\"Museum\", \"AsiyanMuseum::5294x\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4833521$02CD72F1-55EA-4852-AE4E-9B6A23466C15",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "6fa73f9ad62cdcc37a8bea6a0a28c7ad567c621f",
+          "datavalue": {
+            "value": "4241",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4833521$91A361AB-F711-4261-9229-D99C7ABF98F5",
+        "rank": "normal"
+      }
+    ],
+    "P6375": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6375",
+          "hash": "8dd90a43436546c47c6359ff4b748dbbe6cd638c",
+          "datavalue": {
+            "value": {
+              "text": "Bebek, Aşiyan Yolu, Beşiktaş/İstanbul",
+              "language": "tr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q4833521$83b362dd-4ae2-286a-e201-d368c2d34780",
+        "rank": "normal"
+      }
+    ],
+    "P281": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P281",
+          "hash": "350b8f226592e596dea36675f0a37dfca22999a3",
+          "datavalue": {
+            "value": "34342",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q4833521$34bc7e72-45e5-9b48-0713-0f63cbadf6d7",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$F673401D-A655-47B2-B5DC-9ED69F56F7A4",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4833521$DC9A4BDE-27B9-4FB9-B75B-A8E997431672",
+        "rank": "normal"
+      }
+    ]
+  }
+}

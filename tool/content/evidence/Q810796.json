@@ -1,0 +1,268 @@
+{
+  "pageid": 763693,
+  "ns": 0,
+  "title": "Q810796",
+  "lastrevid": 2449457863,
+  "modified": "2025-12-31T04:18:05Z",
+  "type": "item",
+  "id": "Q810796",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Bathonea"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Bathonea"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "archeological site in Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Avcılar'da antik kent ve ören yeri"
+    }
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q810796$0547236B-DDB9-4A5C-AD19-A8FEF14C1F96",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4441c653c09b7127b7d39c2f526a738ab5fbd6a9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 839954,
+              "id": "Q839954"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q810796$DE320DFC-33F7-412D-8A37-FCEA44BAB2F6",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "91b19c6a856834278ebf54fed848a125fd8d9bcb",
+          "datavalue": {
+            "value": {
+              "latitude": 41.036389,
+              "longitude": 28.733,
+              "altitude": null,
+              "precision": 1e-06,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q810796$A3A7DFA8-3B4D-4807-A03C-ABF19A33A2F5",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q810796$BE76110D-7880-4B72-8189-7DCD6BCB8A56",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "712cb1737b990fe661c1079bbd5571b486635527",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "7d799fec43feade40a43b9d6665adcfc9167acce",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Bathonea&oldid=112492757",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "72b7c341923d5ca1d6a7268ce4c49175db33c6b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 534799,
+              "id": "Q534799"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q810796$5d3c205c-403c-f855-1f05-57c215431847",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "5cf149a10b0718f22d8209635e30647dce36aa64",
+          "datavalue": {
+            "value": "/m/0ds3_3g",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q810796$63C6FF62-13CD-45E9-B8CA-3C25626DDEA2",
+        "rank": "normal"
+      }
+    ],
+    "P242": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P242",
+          "hash": "47f1c80d4e6b350c7117bcf4e8d76118ad68f2d1",
+          "datavalue": {
+            "value": "Thraciae-veteris-typvs.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q810796$30E2B2D0-3BA3-46A8-9A90-943D960D83D5",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "be30d5b2cbe6cab167797cd7c087566cbbec0ec4",
+          "datavalue": {
+            "value": "74797",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q810796$A8D74BE5-9C27-4432-8C11-7FA73186D1E0",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q810796$BCADD5E8-BF74-4B15-AF27-2DCD0B69A6D4",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q810796$8D09EAC2-4D4F-4A0E-A189-630F2B1B42B5",
+        "rank": "normal"
+      }
+    ]
+  }
+}

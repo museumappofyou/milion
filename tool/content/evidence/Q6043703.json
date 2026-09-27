@@ -1,0 +1,796 @@
+{
+  "pageid": 5828465,
+  "ns": 0,
+  "title": "Q6043703",
+  "lastrevid": 2521617968,
+  "modified": "2026-07-23T12:09:29Z",
+  "type": "item",
+  "id": "Q6043703",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Mağlova Kemeri"
+    },
+    "en": {
+      "language": "en",
+      "value": "Mağlova Aqueduct"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Arch bridge in Istanbul, Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Mimar Sinan tarafından 1554-1562 yılları arasında İstanbul'da, Alibey Deresi vadisi üzerinde yapılmış olan su kemeri"
+    }
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "ff8c9f8c7bd7baad9332cb4e930aa25d18bf80db",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 474,
+              "id": "Q474"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$8A519738-E010-4F26-BC9D-2DD7593CCAFE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "17b40bd079af00bd357d02aa200132389a9cb198",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "53a35d0294c4f0233d559258cb4c0f242c9fa080",
+                  "datavalue": {
+                    "value": "76199",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "7b2d734e88d1928fd1fe75a0dd0f7312b7138766",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-10-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "d749d08658bb7aefc1d4b13fb0659b1d4b6991eb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 40097962,
+              "id": "Q40097962"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$72EA71A7-4A08-4FC4-9454-E570FFA4E775",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ab535de11e6eeaf398c3b8fe13d4a5f7aeaccc34",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2f0b3db840b6b213c97275abc86c29d6f5847cbc",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/moglova-kemeri",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$E75C25D3-4A4A-4290-A15B-69600BDB3496",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b964dd7d0cd6b8917b776f34c17585b7fba58d10",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "53a35d0294c4f0233d559258cb4c0f242c9fa080",
+                  "datavalue": {
+                    "value": "76199",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "1c2aeb96b78dfc88934ce3c410e36af4c25e7c8a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-30T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          },
+          {
+            "hash": "ab535de11e6eeaf398c3b8fe13d4a5f7aeaccc34",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2f0b3db840b6b213c97275abc86c29d6f5847cbc",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/moglova-kemeri",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5383": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5383",
+          "hash": "53a35d0294c4f0233d559258cb4c0f242c9fa080",
+          "datavalue": {
+            "value": "76199",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$6ED37DCB-02D1-447F-8849-C9B41193B982",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5d595572bed0bb3e3d4c8d727736916185b0fd7",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                  "datavalue": {
+                    "value": "https://www.archinform.net/service/wd_aipro.php",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "79336cd6a2a7de751fe8400a070acfc1b1b9fe8c",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-14T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "3c05a275482e421f9f35ae960c5dda24ce11698d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 673073,
+              "id": "Q673073"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$0B6DCDC6-2E19-49A8-9F77-4BD76A7593C3",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "d3cd68322117a2dc1f1743c41b6246254b9aaadd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 268747,
+              "id": "Q268747"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$153069c8-43bf-c1d2-f981-5e7622289568",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "855125bfee5a24a7cba4955125b3425aa1d92ff7",
+          "datavalue": {
+            "value": "moglova-kemeri",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$511099a1-4088-a01a-8c69-33630652f033",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ab535de11e6eeaf398c3b8fe13d4a5f7aeaccc34",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2f0b3db840b6b213c97275abc86c29d6f5847cbc",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/moglova-kemeri",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P454": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P454",
+          "hash": "d4b21e630bf27f6cc2fdbe75618c25d7c65b697e",
+          "datavalue": {
+            "value": "20005867",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$C7B15949-94B6-49B9-809C-693BFB1F2BF8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a1b1a30cc50d070ddd660b24068867a003cc30b7",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "53a35d0294c4f0233d559258cb4c0f242c9fa080",
+                  "datavalue": {
+                    "value": "76199",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "c5de51aaae23363da9626b4eb6edf3246428e248",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-01-24T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "d93f19b4f5bdd3833abecf8181d4d688d61ede52",
+          "datavalue": {
+            "value": {
+              "latitude": 41.1358902,
+              "longitude": 28.893436,
+              "altitude": null,
+              "precision": 1e-07,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6043703$720F43BE-EAE9-448A-BA8F-B4B48374E54E",
+        "rank": "normal"
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "66ae19eee43b4bf2ba4211529c6fd710a8bea74a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5600,
+              "id": "Q5600"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$AC477FF8-4020-4518-ABC7-3C24DC5EBE78",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "d61cc4006c7e3494922b294b6c5943b8e6362969",
+          "datavalue": {
+            "value": "Moglova kemeri.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6043703$1f40e218-4bb9-eb37-fdfc-cd0a046966de",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "c11887d7066d8e17e1b83187889169563c3013e3",
+          "datavalue": {
+            "value": "/g/122mkykc",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$1B103AEF-3010-4F16-9DC2-FA64037DEA21",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "949a6d65765ca79c3a74779ae1b9e64589ca360e",
+          "datavalue": {
+            "value": "Mağlova Aquaduct",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6043703$6076a300-ba67-40e4-97b1-3f1560c68e84",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "b1aebddec523b9474c7fa2cec5be4c99cdedf79e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6072421,
+              "id": "Q6072421"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$6e8a77ba-4fa9-6f26-0631-02c594f7886f",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "788e70a8d7a1aff35aea5780c0190b901315a1a0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6059313,
+              "id": "Q6059313"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$5bf0d20c-44df-bbcc-03a3-88c78bed025c",
+        "rank": "normal"
+      }
+    ],
+    "P206": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P206",
+          "hash": "6e8539ea269275f05f3beef440e9c8fd3fd395a6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1226625,
+              "id": "Q1226625"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$18d6ea1f-4305-b64e-99bc-f1558131e402",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "546a19e17ea8207ba57408705b914faa0e135265",
+          "datavalue": {
+            "value": "6962",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$EC5937A4-1C4D-460B-9652-31901F8FCEA6",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "20d57251ee1c3d8a37b7a04116016b1568566df2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8474,
+              "id": "Q8474"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$64d6cff7-4b06-c761-69b5-e6eb53364743",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "9a1156d50c2108a799030e82d6fad9a1f1bfcb7c",
+          "datavalue": {
+            "value": "1033475871",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$BBE389CA-251B-46EF-9FBE-F11784437209",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$906128EF-ED96-4E81-9D0D-C62FBE01CC8F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ab535de11e6eeaf398c3b8fe13d4a5f7aeaccc34",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2f0b3db840b6b213c97275abc86c29d6f5847cbc",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/moglova-kemeri",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$C4A473F7-D5D3-46F8-A90B-6C32792F9990",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6043703$0044CF0A-E58F-4B82-AA1D-E27634B43415",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "c2af9df2bad6d9cb562e89e28bd54fcd2a59f0df",
+          "datavalue": {
+            "value": "2212",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$632A0C96-566A-481E-9DDA-987E0BA64E6A",
+        "rank": "normal"
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "f91f150106a069b439309a9a40b773165cd2d15a",
+          "datavalue": {
+            "value": "Q294293",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6043703$7C056735-8BBB-4A93-B866-A79972048866",
+        "rank": "normal"
+      }
+    ]
+  }
+}

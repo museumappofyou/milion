@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "note": "Authoring seeds for P18, not a runtime Daily feature. Review claims and native copy in each wave before publication.",
+  "daily": [
+    {
+      "id": "p02-mile-length",
+      "place": "milion",
+      "text": {
+        "en": "A Roman mile is about 1,480 metres. Istanbul starts counting at the Milion.",
+        "tr": "Bir Roma mili yaklaşık 1.480 metre. İstanbul’un sayacı Milion’da başlıyor."
+      },
+      "sources": [
+        "roman-mile",
+        "wd-q1187329"
+      ],
+      "review": "draft"
+    },
+    {
+      "id": "p02-two-shores",
+      "place": "mihrimah-uskudar",
+      "text": {
+        "en": "Two Mihrimah Sultan mosques: one in Üsküdar, one at Edirnekapı.",
+        "tr": "İki Mihrimah Sultan Camii: biri Üsküdar’da, diğeri Edirnekapı’da."
+      },
+      "sources": [
+        "wd-q2537376",
+        "wd-q1581190"
+      ],
+      "review": "draft"
+    },
+    {
+      "id": "p02-three-uses",
+      "place": "hagia-sophia",
+      "text": {
+        "en": "Church, museum, mosque: Hagia Sophia has held all three roles.",
+        "tr": "Kilise, müze, cami: Ayasofya bu üç işlevi de üstlendi."
+      },
+      "sources": [
+        "wd-q12506"
+      ],
+      "review": "draft"
+    }
+  ],
+  "onThisDay": [
+    {
+      "id": "p02-sakirin",
+      "place": "sakirin",
+      "text": {
+        "en": "7 May 2009: Şakirin Mosque opens in Üsküdar.",
+        "tr": "7 Mayıs 2009: Şakirin Camii Üsküdar’da açıldı."
+      },
+      "sources": [
+        "wd-q2705343"
+      ],
+      "review": "draft",
+      "date": "2009-05-07"
+    },
+    {
+      "id": "p02-toys",
+      "place": "toy-museum",
+      "text": {
+        "en": "23 April 2005: Istanbul Toy Museum opens on Children’s Day.",
+        "tr": "23 Nisan 2005: İstanbul Oyuncak Müzesi, Çocuk Bayramı’nda açıldı."
+      },
+      "sources": [
+        "wd-q2743371"
+      ],
+      "review": "draft",
+      "date": "2005-04-23"
+    },
+    {
+      "id": "p02-rahmi-koc",
+      "place": "rahmi-koc",
+      "text": {
+        "en": "13 December 1994: the Rahmi M. Koç Museum opens by the Golden Horn.",
+        "tr": "13 Aralık 1994: Rahmi M. Koç Müzesi Haliç kıyısında açıldı."
+      },
+      "sources": [
+        "wd-q3404565"
+      ],
+      "review": "draft",
+      "date": "1994-12-13"
+    }
+  ]
+}

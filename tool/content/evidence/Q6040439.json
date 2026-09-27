@@ -1,0 +1,946 @@
+{
+  "pageid": 5824826,
+  "ns": 0,
+  "title": "Q6040439",
+  "lastrevid": 2497804066,
+  "modified": "2026-05-26T10:48:35Z",
+  "type": "item",
+  "id": "Q6040439",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Revan Köşkü"
+    },
+    "en": {
+      "language": "en",
+      "value": "Yerevan Kiosk"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mansion in Fatih, İstanbul, European Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde tarihi köşk"
+    }
+  },
+  "claims": {
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "06b0119e34c35a1134a3afa52629d6ae31638903",
+          "datavalue": {
+            "value": "Revan Köşkü.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6040439$B31E2E8E-1931-491F-B6A6-927FB7BF708C",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$B9ED8280-4167-444D-A54E-823145F34025",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "7b0798661d69560f320725d2612e58dc2b23656c",
+          "datavalue": {
+            "value": "Revan Kiosk",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6040439$c0e9e379-4687-c40c-9f48-9dae59ebd676",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "954aedc28f9ed3b0d23fb96cd58a1af3421d3163",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170495,
+              "id": "Q170495"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$596dcec6-4fd3-5c1c-f340-16384000aa03",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "492726f364ed5402d2fc074937c453cae8c489ab",
+          "datavalue": {
+            "value": "/g/1215pr7t",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6040439$E6FBA128-40A1-472B-88C9-BC6E7F6ADD9A",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$E7A5C17F-297D-4BD1-B084-E0068EA8D3BD",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "5996f31ddcbd15992e666ec7855866cffd06b92e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 522124,
+              "id": "Q522124"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$7AB811C1-5949-4611-A067-BE0DF9EE5D62",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "2f30d23257a923ea267e0e1fddfa5f5b835b24ee",
+          "datavalue": {
+            "value": "969327995",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6040439$C5DB4C55-DA15-4938-BDDC-E487D3DD2E0D",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$0D3DEAD4-A941-4C0B-852F-A2386EE48004",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "eddd2c729f7c4dc67db81413a86e681ec2e334a9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6073520,
+              "id": "Q6073520"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$B9C34CBA-C2FE-47C8-BD4E-F222B9E8AB3E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "395aa22cb84fa83f6e001b0bdefb5605327431dd",
+          "datavalue": {
+            "value": "8687",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6040439$859BA4A3-E132-470D-AA83-364C62378F65",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "16bc437498a01d3bca30873a138542a68cde1c69",
+          "datavalue": {
+            "value": {
+              "latitude": 41.013897,
+              "longitude": 28.984489,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6040439$2EAF1E58-9AE1-43BC-A830-CA07D9AC5C89",
+        "rank": "normal"
+      }
+    ],
+    "P3032": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3032",
+          "hash": "fdcc2b3959bc01206f7d6b7eca4767d1be8e36b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1334583,
+              "id": "Q1334583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$0CA0E698-6BE8-43CF-8BC5-BEEEE819C48C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "73fc8cd3e64426ca53c19609e9b28c07e6f4117c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2442892,
+              "id": "Q2442892"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$C8404338-DFC3-4033-B0C2-FF68B96A41E5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1139": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1139",
+          "hash": "ce5eb6602a410a8bd775633e3eeadce97a66c2f7",
+          "datavalue": {
+            "value": {
+              "amount": "+1",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q6040439$1253B847-EE5F-4A4D-9A49-80E8C4B175B7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "b576cd15ecd323b6070e48b4c0ce834eff30e941",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2087181,
+              "id": "Q2087181"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "4aab56fa8a723823e6fcdaaa385e92027eea8d77",
+              "datavalue": {
+                "value": {
+                  "time": "+1924-04-03T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q6040439$B6E27600-DCA1-486C-88F4-F8B5055E4B1C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "827f0d87dffcd0d42e9d176e9eac32391444af33",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "fe0cc0ca53e1ad66a83331085f38bbcdbc735d7d",
+                  "datavalue": {
+                    "value": "https://en.unesco.org/silkroad/content/topkapi-palace-museum",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$49DFD6FE-7A1B-4AA9-98AB-7AB28FF48C30",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "8fff2724f4b209a5b40f7d804d460172c434f87c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 31070845,
+              "id": "Q31070845"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$20D49219-069C-4886-AD39-DF1A8BAC0367",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "8570c5c664d7a9b5638d7c3b5d1320f5a2fce409",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 174762,
+              "id": "Q174762"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$C9BF143A-76BE-45A5-84AC-6EB3AAF75933",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "e4860a5b7394994b9ce8a6cd40ba85f2f5677267",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43113623,
+              "id": "Q43113623"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "292b4ab55e989ffdf984aede998f1d63e3c77eba",
+              "datavalue": {
+                "value": {
+                  "time": "+1985-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q6040439$FE476561-FD30-4608-B7E6-C9FB422A8487",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "827f0d87dffcd0d42e9d176e9eac32391444af33",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "fe0cc0ca53e1ad66a83331085f38bbcdbc735d7d",
+                  "datavalue": {
+                    "value": "https://en.unesco.org/silkroad/content/topkapi-palace-museum",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "adda6a422611ad4ee3e63afc9ea599282ed0b710",
+          "datavalue": {
+            "value": "revan-kosku",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6040439$467E9D7B-D391-4491-9556-80FC1DAE62E5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P793": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P793",
+          "hash": "751fe108b334490040f8e5822703f3ef25bb9ffe",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13377390,
+              "id": "Q13377390"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$96F7AED5-4EB2-4EA9-8387-9A5D3C3705AE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "4ab30d8d4e5de36e1ee9eb33261e64c45666884c",
+          "datavalue": {
+            "value": {
+              "time": "+1635-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q6040439$7FC0DEBE-886D-4C7A-9BC2-3C47256B2BB5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d67f93c68d95383d5fb55bd1927255f1d9e48695",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6b3cd828aacde6d3105ccdc51ceb5ba4a19448fb",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/revan-kosku",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$78E726FA-E7CC-44E8-83B4-0BCB946032B4",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$67F273FB-088C-4506-82A1-36C4CCA9F4DD",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "658f7ad0d290c06d24ab644b68c651be5d2b00ee",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5773394,
+              "id": "Q5773394"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6040439$10417e91-432e-a6d9-1ed0-b1e89999df97",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "8c729f20ec0637fd893dc4d4ad4725a66f401068",
+          "datavalue": {
+            "value": "4922",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6040439$2A8304F7-1346-4F28-9E30-09ED2E5178A7",
+        "rank": "normal"
+      }
+    ]
+  }
+}

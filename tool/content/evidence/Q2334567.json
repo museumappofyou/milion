@@ -1,0 +1,862 @@
+{
+  "pageid": 2255352,
+  "ns": 0,
+  "title": "Q2334567",
+  "lastrevid": 2549978001,
+  "modified": "2026-09-27T10:48:57Z",
+  "type": "item",
+  "id": "Q2334567",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Yeni Üsküdar Mosque"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Yeni Valide Camii"
+    },
+    "el": {
+      "language": "el",
+      "value": "Τέμενος Γενί Βάλιντε"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mosque in İstanbul, Turkey"
+    },
+    "el": {
+      "language": "el",
+      "value": "τζαμί στην τουρκία"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Üsküdar ilçesinde cami"
+    }
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "314a479bb331135736f435ea23c2bb923db2b956",
+          "datavalue": {
+            "value": "Yeni Valide Mosque",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q2334567$B736A561-5F04-44B4-B176-54228838AC30",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "f638839645b04b6abed934f05f497e02f994df31",
+          "datavalue": {
+            "value": {
+              "latitude": 41.024787,
+              "longitude": 29.015107,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q2334567$7D883901-D04F-421F-BF92-7E8447596CEA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "45995935afc338d83b11f4f9ef7edfc31adb160d",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "b949f92475f866250da42294babf8ea294fd253f",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48952,
+                      "id": "Q48952"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "22121885195a762943188a937d218b70b28445c7",
+          "datavalue": {
+            "value": "/m/02w4fgz",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$D3CBC7C0-B783-477D-B74B-064B59D7DF7B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$649D1FFD-B461-4739-A505-25810F494E95",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$927A55E2-4CD3-4A7B-9DC2-A5F4AF5119F9",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$A5229EF4-1071-4345-80C3-9E822CE8D031",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "34bcf1dbe3f22584f1d79cdb4cc70b49c20c0e68",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 326339,
+              "id": "Q326339"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$3998e4e7-4f11-b285-c6b0-e15ffe3c013a",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "8fcc4572334ac742756846a7c8c0c1ee03c94c52",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img09 Yeni Valide Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2334567$A94947EA-13D5-4D4E-B0F2-3B20A16364DF",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$E3D7A28F-01A1-416C-9721-1E271FA2DAB2",
+        "rank": "normal"
+      }
+    ],
+    "P1619": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1619",
+          "hash": "7f74119af7a0d754e59b4ea74f5d1c8d43ba99e1",
+          "datavalue": {
+            "value": {
+              "time": "+1710-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2334567$21D41D3F-0D4B-42E3-AEBD-8FE59F3A7D6A",
+        "rank": "normal"
+      }
+    ],
+    "P6117": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6117",
+          "hash": "d5aeca74fd52551e519feeb86dc2d9fdaafff16a",
+          "datavalue": {
+            "value": "51168",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$87f106d1-407e-691d-e348-6f823c566e9c",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "4c2d8c80035450473ec704ea76b6529bd1311deb",
+          "datavalue": {
+            "value": "no2019029437",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$587ED477-BC23-4401-A657-0AF4FD1F4E42",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-03-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "ee8941c850b5d9b10992bed1d350bdd83a98ddcf",
+          "datavalue": {
+            "value": {
+              "time": "+1710-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2334567$6655E6A6-B6E4-432D-A40B-AC2B4F6C08D4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "80dc9f6575f6137f0fe70acb115b5d90a6af7b84",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "bf604cb07c14e6672cc5a2f25ffb52420dad42e5",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Moschea_di_Yeni_Valide&oldid=106288294",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "25e78ddba26709bc02384d81f273e324ee0196e2",
+          "datavalue": {
+            "value": "245435184",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$18CDAD0F-537D-4915-B7B1-AD9113CB316C",
+        "rank": "normal"
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "276287c0d3413b29076632925b0528391828df58",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 86119276,
+              "id": "Q86119276"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$3C76FE63-DC5D-4190-9D5E-B4C71B3F5736",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "84872941c2218c08cd83c63d3eb8d9cc05667f04",
+          "datavalue": {
+            "value": "Istanbul asv2021-11 img10 Yeni Valide Mosque.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2334567$1ef97177-4f92-b093-9eee-60a5083a6e07",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "04c38b3f09baf117ee3412c895c4d60892f8f6d1",
+          "datavalue": {
+            "value": "8323",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$BAACB61B-B0C3-4BDB-BFF1-160C3A262DA5",
+        "rank": "normal"
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "ae6670cf484d678831c388601e9f7ecde1fd83cd",
+          "datavalue": {
+            "value": "7321116",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$10D66104-E97B-4479-8251-5B2709C3A322",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "04860031246a313272f7be323dbcf584be55a713",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$AFCBF950-319C-40A0-9BA0-98C8735E8165",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$4DB109FB-0E40-4879-BF15-CA07F2A001E9",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$6FC804A7-5888-4B19-B737-4DFA6248920B",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$F94B66CB-F7CD-4F64-BE13-81318A9EFB80",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "f3bbd44081fd587bbca6fe1aec495be854a09cb7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2745815,
+              "id": "Q2745815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$3AA39B3C-B210-4BBD-8F45-ADB7E3D94DB6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b56267f542a5002e0a9dad176fd833f1187d1f55",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "130b08b5b01fdd742593c56db2d24309dac48614",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/uskudar",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "4137e4a384de1f1aa7b7ebbbf80cfe20514cac5b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 128756684,
+              "id": "Q128756684"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2334567$DF9C8275-63FA-418F-9F71-09BCD878335A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b56267f542a5002e0a9dad176fd833f1187d1f55",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "130b08b5b01fdd742593c56db2d24309dac48614",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/uskudar",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "28431c7f3c545cb782cdfd0d13895aa91c5fb574",
+          "datavalue": {
+            "value": "yeni-valide-kulliyesi",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$C3BD37C3-84E4-45EF-8B83-A3C116864674",
+        "rank": "normal"
+      }
+    ],
+    "P9906": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9906",
+          "hash": "addbba199bd2fe498fcbade7c291f2e29cc80828",
+          "datavalue": {
+            "value": "Yeni Valide Camii Avlu Girişi Kitabesi.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2334567$C17C43F1-3CDD-41D7-AEA1-49B7643A4A6A",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "ed9986c6bd3037c88ec230fca348dbb4ae590530",
+          "datavalue": {
+            "value": "236",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$313BD96E-6EFA-4453-93E0-B1BADE90C7FA",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "0497b4de8116163cb7237a009de545c7af6170bc",
+          "datavalue": {
+            "value": "Entity[\"Building\", \"YeniValideMosque::fz9qr\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$5479E2F0-2AA2-4B2E-9197-8281C4E8C839",
+        "rank": "normal"
+      }
+    ],
+    "P11493": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11493",
+          "hash": "13abf6dd127bfe141b779ef4a61b2af3f903a942",
+          "datavalue": {
+            "value": "Q294287",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$A2E40021-8944-4E6E-A955-7755261C5ED6",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "c06d1f67a1bccbb0c77a46b0798bf208b0b2ef00",
+          "datavalue": {
+            "value": "4822305-0",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2334567$C4BDA204-8471-411A-9854-31B682AE31D1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dff07e3ba5f1c42c9c205801803e8eb4a6942c8e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "36d558700354b596f79376aa110f264256571b6d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-09-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

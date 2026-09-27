@@ -142,7 +142,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       }
     }
     final bestProbability = smoothed[bestIndex];
-    final bestId = widget.classifier.scenes[bestIndex].id;
+    final bestId = widget.classifier.sceneAtPrediction(bestIndex).id;
 
     if (bestProbability < _hideThreshold) {
       _candidateId = null;
@@ -166,7 +166,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
         bestProbability >= _showThreshold;
     if (confirmed || alreadyShown) {
       final match = SceneMatch(
-        widget.classifier.scenes[bestIndex],
+        widget.classifier.sceneAtPrediction(bestIndex),
         bestProbability,
       );
       setState(() => _liveMatch = match);

@@ -1,0 +1,36 @@
+{
+  "method": "GeographicLib 2.1 Geodesic(R, 0).Inverse + independent ECEF cross/dot/tangent-plane bearing",
+  "earthRadiusM": 6371008.8,
+  "origin": [
+    41.008043,
+    28.978066
+  ],
+  "records": [
+    {
+      "id": "chora",
+      "lat": 41.031111,
+      "lng": 28.939167,
+      "geographicLib": {
+        "km": 4.150839988381113,
+        "bearing": 308.17999112934694
+      },
+      "vector": {
+        "km": 4.150839988380253,
+        "bearing": 308.1799911293458
+      }
+    },
+    {
+      "id": "rumeli-hisari",
+      "lat": 41.084722222222,
+      "lng": 29.056111111111,
+      "geographicLib": {
+        "km": 10.74871248052611,
+        "bearing": 37.484673725589175
+      },
+      "vector": {
+        "km": 10.74871248052628,
+        "bearing": 37.48467372559124
+      }
+    }
+  ]
+}

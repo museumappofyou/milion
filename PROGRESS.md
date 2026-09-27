@@ -1,6 +1,6 @@
 # Milion — Progress
 
-**Updated 2026-09-27, after P01. Overall readiness: 14.2%.** This is the mean of the 56 dimensions below: 793 points out of 5,600.
+**Updated 2026-09-27, after P02. Overall readiness: 17.1%.** This is the mean of the 56 dimensions below: 960 points out of 5,600.
 
 **Ship rule.** Milion is ready to ship when **every dimension is at 100%** and no release-blocking Open issue remains in PHASES.md §8. The average only shows direction; a high score in one area cannot compensate for a low score in another.
 
@@ -16,15 +16,15 @@
 
 Values in between are allowed when the evidence justifies them. Scores go down when a regression or a scope change exposes a gap. Anything checked only on an emulator or in widget tests is marked *unverified* and cannot reach 100%.
 
-## Snapshot: what the app is today (audit 2026-09-26)
+## Snapshot: what the app is today (updated 2026-09-27)
 
 **Works**
-- A Flutter app for **one place (Chora)**.
-- A 103-scene catalogue with search and room filters.
+- A Flutter app with the **Chora preview** and a hidden 155-place draft registry.
+- A 103-artwork Chora catalogue with search and room filters, loaded independently of the classifier.
 - An on-device ONNX recogniser (live, still and gallery input; loaded only when Scan opens).
 - Per-scene notes.
 - Two 2.5D explorers, Anastasis (F02) and Last Judgment (F05). They offer 1–8× zoom, focus on six details each, an Original/Relief/Restored comparison, a 48-pose figure loop and reduced motion.
-- `flutter analyze` is clean and 20 app tests pass, plus 3 capture tests under `tool/captures/`.
+- `flutter analyze` is clean and 33 app tests pass; 4 capture tests exist under `tool/captures/` (the new Registry test passed in P02; the other 3 passed in P01).
 
 **Review of the previous (İzvoya) run**
 - **Kept:** the prototype above, which is real and valuable. The rigs, relief meshes and tests are solid engineering.
@@ -53,6 +53,12 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 - **Studio:** `anastasis_25d/`, `last_judgment_25d/`, `figure_animation/`, `restoration_studies/`, `ui_refresh/` moved under `studio/`; the three surviving capture tests moved to `tool/captures/`; all script and test paths fixed. `MILION_CAPTURES` replaces the hard-coded corpus paths.
 - **Android:** minSdk 26; R8 and resource shrinking on for release with ONNX keep rules (camera + ONNX verified in a release build on the Pixel Fold API 36 emulator); release signing reads `android/key.properties` when present and otherwise warns loudly and falls back to debug; RECORD_AUDIO and legacy storage permissions removed and `aapt`-verified; per-ABI APKs via `tool/build_android.sh`.
 - **Not changed yet:** the UI, content and engines; P02–P06 as planned.
+
+**Changed in P02 (this run)**
+- **Content:** one schema-versioned registry, 155 hidden draft places with QIDs and EN/TR hooks, 103 migrated Chora Artworks, and prototype Milestones I–II. Category and district counts include drafts; reviewed and approved counts remain zero.
+- **Geography:** cited Milion origin, great-circle km/Roman miles and true bearing, checked against GeographicLib and independent vector geometry. Province bounds and outside flags are validated.
+- **Demo:** in a debug build, long-press the version in About to open Registry. It lists places by distance and counts all categories and districts. EN/TR vertical stills are in `studio/captures/P02/`.
+- **Preserved:** all existing scene IDs and note text. The 863 missing Turkish artwork fields remain explicit translation debt; new place hooks are bilingual. Device, entrances and current access checks remain unverified.
 
 ## Dimensions
 
@@ -83,15 +89,15 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 
 | ID | Dimension | Now | Evidence now | 100% means | Phases |
 | --- | --- | ---: | --- | --- | --- |
-| D14 | Content model and registry | 10% | A hard-coded Scene and ExplorableScene; the catalogue follows the classifier's class order. | A typed, versioned, validated registry; the validator CLI runs in CI. | P02 |
-| D15 | Byzantine coverage | 5% | 1 place (Chora), deep but not fully reviewed. | ≥ 30 reviewed Byzantine places. | P11–P16 |
-| D16 | Mosque coverage | 0% | None. | ≥ 30 reviewed mosques with the visiting layer. | P24–P27 |
-| D17 | Museum coverage | 0% | None. | ≥ 25 reviewed museums or palaces and ≥ 25 object pages. | P28–P31 |
-| D18 | 39-district coverage | 3% | 1 of 39 districts (Fatih). | 39/39 districts and ≥ 110 reviewed places. | P32 |
-| D19 | Stories and writing | 10% | 103 one-line summaries plus cues. | Every reviewed place and Milestone has a story in TR and EN with hooks. | P05, P11–P32, P34 |
-| D20 | Accuracy, sources, honesty labels | 20% | Capture credits in captures.json; the restoration is called "interpretive"; no sources per claim. | Every claim is sourced, every place has a QID, labels are applied everywhere and debates are marked. | P02, all content phases |
-| D21 | Practical visit information | 0% | Room positions only. | Hours, access, etiquette, prayer windows and transit for every place, each with a checkedAt date. | P05, P24, P39 |
-| D22 | Media library | 10% | Chora photos, plus the 5.3 GB corpus outside the repo; P01 kept every source photograph and pruned 26 MB of derived v3 textures. | ≥ 3 images per reviewed place (today and historical), all credited in the manifest. | P02, content phases |
+| D14 | Content model and registry | 75% | Schema 1 typed registry in `lib/content/`; strict JSON/references/coordinates/EN validation; `dart run tool/content/validate.dart` passes. Catalogue loads 103 artworks without ONNX; classifier maps prediction IDs only. CI remains P38. | A typed, versioned, validated registry; the validator CLI runs in CI. | P02 |
+| D15 | Byzantine coverage | 10% | 52 Byzantine-category drafts with pinned Wikidata/OSM evidence in `assets/content/places/istanbul.json`; 0 reviewed. Existing Chora preview retained. | ≥ 30 reviewed Byzantine places. | P11–P16 |
+| D16 | Mosque coverage | 10% | 39 mosque-category drafts, including layered former churches; bilingual names/hooks and QIDs. No visiting layer or field review yet. | ≥ 30 reviewed mosques with the visiting layer. | P24–P27 |
+| D17 | Museum coverage | 10% | 33 museum and 15 palace category assignments (overlap); QID-backed drafts only. Object extension remains P28. | ≥ 25 reviewed museums or palaces and ≥ 25 object pages. | P28–P31 |
+| D18 | 39-district coverage | 10% | 155 drafts across 22/39 Istanbul districts plus 9 explicitly outside-province records; all 39 district enum values and zero counts tested. 0 reviewed districts. | 39/39 districts and ≥ 110 reviewed places. | P32 |
+| D19 | Stories and writing | 15% | 155 one-line EN/TR seed hooks and all legacy Chora English text preserved in typed Artworks; 3 Daily + 3 dated authoring drafts. Full stories and native review remain open. | Every reviewed place and Milestone has a story in TR and EN with hooks. | P05, P11–P32, P34 |
+| D20 | Accuracy, sources, honesty labels | 35% | 201 typed sources, 155 selected entity snapshots with revision/hash evidence, canonical QIDs and OSM coordinate exceptions; typed honesty labels. `tool/content/audit_evidence.py` verifies hashes; claims still need wave review. | Every claim is sourced, every place has a QID, labels are applied everywhere and debates are marked. | P02, all content phases |
+| D21 | Practical visit information | 5% | Typed entrance, current function and dated visit status. Unverified drafts explicitly use null entrance and unknown status; validation prevents undated known status and incomplete reviewed records. | Hours, access, etiquette, prayer windows and transit for every place, each with a checkedAt date. | P05, P24, P39 |
+| D22 | Media library | 15% | 2 typed, credited reference media with source URLs, original and bundled SHA-256 hashes in `tool/content/media_hashes.json`; originals unchanged. Full image library remains open. | ≥ 3 images per reviewed place (today and historical), all credited in the manifest. | P02, content phases |
 
 ### D. The Milestone collection (2.5D / 3D)
 
@@ -123,26 +129,26 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 
 | ID | Dimension | Now | Evidence now | 100% means | Phases |
 | --- | --- | ---: | --- | --- | --- |
-| D39 | Turkish and English localisation | 0% | UI and content are English only, with hard-coded strings. | 100% ARB and content coverage, reviewed by native readers (O08). | P03, P34 |
+| D39 | Turkish and English localisation | 5% | Every new content text uses Localized EN/TR; all 155 draft names/hooks bilingual; Registry switches EN/TR. Validator counts 863 missing TR fields out of 1,938, all legacy artworks; ARB/native review remain P03/P34. | 100% ARB and content coverage, reviewed by native readers (O08). | P03, P34 |
 | D40 | Accessibility | 15% | Some semantics, a reduced-motion path, a 150%-text capture. | P35 passes on the device: TalkBack, 200% text, contrast, targets, still equivalents, captions. | P35 |
 | D41 | Layouts and device classes | 30% | Widget captures at 360, 390, 430, 768 and 1440 dp. | Phone, tablet, landscape and foldable layouts verified; edge-to-edge insets. | P03, P35 |
 | D42 | Performance | 10% | Lazy ONNX loading; renderer-lifetime tests; nothing measured on a device. | All P36 budgets met on the A52s. | P06, P08, P36 |
-| D43 | App size and asset delivery | 30% | P01: arm64 release APK 89.7 MB (from the 203.7 MB universal baseline), AAB 134.3 MB; relief generations and v1 data pruned; R8 and resource shrinking on. Base download still above the 60 MB target. | Base download ≤ 60 MB; Play Asset Delivery packs with download management. | P01, P36 |
+| D43 | App size and asset delivery | 30% | P02: arm64 release APK 89.9 MB (89,850,190 bytes), AAB 134.6 MB (134,603,827 bytes); relief generations and v1 data pruned; R8 and resource shrinking on. Base download still above the 60 MB target. | Base download ≤ 60 MB; Play Asset Delivery packs with download management. | P01, P36 |
 | D44 | Offline behaviour | 40% | Everything is bundled, so all current features work offline. | Starter plus packs work offline; downloads resume; low-storage and corruption recovery. | P10, P36 |
 | D45 | Lifecycle and permissions | 35% | P01: RECORD_AUDIO and READ/WRITE_EXTERNAL_STORAGE removed with `tools:node="remove"` and `aapt dump permissions` shows only CAMERA + ACCESS_NETWORK_STATE; camera and ONNX verified in an R8 release build on the emulator. The P37 request/denial script is still open. | P37 script passes: in-context requests, denial, revocation, process death. | P01, P37 |
 | D46 | Privacy and data safety | 30% | Fully local, no network, no analytics. No policy, export or delete. | Data Safety answers, TR/EN policy, export and delete, opt-in only. | P19, P37 |
-| D47 | Persistence and migrations | 15% | SharedPreferences notes with no schema version. | Versioned local database with migrations tested across upgrades. | P02, P19 |
+| D47 | Persistence and migrations | 30% | Notes schema v1 stamps existing keys in place. Migration tests preserve text for all 103 IDs, including M49_1–M49_4, F02/I and F05/II; future schemas reject writes. SQLite remains P19. | Versioned local database with migrations tested across upgrades. | P02, P19 |
 | D48 | Stability and crash reporting | 5% | No crash reporting; never run through monkey testing. | Opt-in crash and ANR reporting; a 1-hour monkey run clean; 0 crashes in the field trial. | P37, P39 |
 
 ### G. Engineering and release
 
 | ID | Dimension | Now | Evidence now | 100% means | Phases |
 | --- | --- | ---: | --- | --- | --- |
-| D49 | Codebase health | 55% | P01: lib/ fell from 9,491 to 4,638 Dart lines; v3 conch, Classic v5, v1 data and dead assets removed; analyzer clean. Largest file: scan_tab.dart 884 lines; scene_explorer_screen.dart 1,145 → 735. | No dead code or assets, a feature-based structure, analyzer clean, no file over about 600 lines without reason. | P01, ongoing |
-| D50 | Automated tests | 35% | P01: 20 app tests plus 3 capture tests green over the pruned runtime (the removed tests covered removed code); capture tests moved to `tool/captures/`; `frontier_screenshot_test.dart` rerun to prove the new paths. | P38 pyramid with integration tests on the device; a deliberately broken build fails. | P38, ongoing |
-| D51 | Version control, reproducibility, CI | 40% | P01: git repo with a baseline commit before any deletion and phase commits, pushed to GitHub over SSH; `MILION_CAPTURES` replaces hard-coded corpus paths (clear failure when absent); `tool/requirements.txt` pinned from the imports actually used; every tool script has a usage docstring. LFS is missing (O20) and CI is still open. | Git with LFS, env-configured tools, pinned requirements, green CI. | P01, P38 |
-| D52 | Physical device validation | 5% | Release APK installed and launched on the SM-A528B (Android 14, P00). P01, emulator only (*unverified*): the R8 release APK boots, CameraX preview runs and ONNX infers (M03 · 47%), the Anastasis explorer shows Original/Relief/Restored; no physical device was attached this phase. | Every flow is verified on the A52s, plus the emulator matrix. | P06 onward, P38 |
-| D53 | Release engineering | 40% | P01: R8 + resource shrinking on with `proguard-rules.pro` keep rules, proven by a release build; minSdk 26; per-ABI APKs (`tool/build_android.sh`), AAB 134.3 MB as the release artifact; signing reads `key.properties` or warns loudly and falls back to debug. No keystore yet (O05) and no staged rollout. | A signed AAB with asset packs, a clean pre-launch report, a versioning scheme and staged rollout. | P01, P40 |
+| D49 | Codebase health | 60% | Catalogue removed from classifier; duplicate runtime class_map/scene_info deleted after exact migration comparison. `lib/content/` is pure Dart except the bundle adapter; analyzer clean; lib/ now 5,894 lines. | No dead code or assets, a feature-based structure, analyzer clean, no file over about 600 lines without reason. | P01, ongoing |
+| D50 | Automated tests | 45% | 33 app tests green: valid/invalid schemas, seed evidence, 103-artwork no-ONNX load, notes migration, geography against two independent methods and About long-press. New EN/TR Registry capture test passes; 3 existing capture tests retained. | P38 pyramid with integration tests on the device; a deliberately broken build fails. | P38, ongoing |
+| D51 | Version control, reproducibility, CI | 45% | Deterministic offline seed builder, pinned Wikidata snapshots, reviewed selections, source hashes and GeographicLib 2.1 oracle requirements under `tool/content/`; phase commit. CI and LFS remain P38/O20. | Git with LFS, env-configured tools, pinned requirements, green CI. | P01, P38 |
+| D52 | Physical device validation | 5% | Release APK installed and launched on the SM-A528B (Android 14, P00). P01, emulator only (*unverified*): the R8 release APK boots, CameraX preview runs and ONNX infers (M03 · 47%), the Anastasis explorer shows Original/Relief/Restored; no physical device was attached in P01 or P02; P02 Registry evidence is widget-only. | Every flow is verified on the A52s, plus the emulator matrix. | P06 onward, P38 |
+| D53 | Release engineering | 40% | P01: R8 + resource shrinking on with `proguard-rules.pro` keep rules, proven by a release build; minSdk 26; per-ABI APKs (`tool/build_android.sh`), P02 AAB 134.6 MB as the release artifact; signing reads `key.properties` or warns loudly and falls back to debug. No keystore yet (O05) and no staged rollout. | A signed AAB with asset packs, a clean pre-launch report, a versioning scheme and staged rollout. | P01, P40 |
 | D54 | Store listing | 0% | None. | TR/EN listing, 8 screenshots, feature graphic, promo video, Data Safety. | P40 |
 | D55 | Field trial | 0% | None. | P39 run, with all P0 and P1 findings fixed. | P39 |
 | D56 | Feedback and corrections loop | 0% | None. | In-app "Report a change", a support address (O17) and triage in the phase workflow. | P05, P37, P40 |
@@ -152,15 +158,16 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | Counter | Now | Ship target |
 | --- | ---: | ---: |
 | Reviewed places (Byzantine / mosque / museum / other) | 0 (0 / 0 / 0 / 0). Chora exists, not reviewed. | ≥ 110 (≥ 30 / ≥ 30 / ≥ 25 / rest) |
-| Districts with ≥ 1 reviewed place | 0 / 39 | 39 / 39 |
-| Chora artworks complete | 0 / 103 (summaries exist; inscriptions and sources missing) | 103 / 103 |
+| Districts with ≥ 1 reviewed place | 0 / 39 (drafts in 22 / 39) | 39 / 39 |
+| Draft places with verified QIDs | 155 / 155; 146 inside province, 9 flagged outside | reviewed by their wave phases |
+| Chora artworks complete | 0 / 103 complete; 103 / 103 migrated (guide source linked; detailed stories, inscriptions and TR still missing) | 103 / 103 |
 | Milestones approved (of 48) | 0 (prototypes: I, II) | ≥ 40, all ★ |
 | Routes / hunts / ghost-lens viewpoints | 0 / 0 / 0 | 12 / 6 / 30 |
-| Daily pool / On-this-day entries | 0 / 0 | 365 / 120 |
-| Turkish string coverage | 0% | 100% |
-| App tests | 20 (+3 capture in `tool/captures/`) | P38 pyramid |
-| Dart lines in lib/ | 4,638 (from 9,491) | lean, no dead code |
-| Release artifact size | 89.7 MB arm64 APK (89,695,631 bytes) and 134.3 MB AAB (134,331,439 bytes); universal baseline was 203.7 MB | base download ≤ 60 MB |
+| Daily pool / On-this-day entries | 0 / 0 published; 3 / 3 authoring drafts | 365 / 120 |
+| Turkish string coverage | UI: legacy English, except Registry. Content: 1,075 / 1,938 localized fields have TR (55.5%); 155 / 155 place names/hooks | 100% |
+| App tests | 33; 4 capture tests retained (new Registry test run in P02) | P38 pyramid |
+| Dart lines in lib/ | 5,894 (P01: 4,638; pre-prune: 9,491) | lean, no dead code |
+| Release artifact size | 89.9 MB arm64 APK (89,850,190 bytes) and 134.6 MB AAB (134,603,827 bytes); P01: 89,695,631 / 134,331,439 bytes | base download ≤ 60 MB |
 | Manual minutes per plate | not measured | tracked from P07 |
 
 ## Phase ledger
@@ -169,7 +176,7 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | --- | --- | --- | --- |
 | P00 Milion identity and plan | Done | 2026-09-26 | New name, mark, launcher and splash; paths renamed; this plan. |
 | P01 Clean slate | Done | 2026-09-27 | Git baseline + phase commits; runtime pruned (v3 conch, Classic v5, 26 MB relief, v1 data); `studio/` reorg; `MILION_CAPTURES`; R8 release verified with camera + ONNX; arm64 APK 89.7 MB (from 203.7 MB). |
-| P02 Content registry and mile-zero geography | Not started | | |
+| P02 Content registry and mile-zero geography | Done | 2026-09-27 | Debug About version long-press → Registry; 155 QID drafts sorted by mil distance, 103 Chora artworks, notes preserved. EN/TR and district captures: `studio/captures/P02/`. |
 | P03 Design language | Not started | | |
 | P04 Shell, Today and the first ten seconds | Not started | | |
 | P05 Place page: the dig | Not started | | |
@@ -210,6 +217,8 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | P40 Store launch and release | Not started | | |
 
 ## Changelog
+
+- **2026-09-27, P02 — content registry and mile-zero geography.** Schema 1, 155 QID-backed draft places (22 Istanbul districts + 9 outside), 103 Chora Artworks, I–II prototypes, independent catalogue, preserved notes and bilingual debug Registry. `flutter analyze`, `flutter test` (33), Registry capture, content CLI and APK/AAB release builds pass; invalid fixture exits 1. Evidence: `studio/captures/P02/{analyze,tests,capture,validator,fixture-valid,fixture-invalid,release,evidence-audit}.txt`, `registry-en.png`, `registry-tr.png`, `registry-districts.png`; data provenance and phase-name coverage in `tool/content/`. Scores: D14 10 → 75; D15 5 → 10; D16 0 → 10; D17 0 → 10; D18 3 → 10; D19 10 → 15; D20 20 → 35; D21 0 → 5; D22 10 → 15; D39 0 → 5; D47 15 → 30; D49 55 → 60; D50 35 → 45; D51 40 → 45. Overall **14.2% → 17.1%** (960/5,600). Assessed unchanged: D05 15 → 15 and D07 15 → 15 (legacy fonts/copy await P03); D08 20 → 20 (debug entry only); D13 0 → 0 (models only); D25 5 → 5 (no approvals); D32 0 → 0 (authoring drafts only); D33 5 → 5 (notes only); D35 30 → 30 (mapping change, no new recognition measurement); D41 30 → 30 (widget captures only); D42 10 → 10, D43 30 → 30, D44 40 → 40, D52 5 → 5 and D53 40 → 40 (no device/PAD/signing change). No physical device connected: on-device checks **unverified**; O05 debug signing fallback remains.
 
 - **2026-09-27, P01 — clean slate.** Baseline commit `d219ca4` (made before any deletion) and the P01 commits; the runtime now has one explorer path per Milestone; `studio/` holds the authoring trees and `tool/captures/` the capture tests; `MILION_CAPTURES` replaces the hard-coded corpus paths; R8 + resource shrinking ship with proven ONNX keep rules; minSdk 26; signing falls back to debug with a loud Gradle warning; RECORD_AUDIO and legacy storage are gone (`aapt`-verified); analyzer clean and 20 + 3 tests green. Artifact sizes:
 

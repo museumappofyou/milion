@@ -1,0 +1,435 @@
+{
+  "pageid": 19522719,
+  "ns": 0,
+  "title": "Q17989029",
+  "lastrevid": 2549777006,
+  "modified": "2026-09-26T20:05:40Z",
+  "type": "item",
+  "id": "Q17989029",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Cistern of Aetius"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Aetios Sarnıcı"
+    },
+    "el": {
+      "language": "el",
+      "value": "Κιστέρνα του Αετίου"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "stadium"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "a9f33ce76f75fba87c9de03deedaf673403fecc9",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0278,
+              "longitude": 28.9392,
+              "altitude": null,
+              "precision": 0.011907818107971,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q17989029$FCF19620-0246-47EA-ACF6-F488D7D94F21",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "a2cb9ea692bc81efccddb68809a778e595f32b34",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 483110,
+              "id": "Q483110"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$8A439C0E-37F2-4947-92F5-4C0C6006D131",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "e5428d65d6dcebffe698ebb92e92ade7b18feff1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 93429857,
+              "id": "Q93429857"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$76aeff5e-47e1-f801-0749-6d7c706f1395",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "91e6fbfad4d9bc32a5e74a52eb69b6f9a79e6f0c",
+          "datavalue": {
+            "value": "Cistern of Aetius",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q17989029$E79BF216-DD62-43C6-ACF8-B8077FC14A10",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$5E4C3354-2781-459F-B1AE-C8C8ADF3086F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8f08ac3e0839bdbc4c6eb8d671e772deb12ba423",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "250b03083f7971a02473af3e43115ef521b1440d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 465,
+                      "id": "Q465"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "7e8c3bfb09b068900cd1e3cf5c692d1d96e98f0f",
+          "datavalue": {
+            "value": {
+              "time": "+0401-01-17T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 7,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q17989029$C292788D-F3FE-45A9-8E72-1D631196AD97",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "011bbdba04c0c85188eaee04bd011840a03869f9",
+          "datavalue": {
+            "value": "Vefa.stadi1.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "6629d9014f9327ee85f595506e8e327a9e148357",
+              "datavalue": {
+                "value": {
+                  "text": "Lo Stadio di Karagümrük visto da occidente. Al di là degli alberi è possibile vedere i resti delle mura della cisterna.",
+                  "language": "it"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q17989029$a19e6693-49b3-d5b4-27df-5064a4244a05",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "7fe39c5b03b27aff86148bbf44160b6fd4e7ccaa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 47591,
+              "id": "Q47591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$c203a8aa-449c-d6a0-6798-831081afe239",
+        "rank": "normal"
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "3e4a538127c2e900d5d62c1142013a4a4cc23507",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3678788,
+              "id": "Q3678788"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$1f64d9f6-4573-dd62-7331-284e8f76e1ad",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "7f57c0ca2638a1d892201e5087da24ff030c98ad",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 378369,
+              "id": "Q378369"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$a69870b0-48fa-b6f3-af99-de8f3c55e8b7",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$bfe5d653-4537-e215-7726-c158adf9a1b9",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "6ebcb30996ff6abde5b417719559717874b90bc4",
+          "datavalue": {
+            "value": "/m/011q4k0x",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q17989029$A091A80E-FE08-46BF-BAD3-15D8C08192E7",
+        "rank": "normal"
+      }
+    ],
+    "P366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P366",
+          "hash": "1c4fc0920b0ebc155864f2111af1795344e13817",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1154710,
+              "id": "Q1154710"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$44fda410-44b6-f250-dcb2-0f1f824af9d5",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "ef28679949c3007b155f210ae0a95cb0acd4aa32",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 185476,
+              "id": "Q185476"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$cc219371-4dd9-8974-70b9-3332611402ed",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "7f01bd9f95691c243ca1b486265089da8ab2899d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6102963,
+              "id": "Q6102963"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q17989029$8ff0045c-406a-bb65-7681-05f11608fd79",
+        "rank": "normal"
+      }
+    ]
+  }
+}

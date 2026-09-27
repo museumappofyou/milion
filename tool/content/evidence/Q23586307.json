@@ -1,0 +1,270 @@
+{
+  "pageid": 25594533,
+  "ns": 0,
+  "title": "Q23586307",
+  "lastrevid": 2350391871,
+  "modified": "2025-05-19T23:35:02Z",
+  "type": "item",
+  "id": "Q23586307",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Riva Castle"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Riva Kalesi"
+    }
+  },
+  "descriptions": {
+    "tr": {
+      "language": "tr",
+      "value": "Riva Deresi'nin Karadeniz ile buluştuğu bir tepede yer alan kale"
+    },
+    "en": {
+      "language": "en",
+      "value": "byzantine coastal fort on the hill beside of Riva River"
+    }
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "c9b6bd02601a5c1e40d66f63d926f85939a8c3d7",
+          "datavalue": {
+            "value": {
+              "latitude": 41.224,
+              "longitude": 29.2173,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q23586307$5DFC320C-37B8-49AC-BC88-2D940EE8B166",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "cbeaf2223221ca8690f00655dd773dc67dd5d68a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 57831,
+              "id": "Q57831"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q23586307$98e8db40-4c3a-3b0d-fd04-516b72f70f5b",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q23586307$f2cf26d3-4759-bcc0-2d56-f68dd88c328c",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "9239c1c83760089f25faca0318d52e9c96195a59",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 794351,
+              "id": "Q794351"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q23586307$0b85c2b8-476b-cb69-9c36-625320f2d098",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "da774d97dde8f1ab3bd435378e5914619ff6a41b",
+          "datavalue": {
+            "value": "/g/11bwh96_lw",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q23586307$0146D2C8-FEFF-4964-B1F0-88699EB643B1",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "15e618441f813dff3fd468d9196c02acb0f34069",
+          "datavalue": {
+            "value": "Riva Kalesi girişi 01.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q23586307$a39e0ac9-4ce9-467f-54ab-ebef7d35aaa4",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "80f3cdb5a3cafc8eb2758b671266982ecb67c127",
+          "datavalue": {
+            "value": "Riva Castle",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q23586307$c463841a-4195-349a-f30b-0b5696384fdc",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "b76f88c73604e01ed7b3231e6cc3678136f00bc9",
+          "datavalue": {
+            "value": "3156",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q23586307$A81CB89F-5309-45DA-BE38-5E9104825390",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "4321a9940bc2e04c63b6d57b63c99aa69f6f8241",
+          "datavalue": {
+            "value": "582310548",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q23586307$13A3B58E-1582-4991-9019-ABE16853CB2A",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q23586307$015A8403-7E20-487F-BD3E-064894A03947",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q23586307$90D185BA-3FD5-49BE-9EAF-8E0FE7832942",
+        "rank": "normal"
+      }
+    ]
+  }
+}

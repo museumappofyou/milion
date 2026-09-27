@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../services/classifier.dart';
+import '../content/bundled_content.dart';
+import '../content/registry.dart';
 import '../theme/milion_theme.dart';
 import 'about_tab.dart';
 import 'anastasis_relief_screen.dart';
@@ -17,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final Classifier _classifier = Classifier();
-  late final Future<void> _catalogLoading = _classifier.loadCatalog();
+  late final Future<ContentRegistry> _catalogLoading = bundledContent.load();
   Future<void>? _scannerLoading;
   int _index = 0;
 
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
       onScan: () => _select(2),
       onAbout: () => _select(3),
     ),
-    1 => FutureBuilder<void>(
+    1 => FutureBuilder<ContentRegistry>(
       future: _catalogLoading,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
@@ -72,7 +74,12 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         }
         return ScenesTab(
-          scenes: _classifier.scenes,
+          // Preserve the existing Chora preview; newly seeded places remain
+          // private until their wave review and P05 place pages.
+          scenes: snapshot.data!.artworks
+              .where((a) => a.placeId == 'chora')
+              .map(sceneForArtwork)
+              .toList(growable: false),
           onExamineAnastasis: _openAnastasis,
           onExamineLastJudgment: _openJudgment,
         );

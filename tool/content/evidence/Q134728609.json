@@ -1,0 +1,345 @@
+{
+  "pageid": 128556929,
+  "ns": 0,
+  "title": "Q134728609",
+  "lastrevid": 2529226958,
+  "modified": "2026-08-09T13:39:53Z",
+  "type": "item",
+  "id": "Q134728609",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Babüsselam"
+    },
+    "en": {
+      "language": "en",
+      "value": "Babüsselam"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Monumental Gate in Fatih District"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde anıtsal kapı"
+    }
+  },
+  "claims": {
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "cb0d7894bcffe8b115142926a3ef51ed72a0833d",
+          "datavalue": {
+            "value": "8650",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q134728609$A51F22D4-51EF-472C-82B4-208B4D3862E5",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$C0DD94E3-5776-4C7A-B02C-10E3144331CF",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$B33A0E61-209B-4B10-81DB-7964E0CD1E24",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$50F0A5FC-F452-4A2F-B477-B0BD173AD07C",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "9032bd060b4e323148d530e9d668c85fa882aad4",
+          "datavalue": {
+            "value": {
+              "latitude": 41.01138977264853,
+              "longitude": 28.98322307778912,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q134728609$D4581F90-1322-419A-BBAD-84926780EFE5",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7d5b36e618039af574d0d9f622e0d07e3cd9f993",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 854429,
+              "id": "Q854429"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$C9B29383-B989-4C35-A333-A2918A4F3DDD",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "30601b739e9c4bc9d0b0251caa0f9cc1c16ed38c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 82117,
+              "id": "Q82117"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$4D52026A-9547-4FF5-BAEF-108BFB512381",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d8684783e8f9e805f8066515615873a8af13d2e4",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "69e6fe9dee2c6b521b95b19c74ee776f4d6cc378",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/babusselam",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$CA9DB7FE-488C-48B9-A34C-3F172255ABDD",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "3e1212f1891d172723d78fb9d4bc9a9b758622a9",
+          "datavalue": {
+            "value": "babusselam",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q134728609$C0D97D4F-1485-4AD9-A871-0547BD8893A8",
+        "rank": "normal"
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "bb4735d8c9746f23eda3e7812786d3faac8996d5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 527449,
+              "id": "Q527449"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q134728609$237DFB5B-FF1B-42AD-9BE0-60864205E2AF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d8684783e8f9e805f8066515615873a8af13d2e4",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "69e6fe9dee2c6b521b95b19c74ee776f4d6cc378",
+                  "datavalue": {
+                    "value": "https://islamansiklopedisi.org.tr/babusselam",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "c099fbd629e13716764aeb4b3134e23ecda5b4db",
+          "datavalue": {
+            "value": "Gate of Salutation (Topkapı Palace)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q134728609$6df71a80-4886-5293-dabc-d9cafe2b7385",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "cf48db69e6b379a5eee49e892c5136a6f56f85cb",
+          "datavalue": {
+            "value": "335402649",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q134728609$bd345de9-4e6e-4a84-996e-626767b0ebbc",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "2bede9887680fddc697775b50f1a5f86abaf5a50",
+          "datavalue": {
+            "value": "244",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q134728609$DAFBB2A5-800A-4542-A23B-015AA3960B31",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "7d599635fa5636fefaa6240223559e3901dc9491",
+          "datavalue": {
+            "value": "Gate of Salutation (Topkapi Palace).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q134728609$48CA89A1-262D-4FF3-82CC-99AD80AC80BF",
+        "rank": "normal"
+      }
+    ]
+  }
+}

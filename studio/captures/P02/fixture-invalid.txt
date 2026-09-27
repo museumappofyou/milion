@@ -1,0 +1,21 @@
+Running build hooks...Running build hooks...places: 3
+artworks: 1
+milestones: 1
+sources: 1
+media: 1
+routes: 1
+hunts: 1
+category: byzantine=1, mosque=1, museum=0, palace=0, fortification=0, cistern=0, tower=0, bazaar=0, bath=0, other=0
+district: adalar=0, arnavutkoy=0, atasehir=0, avcilar=0, bagcilar=0, bahcelievler=0, bakirkoy=0, basaksehir=0, bayrampasa=0, besiktas=0, beykoz=0, beylikduzu=0, beyoglu=0, buyukcekmece=0, catalca=0, cekmekoy=0, esenler=0, esenyurt=0, eyupsultan=0, fatih=1, gaziosmanpasa=0, gungoren=0, kadikoy=0, kagithane=0, kartal=0, kucukcekmece=0, maltepe=0, pendik=0, sancaktepe=0, sariyer=0, sile=0, silivri=0, sisli=0, sultanbeyli=0, sultangazi=0, tuzla=0, umraniye=0, uskudar=0, zeytinburnu=0, outside=0
+era (places, not strata): ancient=0, roman=0, byzantine=1, medieval=0, ottoman=1, modern=0
+wave: byzantine=1, mosques=0, museums=0, city=0, abroad=0
+Missing TR: 1/37 localized fields
+ERROR: places[0] (chora): FormatException: Unknown district: invented
+ERROR: places[1] duplicate global id: chora
+ERROR: places[2] duplicate global id: chora
+ERROR: places[2] (chora): FormatException: en must be a non-empty string
+ERROR: chora outside Istanbul bounds without outsideProvince flag
+ERROR: chora references unknown sources id: missing
+6 error(s)
+
+Exit code: 1 (expected 1)

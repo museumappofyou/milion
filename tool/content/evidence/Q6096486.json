@@ -1,0 +1,476 @@
+{
+  "pageid": 5886827,
+  "ns": 0,
+  "title": "Q6096486",
+  "lastrevid": 2541658829,
+  "modified": "2026-09-07T11:35:12Z",
+  "type": "item",
+  "id": "Q6096486",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Bağdat Köşkü"
+    },
+    "en": {
+      "language": "en",
+      "value": "Baghdad Kiosk"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mansion in Fatih, İstanbul, European Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "İstanbul'un Fatih ilçesinde tarihi köşk"
+    }
+  },
+  "claims": {
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "14338d999f8d64d59d15b9af1b2d8bd9b87c5e2c",
+          "datavalue": {
+            "value": "Palacio de Topkapı, Estambul, Turquía, 2024-09-30, DD 65.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6096486$239C7E78-260D-4965-8272-D8501590178B",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$82ACC7CE-BE06-4405-9CB3-23A3D9257AD3",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "bcc32504c371c93861eda6b025b2b937d1012e7b",
+          "datavalue": {
+            "value": "/g/122glb50",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6096486$8885247A-BE26-4C1E-907C-D8AA2FDCAB92",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "cfdb8e79d9e8769780b77e227973d669f1a85249",
+          "datavalue": {
+            "value": {
+              "latitude": 41.014380507973144,
+              "longitude": 28.984524671181372,
+              "altitude": null,
+              "precision": 1e-08,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6096486$a9b72cba-4c00-e69d-4980-4cde0fa3eb4b",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "b8b1fec4cfa285373d2d87a5b10555121a477a86",
+          "datavalue": {
+            "value": "8648",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6096486$36B46FA1-FC13-48FA-BC23-D96F182086B4",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$E13ABA31-25D6-43E2-B336-5209A9DFAA92",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "eddd2c729f7c4dc67db81413a86e681ec2e334a9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6073520,
+              "id": "Q6073520"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$396290A3-13B4-4980-8A3F-B592A01A546B",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "4b44bad7562cee6cb3a6a95b46ea083edfa7ef19",
+          "datavalue": {
+            "value": "32396296",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6096486$DEB5BF3C-2A99-4647-9A11-34B557D5D656",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1546f2e76f4ca1375bc8608e6a797f11f0fd665b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 35112127,
+              "id": "Q35112127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$64588DDC-8A1D-441E-8995-C236AA427BA9",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "5996f31ddcbd15992e666ec7855866cffd06b92e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 522124,
+              "id": "Q522124"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$83F62E4C-9D1A-44B1-9879-D69E59577609",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$678B56B6-0BA6-4258-BD2A-4E64498B3F5F",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$9961558A-F471-44DE-BC91-C2BE930ACBCB",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "3aa083f215e2c8abbdeaaf88a2c5af537963b37f",
+          "datavalue": {
+            "value": "Palacio de Topkapı, Estambul, Turquía, 2024-09-30, DD 68-70 HDR.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6096486$46360209-4df9-ceb6-d5f6-a0646de5bf0c",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "eb5189b3372385845f5aadf8288a41ee23c498b2",
+          "datavalue": {
+            "value": "Baghdad Kiosk",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6096486$c308acc6-455c-6785-51f5-27733ad5cdcf",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "23fc3763dda7aa0153bb242c9cd536366eced13f",
+          "datavalue": {
+            "value": "bagdat-kosku",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6096486$1F482240-E72C-435E-A67B-9248B75E5EF2",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "3eaa9cadcf9e74552e9c2717834fc33d0b36f050",
+          "datavalue": {
+            "value": "1646",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6096486$C30C3D4D-DF8B-421D-AE8D-A65BF6A714A2",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "be35b44277b3352b572c2f1093d3f992f83d01de",
+          "datavalue": {
+            "value": {
+              "time": "+1638-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q6096486$f919ce40-4372-7bfe-44d8-d57a3fab6d56",
+        "rank": "normal"
+      }
+    ],
+    "P88": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P88",
+          "hash": "297cc5209e1e7fd6904c86277cf7bd4becf0a7d6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 174762,
+              "id": "Q174762"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$d3044078-4c4b-96bd-9fd8-7db2cd30ea13",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "79a0ff53c58b1b16a84108d9b70c11deac38f0a3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170495,
+              "id": "Q170495"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$17a89fd0-4c54-cb56-2a99-b68aa3936f00",
+        "rank": "normal"
+      }
+    ],
+    "P547": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P547",
+          "hash": "8ec323f8093587af431215f9b3c60e2956d03f78",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5036981,
+              "id": "Q5036981"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$ad8a6d60-4a41-1f33-472f-aa885c8aa1ec",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "aaa00cdbff57a29bdf9412a1f596c0a27c768a46",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "df50f79aeb0f58b155290189b4950e047ad66b8d",
+                  "datavalue": {
+                    "value": "https://mosqpedia.org/wp-content/uploads/2024/09/OzNCnvrAwbuRXdVRKZBl4uI51mXG9yvOH4KZGq4q.pdf",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P304": [
+                {
+                  "snaktype": "value",
+                  "property": "P304",
+                  "hash": "f79e755287b7c1064252b59cf42bec2bd7b15ba2",
+                  "datavalue": {
+                    "value": "285",
+                    "type": "string"
+                  },
+                  "datatype": "string"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P304"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2670": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2670",
+          "hash": "6c490e79eeef6d8066d00a4de06f215f7cb2ab88",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12493,
+              "id": "Q12493"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6096486$547a8d7e-4bd7-774a-4bbf-48d3388999f4",
+        "rank": "normal"
+      }
+    ]
+  }
+}

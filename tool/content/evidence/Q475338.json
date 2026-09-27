@@ -1,0 +1,596 @@
+{
+  "pageid": 448040,
+  "ns": 0,
+  "title": "Q475338",
+  "lastrevid": 2543942080,
+  "modified": "2026-09-11T11:46:36Z",
+  "type": "item",
+  "id": "Q475338",
+  "labels": {
+    "el": {
+      "language": "el",
+      "value": "Μέγα Παλάτιον"
+    },
+    "en": {
+      "language": "en",
+      "value": "Great Palace of Constantinople"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Büyük Saray"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Byzantine imperial palace complex"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te saray"
+    }
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "c231b12e8d188f7949a6de3aa87066be1369009e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8499351,
+              "id": "Q8499351"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$F4FD62D9-2FF7-4704-A03A-6FA7ED4D2FF5",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "5fcb9387014a40021609cd030052e83c3e0ebb0e",
+          "datavalue": {
+            "value": {
+              "latitude": 41.00638889,
+              "longitude": 28.97777778,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q475338$264B2CB5-E2D7-4803-BF90-50EAF99F9E97",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "d09d779e44321fedbbd8456394fd79387de8e962",
+          "datavalue": {
+            "value": "/m/0b8cgl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$22406355-642B-43F9-9697-40F661E8DD73",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "7fe39c5b03b27aff86148bbf44160b6fd4e7ccaa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 47591,
+              "id": "Q47591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$A6A5AADB-337A-4996-97AE-5214740BEF00",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "a9269c53b6be27acc2f06780b28d0bcf4b794bbb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16560,
+              "id": "Q16560"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$D8C7B789-A84C-4167-A4C0-344A6350D0B2",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "31445342cb3c7702ea76176c174d810e430e7f49",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19860854,
+              "id": "Q19860854"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$2bd71b65-40d6-2bdd-093f-39183815b5ad",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "3355a99d1ea5a7830df74315252c517cd9a7bc81",
+          "datavalue": {
+            "value": "Pier Great Palace Istanbul (1).JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q475338$7f158bb7-4d81-a100-6367-8628847e59b2",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "1028264e540503e12764f10bae5a030bef9fc795",
+          "datavalue": {
+            "value": "Great Palace of Constantinople",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q475338$476bc4c1-47f2-ce51-79b3-42427e770e01",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$8CC9CF60-78C7-4989-AF9D-EF3B1B125472",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$4e788222-4f3a-5182-a27e-7844a61ce312",
+        "rank": "normal"
+      }
+    ],
+    "P2596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2596",
+          "hash": "772247c12d92cbc977b55d017a76aad77cbaeaeb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12544,
+              "id": "Q12544"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$dd3f447e-4475-2286-df65-b89601af3866",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "248d54dc41de17e7a8737d8c2a3f4591ba9327c5",
+          "datavalue": {
+            "value": "143546941",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$ccddb4f5-44fe-05ac-80f2-0304d8b0254e",
+        "rank": "normal"
+      }
+    ],
+    "P949": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P949",
+          "hash": "2bb8bbf7fe0f7d83f3a83e266c2fd7ec5a68239a",
+          "datavalue": {
+            "value": "000594194",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$8c0ef207-4dcc-9b3d-ed6b-288f77e3e8c8",
+        "rank": "normal"
+      }
+    ],
+    "P1584": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1584",
+          "hash": "6d5cecbe11af25c1f317982e2d1900d3c270fce1",
+          "datavalue": {
+            "value": "177059114",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$c93f48a2-471a-bff3-4de8-64445fe2d752",
+        "rank": "normal"
+      }
+    ],
+    "P455": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P455",
+          "hash": "680c5144c520ff18d0aca8434bffb7b070919bc2",
+          "datavalue": {
+            "value": "259752",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$b0345f5f-4f34-e8d9-23dc-bebce0da6580",
+        "rank": "normal"
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "307e154fecae8aa20d84eda08ffd336e97bd5df3",
+          "datavalue": {
+            "value": "987007290658605171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$3478DE52-40D3-47DA-A4CF-C134C529A4C6",
+        "rank": "normal"
+      }
+    ],
+    "P5817": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5817",
+          "hash": "72bf9c5b5c8bbc435ef6d6024404e57affb92697",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 104664889,
+              "id": "Q104664889"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$984F6719-5911-4804-9304-AD1A065F1B6D",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "d6c4840577ba6c097ffaaf909de0a2afa5e881b9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56556915,
+              "id": "Q56556915"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$B261E521-2DAF-4E68-8BCC-3221E93D3D15",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "6ba4f9c8011f93e76dde19db8ac5952adf0988e6",
+          "datavalue": {
+            "value": "sh93009365",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$9BA2F235-29D2-4473-B55C-D7D5DC318E58",
+        "rank": "normal"
+      }
+    ],
+    "P691": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P691",
+          "hash": "61565185abe942d76a5e1cc73b41c1cce1864894",
+          "datavalue": {
+            "value": "kn20020322071",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "e5036172ad0c43f994325b646982273c67730ec8",
+              "datavalue": {
+                "value": "Great Palace of the Emperors (Istanbul, Turecko)",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q475338$5786A777-EE59-4AF6-AD1C-0E0C6AF4E6BC",
+        "rank": "normal"
+      }
+    ],
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "57703ca8f38e21bb9aeeb10a4baf191a0625e430",
+          "datavalue": {
+            "value": "135853",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$13086153-EBA8-4268-A6DA-F1D660F9C54B",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q475338$CD02CBB8-4E1B-4C7C-B449-89C656E74CF7",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "c3b8fb123e91a00f14360b293fbdd7e7716648c4",
+          "datavalue": {
+            "value": "group/1c32aaaf-bb9c-474b-ab8f-ea1357235571",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$1378CBF3-FC68-42E8-9E0F-3EA2945B5D77",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "9d30dc07ca2e286071d9958c2399eca841ed60cc",
+          "datavalue": {
+            "value": {
+              "text": "Μέγα Παλάτιον",
+              "language": "el"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q475338$d7724cd4-4407-7f01-807e-2e7d944b56e7",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "ba39fd02284e8891fb73f6a8fcf677092ababa59",
+          "datavalue": {
+            "value": "5039",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q475338$3BBC85AB-4755-412B-B296-C6F8698D0561",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "pageid": 126540570,
+  "ns": 0,
+  "title": "Q132681951",
+  "lastrevid": 2350364681,
+  "modified": "2025-05-19T21:51:24Z",
+  "type": "item",
+  "id": "Q132681951",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Hisart Canlı Tarih ve Diorama Müzesi"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "museum in Şişli District"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Şişli'de müze"
+    }
+  },
+  "claims": {
+    "P11729": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11729",
+          "hash": "ffe682a8d5155b7b733d66955fe1392d7a6da4e1",
+          "datavalue": {
+            "value": "10021",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q132681951$AC98BD4D-2A98-4547-93AF-0EAA4C22CFA0",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q132681951$D1314CD2-DD19-4DA7-AF67-E057E973F346",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "9488bf5a94ef7447ccb880f162b1318cb58b04a7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 390637,
+              "id": "Q390637"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q132681951$134B876C-F630-4C28-A4F7-F0900ADC8A6A",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "304be9f222e83d834ea4dbcceba76b5b62e89231",
+          "datavalue": {
+            "value": {
+              "latitude": 41.071339,
+              "longitude": 28.983349,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q132681951$0FC7B4FE-7967-42FF-8266-943B3D7A11C5",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q132681951$C0E3603B-20FF-412B-9FD2-67EB0456BA00",
+        "rank": "normal"
+      }
+    ],
+    "P5816": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5816",
+          "hash": "ce46cb1edbe790adf400f939aa9045a5c44a72c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56557591,
+              "id": "Q56557591"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q132681951$951E4E78-5D58-4455-A4DB-FAF77CC60ED5",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q132681951$257DB446-492C-4EC8-A51D-E35471D3C307",
+        "rank": "normal"
+      }
+    ]
+  }
+}

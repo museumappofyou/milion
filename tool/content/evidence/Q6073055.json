@@ -1,0 +1,4253 @@
+{
+  "pageid": 5861076,
+  "ns": 0,
+  "title": "Q6073055",
+  "lastrevid": 2522656639,
+  "modified": "2026-07-25T20:56:09Z",
+  "type": "item",
+  "id": "Q6073055",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Silivrikapı"
+    },
+    "en": {
+      "language": "en",
+      "value": "Silivrikapı"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "mahalle (administrative quarter) in Fatih, İstanbul–Europe, northwestern Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih, İstanbul, Türkiye'de mahalle"
+    }
+  },
+  "claims": {
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P131": [
+            {
+              "snaktype": "value",
+              "property": "P131",
+              "hash": "72b7c341923d5ca1d6a7268ce4c49175db33c6b0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 534799,
+                  "id": "Q534799"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P131"
+        ],
+        "id": "Q6073055$7911B2D0-E96B-405C-8CC8-1FAD720834DB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2e7fa0083ba1c302cdcf3fa65c613f90daeb4c37",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a6fb73df37ac546825b07ebb80a22de88d99425",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 58255,
+                      "id": "Q58255"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6073055$49D04BE4-425B-4448-9267-D59A78336473",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2d647a00d3c1607e15818bfeaf2fd5343848c789",
+            "snaks": {
+              "P5573": [
+                {
+                  "snaktype": "value",
+                  "property": "P5573",
+                  "hash": "900135c68e07363d0e58b6f7296ee63cb4b03238",
+                  "datavalue": {
+                    "value": "42963",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "0c8bd92e73708301fbdef488186bd3197b7c3d1c",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-08-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5573",
+              "P248",
+              "P813"
+            ]
+          },
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5573": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5573",
+          "hash": "900135c68e07363d0e58b6f7296ee63cb4b03238",
+          "datavalue": {
+            "value": "42963",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6073055$BC11F5EA-997B-4817-AEB1-E5D25796AA70",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "21494d78c86d729112257391ca4131a84f73b44b",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d845f4eb775982fb2055473e0463f4a17a2cfa54",
+                  "datavalue": {
+                    "value": "https://www.archinform.net/service/wd_aiort.php",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "83237a37d47a18cacfe2acba0b8c6667601a1f38",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-08-05T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P402": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P402",
+          "hash": "99bfc054920b604d2de9950c39f595abafcd8d79",
+          "datavalue": {
+            "value": "7648810",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6073055$f334f40b-44c4-0bca-153f-ffc12a612940",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "62247091f63482464bc74eadaeb394782c83da8e",
+          "datavalue": {
+            "value": "/g/1238sbtl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6073055$0D2C7B66-692B-4EE6-A3A7-EFB37DBA452F",
+        "rank": "normal"
+      }
+    ],
+    "P1082": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "7de207c7d65bdd5973df8ec52ad4dc17dbbd958c",
+          "datavalue": {
+            "value": {
+              "amount": "+16901",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "e4ce1ad4d6c6d0289a402c42bf392b7c735cbc30",
+              "datavalue": {
+                "value": {
+                  "time": "+2009-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$2E1A8019-D76F-4E4E-9777-1DA051030D42",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "71e48cad1f123754e893357f29be560f713eb168",
+          "datavalue": {
+            "value": {
+              "amount": "+17337",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "3c2d510317e0fcbe8582afb1d706a4b6eb08d233",
+              "datavalue": {
+                "value": {
+                  "time": "+2010-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$AA5C65E9-3A05-48AB-8344-F2428B9038EF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "090a1faee4a98917e6a850a078fd4cc2848ecadf",
+          "datavalue": {
+            "value": {
+              "amount": "+17379",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "1277780215cd5ca03e85ca9c50830783b4fedfe1",
+              "datavalue": {
+                "value": {
+                  "time": "+2011-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$1656709D-E828-4A53-9E0B-D0CB7D59E8DD",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "0924d6fd8601f78f400a16f6e261d1f2ad6ac64a",
+          "datavalue": {
+            "value": {
+              "amount": "+17239",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "8f3565657428592dc1dd7f92da0f734724d987d7",
+              "datavalue": {
+                "value": {
+                  "time": "+2012-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$CCF6BA2F-9DFF-42F2-B7FA-21824F537EE2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "e6e873e35c5579e71912fbdbc4567ebee1ca4fed",
+          "datavalue": {
+            "value": {
+              "amount": "+17274",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "1e2a78761fecc9e5ba1ba772d86ba7dbf29fe467",
+              "datavalue": {
+                "value": {
+                  "time": "+2013-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$EBD1C2E0-489E-4C5A-993B-8D42A7330CDB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "362f57729b8364965c626139dee44e61f9eeb354",
+          "datavalue": {
+            "value": {
+              "amount": "+16997",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "049bd876bdfea826eaceb6f6056701b74c6d3f08",
+              "datavalue": {
+                "value": {
+                  "time": "+2014-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$36F86DB5-E735-44FB-B18C-A9C970DE24C9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "1d4d46ee075c2fc0c4f2c732eb1b2b7c6a7de07a",
+          "datavalue": {
+            "value": {
+              "amount": "+17050",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "b6849eb7f635c6ee36b75d8adf7e3f89c6624101",
+              "datavalue": {
+                "value": {
+                  "time": "+2015-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$D3D7AA0D-AFE8-48FE-BB8B-A5C5650C1ADE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "90f71096e99eb9d39702e4e8ca10417252321364",
+          "datavalue": {
+            "value": {
+              "amount": "+16815",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "f4e1bbc6e9b3a72c2e1fd3e6061f4c7e7f5acad9",
+              "datavalue": {
+                "value": {
+                  "time": "+2016-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$66BEFBF0-AAE8-4DF1-B3EC-54DE9AF5A26C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "2997bb4734718e3ecd3b125806cc47bd8ae2607f",
+          "datavalue": {
+            "value": {
+              "amount": "+16823",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "c34a8cfb745b0cda47dffa6967839b8f92bcb653",
+              "datavalue": {
+                "value": {
+                  "time": "+2017-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$3B253A7E-9743-4D46-9189-AD191F7CF1D0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "206bfa728fab3e13dd1d16f906ef078d71888f33",
+          "datavalue": {
+            "value": {
+              "amount": "+16556",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "6174553681261aeec411766adf691fdeec1dee47",
+              "datavalue": {
+                "value": {
+                  "time": "+2018-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$06801AA0-C3BD-42AD-82F2-A4F0D916601D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "7dfbd965d0301cad74620a6519329f74ba7d29f8",
+          "datavalue": {
+            "value": {
+              "amount": "+16639",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "77f348fcb49110a0de3c2faf4865527dc30dcbc9",
+              "datavalue": {
+                "value": {
+                  "time": "+2019-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$42344E0E-7281-4459-93BE-C910E01E0776",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "b1a9074be2994674daf49cc8972f164eaef72713",
+          "datavalue": {
+            "value": {
+              "amount": "+15995",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "09f85c089438e099c1cd33998f5c59a57729afd2",
+              "datavalue": {
+                "value": {
+                  "time": "+2020-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$A4C5C92D-ABA7-4CF0-8EFF-5F4F1B006F72",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "d43a6225195a29e6401ddcb60bb514a91efc37ae",
+          "datavalue": {
+            "value": {
+              "amount": "+16028",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "4a6fe7f861358928efef462e361b21704446d129",
+              "datavalue": {
+                "value": {
+                  "time": "+2021-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            },
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "33bd9a339157ce7b3d74cb10d73bc23529c9a7f3",
+              "datavalue": {
+                "value": {
+                  "time": "+2021-12-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "4a03ba950ef0a137d2095b6b581ec7a75f3d0ec2",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 111630488,
+                  "id": "Q111630488"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$3893FB87-A962-4565-A33D-9DC8E1AD3E74",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          },
+          {
+            "hash": "233085b81d3e5a2fe183f818334e958d650e92f5",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "21baa2271ee44abd650f60001cb9cc3f13d0c464",
+                  "datavalue": {
+                    "value": "https://data.tuik.gov.tr/Bulten/Index?p=Adrese-Dayali-Nufus-Kayit-Sistemi-Sonuclari-2021-45500",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "495f04cdb6e4632e5697967c832d7d4556cd4383",
+          "datavalue": {
+            "value": {
+              "amount": "+15540",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "2158d4b68f82b8f36f47c98bd3609a99913faa59",
+              "datavalue": {
+                "value": {
+                  "time": "+2022-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$2E4ECE5A-0319-4613-86CA-43818D06417A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f7c6865a6793406a8a63e79d702de3f4a3dc7353",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e6afbd2c74741e88df4699ec517e18f466be17d4",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "d48d68ee3e7889a1ac2b65ae8d9606a9dc1b4cb3",
+          "datavalue": {
+            "value": {
+              "amount": "+15080",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "1a3e5e8f69f70a8a6b056a6cb8cf5fce7fffa373",
+              "datavalue": {
+                "value": {
+                  "time": "+2023-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$F554B447-05D1-4F70-B742-368CB43DBC77",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6e18ffeb9c21f0c7cfc6e877e5390b3818e22ed3",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "23f1d83405654eeb2097d5cbb75ea80a5e34ee48",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-04-09T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1082",
+          "hash": "14cc3ac3933523b2d271e3720c1136889c8308f2",
+          "datavalue": {
+            "value": {
+              "amount": "+14926",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "daee777a902fd7cd73351aa33ba07e0a22d4fb9b",
+              "datavalue": {
+                "value": {
+                  "time": "+2024-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$3FE48E09-E9B1-4EEB-A74F-FD589BDBE74A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "94d97bc0a04c6e5313f33aa6bd9f2fd0a831890d",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ce2dc7e32a82370ef97b0710c32900f96072ab62",
+                  "datavalue": {
+                    "value": "https://www.tuik.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "af1cb5409f261874f75987d0b7bdebaf9dd566e5",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-05-01T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "60c5d02ddc786b2606c767bb5e4785095828f5d3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1375058,
+                      "id": "Q1375058"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "6b5bf7078ef55df0c7f91621cc3835813ea275b6",
+                  "datavalue": {
+                    "value": {
+                      "text": "Adrese Dayalı Nüfus Kayıt Sistemi",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2340e829b09293086dbf1d01319e2cbbd6e594a2",
+                  "datavalue": {
+                    "value": {
+                      "text": "Address Based Population Registration System",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      }
+    ],
+    "P473": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P473",
+          "hash": "6ce766305ec1513e0e05ed368c3fc05af15be740",
+          "datavalue": {
+            "value": "212",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6073055$BEE5D04E-D162-4F77-A7C0-F51C4EF5C97B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "26a15961eb9eea08319a9291ce3ed5400a0adb59",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2a0e0f9858720fd846ede433bc4f519b3d036931",
+                  "datavalue": {
+                    "value": "https://www.btk.gov.tr/cografi-numaralar",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "d47e7b4d24f29d39080b03289a3f3c18c89e350b",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-04-12T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "17ace22c88c24e91b91eb937229f1a9e269715b5",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 12808868,
+                      "id": "Q12808868"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "cba4ed216323fea93a00ca1a900fc5541daeeaad",
+                  "datavalue": {
+                    "value": {
+                      "text": "Coğrafi Numaralar",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "e017a05ee39079d6d01d4f72e7cbd79f39bd3311",
+                  "datavalue": {
+                    "value": {
+                      "text": "Geographic Numbers",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "d31ba47f3a6baf89d3232646f037394ac5077f47",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20240119165805/https://www.btk.gov.tr/cografi-numaralar",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "f26809b9f2c296180ea26e3b2ceab0afb0c831d0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-01-19T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407",
+              "P1065",
+              "P2960"
+            ]
+          }
+        ]
+      }
+    ],
+    "P395": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P395",
+          "hash": "576b7536396c0816d42c86077793f196a231af98",
+          "datavalue": {
+            "value": "34",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6073055$D3A92247-838C-454F-936B-C98490AE0AD8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3e9a51d21b239244f5810bd42d58e846650b6538",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "4d0a05d03c340169f59d5006698d8f4928e926d4",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/GeneleAcikSayfalar/IlBilgileri/Il_Bilgileri_Haritasi.aspx?IlKey=34",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "d47e7b4d24f29d39080b03289a3f3c18c89e350b",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-04-12T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "395430b6f73ef070fe3999fc7659125d9d717368",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1663916,
+                      "id": "Q1663916"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "9c77d9d71a6bb2e31d0f670f9951bd684d54c2d3",
+                  "datavalue": {
+                    "value": {
+                      "text": "İl bilgileri Haritası",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "099cd878e70033dc913661d614adf2aa5a1d6f01",
+                  "datavalue": {
+                    "value": {
+                      "text": "Province information map",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "c298fdff0e55b2846306af7e14e8eb95a8214d41",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20230927083329/https://www.e-icisleri.gov.tr/GeneleAcikSayfalar/IlBilgileri/Il_Bilgileri_Haritasi.aspx?IlKey=34",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "659ee4c7762b0806bfd9f72b7a39e0b1592569db",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-09-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813",
+              "P123",
+              "P1476",
+              "P407",
+              "P1065",
+              "P2960"
+            ]
+          }
+        ]
+      }
+    ],
+    "P281": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P281",
+          "hash": "959ef42360f32af2ea28585db98731f583a94a51",
+          "datavalue": {
+            "value": "34107",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6073055$2B8D4080-65CD-4F18-A633-C4D38A9C530C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "99ec7e9ee7c1011ed4f4aa4f9c8b04daf403832f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "ac9d132bf016809bd9b881c442c8f4cd04e1a0b1",
+                  "datavalue": {
+                    "value": "https://postakodu.ptt.gov.tr",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "9a6138f627e09928236d5207090304201215aef6",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 3079259,
+                      "id": "Q3079259"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "69860feb021d5969069e694db06f75c0c9c1db2b",
+                  "datavalue": {
+                    "value": {
+                      "text": "PTT posta kodu sorgulama",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "09e480aa418af6bddfec07ac4dd2bb5b48af50fa",
+                  "datavalue": {
+                    "value": {
+                      "text": "PTT zip code inquiry",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e8bcf05094551ad7689cefdd22e54e1b6d96ed7f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-06-09T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P123",
+              "P1476",
+              "P407",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8138",
+          "hash": "d7e0d142881c893e9ac91632c1ae640ba2241624",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19838938,
+              "id": "Q19838938"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6073055$9939B046-75C9-45BA-8371-ED5D605287D2",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "ee7412972a9cdb17e0f3837a34be701dbc4f15dd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12808623,
+              "id": "Q12808623"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6073055$6B449637-ECE1-4097-B754-AAE309057C79",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "8fb1f4c3f26ef2bb4e2b3ff6888eed3e28b4f456",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17051044,
+              "id": "Q17051044"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6073055$DFB2FFE7-4296-4993-A1E8-567C445BC0EB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P12883": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12883",
+          "hash": "ad8d066c76ca45e2ead4ea6a09edb5e02c201504",
+          "datavalue": {
+            "value": "99132",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q6073055$44A31B95-15B0-416D-8300-03A7614C43B8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "acb43a8957cbc8ff89d496be0d2cfde74839e642",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0054068,
+              "longitude": 28.9268933,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q6073055$6A6E648B-A937-450D-B8D5-EFCCDFCFA8BC",
+        "rank": "normal"
+      }
+    ],
+    "P7938": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7938",
+          "hash": "ee4cfe624bcc9339b13a5ad47747141d7c1a62a4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 20723392,
+              "id": "Q20723392"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6073055$8855F85F-E745-4D0A-9010-E5CD9953D05D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fd01156aa1bd045cec9e3155f1d18ca568759759",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "820a07a83931eaa214fe85b6643666b9073dfc52",
+                  "datavalue": {
+                    "value": "https://www.resmigazete.gov.tr/eskiler/2023/03/20230303-6.pdf",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "b2c8d8deddd6a441eecc986c69969625ef79b4e2",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20230303213401/https://www.resmigazete.gov.tr/eskiler/2023/03/20230303-6.pdf",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a4d98c4e5548e53733a37846668c7e9a98673833",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-07-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "b27a081ff12f17af0e4ff8068456f4bd80f3e871",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 7645037,
+                      "id": "Q7645037"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "d28232c79be695bff5f3e3cdc7493be8f20060aa",
+                  "datavalue": {
+                    "value": {
+                      "text": "Yüksek Seçim Kurulu Kararı",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "fb97a4bbb4085a3fa37809d6d88eba4b36b8bf1d",
+                  "datavalue": {
+                    "value": {
+                      "text": "Decision of the Supreme Election Council",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "1b6212a92653b20840a83645f758a0552282bebf",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-03-03T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "81db024f3c06a5bc915c39ac59c721e882bc0dbc",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-03-03T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P1065",
+              "P813",
+              "P123",
+              "P1476",
+              "P407",
+              "P2960",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2046": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2046",
+          "hash": "fe9f47ceaaff948d2fa0c9627eaced103bc61ee1",
+          "datavalue": {
+            "value": {
+              "amount": "+0.31",
+              "unit": "http://www.wikidata.org/entity/Q712226"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q6073055$79575BC0-A701-4C01-BFCE-109C647155AA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c99d841a9d4aec430af2e0d0f488ac3a8d76be8d",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "42d4b444920a7eafa02d6673bd9d156f299f1a20",
+                  "datavalue": {
+                    "value": "https://atlasbig.com.tr/istanbul-mahalleleri-nufus-yogunlugu",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "e37eccc99a8f5e225bc3a2a20102ac338a8738b9",
+                  "datavalue": {
+                    "value": {
+                      "text": "İstanbul'un Mahalle Bazında Nüfus Yoğunluğu Haritası",
+                      "language": "tr"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                },
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "ad12a570a6619d9cd4fe3ce69a9b4ba951848174",
+                  "datavalue": {
+                    "value": {
+                      "text": "Population Density Map of Istanbul by Neighborhood",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "0b8509a9daffac68f6adaacc8adb542dfe69ff03",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-09-24T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "0bc759fbb2703b9235b9ace773594b2610b98aaf",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20240925143124/https://atlasbig.com.tr/istanbul-mahalleleri-nufus-yogunlugu",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "52fef42eee053441e359984f0e9d81f996385c63",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-09-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 256,
+                      "id": "Q256"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P1476",
+              "P813",
+              "P1065",
+              "P2960",
+              "P407"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1540": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1540",
+          "hash": "6903de0f9c38a726542d84d32dd491adaeba1031",
+          "datavalue": {
+            "value": {
+              "amount": "+7747",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "33bd9a339157ce7b3d74cb10d73bc23529c9a7f3",
+              "datavalue": {
+                "value": {
+                  "time": "+2021-12-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "4a03ba950ef0a137d2095b6b581ec7a75f3d0ec2",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 111630488,
+                  "id": "Q111630488"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$27391874-2283-4280-99CD-31BF95A78E28",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "233085b81d3e5a2fe183f818334e958d650e92f5",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "21baa2271ee44abd650f60001cb9cc3f13d0c464",
+                  "datavalue": {
+                    "value": "https://data.tuik.gov.tr/Bulten/Index?p=Adrese-Dayali-Nufus-Kayit-Sistemi-Sonuclari-2021-45500",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1539": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1539",
+          "hash": "a219fce01b716130f56f4d7f3019641a2f711a49",
+          "datavalue": {
+            "value": {
+              "amount": "+8281",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "33bd9a339157ce7b3d74cb10d73bc23529c9a7f3",
+              "datavalue": {
+                "value": {
+                  "time": "+2021-12-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P459": [
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "0c50ad141c11fb26dee818563129b921c9d63457",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6042918,
+                  "id": "Q6042918"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            {
+              "snaktype": "value",
+              "property": "P459",
+              "hash": "4a03ba950ef0a137d2095b6b581ec7a75f3d0ec2",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 111630488,
+                  "id": "Q111630488"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P459"
+        ],
+        "id": "Q6073055$C4FE8241-45E1-43CB-A2F6-2F06F7469ACA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "233085b81d3e5a2fe183f818334e958d650e92f5",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "21baa2271ee44abd650f60001cb9cc3f13d0c464",
+                  "datavalue": {
+                    "value": "https://data.tuik.gov.tr/Bulten/Index?p=Adrese-Dayali-Nufus-Kayit-Sistemi-Sonuclari-2021-45500",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          },
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P30": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P30",
+          "hash": "19a1327487d5b9576f36ab9e95214ac7aa1091ba",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 46,
+              "id": "Q46"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6073055$6CF03A96-7B97-44B8-9F76-48E825644CD0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c6327a6d752478d9d4fc29e57178627078623851",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b6448d9f436753c0cb2a56ef204b0e21dddce17d",
+                  "datavalue": {
+                    "value": "https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P13835": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13835",
+          "hash": "de69f40882221f0aca096cc1cd002289c4bdaef1",
+          "datavalue": {
+            "value": "670",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6073055$F51420A7-B4FD-4C2F-A23E-2CDF962A9F49",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "e5d0444c52fc0986e6516872505e9e455bf9c5fd",
+          "datavalue": {
+            "value": "Silivri Kapısı, Fatih, İstanbul 2025.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q6073055$f32eee2f-4146-16f9-1142-ff3039b3f057",
+        "rank": "normal"
+      }
+    ],
+    "P14214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14214",
+          "hash": "514c73f46c47662e7b9f5f5ddf943b75830989d8",
+          "datavalue": {
+            "value": "3371",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6073055$89A3A1BB-B5D5-4FCF-B66C-E320A676A951",
+        "rank": "normal"
+      }
+    ]
+  }
+}

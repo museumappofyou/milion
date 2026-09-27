@@ -1,0 +1,407 @@
+{
+  "pageid": 97348514,
+  "ns": 0,
+  "title": "Q99397898",
+  "lastrevid": 2457921280,
+  "modified": "2026-01-26T12:25:07Z",
+  "type": "item",
+  "id": "Q99397898",
+  "labels": {
+    "tr": {
+      "language": "tr",
+      "value": "Eski Şark Eserleri Müzesi"
+    },
+    "en": {
+      "language": "en",
+      "value": "Museum of the Ancient Orient"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "museum in Fatih, İstanbul, European Turkey"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fatih'te müze"
+    }
+  },
+  "claims": {
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "9eb4f5171414111a9e14324da80f5423e35bf72b",
+          "datavalue": {
+            "value": "/g/1tz27186",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q99397898$C1A9DBCD-BC30-4F83-9BCA-A396C06A6FBC",
+        "rank": "normal"
+      }
+    ],
+    "P1416": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1416",
+          "hash": "032a7bfd4f22b7a1514b593513c40843ef3c9ef9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 108564951,
+              "id": "Q108564951"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$BB8ED038-6006-4F82-9F92-CCDAACBB772F",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33506,
+              "id": "Q33506"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$A8156A33-AAAF-48F3-B42D-2AAD09D37405",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b83b07aa158d8a68508ac76da82480f656131b69",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 732923,
+              "id": "Q732923"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$98550177-2173-4EC8-A5A0-2D3CCAEC351A",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "632e3ea72e2789cfcd116d718c3200586af55585",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 406,
+              "id": "Q406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$AE040024-FBA8-4848-BD9C-4AEB746A730B",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9f690e1a6fecc67bd5f44ad0db8dd6eae8df70ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43,
+              "id": "Q43"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$a8a5a55c-4cc8-1895-09ea-a99d87cb0ca1",
+        "rank": "normal"
+      }
+    ],
+    "P1619": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1619",
+          "hash": "231c5fbe5b2795eb72c1a37846326d15fe740163",
+          "datavalue": {
+            "value": {
+              "time": "+1935-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q99397898$033B9FDE-61FA-4E07-91F5-43AB353705E8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "426983fac538c043480facacdc0e20068acb65cb",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0e0a314d44760bb4320191175d9808b955acc8cf",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Museo_dell'Antico_Oriente&oldid=125075606",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "a3c93b6022db8bcdb790037b7022394a2909476b",
+          "datavalue": {
+            "value": "İstanbul - Sanayi-i Nefise Mektebi (Mimar Sinan Güzel Sanatlar Üniversitesi) r2 - Mart 2013.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q99397898$C087A20C-B69F-45A7-A4F4-7A12153DFC75",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "426983fac538c043480facacdc0e20068acb65cb",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0e0a314d44760bb4320191175d9808b955acc8cf",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Museo_dell'Antico_Oriente&oldid=125075606",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "3bd7ce9a528fbb00fb354f9c9687d2332caabd7a",
+          "datavalue": {
+            "value": "Ancient Orient Museum, Istanbul",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q99397898$91265b7e-cd9b-4e1f-84d6-1dea7526fea9",
+        "rank": "normal"
+      }
+    ],
+    "P12187": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12187",
+          "hash": "ea544ba7b22737d1b3d14877269f6b723f75c2b4",
+          "datavalue": {
+            "value": "2OUMXLBPRZB25MIEIPKMFKZ6F4",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q99397898$ce50f9e7-481e-0423-e56f-851b9bfd97f6",
+        "rank": "normal"
+      }
+    ],
+    "P13092": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13092",
+          "hash": "ff3dac80cdb505f38de05a9bf39cd5eddfa9de4d",
+          "datavalue": {
+            "value": "K000343649",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q99397898$B5D6EFC1-9D4A-44A4-9BFC-630600355CCF",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "31a0cd9a12635bdf26536c95730d79c65f87d537",
+          "datavalue": {
+            "value": {
+              "latitude": 41.0113182,
+              "longitude": 28.9804363,
+              "altitude": null,
+              "precision": 1e-05,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q99397898$681F3ADE-E048-42BE-BAD4-D666D69C77F2",
+        "rank": "normal"
+      }
+    ],
+    "P706": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P706",
+          "hash": "cc7530c7e78b8f45b60a29c9996fd86b92175c83",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 155583,
+              "id": "Q155583"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$0AF55CCA-62CA-4962-BB4C-661EB5241506",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "54b49f306168969c671dae3b4ffc264157935987",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 636978,
+              "id": "Q636978"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$aa29dea9-440e-9dda-c961-8e636012bd26",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "d2645a973b9ebd6b401aa6ab8f067e1e3d44a279",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 136402741,
+              "id": "Q136402741"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q99397898$2ae35af4-463a-d5fd-de61-871a04205c36",
+        "rank": "normal"
+      }
+    ]
+  }
+}
