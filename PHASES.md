@@ -257,7 +257,7 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P02 — Content registry and mile-zero geography
+### P02 — Content registry and mile-zero geography — DONE (2026-09-27)
 
 ```text
 Phase P02 — Content registry and mile-zero geography. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
