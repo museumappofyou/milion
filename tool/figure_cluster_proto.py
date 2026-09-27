@@ -1,5 +1,6 @@
 """Static left witness prototype: three depth clusters inside the painted outer edge.
 
+Usage: python3.11 tool/figure_cluster_proto.py
 The v3 outer group mask keeps the photographed silhouette. Hand-authored
 partition curves follow the visible overlaps, not a global depth estimate.
 Every result is derived from the original RGB photograph.
@@ -13,7 +14,7 @@ import numpy as np
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'anastasis_25d/v4'
+OUT=ROOT/'studio/anastasis_25d/v4'
 SOURCE=np.array(Image.open(ROOT/'assets/anastasis/conch_reference.jpg').convert('RGB'))
 H,W=SOURCE.shape[:2]
 CROP=(300,260,820,700)

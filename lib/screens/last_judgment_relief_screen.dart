@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/explorable_scene.dart';
-import 'last_judgment_v5_screen.dart';
 import 'scene_explorer_screen.dart';
 
 class LastJudgmentReliefScreen extends StatelessWidget {
@@ -12,6 +11,5 @@ class LastJudgmentReliefScreen extends StatelessWidget {
   Widget build(BuildContext context) => SceneExplorerScreen(
     scene: ExplorableScene.judgment,
     initialFocus: initialFocus,
-    classicBuilder: (_) => const LastJudgmentV5Screen(),
   );
 }

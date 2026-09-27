@@ -17,7 +17,7 @@ import render_anastasis_v5 as rv
 
 ROOT = b.ROOT
 OUT = b.V5
-V3 = ROOT / 'anastasis_25d/v3'
+V3 = ROOT / 'studio/anastasis_25d/v3'
 
 LEFT_ROCK = (230, 125, 830, 335)
 RIGHT_ROCK = (1150, 125, 1720, 365)

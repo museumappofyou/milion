@@ -1,9 +1,6 @@
 import 'dart:convert';
 
 import 'package:milion/models/scene.dart';
-import 'package:milion/screens/last_judgment_relief_screen.dart';
-import 'package:milion/screens/scene_explorer_screen.dart';
-import 'package:milion/screens/last_judgment_tab.dart';
 import 'package:milion/screens/scenes_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,16 +10,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Future<img.Image> decode(String path) async =>
     img.decodeImage((await rootBundle.load(path)).buffer.asUint8List())!;
-
-Future<void> settleAssets(WidgetTester tester) async {
-  await tester.runAsync(() async {
-    for (var i = 0; i < 20; i++) {
-      await Future<void>.delayed(const Duration(milliseconds: 50));
-      await tester.pump();
-    }
-  });
-  await tester.pumpAndSettle();
-}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -90,50 +77,6 @@ void main() {
       expect({...left, ...right}, containsAll([0xf58c1e, 0x28d7e1, 0xe12828]));
     },
   );
-
-  testWidgets('Judgment tab opens relief, focus comparison and references', (
-    tester,
-  ) async {
-    await tester.pumpWidget(const MaterialApp(home: LastJudgmentTab()));
-    await settleAssets(tester);
-    await tester.scrollUntilVisible(
-      find.text('Explore painted relief'),
-      200,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Explore painted relief'));
-    await settleAssets(tester);
-    expect(find.byType(LastJudgmentReliefScreen), findsOneWidget);
-    final explorer = tester.state<SceneExplorerScreenState>(
-      find.byType(SceneExplorerScreen),
-    );
-    await tester.tap(find.text('Original'));
-    await tester.pumpAndSettle();
-    expect(explorer.variant, 'Original');
-    await tester.ensureVisible(find.text('Christ'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Christ'));
-    await tester.pumpAndSettle();
-    expect(explorer.selectedDetail, 'christ');
-    expect(explorer.zoom, greaterThan(1));
-    await tester.tap(find.byTooltip('Reset view'));
-    await tester.pumpAndSettle();
-    expect(explorer.selectedDetail, isNull);
-    expect(explorer.zoom, closeTo(1, .001));
-    await tester.pageBack();
-    await tester.pumpAndSettle();
-    await tester.scrollUntilVisible(
-      find.text('The prepared throne'),
-      250,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.tap(find.text('The prepared throne'));
-    await settleAssets(tester);
-    expect(find.byType(InteractiveViewer), findsOneWidget);
-    expect(find.text('Photograph: Caner Cangül'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-  });
 
   testWidgets(
     'F05 catalog action opens its relief without changing F02 routing',

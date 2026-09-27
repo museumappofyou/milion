@@ -1,17 +1,27 @@
 """Copy the selected user-supplied F05 references and record their provenance.
 
-python3.11 tool/prepare_last_judgment_assets.py [source-folder]
+Usage: python3.11 tool/prepare_last_judgment_assets.py [source-folder]
 No synthesized imagery, perspective warp, crop or color correction is applied.
 The normal relief build uses the bundled copies and needs no external folder.
+The capture corpus comes from MILION_CAPTURES, defaulting to
+../chora-ar/captures next to the repository.
 """
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT = Path('/Users/memre/Desktop/chora-ar/captures/chora-scenes/5-PAREKKLESION/C__F05__The-Last-Judgment__vault__REF-9')
+
+
+def captures_root() -> Path:
+    """Capture corpus root from MILION_CAPTURES or ../chora-ar/captures."""
+    return Path(os.environ.get('MILION_CAPTURES', ROOT.parent / 'chora-ar' / 'captures'))
+
+
+DEFAULT = captures_root() / 'chora-scenes/5-PAREKKLESION/C__F05__The-Last-Judgment__vault__REF-9'
 REFERENCES = [
     ('vault_reference.jpg', 'web-ke-02-Mahser.jpg', 'Complete Last Judgment vault'),
     ('deesis_reference.jpg', 'web-ke-04-Isa-Meryem-ve-Yahya.jpg', 'Christ, Mary and John'),
@@ -26,7 +36,11 @@ def main():
     # Check all inputs before replacing any prepared assets.
     for _, name, _ in REFERENCES:
         if not (source / name).is_file():
-            raise FileNotFoundError(source / name)
+            raise SystemExit(
+                f'Capture not found: {source / name}\n'
+                'Set MILION_CAPTURES to the corpus root (default: '
+                '../chora-ar/captures next to the repository) or pass the '
+                'scene folder as the first argument.')
     out.mkdir(parents=True, exist_ok=True)
     records = []
     for target, name, title in REFERENCES:

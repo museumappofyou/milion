@@ -104,16 +104,6 @@ class ExplorableScene {
         'assets/restoration/anastasis_restored_4k_v2.jpg',
         initialBlend: 1,
       ),
-      RestorationStudy(
-        'Earlier gentle study',
-        'assets/anastasis/conch_reference.jpg',
-        'assets/restoration/anastasis_scene_study.png',
-      ),
-      RestorationStudy(
-        'Christ and the faces',
-        'assets/anastasis/detail_christ_mandorla.jpg',
-        'assets/restoration/anastasis_detail_study.png',
-      ),
     ],
   );
 
@@ -176,16 +166,6 @@ class ExplorableScene {
         'assets/last_judgment/vault_reference.jpg',
         'assets/restoration/last_judgment_restored_4k_v2.jpg',
         initialBlend: 1,
-      ),
-      RestorationStudy(
-        'Earlier gentle study',
-        'assets/last_judgment/vault_reference.jpg',
-        'assets/restoration/last_judgment_scene_study.png',
-      ),
-      RestorationStudy(
-        'Christ, Mary and John',
-        'assets/last_judgment/deesis_reference.jpg',
-        'assets/restoration/last_judgment_detail_study.png',
       ),
     ],
   );

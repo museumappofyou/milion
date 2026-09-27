@@ -1,4 +1,7 @@
-"""Three overlapping left witnesses: conservative masks and shallow body relief."""
+"""Three overlapping left witnesses: conservative masks and shallow body relief.
+
+Usage: python3.11 tool/figures_relief_proto.py
+"""
 from __future__ import annotations
 
 import json
@@ -9,9 +12,9 @@ import numpy as np
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'anastasis_25d/v4'
+OUT=ROOT/'studio/anastasis_25d/v4'
 SOURCE=np.asarray(Image.open(ROOT/'assets/anastasis/conch_reference.jpg').convert('RGB'))
-REFERENCE=np.asarray(Image.open(ROOT/'anastasis_25d/v4/left_webke_local_aligned.jpg').convert('RGB'))
+REFERENCE=np.asarray(Image.open(ROOT/'studio/anastasis_25d/v4/left_webke_local_aligned.jpg').convert('RGB'))
 H,W=SOURCE.shape[:2]
 CROP=(335,290,815,635)
 

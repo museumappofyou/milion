@@ -1,4 +1,7 @@
-"""Continuous bas-relief surface for three overlapping left witnesses."""
+"""Continuous bas-relief surface for three overlapping left witnesses.
+
+Usage: python3.11 tool/figures_continuous_proto.py
+"""
 from __future__ import annotations
 
 import json

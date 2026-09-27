@@ -1,24 +1,28 @@
-// Prepares the offline assets for the Anastasis 2.5D artifact tab.
-//
-// Reads the raw reference captures of scene F02 from the chora-ar corpus,
-// removes the viewer letterbox bars and picture-in-picture overlay, crops,
-// downsizes and re-encodes them into assets/anastasis/, and writes a
-// provenance manifest (assets/anastasis/captures.json) that the app reads at
-// runtime.
+// Prepares the shipped Anastasis photographs from the chora-ar corpus: the
+// raw reference captures of scene F02 are letterbox-trimmed, cropped,
+// downsized and re-encoded into assets/anastasis/, with a provenance manifest
+// at assets/anastasis/captures.json.
 //
 // Usage (from the app package root):
 //   dart run tool/prepare_anastasis_assets.dart [source-folder]
 //
-// Everything the app ships is derivable from this one command, so the tab can
-// be rebuilt from the raw captures at any time.
+// The corpus root comes from MILION_CAPTURES, defaulting to the sibling
+// checkout ../chora-ar/captures next to this repository. Every shipped
+// photograph is derivable from this one command.
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:image/image.dart' as img;
 
-const String defaultSourceFolder =
-    '/Users/memre/Desktop/chora-ar/captures/chora-scenes/5-PAREKKLESION/C__F02__Anastasis__dome__REF-8';
+/// Root of the capture corpus. Override with MILION_CAPTURES; by default the
+/// sibling checkout `../chora-ar/captures` next to this repository.
+String get capturesRoot =>
+    Platform.environment['MILION_CAPTURES'] ??
+    '${File.fromUri(Platform.script).parent.parent.path}/../chora-ar/captures';
+
+String get defaultSourceFolder =>
+    '$capturesRoot/chora-scenes/5-PAREKKLESION/C__F02__Anastasis__dome__REF-8';
 
 const String outputFolder = 'assets/anastasis';
 
@@ -397,7 +401,12 @@ void main(List<String> args) {
   final sourceFolder = args.isNotEmpty ? args.first : defaultSourceFolder;
   final sourceDir = Directory(sourceFolder);
   if (!sourceDir.existsSync()) {
-    stderr.writeln('Source folder not found: $sourceFolder');
+    stderr.writeln(
+      'Source folder not found: $sourceFolder\n'
+      'Set MILION_CAPTURES to the capture corpus root (default: '
+      'the ../chora-ar/captures folder next to this repository), or pass '
+      'the scene folder as the first argument.',
+    );
     exitCode = 1;
     return;
   }

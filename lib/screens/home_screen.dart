@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import '../services/classifier.dart';
 import '../theme/milion_theme.dart';
 import 'about_tab.dart';
-import 'anastasis_tab.dart';
 import 'anastasis_relief_screen.dart';
 import 'frontier_page.dart';
 import 'scan_tab.dart';
-import 'last_judgment_tab.dart';
 import 'last_judgment_relief_screen.dart';
 import 'scenes_tab.dart';
 
@@ -53,12 +51,6 @@ class _HomeScreenState extends State<HomeScreen> {
     0 => FrontierPage(
       onAnastasis: _openAnastasis,
       onJudgment: _openJudgment,
-      onAnastasisSources: () => _open(
-        AnastasisTab(
-          scene: _classifier.scenes.where((s) => s.id == 'F02').firstOrNull,
-        ),
-      ),
-      onJudgmentSources: () => _open(const LastJudgmentTab()),
       onCollection: () => _select(1),
       onScan: () => _select(2),
       onAbout: () => _select(3),

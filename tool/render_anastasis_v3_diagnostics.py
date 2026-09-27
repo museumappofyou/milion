@@ -1,5 +1,6 @@
 """Reproducible, source-aligned still diagnostics for the v3 relief assets.
 
+Usage: python3.11 tool/render_anastasis_v3_diagnostics.py
 The mobile and side-angle screenshots are captured by Flutter tests. This
 script makes full-resolution mask, comparison, and section review sheets.
 """
@@ -13,11 +14,11 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'anastasis_25d/v3'
+OUT = ROOT / 'studio/anastasis_25d/v3'
 ASSETS = ROOT / 'assets/anastasis/relief_v3'
 MANIFEST = json.loads((ASSETS / 'manifest.json').read_text())
 SOURCE = np.asarray(Image.open(ROOT / MANIFEST['master']).convert('RGB'))
-OLD = np.asarray(Image.open(ROOT / 'anastasis_25d/mobile_v2/center_full.png').convert('RGB'))
+OLD = np.asarray(Image.open(ROOT / 'studio/anastasis_25d/mobile_v2/center_full.png').convert('RGB'))
 
 
 def font(size: int):

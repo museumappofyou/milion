@@ -1,1 +1,2 @@
+-keep class com.masicai.flutteronnxruntime.** { *; }
 -keep class ai.onnxruntime.** { *; }

@@ -1,5 +1,6 @@
 """Mobile-size visual acceptance renders for the physical Anastasis relief.
 
+Usage: python3.11 tool/render_mobile_relief.py
 This raster diagnostic uses the same shipped textures, depth maps and layer
 order as the Flutter viewer. It also exports original/v1/v2 close-up sheets.
 """
@@ -10,7 +11,7 @@ import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
 ASSET=ROOT/'assets/anastasis/relief'
-OUT=ROOT/'anastasis_25d/mobile_v2'
+OUT=ROOT/'studio/anastasis_25d/mobile_v2'
 OUT.mkdir(parents=True,exist_ok=True)
 manifest=json.loads((ASSET/'manifest.json').read_text())
 master=cv2.imread(str(ROOT/manifest['master']))
@@ -80,7 +81,7 @@ def mobile(image,width,height,style='relief'):
     return display
 
 def comparisons(new):
-    old=cv2.imread(str(ROOT/'anastasis_25d/v1_baseline/center.png'))
+    old=cv2.imread(str(ROOT/'studio/anastasis_25d/v1_baseline/center.png'))
     boxes={
       'christ_mandorla':(790,300,1220,850),
       'adam_left_group':(150,440,865,860),

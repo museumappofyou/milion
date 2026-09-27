@@ -1,4 +1,7 @@
-"""Third-pass manually authored painted relief in 2048x1091 master pixels."""
+"""Third-pass manually authored painted relief in 2048x1091 master pixels.
+
+Usage: python3.11 tool/build_anastasis_v3.py
+"""
 from __future__ import annotations
 import argparse, json, shutil
 from pathlib import Path
@@ -10,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/anastasis/conch_reference.jpg'
 OLD=ROOT/'assets/anastasis/relief'
 OUT=ROOT/'assets/anastasis/relief_v3'
-DOC=ROOT/'anastasis_25d/v3'
+DOC=ROOT/'studio/anastasis_25d/v3'
 W,H=2048,1091
 
 # Only visible painted rock bands receive relief. Slopes and joins follow the

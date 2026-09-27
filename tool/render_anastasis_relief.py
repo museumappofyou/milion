@@ -1,5 +1,6 @@
 """Fast, deterministic diagnostic renders from the shipped layer manifest.
 
+Usage: python3.11 tool/render_anastasis_relief.py
 This matches the photo projector's layer order and depth/parallax formula.
 It does not replace the Flutter screenshots; it makes segmentation and ghost
 edges inspectable without depending on a GPU or simulator.
@@ -10,7 +11,7 @@ import cv2
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'anastasis_25d/screenshots'
+OUT=ROOT/'studio/anastasis_25d/screenshots'
 ASSET=ROOT/'assets/anastasis/relief'
 manifest=json.loads((ASSET/'manifest.json').read_text())
 base=cv2.imread(str(ROOT/manifest['master']))

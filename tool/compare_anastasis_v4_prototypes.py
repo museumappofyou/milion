@@ -1,4 +1,7 @@
-"""Reviewable, stationary phone-size comparisons for fourth-pass experiments."""
+"""Reviewable, stationary phone-size comparisons for fourth-pass experiments.
+
+Usage: python3.11 tool/compare_anastasis_v4_prototypes.py
+"""
 from pathlib import Path
 import json
 import shutil
@@ -8,7 +11,7 @@ from PIL import Image,ImageDraw,ImageFont
 from figure_cluster_proto import partitions
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'anastasis_25d/v4'
+OUT=ROOT/'studio/anastasis_25d/v4'
 SOURCE=Image.open(ROOT/'assets/anastasis/conch_reference.jpg').convert('RGBA')
 MANIFEST=json.loads((ROOT/'assets/anastasis/relief_v3/manifest.json').read_text())
 ROCKS={

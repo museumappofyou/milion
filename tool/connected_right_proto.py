@@ -1,4 +1,7 @@
-"""Matching connected rock-mesh prototype for the exposed right mountain."""
+"""Matching connected rock-mesh prototype for the exposed right mountain.
+
+Usage: python3.11 tool/connected_right_proto.py
+"""
 from __future__ import annotations
 
 import json
@@ -10,7 +13,7 @@ import numpy as np
 import connected_relief_proto as mesh
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'anastasis_25d/v4'
+OUT=ROOT/'studio/anastasis_25d/v4'
 
 TOP=[
  (1172,250,.145),(1230,184,.165),(1352,151,.135),

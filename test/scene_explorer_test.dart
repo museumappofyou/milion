@@ -5,9 +5,7 @@ import 'package:milion/models/explorable_scene.dart';
 import 'package:milion/services/explorer_assets.dart';
 import 'package:milion/widgets/interactive_relief_surface.dart';
 import 'package:milion/screens/anastasis_relief_screen.dart';
-import 'package:milion/screens/anastasis_v5_screen.dart';
 import 'package:milion/screens/last_judgment_relief_screen.dart';
-import 'package:milion/screens/last_judgment_v5_screen.dart';
 import 'package:milion/screens/restoration_studies_screen.dart';
 import 'package:milion/screens/scene_explorer_screen.dart';
 import 'package:flutter/gestures.dart';
@@ -96,29 +94,26 @@ void main() {
     },
   );
 
-  test('restored scenes are 4K exports with the source aspect and earlier studies preserved', () async {
+  test('restored scenes are single 4K exports with the source aspect', () async {
     for (final scene in [ExplorableScene.anastasis, ExplorableScene.judgment]) {
       final bytes = await rootBundle.load(scene.restored);
       final codec = await ui.instantiateImageCodec(bytes.buffer.asUint8List());
       final image = (await codec.getNextFrame()).image;
       expect(image.width, 3840);
       expect(image.width / image.height, closeTo(scene.size.aspectRatio, .001));
+      expect(scene.studies, hasLength(1));
       expect(scene.studies.first.study, scene.restored);
       expect(scene.studies.first.initialBlend, 1);
-      expect(
-        scene.studies.any((s) => s.title == 'Earlier gentle study'),
-        isTrue,
-      );
       image.dispose();
       codec.dispose();
     }
   });
 
-  for (final (name, home, classic) in [
-    ('Anastasis', const AnastasisReliefScreen(), AnastasisV5Screen),
-    ('Last Judgment', const LastJudgmentReliefScreen(), LastJudgmentV5Screen),
+  for (final (name, home) in [
+    ('Anastasis', const AnastasisReliefScreen()),
+    ('Last Judgment', const LastJudgmentReliefScreen()),
   ]) {
-    testWidgets('$name zooms, pans, compares and keeps classic v5 reachable', (
+    testWidgets('$name zooms, pans and compares original, relief, restored', (
       tester,
     ) async {
       await openScene(tester, home);
@@ -152,9 +147,7 @@ void main() {
       expect(explorer.zoom, closeTo(1, .001));
       await tester.tap(find.byTooltip('Scene options'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Classic v5 viewer'));
-      await assetsReady(tester);
-      expect(find.byType(classic), findsOneWidget);
+      expect(find.text('Classic v5 viewer'), findsNothing);
       expect(tester.takeException(), isNull);
     });
 
@@ -385,7 +378,7 @@ void main() {
     },
   );
 
-  testWidgets('detail-file studies retain the original comparison', (
+  testWidgets('the 4K restoration study retains the original comparison', (
     tester,
   ) async {
     await openScene(tester, const LastJudgmentReliefScreen());
@@ -394,7 +387,7 @@ void main() {
     await tester.tap(find.text('Restoration studies'));
     await assetsReady(tester);
     expect(find.byType(RestorationStudiesScreen), findsOneWidget);
-    await tester.tap(find.text('Christ, Mary and John'));
+    await tester.tap(find.text('4K restored vault'));
     await assetsReady(tester);
     expect(
       find.byKey(const ValueKey('study-interactive-viewer')),

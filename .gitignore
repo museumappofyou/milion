@@ -45,6 +45,9 @@ migrate_working_dir/
 /studio/cache/
 tool/**/__pycache__/
 
+# Phase router cache (Jev profiles, catalog snapshots) — never contains secrets
+/.phase_router_cache/
+
 # Symbolication related
 app.*.symbols
 

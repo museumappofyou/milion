@@ -1,5 +1,6 @@
 """Fixed-camera renders of the v5 relief height field.
 
+Usage: python3.11 tool/render_anastasis_v5.py
 * front: centered orthographic view, no parallax (identical pixel positions
   to the photograph), restrained production light or exaggerated debug light;
 * side: the same height field seen from 45 degrees, rendered as a solid with

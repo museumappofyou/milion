@@ -1,6 +1,6 @@
 # Milion — Progress
 
-**Updated 2026-09-26, after P00. Overall readiness: 12.0%.** This is the mean of the 56 dimensions below: 673 points out of 5,600.
+**Updated 2026-09-27, after P01. Overall readiness: 14.2%.** This is the mean of the 56 dimensions below: 793 points out of 5,600.
 
 **Ship rule.** Milion is ready to ship when **every dimension is at 100%** and no release-blocking Open issue remains in PHASES.md §8. The average only shows direction; a high score in one area cannot compensate for a low score in another.
 
@@ -24,7 +24,7 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 - An on-device ONNX recogniser (live, still and gallery input; loaded only when Scan opens).
 - Per-scene notes.
 - Two 2.5D explorers, Anastasis (F02) and Last Judgment (F05). They offer 1–8× zoom, focus on six details each, an Original/Relief/Restored comparison, a 48-pose figure loop and reduced motion.
-- `flutter analyze` is clean and 37 app tests pass, plus 2 capture tests.
+- `flutter analyze` is clean and 20 app tests pass, plus 3 capture tests under `tool/captures/`.
 
 **Review of the previous (İzvoya) run**
 - **Kept:** the prototype above, which is real and valuable. The rigs, relief meshes and tests are solid engineering.
@@ -46,6 +46,13 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 - **Docs:** the İzvoya-era documents are archived.
 - **Plan:** a new 41-phase plan with a 48-piece Milestone collection and a design doctrine.
 - **Not changed yet:** no product features. The UI is still the old template until P03 and P04.
+
+**Changed in P01 (this run)** — see the size table under Changelog.
+- **Version control:** `git init` with the "P01 baseline" commit made before any deletion, then pushed to `origin` (`museumappofyou/milion`, SSH). `.gitignore` covers `build/`, `.dart_tool/`, `android/.gradle`, `android/.kotlin`, `local.properties`, `key.properties`, `*.jks`, `studio/cache/`, `tool/**/__pycache__/`.
+- **Pruned runtime:** the v3 conch relief (service, geometry, dome view, tab, manifest), the Classic v5 viewers, v1 figure data, the earlier restoration studies and 26 MB of `relief`/`relief_v3` textures are gone; every source photograph is kept. One explorer path per Milestone remains, with Original/Relief/Restored.
+- **Studio:** `anastasis_25d/`, `last_judgment_25d/`, `figure_animation/`, `restoration_studies/`, `ui_refresh/` moved under `studio/`; the three surviving capture tests moved to `tool/captures/`; all script and test paths fixed. `MILION_CAPTURES` replaces the hard-coded corpus paths.
+- **Android:** minSdk 26; R8 and resource shrinking on for release with ONNX keep rules (camera + ONNX verified in a release build on the Pixel Fold API 36 emulator); release signing reads `android/key.properties` when present and otherwise warns loudly and falls back to debug; RECORD_AUDIO and legacy storage permissions removed and `aapt`-verified; per-ABI APKs via `tool/build_android.sh`.
+- **Not changed yet:** the UI, content and engines; P02–P06 as planned.
 
 ## Dimensions
 
@@ -84,19 +91,19 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | D19 | Stories and writing | 10% | 103 one-line summaries plus cues. | Every reviewed place and Milestone has a story in TR and EN with hooks. | P05, P11–P32, P34 |
 | D20 | Accuracy, sources, honesty labels | 20% | Capture credits in captures.json; the restoration is called "interpretive"; no sources per claim. | Every claim is sourced, every place has a QID, labels are applied everywhere and debates are marked. | P02, all content phases |
 | D21 | Practical visit information | 0% | Room positions only. | Hours, access, etiquette, prayer windows and transit for every place, each with a checkedAt date. | P05, P24, P39 |
-| D22 | Media library | 10% | Chora photos, plus the 5.3 GB corpus outside the repo. | ≥ 3 images per reviewed place (today and historical), all credited in the manifest. | P02, content phases |
+| D22 | Media library | 10% | Chora photos, plus the 5.3 GB corpus outside the repo; P01 kept every source photograph and pruned 26 MB of derived v3 textures. | ≥ 3 images per reviewed place (today and historical), all credited in the manifest. | P02, content phases |
 
 ### D. The Milestone collection (2.5D / 3D)
 
 | ID | Dimension | Now | Evidence now | 100% means | Phases |
 | --- | --- | ---: | --- | --- | --- |
-| D23 | 2.5D Plate engine | 35% | A relief mesh via drawVertices, a pose rig, zoom and focus, but coded for two scenes; no gyroscope, shaders, wipe or beats. | PlatePlayer with DP, GL, RL, Candle, WR, SB, MM and LU running from manifests at budget on the device. | P06, P07 |
+| D23 | 2.5D Plate engine | 35% | One maintained explorer path per scene (drawVertices relief mesh, pose rig, 1–8× zoom, six details, Original/Relief/Restored); P01 removed the v3 conch and Classic v5 renderers; no gyroscope, shaders, wipe or beats. | PlatePlayer with DP, GL, RL, Candle, WR, SB, MM and LU running from manifests at budget on the device. | P06, P07 |
 | D24 | 2.5D production pipeline | 20% | Scene-specific Python scripts and SAM masks. | One command turns a photo into a validated plate, reproducible from the repo. | P07 |
 | D25 | 2.5D Milestones approved | 5% | 0 of the ~26 2.5D pieces approved; I and II are prototypes. | Every 2.5D Milestone the ship scope needs is approved (§3 definition). | P06–P31 |
 | D26 | 3D runtime | 0% | Offline PLY exports only; no runtime 3D. | SpacePlayer with orbit, section, assembly and styles, at budget on the device. | P08 |
 | D27 | Procedural architecture kit | 0% | None. | The generators and spec format build every 3D building in the register. | P09 |
 | D28 | 3D Milestones approved | 0% | None. | Every 3D Milestone the ship scope needs is approved. | P08–P31 |
-| D29 | Motion doctrine and honesty in motion | 20% | Reduced motion, a Still pose and an "interpretive" note exist, but the defaults (Bold puppetry, AI repaint) break the doctrine. | Every Milestone follows §3: labels, the original one tap away, still-sequence equivalents, no sacred puppetry. | P06 onward |
+| D29 | Motion doctrine and honesty in motion | 20% | Reduced motion, a Still pose and an "interpretive" note exist, but the surviving explorer still defaults to Bold puppetry and the 4K repaint; P01 removed the archived v3/v5 motion paths. | Every Milestone follows §3: labels, the original one tap away, still-sequence equivalents, no sacred puppetry. | P06 onward |
 | D30 | Light and sensors | 0% | Raking-light renders exist offline only. | Gyroscope, specular gold, candle and sun position work smoothly on the device, and gyroscope motion is opt-in. | P06, P25, P26 |
 
 ### E. Attraction and return
@@ -120,9 +127,9 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | D40 | Accessibility | 15% | Some semantics, a reduced-motion path, a 150%-text capture. | P35 passes on the device: TalkBack, 200% text, contrast, targets, still equivalents, captions. | P35 |
 | D41 | Layouts and device classes | 30% | Widget captures at 360, 390, 430, 768 and 1440 dp. | Phone, tablet, landscape and foldable layouts verified; edge-to-edge insets. | P03, P35 |
 | D42 | Performance | 10% | Lazy ONNX loading; renderer-lifetime tests; nothing measured on a device. | All P36 budgets met on the A52s. | P06, P08, P36 |
-| D43 | App size and asset delivery | 5% | 203.8 MB universal APK, three relief generations bundled. | Base download ≤ 60 MB; Play Asset Delivery packs with download management. | P01, P36 |
+| D43 | App size and asset delivery | 30% | P01: arm64 release APK 89.7 MB (from the 203.7 MB universal baseline), AAB 134.3 MB; relief generations and v1 data pruned; R8 and resource shrinking on. Base download still above the 60 MB target. | Base download ≤ 60 MB; Play Asset Delivery packs with download management. | P01, P36 |
 | D44 | Offline behaviour | 40% | Everything is bundled, so all current features work offline. | Starter plus packs work offline; downloads resume; low-storage and corruption recovery. | P10, P36 |
-| D45 | Lifecycle and permissions | 25% | The camera has some error handling; the explorer pauses. The merged manifest includes RECORD_AUDIO and legacy storage, which are not needed. | P37 script passes: in-context requests, denial, revocation, process death. | P01, P37 |
+| D45 | Lifecycle and permissions | 35% | P01: RECORD_AUDIO and READ/WRITE_EXTERNAL_STORAGE removed with `tools:node="remove"` and `aapt dump permissions` shows only CAMERA + ACCESS_NETWORK_STATE; camera and ONNX verified in an R8 release build on the emulator. The P37 request/denial script is still open. | P37 script passes: in-context requests, denial, revocation, process death. | P01, P37 |
 | D46 | Privacy and data safety | 30% | Fully local, no network, no analytics. No policy, export or delete. | Data Safety answers, TR/EN policy, export and delete, opt-in only. | P19, P37 |
 | D47 | Persistence and migrations | 15% | SharedPreferences notes with no schema version. | Versioned local database with migrations tested across upgrades. | P02, P19 |
 | D48 | Stability and crash reporting | 5% | No crash reporting; never run through monkey testing. | Opt-in crash and ANR reporting; a 1-hour monkey run clean; 0 crashes in the field trial. | P37, P39 |
@@ -131,11 +138,11 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 
 | ID | Dimension | Now | Evidence now | 100% means | Phases |
 | --- | --- | ---: | --- | --- | --- |
-| D49 | Codebase health | 35% | 9,491 lines of Dart in lib/; legacy v3 and "Classic v5" screens; 1,145-line anastasis_tab; analyzer clean. | No dead code or assets, a feature-based structure, analyzer clean, no file over about 600 lines without reason. | P01, ongoing |
-| D50 | Automated tests | 30% | 37 app tests plus 2 capture tests pass. | P38 pyramid with integration tests on the device; a deliberately broken build fails. | P38, ongoing |
-| D51 | Version control, reproducibility, CI | 5% | No git; hard-coded external paths; no CI. The KGP deprecation warning is fixed (built-in Kotlin plus the patched ONNX plugin). | Git with LFS, env-configured tools, pinned requirements, green CI. | P01, P38 |
-| D52 | Physical device validation | 5% | Release APK installed and launched on the SM-A528B (Android 14). Plugins register and the ONNX JNI library loads with no errors. Logcat shows Impeller trying Vulkan and then OpenGLES; confirm the backend in P08. Flows not yet verified. | Every flow is verified on the A52s, plus the emulator matrix. | P06 onward, P38 |
-| D53 | Release engineering | 15% | The release APK builds but is debug-signed; R8 is off. | A signed AAB with asset packs, a clean pre-launch report, a versioning scheme and staged rollout. | P01, P40 |
+| D49 | Codebase health | 55% | P01: lib/ fell from 9,491 to 4,638 Dart lines; v3 conch, Classic v5, v1 data and dead assets removed; analyzer clean. Largest file: scan_tab.dart 884 lines; scene_explorer_screen.dart 1,145 → 735. | No dead code or assets, a feature-based structure, analyzer clean, no file over about 600 lines without reason. | P01, ongoing |
+| D50 | Automated tests | 35% | P01: 20 app tests plus 3 capture tests green over the pruned runtime (the removed tests covered removed code); capture tests moved to `tool/captures/`; `frontier_screenshot_test.dart` rerun to prove the new paths. | P38 pyramid with integration tests on the device; a deliberately broken build fails. | P38, ongoing |
+| D51 | Version control, reproducibility, CI | 40% | P01: git repo with a baseline commit before any deletion and phase commits, pushed to GitHub over SSH; `MILION_CAPTURES` replaces hard-coded corpus paths (clear failure when absent); `tool/requirements.txt` pinned from the imports actually used; every tool script has a usage docstring. LFS is missing (O20) and CI is still open. | Git with LFS, env-configured tools, pinned requirements, green CI. | P01, P38 |
+| D52 | Physical device validation | 5% | Release APK installed and launched on the SM-A528B (Android 14, P00). P01, emulator only (*unverified*): the R8 release APK boots, CameraX preview runs and ONNX infers (M03 · 47%), the Anastasis explorer shows Original/Relief/Restored; no physical device was attached this phase. | Every flow is verified on the A52s, plus the emulator matrix. | P06 onward, P38 |
+| D53 | Release engineering | 40% | P01: R8 + resource shrinking on with `proguard-rules.pro` keep rules, proven by a release build; minSdk 26; per-ABI APKs (`tool/build_android.sh`), AAB 134.3 MB as the release artifact; signing reads `key.properties` or warns loudly and falls back to debug. No keystore yet (O05) and no staged rollout. | A signed AAB with asset packs, a clean pre-launch report, a versioning scheme and staged rollout. | P01, P40 |
 | D54 | Store listing | 0% | None. | TR/EN listing, 8 screenshots, feature graphic, promo video, Data Safety. | P40 |
 | D55 | Field trial | 0% | None. | P39 run, with all P0 and P1 findings fixed. | P39 |
 | D56 | Feedback and corrections loop | 0% | None. | In-app "Report a change", a support address (O17) and triage in the phase workflow. | P05, P37, P40 |
@@ -151,8 +158,9 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | Routes / hunts / ghost-lens viewpoints | 0 / 0 / 0 | 12 / 6 / 30 |
 | Daily pool / On-this-day entries | 0 / 0 | 365 / 120 |
 | Turkish string coverage | 0% | 100% |
-| App tests | 37 (+2 capture) | P38 pyramid |
-| Release artifact size | 203.7 MB universal APK (203,742,562 bytes; rebuilt after the rename) | base download ≤ 60 MB |
+| App tests | 20 (+3 capture in `tool/captures/`) | P38 pyramid |
+| Dart lines in lib/ | 4,638 (from 9,491) | lean, no dead code |
+| Release artifact size | 89.7 MB arm64 APK (89,695,631 bytes) and 134.3 MB AAB (134,331,439 bytes); universal baseline was 203.7 MB | base download ≤ 60 MB |
 | Manual minutes per plate | not measured | tracked from P07 |
 
 ## Phase ledger
@@ -160,7 +168,7 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | Phase | Status | Date | Visible result |
 | --- | --- | --- | --- |
 | P00 Milion identity and plan | Done | 2026-09-26 | New name, mark, launcher and splash; paths renamed; this plan. |
-| P01 Clean slate | Not started | | |
+| P01 Clean slate | Done | 2026-09-27 | Git baseline + phase commits; runtime pruned (v3 conch, Classic v5, 26 MB relief, v1 data); `studio/` reorg; `MILION_CAPTURES`; R8 release verified with camera + ONNX; arm64 APK 89.7 MB (from 203.7 MB). |
 | P02 Content registry and mile-zero geography | Not started | | |
 | P03 Design language | Not started | | |
 | P04 Shell, Today and the first ten seconds | Not started | | |
@@ -202,6 +210,17 @@ Values in between are allowed when the evidence justifies them. Scores go down w
 | P40 Store launch and release | Not started | | |
 
 ## Changelog
+
+- **2026-09-27, P01 — clean slate.** Baseline commit `d219ca4` (made before any deletion) and the P01 commits; the runtime now has one explorer path per Milestone; `studio/` holds the authoring trees and `tool/captures/` the capture tests; `MILION_CAPTURES` replaces the hard-coded corpus paths; R8 + resource shrinking ship with proven ONNX keep rules; minSdk 26; signing falls back to debug with a loud Gradle warning; RECORD_AUDIO and legacy storage are gone (`aapt`-verified); analyzer clean and 20 + 3 tests green. Artifact sizes:
+
+  | Artifact | Before (2026-09-26) | After P01 (2026-09-27) | Change |
+  | --- | ---: | ---: | ---: |
+  | Universal APK (release) | 203.7 MB / 203,742,562 B | not built (AAB is the release artifact) | — |
+  | arm64 APK (release) | — | 89.7 MB / 89,695,631 B | **−56.0% vs the universal baseline** |
+  | AAB (release) | — | 134.3 MB / 134,331,439 B | — |
+  | Dart lines in lib/ | 9,491 | 4,638 | −51% |
+
+  Evidence: `build/app/outputs/flutter-apk/app-arm64-v8a-release.apk`, `build/app/outputs/bundle/release/app-release.aab`, `aapt dump permissions` (CAMERA + ACCESS_NETWORK_STATE only), emulator release captures in `studio/captures/P01/`, `flutter analyze` clean, `flutter test` 20/20 + 3 capture tests. The placeholder `README.md` added with the GitHub repo was removed again (P00's two-Markdown rule).
 
 - **2026-09-26, P00 follow-up: the mark.** The dome-on-pendentives mark read as a camera aperture, so it was replaced by an inscriptional M holding the gilded zero of the Milion stone (M + 0, mile zero). `tool/build_milion_identity.py` rebuilt the SVG, brand PNG, five launcher densities, adaptive/themed icons, splash and web icons; `MilionMark` in `lib/theme/milion_theme.dart` matches the same 64-unit geometry. Home previews refreshed in `ui_refresh/previews/`; analyzer clean and 37/37 tests pass.
 - **2026-09-26, P00.**

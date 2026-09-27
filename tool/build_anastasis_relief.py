@@ -1,22 +1,33 @@
 """Build editable semantic masks and texture-preserving relief layers.
 
+Usage: python3.11 tool/build_anastasis_relief.py
 Requires Python 3.11 with Pillow, OpenCV and NumPy. Source photos are read only.
-The polygon list is deliberately plain data so boundaries can be corrected by
-moving points without training or downloading a model.
+The capture corpus comes from MILION_CAPTURES, defaulting to ../chora-ar/captures
+next to the repository. The polygon list is deliberately plain data so
+boundaries can be corrected by moving points without training or downloading a
+model.
 """
 from pathlib import Path
 import csv
 import json
+import os
 
 import cv2
 import numpy as np
 from PIL import Image, ImageOps, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path('/Users/memre/Desktop/chora-ar/captures/chora-scenes/5-PAREKKLESION/C__F02__Anastasis__dome__REF-8')
+
+
+def captures_root() -> Path:
+    """Capture corpus root from MILION_CAPTURES or ../chora-ar/captures."""
+    return Path(os.environ.get('MILION_CAPTURES', ROOT.parent / 'chora-ar' / 'captures'))
+
+
+SOURCE = captures_root() / 'chora-scenes/5-PAREKKLESION/C__F02__Anastasis__dome__REF-8'
 MASTER = ROOT / 'assets/anastasis/conch_reference.jpg'
 OUT = ROOT / 'assets/anastasis/relief'
-DOC = ROOT / 'anastasis_25d'
+DOC = ROOT / 'studio/anastasis_25d'
 
 # Pixel coordinates in the 2048 x 1091 prepared master. Boundaries follow
 # visible paint, including Christ's outstretched arm and both raised wrists.
@@ -100,6 +111,11 @@ def edge_refine(image,poly):
     return cv2.GaussianBlur(selected,(0,0),2.0)
 
 def audit_and_contact():
+    if not SOURCE.is_dir():
+        raise SystemExit(
+            f'Capture corpus not found: {SOURCE}\n'
+            'Set MILION_CAPTURES to the corpus root (default: '
+            '../chora-ar/captures next to the repository).')
     DOC.mkdir(exist_ok=True)
     files = sorted(p for p in SOURCE.iterdir() if p.suffix.lower() in {'.png','.jpg','.jpeg'})
     sheet = Image.new('RGB',(1200,((len(files)+3)//4)*245),'#ddd')

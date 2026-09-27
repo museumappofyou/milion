@@ -7,8 +7,6 @@ class FrontierPage extends StatelessWidget {
     super.key,
     required this.onAnastasis,
     required this.onJudgment,
-    required this.onAnastasisSources,
-    required this.onJudgmentSources,
     required this.onCollection,
     required this.onScan,
     required this.onAbout,
@@ -16,8 +14,6 @@ class FrontierPage extends StatelessWidget {
 
   final VoidCallback onAnastasis,
       onJudgment,
-      onAnastasisSources,
-      onJudgmentSources,
       onCollection,
       onScan,
       onAbout;
@@ -75,7 +71,6 @@ class FrontierPage extends StatelessWidget {
                           image: 'assets/anastasis/conch_reference.jpg',
                           description: 'A hand reaches out. A story of resurrection unfolds.',
                           onOpen: onAnastasis,
-                          onSources: onAnastasisSources,
                         ),
                         _SceneCard(
                           number: '02',
@@ -84,7 +79,6 @@ class FrontierPage extends StatelessWidget {
                           image: 'assets/last_judgment/vault_reference.jpg',
                           description: 'A heavenly court, an unfolding sky, a world of detail.',
                           onOpen: onJudgment,
-                          onSources: onJudgmentSources,
                         ),
                       ];
                       return constraints.maxWidth >= 700
@@ -415,10 +409,9 @@ class _SceneCard extends StatelessWidget {
     required this.image,
     required this.description,
     required this.onOpen,
-    required this.onSources,
   });
   final String number, title, location, image, description;
-  final VoidCallback onOpen, onSources;
+  final VoidCallback onOpen;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -469,22 +462,12 @@ class _SceneCard extends StatelessWidget {
         ),
       ),
       const SizedBox(height: 12),
-      Wrap(
-        spacing: 14,
-        children: [
-          TextButton.icon(
-            onPressed: onOpen,
-            label: const Text('Explore scene'),
-            icon: const Icon(Icons.arrow_forward, size: 16),
-            iconAlignment: IconAlignment.end,
-            style: TextButton.styleFrom(padding: EdgeInsets.zero),
-          ),
-          TextButton(
-            onPressed: onSources,
-            style: TextButton.styleFrom(foregroundColor: MilionTheme.muted),
-            child: const Text('View sources'),
-          ),
-        ],
+      TextButton.icon(
+        onPressed: onOpen,
+        label: const Text('Explore scene'),
+        icon: const Icon(Icons.arrow_forward, size: 16),
+        iconAlignment: IconAlignment.end,
+        style: TextButton.styleFrom(padding: EdgeInsets.zero),
       ),
     ],
   );

@@ -1,8 +1,9 @@
 """Authoring aid for the v5 semantic masks.
 
+Usage: python3.11 tool/anastasis_v5_sam_masks.py
 Runs Segment Anything (ViT-H) with hand-placed point and box prompts from
-anastasis_25d/v5/authoring/sam_prompts.json on crops of the master photograph.
-The resulting binary masks are written to anastasis_25d/v5/authoring/sam/ and
+studio/anastasis_25d/v5/authoring/sam_prompts.json on crops of the master photograph.
+The resulting binary masks are written to studio/anastasis_25d/v5/authoring/sam/ and
 are only a starting point: tool/build_anastasis_v5.py reads them, resolves the
 painted overlap order and applies the hand corrections in its own polygons.
 
@@ -34,7 +35,7 @@ from segment_anything import sam_model_registry, SamPredictor
 
 ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / 'assets/anastasis/conch_reference.jpg'
-AUTH = ROOT / 'anastasis_25d/v5/authoring'
+AUTH = ROOT / 'studio/anastasis_25d/v5/authoring'
 OUT = AUTH / 'sam'
 
 

@@ -14,7 +14,7 @@ from build_anastasis_v5 import (
 from render_anastasis_v5 import side_view, fit, label, hstack
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'last_judgment_25d/v5'
+OUT = ROOT / 'studio/last_judgment_25d/v5'
 AUTH = OUT / 'authoring'
 ASSETS = ROOT / 'assets/last_judgment/relief_v5'
 MASTER = 'assets/last_judgment/vault_reference.jpg'

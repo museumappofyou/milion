@@ -1,5 +1,6 @@
 """Second-pass painted-plaster relief assets from the existing semantic masks.
 
+Usage: python3.11 tool/physical_relief.py
 The mountain fields are sculpted from documented ridge controls, then smoothed;
 the original fresco RGB remains the only visible painting. The generated matte
 light textures are reversible display assets, not a repaint of the source.
@@ -14,7 +15,7 @@ from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'assets/anastasis/relief'
-DOC=ROOT/'anastasis_25d/physical'
+DOC=ROOT/'studio/anastasis_25d/physical'
 
 # Ridge points are master-image pixels. A ridge controls a broad elevated spine;
 # widths are in source pixels. These follow the painted rock masses, not pigment
@@ -244,6 +245,6 @@ def build_physical():
                           'sourceRGB':'unchanged master capture'}
     text=json.dumps(manifest,indent=2)
     manifest_path.write_text(text)
-    (ROOT/'anastasis_25d/layer_manifest.json').write_text(text)
+    (ROOT/'studio/anastasis_25d/layer_manifest.json').write_text(text)
 
 if __name__=='__main__':build_physical()

@@ -233,7 +233,7 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P01 — Clean slate
+### P01 — Clean slate (done 2026-09-27)
 
 ```text
 Phase P01 — Clean slate: version control, pruning, reproducible tooling. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
@@ -1352,11 +1352,11 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 | ID | What is needed from you (or outside) | Why / what it blocks | Needed by | Status |
 | --- | --- | --- | --- | --- |
 | O01 | Connect the Samsung Galaxy A52s over USB with USB debugging on, and keep it unlocked while a phase runs device checks. | Every performance, gyroscope, camera and TalkBack claim stays *unverified* without a physical device. | P06 | Resolved 2026-09-26: SM-A528B (Android 14) is listed by adb and runs the release build. It must be unlocked for automated UI checks. |
-| O02 | Decide whether the 5.3 GB Chora capture corpus (`~/Desktop/chora-ar/captures`) stays outside the repo (via `MILION_CAPTURES`) or is copied in with LFS. | Reproducible plate and recognition builds. | P01 | Open (default: stays outside) |
+| O02 | Decide whether the 5.3 GB Chora capture corpus (`~/Desktop/chora-ar/captures`) stays outside the repo (via `MILION_CAPTURES`) or is copied in with LFS. | Reproducible plate and recognition builds. | P01 | Resolved 2026-09-27: stays outside the repo; `MILION_CAPTURES` replaces the hard-coded paths (default: `../chora-ar/captures` next to the repo) and the three preparation scripts fail with a clear message when it is missing. |
 | O03 | On-site photos: current-day photos of each ghost-lens viewpoint, and real-light photos of key mosaics and tiles for recognition. | The P20 lens and P23 recognition quality. | P20 | Open |
 | O04 | A Google Play Console developer account and ownership of the listing. | Internal testing (P39) and release (P40). | P39 | Open |
-| O05 | Create the upload keystore, store it safely outside the repo, and fill in `android/key.properties`. | Signed release builds. | P39 | Open |
-| O06 | A private GitHub repository (for CI), and optionally a domain (e.g. milion.app) for App Links. | P38 CI and P17 https deep links (a custom scheme works meanwhile). | P17 / P38 | Open |
+| O05 | Create the upload keystore, store it safely outside the repo, and fill in `android/key.properties`. | Signed release builds. | P39 | Open (P01: release builds read `android/key.properties` when present and otherwise print a loud Gradle warning and fall back to the debug key; no change until the keystore exists). |
+| O06 | A private GitHub repository (for CI), and optionally a domain (e.g. milion.app) for App Links. | P38 CI and P17 https deep links (a custom scheme works meanwhile). | P17 / P38 | Partly resolved 2026-09-27: `github.com/museumappofyou/milion` exists and `origin` pushes over SSH. CI (P38) and the optional domain remain open. |
 | O07 | Taste check: pick direction A or B from the P03 design sheet (5 minutes). | Non-blocking; P03 picks a default. | P03 | Open |
 | O08 | Language review: you review the Turkish copy; a native English reader reviews the English. | P34 acceptance. | P34 | Open |
 | O09 | Narration: accept Android TTS, or record human narration (you or a voice artist). | P22 quality level. | P22 | Open |
@@ -1369,7 +1369,8 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 | O16 | Old installs of "chora_scene_finder" and "İzvoya" on your phone are separate apps with separate notes and cannot be migrated automatically. Export anything you need, then uninstall them. | Avoids confusion during device testing. | P01 | Open |
 | O17 | A support or feedback email address for "Report a change" and the store listing. | P05 visit card and P40 listing. | P05 | Open |
 | O18 | Business model: free, paid, tip jar or paid chapters (you said you will decide later). | P40 listing and any billing work. | P40 | Open |
-| O19 | Upstream `flutter_onnxruntime` (masicai) still has the line `apply plugin: "kotlin-android"`, which Flutter flags as KGP use. Optional: file the issue using Flutter's template (docs.flutter.dev, migrate-to-built-in-kotlin). | Until upstream changes, the app uses the patched copy in `third_party/flutter_onnxruntime`. Remove it when a fixed release exists. | P01 check | Open |
+| O19 | Upstream `flutter_onnxruntime` (masicai) still has the line `apply plugin: "kotlin-android"`, which Flutter flags as KGP use. Optional: file the issue using Flutter's template (docs.flutter.dev, migrate-to-built-in-kotlin). | Until upstream changes, the app uses the patched copy in `third_party/flutter_onnxruntime`. Remove it when a fixed release exists. | P01 check | Open — checked 2026-09-27: pub.dev's latest is still 1.8.5 (published 2026-09-08), so the patched copy and the `dependency_overrides` entry stay. Re-check before P38. |
+| O20 | Install git-lfs on this machine and migrate the large binaries (`*.jpg *.png *.bin *.onnx *.mp4`) when convenient, or keep the repository private and exclude it from CI caches. | The repo carries roughly 250 MB of binaries inside normal git objects; clone and CI costs grow every phase. P01 captured a plain baseline because git-lfs was not installed. | P38 | Open |
 
 ## 9. Decisions
 
@@ -1380,3 +1381,11 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 - **2026-09-26: figure puppetry is demoted** to an optional IMAGINED "Gesture study". The 4K AI repaint becomes a local wipe only. Rationale in §3.
 - **2026-09-26: Android only; no iOS phases.** Copyright work is deferred until a public release.
 - **2026-09-26: built-in Kotlin.** `android.builtInKotlin=true`: AGP 9 compiles Kotlin and no module applies KGP, so the build is ready for the Flutter version that makes KGP fatal. `flutter_onnxruntime` 1.8.5, still the latest release, keeps a literal `apply plugin: "kotlin-android"` that triggers Flutter's warning. It is therefore overridden with a patched local copy (`third_party/flutter_onnxruntime`, MIT) whose `android/build.gradle` has the KGP classpath and apply removed. The Dart and Kotlin sources are unchanged. Revert when upstream is fixed (O19).
+- **2026-09-27: prune, do not archive, the superseded runtime.** Only the current explorer path survives for F02/F05: `SceneExplorerScreen` (Original/Relief/Restored, the 48-pose rig, six detail windows each), reached from the frontier cards, the collection and scan. The v3 conch artifact tab, the "Classic v5" viewers, v1 figure data, the earlier restoration studies and `assets/anastasis/relief` + `relief_v3` (~26 MB) are deleted; every source photograph is kept. Deletions happened only after grepping for references, and only after the `P01 baseline` commit. Rationale: P06's Plate engine supersedes these paths, and dead alternatives hide regressions.
+- **2026-09-27: the capture corpus is external and path-independent.** Tools read it from `MILION_CAPTURES`, defaulting to `../chora-ar/captures` next to the repository. `tool/build_anastasis_relief.py`, `tool/prepare_last_judgment_assets.py` and `tool/prepare_anastasis_assets.dart` fail with a clear message when the corpus or a scene folder is missing. The 5.3 GB corpus is never copied into git.
+- **2026-09-27: studio layout.** Authoring trees (`anastasis_25d/`, `last_judgment_25d/`, `figure_animation/`, `restoration_studies/`, `ui_refresh/`) live under `studio/`; visual capture tests live under `tool/captures/`; phase evidence goes to `studio/captures/<phase>/`.
+- **2026-09-27: minSdk 26.** Android 8.0 is the practical baseline for CameraX/camera2, adaptive icons, notification channels and scoped storage, needs no legacy-storage path, and drops only API 24–25. The reference device runs Android 14.
+- **2026-09-27: R8 and resource shrinking on for release.** `android/app/proguard-rules.pro` keeps `com.masicai.flutteronnxruntime.**` and `ai.onnxruntime.**` because the ONNX bridge crosses JNI; CameraX ships its own consumer rules. Proven by an arm64 release build on the Pixel Fold API 36 emulator: CameraX preview runs and ONNX infers (M03 · 47% on the virtual scene, capture in `studio/captures/P01/`).
+- **2026-09-27: release signing rule.** Read `android/key.properties` when present; otherwise print a loud Gradle warning at configuration time and sign with the debug key so local release testing still works (O05 unchanged).
+- **2026-09-27: local installs are per-ABI APKs; the AAB stays the release artifact.** `tool/build_android.sh` builds both.
+- **2026-09-27: git without LFS for now.** `git-lfs` is not installed on this machine, so the baseline holds the binaries as ordinary objects (O20); the repository stays private.

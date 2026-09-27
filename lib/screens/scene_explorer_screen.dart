@@ -14,11 +14,9 @@ class SceneExplorerScreen extends StatefulWidget {
   const SceneExplorerScreen({
     super.key,
     required this.scene,
-    required this.classicBuilder,
     this.initialFocus = 'Overview',
   });
   final ExplorableScene scene;
-  final WidgetBuilder classicBuilder;
   final String initialFocus;
 
   @override
@@ -310,7 +308,6 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
         PopupMenuButton<String>(
           tooltip: 'Scene options',
           onSelected: (value) {
-            if (value == 'classic') _openPage(widget.classicBuilder);
             if (value == 'studies') {
               _openPage((_) => RestorationStudiesScreen(scene: widget.scene));
             }
@@ -326,10 +323,6 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
             const PopupMenuItem(
               value: 'studies',
               child: Text('Restoration studies'),
-            ),
-            const PopupMenuItem(
-              value: 'classic',
-              child: Text('Classic v5 viewer'),
             ),
           ],
         ),

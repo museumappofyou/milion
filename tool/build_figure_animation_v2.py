@@ -13,7 +13,7 @@ from scipy.sparse.linalg import factorized
 from build_figure_animation import author, part_mask, shape_mask
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'figure_animation/v2'
+OUT=ROOT/'studio/figure_animation/v2'
 FRAMES=48
 
 
@@ -65,7 +65,7 @@ def build(name,spec):
     n=rows*cols; assert n<65536
     yy,xx=np.meshgrid(np.linspace(0,h,rows),np.linspace(0,w,cols),indexing='ij')
     P=np.stack([xx.ravel(),yy.ravel()],axis=-1)
-    base=ROOT/('anastasis_25d' if name=='anastasis' else 'last_judgment_25d')/'v5/authoring'
+    base=ROOT/('studio/anastasis_25d' if name=='anastasis' else 'studio/last_judgment_25d')/'v5/authoring'
     cfg=json.loads((base/'layers.json').read_text())
     parts={p['id']:p for p in (sum([l['parts'] for l in cfg['layers']],[]) if 'layers' in cfg else cfg['parts'])}
     masks={}; active=np.zeros((h,w),np.uint8)
@@ -173,7 +173,7 @@ def build(name,spec):
     (ROOT/'assets/explorer'/binary_name).write_bytes(binary)
     metadata=dict(version=2,cols=cols,rows=rows,frames=FRAMES,vertices=ids.tolist(),poses=f'assets/explorer/{binary_name}',durationSeconds=6,gestures=[i['name'] for i in handles])
     (ROOT/'assets/explorer'/f'{name}_figures_v2.json').write_text(json.dumps(metadata,separators=(',',':'))+'\n')
-    previous=json.loads((ROOT/'figure_animation/build_report.json').read_text())[name]
+    previous=json.loads((ROOT/'studio/figure_animation/build_report.json').read_text())[name]
     report=dict(method='rigid face/hand handles, ARAP cloth and local seam',vertices=n,animated_vertices=len(ids),frames=FRAMES,seconds=6,minimum_triangle_area_ratio=minimum,max_displacement_source_pixels=maximum,previous_max_displacement=previous['max_displacement_source_pixels'],travel_increase=maximum/previous['max_displacement_source_pixels'],checked_interpolated_poses=FRAMES*4,checked_intensities=[.25,.5,.75,1],pose_bytes=len(binary),textures_modified=0)
     authored=[{k:(v.tolist() if isinstance(v,np.ndarray) else v) for k,v in i.items() if k!='indices'} for i in handles]
     (OUT/'authoring'/f'{name}_joints.json').write_text(json.dumps(authored,indent=2)+'\n')

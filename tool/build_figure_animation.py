@@ -13,7 +13,7 @@ from build_anastasis_v5 import part_mask
 from build_last_judgment_v5 import shape_mask
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'figure_animation'
+OUT = ROOT / 'studio/figure_animation'
 
 
 def control(name, parts, center, radius, pivot, angle=0, shift=(0, 0), timing=(1, 0), head=False):
@@ -75,7 +75,7 @@ def smooth(x):
 
 def build(name, spec):
     w,h=spec['size']; scale=np.array([w/spec['grid'][0],h/spec['grid'][1]])
-    base=ROOT / ('anastasis_25d' if name=='anastasis' else 'last_judgment_25d') / 'v5/authoring'
+    base=ROOT / ('studio/anastasis_25d' if name=='anastasis' else 'studio/last_judgment_25d') / 'v5/authoring'
     cfg=json.loads((base/'layers.json').read_text())
     parts={p['id']:p for p in (sum([l['parts'] for l in cfg['layers']],[]) if 'layers' in cfg else cfg['parts'])}
     cols=257; rows=round((cols-1)*h/w)+1

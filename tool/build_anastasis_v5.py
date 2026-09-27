@@ -1,12 +1,13 @@
 """Fifth-pass Anastasis painted relief.
 
+Usage: python3.11 tool/build_anastasis_v5.py
 One physical height field over the master photograph:
 
 * semantic depth clusters from authored masks, resolved in painted overlap
-  order (anastasis_25d/v5/authoring/layers.json);
+  order (studio/anastasis_25d/v5/authoring/layers.json);
 * rock made of authored planar facets that follow the painted rock planes,
   solved jointly so a shared painted edge is a crease and an authored overlap
-  is a step (anastasis_25d/v5/authoring/rock_facets.json);
+  is a step (studio/anastasis_25d/v5/authoring/rock_facets.json);
 * figures as raised parts with a rounded edge, a shallow body swell and head
   domes, each clearing the parts it overlaps;
 * one fixed raking light, soft height-field shadows and occlusion that only
@@ -24,7 +25,7 @@ from scipy.sparse.linalg import lsqr
 
 ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / 'assets/anastasis/conch_reference.jpg'
-V5 = ROOT / 'anastasis_25d/v5'
+V5 = ROOT / 'studio/anastasis_25d/v5'
 AUTH = V5 / 'authoring'
 H_SCALE = 256.0  # 16-bit height PNG: value = z * H_SCALE
 

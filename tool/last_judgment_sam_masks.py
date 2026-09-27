@@ -9,7 +9,7 @@ import numpy as np
 from anastasis_v5_sam_masks import torch, sam_model_registry, SamPredictor
 
 ROOT = Path(__file__).resolve().parents[1]
-AUTH = ROOT / 'last_judgment_25d/v5/authoring'
+AUTH = ROOT / 'studio/last_judgment_25d/v5/authoring'
 
 def main():
     image = cv2.cvtColor(cv2.imread(str(ROOT / 'assets/last_judgment/vault_reference.jpg')), cv2.COLOR_BGR2RGB)

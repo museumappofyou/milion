@@ -1,4 +1,6 @@
 """Export compact sampled v5 geometry for optional in-app depth motion.
+
+Usage: python3.11 tool/prepare_explorer_geometry.py
 Reads height data only; never edits original or restored images.
 """
 from pathlib import Path
@@ -6,7 +8,7 @@ import json
 import cv2
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-for name,source in [('anastasis','anastasis_25d/v5/build/height16.png'),('last_judgment','last_judgment_25d/v5/height16.png')]:
+for name,source in [('anastasis','studio/anastasis_25d/v5/build/height16.png'),('last_judgment','studio/last_judgment_25d/v5/height16.png')]:
     data=cv2.imread(str(ROOT/source),cv2.IMREAD_UNCHANGED)
     if data is None or data.dtype!=np.uint16: raise ValueError(source)
     h,w=data.shape

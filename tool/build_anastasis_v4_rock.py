@@ -1,5 +1,6 @@
 """Authored Anastasis rock-facet prototype; source RGB is always the texture.
 
+Usage: python3.11 tool/build_anastasis_v4_rock.py
 Run from the repository root with Python 3.11. This first focuses only on
 the exposed upper-left painted rock. Facet points are master-photo pixels.
 """
@@ -13,7 +14,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'anastasis_25d/v4'
+OUT = ROOT / 'studio/anastasis_25d/v4'
 ASSETS = ROOT / 'assets/anastasis/relief_v4'
 SOURCE = np.asarray(Image.open(ROOT / 'assets/anastasis/conch_reference.jpg').convert('RGB'))
 H, W = SOURCE.shape[:2]
