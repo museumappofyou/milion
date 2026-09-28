@@ -58,7 +58,6 @@ void main() {
             frame: const Rect.fromLTWH(0, 0, 32, 32),
             phase: (frame + 1) / 25,
             posed: true,
-            showDetails: false,
           ).paint(Canvas(recorder), const Size(32, 32));
           final picture = recorder.endRecording();
           expect(

@@ -16,7 +16,7 @@ Future<void> capture(WidgetTester tester, GlobalKey key, String name) async {
         key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
     final image = await boundary.toImage(pixelRatio: 1);
     final data = (await image.toByteData(format: ui.ImageByteFormat.png))!;
-    File('studio/ui_refresh/previews/$name.png')
+    File('studio/captures/P03/navigation-regression/$name.png')
         .writeAsBytesSync(data.buffer.asUint8List());
     image.dispose();
   });
@@ -29,7 +29,8 @@ void main() {
       // Visual captures run through flutter test from tool/captures/.
       // ignore: invalid_use_of_visible_for_testing_member
       SharedPreferences.setMockInitialValues({});
-      Directory('studio/ui_refresh/previews').createSync(recursive: true);
+      Directory('studio/captures/P03/navigation-regression')
+          .createSync(recursive: true);
       addTearDown(tester.view.reset);
       await loadThemeFonts(tester);
       for (final size in [

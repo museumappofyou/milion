@@ -5,24 +5,17 @@ import 'package:milion/screens/anastasis_relief_screen.dart';
 import 'package:milion/screens/last_judgment_relief_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
+import 'package:milion/design/theme.dart';
+import 'package:milion/l10n/strings.dart';
+
+import '../../test/frontier_navigation_test.dart' show loadThemeFonts;
+import '../../test/scene_explorer_test.dart' show assetsReady, visibleTap;
+
 import 'package:flutter_test/flutter_test.dart';
 
-const out = 'studio/figure_animation/v2/previews/layouts';
+const out = 'studio/captures/P03/artwork-regression';
 
-Future<void> load(WidgetTester tester) async {
-  await tester.runAsync(() async {
-    for (var i = 0; i < 200; i++) {
-      await Future<void>.delayed(const Duration(milliseconds: 50));
-      await tester.pump();
-      if (i >= 20 &&
-          find.byType(CircularProgressIndicator).evaluate().isEmpty) {
-        break;
-      }
-    }
-  });
-  await tester.pumpAndSettle();
-}
+Future<void> load(WidgetTester tester) => assetsReady(tester);
 
 Future<void> capture(WidgetTester tester, GlobalKey key, String name) async {
   await tester.runAsync(() async {
@@ -41,17 +34,7 @@ void main() {
   ) async {
     Directory(out).createSync(recursive: true);
     addTearDown(tester.view.reset);
-    await tester.runAsync(() async {
-      final icons = FontLoader('MaterialIcons')
-        ..addFont(rootBundle.load('fonts/MaterialIcons-Regular.otf'));
-      await icons.load();
-      final font = File('/System/Library/Fonts/Supplemental/Arial.ttf');
-      if (font.existsSync()) {
-        final loader = FontLoader('CaptureFont')
-          ..addFont(Future.value(ByteData.sublistView(font.readAsBytesSync())));
-        await loader.load();
-      }
-    });
+    await loadThemeFonts(tester);
     final key = GlobalKey();
     for (final (name, home) in [
       ('anastasis', const AnastasisReliefScreen()),
@@ -70,13 +53,9 @@ void main() {
             key: key,
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                useMaterial3: true,
-                fontFamily: 'CaptureFont',
-                colorScheme: ColorScheme.fromSeed(
-                  seedColor: const Color(0xFF1F3B73),
-                ),
-              ),
+              theme: DesignTheme.lamp,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
               home: home,
             ),
           ),
@@ -85,47 +64,22 @@ void main() {
         final size = '${w.toInt()}x${h.toInt()}';
         await capture(tester, key, '${name}_overview_$size');
         if (w == 390) {
-          await tester.tap(find.text('Christ'));
+          await tester.tap(find.byType(DropdownButtonFormField<String>));
           await tester.pumpAndSettle();
-          await capture(tester, key, '${name}_christ_relief');
-          await tester.tap(find.text('Original'));
+          await tester.tap(find.text('Christ').last);
           await tester.pumpAndSettle();
-          await capture(tester, key, '${name}_christ_original');
-          await tester.tap(find.text('Restored'));
-          await load(tester);
-          await capture(tester, key, '${name}_christ_restored_4k_full');
-          await tester.drag(
-            find.byKey(const ValueKey('restoration-strength')),
-            const Offset(-90, 0),
-          );
-          await tester.pumpAndSettle();
-          await capture(tester, key, '${name}_christ_restored_blend');
-          await tester.tap(find.text('Relief'));
-          await tester.pumpAndSettle();
-          await tester.tap(find.text('Animate figures'));
-          await tester.pump();
-          await tester.pump(const Duration(seconds: 2));
-          await capture(tester, key, '${name}_figure_motion');
-          await tester.tap(find.text('Pause figures'));
-          await tester.pumpAndSettle();
+          for (final label in ['Depth', 'Original', 'Reconstruction']) {
+            await visibleTap(tester, label);
+            await load(tester);
+            await capture(tester, key, '${name}_${label.toLowerCase()}_$size');
+          }
           await tester.tap(find.byTooltip('Scene options'));
           await tester.pumpAndSettle();
           await tester.tap(find.text('Restoration studies'));
           await load(tester);
-          await tester.tap(
-            find.text(
-              name == 'anastasis'
-                  ? 'Christ and the faces'
-                  : 'Christ, Mary and John',
-            ),
-          );
+          await visibleTap(tester, 'Reconstruction');
           await load(tester);
-          await capture(tester, key, '${name}_detail_file_study');
-        }
-        if (w == 360) {
-          await tester.tap(find.text('Restored'));
-          await load(tester);
-          await capture(tester, key, '${name}_restored_360x800');
+          await capture(tester, key, '${name}_study_$size');
         }
         expect(tester.takeException(), isNull);
         await tester.pumpWidget(const SizedBox.shrink());

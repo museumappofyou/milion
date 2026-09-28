@@ -2,6 +2,11 @@ import 'dart:convert';
 import 'dart:ui' as ui;
 
 import 'package:milion/models/explorable_scene.dart';
+import 'package:milion/design/components.dart';
+import 'package:milion/l10n/strings.dart';
+
+import 'frontier_navigation_test.dart' show loadThemeFonts;
+
 import 'package:milion/services/explorer_assets.dart';
 import 'package:milion/widgets/interactive_relief_surface.dart';
 import 'package:milion/screens/anastasis_relief_screen.dart';
@@ -19,8 +24,7 @@ Future<void> assetsReady(WidgetTester tester) async {
     for (var i = 0; i < 200; i++) {
       await Future<void>.delayed(const Duration(milliseconds: 50));
       await tester.pump();
-      if (i >= 20 &&
-          find.byType(CircularProgressIndicator).evaluate().isEmpty) {
+      if (i >= 20 && find.byType(TesseraLoader).evaluate().isEmpty) {
         break;
       }
     }
@@ -37,8 +41,11 @@ Future<void> openScene(
   tester.view.physicalSize = const Size(390, 844);
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
+  await loadThemeFonts(tester);
   await tester.pumpWidget(
     MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: MediaQuery(
         data: MediaQueryData(
           size: const Size(390, 844),
@@ -53,6 +60,22 @@ Future<void> openScene(
 
 SceneExplorerScreenState state(WidgetTester tester) =>
     tester.state<SceneExplorerScreenState>(find.byType(SceneExplorerScreen));
+
+Future<void> visibleTap(WidgetTester tester, String label) async {
+  final target = find.text(label).last;
+  await tester.ensureVisible(target);
+  await tester.pump(const Duration(milliseconds: 100));
+  await tester.tap(target);
+  await tester.pump();
+}
+
+Future<void> openGesture(WidgetTester tester) async {
+  if (find.text('Play one gesture').evaluate().isEmpty &&
+      find.text('Pause gesture').evaluate().isEmpty) {
+    await visibleTap(tester, 'Gesture study');
+    await tester.pumpAndSettle();
+  }
+}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -94,20 +117,31 @@ void main() {
     },
   );
 
-  test('restored scenes are single 4K exports with the source aspect', () async {
-    for (final scene in [ExplorableScene.anastasis, ExplorableScene.judgment]) {
-      final bytes = await rootBundle.load(scene.restored);
-      final codec = await ui.instantiateImageCodec(bytes.buffer.asUint8List());
-      final image = (await codec.getNextFrame()).image;
-      expect(image.width, 3840);
-      expect(image.width / image.height, closeTo(scene.size.aspectRatio, .001));
-      expect(scene.studies, hasLength(1));
-      expect(scene.studies.first.study, scene.restored);
-      expect(scene.studies.first.initialBlend, 1);
-      image.dispose();
-      codec.dispose();
-    }
-  });
+  test(
+    'restored scenes are single 4K exports with the source aspect',
+    () async {
+      for (final scene in [
+        ExplorableScene.anastasis,
+        ExplorableScene.judgment,
+      ]) {
+        final bytes = await rootBundle.load(scene.restored);
+        final codec = await ui.instantiateImageCodec(
+          bytes.buffer.asUint8List(),
+        );
+        final image = (await codec.getNextFrame()).image;
+        expect(image.width, 3840);
+        expect(
+          image.width / image.height,
+          closeTo(scene.size.aspectRatio, .001),
+        );
+        expect(scene.studies, hasLength(1));
+        expect(scene.studies.first.study, scene.restored);
+        expect(scene.studies.first.initialBlend, 1);
+        image.dispose();
+        codec.dispose();
+      }
+    },
+  );
 
   for (final (name, home) in [
     ('Anastasis', const AnastasisReliefScreen()),
@@ -129,16 +163,16 @@ void main() {
       await tester.pumpAndSettle();
       expect(explorer.transformation.value.getTranslation().x, isNot(0));
       final current = explorer.transformation.value.clone();
-      await tester.tap(find.text('Original'));
+      await visibleTap(tester, 'Original');
       await tester.pumpAndSettle();
       expect(explorer.variant, 'Original');
       expect(explorer.transformation.value, current);
-      await tester.tap(find.text('Restored'));
+      await visibleTap(tester, 'Reconstruction');
       await assetsReady(tester);
       expect(explorer.variant, 'Restored');
       expect(explorer.restorationAmount, 1);
       expect(
-        find.text('4K restoration · interpretive · original preserved'),
+        find.text('Reconstruction · source photograph preserved'),
         findsOneWidget,
       );
       expect(explorer.zoom, closeTo(1.5, .01));
@@ -152,11 +186,19 @@ void main() {
     });
 
     testWidgets(
-      '$name animates figures in place, freezes on pause and supports every texture',
+      '$name plays one gentle labelled gesture and preserves camera and textures',
       (tester) async {
         await openScene(tester, home);
         final explorer = state(tester);
-        expect(find.text('Play tour'), findsNothing);
+        expect(explorer.variant, 'Original');
+        expect(explorer.motionAmount, .25);
+        await openGesture(tester);
+        await visibleTap(tester, 'Play one gesture');
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 2));
+        expect(explorer.isMotionPlaying, isTrue);
+        expect(explorer.figurePose, closeTo(1 / 3, .01));
+        expect(find.text('IMAGINED'), findsNWidgets(2));
         final camera = explorer.transformation.value.clone();
         final boundary = tester.renderObject<RenderRepaintBoundary>(
           find.byKey(const ValueKey('figure-canvas')),
@@ -170,14 +212,7 @@ void main() {
           return data.buffer.asUint8List().toList();
         }
 
-        final still = await tester.runAsync(pixels);
-        await tester.tap(find.text('Animate figures'));
-        await tester.pump();
-        await tester.pump(const Duration(seconds: 2));
-        expect(explorer.isMotionPlaying, isTrue);
-        expect(explorer.figurePose, closeTo(1 / 3, .01));
-        expect(explorer.transformation.value, camera);
-        expect(explorer.selectedDetail, isNull);
+        final moving = await tester.runAsync(pixels);
         final surface =
             tester
                     .widget<CustomPaint>(
@@ -188,60 +223,37 @@ void main() {
                     )
                     .painter!
                 as InteractiveReliefSurface;
-        expect(surface.showDetails, isFalse);
-        final animated = await tester.runAsync(pixels);
-        expect(animated, isNot(equals(still)));
-        await tester.tap(find.text('Pause figures'));
+        expect(surface.posed, isTrue);
+        await visibleTap(tester, 'Pause gesture');
         await tester.pumpAndSettle();
-        final paused = await tester.runAsync(pixels);
         final pose = explorer.figurePose;
-        await tester.pump(const Duration(seconds: 5));
+        final paused = await tester.runAsync(pixels);
+        await tester.pump(const Duration(seconds: 8));
+        expect(explorer.figurePose, pose);
+        expect(await tester.runAsync(pixels), paused);
+        await visibleTap(tester, 'Play one gesture');
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 7));
+        await tester.pump();
         expect(explorer.isMotionPlaying, isFalse);
-        expect(explorer.figurePose, pose);
-        expect(await tester.runAsync(pixels), equals(paused));
+        expect(explorer.figurePose, 1);
+        await tester.pump(const Duration(seconds: 7));
+        expect(explorer.figurePose, 1);
         expect(explorer.transformation.value, camera);
-        expect(explorer.motionAmount, 1);
-        await tester.drag(
-          find.byKey(const ValueKey('figure-intensity')),
-          const Offset(-220, 0),
-        );
-        await tester.pumpAndSettle();
-        expect(explorer.motionAmount, lessThan(.5));
-        expect(explorer.figurePose, pose);
-        expect(await tester.runAsync(pixels), isNot(equals(paused)));
-        await tester.drag(
-          find.byKey(const ValueKey('figure-intensity')),
-          const Offset(220, 0),
-        );
-        await tester.pumpAndSettle();
-        expect(explorer.motionAmount, 1);
-        await tester.tap(find.text('Still'));
+        await visibleTap(tester, 'Still');
         await tester.pumpAndSettle();
         expect(explorer.figurePose, 0);
-        expect(await tester.runAsync(pixels), equals(still));
-        // Manual pose scrubbing pauses the clock and keeps its selected pose.
-        await tester.drag(
-          find.byKey(const ValueKey('figure-pose')),
-          const Offset(60, 0),
-        );
+        expect(await tester.runAsync(pixels), isNot(equals(moving)));
+        final intensity = find.byKey(const ValueKey('figure-intensity'));
+        await tester.ensureVisible(intensity);
         await tester.pumpAndSettle();
-        expect(explorer.figurePose, greaterThan(0));
-        expect(explorer.isMotionPlaying, isFalse);
-        for (final texture in ['Original', 'Restored']) {
-          await tester.tap(find.text(texture));
+        await tester.drag(intensity, const Offset(300, 0));
+        await tester.pumpAndSettle();
+        expect(explorer.motionAmount, closeTo(.35, .001));
+        for (final label in ['Depth', 'Reconstruction', 'Original']) {
+          await visibleTap(tester, label);
           await assetsReady(tester);
-          await tester.tap(find.text('Animate figures'));
-          await tester.pump();
-          final before = explorer.figurePose;
-          await tester.pump(const Duration(milliseconds: 500));
-          expect(explorer.isMotionPlaying, isTrue);
-          expect(explorer.figurePose, isNot(before));
-          // User can zoom and select a figure while the gesture continues.
-          await tester.tap(find.byTooltip('Zoom in'));
-          await tester.pump(const Duration(milliseconds: 800));
-          expect(explorer.isMotionPlaying, isTrue);
-          await tester.tap(find.text('Pause figures'));
-          await tester.pumpAndSettle();
+          expect(explorer.transformation.value, camera);
         }
         expect(tester.takeException(), isNull);
       },
@@ -294,9 +306,12 @@ void main() {
     'reduced motion allows manual poses and lifecycle pauses figures',
     (tester) async {
       await openScene(tester, const LastJudgmentReliefScreen(), reduced: true);
-      await tester.tap(find.text('Animate figures'));
+      await openGesture(tester);
+      await visibleTap(tester, 'Play one gesture');
       await tester.pump();
       expect(state(tester).isMotionPlaying, isFalse);
+      await tester.ensureVisible(find.byKey(const ValueKey('figure-pose')));
+      await tester.pumpAndSettle();
       await tester.drag(
         find.byKey(const ValueKey('figure-pose')),
         const Offset(40, 0),
@@ -305,7 +320,8 @@ void main() {
       expect(state(tester).figurePose, greaterThan(0));
       await tester.pumpWidget(const SizedBox.shrink());
       await openScene(tester, const LastJudgmentReliefScreen());
-      await tester.tap(find.text('Animate figures'));
+      await openGesture(tester);
+      await visibleTap(tester, 'Play one gesture');
       await tester.pump(const Duration(seconds: 1));
       state(tester).didChangeAppLifecycleState(AppLifecycleState.inactive);
       await tester.pumpAndSettle();
@@ -314,7 +330,8 @@ void main() {
       expect(state(tester).isMotionPlaying, isFalse);
       expect(state(tester).figurePose, pose);
       state(tester).didChangeAppLifecycleState(AppLifecycleState.resumed);
-      await tester.tap(find.text('Animate figures'));
+      await openGesture(tester);
+      await visibleTap(tester, 'Play one gesture');
       await tester.pump(const Duration(seconds: 1));
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(seconds: 10));
@@ -387,13 +404,11 @@ void main() {
     await tester.tap(find.text('Restoration studies'));
     await assetsReady(tester);
     expect(find.byType(RestorationStudiesScreen), findsOneWidget);
-    await tester.tap(find.text('4K restored vault'));
-    await assetsReady(tester);
     expect(
       find.byKey(const ValueKey('study-interactive-viewer')),
       findsOneWidget,
     );
-    await tester.tap(find.text('Original'));
+    await visibleTap(tester, 'Original');
     await tester.pumpAndSettle();
     expect(
       find.textContaining('source photograph is unchanged'),

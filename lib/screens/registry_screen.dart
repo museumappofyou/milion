@@ -4,8 +4,10 @@ import '../content/bundled_content.dart';
 import '../content/geography.dart';
 import '../content/models.dart';
 import '../content/registry.dart';
+import '../design/components.dart';
+import '../design/tokens.dart';
+import '../l10n/strings.dart';
 
-/// Internal draft inspection, reachable only from About in debug builds.
 class RegistryScreen extends StatefulWidget {
   const RegistryScreen({super.key, this.registry});
   final ContentRegistry? registry;
@@ -17,168 +19,160 @@ class _RegistryScreenState extends State<RegistryScreen> {
   late final Future<ContentRegistry> _load = widget.registry == null
       ? bundledContent.load()
       : Future.value(widget.registry);
-  String _language = 'en';
-  String text(String en, String tr) =>
-      Localized(en: en, tr: tr).inLanguage(_language);
-
+  String? _language;
   @override
-  Widget build(BuildContext context) => Scaffold(
-    backgroundColor: const Color(0xFFEEE7DB),
-    appBar: AppBar(
-      title: Text(text('Registry', 'İçerik kaydı')),
-      actions: [
-        TextButton(
-          onPressed: () =>
-              setState(() => _language = _language == 'en' ? 'tr' : 'en'),
-          child: Text(_language == 'en' ? 'TR' : 'EN'),
-        ),
-      ],
-    ),
-    body: FutureBuilder<ContentRegistry>(
-      future: _load,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Center(
-            child: Text(
-              text('Registry could not load.', 'İçerik kaydı yüklenemedi.'),
-            ),
-          );
-        }
-        if (!snapshot.hasData) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        final registry = snapshot.data!;
-        final places = registry.placesByDistance(includeDrafts: true);
-        return ListView(
-          key: const PageStorageKey('registry-list'),
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          children: [
-            const SizedBox(height: 20),
-            Text(
-              text('MILE ZERO', 'SIFIRINCI MİL'),
-              style: const TextStyle(fontSize: 13, letterSpacing: 3),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              '41.008043° N · 28.978066° E',
-              style: TextStyle(fontSize: 19),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              text(
-                '${places.length} places · ${registry.artworks.length} artworks',
-                '${places.length} yer · ${registry.artworks.length} eser',
-              ),
-            ),
-            Text(
-              text(
-                '${places.where((p) => p.review == ReviewStatus.draft).length} drafts · hidden from public place lists',
-                '${places.where((p) => p.review == ReviewStatus.draft).length} taslak · genel yer listelerinde gösterilmez',
-              ),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              text(
-                'Straight-line distance · Roman miles rounded\n1 mil ≈ 1,480 m · bearings from true north',
-                'Kuş uçuşu uzaklık · Roma mili yuvarlanır\n1 mil ≈ 1.480 m · açılar gerçek kuzeye göre',
-              ),
-            ),
-            const SizedBox(height: 12),
-            ExpansionTile(
-              tilePadding: EdgeInsets.zero,
-              title: Text(
-                text('Counts by category', 'Kategoriye göre sayılar'),
-              ),
-              children: [
-                for (final c in Category.values)
-                  _count(
-                    _categoryName(c),
-                    places.where((p) => p.categories.contains(c)).length,
-                  ),
-              ],
-            ),
-            ExpansionTile(
-              tilePadding: EdgeInsets.zero,
-              title: Text(
-                text('Counts by district · 39', 'İlçeye göre sayılar · 39'),
-              ),
-              children: [
-                for (final d in District.values)
-                  _count(
-                    d.spelling,
-                    places.where((p) => p.district == d).length,
-                  ),
-                _count(
-                  text('Outside province', 'İl dışı'),
-                  places.where((p) => p.outsideProvince).length,
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            for (final place in places) _place(place),
-          ],
-        );
-      },
-    ),
+  Widget build(BuildContext context) => Localizations.override(
+    context: context,
+    locale: Locale(_language ?? context.language),
+    delegates: AppLocalizations.localizationsDelegates,
+    child: Builder(builder: _view),
   );
+  Widget _view(BuildContext context) {
+    final s = context.l10n;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(s.registry),
+        actions: [
+          TextButton(
+            onPressed: () => setState(
+              () => _language = context.language == 'en' ? 'tr' : 'en',
+            ),
+            child: Text(context.language == 'en' ? s.localeTr : s.localeEn),
+          ),
+        ],
+      ),
+      body: FutureBuilder<ContentRegistry>(
+        future: _load,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return ContentState(error: true, title: s.registryError);
+          }
+          if (!snapshot.hasData) return const Center(child: TesseraLoader());
+          final registry = snapshot.data!,
+              places = registry.placesByDistance(includeDrafts: true);
+          return ListView(
+            key: const PageStorageKey('registry-list'),
+            padding: const EdgeInsets.all(24),
+            children: [
+              Text(
+                TypeRole.capitals(s.mileZero, context.language),
+                style: TypeRole.measurement,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                s.milionCoordinates,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 16),
+              Text(
+                s.registryCounts(
+                  '${places.length}',
+                  '${registry.artworks.length}',
+                ),
+              ),
+              Text(
+                s.draftCounts(
+                  '${places.where((p) => p.review == ReviewStatus.draft).length}',
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(s.registryMeasurement),
+              const SizedBox(height: 16),
+              ExpansionTile(
+                tilePadding: EdgeInsets.zero,
+                title: Text(s.categoryCounts),
+                children: [
+                  for (final c in Category.values)
+                    _count(
+                      context,
+                      _category(context, c),
+                      places.where((p) => p.categories.contains(c)).length,
+                    ),
+                ],
+              ),
+              ExpansionTile(
+                tilePadding: EdgeInsets.zero,
+                title: Text(s.districtCounts),
+                children: [
+                  for (final d in District.values)
+                    _count(
+                      context,
+                      d.spelling,
+                      places.where((p) => p.district == d).length,
+                    ),
+                  _count(
+                    context,
+                    s.outsideProvince,
+                    places.where((p) => p.outsideProvince).length,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              for (final p in places) _place(context, p),
+            ],
+          );
+        },
+      ),
+    );
+  }
 
-  Widget _count(String label, int count) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: 5),
+  Widget _count(BuildContext context, String label, int count) => Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8),
     child: Row(
       children: [
         Expanded(child: Text(label)),
-        Text('$count'),
+        Text('$count', style: TypeRole.measurement),
       ],
     ),
   );
-
-  String _categoryName(Category c) {
-    const labels = {
-      Category.byzantine: ('Byzantine', 'Bizans'),
-      Category.mosque: ('Mosque', 'Cami'),
-      Category.museum: ('Museum', 'Müze'),
-      Category.palace: ('Palace', 'Saray'),
-      Category.fortification: ('Fortification', 'Savunma yapısı'),
-      Category.cistern: ('Cistern', 'Sarnıç'),
-      Category.tower: ('Tower', 'Kule'),
-      Category.bazaar: ('Bazaar', 'Çarşı'),
-      Category.bath: ('Bath', 'Hamam'),
-      Category.other: ('Other', 'Diğer'),
+  String _category(BuildContext context, Category c) {
+    final s = context.l10n;
+    return switch (c) {
+      Category.byzantine => s.categoryByzantine,
+      Category.mosque => s.categoryMosque,
+      Category.museum => s.categoryMuseum,
+      Category.palace => s.categoryPalace,
+      Category.fortification => s.categoryFortification,
+      Category.cistern => s.categoryCistern,
+      Category.tower => s.categoryTower,
+      Category.bazaar => s.categoryBazaar,
+      Category.bath => s.categoryBath,
+      Category.other => s.categoryOther,
     };
-    return text(labels[c]!.$1, labels[c]!.$2);
   }
 
-  Widget _place(Place place) {
-    final distance = fromMilion(place);
-    final bearing = distance.bearing == null
-        ? '—'
-        : '${distance.bearing!.toStringAsFixed(0)}°';
+  Widget _place(BuildContext context, Place p) {
+    final d = fromMilion(p), c = MeasureColors.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
-      decoration: const BoxDecoration(
-        border: Border(top: BorderSide(color: Color(0xFFBDB3A5))),
+      decoration: BoxDecoration(
+        border: Border(top: BorderSide(color: c.line)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '${formatMilDistance(distance.km, language: _language)} · $bearing',
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              color: Color(0xFF4E1B2B),
-            ),
+          Wrap(
+            spacing: 8,
+            children: [
+              MilDistance(d.km),
+              if (d.bearing != null)
+                Text(
+                  context.l10n.bearing('${d.bearing!.round()}'),
+                  style: TypeRole.measurement.copyWith(color: c.secondary),
+                ),
+            ],
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 8),
           Text(
-            place.names.inLanguage(_language),
-            style: const TextStyle(fontSize: 20),
+            p.names.inLanguage(context.language),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
-          const SizedBox(height: 4),
-          Text(place.hook.inLanguage(_language)),
-          const SizedBox(height: 6),
+          const SizedBox(height: 8),
+          Text(p.hook.inLanguage(context.language)),
+          const SizedBox(height: 8),
           Text(
-            '${place.district?.spelling ?? text('Outside province', 'İl dışı')} · ${place.qid} · ${place.reviewPhase}',
-            style: const TextStyle(fontSize: 12),
+            '${p.district?.spelling ?? context.l10n.outsideProvince} · ${p.qid} · ${p.reviewPhase}',
+            style: Theme.of(context).textTheme.bodySmall,
           ),
         ],
       ),

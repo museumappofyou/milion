@@ -6,12 +6,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/screens/registry_screen.dart';
-import 'package:milion/theme/milion_theme.dart';
+import 'package:milion/design/theme.dart';
 
 import '../../test/frontier_navigation_test.dart' show loadThemeFonts;
 
 void main() {
-  testWidgets('P02 registry EN/TR and district-count evidence at 390 dp', (
+  testWidgets('P03 registry EN/TR and district-count evidence at 390 dp', (
     tester,
   ) async {
     tester.view.physicalSize = const Size(390, 844);
@@ -26,7 +26,7 @@ void main() {
       RepaintBoundary(
         key: key,
         child: MaterialApp(
-          theme: MilionTheme.light,
+          theme: DesignTheme.marble,
           debugShowCheckedModeBanner: false,
           home: RegistryScreen(registry: registry),
         ),
@@ -38,7 +38,7 @@ void main() {
           key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
       final image = await boundary.toImage(pixelRatio: 2);
       final data = await image.toByteData(format: ui.ImageByteFormat.png);
-      final file = File('studio/captures/P02/$name.png');
+      final file = File('studio/captures/P03/$name.png');
       file.parent.createSync(recursive: true);
       file.writeAsBytesSync(data!.buffer.asUint8List());
       image.dispose();

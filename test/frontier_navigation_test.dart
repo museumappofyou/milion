@@ -12,8 +12,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future<void> loadThemeFonts(WidgetTester tester) async =>
     tester.runAsync(() async {
       for (final (family, asset) in [
-        ('DMSans', 'assets/fonts/DMSans.ttf'),
-        ('CormorantGaramond', 'assets/fonts/CormorantGaramond.ttf'),
+        ('Cinzel', 'assets/fonts/Cinzel.ttf'),
+        ('NotoSans', 'assets/fonts/NotoSans.ttf'),
+        ('NotoSerifDisplay', 'assets/fonts/NotoSerifDisplay.ttf'),
         ('MaterialIcons', 'fonts/MaterialIcons-Regular.otf'),
       ]) {
         final loader = FontLoader(family)..addFont(rootBundle.load(asset));
@@ -53,20 +54,24 @@ void main() {
     await tester.tap(destination('Collection'));
     await ready(tester);
     expect(find.byType(ScenesTab), findsOneWidget);
-    expect(find.text('103 scenes. Every wall has a story.'), findsOneWidget);
+    expect(find.text('103 artworks · Chora / Kariye'), findsOneWidget);
     await tester.tap(find.text('Interactive'));
     await tester.pumpAndSettle();
-    expect(find.byType(ListTile), findsNWidgets(2));
+    expect(find.text('F02'), findsOneWidget);
+    expect(find.text('F05'), findsOneWidget);
+    expect(find.text('M03'), findsNothing);
     await tester.enterText(find.byType(TextField), 'no matching fresco');
     await tester.pumpAndSettle();
-    expect(find.text('No scenes found'), findsOneWidget);
+    expect(find.text('No artworks match'), findsOneWidget);
     await tester.tap(find.text('Clear filters'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Interactive'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('The Last Judgment'));
     await ready(tester);
-    await tester.tap(find.text('Explore painted relief'));
+    await tester.ensureVisible(find.text('Open artwork'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Open artwork'));
     await ready(tester);
     expect(find.byType(LastJudgmentReliefScreen), findsOneWidget);
     expect(tester.takeException(), isNull);

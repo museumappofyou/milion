@@ -3,7 +3,6 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-import '../models/explorable_scene.dart';
 import '../services/figure_rig.dart';
 
 /// Articulated figure gestures on the existing v5 photograph and relief.
@@ -18,22 +17,14 @@ class InteractiveReliefSurface extends CustomPainter {
     this.phase = 0,
     this.motionAmount = 1,
     this.posed = false,
-    this.showDetails = true,
-    this.details = const [],
-    this.selected,
-    this.zoom = 1,
-    this.fontFamily,
   });
-  final String? fontFamily;
   final ui.Image texture;
   final ui.Image? study;
-  final double studyAmount, phase, zoom, motionAmount;
+  final double studyAmount, phase, motionAmount;
   final Size sourceSize;
   final FigureRig rig;
   final Rect frame;
-  final bool posed, showDetails;
-  final List<SceneDetail> details;
-  final String? selected;
+  final bool posed;
 
   static Rect fitFrame(Size viewport, Size source) {
     final fitted = applyBoxFit(BoxFit.contain, source, viewport).destination;
@@ -47,47 +38,6 @@ class InteractiveReliefSurface extends CustomPainter {
       if (study != null && studyAmount > 0) _flat(canvas, study!, studyAmount);
     } else {
       _mesh(canvas);
-    }
-    if (showDetails) {
-      for (var i = 0; i < details.length; i++) {
-        final detail = details[i];
-        final point = Offset(
-          frame.left + frame.width * detail.point.dx,
-          frame.top + frame.height * detail.point.dy,
-        );
-        final chosen = detail.id == selected;
-        final radius = (chosen ? 15.0 : 12.0) / zoom;
-        canvas.drawCircle(
-          point,
-          radius,
-          Paint()
-            ..color = (chosen
-                ? const Color(0xFFE9D19A)
-                : const Color(0xDD1B1918)),
-        );
-        canvas.drawCircle(
-          point,
-          radius,
-          Paint()
-            ..color = const Color(0xFFE9D19A)
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 1.2 / zoom,
-        );
-        final text = TextPainter(
-          textDirection: TextDirection.ltr,
-          text: TextSpan(
-            text: '${i + 1}',
-            style: TextStyle(
-              fontSize: 11 / zoom,
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.w600,
-              color: chosen ? Colors.black : Colors.white,
-            ),
-          ),
-        )..layout();
-        text.paint(canvas, point - Offset(text.width / 2, text.height / 2));
-        text.dispose();
-      }
     }
   }
 
@@ -146,9 +96,5 @@ class InteractiveReliefSurface extends CustomPainter {
       old.frame != frame ||
       old.phase != phase ||
       old.motionAmount != motionAmount ||
-      old.posed != posed ||
-      old.showDetails != showDetails ||
-      old.selected != selected ||
-      old.zoom != zoom ||
-      old.fontFamily != fontFamily;
+      old.posed != posed;
 }

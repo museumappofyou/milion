@@ -1,0 +1,312 @@
+{
+  "@@locale": "en",
+  "appTitle": "Milion · Istanbul from mile zero",
+  "brandName": "MILION",
+  "tagline": "Istanbul from mile zero",
+  "home": "Home",
+  "today": "Today",
+  "collection": "Collection",
+  "scan": "Scan",
+  "about": "About",
+  "openAnastasis": "Open Anastasis",
+  "anastasis": "Anastasis",
+  "judgment": "The Last Judgment",
+  "chora": "Chora / Kariye",
+  "choraLocation": "Fatih · Chora / Kariye",
+  "anastasisHook": "Christ holds Adam and Eve by the wrist.",
+  "judgmentHook": "An angel rolls up the sky like a scroll.",
+  "original": "Original",
+  "depth": "Depth",
+  "reconstruction": "Reconstruction",
+  "imagined": "Imagined",
+  "originalDescription": "The unchanged source photograph.",
+  "depthDescription": "Source pixels with added depth or light.",
+  "reconstructionDescription": "Added pixels or geometry based on cited evidence.",
+  "imaginedDescription": "A proposed interpretation, not historical evidence.",
+  "mileZero": "Mile zero",
+  "milionCoordinates": "41.008043° N · 28.978066° E",
+  "fromMilion": "From the Milion",
+  "bearing": "{degrees}° from true north",
+  "@bearing": {
+    "placeholders": {
+      "degrees": {
+        "type": "String"
+      }
+    }
+  },
+  "straightLine": "Straight-line distance · 1 Roman mile ≈ 1,480 m",
+  "catalogueCount": "{count} artworks · Chora / Kariye",
+  "@catalogueCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "viewCollection": "View collection",
+  "scanScene": "Scan a scene",
+  "aboutCredits": "About and credits",
+  "loadingCollection": "Opening the collection",
+  "collectionError": "The collection could not open",
+  "collectionErrorBody": "The bundled Chora catalogue could not be read. Try again.",
+  "scannerUnavailable": "The scanner is unavailable",
+  "scannerUnavailableBody": "Scene recognition could not start. The collection is available offline.",
+  "preparingScanner": "Preparing the scanner",
+  "preparingScannerBody": "Loading the 103-artwork Chora model.",
+  "retry": "Try again",
+  "loading": "Loading",
+  "searchScenes": "Search artwork, room or detail",
+  "clearSearch": "Clear search",
+  "allRooms": "All rooms",
+  "interactive": "Interactive",
+  "noScenes": "No artworks match",
+  "noScenesBody": "Change the search text or room filter.",
+  "clearFilters": "Clear filters",
+  "hasNote": "Has a note",
+  "room": "Room",
+  "lookFor": "Look for",
+  "where": "Position",
+  "yourNote": "Your note",
+  "noteHint": "Write a note about this artwork",
+  "saveNote": "Save note",
+  "saved": "Saved",
+  "noteSaved": "Note saved for {id}",
+  "@noteSaved": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "exploreRelief": "Open artwork",
+  "modelMatch": "Model match {percent}% · unverified",
+  "@modelMatch": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "contentEnglish": "This artwork’s text is awaiting Turkish review.",
+  "language": "Language",
+  "systemLanguage": "Device language",
+  "english": "English",
+  "turkish": "Türkçe",
+  "appearance": "Appearance",
+  "marble": "Marble",
+  "lamp": "Lamp",
+  "aboutStory": "The Milion marked Constantinople’s mile zero. Its surviving fragment stands on Divanyolu beside the Basilica Cistern. Milion measures Istanbul from that point.",
+  "aboutRecognition": "The camera suggests matches among 103 Chora artworks. Recognition runs on the device, offline.",
+  "recognitionLimits": "Recognition limits",
+  "recognitionLimitsBody": "Matches are suggestions. The prototype rejected at most 67% of 231 unrelated test images; it cannot confirm an artwork on its own.",
+  "credits": "Sources and credits",
+  "creditsBody": "Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Source URLs are recorded; public-release rights review is pending.",
+  "licenses": "Open-source licences",
+  "version": "Milion 1.0.0 · 1",
+  "previewFooter": "Istanbul collection · Chora preview",
+  "registry": "Registry",
+  "registryError": "Registry could not load.",
+  "registryCounts": "{places} places · {artworks} artworks",
+  "@registryCounts": {
+    "placeholders": {
+      "places": {
+        "type": "String"
+      },
+      "artworks": {
+        "type": "String"
+      }
+    }
+  },
+  "draftCounts": "{count} drafts · hidden from public place lists",
+  "@draftCounts": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "registryMeasurement": "Straight-line distance · Roman miles rounded\n1 mil ≈ 1,480 m · bearings from true north",
+  "categoryCounts": "Counts by category",
+  "districtCounts": "Counts by district · 39",
+  "outsideProvince": "Outside province",
+  "categoryByzantine": "Byzantine",
+  "categoryMosque": "Mosque",
+  "categoryMuseum": "Museum",
+  "categoryPalace": "Palace",
+  "categoryFortification": "Fortification",
+  "categoryCistern": "Cistern",
+  "categoryTower": "Tower",
+  "categoryBazaar": "Bazaar",
+  "categoryBath": "Bath",
+  "categoryOther": "Other",
+  "designSheet": "Porphyry & Tessera",
+  "designIntro": "A measuring instrument for Istanbul: distance, depth and light.",
+  "directionA": "A · Lamp first",
+  "directionB": "B · Marble & porphyry",
+  "paletteTitle": "Pigments and surfaces",
+  "typeTitle": "Inscriptions and measures",
+  "componentsTitle": "Instruments",
+  "porphyry": "Porphyry",
+  "tesseraGold": "Tessera gold · material & rewards",
+  "cobalt": "İznik cobalt",
+  "bole": "İznik bole red",
+  "turquoise": "Turquoise",
+  "verdigris": "Verdigris",
+  "bronze": "Bronze",
+  "gridLabel": "4 dp grid · 2 dp maximum radius · no elevation",
+  "fontSpecimen": "İstanbul Ayasofya Süleymaniye Eyüpsultan Kılıç Ali Paşa Şehzadebaşı ığüşöçİĞÜŞÖÇ · Η ΑΝΑϹΤΑϹΙϹ ΙϹ ΧϹ · XLVII · 3,4 mil",
+  "displayRole": "Cinzel · Greek fallback Noto Serif Display",
+  "bodyRole": "Noto Sans · tabular measurements",
+  "stratumTitle": "Metochites’ Chora",
+  "stratumBody": "Mosaic and fresco share the walls, vaults and domes.",
+  "leaderCaption": "Adam’s wrist",
+  "north": "North",
+  "northLetter": "N",
+  "scaleDistance": "{metres} m",
+  "@scaleDistance": {
+    "placeholders": {
+      "metres": {
+        "type": "String"
+      }
+    }
+  },
+  "dimensionHandle": "Drag to close sheet",
+  "sheetTitle": "Artwork note",
+  "openSheet": "Open dimension sheet",
+  "emptyTitle": "No saved notes",
+  "emptyBody": "Open a Chora artwork and save your first note.",
+  "errorTitle": "Artwork image unavailable",
+  "errorBody": "The image file could not be read. Try loading it again.",
+  "motionTitle": "Settle · dig · sweep",
+  "motionInfo": "Settle · 160 ms · easeOutCubic\nDig · 360 ms · easeInOutCubic\nSweep · 520 ms · easeOutQuart\nReduced motion: immediate state change.",
+  "hapticDetent": "Feel a detent",
+  "hapticCollect": "Feel collection",
+  "iconDome": "Dome",
+  "iconMinaret": "Minaret",
+  "iconColumn": "Column",
+  "iconGate": "Gate",
+  "iconCistern": "Cistern",
+  "iconVitrine": "Vitrine",
+  "iconRoute": "Route",
+  "iconTessera": "Tessera",
+  "iconCameraEye": "Camera eye",
+  "iconSound": "Sound",
+  "iconLight": "Light",
+  "iconLayers": "Layers",
+  "iconStory": "Story",
+  "scalePercent": "{percent}% text",
+  "@scalePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "milestoneNumber": "Milestone {numeral}",
+  "@milestoneNumber": {
+    "placeholders": {
+      "numeral": {
+        "type": "String"
+      }
+    }
+  },
+  "measurementTitle": "Distance from mile zero",
+  "strataTitle": "Layers of Chora",
+  "focusChora": "Chora · 103 artworks",
+  "chapterByzantine": "Byzantine chapter",
+  "plates": "Two plates",
+  "openJudgment": "Open the Last Judgment",
+  "zoomIn": "Zoom in",
+  "zoomOut": "Zoom out",
+  "resetView": "Reset view",
+  "sceneOptions": "Scene options",
+  "studies": "Restoration studies",
+  "studyUnavailable": "Restoration study could not be loaded.",
+  "sceneUnavailable": "Scene assets unavailable.",
+  "loadingArtwork": "Loading artwork",
+  "overview": "Overview",
+  "chooseDetail": "Choose a detail",
+  "detailHint": "Pinch to enlarge. Choose a detail to move to its position.",
+  "detailMarkers": "Leader lines",
+  "showMarkers": "Show leader lines",
+  "hideMarkers": "Hide leader lines",
+  "gestureStudy": "Gesture study",
+  "gestureBody": "One gentle, imagined beat. The source photograph stays one tap away.",
+  "playGesture": "Play one gesture",
+  "pauseGesture": "Pause gesture",
+  "still": "Still",
+  "pose": "Pose",
+  "movement": "Movement",
+  "gentle": "Gentle",
+  "singleGesture": "6 s · once",
+  "reducedMotionHint": "Automatic motion is off. You can adjust the pose manually.",
+  "gesturePercent": "{percent}% of gesture",
+  "@gesturePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "movementPercent": "{percent}% movement",
+  "@movementPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "blend": "Blend",
+  "restorationAmount": "Reconstruction opacity",
+  "restorationNotice": "Reconstruction · source photograph preserved",
+  "studyNotice": "Interpretive reconstruction. Facial details are inferred; the source photograph is unchanged.",
+  "restoredFresco": "4K fresco reconstruction",
+  "restoredVault": "4K vault reconstruction",
+  "detailChrist": "Christ",
+  "detailAdam": "Adam",
+  "detailEve": "Eve",
+  "detailLeft": "Left figures",
+  "detailRight": "Right figures",
+  "detailGates": "Gates",
+  "detailDeesis": "Deesis",
+  "detailApostles": "Apostles",
+  "detailHeavens": "Heavens",
+  "detailThrone": "Throne",
+  "detailRiver": "River of fire",
+  "anastasisChristBody": "The light robe stands against the star-filled mandorla.",
+  "adamBody": "Joined hands lead from the tomb toward the centre.",
+  "eveBody": "The red robe, bowed face and extended arm mark Eve.",
+  "leftBody": "Faces, crowns and halos overlap on the left.",
+  "rightBody": "Faces and robe folds meet the painted rock.",
+  "gatesBody": "Broken gates lie beneath Christ.",
+  "judgmentChristBody": "The face and mandorla centre the heavenly court.",
+  "deesisBody": "Two standing figures flank the central figure.",
+  "apostlesBody": "Seated figures hold books beneath overlapping halos.",
+  "heavensBody": "An angel carries the circular, rolled-up heavens.",
+  "throneBody": "The prepared throne stands above kneeling figures.",
+  "riverBody": "The red-orange river runs toward the vault’s lower right.",
+  "noCamera": "No camera found on this device.",
+  "cameraError": "Camera unavailable",
+  "liveUnavailable": "Live recognition is unavailable on this device.",
+  "scanFailed": "The image could not be analysed. Try another image.",
+  "lightFailed": "The camera light could not be switched.",
+  "liveOn": "Live recognition on",
+  "liveOff": "Live recognition off",
+  "pickGallery": "Pick from gallery",
+  "gallery": "Gallery",
+  "light": "Light",
+  "noSceneDetected": "No scene detected · frame a Chora artwork",
+  "startCamera": "Starting the camera",
+  "cameraGuide": "Frame a mosaic or fresco",
+  "analysingScene": "Analysing the artwork",
+  "topMatch": "Top match",
+  "resultHint": "Tap a result for details and notes",
+  "demoResult": "Suggested matches. Compare each result with the artwork before identifying it.",
+  "scanAgain": "Scan again",
+  "localeTr": "TR",
+  "localeEn": "EN",
+  "waveByzantine": "Byzantine · gold on porphyry",
+  "waveMosque": "Mosques · cobalt / turquoise",
+  "waveMuseum": "Museums · verdigris / bronze",
+  "cameraErrorBody": "Allow camera access in Android settings, then try again. You can also choose a photo from the gallery."
+}

@@ -3,7 +3,11 @@ import 'dart:typed_data';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-import '../theme/milion_theme.dart';
+import '../design/components.dart';
+import '../design/plan_icon.dart';
+import '../design/theme.dart';
+import '../design/tokens.dart';
+import '../l10n/strings.dart';
 
 import 'package:image_picker/image_picker.dart';
 
@@ -55,7 +59,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
     try {
       final cameras = await availableCameras();
       if (cameras.isEmpty) {
-        setState(() => _cameraError = 'No camera found on this device.');
+        if (mounted) setState(() => _cameraError = 'noCamera');
         return;
       }
       final back = cameras.firstWhere(
@@ -84,15 +88,13 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
         } catch (error) {
           if (mounted) {
             setState(() => _live = false);
-            _showMessage(
-              'Live recognition is not available on this device: $error',
-            );
+            _showMessage(context.l10n.liveUnavailable);
           }
         }
       }
     } catch (error) {
       if (mounted) {
-        setState(() => _cameraError = '$error');
+        setState(() => _cameraError = 'cameraError');
       }
     }
   }
@@ -199,7 +201,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
         await controller.stopImageStream();
       }
     } catch (error) {
-      _showMessage('Could not switch live recognition: $error');
+      if (mounted) _showMessage(context.l10n.liveUnavailable);
     }
   }
 
@@ -244,7 +246,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       } catch (error) {
         if (mounted) {
           setState(() => _live = false);
-          _showMessage('Live recognition is not available here: $error');
+          if (mounted) _showMessage(context.l10n.liveUnavailable);
         }
       }
     }
@@ -264,7 +266,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       final shot = await controller.takePicture();
       await _classifyFile(shot);
     } catch (error) {
-      _showMessage('Could not capture the photo: $error');
+      if (mounted) _showMessage(context.l10n.scanFailed);
     } finally {
       if (mounted) {
         setState(() => _processing = false);
@@ -290,7 +292,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
     try {
       await _classifyFile(picked);
     } catch (error) {
-      _showMessage('Could not read that image: $error');
+      if (mounted) _showMessage(context.l10n.scanFailed);
     } finally {
       if (mounted) {
         setState(() => _processing = false);
@@ -308,11 +310,6 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
     final selected = await showModalBottomSheet<SceneMatch>(
       context: context,
       isScrollControlled: true,
-      showDragHandle: true,
-      backgroundColor: Colors.white,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
       builder: (context) => _ResultsSheet(matches: matches, image: bytes),
     );
     if (selected != null && mounted) {
@@ -324,11 +321,6 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      showDragHandle: true,
-      backgroundColor: Colors.white,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
       builder: (context) => SceneDetailSheet(
         scene: match.scene,
         confidence: match.probability,
@@ -351,7 +343,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       await controller.setFlashMode(next ? FlashMode.torch : FlashMode.off);
       setState(() => _torchOn = next);
     } catch (error) {
-      _showMessage('Could not switch the light: $error');
+      if (mounted) _showMessage(context.l10n.lightFailed);
     }
   }
 
@@ -364,191 +356,165 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final controller = _controller;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Scan a scene'),
-        actions: [
-          IconButton(
-            tooltip: _live ? 'Live recognition on' : 'Live recognition off',
-            onPressed: _toggleLive,
-            icon: Icon(
-              _live ? Icons.motion_photos_on : Icons.motion_photos_off,
-            ),
-          ),
-          IconButton(
-            tooltip: 'Pick from gallery',
-            onPressed: _processing ? null : _pickFromGallery,
-            icon: const Icon(Icons.photo_library_outlined),
-          ),
-        ],
-      ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          if (controller != null && controller.value.isInitialized)
-            _CameraPreview(controller: controller)
-          else
-            _CameraPlaceholder(error: _cameraError, onRetry: _initCamera),
-          const _GuideFrame(),
-          Positioned(
-            left: 16,
-            right: 16,
-            bottom: 168,
-            child: _LivePill(
-              live: _live,
-              match: _liveMatch,
-              onTap: _liveMatch == null ? null : () => _openScene(_liveMatch!),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(24, 40, 24, 28),
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.transparent, Color(0xCC000000)],
+  Widget build(BuildContext context) => Theme(
+    data: DesignTheme.lamp,
+    child: Builder(
+      builder: (context) {
+        final s = context.l10n,
+            c = MeasureColors.of(context),
+            controller = _controller;
+        final cameraReady =
+            controller != null && controller.value.isInitialized;
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(s.scanScene),
+            actions: [
+              IconButton(
+                tooltip: _live ? s.liveOn : s.liveOff,
+                onPressed: _toggleLive,
+                icon: PlanIcon(
+                  PlanSymbol.cameraEye,
+                  color: _live ? c.ink : c.secondary,
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ],
+          ),
+          body: Stack(
+            children: [
+              Column(
                 children: [
-                  _RoundButton(
-                    icon: Icons.photo_library_outlined,
-                    label: 'Gallery',
-                    onPressed: _processing ? null : _pickFromGallery,
+                  Expanded(
+                    child: cameraReady
+                        ? Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              _CameraPreview(controller: controller),
+                              IgnorePointer(
+                                child: Center(
+                                  child: Container(
+                                    width: 220,
+                                    height: 220,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Pigment.marble,
+                                        width: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        : Center(
+                            child: SingleChildScrollView(
+                              child: ContentState(
+                                error: _cameraError != null,
+                                title: _cameraError == null
+                                    ? s.startCamera
+                                    : s.cameraError,
+                                message: _cameraError == 'noCamera'
+                                    ? s.noCamera
+                                    : _cameraError != null
+                                    ? s.cameraErrorBody
+                                    : s.cameraGuide,
+                                onAction: _cameraError == null
+                                    ? null
+                                    : _initCamera,
+                              ),
+                            ),
+                          ),
                   ),
-                  _ScanButton(onPressed: _processing ? null : _scan),
-                  _RoundButton(
-                    icon: _torchOn ? Icons.flashlight_on : Icons.flashlight_off,
-                    label: 'Light',
-                    onPressed: (_processing || controller == null)
-                        ? null
-                        : _toggleTorch,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: MediaQuery.sizeOf(context).height * .38,
+                    ),
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            if (cameraReady)
+                              InkWell(
+                                onTap: _liveMatch == null
+                                    ? null
+                                    : () => _openScene(_liveMatch!),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 16),
+                                  child: Text(
+                                    !_live
+                                        ? s.liveOff
+                                        : _liveMatch == null
+                                        ? s.noSceneDetected
+                                        : '${_liveMatch!.scene.id} · ${_liveMatch!.scene.prettyTitle} · ${s.modelMatch((_liveMatch!.probability * 100).round().toString())}',
+                                  ),
+                                ),
+                              ),
+                            Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              spacing: 8,
+                              runSpacing: 8,
+                              children: [
+                                OutlinedButton.icon(
+                                  onPressed: _processing
+                                      ? null
+                                      : _pickFromGallery,
+                                  icon: const PlanIcon(PlanSymbol.vitrine),
+                                  label: Text(s.gallery),
+                                ),
+                                FilledButton.icon(
+                                  onPressed: _processing || !cameraReady
+                                      ? null
+                                      : _scan,
+                                  icon: const PlanIcon(PlanSymbol.cameraEye),
+                                  label: Text(s.scan),
+                                ),
+                                OutlinedButton.icon(
+                                  onPressed: _processing || !cameraReady
+                                      ? null
+                                      : _toggleTorch,
+                                  icon: PlanIcon(
+                                    PlanSymbol.light,
+                                    color: _torchOn ? c.accent : null,
+                                  ),
+                                  label: Text(s.light),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
-            ),
+              if (_processing)
+                Positioned.fill(
+                  child: ColoredBox(
+                    color: c.ground,
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const TesseraLoader(),
+                          const SizedBox(height: 16),
+                          Text(s.analysingScene),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+            ],
           ),
-          if (_processing) const _ProcessingOverlay(),
-        ],
-      ),
-    );
-  }
-}
-
-class _LivePill extends StatelessWidget {
-  const _LivePill({
-    required this.live,
-    required this.match,
-    required this.onTap,
-  });
-
-  final bool live;
-  final SceneMatch? match;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    Widget content;
-    if (!live) {
-      content = Row(
-        children: [
-          Icon(
-            Icons.motion_photos_off,
-            size: 16,
-            color: Colors.white.withValues(alpha: 0.6),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            'Live recognition off',
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: Colors.white.withValues(alpha: 0.75),
-            ),
-          ),
-        ],
-      );
-    } else if (match == null) {
-      content = Row(
-        children: [
-          Icon(
-            Icons.search_off,
-            size: 16,
-            color: Colors.white.withValues(alpha: 0.6),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            'No scene detected · keep looking',
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: Colors.white.withValues(alpha: 0.75),
-            ),
-          ),
-        ],
-      );
-    } else {
-      final confidence = match!.probability;
-      final dotColor = confidence >= 0.65
-          ? const Color(0xFF66BB6A)
-          : confidence >= 0.35
-          ? const Color(0xFFFFB74D)
-          : const Color(0xFFBDBDBD);
-      content = Row(
-        children: [
-          Container(
-            width: 8,
-            height: 8,
-            decoration: BoxDecoration(color: dotColor, shape: BoxShape.circle),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              '${match!.scene.id} · ${match!.scene.prettyTitle}',
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            '${(confidence * 100).toStringAsFixed(0)}%',
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.white.withValues(alpha: 0.45),
-            ),
-          ),
-        ],
-      );
-    }
-
-    return Material(
-      color: Colors.black.withValues(alpha: 0.55),
-      borderRadius: BorderRadius.circular(24),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(24),
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          child: content,
-        ),
-      ),
-    );
-  }
+        );
+      },
+    ),
+  );
 }
 
 class _CameraPreview extends StatelessWidget {
   const _CameraPreview({required this.controller});
-
   final CameraController controller;
-
   @override
   Widget build(BuildContext context) {
     final size = controller.value.previewSize;
@@ -565,320 +531,67 @@ class _CameraPreview extends StatelessWidget {
   }
 }
 
-class _CameraPlaceholder extends StatelessWidget {
-  const _CameraPlaceholder({required this.error, required this.onRetry});
-
-  final String? error;
-  final VoidCallback onRetry;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xFF101820),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(
-                Icons.no_photography_outlined,
-                size: 56,
-                color: Colors.white70,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                error ?? 'Starting the camera...',
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.white70),
-              ),
-              const SizedBox(height: 16),
-              FilledButton(onPressed: onRetry, child: const Text('Try again')),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _GuideFrame extends StatelessWidget {
-  const _GuideFrame();
-
-  @override
-  Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Spacer(),
-            Container(
-              width: 220,
-              height: 220,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white54, width: 2),
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Point the camera at a mosaic or fresco',
-              style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.85),
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const Spacer(),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _ScanButton extends StatelessWidget {
-  const _ScanButton({required this.onPressed});
-
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Material(
-          color: onPressed == null ? Colors.white38 : MilionTheme.lightGold,
-          shape: const CircleBorder(),
-          elevation: 6,
-          child: InkWell(
-            customBorder: const CircleBorder(),
-            onTap: onPressed,
-            child: const SizedBox(
-              width: 78,
-              height: 78,
-              child: Icon(Icons.camera_alt, size: 34, color: MilionTheme.ink),
-            ),
-          ),
-        ),
-        const SizedBox(height: 8),
-        const Text(
-          'Scan',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-        ),
-      ],
-    );
-  }
-}
-
-class _RoundButton extends StatelessWidget {
-  const _RoundButton({
-    required this.icon,
-    required this.label,
-    required this.onPressed,
-  });
-
-  final IconData icon;
-  final String label;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Material(
-          color: Colors.white24,
-          shape: const CircleBorder(),
-          child: InkWell(
-            customBorder: const CircleBorder(),
-            onTap: onPressed,
-            child: SizedBox(
-              width: 52,
-              height: 52,
-              child: Icon(icon, color: Colors.white),
-            ),
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(label, style: const TextStyle(color: Colors.white70)),
-      ],
-    );
-  }
-}
-
-class _ProcessingOverlay extends StatelessWidget {
-  const _ProcessingOverlay();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0x99000000),
-      child: const Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircularProgressIndicator(color: MilionTheme.lightGold),
-            SizedBox(height: 16),
-            Text(
-              'Analysing the scene...',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class _ResultsSheet extends StatelessWidget {
   const _ResultsSheet({required this.matches, required this.image});
-
   final List<SceneMatch> matches;
   final Uint8List image;
-
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.memory(
-                      image,
-                      width: 84,
-                      height: 84,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Top match',
-                          style: Theme.of(context).textTheme.labelLarge,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '${matches.first.scene.id} · ${matches.first.scene.prettyTitle}',
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          'Tap a result for details and notes',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: scheme.onSurface.withValues(alpha: 0.55),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 18),
-              for (final match in matches)
-                InkWell(
-                  borderRadius: BorderRadius.circular(10),
-                  onTap: () => Navigator.of(context).pop(match),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 6),
-                    child: _MatchBar(match: match, scheme: scheme),
-                  ),
-                ),
-              const SizedBox(height: 4),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFFF4D6),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Row(
+    final s = context.l10n, c = MeasureColors.of(context);
+    return DimensionSheet(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.memory(
+            image,
+            height: 160,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(height: 16),
+          Text(s.topMatch, style: Theme.of(context).textTheme.headlineSmall),
+          const SizedBox(height: 8),
+          Text(s.resultHint),
+          for (final match in matches)
+            InkWell(
+              onTap: () => Navigator.pop(context, match),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.warning_amber_rounded, size: 20),
-                    SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        'Demo result. The model ranks possibilities only; it does not '
-                        'verify the scene. Always confirm against the mosaic itself.',
-                        style: TextStyle(fontSize: 13),
+                    Text(
+                      '${match.scene.id} · ${match.scene.prettyTitle}',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      s.modelMatch(
+                        (match.probability * 100).round().toString(),
                       ),
+                      style: TypeRole.measurement.copyWith(color: c.secondary),
+                    ),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(
+                      value: match.probability,
+                      color: c.accent,
+                      backgroundColor: c.poche,
+                      minHeight: 2,
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 12),
-              FilledButton.icon(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.camera_alt),
-                label: const Text('Scan again'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _MatchBar extends StatelessWidget {
-  const _MatchBar({required this.match, required this.scheme});
-
-  final SceneMatch match;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    final probability = match.probability;
-    final color = probability >= 0.65
-        ? const Color(0xFF2E7D32)
-        : probability >= 0.35
-        ? const Color(0xFFB26A00)
-        : const Color(0xFF9E9E9E);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: Text(
-                '${match.scene.id} · ${match.scene.prettyTitle}',
-                style: const TextStyle(fontWeight: FontWeight.w600),
-              ),
             ),
-            Text('${(probability * 100).toStringAsFixed(1)}%'),
-          ],
-        ),
-        const SizedBox(height: 6),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: LinearProgressIndicator(
-            value: probability.clamp(0.0, 1.0),
-            minHeight: 8,
-            backgroundColor: const Color(0xFFEDEDED),
-            valueColor: AlwaysStoppedAnimation<Color>(color),
+          const Divider(),
+          Text(s.demoResult),
+          const SizedBox(height: 16),
+          OutlinedButton.icon(
+            onPressed: () => Navigator.pop(context),
+            icon: const PlanIcon(PlanSymbol.cameraEye),
+            label: Text(s.scanAgain),
           ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          '${match.scene.room} · ${match.scene.surface}',
-          style: TextStyle(
-            fontSize: 12,
-            color: scheme.onSurface.withValues(alpha: 0.6),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

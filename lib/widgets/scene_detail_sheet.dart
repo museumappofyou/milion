@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../models/scene.dart';
-import '../theme/milion_theme.dart';
 import '../services/notes_service.dart';
+import '../design/components.dart';
+import '../design/plan_icon.dart';
+import '../design/tokens.dart';
+import '../l10n/strings.dart';
 
 class SceneDetailSheet extends StatefulWidget {
   const SceneDetailSheet({
@@ -11,34 +14,26 @@ class SceneDetailSheet extends StatefulWidget {
     this.confidence,
     this.onExamine,
   });
-
   final Scene scene;
   final double? confidence;
-
-  /// Opens a painted relief when one is available for this scene.
   final VoidCallback? onExamine;
-
   @override
   State<SceneDetailSheet> createState() => _SceneDetailSheetState();
 }
 
 class _SceneDetailSheetState extends State<SceneDetailSheet> {
-  final NotesService _notes = NotesService();
-  final TextEditingController _noteController = TextEditingController();
-  bool _loaded = false;
-  bool _saved = false;
-
+  final _notes = NotesService(), _noteController = TextEditingController();
+  bool _loaded = false, _saved = false;
   @override
   void initState() {
     super.initState();
     _notes.noteFor(widget.scene.id).then((note) {
-      if (!mounted) {
-        return;
+      if (mounted) {
+        setState(() {
+          _noteController.text = note;
+          _loaded = true;
+        });
       }
-      setState(() {
-        _noteController.text = note;
-        _loaded = true;
-      });
     });
   }
 
@@ -50,168 +45,90 @@ class _SceneDetailSheetState extends State<SceneDetailSheet> {
 
   Future<void> _save() async {
     await _notes.saveNote(widget.scene.id, _noteController.text);
-    if (!mounted) {
-      return;
-    }
+    if (!mounted) return;
     setState(() => _saved = true);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Note saved for ${widget.scene.id}')),
+      SnackBar(content: Text(context.l10n.noteSaved(widget.scene.id))),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final scene = widget.scene;
-    final theme = Theme.of(context);
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 20,
-          right: 20,
-          bottom: MediaQuery.of(context).viewInsets.bottom + 20,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    final a = widget.scene, s = context.l10n, theme = Theme.of(context);
+    return DimensionSheet(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(a.id, style: TypeRole.measurement),
+          const SizedBox(height: 8),
+          Text(a.prettyTitle, style: theme.textTheme.headlineMedium),
+          const SizedBox(height: 12),
+          Text('${a.room} · ${a.surface}'),
+          if (widget.confidence != null) ...[
+            const SizedBox(height: 8),
+            Text(
+              s.modelMatch('${(widget.confidence! * 100).round()}'),
+              style: theme.textTheme.bodySmall,
+            ),
+          ],
+          if (context.language == 'tr') ...[
+            const SizedBox(height: 8),
+            Text(s.contentEnglish, style: theme.textTheme.bodySmall),
+          ],
+          if (a.summary.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text(a.summary),
+          ],
+          if (a.cues.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text(s.lookFor, style: theme.textTheme.titleMedium),
+            const SizedBox(height: 8),
+            Text(a.cues.join(' · ')),
+          ],
+          if (widget.onExamine != null) ...[
+            const SizedBox(height: 16),
+            FilledButton.icon(
+              onPressed: () {
+                Navigator.pop(context);
+                widget.onExamine!();
+              },
+              icon: const PlanIcon(PlanSymbol.layers),
+              label: Text(s.exploreRelief),
+            ),
+          ],
+          if (a.position.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text(s.where, style: theme.textTheme.titleMedium),
+            const SizedBox(height: 8),
+            Text(a.position),
+          ],
+          const SizedBox(height: 24),
+          const Divider(),
+          const SizedBox(height: 24),
+          Text(s.yourNote, style: theme.textTheme.titleMedium),
+          const SizedBox(height: 8),
+          TextField(
+            controller: _noteController,
+            minLines: 2,
+            maxLines: 5,
+            enabled: _loaded,
+            onChanged: (_) => setState(() => _saved = false),
+            decoration: InputDecoration(hintText: s.noteHint),
+          ),
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 16,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Text(scene.id, style: theme.textTheme.labelMedium),
-              const SizedBox(height: 4),
-              Semantics(
-                header: true,
-                child: Text(
-                  scene.prettyTitle,
-                  style: theme.textTheme.headlineMedium,
-                ),
+              FilledButton(
+                onPressed: _loaded ? _save : null,
+                child: Text(s.saveNote),
               ),
-              const SizedBox(height: 10),
-              Wrap(
-                spacing: 8,
-                runSpacing: 6,
-                children: [
-                  _Tag(label: scene.room),
-                  _Tag(label: scene.surface),
-                  if (scene.artworkType.isNotEmpty)
-                    _Tag(label: scene.artworkType),
-                ],
-              ),
-              if (widget.confidence != null) ...[
-                const SizedBox(height: 8),
-                Text(
-                  'model match ${(widget.confidence! * 100).toStringAsFixed(0)}% · unverified',
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.45),
-                  ),
-                ),
-              ],
-              if (scene.summary.isNotEmpty) ...[
-                const SizedBox(height: 16),
-                Text(scene.summary, style: theme.textTheme.bodyMedium),
-              ],
-              if (scene.cues.isNotEmpty) ...[
-                const SizedBox(height: 16),
-                Text('Look for', style: theme.textTheme.titleSmall),
-                const SizedBox(height: 6),
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 6,
-                  children: [for (final cue in scene.cues) _Tag(label: cue)],
-                ),
-              ],
-              if (widget.onExamine != null) ...[
-                const SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  child: FilledButton.tonalIcon(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                      widget.onExamine!.call();
-                    },
-                    icon: const Icon(Icons.threed_rotation, size: 18),
-                    label: const Text('Explore painted relief'),
-                  ),
-                ),
-              ],
-              if (scene.position.isNotEmpty) ...[
-                const SizedBox(height: 16),
-                Text('Where', style: theme.textTheme.titleSmall),
-                const SizedBox(height: 4),
-                Text(scene.position, style: theme.textTheme.bodySmall),
-              ],
-              const Divider(height: 32),
-              Text('Your note', style: theme.textTheme.titleSmall),
-              const SizedBox(height: 8),
-              TextField(
-                controller: _noteController,
-                minLines: 2,
-                maxLines: 5,
-                enabled: _loaded,
-                onChanged: (_) {
-                  if (_saved) {
-                    setState(() => _saved = false);
-                  }
-                },
-                decoration: InputDecoration(
-                  hintText: 'Write a small note about this scene...',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: [
-                  if (_saved)
-                    const Row(
-                      children: [
-                        Icon(
-                          Icons.check_circle,
-                          size: 16,
-                          color: Color(0xFF2E7D32),
-                        ),
-                        SizedBox(width: 6),
-                        Text(
-                          'Saved',
-                          style: TextStyle(
-                            color: Color(0xFF2E7D32),
-                            fontSize: 13,
-                          ),
-                        ),
-                      ],
-                    ),
-                  const Spacer(),
-                  FilledButton.icon(
-                    onPressed: _loaded ? _save : null,
-                    icon: const Icon(Icons.save_outlined, size: 18),
-                    label: const Text('Save note'),
-                  ),
-                ],
-              ),
+              if (_saved) Text(s.saved),
             ],
           ),
-        ),
+        ],
       ),
-    );
-  }
-}
-
-class _Tag extends StatelessWidget {
-  const _Tag({required this.label});
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      decoration: BoxDecoration(
-        color: MilionTheme.parchment,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(label, style: const TextStyle(fontSize: 12)),
     );
   }
 }

@@ -114,7 +114,7 @@ void main() {
       ]) {
         await tester.tap(find.text(title));
         await tester.pumpAndSettle();
-        await tester.tap(find.text('Explore painted relief'));
+        await tester.tap(find.text('Open artwork'));
         await tester.pumpAndSettle();
         expect(opened, id);
       }
