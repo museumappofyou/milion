@@ -9,12 +9,10 @@ import 'package:milion/design/motion.dart';
 import 'package:milion/design/settings.dart';
 import 'package:milion/design/theme.dart';
 import 'package:milion/design/tokens.dart';
-import 'package:milion/main.dart';
 import 'package:milion/screens/about_tab.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../frontier_navigation_test.dart'
-    show loadThemeFonts, ready, destination;
+import '../helpers.dart' show pumpShell;
 
 double contrast(Color a, Color b) {
   final x = a.computeLuminance(), y = b.computeLuminance();
@@ -118,11 +116,8 @@ void main() {
   testWidgets('About changes actual app language; hidden design route opens', (
     tester,
   ) async {
-    SharedPreferences.setMockInitialValues({});
-    await loadThemeFonts(tester);
-    await tester.pumpWidget(const MilionApp());
-    await ready(tester);
-    await tester.tap(destination('About'));
+    await pumpShell(tester);
+    await tester.tap(find.byTooltip('About'));
     await tester.pumpAndSettle();
     final language = find.byType(DropdownButtonFormField<String>);
     await tester.ensureVisible(language);

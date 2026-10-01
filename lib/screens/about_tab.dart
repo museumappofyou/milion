@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../design/plan_icon.dart';
 import '../design/settings.dart';
 import '../design/tokens.dart';
+import '../first_run/first_run_screen.dart';
 import '../l10n/strings.dart';
 import '../theme/milion_theme.dart';
 import 'registry_screen.dart';
@@ -29,6 +31,21 @@ class AboutTab extends StatelessWidget {
           const SizedBox(height: 24),
           Text(s.aboutStory),
           const SizedBox(height: 16),
+          Text(
+            s.replayFirstRunBody,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: OutlinedButton.icon(
+              key: const ValueKey('about-replay'),
+              onPressed: () => replayFirstRun(Navigator.of(context)),
+              icon: const PlanIcon(PlanSymbol.dial),
+              label: Text(s.replayFirstRun),
+            ),
+          ),
+          const SizedBox(height: 24),
           Text(s.aboutRecognition),
           const SizedBox(height: 24),
           const Divider(),

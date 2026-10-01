@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class NotesService {
+  /// Bumped after every save so open lists can reload.
+  static final revision = ValueNotifier(0);
   static const String _prefix = 'scene_note_';
   static const String _schemaKey = 'scene_notes_schema_version';
   static const int schemaVersion = 1;
@@ -34,6 +37,7 @@ class NotesService {
     } else {
       await prefs.setString('$_prefix$sceneId', trimmed);
     }
+    revision.value++;
   }
 
   Future<Set<String>> notedSceneIds() async {

@@ -1,0 +1,26 @@
+{
+  "query": "[out:json][timeout:90];way[\"natural\"=\"coastline\"](40.975,28.9,41.065,29.07);out geom;",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "osmBase": "2026-10-01T06:28:33Z",
+  "licence": "ODbL 1.0, © OpenStreetMap contributors",
+  "rawSha256": "fd1f78f0d6d9bda262f2de1ddfa9dfe06f5c5cfae0afd84adae16a5671c6e26d",
+  "ways": 87,
+  "rawNodes": 2904,
+  "toleranceMetres": 12.0,
+  "polylines": 2,
+  "points": 582,
+  "streetQueries": {
+    "osm_street_a.json": "[out:json][timeout:60];(way[\"railway\"=\"tram\"](41.0035,28.9680,41.0125,28.9885);way[\"highway\"][\"name\"~\"Divan Yolu|Yerebatan|Alemdar|Babıhümayun\"](41.0035,28.9680,41.0125,28.9885);way[\"wikidata\"~\"^(Q12506|Q216511|Q80541|Q1187329)$\"](41.0,28.96,41.015,28.99);relation[\"wikidata\"~\"^(Q12506|Q216511|Q80541)$\"](41.0,28.96,41.015,28.99););out geom;",
+    "osm_street_b.json": "[out:json][timeout:60];(way[\"highway\"][\"name\"~\"Divanyolu|Divan Yolu\"](41.0035,28.9680,41.0125,28.9885);way(around:45,41.0084795,28.9783826)[\"building\"];way(around:25,41.008043,28.978066)[\"building\"];);out geom;"
+  },
+  "streetOsmBase": {
+    "osm_street_a.json": "2026-10-01T06:38:50Z",
+    "osm_street_b.json": "2026-10-01T06:38:50Z"
+  },
+  "streetRawSha256": {
+    "osm_street_a.json": "b8b9c39b917d2147b7e03d96dd763646eff24c2f9cc40bfd9a167a9d656713f6",
+    "osm_street_b.json": "7840c9009b1c95ff3e16670b935ca3f02537afbc625d3ffc6c8b2d747ab8a66d"
+  },
+  "streetLines": 18,
+  "outputSha256": "6455c8e234601cca2c5070cd75e7045caa627beb2342282308651f2ff2a0520e"
+}

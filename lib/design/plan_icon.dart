@@ -16,6 +16,23 @@ enum PlanSymbol {
   light,
   layers,
   story,
+  // P04 shell destinations.
+  dial,
+  milestone,
+  // P04 technique glyphs for the §3 codes without an existing symbol.
+  parallax,
+  gilded,
+  raking,
+  popup,
+  wipe,
+  flow,
+  stroke,
+  lookUp,
+  assembly,
+  section,
+  turntable,
+  timeModel,
+  sky,
 }
 
 /// Architectural linework on a shared 24-unit plan grid; no icon font.
@@ -199,6 +216,166 @@ class _PlanPainter extends CustomPainter {
         line(8, 11, 16, 11);
         line(8, 15, 13, 15);
         line(3, 5, 3, 19);
+      case PlanSymbol.dial:
+        canvas.drawCircle(const Offset(12, 12), 9.5, p);
+        canvas.drawCircle(const Offset(12, 12), 5, p);
+        rect(11, 11, 2, 2);
+        line(12, 11, 16.5, 3.5);
+        line(12, 1, 12, 3);
+      case PlanSymbol.milestone:
+        canvas.drawArc(
+          const Rect.fromLTWH(8, 3, 8, 4),
+          math.pi,
+          math.pi,
+          false,
+          p,
+        );
+        line(8, 5, 8, 18);
+        line(16, 5, 16, 18);
+        rect(6, 18, 12, 3);
+        line(10, 10, 14, 10);
+        line(12, 10, 12, 14);
+        line(10, 14, 14, 14);
+      case PlanSymbol.parallax:
+        rect(3, 8, 12, 12);
+        rect(9, 3, 12, 12);
+        line(3, 8, 9, 3);
+        line(15, 20, 21, 15);
+      case PlanSymbol.gilded:
+        canvas.drawPath(
+          Path()
+            ..moveTo(4, 11)
+            ..lineTo(14, 10)
+            ..lineTo(15, 20)
+            ..lineTo(5, 21)
+            ..close(),
+          p,
+        );
+        line(16, 8, 20, 4);
+        line(17, 11, 22, 11);
+        line(13, 7, 13, 2);
+      case PlanSymbol.raking:
+        line(2, 4, 10, 12);
+        line(6, 2, 14, 10);
+        canvas.drawPath(
+          Path()
+            ..moveTo(2, 20)
+            ..quadraticBezierTo(6, 13, 10, 18)
+            ..quadraticBezierTo(14, 22, 17, 16)
+            ..lineTo(22, 20),
+          p,
+        );
+      case PlanSymbol.popup:
+        line(2, 21, 22, 21);
+        rect(4, 11, 5, 10);
+        rect(10, 5, 5, 16);
+        rect(16, 13, 5, 8);
+      case PlanSymbol.wipe:
+        rect(3, 5, 18, 14);
+        line(12, 2, 12, 22);
+        // Hatched half: the reconstruction side of the wipe.
+        line(3, 9, 7, 5);
+        line(3, 13, 11, 5);
+        line(3, 17, 12, 8);
+        line(5, 19, 12, 12);
+        line(9, 19, 12, 16);
+      case PlanSymbol.flow:
+        for (final y in [7.0, 12.0, 17.0]) {
+          canvas.drawPath(
+            Path()
+              ..moveTo(3, y)
+              ..quadraticBezierTo(7.5, y - 3, 12, y)
+              ..quadraticBezierTo(16.5, y + 3, 21, y),
+            p,
+          );
+        }
+      case PlanSymbol.stroke:
+        canvas.drawArc(
+          const Rect.fromLTWH(3, 6, 18, 24),
+          math.pi * 1.05,
+          math.pi * .85,
+          false,
+          p,
+        );
+        canvas.drawCircle(const Offset(4, 17), 1.5, p);
+        canvas.drawPath(
+          Path()
+            ..moveTo(19, 9)
+            ..lineTo(22, 5)
+            ..lineTo(20, 4)
+            ..close(),
+          p,
+        );
+      case PlanSymbol.lookUp:
+        canvas.drawCircle(const Offset(12, 12), 9.5, p);
+        canvas.drawCircle(const Offset(12, 12), 3, p);
+        for (var n = 0; n < 8; n++) {
+          final a = n * math.pi / 4;
+          line(
+            12 + 3 * math.cos(a),
+            12 + 3 * math.sin(a),
+            12 + 9.5 * math.cos(a),
+            12 + 9.5 * math.sin(a),
+          );
+        }
+      case PlanSymbol.assembly:
+        rect(4, 18, 16, 3);
+        rect(6, 11, 12, 4);
+        canvas.drawArc(
+          const Rect.fromLTWH(7, 3, 10, 10),
+          math.pi,
+          math.pi,
+          false,
+          p,
+        );
+        line(7, 8, 17, 8);
+      case PlanSymbol.section:
+        line(2, 18, 22, 18);
+        canvas.drawArc(
+          const Rect.fromLTWH(3, 6, 18, 24),
+          math.pi,
+          math.pi,
+          false,
+          p,
+        );
+        canvas.drawArc(
+          const Rect.fromLTWH(6, 9, 12, 18),
+          math.pi,
+          math.pi,
+          false,
+          p,
+        );
+        line(3, 18, 6, 15);
+        line(18, 15, 21, 18);
+        line(12, 2, 12, 5);
+      case PlanSymbol.turntable:
+        canvas.drawOval(const Rect.fromLTWH(3, 15, 18, 6), p);
+        rect(10, 6, 4, 11);
+        canvas.drawArc(
+          const Rect.fromLTWH(2, 9, 20, 9),
+          math.pi * .1,
+          math.pi * .8,
+          false,
+          p,
+        );
+      case PlanSymbol.timeModel:
+        line(4, 3, 4, 21);
+        for (final y in [6.0, 12.0, 18.0]) {
+          line(2, y, 4, y);
+          line(7, y, 21, y);
+        }
+        line(7, 9, 15, 9);
+        line(7, 15, 18, 15);
+      case PlanSymbol.sky:
+        line(2, 19, 22, 19);
+        canvas.drawArc(
+          const Rect.fromLTWH(4, 6, 16, 26),
+          math.pi,
+          math.pi,
+          false,
+          p,
+        );
+        canvas.drawCircle(const Offset(16, 8.5), 2.5, p);
     }
     canvas.restore();
   }

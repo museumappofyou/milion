@@ -133,11 +133,17 @@
     ]
   },
   "divanyolu": {
-    "en": "Divanyolu"
+    "en": "Divanyolu",
+    "tags": [
+      "area"
+    ]
   },
   "land-walls": {
     "en": "Walls of Constantinople",
-    "note": "One Q89917 layered record for land and sea walls. Point is a representative location, not an entrance or the whole wall geometry."
+    "note": "One Q89917 layered record for land and sea walls. Point is a representative location, not an entrance or the whole wall geometry.",
+    "tags": [
+      "representative-point"
+    ]
   },
   "silivri-gate": {
     "en": "Silivrikapı",
@@ -145,7 +151,10 @@
     "hook": {
       "en": "Silivrikapı names a quarter beside the land walls.",
       "tr": "Silivrikapı, kara surlarının yanındaki semte adını veriyor."
-    }
+    },
+    "tags": [
+      "area"
+    ]
   },
   "mevlana-gate": {
     "en": "Mevlanakapı",
@@ -153,7 +162,10 @@
     "hook": {
       "en": "Mevlanakapı names a quarter beside the land walls.",
       "tr": "Mevlanakapı, kara surlarının yanındaki semte adını veriyor."
-    }
+    },
+    "tags": [
+      "area"
+    ]
   },
   "topkapi-gate": {
     "en": "Topkapı quarter",
@@ -161,7 +173,10 @@
     "hook": {
       "en": "Topkapı quarter names a quarter beside the land walls.",
       "tr": "Topkapı semti, kara surlarının yanındaki semte adını veriyor."
-    }
+    },
+    "tags": [
+      "area"
+    ]
   },
   "edirnekapi": {
     "en": "Edirnekapı",
@@ -169,7 +184,10 @@
     "hook": {
       "en": "Edirnekapı names a quarter beside the land walls.",
       "tr": "Edirnekapı, kara surlarının yanındaki semte adını veriyor."
-    }
+    },
+    "tags": [
+      "area"
+    ]
   },
   "kerkoporta": {
     "en": "Kerkoporta (mapped marker)",
@@ -198,7 +216,10 @@
   },
   "belgrade-gate": {
     "district": "zeytinburnu",
-    "note": "OSM places the Wikidata gate point on the Kazlıçeşme, Zeytinburnu side of the wall. Entrance not surveyed."
+    "note": "OSM places the Wikidata gate point on the Kazlıçeşme, Zeytinburnu side of the wall. Entrance not surveyed.",
+    "tags": [
+      "area"
+    ]
   },
   "bosphorus": {
     "tags": [
@@ -257,5 +278,115 @@
       "en": "Galata’s walls belong to the Genoese city across the Golden Horn.",
       "tr": "Galata surları, Haliç’in karşı kıyısındaki Ceneviz yerleşimini çevreliyordu."
     }
+  },
+  "kagithane": {
+    "tags": [
+      "area"
+    ]
+  },
+  "eyupsultan": {
+    "tags": [
+      "area"
+    ]
+  },
+  "maltepe": {
+    "tags": [
+      "area"
+    ]
+  },
+  "beykoz": {
+    "tags": [
+      "area"
+    ]
+  },
+  "kucukcekmece": {
+    "tags": [
+      "area"
+    ]
+  },
+  "sariyer": {
+    "tags": [
+      "area"
+    ]
+  },
+  "kartal": {
+    "tags": [
+      "area"
+    ]
+  },
+  "pendik": {
+    "tags": [
+      "area"
+    ]
+  },
+  "tuzla": {
+    "tags": [
+      "area"
+    ]
+  },
+  "buyukcekmece": {
+    "tags": [
+      "area"
+    ]
+  },
+  "catalca": {
+    "tags": [
+      "area"
+    ]
+  },
+  "sile": {
+    "tags": [
+      "area"
+    ]
+  },
+  "silivri": {
+    "tags": [
+      "area"
+    ]
+  },
+  "mese": {
+    "tags": [
+      "area"
+    ]
+  },
+  "karakoy": {
+    "tags": [
+      "area"
+    ]
+  },
+  "galata": {
+    "tags": [
+      "area"
+    ]
+  },
+  "blachernae": {
+    "tags": [
+      "area"
+    ]
+  },
+  "chrysopolis": {
+    "tags": [
+      "area"
+    ]
+  },
+  "chalcedon": {
+    "tags": [
+      "area"
+    ]
+  },
+  "princes-islands": {
+    "tags": [
+      "area"
+    ]
+  },
+  "burgazada": {
+    "tags": [
+      "area"
+    ]
+  },
+  "belgrad-forest": {
+    "tags": [
+      "area"
+    ]
   }
 }

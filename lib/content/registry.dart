@@ -11,7 +11,11 @@ const recordKinds = [
   'media',
   'routes',
   'hunts',
+  'details',
 ];
+
+/// Tags marking records that are not a single visitable point.
+const nonPointTags = {'area', 'representative-point', 'location-contested'};
 
 /// A complete immutable snapshot. Public place queries exclude drafts by default.
 class ContentRegistry {
@@ -22,7 +26,8 @@ class ContentRegistry {
       sources = _records(data, 'sources', Source.fromJson),
       media = _records(data, 'media', Media.fromJson),
       routes = _records(data, 'routes', Route.fromJson),
-      hunts = _records(data, 'hunts', Hunt.fromJson);
+      hunts = _records(data, 'hunts', Hunt.fromJson),
+      details = _records(data, 'details', Detail.fromJson);
   factory ContentRegistry.fromJson(Json data) {
     final report = validateContent(data);
     if (!report.isValid) throw FormatException(report.errors.join('\n'));
@@ -35,6 +40,27 @@ class ContentRegistry {
   final List<Media> media;
   final List<Route> routes;
   final List<Hunt> hunts;
+  final List<Detail> details;
+
+  late final Map<String, Place> _places = {for (final p in places) p.id: p};
+  late final Map<String, Milestone> _milestones = {
+    for (final m in milestones) m.id: m,
+  };
+  Place? place(String id) => _places[id];
+  Milestone? milestone(String id) => _milestones[id];
+
+  /// The numbered register in §3 order, 0 to XLVII.
+  late final List<Milestone> register = [...milestones]
+    ..sort((a, b) => a.number.compareTo(b.number));
+
+  /// Places an instrument may plot by distance and bearing: every reviewed
+  /// record, plus drafts whose Wikidata identity and P625 position are
+  /// verified, which lie inside the province and name a single point.
+  /// Callers must still hide a draft's unreviewed hook, function and status.
+  late final List<Place> plottablePlaces = [
+    for (final p in placesByDistance(includeDrafts: true))
+      if (!p.outsideProvince && !p.tags.any(nonPointTags.contains)) p,
+  ];
 
   List<Place> placesByDistance({bool includeDrafts = false}) =>
       [
@@ -92,6 +118,7 @@ ValidationReport validateContent(Json data) {
     'media': Media.fromJson,
     'routes': Route.fromJson,
     'hunts': Hunt.fromJson,
+    'details': Detail.fromJson,
   };
   void localizations(dynamic value, String path) {
     if (value is Map) {
@@ -298,6 +325,35 @@ ValidationReport validateContent(Json data) {
     refs(h.id, h.artworkIds, 'artworks');
     refs(h.id, h.sourceIds, 'sources', required: true);
     if (h.clues.isEmpty) error('${h.id} requires clues');
+  }
+  final milestones = {
+    for (final m in parsed['milestones']!.cast<Milestone>()) m.id: m,
+  };
+  for (final d in parsed['details']!.cast<Detail>()) {
+    refs(d.id, [d.milestoneId], 'milestones');
+    refs(d.id, [d.artworkId], 'artworks');
+    refs(d.id, d.sourceIds, 'sources', required: true);
+    final m = milestones[d.milestoneId];
+    if (m != null && !m.artworkIds.contains(d.artworkId)) {
+      error('${d.id} artwork ${d.artworkId} is not part of ${m.id}');
+    }
+    if (m != null && !m.honesty.contains(d.honesty)) {
+      error('${d.id} honesty ${d.honesty.name} not offered by ${m.id}');
+    }
+    final w = d.window;
+    if (w.left < 0 || w.top < 0 || w.right > 1 || w.bottom > 1) {
+      error('${d.id} window outside the photograph');
+    }
+    if (w.width < .1 || w.height < .1) {
+      error('${d.id} window must cover at least a tenth of each side');
+    }
+    if (!w.contains(d.anchorX, d.anchorY)) {
+      error('${d.id} anchor outside its window');
+    }
+    // Published Today copy is bilingual from the first day.
+    for (final text in [d.title, d.sentence]) {
+      if ((text.tr?.trim() ?? '').isEmpty) error('${d.id} requires Turkish');
+    }
   }
   return report;
 }

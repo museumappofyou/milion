@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'tokens.dart';
 
 abstract final class DesignTheme {
   static ThemeData get marble => build(MeasureColors.marble, Brightness.light);
   static ThemeData get lamp => build(MeasureColors.lamp, Brightness.dark);
+
+  /// Edge-to-edge: transparent bars, icons contrasting with the ground below.
+  static SystemUiOverlayStyle overlay(Brightness ground) {
+    final icons = ground == Brightness.light
+        ? Brightness.dark
+        : Brightness.light;
+    return SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: icons,
+      statusBarBrightness: ground,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarDividerColor: Colors.transparent,
+      systemNavigationBarIconBrightness: icons,
+      systemNavigationBarContrastEnforced: false,
+    );
+  }
+
   static ThemeData build(MeasureColors c, Brightness brightness) {
     final scheme =
         ColorScheme.fromSeed(
@@ -76,7 +94,16 @@ abstract final class DesignTheme {
       extensions: [c],
       scaffoldBackgroundColor: c.ground,
       textTheme: text,
+      // Android 14 predictive back previews the page underneath.
+      pageTransitionsTheme: PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: PredictiveBackPageTransitionsBuilder(
+            fallbackColor: c.ground,
+          ),
+        },
+      ),
       appBarTheme: AppBarTheme(
+        systemOverlayStyle: overlay(brightness),
         backgroundColor: c.ground,
         foregroundColor: c.ink,
         surfaceTintColor: Colors.transparent,

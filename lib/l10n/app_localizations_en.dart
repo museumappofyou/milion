@@ -95,7 +95,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get straightLine => 'Straight-line distance · 1 Roman mile ≈ 1,480 m';
+  String get straightLine =>
+      'Straight-line distance · 1 Roman mile is about 1,480 m';
 
   @override
   String catalogueCount(String count) {
@@ -243,7 +244,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get creditsBody =>
-      'Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Source URLs are recorded; public-release rights review is pending.';
+      'Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Every image passes a rights review before public release. Coastline and street lines on the dial and in the opening: © OpenStreetMap contributors, ODbL 1.0.';
 
   @override
   String get licenses => 'Open-source licences';
@@ -272,7 +273,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get registryMeasurement =>
-      'Straight-line distance · Roman miles rounded\n1 mil ≈ 1,480 m · bearings from true north';
+      'Straight-line distance · Roman miles rounded\n1 mil is about 1,480 m · bearings from true north';
 
   @override
   String get categoryCounts => 'Counts by category';
@@ -745,4 +746,303 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get cameraErrorBody =>
       'Allow camera access in Android settings, then try again. You can also choose a photo from the gallery.';
+
+  @override
+  String get navToday => 'Today';
+
+  @override
+  String get navCity => 'City';
+
+  @override
+  String get navMilestones => 'Milestones';
+
+  @override
+  String get navMosaic => 'Mosaic';
+
+  @override
+  String get iconDial => 'Mile Zero dial';
+
+  @override
+  String get iconMilestone => 'Milestone';
+
+  @override
+  String get techDP => 'Depth parallax';
+
+  @override
+  String get techGL => 'Gilded light';
+
+  @override
+  String get techRL => 'Raking light or candle';
+
+  @override
+  String get techPU => 'Pop-up layers';
+
+  @override
+  String get techWR => 'Wipe to reconstruction';
+
+  @override
+  String get techSB => 'Story beats';
+
+  @override
+  String get techMM => 'Micro-motion';
+
+  @override
+  String get techSR => 'Stroke reveal';
+
+  @override
+  String get techLU => 'Look up';
+
+  @override
+  String get techCA => 'Choisy assembly';
+
+  @override
+  String get techCS => 'Cutaway section';
+
+  @override
+  String get techWK => 'Walkable space';
+
+  @override
+  String get techTT => 'Turntable';
+
+  @override
+  String get techTM => 'Time model';
+
+  @override
+  String get techSK => 'Sky simulation';
+
+  @override
+  String get techVO => 'Voices';
+
+  @override
+  String techniqueList(String list) {
+    return 'Techniques: $list';
+  }
+
+  @override
+  String get firstRunLine => 'Every road started here.';
+
+  @override
+  String get firstRunSentence =>
+      'Mile zero: the Milion on Divanyolu, the stone from which the empire measured its roads, with rings in Roman miles reaching Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.';
+
+  @override
+  String get firstRunStone => 'Divanyolu, beside the Basilica Cistern';
+
+  @override
+  String firstRunStill(String number) {
+    return 'Still $number of 3';
+  }
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get openToday => 'Open Today';
+
+  @override
+  String get replayFirstRun => 'Replay mile zero';
+
+  @override
+  String get replayFirstRunBody =>
+      'The 12-second opening: the Milion, the Roman-mile rings and five places.';
+
+  @override
+  String get detailOfDay => 'Detail of the day';
+
+  @override
+  String openMilestoneDetail(String numeral) {
+    return 'Open $numeral at this detail';
+  }
+
+  @override
+  String detailSource(String artwork, String place) {
+    return '$artwork · $place';
+  }
+
+  @override
+  String get dialLabel => 'Mile Zero dial';
+
+  @override
+  String get dialHint =>
+      'Turn the ring: one detent per place. Tap a tick to open it.';
+
+  @override
+  String dialValue(String place, String distance, String degrees) {
+    return '$place, $distance, $degrees° from true north';
+  }
+
+  @override
+  String get showList => 'List';
+
+  @override
+  String get showDial => 'Dial';
+
+  @override
+  String placesByBearing(String count) {
+    return '$count places by bearing from true north';
+  }
+
+  @override
+  String plottedPlaces(String count, String reviewed) {
+    return '$count places · positions checked on Wikidata · $reviewed reviewed';
+  }
+
+  @override
+  String get notReviewed => 'Not reviewed yet';
+
+  @override
+  String get reviewed => 'Reviewed';
+
+  @override
+  String openPlace(String place) {
+    return 'Open $place';
+  }
+
+  @override
+  String get nextMilestones => 'Next in the register';
+
+  @override
+  String chapterHeading(String numeral, String name) {
+    return 'Chapter $numeral · $name';
+  }
+
+  @override
+  String get chapterByzantineName => 'Byzantine';
+
+  @override
+  String get chapterMosquesName => 'Mosques';
+
+  @override
+  String get chapterMuseumsName => 'Museums';
+
+  @override
+  String get chapterAbroadName => 'Istanbul abroad';
+
+  @override
+  String get chapterCurrent => 'Current chapter';
+
+  @override
+  String chapterProgress(String playable, String total, String approved) {
+    return '$playable of $total playable · $approved approved';
+  }
+
+  @override
+  String get statusPlanned => 'Planned';
+
+  @override
+  String get statusPrototype => 'Prototype';
+
+  @override
+  String get statusApproved => 'Approved';
+
+  @override
+  String get statusOpened => 'Opened';
+
+  @override
+  String get flagship => 'Flagship';
+
+  @override
+  String get craftKit => 'Craft kit';
+
+  @override
+  String get acrossCity => 'Across the city';
+
+  @override
+  String registerCounts(
+    String total,
+    String playable,
+    String approved,
+    String planned,
+  ) {
+    return '$total Milestones · $playable playable · $approved approved · $planned planned';
+  }
+
+  @override
+  String get milestonePlannedBody =>
+      'Planned: its reveal, story and exploration are not built yet. The empty slot stays outlined until it is.';
+
+  @override
+  String get techniques => 'Techniques';
+
+  @override
+  String get labelsTitle => 'Labels';
+
+  @override
+  String mosaicProgress(String opened, String total) {
+    return '$opened of $total Milestones opened';
+  }
+
+  @override
+  String mosaicNext(String numeral, String title) {
+    return 'Next: $numeral · $title';
+  }
+
+  @override
+  String get mosaicIntro =>
+      'One tessera per Milestone. Each one you open is set in gold.';
+
+  @override
+  String get notesTitle => 'Your notes';
+
+  @override
+  String notesCount(String count) {
+    return '$count notes on Chora artworks';
+  }
+
+  @override
+  String get cityTitle => 'Places by distance from mile zero';
+
+  @override
+  String placeDraftBody(String qid, String date) {
+    return 'Name and position checked against Wikidata $qid on $date. Story, hours and entrance are not reviewed yet.';
+  }
+
+  @override
+  String get historicalNames => 'Historical names';
+
+  @override
+  String artworksHere(String count) {
+    return '$count artworks';
+  }
+
+  @override
+  String get milestonesHere => 'Milestones here';
+
+  @override
+  String get recognise => 'Recognise an artwork with the camera';
+
+  @override
+  String get sourcesTitle => 'Sources';
+
+  @override
+  String get todayError => 'Today could not open';
+
+  @override
+  String get todayErrorBody =>
+      'The bundled registry could not be read. Try again.';
+
+  @override
+  String get photoOriginal => 'Unaltered photograph';
+
+  @override
+  String placeCount(String count) {
+    return '$count places';
+  }
+
+  @override
+  String get eastLetter => 'E';
+
+  @override
+  String get southLetter => 'S';
+
+  @override
+  String get westLetter => 'W';
+
+  @override
+  String honestyRange(String from, String to) {
+    return '$from to $to';
+  }
 }

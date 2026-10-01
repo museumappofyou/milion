@@ -13,10 +13,14 @@ class SceneDetailSheet extends StatefulWidget {
     required this.scene,
     this.confidence,
     this.onExamine,
+    this.onScan,
   });
   final Scene scene;
   final double? confidence;
   final VoidCallback? onExamine;
+
+  /// Camera-eye action; only for artworks the on-device model can suggest.
+  final VoidCallback? onScan;
   @override
   State<SceneDetailSheet> createState() => _SceneDetailSheetState();
 }
@@ -94,6 +98,18 @@ class _SceneDetailSheetState extends State<SceneDetailSheet> {
               },
               icon: const PlanIcon(PlanSymbol.layers),
               label: Text(s.exploreRelief),
+            ),
+          ],
+          if (widget.onScan != null) ...[
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              key: const ValueKey('artwork-camera-eye'),
+              onPressed: () {
+                Navigator.pop(context);
+                widget.onScan!();
+              },
+              icon: const PlanIcon(PlanSymbol.cameraEye),
+              label: Text(s.recognise),
             ),
           ],
           if (a.position.isNotEmpty) ...[

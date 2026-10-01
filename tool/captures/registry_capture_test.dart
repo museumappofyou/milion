@@ -8,7 +8,7 @@ import 'package:milion/content/repository.dart';
 import 'package:milion/screens/registry_screen.dart';
 import 'package:milion/design/theme.dart';
 
-import '../../test/frontier_navigation_test.dart' show loadThemeFonts;
+import '../../test/helpers.dart' show loadThemeFonts;
 
 void main() {
   testWidgets('P03 registry EN/TR and district-count evidence at 390 dp', (

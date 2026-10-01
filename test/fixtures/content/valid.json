@@ -165,7 +165,8 @@
       "packId": "chora-starter",
       "sources": [
         "fixture-source"
-      ]
+      ],
+      "flagship": true
     }
   ],
   "sources": [
@@ -237,6 +238,33 @@
       "artworks": [
         "F02"
       ],
+      "sources": [
+        "fixture-source"
+      ]
+    }
+  ],
+  "details": [
+    {
+      "id": "detail-adam-wrist",
+      "milestone": "milestone-i",
+      "artwork": "F02",
+      "title": {
+        "en": "Adam’s wrist",
+        "tr": "Âdem’in bileği"
+      },
+      "sentence": {
+        "en": "Christ grips Adam by the wrist, not the hand.",
+        "tr": "İsa, Âdem’i elinden değil bileğinden tutuyor."
+      },
+      "window": {
+        "left": 0.2,
+        "top": 0.4,
+        "right": 0.5,
+        "bottom": 0.8
+      },
+      "anchorX": 0.4,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
       "sources": [
         "fixture-source"
       ]

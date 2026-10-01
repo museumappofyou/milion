@@ -16,7 +16,7 @@ import 'package:milion/design/tokens.dart';
 import '../../test/design/design_contract_test.dart' show contrast;
 
 import 'package:milion/l10n/strings.dart';
-import 'package:milion/main.dart';
+
 import 'package:milion/screens/anastasis_relief_screen.dart';
 import 'package:milion/screens/last_judgment_relief_screen.dart';
 import 'package:milion/screens/scan_tab.dart';
@@ -24,8 +24,7 @@ import 'package:milion/services/classifier.dart';
 import 'package:milion/widgets/scene_detail_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../test/frontier_navigation_test.dart'
-    show loadThemeFonts, ready, destination;
+import '../../test/helpers.dart' show loadThemeFonts, ready;
 import '../../test/scene_explorer_test.dart'
     show assetsReady, openGesture, visibleTap;
 
@@ -99,49 +98,8 @@ void main() {
       '${const JsonEncoder.withIndent('  ').convert(records)}\n',
     );
   });
-  testWidgets('P03 shipped phone surfaces at 360, 390, 430 dp and 200% EN/TR', (
-    tester,
-  ) async {
-    Directory(out).createSync(recursive: true);
-    addTearDown(tester.view.reset);
-    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
-    await loadThemeFonts(tester);
-    for (final width in [360.0, 390.0, 430.0]) {
-      tester.view.physicalSize = Size(width, 844);
-      tester.view.devicePixelRatio = 1;
-      for (final language in ['en', 'tr']) {
-        for (final scale in [1.0, 2.0]) {
-          SharedPreferences.setMockInitialValues({'milion_language': language});
-          tester.platformDispatcher.textScaleFactorTestValue = scale;
-          final key = GlobalKey();
-          await tester.pumpWidget(
-            RepaintBoundary(key: key, child: const MilionApp()),
-          );
-          await ready(tester);
-          final label = '${width.toInt()}-$language-${(scale * 100).round()}';
-          await capture(tester, key, 'home-$label');
-          await tester.tap(
-            destination(language == 'en' ? 'Collection' : 'Koleksiyon'),
-          );
-          await ready(tester);
-          await capture(tester, key, 'collection-$label');
-          await tester.tap(
-            destination(language == 'en' ? 'About' : 'Hakkında'),
-          );
-          await tester.pumpAndSettle();
-          await capture(tester, key, 'about-$label');
-          await tester.scrollUntilVisible(
-            find.byType(DropdownButtonFormField<ThemeMode>),
-            250,
-            scrollable: find.byType(Scrollable).first,
-          );
-          await tester.pumpAndSettle();
-          await capture(tester, key, 'settings-$label');
-          await tester.pumpWidget(const SizedBox.shrink());
-        }
-      }
-    }
-  });
+  // The P03 home/collection/about tab surfaces were superseded by the P04
+  // shell; tool/captures/p04_capture_test.dart captures the new phone layouts.
   testWidgets(
     'P03 direction trials, lamp home, complete design galleries and scanner',
     (tester) async {
@@ -192,14 +150,6 @@ void main() {
           await tester.pumpWidget(const SizedBox.shrink());
         }
       }
-      SharedPreferences.setMockInitialValues({'milion_scheme': 'lamp'});
-      final lampKey = GlobalKey();
-      await tester.pumpWidget(
-        RepaintBoundary(key: lampKey, child: const MilionApp()),
-      );
-      await ready(tester);
-      await capture(tester, lampKey, 'home-lamp-390');
-      await tester.pumpWidget(const SizedBox.shrink());
       final classifier = Classifier();
       final cameraKey = GlobalKey();
       await tester.pumpWidget(

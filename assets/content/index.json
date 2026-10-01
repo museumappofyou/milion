@@ -8,10 +8,13 @@
       "assets/content/artworks/chora.json"
     ],
     "milestones": [
-      "assets/content/milestones/chora.json"
+      "assets/content/milestones/chora.json",
+      "assets/content/milestones/register.json"
     ],
     "sources": [
-      "assets/content/sources.json"
+      "assets/content/sources.json",
+      "assets/content/sources/register.json",
+      "assets/content/sources/details.json"
     ],
     "media": [
       "assets/content/media.json"
@@ -21,6 +24,9 @@
     ],
     "hunts": [
       "assets/content/hunts.json"
+    ],
+    "details": [
+      "assets/content/details/chora.json"
     ]
   }
 }

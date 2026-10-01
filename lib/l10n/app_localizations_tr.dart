@@ -95,7 +95,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get straightLine => 'Kuş uçuşu uzaklık · 1 Roma mili ≈ 1.480 m';
+  String get straightLine => 'Kuş uçuşu uzaklık · 1 Roma mili yaklaşık 1.480 m';
 
   @override
   String catalogueCount(String count) {
@@ -242,7 +242,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get creditsBody =>
-      'Kariye görselleri: proje sahibinin çekimleri, Wikimedia Commons ve Kültür Envanteri. Kaynak bağlantıları kayıtlıdır; yayın öncesi hak incelemesi sürüyor.';
+      'Kariye görselleri: proje sahibinin çekimleri, Wikimedia Commons ve Kültür Envanteri. Her görsel yayından önce hak incelemesinden geçer. Kadrandaki ve açılıştaki kıyı ve sokak çizgileri: © OpenStreetMap katkıda bulunanları, ODbL 1.0.';
 
   @override
   String get licenses => 'Açık kaynak lisansları';
@@ -271,7 +271,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get registryMeasurement =>
-      'Kuş uçuşu uzaklık · Roma mili yuvarlanır\n1 mil ≈ 1.480 m · açılar gerçek kuzeye göre';
+      'Kuş uçuşu uzaklık · Roma mili yuvarlanır\n1 mil yaklaşık 1.480 m · açılar gerçek kuzeye göre';
 
   @override
   String get categoryCounts => 'Kategoriye göre sayılar';
@@ -470,7 +470,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String milestoneNumber(String numeral) {
-    return 'Milestone $numeral';
+    return 'Taş $numeral';
   }
 
   @override
@@ -746,4 +746,303 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get cameraErrorBody =>
       'Android ayarlarında kamera iznini açıp yeniden deneyin. Galeriden bir fotoğraf da seçebilirsiniz.';
+
+  @override
+  String get navToday => 'Bugün';
+
+  @override
+  String get navCity => 'Şehir';
+
+  @override
+  String get navMilestones => 'Taşlar';
+
+  @override
+  String get navMosaic => 'Mozaik';
+
+  @override
+  String get iconDial => 'Sıfırıncı mil kadranı';
+
+  @override
+  String get iconMilestone => 'Mil taşı';
+
+  @override
+  String get techDP => 'Derinlik paralaksı';
+
+  @override
+  String get techGL => 'Yaldız ışığı';
+
+  @override
+  String get techRL => 'Yalayan ışık ya da mum';
+
+  @override
+  String get techPU => 'Açılır katmanlar';
+
+  @override
+  String get techWR => 'Silerek rekonstrüksiyon';
+
+  @override
+  String get techSB => 'Anlatı adımları';
+
+  @override
+  String get techMM => 'Mikro hareket';
+
+  @override
+  String get techSR => 'Çizgi çizgi açılış';
+
+  @override
+  String get techLU => 'Yukarı bakış';
+
+  @override
+  String get techCA => 'Choisy montajı';
+
+  @override
+  String get techCS => 'Kesit';
+
+  @override
+  String get techWK => 'Yürünebilir mekân';
+
+  @override
+  String get techTT => 'Döner tabla';
+
+  @override
+  String get techTM => 'Zaman modeli';
+
+  @override
+  String get techSK => 'Gökyüzü benzetimi';
+
+  @override
+  String get techVO => 'Sesler';
+
+  @override
+  String techniqueList(String list) {
+    return 'Teknikler: $list';
+  }
+
+  @override
+  String get firstRunLine => 'Bütün yollar buradan başladı.';
+
+  @override
+  String get firstRunSentence =>
+      'Sıfırıncı mil: İmparatorluğun yollarını ölçtüğü taş, Divanyolu’ndaki Milion; Roma mili halkaları Süleymaniye’ye, Galata Kulesi’ne, Kız Kulesi’ne, Kariye’ye ve Yedikule’ye uzanıyor.';
+
+  @override
+  String get firstRunStone => 'Divanyolu, Yerebatan Sarnıcı’nın yanında';
+
+  @override
+  String firstRunStill(String number) {
+    return 'Durağan görüntü $number/3';
+  }
+
+  @override
+  String get skip => 'Geç';
+
+  @override
+  String get next => 'İleri';
+
+  @override
+  String get openToday => 'Bugün’ü aç';
+
+  @override
+  String get replayFirstRun => 'Sıfırıncı mili yeniden oynat';
+
+  @override
+  String get replayFirstRunBody =>
+      '12 saniyelik açılış: Milion, Roma mili halkaları ve beş yer.';
+
+  @override
+  String get detailOfDay => 'Günün ayrıntısı';
+
+  @override
+  String openMilestoneDetail(String numeral) {
+    return '$numeral taşını bu ayrıntıda aç';
+  }
+
+  @override
+  String detailSource(String artwork, String place) {
+    return '$artwork · $place';
+  }
+
+  @override
+  String get dialLabel => 'Sıfırıncı mil kadranı';
+
+  @override
+  String get dialHint =>
+      'Halkayı çevirin: her yerde bir tık. Açmak için bir çizgiye dokunun.';
+
+  @override
+  String dialValue(String place, String distance, String degrees) {
+    return '$place, $distance, gerçek kuzeyden $degrees°';
+  }
+
+  @override
+  String get showList => 'Liste';
+
+  @override
+  String get showDial => 'Kadran';
+
+  @override
+  String placesByBearing(String count) {
+    return 'Gerçek kuzeye göre açı sırasıyla $count yer';
+  }
+
+  @override
+  String plottedPlaces(String count, String reviewed) {
+    return '$count yer · konumlar Wikidata’da doğrulandı · $reviewed incelendi';
+  }
+
+  @override
+  String get notReviewed => 'Henüz incelenmedi';
+
+  @override
+  String get reviewed => 'İncelendi';
+
+  @override
+  String openPlace(String place) {
+    return '$place sayfasını aç';
+  }
+
+  @override
+  String get nextMilestones => 'Listede sıradakiler';
+
+  @override
+  String chapterHeading(String numeral, String name) {
+    return '$numeral. bölüm · $name';
+  }
+
+  @override
+  String get chapterByzantineName => 'Bizans';
+
+  @override
+  String get chapterMosquesName => 'Camiler';
+
+  @override
+  String get chapterMuseumsName => 'Müzeler';
+
+  @override
+  String get chapterAbroadName => 'Yurt dışındaki İstanbul';
+
+  @override
+  String get chapterCurrent => 'Şu anki bölüm';
+
+  @override
+  String chapterProgress(String playable, String total, String approved) {
+    return '$total taştan $playable tanesi açılabilir · $approved onaylı';
+  }
+
+  @override
+  String get statusPlanned => 'Planlandı';
+
+  @override
+  String get statusPrototype => 'Prototip';
+
+  @override
+  String get statusApproved => 'Onaylandı';
+
+  @override
+  String get statusOpened => 'Açıldı';
+
+  @override
+  String get flagship => 'Öne çıkan';
+
+  @override
+  String get craftKit => 'Zanaat seti';
+
+  @override
+  String get acrossCity => 'Şehir genelinde';
+
+  @override
+  String registerCounts(
+    String total,
+    String playable,
+    String approved,
+    String planned,
+  ) {
+    return '$total taş · $playable açılabilir · $approved onaylı · $planned planlandı';
+  }
+
+  @override
+  String get milestonePlannedBody =>
+      'Planlandı: açılışı, anlatısı ve keşfi henüz hazır değil. Hazır olana dek yeri boş çerçeve olarak kalır.';
+
+  @override
+  String get techniques => 'Teknikler';
+
+  @override
+  String get labelsTitle => 'Etiketler';
+
+  @override
+  String mosaicProgress(String opened, String total) {
+    return '$total taştan $opened tanesini açtınız';
+  }
+
+  @override
+  String mosaicNext(String numeral, String title) {
+    return 'Sıradaki: $numeral · $title';
+  }
+
+  @override
+  String get mosaicIntro =>
+      'Her taş için bir tessera. Açtığınız her biri altınla yerine oturur.';
+
+  @override
+  String get notesTitle => 'Notlarınız';
+
+  @override
+  String notesCount(String count) {
+    return 'Kariye eserlerinde $count not';
+  }
+
+  @override
+  String get cityTitle => 'Sıfırıncı milden uzaklığa göre yerler';
+
+  @override
+  String placeDraftBody(String qid, String date) {
+    return 'Ad ve konum $date tarihinde Wikidata $qid kaydıyla karşılaştırıldı. Anlatı, ziyaret saatleri ve giriş henüz incelenmedi.';
+  }
+
+  @override
+  String get historicalNames => 'Tarihî adlar';
+
+  @override
+  String artworksHere(String count) {
+    return '$count eser';
+  }
+
+  @override
+  String get milestonesHere => 'Buradaki taşlar';
+
+  @override
+  String get recognise => 'Bir eseri kamerayla tanıyın';
+
+  @override
+  String get sourcesTitle => 'Kaynaklar';
+
+  @override
+  String get todayError => 'Bugün açılamadı';
+
+  @override
+  String get todayErrorBody =>
+      'Cihazdaki içerik kaydı okunamadı. Yeniden deneyin.';
+
+  @override
+  String get photoOriginal => 'Değiştirilmemiş fotoğraf';
+
+  @override
+  String placeCount(String count) {
+    return '$count yer';
+  }
+
+  @override
+  String get eastLetter => 'D';
+
+  @override
+  String get southLetter => 'G';
+
+  @override
+  String get westLetter => 'B';
+
+  @override
+  String honestyRange(String from, String to) {
+    return '$from ile $to arası';
+  }
 }

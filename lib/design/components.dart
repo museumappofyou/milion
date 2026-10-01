@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../content/geography.dart';
@@ -74,6 +76,67 @@ class HonestyLabel extends StatelessWidget {
   }
 }
 
+/// How far a piece departs from the photograph: ORIGINAL, then the furthest
+/// state it reaches (§3 rule 1: everything starts from the original).
+class HonestyRange extends StatelessWidget {
+  const HonestyRange(this.labels, {super.key});
+  final Set<Honesty> labels;
+  @override
+  Widget build(BuildContext context) {
+    final furthest = labels.reduce((a, b) => a.index >= b.index ? a : b);
+    if (furthest == Honesty.ORIGINAL) {
+      return const HonestyLabel(Honesty.ORIGINAL);
+    }
+    final s = context.l10n;
+    return Semantics(
+      label: s.honestyRange(s.original, switch (furthest) {
+        Honesty.ORIGINAL => s.original,
+        Honesty.DEPTH => s.depth,
+        Honesty.RECONSTRUCTION => s.reconstruction,
+        Honesty.IMAGINED => s.imagined,
+      }),
+      child: ExcludeSemantics(
+        child: Wrap(
+          spacing: 4,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            const HonestyLabel(Honesty.ORIGINAL),
+            CustomPaint(
+              size: const Size(16, 8),
+              painter: _ArrowPainter(MeasureColors.of(context).secondary),
+            ),
+            HonestyLabel(furthest),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ArrowPainter extends CustomPainter {
+  _ArrowPainter(this.color);
+  final Color color;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final p = Paint()
+      ..color = color
+      ..strokeWidth = 1
+      ..style = PaintingStyle.stroke;
+    final y = size.height / 2;
+    canvas.drawLine(Offset(0, y), Offset(size.width, y), p);
+    canvas.drawPath(
+      Path()
+        ..moveTo(size.width - 4, y - 3)
+        ..lineTo(size.width, y)
+        ..lineTo(size.width - 4, y + 3),
+      p,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_ArrowPainter old) => old.color != color;
+}
+
 class TesseraChip extends StatelessWidget {
   const TesseraChip(this.label, {super.key, this.collected = false});
   final String label;
@@ -100,34 +163,136 @@ class TesseraChip extends StatelessWidget {
   }
 }
 
+/// The irregular one-physical-pixel tessera outline shared by chips and slots.
+Path tesseraPath(Size size, double dpr) {
+  final n = 1 / dpr;
+  return Path()
+    ..moveTo(n, n * 2)
+    ..lineTo(size.width * .55, n)
+    ..lineTo(size.width - n, n * 2)
+    ..lineTo(size.width - n * 2, size.height * .55)
+    ..lineTo(size.width - n, size.height - n * 2)
+    ..lineTo(size.width * .3, size.height - n)
+    ..lineTo(n, size.height - n * 2)
+    ..lineTo(n * 2, size.height * .4)
+    ..close();
+}
+
 class _TesseraEdge extends CustomPainter {
-  _TesseraEdge(this.color, this.dpr);
+  _TesseraEdge(this.color, this.dpr, {this.fill});
   final Color color;
+  final Color? fill;
   final double dpr;
   @override
   void paint(Canvas canvas, Size size) {
-    final n = 1 / dpr;
-    final path = Path()
-      ..moveTo(n, n * 2)
-      ..lineTo(size.width * .55, n)
-      ..lineTo(size.width - n, n * 2)
-      ..lineTo(size.width - n * 2, size.height * .55)
-      ..lineTo(size.width - n, size.height - n * 2)
-      ..lineTo(size.width * .3, size.height - n)
-      ..lineTo(n, size.height - n * 2)
-      ..lineTo(n * 2, size.height * .4)
-      ..close();
+    final path = tesseraPath(size, dpr);
+    if (fill != null) canvas.drawPath(path, Paint()..color = fill!);
     canvas.drawPath(
       path,
       Paint()
         ..color = color
         ..style = PaintingStyle.stroke
-        ..strokeWidth = n,
+        ..strokeWidth = 1 / dpr,
     );
   }
 
   @override
-  bool shouldRepaint(_TesseraEdge old) => old.color != color || old.dpr != dpr;
+  bool shouldRepaint(_TesseraEdge old) =>
+      old.color != color || old.dpr != dpr || old.fill != fill;
+}
+
+enum SlotState {
+  /// Not built yet: an outlined, empty slot.
+  planned,
+
+  /// Playable but not opened by this person.
+  available,
+
+  /// Opened: set in tessera gold.
+  set,
+}
+
+/// A mosaic slot. Unfilled slots are outlined tesserae (§2, signature 6).
+class TesseraSlot extends StatelessWidget {
+  const TesseraSlot({
+    super.key,
+    required this.state,
+    this.width = 48,
+    this.height = 48,
+    this.label,
+  });
+  final SlotState state;
+  final double width, height;
+  final String? label;
+  @override
+  Widget build(BuildContext context) {
+    final c = MeasureColors.of(context);
+    final (fill, edge, ink) = switch (state) {
+      SlotState.planned => (null, c.line, c.secondary),
+      SlotState.available => (c.poche, c.ink, c.accent),
+      SlotState.set => (Pigment.gold, Pigment.gold, Pigment.lamp),
+    };
+    return CustomPaint(
+      painter: _TesseraEdge(
+        edge,
+        MediaQuery.devicePixelRatioOf(context),
+        fill: fill,
+      ),
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: label == null
+            ? null
+            : Center(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: Text(
+                      label!,
+                      style: TypeRole.inscription(16, color: ink),
+                      textScaler: TextScaler.noScaling,
+                    ),
+                  ),
+                ),
+              ),
+      ),
+    );
+  }
+}
+
+/// An eight-pointed star, the ★ of the §3 register, drawn not typed.
+class FlagshipMark extends StatelessWidget {
+  const FlagshipMark({super.key, this.size = 14});
+  final double size;
+  @override
+  Widget build(BuildContext context) => Semantics(
+    label: context.l10n.flagship,
+    child: CustomPaint(
+      size: Size.square(size),
+      painter: _StarPainter(MeasureColors.of(context).accent),
+    ),
+  );
+}
+
+class _StarPainter extends CustomPainter {
+  _StarPainter(this.color);
+  final Color color;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = size.center(Offset.zero), r = size.shortestSide / 2;
+    final path = Path();
+    for (var i = 0; i < 16; i++) {
+      final a = i * math.pi / 8 - math.pi / 2;
+      final d = i.isEven ? r : r * .45;
+      final p = c + Offset(math.cos(a), math.sin(a)) * d;
+      i == 0 ? path.moveTo(p.dx, p.dy) : path.lineTo(p.dx, p.dy);
+    }
+    canvas.drawPath(path..close(), Paint()..color = color);
+  }
+
+  @override
+  bool shouldRepaint(_StarPainter old) => old.color != color;
 }
 
 class StrataBand extends StatelessWidget {

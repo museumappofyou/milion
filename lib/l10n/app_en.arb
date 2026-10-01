@@ -34,7 +34,7 @@
       }
     }
   },
-  "straightLine": "Straight-line distance · 1 Roman mile ≈ 1,480 m",
+  "straightLine": "Straight-line distance · 1 Roman mile is about 1,480 m",
   "catalogueCount": "{count} artworks · Chora / Kariye",
   "@catalogueCount": {
     "placeholders": {
@@ -100,7 +100,7 @@
   "recognitionLimits": "Recognition limits",
   "recognitionLimitsBody": "Matches are suggestions. The prototype rejected at most 67% of 231 unrelated test images; it cannot confirm an artwork on its own.",
   "credits": "Sources and credits",
-  "creditsBody": "Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Source URLs are recorded; public-release rights review is pending.",
+  "creditsBody": "Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Every image passes a rights review before public release. Coastline and street lines on the dial and in the opening: © OpenStreetMap contributors, ODbL 1.0.",
   "licenses": "Open-source licences",
   "version": "Milion 1.0.0 · 1",
   "previewFooter": "Istanbul collection · Chora preview",
@@ -125,7 +125,7 @@
       }
     }
   },
-  "registryMeasurement": "Straight-line distance · Roman miles rounded\n1 mil ≈ 1,480 m · bearings from true north",
+  "registryMeasurement": "Straight-line distance · Roman miles rounded\n1 mil is about 1,480 m · bearings from true north",
   "categoryCounts": "Counts by category",
   "districtCounts": "Counts by district · 39",
   "outsideProvince": "Outside province",
@@ -308,5 +308,257 @@
   "waveByzantine": "Byzantine · gold on porphyry",
   "waveMosque": "Mosques · cobalt / turquoise",
   "waveMuseum": "Museums · verdigris / bronze",
-  "cameraErrorBody": "Allow camera access in Android settings, then try again. You can also choose a photo from the gallery."
+  "cameraErrorBody": "Allow camera access in Android settings, then try again. You can also choose a photo from the gallery.",
+  "navToday": "Today",
+  "navCity": "City",
+  "navMilestones": "Milestones",
+  "navMosaic": "Mosaic",
+  "iconDial": "Mile Zero dial",
+  "iconMilestone": "Milestone",
+  "techDP": "Depth parallax",
+  "techGL": "Gilded light",
+  "techRL": "Raking light or candle",
+  "techPU": "Pop-up layers",
+  "techWR": "Wipe to reconstruction",
+  "techSB": "Story beats",
+  "techMM": "Micro-motion",
+  "techSR": "Stroke reveal",
+  "techLU": "Look up",
+  "techCA": "Choisy assembly",
+  "techCS": "Cutaway section",
+  "techWK": "Walkable space",
+  "techTT": "Turntable",
+  "techTM": "Time model",
+  "techSK": "Sky simulation",
+  "techVO": "Voices",
+  "techniqueList": "Techniques: {list}",
+  "@techniqueList": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "firstRunLine": "Every road started here.",
+  "firstRunSentence": "Mile zero: the Milion on Divanyolu, the stone from which the empire measured its roads, with rings in Roman miles reaching Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.",
+  "firstRunStone": "Divanyolu, beside the Basilica Cistern",
+  "firstRunStill": "Still {number} of 3",
+  "@firstRunStill": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "skip": "Skip",
+  "next": "Next",
+  "openToday": "Open Today",
+  "replayFirstRun": "Replay mile zero",
+  "replayFirstRunBody": "The 12-second opening: the Milion, the Roman-mile rings and five places.",
+  "detailOfDay": "Detail of the day",
+  "openMilestoneDetail": "Open {numeral} at this detail",
+  "@openMilestoneDetail": {
+    "placeholders": {
+      "numeral": {
+        "type": "String"
+      }
+    }
+  },
+  "detailSource": "{artwork} · {place}",
+  "@detailSource": {
+    "placeholders": {
+      "artwork": {
+        "type": "String"
+      },
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "dialLabel": "Mile Zero dial",
+  "dialHint": "Turn the ring: one detent per place. Tap a tick to open it.",
+  "dialValue": "{place}, {distance}, {degrees}° from true north",
+  "@dialValue": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      },
+      "distance": {
+        "type": "String"
+      },
+      "degrees": {
+        "type": "String"
+      }
+    }
+  },
+  "showList": "List",
+  "showDial": "Dial",
+  "placesByBearing": "{count} places by bearing from true north",
+  "@placesByBearing": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "plottedPlaces": "{count} places · positions checked on Wikidata · {reviewed} reviewed",
+  "@plottedPlaces": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "reviewed": {
+        "type": "String"
+      }
+    }
+  },
+  "notReviewed": "Not reviewed yet",
+  "reviewed": "Reviewed",
+  "openPlace": "Open {place}",
+  "@openPlace": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "nextMilestones": "Next in the register",
+  "chapterHeading": "Chapter {numeral} · {name}",
+  "@chapterHeading": {
+    "placeholders": {
+      "numeral": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chapterByzantineName": "Byzantine",
+  "chapterMosquesName": "Mosques",
+  "chapterMuseumsName": "Museums",
+  "chapterAbroadName": "Istanbul abroad",
+  "chapterCurrent": "Current chapter",
+  "chapterProgress": "{playable} of {total} playable · {approved} approved",
+  "@chapterProgress": {
+    "placeholders": {
+      "playable": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "approved": {
+        "type": "String"
+      }
+    }
+  },
+  "statusPlanned": "Planned",
+  "statusPrototype": "Prototype",
+  "statusApproved": "Approved",
+  "statusOpened": "Opened",
+  "flagship": "Flagship",
+  "craftKit": "Craft kit",
+  "acrossCity": "Across the city",
+  "registerCounts": "{total} Milestones · {playable} playable · {approved} approved · {planned} planned",
+  "@registerCounts": {
+    "placeholders": {
+      "total": {
+        "type": "String"
+      },
+      "playable": {
+        "type": "String"
+      },
+      "approved": {
+        "type": "String"
+      },
+      "planned": {
+        "type": "String"
+      }
+    }
+  },
+  "milestonePlannedBody": "Planned: its reveal, story and exploration are not built yet. The empty slot stays outlined until it is.",
+  "techniques": "Techniques",
+  "labelsTitle": "Labels",
+  "mosaicProgress": "{opened} of {total} Milestones opened",
+  "@mosaicProgress": {
+    "placeholders": {
+      "opened": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "mosaicNext": "Next: {numeral} · {title}",
+  "@mosaicNext": {
+    "placeholders": {
+      "numeral": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mosaicIntro": "One tessera per Milestone. Each one you open is set in gold.",
+  "notesTitle": "Your notes",
+  "notesCount": "{count} notes on Chora artworks",
+  "@notesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "cityTitle": "Places by distance from mile zero",
+  "placeDraftBody": "Name and position checked against Wikidata {qid} on {date}. Story, hours and entrance are not reviewed yet.",
+  "@placeDraftBody": {
+    "placeholders": {
+      "qid": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "historicalNames": "Historical names",
+  "artworksHere": "{count} artworks",
+  "@artworksHere": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "milestonesHere": "Milestones here",
+  "recognise": "Recognise an artwork with the camera",
+  "sourcesTitle": "Sources",
+  "todayError": "Today could not open",
+  "todayErrorBody": "The bundled registry could not be read. Try again.",
+  "photoOriginal": "Unaltered photograph",
+  "placeCount": "{count} places",
+  "@placeCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "eastLetter": "E",
+  "southLetter": "S",
+  "westLetter": "W",
+  "honestyRange": "{from} to {to}",
+  "@honestyRange": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  }
 }

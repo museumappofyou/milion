@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppSettings extends ChangeNotifier {
+  static const firstRunKey = 'milion_first_run_seen';
   Locale? locale;
   ThemeMode themeMode = ThemeMode.light;
+
+  /// True once stored preferences have been read; the shell waits for it.
+  bool loaded = false;
+
+  /// Milestone 0 lite plays once; About replays it without resetting this.
+  bool firstRunSeen = false;
   bool _changed = false;
   bool _disposed = false;
   @override
@@ -14,13 +21,23 @@ class AppSettings extends ChangeNotifier {
 
   Future<void> load() async {
     final p = await SharedPreferences.getInstance();
-    if (_changed || _disposed) return;
-    final code = p.getString('milion_language');
-    locale = ['en', 'tr'].contains(code) ? Locale(code!) : null;
-    themeMode = p.getString('milion_scheme') == 'lamp'
-        ? ThemeMode.dark
-        : ThemeMode.light;
+    if (_disposed) return;
+    if (!_changed) {
+      final code = p.getString('milion_language');
+      locale = ['en', 'tr'].contains(code) ? Locale(code!) : null;
+      themeMode = p.getString('milion_scheme') == 'lamp'
+          ? ThemeMode.dark
+          : ThemeMode.light;
+    }
+    firstRunSeen = firstRunSeen || (p.getBool(firstRunKey) ?? false);
+    loaded = true;
     notifyListeners();
+  }
+
+  Future<void> completeFirstRun() async {
+    firstRunSeen = true;
+    notifyListeners();
+    await (await SharedPreferences.getInstance()).setBool(firstRunKey, true);
   }
 
   Future<void> setLanguage(String? code) async {

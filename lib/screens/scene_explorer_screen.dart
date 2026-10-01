@@ -9,11 +9,12 @@ import '../design/theme.dart';
 import '../design/components.dart';
 import '../design/motion.dart';
 import '../design/plan_icon.dart';
-import '../content/models.dart' show Honesty;
+import '../content/models.dart' show Detail, Honesty, NormalRect;
 import '../l10n/strings.dart';
 import '../l10n/scene_strings.dart';
 import '../services/explorer_assets.dart';
 import '../services/figure_rig.dart';
+import '../today/detail_crop.dart';
 import '../widgets/interactive_relief_surface.dart';
 import 'restoration_studies_screen.dart';
 
@@ -22,9 +23,13 @@ class SceneExplorerScreen extends StatefulWidget {
     super.key,
     required this.scene,
     this.initialFocus = 'Overview',
+    this.initialDetail,
   });
   final ExplorableScene scene;
   final String initialFocus;
+
+  /// A curated detail to open at, the landing end of Today's shared element.
+  final Detail? initialDetail;
 
   @override
   State<SceneExplorerScreen> createState() => SceneExplorerScreenState();
@@ -55,6 +60,10 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
   double _motionAmount = .25;
   Size _viewport = Size.zero;
   bool _initialApplied = false;
+  late Detail? _custom = widget.initialDetail;
+  late bool _heroShown = widget.initialDetail != null;
+  bool _routeSettled = false;
+  Animation<double>? _routeAnimation;
 
   double get zoom => transformation.value.getMaxScaleOnAxis();
   double get figurePose => _figures.value;
@@ -86,6 +95,12 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    final route = ModalRoute.of(context)?.animation;
+    if (route != _routeAnimation) {
+      _routeAnimation?.removeStatusListener(_routeStatus);
+      _routeAnimation = route?..addStatusListener(_routeStatus);
+      _routeStatus(route?.status ?? AnimationStatus.completed);
+    }
     if (_reduceMotion && _motion) {
       _figures.stop();
       _motion = false;
@@ -101,8 +116,24 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
     }
   }
 
+  void _routeStatus(AnimationStatus status) {
+    if (status != AnimationStatus.completed) return;
+    _routeSettled = true;
+    _settleHero();
+  }
+
+  /// Once the flight has landed and the plate shows the same pixels beneath,
+  /// the flying crop gives way to the interactive plate.
+  void _settleHero() {
+    if (!_heroShown || !_initialApplied || !_routeSettled) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) setState(() => _heroShown = false);
+    });
+  }
+
   @override
   void dispose() {
+    _routeAnimation?.removeStatusListener(_routeStatus);
     WidgetsBinding.instance.removeObserver(this);
     _move.dispose();
     _figures.dispose();
@@ -170,26 +201,35 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
   }
 
   void resetView() {
-    setState(() => _selected = null);
+    setState(() {
+      _selected = null;
+      _custom = null;
+    });
     _moveTo(Matrix4.identity());
   }
 
-  void _focus(SceneDetail detail) {
-    setState(() => _selected = detail.id);
-    final frame = _frame, r = detail.window;
-    final crop = Rect.fromLTRB(
+  Rect _crop(Rect r) {
+    final frame = _frame;
+    return Rect.fromLTRB(
       frame.left + r.left * frame.width,
       frame.top + r.top * frame.height,
       frame.left + r.right * frame.width,
       frame.top + r.bottom * frame.height,
     );
+  }
+
+  static Rect _normal(NormalRect w) =>
+      Rect.fromLTRB(w.left, w.top, w.right, w.bottom);
+
+  Matrix4 _windowMatrix(Rect window) {
+    final crop = _crop(window);
     final s = math
         .min(
           (_viewport.width - 36) / crop.width,
           (_viewport.height - 36) / crop.height,
         )
         .clamp(1.0, 8.0);
-    _moveTo(
+    return _bounded(
       Matrix4.identity()
         ..translateByDouble(
           _viewport.width / 2 - crop.center.dx * s,
@@ -199,6 +239,40 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
         )
         ..scaleByDouble(s, s, 1, 1),
     );
+  }
+
+  void _focusWindow(Rect window, {bool animate = true}) {
+    final target = _windowMatrix(window);
+    if (animate) {
+      _moveTo(target);
+    } else {
+      _move.stop();
+      transformation.value = target;
+    }
+  }
+
+  void _focus(SceneDetail detail) {
+    setState(() {
+      _selected = detail.id;
+      _custom = null;
+    });
+    _focusWindow(detail.window);
+  }
+
+  void _applyInitial() {
+    _initialApplied = true;
+    final custom = _custom;
+    if (custom != null) {
+      _focusWindow(_normal(custom.window), animate: false);
+      _settleHero();
+      return;
+    }
+    final detail = widget.scene.details
+        .where(
+          (d) => d.title.toLowerCase() == widget.initialFocus.toLowerCase(),
+        )
+        .firstOrNull;
+    if (detail != null) _focus(detail);
   }
 
   Future<void> _setVariant(String value) async {
@@ -331,9 +405,11 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
               child: ContentState(error: true, title: s.sceneUnavailable),
             );
           }
-          if (snapshot.connectionState != ConnectionState.done) {
+          final loaded = snapshot.connectionState == ConnectionState.done;
+          if (!loaded && !_heroShown) {
             return const Center(child: TesseraLoader());
           }
+          final custom = _custom, lang = context.language;
           final chosen = widget.scene.details
               .where((d) => d.id == _selected)
               .firstOrNull;
@@ -358,26 +434,20 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     final size = constraints.biggest;
-                    if (_viewport != size) {
+                    final resized = _viewport != size;
+                    if (resized || (loaded && !_initialApplied)) {
                       _viewport = size;
                       WidgetsBinding.instance.addPostFrameCallback((_) {
-                        if (!mounted) return;
-                        if (!_initialApplied) {
-                          _initialApplied = true;
-                          final detail = widget.scene.details
-                              .where(
-                                (d) =>
-                                    d.title.toLowerCase() ==
-                                    widget.initialFocus.toLowerCase(),
-                              )
-                              .firstOrNull;
-                          if (detail != null) {
-                            _focus(detail);
-                            return;
-                          }
-                        }
+                        if (!mounted || !loaded) return;
+                        if (!_initialApplied) return _applyInitial();
+                        if (!resized) return;
                         if (chosen != null) {
                           _focus(chosen);
+                        } else if (_custom != null) {
+                          _focusWindow(
+                            _normal(_custom!.window),
+                            animate: false,
+                          );
                         } else {
                           transformation.value = _bounded(transformation.value);
                         }
@@ -385,116 +455,162 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
                     }
                     return Stack(
                       children: [
-                        Positioned.fill(
-                          child: InteractiveViewer(
-                            key: const ValueKey('scene-interactive-viewer'),
-                            transformationController: transformation,
-                            minScale: 1,
-                            maxScale: 8,
-                            trackpadScrollCausesScale: true,
-                            onInteractionStart: (_) => _move.stop(),
-                            onInteractionEnd: (_) =>
-                                _moveTo(transformation.value),
-                            child: GestureDetector(
-                              behavior: HitTestBehavior.opaque,
-                              onTapUp: _tapDetail,
-                              onDoubleTapDown: (d) {
-                                final at = MatrixUtils.transformPoint(
-                                  transformation.value,
-                                  d.localPosition,
-                                );
-                                zoomBy(zoom > 4 ? 1 / zoom : 2, at);
-                              },
-                              onDoubleTap: () {},
-                              child: RepaintBoundary(
-                                key: const ValueKey('figure-canvas'),
-                                child: AnimatedBuilder(
-                                  animation: Listenable.merge([
-                                    transformation,
-                                    _figures,
-                                  ]),
-                                  builder: (context, _) => CustomPaint(
-                                    size: size,
-                                    painter: InteractiveReliefSurface(
-                                      texture: _variant == 'Relief'
-                                          ? _relief
-                                          : _original,
-                                      study: _variant == 'Restored'
-                                          ? _restored
-                                          : null,
-                                      studyAmount: _strength,
-                                      sourceSize: widget.scene.size,
-                                      rig: _rig,
-                                      frame: _frame,
-                                      phase: _figures.value,
-                                      motionAmount: _motionAmount,
-                                      posed: _posed,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          right: 8,
-                          top: 8,
-                          child: Material(
-                            color: MeasureColors.lamp.poche,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: Space.radius,
-                            ),
-                            child: Column(
-                              children: [
-                                IconButton(
-                                  tooltip: s.zoomIn,
-                                  onPressed: () => zoomBy(1.5),
-                                  icon: const Icon(Icons.add),
-                                ),
-                                AnimatedBuilder(
-                                  animation: transformation,
-                                  builder: (_, _) => Text(
-                                    '${zoom.toStringAsFixed(1)}×',
-                                    style: TypeRole.measurement,
-                                  ),
-                                ),
-                                IconButton(
-                                  tooltip: s.zoomOut,
-                                  onPressed: () => zoomBy(1 / 1.5),
-                                  icon: const Icon(Icons.remove),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        if (chosen != null && _pins && !_posed)
+                        if (loaded) ...[
                           Positioned.fill(
-                            child: IgnorePointer(
-                              child: AnimatedBuilder(
-                                animation: transformation,
-                                builder: (context, _) => CustomPaint(
-                                  painter: _MarginCallout(
-                                    MatrixUtils.transformPoint(
-                                      transformation.value,
-                                      Offset(
-                                        _frame.left +
-                                            _frame.width * chosen.point.dx,
-                                        _frame.top +
-                                            _frame.height * chosen.point.dy,
+                            child: InteractiveViewer(
+                              key: const ValueKey('scene-interactive-viewer'),
+                              transformationController: transformation,
+                              minScale: 1,
+                              maxScale: 8,
+                              trackpadScrollCausesScale: true,
+                              onInteractionStart: (_) => _move.stop(),
+                              onInteractionEnd: (_) =>
+                                  _moveTo(transformation.value),
+                              child: GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTapUp: _tapDetail,
+                                onDoubleTapDown: (d) {
+                                  final at = MatrixUtils.transformPoint(
+                                    transformation.value,
+                                    d.localPosition,
+                                  );
+                                  zoomBy(zoom > 4 ? 1 / zoom : 2, at);
+                                },
+                                onDoubleTap: () {},
+                                child: RepaintBoundary(
+                                  key: const ValueKey('figure-canvas'),
+                                  child: AnimatedBuilder(
+                                    animation: Listenable.merge([
+                                      transformation,
+                                      _figures,
+                                    ]),
+                                    builder: (context, _) => CustomPaint(
+                                      size: size,
+                                      painter: InteractiveReliefSurface(
+                                        texture: _variant == 'Relief'
+                                            ? _relief
+                                            : _original,
+                                        study: _variant == 'Restored'
+                                            ? _restored
+                                            : null,
+                                        studyAmount: _strength,
+                                        sourceSize: widget.scene.size,
+                                        rig: _rig,
+                                        frame: _frame,
+                                        phase: _figures.value,
+                                        motionAmount: _motionAmount,
+                                        posed: _posed,
                                       ),
                                     ),
-                                    detailTitle(context, chosen.id),
-                                    MediaQuery.textScalerOf(context),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        if (_busy)
-                          const Positioned(
-                            top: 12,
-                            left: 12,
-                            child: TesseraLoader(),
+                          Positioned(
+                            right: 8,
+                            top: 8,
+                            child: Material(
+                              color: MeasureColors.lamp.poche,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: Space.radius,
+                              ),
+                              child: Column(
+                                children: [
+                                  IconButton(
+                                    tooltip: s.zoomIn,
+                                    onPressed: () => zoomBy(1.5),
+                                    icon: const Icon(Icons.add),
+                                  ),
+                                  AnimatedBuilder(
+                                    animation: transformation,
+                                    builder: (_, _) => Text(
+                                      '${zoom.toStringAsFixed(1)}×',
+                                      style: TypeRole.measurement,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    tooltip: s.zoomOut,
+                                    onPressed: () => zoomBy(1 / 1.5),
+                                    icon: const Icon(Icons.remove),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          if (chosen != null && _pins && !_posed)
+                            Positioned.fill(
+                              child: IgnorePointer(
+                                child: AnimatedBuilder(
+                                  animation: transformation,
+                                  builder: (context, _) => CustomPaint(
+                                    painter: _MarginCallout(
+                                      MatrixUtils.transformPoint(
+                                        transformation.value,
+                                        Offset(
+                                          _frame.left +
+                                              _frame.width * chosen.point.dx,
+                                          _frame.top +
+                                              _frame.height * chosen.point.dy,
+                                        ),
+                                      ),
+                                      detailTitle(context, chosen.id),
+                                      MediaQuery.textScalerOf(context),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (custom != null &&
+                              chosen == null &&
+                              _pins &&
+                              !_posed)
+                            Positioned.fill(
+                              child: IgnorePointer(
+                                child: AnimatedBuilder(
+                                  animation: transformation,
+                                  builder: (context, _) => CustomPaint(
+                                    painter: _MarginCallout(
+                                      MatrixUtils.transformPoint(
+                                        transformation.value,
+                                        Offset(
+                                          _frame.left +
+                                              _frame.width * custom.anchorX,
+                                          _frame.top +
+                                              _frame.height * custom.anchorY,
+                                        ),
+                                      ),
+                                      custom.title.inLanguage(lang),
+                                      MediaQuery.textScalerOf(context),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (_busy)
+                            const Positioned(
+                              top: 12,
+                              left: 12,
+                              child: TesseraLoader(),
+                            ),
+                        ],
+                        if (_heroShown && custom != null)
+                          Positioned.fromRect(
+                            rect: MatrixUtils.transformRect(
+                              _windowMatrix(_normal(custom.window)),
+                              _crop(_normal(custom.window)),
+                            ),
+                            child: IgnorePointer(
+                              child: Hero(
+                                tag: detailHeroTag(custom),
+                                transitionOnUserGestures: true,
+                                child: DetailCrop(
+                                  asset: widget.scene.original,
+                                  source: widget.scene.size,
+                                  window: custom.window,
+                                ),
+                              ),
+                            ),
                           ),
                       ],
                     );
@@ -546,7 +662,8 @@ class SceneExplorerScreenState extends State<SceneExplorerScreen>
                           const SizedBox(height: 8),
                           Text(
                             chosen == null
-                                ? s.detailHint
+                                ? custom?.sentence.inLanguage(lang) ??
+                                      s.detailHint
                                 : detailBody(
                                     context,
                                     widget.scene.id,

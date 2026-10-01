@@ -393,5 +393,29 @@
         "fixture-source"
       ]
     }
+  ],
+  "details": [
+    {
+      "id": "detail-bad",
+      "milestone": "milestone-x",
+      "artwork": "F02",
+      "title": {
+        "en": "Adam’s wrist",
+        "tr": "Âdem’in bileği"
+      },
+      "sentence": {
+        "en": "Only English."
+      },
+      "window": {
+        "left": -0.1,
+        "top": 0.4,
+        "right": 0.05,
+        "bottom": 0.45
+      },
+      "anchorX": 0.9,
+      "anchorY": 0.9,
+      "honesty": "ORIGINAL",
+      "sources": []
+    }
   ]
 }

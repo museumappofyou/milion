@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/screens/about_tab.dart';
 import 'package:milion/screens/registry_screen.dart';
 
-import 'frontier_navigation_test.dart' show ready;
+import 'helpers.dart' show ready;
 
 void main() {
   testWidgets(

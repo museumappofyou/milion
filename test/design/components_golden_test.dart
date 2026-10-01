@@ -5,7 +5,7 @@ import 'package:milion/design/plan_icon.dart';
 import 'package:milion/design/theme.dart';
 import 'package:milion/l10n/strings.dart';
 
-import '../frontier_navigation_test.dart' show loadThemeFonts;
+import '../helpers.dart' show loadThemeFonts;
 
 void main() {
   for (final lamp in [false, true]) {
@@ -20,7 +20,8 @@ void main() {
       'strata-band',
       'depth-gauge',
       'leader-line',
-      ...PlanSymbol.values.map((s) => 'plan-${s.name}'),
+      // The thirteen P03 symbols; P04 symbols have their own goldens.
+      ...PlanSymbol.values.take(13).map((s) => 'plan-${s.name}'),
       'scale-bar',
       'north-arrow',
       'tessera-loader',

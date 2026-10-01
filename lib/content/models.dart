@@ -355,6 +355,7 @@ class Milestone {
       status = r.enumeration('status', MilestoneStatus.values),
       manifestPath = r.nullableString('manifestPath'),
       packId = r.string('packId'),
+      flagship = r.optionalBoolean('flagship'),
       sourceIds = r.strings('sources');
   factory Milestone.fromJson(Json j) => decode(j, Milestone.new);
   final String id;
@@ -367,6 +368,71 @@ class Milestone {
   final MilestoneStatus status;
   final String? manifestPath;
   final String packId;
+
+  /// The ★ pieces in PHASES §3; every one must be approved to ship.
+  final bool flagship;
+  final List<String> sourceIds;
+
+  /// Integer value of [numeral]; the register is ordered by it.
+  int get number => romanValue(numeral);
+
+  /// The furthest honesty state this piece reaches; ORIGINAL is always present.
+  Honesty get furthestHonesty =>
+      honesty.reduce((a, b) => a.index >= b.index ? a : b);
+}
+
+int romanValue(String numeral) {
+  const digits = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100};
+  var total = 0;
+  for (var i = 0; i < numeral.length; i++) {
+    final v = digits[numeral[i]] ?? 0;
+    final next = i + 1 < numeral.length ? digits[numeral[i + 1]] ?? 0 : 0;
+    total += v < next ? -v : v;
+  }
+  return total;
+}
+
+class NormalRect {
+  const NormalRect(this.left, this.top, this.right, this.bottom);
+  final double left, top, right, bottom;
+  double get width => right - left;
+  double get height => bottom - top;
+  bool contains(double x, double y) =>
+      x >= left && x <= right && y >= top && y <= bottom;
+  factory NormalRect.fromJson(Json j) => decode(
+    j,
+    (r) => NormalRect(
+      r.number('left'),
+      r.number('top'),
+      r.number('right'),
+      r.number('bottom'),
+    ),
+  );
+}
+
+/// A curated artwork detail: a crop window and anchor in the Milestone's
+/// master photograph, one checkable sentence and its sources.
+class Detail {
+  Detail(JsonReader r)
+    : id = r.string('id'),
+      milestoneId = r.string('milestone'),
+      artworkId = r.string('artwork'),
+      title = Localized.fromJson(r.object('title')),
+      sentence = Localized.fromJson(r.object('sentence')),
+      window = NormalRect.fromJson(r.object('window')),
+      anchorX = r.number('anchorX'),
+      anchorY = r.number('anchorY'),
+      honesty = r.enumeration('honesty', Honesty.values),
+      sourceIds = r.strings('sources');
+  factory Detail.fromJson(Json j) => decode(j, Detail.new);
+  final String id;
+  final String milestoneId;
+  final String artworkId;
+  final Localized title;
+  final Localized sentence;
+  final NormalRect window;
+  final double anchorX, anchorY;
+  final Honesty honesty;
   final List<String> sourceIds;
 }
 

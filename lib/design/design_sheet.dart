@@ -27,6 +27,21 @@ String planLabel(BuildContext context, PlanSymbol icon) {
     PlanSymbol.light => s.iconLight,
     PlanSymbol.layers => s.iconLayers,
     PlanSymbol.story => s.iconStory,
+    PlanSymbol.dial => s.iconDial,
+    PlanSymbol.milestone => s.iconMilestone,
+    PlanSymbol.parallax => s.techDP,
+    PlanSymbol.gilded => s.techGL,
+    PlanSymbol.raking => s.techRL,
+    PlanSymbol.popup => s.techPU,
+    PlanSymbol.wipe => s.techWR,
+    PlanSymbol.flow => s.techMM,
+    PlanSymbol.stroke => s.techSR,
+    PlanSymbol.lookUp => s.techLU,
+    PlanSymbol.assembly => s.techCA,
+    PlanSymbol.section => s.techCS,
+    PlanSymbol.turntable => s.techTT,
+    PlanSymbol.timeModel => s.techTM,
+    PlanSymbol.sky => s.techSK,
   };
 }
 
@@ -70,6 +85,24 @@ Map<String, Widget> designSamples(BuildContext context) {
     'north-arrow': const NorthArrow(),
     'tessera-loader': const TesseraLoader(animated: false),
     'tessera-chip': TesseraChip(s.saved, collected: true),
+    // P04: register slots, the drawn flagship star and the honesty range.
+    for (final state in SlotState.values)
+      'tessera-slot-${state.name}': Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TesseraSlot(state: state, label: 'XLVII', width: 56, height: 48),
+          const SizedBox(width: 8),
+          TesseraSlot(state: state, width: 12, height: 16),
+        ],
+      ),
+    'flagship': const Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [FlagshipMark(), SizedBox(width: 8), FlagshipMark(size: 24)],
+    ),
+    'honesty-range': const HonestyRange({
+      Honesty.ORIGINAL,
+      Honesty.RECONSTRUCTION,
+    }),
     'empty': const ContentState(),
     'error': ContentState(error: true, onAction: () {}),
     'dimension-sheet': Column(

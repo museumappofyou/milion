@@ -1,0 +1,40 @@
+import 'package:flutter/widgets.dart';
+
+import '../content/registry.dart';
+
+/// Content, clock and recognition coverage loaded once at start.
+class AppScope extends InheritedWidget {
+  const AppScope({
+    super.key,
+    required this.registry,
+    required this.error,
+    required this.retry,
+    required this.clock,
+    required this.recognised,
+    required super.child,
+  });
+  final ContentRegistry? registry;
+  final Object? error;
+  final VoidCallback retry;
+  final DateTime Function() clock;
+
+  /// Artwork ids the on-device classifier can suggest (assets/model/classes.json).
+  final Set<String> recognised;
+
+  bool artworkRecognised(String artworkId) => recognised.contains(artworkId);
+  bool placeRecognised(String placeId) =>
+      registry?.artworks.any(
+        (a) => a.placeId == placeId && recognised.contains(a.id),
+      ) ??
+      false;
+
+  static AppScope of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<AppScope>()!;
+
+  @override
+  bool updateShouldNotify(AppScope old) =>
+      registry != old.registry ||
+      error != old.error ||
+      recognised != old.recognised ||
+      clock != old.clock;
+}

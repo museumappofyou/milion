@@ -14,9 +14,13 @@ class ScenesTab extends StatefulWidget {
     required this.scenes,
     this.onExamineAnastasis,
     this.onExamineLastJudgment,
+    this.onScan,
   });
   final List<Scene> scenes;
   final VoidCallback? onExamineAnastasis, onExamineLastJudgment;
+
+  /// Camera-eye action for a catalogue the classifier covers.
+  final VoidCallback? onScan;
   @override
   State<ScenesTab> createState() => _ScenesTabState();
 }
@@ -62,6 +66,7 @@ class _ScenesTabState extends State<ScenesTab> {
           'F05' => widget.onExamineLastJudgment,
           _ => null,
         },
+        onScan: widget.onScan,
       ),
     );
     await _reload();
@@ -85,7 +90,17 @@ class _ScenesTabState extends State<ScenesTab> {
         .toList();
     final rooms = widget.scenes.map((s) => s.room).toSet().toList()..sort();
     return Scaffold(
-      appBar: AppBar(title: Text(s.collection)),
+      appBar: AppBar(
+        title: Text(s.collection),
+        actions: [
+          if (widget.onScan != null)
+            IconButton(
+              tooltip: s.recognise,
+              onPressed: widget.onScan,
+              icon: const PlanIcon(PlanSymbol.cameraEye),
+            ),
+        ],
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

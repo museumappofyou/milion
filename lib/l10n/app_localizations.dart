@@ -263,7 +263,7 @@ abstract class AppLocalizations {
   /// No description provided for @straightLine.
   ///
   /// In en, this message translates to:
-  /// **'Straight-line distance · 1 Roman mile ≈ 1,480 m'**
+  /// **'Straight-line distance · 1 Roman mile is about 1,480 m'**
   String get straightLine;
 
   /// No description provided for @catalogueCount.
@@ -533,7 +533,7 @@ abstract class AppLocalizations {
   /// No description provided for @creditsBody.
   ///
   /// In en, this message translates to:
-  /// **'Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Source URLs are recorded; public-release rights review is pending.'**
+  /// **'Chora references: project-owner captures, Wikimedia Commons and Kültür Envanteri. Every image passes a rights review before public release. Coastline and street lines on the dial and in the opening: © OpenStreetMap contributors, ODbL 1.0.'**
   String get creditsBody;
 
   /// No description provided for @licenses.
@@ -581,7 +581,7 @@ abstract class AppLocalizations {
   /// No description provided for @registryMeasurement.
   ///
   /// In en, this message translates to:
-  /// **'Straight-line distance · Roman miles rounded\n1 mil ≈ 1,480 m · bearings from true north'**
+  /// **'Straight-line distance · Roman miles rounded\n1 mil is about 1,480 m · bearings from true north'**
   String get registryMeasurement;
 
   /// No description provided for @categoryCounts.
@@ -1471,6 +1471,515 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Allow camera access in Android settings, then try again. You can also choose a photo from the gallery.'**
   String get cameraErrorBody;
+
+  /// No description provided for @navToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get navToday;
+
+  /// No description provided for @navCity.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get navCity;
+
+  /// No description provided for @navMilestones.
+  ///
+  /// In en, this message translates to:
+  /// **'Milestones'**
+  String get navMilestones;
+
+  /// No description provided for @navMosaic.
+  ///
+  /// In en, this message translates to:
+  /// **'Mosaic'**
+  String get navMosaic;
+
+  /// No description provided for @iconDial.
+  ///
+  /// In en, this message translates to:
+  /// **'Mile Zero dial'**
+  String get iconDial;
+
+  /// No description provided for @iconMilestone.
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone'**
+  String get iconMilestone;
+
+  /// No description provided for @techDP.
+  ///
+  /// In en, this message translates to:
+  /// **'Depth parallax'**
+  String get techDP;
+
+  /// No description provided for @techGL.
+  ///
+  /// In en, this message translates to:
+  /// **'Gilded light'**
+  String get techGL;
+
+  /// No description provided for @techRL.
+  ///
+  /// In en, this message translates to:
+  /// **'Raking light or candle'**
+  String get techRL;
+
+  /// No description provided for @techPU.
+  ///
+  /// In en, this message translates to:
+  /// **'Pop-up layers'**
+  String get techPU;
+
+  /// No description provided for @techWR.
+  ///
+  /// In en, this message translates to:
+  /// **'Wipe to reconstruction'**
+  String get techWR;
+
+  /// No description provided for @techSB.
+  ///
+  /// In en, this message translates to:
+  /// **'Story beats'**
+  String get techSB;
+
+  /// No description provided for @techMM.
+  ///
+  /// In en, this message translates to:
+  /// **'Micro-motion'**
+  String get techMM;
+
+  /// No description provided for @techSR.
+  ///
+  /// In en, this message translates to:
+  /// **'Stroke reveal'**
+  String get techSR;
+
+  /// No description provided for @techLU.
+  ///
+  /// In en, this message translates to:
+  /// **'Look up'**
+  String get techLU;
+
+  /// No description provided for @techCA.
+  ///
+  /// In en, this message translates to:
+  /// **'Choisy assembly'**
+  String get techCA;
+
+  /// No description provided for @techCS.
+  ///
+  /// In en, this message translates to:
+  /// **'Cutaway section'**
+  String get techCS;
+
+  /// No description provided for @techWK.
+  ///
+  /// In en, this message translates to:
+  /// **'Walkable space'**
+  String get techWK;
+
+  /// No description provided for @techTT.
+  ///
+  /// In en, this message translates to:
+  /// **'Turntable'**
+  String get techTT;
+
+  /// No description provided for @techTM.
+  ///
+  /// In en, this message translates to:
+  /// **'Time model'**
+  String get techTM;
+
+  /// No description provided for @techSK.
+  ///
+  /// In en, this message translates to:
+  /// **'Sky simulation'**
+  String get techSK;
+
+  /// No description provided for @techVO.
+  ///
+  /// In en, this message translates to:
+  /// **'Voices'**
+  String get techVO;
+
+  /// No description provided for @techniqueList.
+  ///
+  /// In en, this message translates to:
+  /// **'Techniques: {list}'**
+  String techniqueList(String list);
+
+  /// No description provided for @firstRunLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Every road started here.'**
+  String get firstRunLine;
+
+  /// No description provided for @firstRunSentence.
+  ///
+  /// In en, this message translates to:
+  /// **'Mile zero: the Milion on Divanyolu, the stone from which the empire measured its roads, with rings in Roman miles reaching Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.'**
+  String get firstRunSentence;
+
+  /// No description provided for @firstRunStone.
+  ///
+  /// In en, this message translates to:
+  /// **'Divanyolu, beside the Basilica Cistern'**
+  String get firstRunStone;
+
+  /// No description provided for @firstRunStill.
+  ///
+  /// In en, this message translates to:
+  /// **'Still {number} of 3'**
+  String firstRunStill(String number);
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @openToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Today'**
+  String get openToday;
+
+  /// No description provided for @replayFirstRun.
+  ///
+  /// In en, this message translates to:
+  /// **'Replay mile zero'**
+  String get replayFirstRun;
+
+  /// No description provided for @replayFirstRunBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The 12-second opening: the Milion, the Roman-mile rings and five places.'**
+  String get replayFirstRunBody;
+
+  /// No description provided for @detailOfDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Detail of the day'**
+  String get detailOfDay;
+
+  /// No description provided for @openMilestoneDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {numeral} at this detail'**
+  String openMilestoneDetail(String numeral);
+
+  /// No description provided for @detailSource.
+  ///
+  /// In en, this message translates to:
+  /// **'{artwork} · {place}'**
+  String detailSource(String artwork, String place);
+
+  /// No description provided for @dialLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Mile Zero dial'**
+  String get dialLabel;
+
+  /// No description provided for @dialHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn the ring: one detent per place. Tap a tick to open it.'**
+  String get dialHint;
+
+  /// No description provided for @dialValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{place}, {distance}, {degrees}° from true north'**
+  String dialValue(String place, String distance, String degrees);
+
+  /// No description provided for @showList.
+  ///
+  /// In en, this message translates to:
+  /// **'List'**
+  String get showList;
+
+  /// No description provided for @showDial.
+  ///
+  /// In en, this message translates to:
+  /// **'Dial'**
+  String get showDial;
+
+  /// No description provided for @placesByBearing.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} places by bearing from true north'**
+  String placesByBearing(String count);
+
+  /// No description provided for @plottedPlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} places · positions checked on Wikidata · {reviewed} reviewed'**
+  String plottedPlaces(String count, String reviewed);
+
+  /// No description provided for @notReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not reviewed yet'**
+  String get notReviewed;
+
+  /// No description provided for @reviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed'**
+  String get reviewed;
+
+  /// No description provided for @openPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {place}'**
+  String openPlace(String place);
+
+  /// No description provided for @nextMilestones.
+  ///
+  /// In en, this message translates to:
+  /// **'Next in the register'**
+  String get nextMilestones;
+
+  /// No description provided for @chapterHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Chapter {numeral} · {name}'**
+  String chapterHeading(String numeral, String name);
+
+  /// No description provided for @chapterByzantineName.
+  ///
+  /// In en, this message translates to:
+  /// **'Byzantine'**
+  String get chapterByzantineName;
+
+  /// No description provided for @chapterMosquesName.
+  ///
+  /// In en, this message translates to:
+  /// **'Mosques'**
+  String get chapterMosquesName;
+
+  /// No description provided for @chapterMuseumsName.
+  ///
+  /// In en, this message translates to:
+  /// **'Museums'**
+  String get chapterMuseumsName;
+
+  /// No description provided for @chapterAbroadName.
+  ///
+  /// In en, this message translates to:
+  /// **'Istanbul abroad'**
+  String get chapterAbroadName;
+
+  /// No description provided for @chapterCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'Current chapter'**
+  String get chapterCurrent;
+
+  /// No description provided for @chapterProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{playable} of {total} playable · {approved} approved'**
+  String chapterProgress(String playable, String total, String approved);
+
+  /// No description provided for @statusPlanned.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned'**
+  String get statusPlanned;
+
+  /// No description provided for @statusPrototype.
+  ///
+  /// In en, this message translates to:
+  /// **'Prototype'**
+  String get statusPrototype;
+
+  /// No description provided for @statusApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved'**
+  String get statusApproved;
+
+  /// No description provided for @statusOpened.
+  ///
+  /// In en, this message translates to:
+  /// **'Opened'**
+  String get statusOpened;
+
+  /// No description provided for @flagship.
+  ///
+  /// In en, this message translates to:
+  /// **'Flagship'**
+  String get flagship;
+
+  /// No description provided for @craftKit.
+  ///
+  /// In en, this message translates to:
+  /// **'Craft kit'**
+  String get craftKit;
+
+  /// No description provided for @acrossCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Across the city'**
+  String get acrossCity;
+
+  /// No description provided for @registerCounts.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} Milestones · {playable} playable · {approved} approved · {planned} planned'**
+  String registerCounts(
+    String total,
+    String playable,
+    String approved,
+    String planned,
+  );
+
+  /// No description provided for @milestonePlannedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned: its reveal, story and exploration are not built yet. The empty slot stays outlined until it is.'**
+  String get milestonePlannedBody;
+
+  /// No description provided for @techniques.
+  ///
+  /// In en, this message translates to:
+  /// **'Techniques'**
+  String get techniques;
+
+  /// No description provided for @labelsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Labels'**
+  String get labelsTitle;
+
+  /// No description provided for @mosaicProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{opened} of {total} Milestones opened'**
+  String mosaicProgress(String opened, String total);
+
+  /// No description provided for @mosaicNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next: {numeral} · {title}'**
+  String mosaicNext(String numeral, String title);
+
+  /// No description provided for @mosaicIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'One tessera per Milestone. Each one you open is set in gold.'**
+  String get mosaicIntro;
+
+  /// No description provided for @notesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your notes'**
+  String get notesTitle;
+
+  /// No description provided for @notesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} notes on Chora artworks'**
+  String notesCount(String count);
+
+  /// No description provided for @cityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Places by distance from mile zero'**
+  String get cityTitle;
+
+  /// No description provided for @placeDraftBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Name and position checked against Wikidata {qid} on {date}. Story, hours and entrance are not reviewed yet.'**
+  String placeDraftBody(String qid, String date);
+
+  /// No description provided for @historicalNames.
+  ///
+  /// In en, this message translates to:
+  /// **'Historical names'**
+  String get historicalNames;
+
+  /// No description provided for @artworksHere.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} artworks'**
+  String artworksHere(String count);
+
+  /// No description provided for @milestonesHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Milestones here'**
+  String get milestonesHere;
+
+  /// No description provided for @recognise.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognise an artwork with the camera'**
+  String get recognise;
+
+  /// No description provided for @sourcesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources'**
+  String get sourcesTitle;
+
+  /// No description provided for @todayError.
+  ///
+  /// In en, this message translates to:
+  /// **'Today could not open'**
+  String get todayError;
+
+  /// No description provided for @todayErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The bundled registry could not be read. Try again.'**
+  String get todayErrorBody;
+
+  /// No description provided for @photoOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Unaltered photograph'**
+  String get photoOriginal;
+
+  /// No description provided for @placeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} places'**
+  String placeCount(String count);
+
+  /// No description provided for @eastLetter.
+  ///
+  /// In en, this message translates to:
+  /// **'E'**
+  String get eastLetter;
+
+  /// No description provided for @southLetter.
+  ///
+  /// In en, this message translates to:
+  /// **'S'**
+  String get southLetter;
+
+  /// No description provided for @westLetter.
+  ///
+  /// In en, this message translates to:
+  /// **'W'**
+  String get westLetter;
+
+  /// No description provided for @honestyRange.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} to {to}'**
+  String honestyRange(String from, String to);
 }
 
 class _AppLocalizationsDelegate

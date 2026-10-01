@@ -9,7 +9,7 @@ import 'package:flutter/rendering.dart';
 import 'package:milion/design/theme.dart';
 import 'package:milion/l10n/strings.dart';
 
-import '../../test/frontier_navigation_test.dart' show loadThemeFonts;
+import '../../test/helpers.dart' show loadThemeFonts;
 import '../../test/scene_explorer_test.dart' show openGesture, visibleTap;
 
 import 'package:flutter_test/flutter_test.dart';

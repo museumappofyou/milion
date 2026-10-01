@@ -5,7 +5,7 @@ import 'package:milion/models/explorable_scene.dart';
 import 'package:milion/design/components.dart';
 import 'package:milion/l10n/strings.dart';
 
-import 'frontier_navigation_test.dart' show loadThemeFonts;
+import 'helpers.dart' show loadThemeFonts;
 
 import 'package:milion/services/explorer_assets.dart';
 import 'package:milion/widgets/interactive_relief_surface.dart';

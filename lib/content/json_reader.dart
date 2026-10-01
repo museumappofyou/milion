@@ -40,6 +40,12 @@ class JsonReader {
     return v;
   }
 
+  /// Additive schema-1 fields: absent means [fallback], present must be bool.
+  bool optionalBoolean(String key, {bool fallback = false}) {
+    _read.add(key);
+    return json.containsKey(key) ? boolean(key) : fallback;
+  }
+
   int integer(String key) {
     final v = value(key);
     if (v is! int) throw FormatException('$key must be an integer');
