@@ -62,20 +62,54 @@
             "tr": "Resimli şapel"
           },
           "body": {
-            "en": "A test stratum.",
-            "tr": "Bir test katmanı."
+            "en": "A test stratum opening line.\n\nA second paragraph for the dig.",
+            "tr": "Bir test katmanı giriş satırı.\n\nKazı için ikinci paragraf."
           },
           "media": [
             "fixture-media"
           ],
           "sources": [
             "fixture-source"
+          ],
+          "anchorYear": 1321,
+          "artworks": [
+            "F02"
           ]
         }
       ],
       "sources": [
         "fixture-source"
-      ]
+      ],
+      "visit": {
+        "checkedAt": "2026-10-07",
+        "hours": {
+          "en": "Daily 09:00-18:00.",
+          "tr": "Her gün 09.00-18.00."
+        },
+        "hoursCheckedAt": "2026-10-07",
+        "entry": {
+          "en": "A ticket at the door.",
+          "tr": "Kapıda bilet."
+        },
+        "etiquette": {
+          "en": "Shoes off.",
+          "tr": "Ayakkabı çıkarılır."
+        },
+        "accessibility": null,
+        "transit": [
+          {
+            "kind": "tram",
+            "stop": {
+              "en": "T4 Edirnekapı",
+              "tr": "T4 Edirnekapı"
+            },
+            "minutes": 10
+          }
+        ],
+        "sources": [
+          "fixture-source"
+        ]
+      }
     }
   ],
   "artworks": [

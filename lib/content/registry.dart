@@ -46,8 +46,23 @@ class ContentRegistry {
   late final Map<String, Milestone> _milestones = {
     for (final m in milestones) m.id: m,
   };
+  late final Map<String, Source> _sources = {for (final s in sources) s.id: s};
+  late final Map<String, Media> _media = {for (final m in media) m.id: m};
   Place? place(String id) => _places[id];
   Milestone? milestone(String id) => _milestones[id];
+  Source? source(String id) => _sources[id];
+  Media? mediaItem(String id) => _media[id];
+
+  /// The typed artworks a layer holds, in record order.
+  List<Artwork> artworksIn(Stratum stratum) => [
+    for (final id in stratum.artworkIds) artwork(id),
+  ];
+
+  /// The register pieces entered from a layer, in numeral order.
+  List<Milestone> milestonesIn(Stratum stratum) => [
+    for (final m in register)
+      if (m.artworkIds.any(stratum.artworkIds.contains)) m,
+  ];
 
   /// The numbered register in §3 order, 0 to XLVII.
   late final List<Milestone> register = [...milestones]
@@ -209,6 +224,9 @@ ValidationReport validateContent(Json data) {
 
   final strataIds = <String>{};
   final qids = <String>{};
+  final artworkOwner = {
+    for (final a in parsed['artworks']!.cast<Artwork>()) a.id: a.placeId,
+  };
   for (final p in parsed['places']!.cast<Place>()) {
     if (!RegExp(r'^Q[1-9]\d*$').hasMatch(p.qid)) {
       error('${p.id} invalid Wikidata QID');
@@ -247,6 +265,8 @@ ValidationReport validateContent(Json data) {
     report.districts[district] = report.districts[district]! + 1;
     report.waves[p.wave.name] = report.waves[p.wave.name]! + 1;
     final eras = <Era>{...p.eras};
+    final gaugeYears = <int>{};
+    int? previousFrom;
     for (final s in p.strata) {
       if (!strataIds.add(s.id) || ids.contains(s.id)) {
         error('Duplicate stratum id ${s.id}');
@@ -257,14 +277,56 @@ ValidationReport validateContent(Json data) {
       if (s.toYear != null && s.fromYear > s.toYear!) {
         error('${s.id} reversed year range');
       }
+      if (previousFrom != null && s.fromYear > previousFrom) {
+        error('${p.id} strata must run newest to oldest');
+      }
+      previousFrom = s.fromYear;
+      if (!gaugeYears.add(s.gaugeYear)) {
+        error('${p.id} strata need distinct gauge years');
+      }
+      if (s.gaugeYear < s.fromYear ||
+          (s.toYear != null && s.gaugeYear > s.toYear!)) {
+        error('${s.id} gauge year outside its range');
+      }
+      for (final language in [s.body.en, if (s.body.tr != null) s.body.tr!]) {
+        final paragraphs = language
+            .split('\n\n')
+            .where((x) => x.trim().isNotEmpty)
+            .length;
+        if (paragraphs < 2 || paragraphs > 4) {
+          error('${s.id} needs 2–4 paragraphs, found $paragraphs');
+        }
+      }
       refs(s.id, s.mediaIds, 'media');
       refs(s.id, s.sourceIds, 'sources', required: true);
+      for (final artworkId in s.artworkIds) {
+        if (!byKind['artworks']!.contains(artworkId)) {
+          error('${s.id} references unknown artwork id: $artworkId');
+        } else if (artworkOwner[artworkId] != p.id) {
+          error('${s.id} artwork $artworkId belongs to another place');
+        }
+      }
       eras.add(s.era);
     }
     // Count each place once per era, including name evidence before full strata are authored.
     eras.addAll(p.historicalNames.map((n) => n.era));
     for (final era in eras) {
       report.eras[era.name] = report.eras[era.name]! + 1;
+    }
+    final visit = p.visit;
+    if (visit != null) {
+      refs('${p.id}.visit', visit.sourceIds, 'sources', required: true);
+      if (visit.hours != null && visit.hoursCheckedAt == null) {
+        error('${p.id}.visit opening hours require hoursCheckedAt');
+      }
+      for (final transit in visit.transit) {
+        if (transit.minutes < 1 || transit.minutes > 120) {
+          error('${p.id}.visit transit minutes out of range');
+        }
+        if (transit.stop.en.trim().isEmpty) {
+          error('${p.id}.visit transit stop needs a name');
+        }
+      }
     }
   }
   for (final a in parsed['artworks']!.cast<Artwork>()) {

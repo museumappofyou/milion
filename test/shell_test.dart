@@ -16,7 +16,7 @@ import 'package:milion/screens/about_tab.dart';
 import 'package:milion/screens/scan_screen.dart';
 import 'package:milion/screens/scan_tab.dart';
 import 'package:milion/screens/scene_explorer_screen.dart';
-import 'package:milion/screens/scenes_tab.dart';
+import 'package:milion/screens/artworks_tab.dart';
 import 'package:milion/shell/app_shell.dart';
 import 'package:milion/today/detail_crop.dart';
 import 'package:milion/today/mile_zero_dial.dart';
@@ -537,7 +537,7 @@ void main() {
         expect(find.text('Not reviewed yet'), findsOneWidget);
         await tester.tap(find.byKey(const ValueKey('place-artworks')));
         await tester.pumpAndSettle();
-        expect(find.byType(ScenesTab), findsOneWidget);
+        expect(find.byType(ArtworksTab), findsOneWidget);
         expect(find.text('103 artworks · Chora / Kariye'), findsOneWidget);
         await tester.pageBack();
         await tester.pumpAndSettle();

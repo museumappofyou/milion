@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../city/place_screen.dart';
-import '../content/bundled_content.dart';
 import '../content/models.dart';
 import '../milestones/milestone_sheet.dart';
 import '../models/explorable_scene.dart';
-import '../l10n/strings.dart';
+import '../screens/artworks_tab.dart';
 import '../screens/about_tab.dart';
 import '../screens/scan_screen.dart';
 import '../screens/scene_explorer_screen.dart';
-import '../screens/scenes_tab.dart';
 import '../services/progress_service.dart';
 import 'app_scope.dart';
 
@@ -60,11 +58,10 @@ Future<void> openArtworks(BuildContext context, String placeId) {
       openMilestone(context, milestones[artworkId]!);
   return _push<void>(
     context,
-    ScenesTab(
-      scenes: [
+    ArtworksTab(
+      artworks: [
         for (final a in registry.artworks)
-          if (a.placeId == placeId)
-            sceneForArtwork(a, language: context.language),
+          if (a.placeId == placeId) a,
       ],
       onExamineAnastasis: milestones.containsKey('F02')
           ? () => explore('F02')

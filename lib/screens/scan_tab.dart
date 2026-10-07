@@ -12,7 +12,7 @@ import '../l10n/strings.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../services/classifier.dart';
-import '../widgets/scene_detail_sheet.dart';
+import '../widgets/artwork_sheet.dart';
 
 class ScanTab extends StatefulWidget {
   const ScanTab({
@@ -42,7 +42,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
   bool _torchOn = false;
   bool _frameBusy = false;
   DateTime _lastFrameAt = DateTime.fromMillisecondsSinceEpoch(0);
-  SceneMatch? _liveMatch;
+  ArtworkMatch? _liveMatch;
   List<double>? _smoothed;
   String? _candidateId;
   int _candidateFrames = 0;
@@ -144,7 +144,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       }
     }
     final bestProbability = smoothed[bestIndex];
-    final bestId = widget.classifier.sceneAtPrediction(bestIndex).id;
+    final bestId = widget.classifier.artworkAtPrediction(bestIndex).id;
 
     if (bestProbability < _hideThreshold) {
       _candidateId = null;
@@ -162,13 +162,13 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       _candidateFrames = 1;
     }
 
-    final alreadyShown = _liveMatch?.scene.id == bestId;
+    final alreadyShown = _liveMatch?.artwork.id == bestId;
     final confirmed =
         _candidateFrames >= _requiredFrames &&
         bestProbability >= _showThreshold;
     if (confirmed || alreadyShown) {
-      final match = SceneMatch(
-        widget.classifier.sceneAtPrediction(bestIndex),
+      final match = ArtworkMatch(
+        widget.classifier.artworkAtPrediction(bestIndex),
         bestProbability,
       );
       setState(() => _liveMatch = match);
@@ -307,24 +307,24 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
     if (!mounted) {
       return;
     }
-    final selected = await showModalBottomSheet<SceneMatch>(
+    final selected = await showModalBottomSheet<ArtworkMatch>(
       context: context,
       isScrollControlled: true,
       builder: (context) => _ResultsSheet(matches: matches, image: bytes),
     );
     if (selected != null && mounted) {
-      await _openScene(selected);
+      await _openArtwork(selected);
     }
   }
 
-  Future<void> _openScene(SceneMatch match) async {
+  Future<void> _openArtwork(ArtworkMatch match) async {
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      builder: (context) => SceneDetailSheet(
-        scene: match.scene,
+      builder: (context) => ArtworkSheet(
+        artwork: match.artwork,
         confidence: match.probability,
-        onExamine: switch (match.scene.id) {
+        onExamine: switch (match.artwork.id) {
           'F02' => widget.onExploreAnastasis,
           'F05' => widget.onExploreLastJudgment,
           _ => null,
@@ -438,7 +438,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
                               InkWell(
                                 onTap: _liveMatch == null
                                     ? null
-                                    : () => _openScene(_liveMatch!),
+                                    : () => _openArtwork(_liveMatch!),
                                 child: Padding(
                                   padding: const EdgeInsets.only(bottom: 16),
                                   child: Text(
@@ -446,7 +446,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
                                         ? s.liveOff
                                         : _liveMatch == null
                                         ? s.noSceneDetected
-                                        : '${_liveMatch!.scene.id} · ${_liveMatch!.scene.prettyTitle} · ${s.modelMatch((_liveMatch!.probability * 100).round().toString())}',
+                                        : '${_liveMatch!.artwork.id} · ${_liveMatch!.artwork.title.inLanguage(context.language)} · ${s.modelMatch((_liveMatch!.probability * 100).round().toString())}',
                                   ),
                                 ),
                               ),
@@ -533,7 +533,7 @@ class _CameraPreview extends StatelessWidget {
 
 class _ResultsSheet extends StatelessWidget {
   const _ResultsSheet({required this.matches, required this.image});
-  final List<SceneMatch> matches;
+  final List<ArtworkMatch> matches;
   final Uint8List image;
   @override
   Widget build(BuildContext context) {
@@ -561,7 +561,7 @@ class _ResultsSheet extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${match.scene.id} · ${match.scene.prettyTitle}',
+                      '${match.artwork.id} · ${match.artwork.title.inLanguage(context.language)}',
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     const SizedBox(height: 8),

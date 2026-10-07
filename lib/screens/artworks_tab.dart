@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 
-import '../models/scene.dart';
-import '../services/notes_service.dart';
+import '../content/models.dart';
 import '../design/components.dart';
 import '../design/plan_icon.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
-import '../widgets/scene_detail_sheet.dart';
+import '../services/notes_service.dart';
+import '../widgets/artwork_sheet.dart';
 
-class ScenesTab extends StatefulWidget {
-  const ScenesTab({
+/// The catalogue, rendered from typed registry records. The temporary
+/// scene adapter is gone; the classifier maps predictions to artwork ids.
+class ArtworksTab extends StatefulWidget {
+  const ArtworksTab({
     super.key,
-    required this.scenes,
+    required this.artworks,
     this.onExamineAnastasis,
     this.onExamineLastJudgment,
     this.onScan,
   });
-  final List<Scene> scenes;
+  final List<Artwork> artworks;
   final VoidCallback? onExamineAnastasis, onExamineLastJudgment;
 
   /// Camera-eye action for a catalogue the classifier covers.
   final VoidCallback? onScan;
   @override
-  State<ScenesTab> createState() => _ScenesTabState();
+  State<ArtworksTab> createState() => _ArtworksTabState();
 }
 
-class _ScenesTabState extends State<ScenesTab> {
+class _ArtworksTabState extends State<ArtworksTab> {
   final _notes = NotesService(), _search = TextEditingController();
   Set<String> _notedIds = {};
   String _query = '';
@@ -48,20 +50,20 @@ class _ScenesTabState extends State<ScenesTab> {
     if (mounted) setState(() => _notedIds = ids);
   }
 
-  bool _interactive(Scene s) => s.id == 'F02' || s.id == 'F05';
+  bool _interactive(Artwork a) => a.id == 'F02' || a.id == 'F05';
   void _clear() => setState(() {
     _query = '';
     _search.clear();
     _room = null;
     _interactiveOnly = false;
   });
-  Future<void> _open(Scene scene) async {
+  Future<void> _open(Artwork artwork) async {
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      builder: (_) => SceneDetailSheet(
-        scene: scene,
-        onExamine: switch (scene.id) {
+      builder: (_) => ArtworkSheet(
+        artwork: artwork,
+        onExamine: switch (artwork.id) {
           'F02' => widget.onExamineAnastasis,
           'F05' => widget.onExamineLastJudgment,
           _ => null,
@@ -76,19 +78,24 @@ class _ScenesTabState extends State<ScenesTab> {
   Widget build(BuildContext context) {
     final s = context.l10n,
         c = MeasureColors.of(context),
+        lang = context.language,
         q = _query.toLowerCase().trim();
-    final scenes = widget.scenes
+    final artworks = widget.artworks
         .where(
           (a) =>
-              (_room == null || _room == a.room) &&
+              (_room == null || _room == a.room.inLanguage(lang)) &&
               (!_interactiveOnly || _interactive(a)) &&
               (q.isEmpty ||
-                  '${a.id} ${a.prettyTitle} ${a.room} ${a.surface} ${a.cues.join(' ')}'
+                  '${a.id} ${a.title.inLanguage(lang)} ${a.room.inLanguage(lang)} '
+                          '${a.surface.inLanguage(lang)} '
+                          '${a.cues.map((x) => x.inLanguage(lang)).join(' ')}'
                       .toLowerCase()
                       .contains(q)),
         )
         .toList();
-    final rooms = widget.scenes.map((s) => s.room).toSet().toList()..sort();
+    final rooms =
+        widget.artworks.map((a) => a.room.inLanguage(lang)).toSet().toList()
+          ..sort();
     return Scaffold(
       appBar: AppBar(
         title: Text(s.collection),
@@ -107,11 +114,11 @@ class _ScenesTabState extends State<ScenesTab> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Text(
-              s.catalogueCount('${widget.scenes.length}'),
+              s.catalogueCount('${widget.artworks.length}'),
               style: TextStyle(color: c.secondary),
             ),
           ),
-          if (context.language == 'tr')
+          if (lang == 'tr')
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
               child: Text(
@@ -167,7 +174,7 @@ class _ScenesTabState extends State<ScenesTab> {
           ),
           const Divider(),
           Expanded(
-            child: scenes.isEmpty
+            child: artworks.isEmpty
                 ? SingleChildScrollView(
                     child: ContentState(
                       title: s.noScenes,
@@ -178,10 +185,10 @@ class _ScenesTabState extends State<ScenesTab> {
                   )
                 : ListView.separated(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
-                    itemCount: scenes.length,
+                    itemCount: artworks.length,
                     separatorBuilder: (_, _) => const Divider(),
                     itemBuilder: (context, i) {
-                      final a = scenes[i];
+                      final a = artworks[i];
                       return ListTile(
                         contentPadding: const EdgeInsets.symmetric(
                           vertical: 12,
@@ -195,8 +202,10 @@ class _ScenesTabState extends State<ScenesTab> {
                             ),
                           ),
                         ),
-                        title: Text(a.prettyTitle),
-                        subtitle: Text('${a.room} · ${a.surface}'),
+                        title: Text(a.title.inLanguage(lang)),
+                        subtitle: Text(
+                          '${a.room.inLanguage(lang)} · ${a.surface.inLanguage(lang)}',
+                        ),
                         trailing: _notedIds.contains(a.id)
                             ? Tooltip(
                                 message: s.hasNote,

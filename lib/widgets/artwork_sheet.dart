@@ -1,37 +1,38 @@
 import 'package:flutter/material.dart';
 
-import '../models/scene.dart';
-import '../services/notes_service.dart';
+import '../content/models.dart';
 import '../design/components.dart';
 import '../design/plan_icon.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
+import '../services/notes_service.dart';
 
-class SceneDetailSheet extends StatefulWidget {
-  const SceneDetailSheet({
+/// The typed artwork sheet: catalogue data comes from the registry only.
+class ArtworkSheet extends StatefulWidget {
+  const ArtworkSheet({
     super.key,
-    required this.scene,
+    required this.artwork,
     this.confidence,
     this.onExamine,
     this.onScan,
   });
-  final Scene scene;
+  final Artwork artwork;
   final double? confidence;
   final VoidCallback? onExamine;
 
   /// Camera-eye action; only for artworks the on-device model can suggest.
   final VoidCallback? onScan;
   @override
-  State<SceneDetailSheet> createState() => _SceneDetailSheetState();
+  State<ArtworkSheet> createState() => _ArtworkSheetState();
 }
 
-class _SceneDetailSheetState extends State<SceneDetailSheet> {
+class _ArtworkSheetState extends State<ArtworkSheet> {
   final _notes = NotesService(), _noteController = TextEditingController();
   bool _loaded = false, _saved = false;
   @override
   void initState() {
     super.initState();
-    _notes.noteFor(widget.scene.id).then((note) {
+    _notes.noteFor(widget.artwork.id).then((note) {
       if (mounted) {
         setState(() {
           _noteController.text = note;
@@ -48,26 +49,30 @@ class _SceneDetailSheetState extends State<SceneDetailSheet> {
   }
 
   Future<void> _save() async {
-    await _notes.saveNote(widget.scene.id, _noteController.text);
+    await _notes.saveNote(widget.artwork.id, _noteController.text);
     if (!mounted) return;
     setState(() => _saved = true);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(context.l10n.noteSaved(widget.scene.id))),
+      SnackBar(content: Text(context.l10n.noteSaved(widget.artwork.id))),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final a = widget.scene, s = context.l10n, theme = Theme.of(context);
+    final a = widget.artwork, s = context.l10n, lang = context.language;
+    final theme = Theme.of(context);
+    final summary = a.summary.inLanguage(lang);
+    final fallsBackToEnglish =
+        lang == 'tr' && (a.summary.tr?.trim().isEmpty ?? true);
     return DimensionSheet(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(a.id, style: TypeRole.measurement),
           const SizedBox(height: 8),
-          Text(a.prettyTitle, style: theme.textTheme.headlineMedium),
+          Text(a.title.inLanguage(lang), style: theme.textTheme.headlineMedium),
           const SizedBox(height: 12),
-          Text('${a.room} · ${a.surface}'),
+          Text('${a.room.inLanguage(lang)} · ${a.surface.inLanguage(lang)}'),
           if (widget.confidence != null) ...[
             const SizedBox(height: 8),
             Text(
@@ -75,19 +80,19 @@ class _SceneDetailSheetState extends State<SceneDetailSheet> {
               style: theme.textTheme.bodySmall,
             ),
           ],
-          if (context.language == 'tr') ...[
+          if (fallsBackToEnglish) ...[
             const SizedBox(height: 8),
             Text(s.contentEnglish, style: theme.textTheme.bodySmall),
           ],
-          if (a.summary.isNotEmpty) ...[
+          if (summary.isNotEmpty) ...[
             const SizedBox(height: 16),
-            Text(a.summary),
+            Text(summary),
           ],
           if (a.cues.isNotEmpty) ...[
             const SizedBox(height: 16),
             Text(s.lookFor, style: theme.textTheme.titleMedium),
             const SizedBox(height: 8),
-            Text(a.cues.join(' · ')),
+            Text(a.cues.map((c) => c.inLanguage(lang)).join(' · ')),
           ],
           if (widget.onExamine != null) ...[
             const SizedBox(height: 16),
@@ -112,11 +117,11 @@ class _SceneDetailSheetState extends State<SceneDetailSheet> {
               label: Text(s.recognise),
             ),
           ],
-          if (a.position.isNotEmpty) ...[
+          if (a.position.inLanguage(lang).isNotEmpty) ...[
             const SizedBox(height: 16),
             Text(s.where, style: theme.textTheme.titleMedium),
             const SizedBox(height: 8),
-            Text(a.position),
+            Text(a.position.inLanguage(lang)),
           ],
           const SizedBox(height: 24),
           const Divider(),

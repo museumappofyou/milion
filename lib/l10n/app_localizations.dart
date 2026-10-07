@@ -1980,6 +1980,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{from} to {to}'**
   String honestyRange(String from, String to);
+
+  /// No description provided for @digVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit'**
+  String get digVisit;
+
+  /// No description provided for @digHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Hours'**
+  String get digHours;
+
+  /// No description provided for @digEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Entry'**
+  String get digEntry;
+
+  /// No description provided for @digEtiquette.
+  ///
+  /// In en, this message translates to:
+  /// **'Etiquette'**
+  String get digEtiquette;
+
+  /// No description provided for @digAccessibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility'**
+  String get digAccessibility;
+
+  /// No description provided for @digGettingThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting there'**
+  String get digGettingThere;
+
+  /// No description provided for @digCheckedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}'**
+  String digCheckedOn(String date);
+
+  /// No description provided for @digNotChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet field-checked'**
+  String get digNotChecked;
+
+  /// No description provided for @digVisitUnverified.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit facts are not yet field-checked.'**
+  String get digVisitUnverified;
+
+  /// No description provided for @digRemotelyChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Checked against published sources on {date}.'**
+  String digRemotelyChecked(String date);
+
+  /// No description provided for @digWalkMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'about {minutes} min on foot'**
+  String digWalkMinutes(String minutes);
+
+  /// No description provided for @digReportChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a change'**
+  String get digReportChange;
+
+  /// No description provided for @digReportSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Milion: a correction for {place}'**
+  String digReportSubject(String place);
+
+  /// No description provided for @digReportBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Place: {place} ({qid})\n\nWhat should change?\n'**
+  String digReportBody(String place, String qid);
+
+  /// No description provided for @digSources.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources ({count})'**
+  String digSources(String count);
+
+  /// No description provided for @digLayerArtworks.
+  ///
+  /// In en, this message translates to:
+  /// **'Artworks in this layer'**
+  String get digLayerArtworks;
+
+  /// No description provided for @digLayerMilestones.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the Milestones here'**
+  String get digLayerMilestones;
+
+  /// No description provided for @digGo.
+  ///
+  /// In en, this message translates to:
+  /// **'Go'**
+  String get digGo;
+
+  /// No description provided for @digGoTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open walking directions'**
+  String get digGoTooltip;
+
+  /// No description provided for @digDiagram.
+  ///
+  /// In en, this message translates to:
+  /// **'Section diagram — not a photograph'**
+  String get digDiagram;
+
+  /// No description provided for @digDepthGauge.
+  ///
+  /// In en, this message translates to:
+  /// **'Depth gauge'**
+  String get digDepthGauge;
+
+  /// No description provided for @digDepthHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe the rail to move through the years.'**
+  String get digDepthHint;
+
+  /// No description provided for @digGaugeYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year {year}'**
+  String digGaugeYear(String year);
+
+  /// No description provided for @eraAncient.
+  ///
+  /// In en, this message translates to:
+  /// **'Ancient'**
+  String get eraAncient;
+
+  /// No description provided for @eraRoman.
+  ///
+  /// In en, this message translates to:
+  /// **'Roman'**
+  String get eraRoman;
+
+  /// No description provided for @eraByzantine.
+  ///
+  /// In en, this message translates to:
+  /// **'Byzantine'**
+  String get eraByzantine;
+
+  /// No description provided for @eraMedieval.
+  ///
+  /// In en, this message translates to:
+  /// **'Medieval'**
+  String get eraMedieval;
+
+  /// No description provided for @eraOttoman.
+  ///
+  /// In en, this message translates to:
+  /// **'Ottoman'**
+  String get eraOttoman;
+
+  /// No description provided for @eraModern.
+  ///
+  /// In en, this message translates to:
+  /// **'Modern'**
+  String get eraModern;
+
+  /// No description provided for @placeStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get placeStatusOpen;
+
+  /// No description provided for @placeStatusClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get placeStatusClosed;
+
+  /// No description provided for @placeStatusRestoration.
+  ///
+  /// In en, this message translates to:
+  /// **'Under restoration'**
+  String get placeStatusRestoration;
+
+  /// No description provided for @placeStatusRuin.
+  ///
+  /// In en, this message translates to:
+  /// **'Ruin'**
+  String get placeStatusRuin;
+
+  /// No description provided for @placeStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Status unknown'**
+  String get placeStatusUnknown;
+
+  /// No description provided for @placeCheckedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Status checked {date}'**
+  String placeCheckedOn(String date);
+
+  /// No description provided for @placeFunction.
+  ///
+  /// In en, this message translates to:
+  /// **'Current use'**
+  String get placeFunction;
 }
 
 class _AppLocalizationsDelegate

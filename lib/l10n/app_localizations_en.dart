@@ -1045,4 +1045,128 @@ class AppLocalizationsEn extends AppLocalizations {
   String honestyRange(String from, String to) {
     return '$from to $to';
   }
+
+  @override
+  String get digVisit => 'Visit';
+
+  @override
+  String get digHours => 'Hours';
+
+  @override
+  String get digEntry => 'Entry';
+
+  @override
+  String get digEtiquette => 'Etiquette';
+
+  @override
+  String get digAccessibility => 'Accessibility';
+
+  @override
+  String get digGettingThere => 'Getting there';
+
+  @override
+  String digCheckedOn(String date) {
+    return 'Checked $date';
+  }
+
+  @override
+  String get digNotChecked => 'Not yet field-checked';
+
+  @override
+  String get digVisitUnverified => 'Visit facts are not yet field-checked.';
+
+  @override
+  String digRemotelyChecked(String date) {
+    return 'Checked against published sources on $date.';
+  }
+
+  @override
+  String digWalkMinutes(String minutes) {
+    return 'about $minutes min on foot';
+  }
+
+  @override
+  String get digReportChange => 'Report a change';
+
+  @override
+  String digReportSubject(String place) {
+    return 'Milion: a correction for $place';
+  }
+
+  @override
+  String digReportBody(String place, String qid) {
+    return 'Place: $place ($qid)\n\nWhat should change?\n';
+  }
+
+  @override
+  String digSources(String count) {
+    return 'Sources ($count)';
+  }
+
+  @override
+  String get digLayerArtworks => 'Artworks in this layer';
+
+  @override
+  String get digLayerMilestones => 'Enter the Milestones here';
+
+  @override
+  String get digGo => 'Go';
+
+  @override
+  String get digGoTooltip => 'Open walking directions';
+
+  @override
+  String get digDiagram => 'Section diagram — not a photograph';
+
+  @override
+  String get digDepthGauge => 'Depth gauge';
+
+  @override
+  String get digDepthHint => 'Swipe the rail to move through the years.';
+
+  @override
+  String digGaugeYear(String year) {
+    return 'Year $year';
+  }
+
+  @override
+  String get eraAncient => 'Ancient';
+
+  @override
+  String get eraRoman => 'Roman';
+
+  @override
+  String get eraByzantine => 'Byzantine';
+
+  @override
+  String get eraMedieval => 'Medieval';
+
+  @override
+  String get eraOttoman => 'Ottoman';
+
+  @override
+  String get eraModern => 'Modern';
+
+  @override
+  String get placeStatusOpen => 'Open';
+
+  @override
+  String get placeStatusClosed => 'Closed';
+
+  @override
+  String get placeStatusRestoration => 'Under restoration';
+
+  @override
+  String get placeStatusRuin => 'Ruin';
+
+  @override
+  String get placeStatusUnknown => 'Status unknown';
+
+  @override
+  String placeCheckedOn(String date) {
+    return 'Status checked $date';
+  }
+
+  @override
+  String get placeFunction => 'Current use';
 }

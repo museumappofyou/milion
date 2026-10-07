@@ -7,7 +7,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:milion/content/bundled_content.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/design/design_sheet.dart';
 import 'package:milion/design/theme.dart';
@@ -21,7 +20,7 @@ import 'package:milion/screens/anastasis_relief_screen.dart';
 import 'package:milion/screens/last_judgment_relief_screen.dart';
 import 'package:milion/screens/scan_tab.dart';
 import 'package:milion/services/classifier.dart';
-import 'package:milion/widgets/scene_detail_sheet.dart';
+import 'package:milion/widgets/artwork_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../test/helpers.dart' show loadThemeFonts, ready;
@@ -225,15 +224,13 @@ void main() {
     final registry = await tester.runAsync(
       () => ContentRepository((path) => File(path).readAsString()).load(),
     );
-    final scene = sceneForArtwork(
-      registry!.artworks.firstWhere((a) => a.id == 'F02'),
-    );
+    final artwork = registry!.artworks.firstWhere((a) => a.id == 'F02');
     final key = GlobalKey();
     await tester.pumpWidget(
       RepaintBoundary(
         key: key,
         child: harness(
-          Scaffold(body: SceneDetailSheet(scene: scene)),
+          Scaffold(body: ArtworkSheet(artwork: artwork)),
           language: 'tr',
           scale: 2,
         ),

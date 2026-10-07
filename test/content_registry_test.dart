@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:milion/content/bundled_content.dart';
 import 'package:milion/content/models.dart';
 import 'package:milion/content/prediction_map.dart';
 import 'package:milion/content/registry.dart';
@@ -84,8 +83,14 @@ void main() {
       final registry = ContentRegistry.fromJson(data);
       expect(registry.hunts.single.routeId, registry.routes.single.id);
       expect(registry.places.single.strata.single.era, Era.byzantine);
+      expect(registry.places.single.strata.single.gaugeYear, 1321);
+      expect(registry.places.single.strata.single.artworkIds, ['F02']);
+      expect(registry.places.single.visit!.hoursCheckedAt, DateTime(2026, 10, 7));
+      expect(registry.places.single.visit!.transit.single.kind, TransitKind.tram);
       expect(registry.media.single.historicalPhoto, isFalse);
       expect(registry.artworks.single.title.inLanguage('tr'), 'Anastasis');
+      expect(registry.milestonesIn(registry.places.single.strata.single)
+          .map((m) => m.numeral), ['I']);
     },
   );
 
@@ -120,6 +125,14 @@ void main() {
         (j) => j['places'][0]['entrance'] = {'lat': 0, 'lng': 0},
         (j) => j['places'][0]['coordinates']['lat'] = double.infinity,
         (j) => j['places'][0]['strata'][0]['toYear'] = 1,
+        (j) => j['places'][0]['strata'][0]['artworks'] = ['F99'],
+        (j) => j['places'][0]['strata'][0]['anchorYear'] = 3,
+        (j) => j['places'][0]['strata'][0]['body'] = {
+          'en': 'One paragraph only.',
+          'tr': 'Tek paragraf.',
+        },
+        (j) => j['places'][0]['visit']['hoursCheckedAt'] = null,
+        (j) => j['places'][0]['visit']['transit'][0]['minutes'] = 0,
         (j) => j['milestones'][0]['techniques'] = ['NOPE'],
         (j) => j['milestones'][0]['honesty'] = ['DEPTH'],
         (j) => j['media'][0]['path'] = 'assets/../secret',
@@ -183,16 +196,18 @@ void main() {
       final legacy = await fixture('legacy_chora');
       for (final row in legacy['map']) {
         final artwork = registry.artwork(row['scene_id']);
-        final scene = sceneForArtwork(artwork);
-        final info = legacy['info'][scene.id];
-        expect(scene.title, row['title']);
-        expect(scene.room, row['room']);
-        expect(scene.surface, row['surface']);
-        expect(scene.folder, row['scene_folder']);
-        expect(scene.summary, info['summary']);
-        expect(scene.cues, info['cues']);
-        expect(scene.position, info['position']);
-        expect(scene.artworkType, info['artwork_type']);
+        final info = legacy['info'][artwork.id];
+        expect(artwork.title.inLanguage('en'), row['title']);
+        expect(artwork.room.inLanguage('en'), row['room']);
+        expect(artwork.surface.inLanguage('en'), row['surface']);
+        expect(artwork.folder, row['scene_folder']);
+        expect(artwork.summary.inLanguage('en'), info['summary']);
+        expect(
+          artwork.cues.map((c) => c.inLanguage('en')).toList(),
+          info['cues'],
+        );
+        expect(artwork.position.inLanguage('en'), info['position']);
+        expect(artwork.kind.name, info['artwork_type']);
       }
       final classes = (jsonDecode(
         await File('assets/model/classes.json').readAsString(),

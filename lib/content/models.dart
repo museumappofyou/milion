@@ -231,16 +231,30 @@ class Stratum {
     this.title,
     this.body,
     this.mediaIds,
-    this.sourceIds,
-  );
+    this.artworkIds,
+    this.sourceIds, {
+    this.anchorYear,
+  });
   final String id;
   final int fromYear;
   final int? toYear;
   final Era era;
   final Localized title;
+
+  /// Two to four short paragraphs, separated by a blank line. The validator
+  /// and the P05 content tests enforce the range.
   final Localized body;
   final List<String> mediaIds;
+
+  /// Artworks of the owning place shown inside this layer.
+  final List<String> artworkIds;
   final List<String> sourceIds;
+
+  /// The gauge's tick year; defaults to [fromYear].
+  final int? anchorYear;
+  int get gaugeYear => anchorYear ?? fromYear;
+  List<String> paragraphs(String language) =>
+      body.inLanguage(language).split('\n\n');
   factory Stratum.fromJson(Json j) => decode(
     j,
     (r) => Stratum(
@@ -251,7 +265,72 @@ class Stratum {
       Localized.fromJson(r.object('title')),
       Localized.fromJson(r.object('body')),
       r.strings('media'),
+      r.optionalStrings('artworks'),
       r.strings('sources'),
+      anchorYear: r.optionalInteger('anchorYear'),
+    ),
+  );
+}
+
+enum TransitKind { tram, metro, metrobus, ferry, bus }
+
+class TransitStop {
+  TransitStop(this.kind, this.stop, this.minutes);
+  final TransitKind kind;
+  final Localized stop;
+
+  /// Walking minutes from the stop to the entrance, as published.
+  final int minutes;
+  factory TransitStop.fromJson(Json j) => decode(
+    j,
+    (r) => TransitStop(
+      r.enumeration('kind', TransitKind.values),
+      Localized.fromJson(r.object('stop')),
+      r.integer('minutes'),
+    ),
+  );
+}
+
+/// The visit card of a reviewed place or a remotely checked draft. Every
+/// field is optional; the UI shows an honest empty state for what is missing.
+class VisitInfo {
+  VisitInfo(
+    this.checkedAt,
+    this.hours,
+    this.hoursCheckedAt,
+    this.entry,
+    this.etiquette,
+    this.accessibility,
+    this.transit,
+    this.sourceIds,
+  );
+  final DateTime? checkedAt;
+  final Localized? hours;
+  final DateTime? hoursCheckedAt;
+  final Localized? entry;
+  final Localized? etiquette;
+  final Localized? accessibility;
+  final List<TransitStop> transit;
+  final List<String> sourceIds;
+  factory VisitInfo.fromJson(Json j) => decode(
+    j,
+    (r) => VisitInfo(
+      r.optionalDate('checkedAt'),
+      r.optionalObject('hours') == null
+          ? null
+          : Localized.fromJson(r.object('hours')),
+      r.optionalDate('hoursCheckedAt'),
+      r.optionalObject('entry') == null
+          ? null
+          : Localized.fromJson(r.object('entry')),
+      r.optionalObject('etiquette') == null
+          ? null
+          : Localized.fromJson(r.object('etiquette')),
+      r.optionalObject('accessibility') == null
+          ? null
+          : Localized.fromJson(r.object('accessibility')),
+      r.optionalList('transit', (j) => TransitStop.fromJson(j as Json)),
+      r.optionalStrings('sources'),
     ),
   );
 }
@@ -286,6 +365,9 @@ class Place {
       wave = r.enumeration('wave', Wave.values),
       reviewPhase = r.string('reviewPhase'),
       outsideProvince = r.boolean('outsideProvince'),
+      visit = r.optionalObject('visit') == null
+          ? null
+          : VisitInfo.fromJson(r.object('visit')),
       strata = r.list('strata', (j) => Stratum.fromJson(j as Json)),
       sourceIds = r.strings('sources');
   factory Place.fromJson(Json j) => decode(j, Place.new);
@@ -306,6 +388,7 @@ class Place {
   final Wave wave;
   final String reviewPhase;
   final bool outsideProvince;
+  final VisitInfo? visit;
   final List<Stratum> strata;
   final List<String> sourceIds;
 }

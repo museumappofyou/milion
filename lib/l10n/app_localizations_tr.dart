@@ -1045,4 +1045,129 @@ class AppLocalizationsTr extends AppLocalizations {
   String honestyRange(String from, String to) {
     return '$from ile $to arası';
   }
+
+  @override
+  String get digVisit => 'Ziyaret';
+
+  @override
+  String get digHours => 'Ziyaret saatleri';
+
+  @override
+  String get digEntry => 'Giriş';
+
+  @override
+  String get digEtiquette => 'Görgü kuralları';
+
+  @override
+  String get digAccessibility => 'Erişilebilirlik';
+
+  @override
+  String get digGettingThere => 'Ulaşım';
+
+  @override
+  String digCheckedOn(String date) {
+    return 'Denetlendi: $date';
+  }
+
+  @override
+  String get digNotChecked => 'Yerinde henüz doğrulanmadı';
+
+  @override
+  String get digVisitUnverified =>
+      'Ziyaret bilgileri yerinde henüz doğrulanmadı.';
+
+  @override
+  String digRemotelyChecked(String date) {
+    return 'Yayımlanmış kaynaklara göre $date tarihinde denetlendi.';
+  }
+
+  @override
+  String digWalkMinutes(String minutes) {
+    return 'yürüyüş yaklaşık $minutes dk';
+  }
+
+  @override
+  String get digReportChange => 'Değişiklik bildir';
+
+  @override
+  String digReportSubject(String place) {
+    return 'Milion: $place için düzeltme';
+  }
+
+  @override
+  String digReportBody(String place, String qid) {
+    return 'Yer: $place ($qid)\n\nNe değişmeli?\n';
+  }
+
+  @override
+  String digSources(String count) {
+    return 'Kaynaklar ($count)';
+  }
+
+  @override
+  String get digLayerArtworks => 'Bu katmandaki eserler';
+
+  @override
+  String get digLayerMilestones => 'Taşlara buradan girin';
+
+  @override
+  String get digGo => 'Git';
+
+  @override
+  String get digGoTooltip => 'Yürüyüş tarifini aç';
+
+  @override
+  String get digDiagram => 'Kesit şeması — fotoğraf değil';
+
+  @override
+  String get digDepthGauge => 'Derinlik göstergesi';
+
+  @override
+  String get digDepthHint => 'Yıllar arasında gezinmek için rayı kaydırın.';
+
+  @override
+  String digGaugeYear(String year) {
+    return '$year yılı';
+  }
+
+  @override
+  String get eraAncient => 'Antik';
+
+  @override
+  String get eraRoman => 'Roma';
+
+  @override
+  String get eraByzantine => 'Bizans';
+
+  @override
+  String get eraMedieval => 'Orta Çağ';
+
+  @override
+  String get eraOttoman => 'Osmanlı';
+
+  @override
+  String get eraModern => 'Modern';
+
+  @override
+  String get placeStatusOpen => 'Açık';
+
+  @override
+  String get placeStatusClosed => 'Kapalı';
+
+  @override
+  String get placeStatusRestoration => 'Restorasyonda';
+
+  @override
+  String get placeStatusRuin => 'Harabe';
+
+  @override
+  String get placeStatusUnknown => 'Durum bilinmiyor';
+
+  @override
+  String placeCheckedOn(String date) {
+    return 'Durum $date tarihinde doğrulandı';
+  }
+
+  @override
+  String get placeFunction => 'Bugünkü işlev';
 }

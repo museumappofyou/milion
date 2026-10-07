@@ -1,7 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
 
-import 'package:milion/models/scene.dart';
-import 'package:milion/screens/scenes_tab.dart';
+import 'package:milion/content/repository.dart';
+import 'package:milion/screens/artworks_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -82,26 +83,17 @@ void main() {
     'F05 catalog action opens its relief without changing F02 routing',
     (tester) async {
       SharedPreferences.setMockInitialValues({});
+      final registry = await tester.runAsync(
+        () => ContentRepository((path) => File(path).readAsString()).load(),
+      );
+      final byId = {
+        for (final artwork in registry!.artworks) artwork.id: artwork,
+      };
       var opened = '';
       await tester.pumpWidget(
         MaterialApp(
-          home: ScenesTab(
-            scenes: const [
-              Scene(
-                id: 'F02',
-                title: 'Anastasis',
-                room: 'Parekklesion',
-                surface: 'dome',
-                folder: '',
-              ),
-              Scene(
-                id: 'F05',
-                title: 'Last Judgment',
-                room: 'Parekklesion',
-                surface: 'vault',
-                folder: '',
-              ),
-            ],
+          home: ArtworksTab(
+            artworks: [byId['F02']!, byId['F05']!],
             onExamineAnastasis: () => opened = 'F02',
             onExamineLastJudgment: () => opened = 'F05',
           ),
@@ -109,7 +101,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       for (final (title, id) in [
-        ('Last Judgment', 'F05'),
+        ('The Last Judgment', 'F05'),
         ('Anastasis', 'F02'),
       ]) {
         await tester.tap(find.text(title));

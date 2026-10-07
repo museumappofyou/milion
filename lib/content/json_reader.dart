@@ -46,6 +46,35 @@ class JsonReader {
     return json.containsKey(key) ? boolean(key) : fallback;
   }
 
+  /// Additive schema-1 fields: absent or null means null.
+  Json? optionalObject(String key) {
+    _read.add(key);
+    return json.containsKey(key) && json[key] != null ? object(key) : null;
+  }
+
+  /// Additive schema-1 fields: absent means null, present must be an integer.
+  int? optionalInteger(String key) {
+    _read.add(key);
+    return json.containsKey(key) ? integer(key) : null;
+  }
+
+  /// Additive schema-1 fields: absent or null means null.
+  DateTime? optionalDate(String key) {
+    _read.add(key);
+    return json.containsKey(key) && json[key] != null ? date(key) : null;
+  }
+
+  /// Additive schema-1 fields: absent means an empty list.
+  List<T> optionalList<T>(String key, T Function(dynamic) parse) {
+    _read.add(key);
+    return json.containsKey(key) ? list(key, parse) : const [];
+  }
+
+  List<String> optionalStrings(String key) {
+    _read.add(key);
+    return json.containsKey(key) ? strings(key) : const [];
+  }
+
   int integer(String key) {
     final v = value(key);
     if (v is! int) throw FormatException('$key must be an integer');

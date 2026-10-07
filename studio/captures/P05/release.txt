@@ -1,0 +1,13 @@
+Built 2026-10-07 (P05).
+
+arm64 APK: 92519709 bytes
+AAB: 138985949 bytes
+P04: arm64 APK 92,443,715; AAB 138,752,586
+
+package: app.milion
+uses-permission: name='android.permission.CAMERA'
+permission: app.milion.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission: name='app.milion.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+
+Release signing: android/key.properties absent (O05) -> debug-key fallback with the Gradle warning.

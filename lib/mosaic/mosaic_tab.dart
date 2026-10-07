@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../content/bundled_content.dart';
 import '../design/components.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
@@ -9,7 +8,7 @@ import '../services/notes_service.dart';
 import '../services/progress_service.dart';
 import '../shell/app_scope.dart';
 import '../shell/navigation.dart';
-import '../widgets/scene_detail_sheet.dart';
+import '../widgets/artwork_sheet.dart';
 
 /// Placeholder until P19 builds the seasonal mosaics: the register as
 /// tesserae, and the notes saved on Chora artworks.
@@ -112,8 +111,8 @@ class _MosaicTabState extends State<MosaicTab> {
                         await showModalBottomSheet<void>(
                           context: context,
                           isScrollControlled: true,
-                          builder: (_) => SceneDetailSheet(
-                            scene: sceneForArtwork(artwork, language: lang),
+                          builder: (_) => ArtworkSheet(
+                            artwork: artwork,
                             onScan: app.artworkRecognised(id)
                                 ? () => openScan(context)
                                 : null,

@@ -9,21 +9,21 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_onnxruntime/flutter_onnxruntime.dart';
 import 'package:image/image.dart' as img;
 
-import '../models/scene.dart';
+import '../content/models.dart';
 import '../content/bundled_content.dart';
 import '../content/prediction_map.dart';
 
-class SceneMatch {
-  const SceneMatch(this.scene, this.probability);
+class ArtworkMatch {
+  const ArtworkMatch(this.artwork, this.probability);
 
-  final Scene scene;
+  final Artwork artwork;
   final double probability;
 }
 
 class LivePrediction {
   const LivePrediction({required this.top, required this.probabilities});
 
-  final List<SceneMatch> top;
+  final List<ArtworkMatch> top;
   final List<double> probabilities;
 }
 
@@ -42,20 +42,19 @@ class Classifier {
 
   OnnxRuntime? _ort;
   OrtSession? _session;
-  List<Scene> _predictionScenes = const [];
+  List<Artwork> _predictionArtworks = const [];
   bool _ready = false;
 
   bool get isReady => _ready;
-  Scene sceneAtPrediction(int index) => _predictionScenes[index];
+  Artwork artworkAtPrediction(int index) => _predictionArtworks[index];
 
   Future<void> _loadPredictionMap() async {
     final registry = await bundledContent.load();
     final ids = (jsonDecode(await rootBundle.loadString(classesAsset)) as List)
         .cast<String>();
     final mapping = PredictionMap(ids, registry);
-    _predictionScenes = List.unmodifiable([
-      for (final id in mapping.artworkIds)
-        sceneForArtwork(registry.artwork(id)),
+    _predictionArtworks = List.unmodifiable([
+      for (final id in mapping.artworkIds) registry.artwork(id),
     ]);
   }
 
@@ -82,7 +81,7 @@ class Classifier {
     _ready = true;
   }
 
-  Future<List<SceneMatch>> classifyBytes(Uint8List bytes) async {
+  Future<List<ArtworkMatch>> classifyBytes(Uint8List bytes) async {
     final input = await _preprocessImage(bytes);
     final probabilities = await _infer(input);
     return _topMatches(probabilities);
@@ -274,8 +273,8 @@ class Classifier {
     return [for (final value in exps) value / total];
   }
 
-  List<SceneMatch> _topMatches(List<double> probabilities) {
-    if (probabilities.length != _predictionScenes.length) {
+  List<ArtworkMatch> _topMatches(List<double> probabilities) {
+    if (probabilities.length != _predictionArtworks.length) {
       throw const FormatException(
         'Model output does not match artwork mapping',
       );
@@ -284,7 +283,7 @@ class Classifier {
       ..sort((a, b) => probabilities[b].compareTo(probabilities[a]));
     return [
       for (final i in order.take(3))
-        SceneMatch(_predictionScenes[i], probabilities[i]),
+        ArtworkMatch(_predictionArtworks[i], probabilities[i]),
     ];
   }
 }

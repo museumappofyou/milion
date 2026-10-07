@@ -560,5 +560,100 @@
         "type": "String"
       }
     }
+  },
+  "digVisit": "Visit",
+  "digHours": "Hours",
+  "digEntry": "Entry",
+  "digEtiquette": "Etiquette",
+  "digAccessibility": "Accessibility",
+  "digGettingThere": "Getting there",
+  "digCheckedOn": "Checked {date}",
+  "digNotChecked": "Not yet field-checked",
+  "digVisitUnverified": "Visit facts are not yet field-checked.",
+  "digRemotelyChecked": "Checked against published sources on {date}.",
+  "digWalkMinutes": "about {minutes} min on foot",
+  "digReportChange": "Report a change",
+  "digReportSubject": "Milion: a correction for {place}",
+  "digReportBody": "Place: {place} ({qid})\n\nWhat should change?\n",
+  "digSources": "Sources ({count})",
+  "digLayerArtworks": "Artworks in this layer",
+  "digLayerMilestones": "Enter the Milestones here",
+  "digGo": "Go",
+  "digGoTooltip": "Open walking directions",
+  "digDiagram": "Section diagram — not a photograph",
+  "digDepthGauge": "Depth gauge",
+  "digDepthHint": "Swipe the rail to move through the years.",
+  "digGaugeYear": "Year {year}",
+  "eraAncient": "Ancient",
+  "eraRoman": "Roman",
+  "eraByzantine": "Byzantine",
+  "eraMedieval": "Medieval",
+  "eraOttoman": "Ottoman",
+  "eraModern": "Modern",
+  "@digCheckedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@digRemotelyChecked": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@digWalkMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "@digReportSubject": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "@digReportBody": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      },
+      "qid": {
+        "type": "String"
+      }
+    }
+  },
+  "@digSources": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@digGaugeYear": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "placeStatusOpen": "Open",
+  "placeStatusClosed": "Closed",
+  "placeStatusRestoration": "Under restoration",
+  "placeStatusRuin": "Ruin",
+  "placeStatusUnknown": "Status unknown",
+  "placeCheckedOn": "Status checked {date}",
+  "placeFunction": "Current use",
+  "@placeCheckedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
   }
 }
