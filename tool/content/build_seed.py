@@ -28,6 +28,23 @@ def document(kind, records):
     return dict(schemaVersion=1, kind=kind, records=records)
 
 
+def merge_seed_index(existing):
+    """Retain later phase files when regenerating the P02 base documents."""
+    if existing.get('schemaVersion', 1) != 1:
+        raise ValueError('cannot rebuild an unsupported content schema')
+    files = {kind: list(paths) for kind, paths in existing.get('files', {}).items()}
+    seed_files = {
+        'places': ['assets/content/places/istanbul.json'],
+        'artworks': ['assets/content/artworks/chora.json'],
+        'milestones': ['assets/content/milestones/chora.json'],
+        **{kind: [f'assets/content/{kind}.json']
+           for kind in ['sources', 'media', 'routes', 'hunts']},
+    }
+    for kind, paths in seed_files.items():
+        files[kind] = list(dict.fromkeys(paths + files.get(kind, [])))
+    return dict(schemaVersion=1, files=files)
+
+
 def source(id, en, tr, url, author='Wikidata contributors', author_tr='Wikidata katkıda bulunanları', licence='CC0'):
     return dict(id=id, title=loc(en, tr), url=url, author=loc(author, author_tr),
                 accessedAt=DATE, licence=None if licence is None else loc(licence, licence))
@@ -40,6 +57,9 @@ def values(entity, prop):
 
 
 def build():
+    index_path = OUT / 'index.json'
+    existing_index = json.loads(index_path.read_text()) if index_path.exists() else {}
+    index = merge_seed_index(existing_index)
     selected = json.loads((BASE / 'seed_selection.json').read_text())
     overrides_path = BASE / 'seed_overrides.json'
     overrides = json.loads(overrides_path.read_text()) if overrides_path.exists() else {}
@@ -141,10 +161,7 @@ def build():
     write(OUT / 'media.json', document('media', media))
     write(OUT / 'routes.json', document('routes', []))
     write(OUT / 'hunts.json', document('hunts', []))
-    write(OUT / 'index.json', dict(schemaVersion=1, files={
-        'places': ['assets/content/places/istanbul.json'], 'artworks': ['assets/content/artworks/chora.json'],
-        'milestones': ['assets/content/milestones/chora.json'],
-        **{k: [f'assets/content/{k}.json'] for k in ['sources', 'media', 'routes', 'hunts']}}))
+    write(index_path, index)
     write(BASE / 'verification.json', dict(checkedAt=DATE, places=evidence))
     print(f'{len(places)} draft places, {len(sources)} sources; none promoted to reviewed.')
 

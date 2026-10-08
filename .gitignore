@@ -36,6 +36,7 @@ migrate_working_dir/
 # Android build artifacts and secrets
 /android/.gradle/
 /android/.kotlin/
+/android/build/
 /android/local.properties
 /android/key.properties
 *.jks
@@ -43,6 +44,7 @@ migrate_working_dir/
 
 # Studio local cache
 /studio/cache/
+/studio/captures/AUDIT-2026-10-08/chora-dig-frames/
 tool/**/__pycache__/
 
 # Phase router cache (Jev profiles, catalog snapshots) — never contains secrets

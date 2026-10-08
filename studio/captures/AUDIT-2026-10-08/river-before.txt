@@ -1,0 +1,16 @@
+00:00 +0: loading /Users/memre/Desktop/milion/test/dig_gauge_gestures_test.dart
+00:00 +0: /Users/memre/Desktop/milion/test/dig_gauge_gestures_test.dart: holding then dragging previews without moving the page
+00:00 +1: /Users/memre/Desktop/milion/test/dig_gauge_gestures_test.dart: holding then dragging previews without moving the page
+00:00 +1 -1: /Users/memre/Desktop/milion/test/dig_gauge_gestures_test.dart: holding then dragging previews without moving the page
+00:00 +1 -1: /Users/memre/Desktop/milion/test/plate_assets_test.dart: the shader river coverage channel leaves the rest of the paint still [E]
+  Expected: be in range from 0.01 (exclusive) to 0.15 (exclusive)
+    Actual: <1.0>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test/plate_assets_test.dart 48:7                    main.<fn>
+  
+00:00 +2 -1: Some tests failed.
+
+Failing tests:
+  /Users/memre/Desktop/milion/test/plate_assets_test.dart: the shader river coverage channel leaves the rest of the paint still

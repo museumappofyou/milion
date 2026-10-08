@@ -1,0 +1,52 @@
+Running Gradle task 'assembleRelease'...                        
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* Where:
+Build file '/Users/memre/.pub-cache/hosted/pub.dev/sensors_plus-6.1.2/android/build.gradle' line: 25
+
+* What went wrong:
+A problem occurred evaluating project ':sensors_plus'.
+> Failed to apply plugin 'kotlin-android'.
+   > ⛔ Failed to apply plugin 'org.jetbrains.kotlin.android'
+     The 'org.jetbrains.kotlin.android' plugin is no longer required for Kotlin support since AGP 9.0.
+     Solution: Remove the 'org.jetbrains.kotlin.android' plugin from this project's build file: ../../../.pub-cache/hosted/pub.dev/sensors_plus-6.1.2/android/build.gradle.
+     See https://kotl.in/gradle/agp-built-in-kotlin for more details.
+      > java.lang.Throwable (no error message)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+A problem occurred configuring project ':sensors_plus'.
+> Failed to notify project evaluation listener.
+   > java.lang.NullPointerException (no error message)
+   > Android Gradle Plugin: project ':sensors_plus' does not specify `compileSdk` in build.gradle (/Users/memre/.pub-cache/hosted/pub.dev/sensors_plus-6.1.2/android/build.gradle).
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+BUILD FAILED in 9s
+Running Gradle task 'assembleRelease'...                           10.3s
+
+┌─ Flutter Fix ────────────────────────────────────────────────────────────────┐
+│ [!] Starting AGP 9+, the default has become built-in Kotlin.                 │
+│ This results in a build failure when applying the kotlin-android plugin.     │
+│ To resolve this, migrate to built-in Kotlin.                                 │
+│                                                                              │
+│ For instructions on how to migrate, see:                                     │
+│ https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin │
+└──────────────────────────────────────────────────────────────────────────────┘
+Gradle task assembleRelease failed with exit code 1

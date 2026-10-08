@@ -42,6 +42,7 @@ class _PlaceScreenState extends State<PlaceScreen> {
 
   /// Set while the gauge's finger is down: preview only, no page scroll.
   int? _preview;
+  int _scrollRequest = 0;
 
   List<Stratum> get _strata => widget.place.strata;
   int get _index => _preview ?? _selected;
@@ -78,12 +79,16 @@ class _PlaceScreenState extends State<PlaceScreen> {
   }
 
   void _commit(int index) {
+    final request = ++_scrollRequest;
     final viewport =
         _viewportKey.currentContext?.findRenderObject() as RenderBox?;
     final box =
         _sectionKeys[index].currentContext?.findRenderObject() as RenderBox?;
     setState(() => _preview = null);
-    if (viewport == null || box == null || !viewport.attached || !box.attached) {
+    if (viewport == null ||
+        box == null ||
+        !viewport.attached ||
+        !box.attached) {
       setState(() => _selected = index);
       return;
     }
@@ -107,7 +112,9 @@ class _PlaceScreenState extends State<PlaceScreen> {
           curve: MotionToken.curves[MeasureMotion.dig]!,
         )
         .then((_) {
-          if (mounted) setState(() => _selected = index);
+          if (mounted && request == _scrollRequest) {
+            setState(() => _selected = index);
+          }
         });
   }
 
@@ -196,7 +203,12 @@ class _PlaceScreenState extends State<PlaceScreen> {
                           slivers: [
                             SliverToBoxAdapter(
                               child: Padding(
-                                padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
+                                padding: const EdgeInsets.fromLTRB(
+                                  24,
+                                  16,
+                                  24,
+                                  0,
+                                ),
                                 child: PresentHeader(
                                   place: place,
                                   registry: registry,
@@ -264,8 +276,13 @@ class _PlaceScreenState extends State<PlaceScreen> {
                           strata: strata,
                           selected: _selected,
                           displayYear: strata[_index].gaugeYear,
-                          onPreview: (index) => setState(() => _preview = index),
+                          onPreview: (index) =>
+                              setState(() => _preview = index),
                           onCommit: _commit,
+                          onCancel: () {
+                            setState(() => _preview = null);
+                            _onScroll();
+                          },
                         ),
                     ],
                   ),
@@ -349,8 +366,7 @@ class PresentHeader extends StatelessWidget {
             icon: const PlanIcon(PlanSymbol.route, size: 18),
             label: Text(s.digGo),
           );
-          final largeText =
-              MediaQuery.textScalerOf(context).scale(16) > 20;
+          final largeText = MediaQuery.textScalerOf(context).scale(16) > 20;
           if (largeText) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -458,9 +474,10 @@ class PresentHeader extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
-                [n.name.inLanguage(lang), if (n.greek != null) n.greek!].join(
-                  ' · ',
-                ),
+                [
+                  n.name.inLanguage(lang),
+                  if (n.greek != null) n.greek!,
+                ].join(' · '),
               ),
             ),
         ],

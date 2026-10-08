@@ -7,7 +7,7 @@ deterministic. Writes:
   - assets/content/sources/dig.json: the new pinned sources;
   - assets/content/index.json: registers the new sources document.
 
-Every fact was checked against the cited sources on 2026-10-07. The place
+Authored 2026-10-07; historical and visit corrections audited 2026-10-08. The place
 records stay `draft`: the dig layers and the visit card are individually
 sourced, while the P11/P12 wave reviews still own entrance, status and the
 full artwork review (P04 Decisions, P05 Decisions).
@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT = ROOT / 'assets/content'
 DATE = '2026-10-07'
+AUDIT_DATE = '2026-10-08'
 
 
 def loc(en, tr):
@@ -29,9 +30,9 @@ def write(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
 
 
-def src(id, en, tr, url, author, author_tr, licence=None):
+def src(id, en, tr, url, author, author_tr, licence=None, accessed_at=DATE):
     return dict(id=id, title=loc(en, tr), url=url, author=loc(author, author_tr),
-                accessedAt=DATE, licence=None if licence is None else loc(licence, licence))
+                accessedAt=accessed_at, licence=None if licence is None else loc(licence, licence))
 
 
 SOURCES = [
@@ -39,8 +40,18 @@ SOURCES = [
         'Kariye Mosque — Müze İstanbul (visiting information)',
         'Kariye Camii — Müze İstanbul (ziyaret bilgileri)',
         'https://muze.gen.tr/muze-detay/kariye',
-        'T.R. Ministry of Culture and Tourism — Müze İstanbul',
-        'T.C. Kültür ve Turizm Bakanlığı — Müze İstanbul'),
+        'Müze İstanbul', 'Müze İstanbul', accessed_at=AUDIT_DATE),
+    src('ousterhout-introduction',
+        'The Kariye Camii: An Introduction — history, decoration and architecture',
+        'The Kariye Camii: An Introduction — tarih, bezeme ve mimari',
+        'https://www.columbia.edu/cu/wallach/exhibitions/Byzantium/pdf/ousterhout_intro.pdf',
+        'Robert G. Ousterhout', 'Robert G. Ousterhout', accessed_at=AUDIT_DATE),
+    src('aa-kariye-postponed-2020',
+        'Kariye Mosque opening postponed — 29 October 2020',
+        'Kariye Camisi’nin açılışı ertelendi — 29 Ekim 2020',
+        'https://www.aa.com.tr/tr/turkiye/kariye-camisinin-acilisi-ertelendi/2023331',
+        'Anadolu Agency, reporting the Diyanet announcement',
+        'Anadolu Ajansı, Diyanet açıklaması', accessed_at=AUDIT_DATE),
     src('sozcu-kariye-2024',
         'Kariye Mosque: the paid-visit period began (AA-DHA)',
         'Kariye Camii’nde ücretli giriş dönemi başladı (AA-DHA)',
@@ -85,14 +96,15 @@ SOURCES = [
 
 # --- Chora: six layers, newest first; anchors are the gauge years. ---
 CHORA_VISIT = dict(
-    checkedAt=DATE,
+    checkedAt=AUDIT_DATE,
     hours=loc(
-        'Tuesday–Sunday 09:00–18:00, box office until 17:55. Fridays are '
-        'reserved for worship, and entry pauses about fifteen minutes before '
+        'Daily except Friday, 09:00–18:00; box office until 17:55. Tourist '
+        'visits pause during prayers; admission stops fifteen minutes before '
         'each prayer.',
-        'Salı–Pazar 09.00–18.00, gişe 17.55’e kadar. Cuma günleri ibadete '
-        'ayrılır; her namazdan yaklaşık on beş dakika önce giriş durur.'),
-    hoursCheckedAt=DATE,
+        'Cuma hariç her gün 09.00–18.00; gişe 17.55’e kadar açık. Namaz '
+        'sırasında turistik ziyaret yapılamaz; her namazdan on beş dakika '
+        'önce ziyaretçi girişi durur.'),
+    hoursCheckedAt=AUDIT_DATE,
     entry=loc(
         'Foreign visitors pay €20; Turkish citizens and worshippers enter '
         'free. Museum Passes are not accepted. The route starts at the north '
@@ -125,25 +137,26 @@ CHORA_STRATA = [
         title=loc('The mosque again, 2020–', 'Yeniden cami, 2020–'),
         body=loc(
             'On 21 August 2020 a presidential decree returned the building to '
-            'the Directorate of Religious Affairs. On 30 October 2020 the '
-            'first Friday prayer in 72 years was held in the naos, under its '
-            'mosaics.\n\n'
+            'the Directorate of Religious Affairs. A reopening planned for '
+            '30 October 2020 was postponed, as Diyanet announced on '
+            '29 October.\n\n'
             'A four-year conservation programme followed. The mosque reopened '
             'on 6 May 2024: the narthex cycles, the parekklesion frescoes, '
-            'the naos mosaics and most of the decoration are again on view, '
-            'with the three naos mosaics behind curtains during prayer.\n\n'
+            'and much of the decoration are again on view. The three naos '
+            'mosaics are behind curtains in the prayer area; visibility '
+            'outside prayer times still needs an on-site check.\n\n'
             'Since 19 August 2024 foreign visitors pay €20 at the door; '
             'Turkish citizens and worshippers enter free. Fridays are '
             'reserved for worship, and entry pauses about fifteen minutes '
             'before each prayer.',
             '21 Ağustos 2020 tarihli kararnameyle yapı Diyanet İşleri '
-            'Başkanlığı’na devredildi. 30 Ekim 2020’de naosta, mozaiklerin '
-            'altında 72 yıl sonra ilk cuma namazı kılındı.\n\n'
+            'Başkanlığı’na devredildi. 30 Ekim 2020 için planlanan açılış, '
+            'Diyanet’in 29 Ekim’deki açıklamasıyla ertelendi.\n\n'
             'Ardından dört yıllık bir koruma programı yürütüldü. Cami 6 '
             'Mayıs 2024’te yeniden açıldı: narteks döngüleri, pareklezyon '
-            'freskleri, naos mozaikleri ve bezemenin büyük bölümü yeniden '
-            'görülebiliyor; naostaki üç mozaik namaz sırasında perdeyle '
-            'örtülüyor.\n\n'
+            'freskleri ve bezemenin büyük bölümü yeniden görülebiliyor. '
+            'İbadet alanındaki üç naos mozaiği perde arkasında; namaz '
+            'dışında görülebilirliği yerinde doğrulanmayı bekliyor.\n\n'
             '19 Ağustos 2024’ten beri yabancı ziyaretçiler kapıda 20 avro '
             'ödüyor; Türk vatandaşları ve ibadet edenler ücretsiz giriyor. '
             'Cuma günleri ibadete ayrılıyor ve her namazdan yaklaşık on beş '
@@ -151,7 +164,7 @@ CHORA_STRATA = [
         media=['anastasis-original'],
         artworks=[],
         sources=['muze-kariye', 'hyperallergic-kariye-2024',
-                 'daily-sabah-kariye-2024', 'wd-q849489'],
+                 'daily-sabah-kariye-2024', 'aa-kariye-postponed-2020', 'wd-q849489'],
     ),
     dict(
         id='museum-years', fromYear=1945, toYear=2020, anchorYear=1948,
@@ -202,27 +215,28 @@ CHORA_STRATA = [
             'In 1511, under Sultan Bayezid II, Grand Vizier Hadım (Atik) Ali '
             'Pasha converted it into a mosque. A mihrab went into the apse, '
             'a brick minaret rose in place of the bell tower, and the figures '
-            'were covered with plaster; the plan of the building was left '
-            'alone.\n\n'
+            'were covered over time; the main church plan was retained.\n\n'
             'Ottoman records describe maintenance rather than rebuilding. '
             'Earthquakes brought repairs, and in the nineteenth century the '
-            'Evkaf administration flattened the domed skyline over the naos; '
-            'under the plaster the mosaics and frescoes waited for 1948.',
+            'Evkaf administration repaired the naos dome. Decoration was '
+            'never entirely concealed: nineteenth-century visitors saw '
+            'mosaics in the domes and paid to open shutters over others.',
             '1453’teki son kuşatmada, İstanbul’u koruduğuna inanılan '
             'Hodegetria ikonu Kariye’ye getirildi. Osmanlılar şehre 29 '
             'Mayıs’ta girdi; kilise elli sekiz yıl daha Hristiyan cemaatine '
             'hizmet etti.\n\n'
             '1511’de, II. Bayezid döneminde Sadrazam Hadım (Atik) Ali Paşa '
             'yapıyı camiye çevirtti. Apsise mihrap kondu, çan kulesinin '
-            'yerini tuğla bir minare aldı, figürlerin üzeri sıvayla '
-            'kapatıldı; yapının planına dokunulmadı.\n\n'
+            'yerini tuğla bir minare aldı; figürler zamanla örtüldü, ana '
+            'kilisenin planı korundu.\n\n'
             'Osmanlı kayıtları yeniden yapımı değil bakımı anlatır. '
             'Depremler onarımları getirdi; 19. yüzyılda Evkaf idaresi '
-            'naosun üzerindeki kubbeli silueti düzleştirdi. Mozaiklerle '
-            'freskler sıvanın altında 1948’i bekledi.'),
+            'naos kubbesini onardı. Bezeme hiçbir zaman bütünüyle '
+            'gizlenmedi: 19. yüzyıl ziyaretçileri kubbe mozaiklerini gördü, '
+            'başkalarını örten kapakları bahşişle açtırdı.'),
         media=[],
         artworks=[],
-        sources=['wd-q849489', 'ousterhout-2002', 'chora-guide'],
+        sources=['wd-q849489', 'ousterhout-2002', 'chora-guide', 'ousterhout-introduction'],
     ),
     dict(
         id='metochites', fromYear=1315, toYear=1321, anchorYear=1321,
@@ -243,7 +257,7 @@ CHORA_STRATA = [
             'model of the church to Christ.\n\n'
             'The funerary chapel is painted, not mosaicked: the Anastasis '
             'over the apse — Christ pulling Adam and Eve by the wrist — the '
-            'Last Judgment on the west vault and the Virgin in the dome. His '
+            'Last Judgment in the eastern bay and the Virgin in the western dome. His '
             'name and title, “the ktetor logothetes”, are written beside the '
             'founder portrait.\n\n'
             'Metochites lost power in 1328, was exiled by Andronikos III, '
@@ -261,15 +275,15 @@ CHORA_STRATA = [
             'başlığıyla kilisenin maketini İsa’ya sunan Metokhites.\n\n'
             'Mezar şapeli mozaikle değil resimle bezelidir: apsisin üstünde '
             'Anastasis — İsa’nın Âdem ile Havva’yı bileklerinden çekişi —, '
-            'batı tonozunda Son Yargı, kubbede Meryem. Adı ve unvanı, '
+            'doğu bölümünde Son Yargı, batı kubbesinde Meryem. Adı ve unvanı, '
             '“ktetor logothetes”, kurucu portresinin yanında yazılıdır.\n\n'
             'Metokhites 1328’de gücünü yitirdi, III. Andronikos onu '
             'sürgüne gönderdi; iki yıl sonra döndü ve ömrünü parasını '
             'verdiği manastırda Theoleptos adıyla keşiş olarak tamamladı.'),
         media=['judgment-original'],
-        artworks=['F02', 'F05', 'M11', 'M13', 'M35'],
+        artworks=['F02', 'F05', 'M11', 'M13', 'M35', 'M01', 'M02', 'M03', 'M12'],
         sources=['ousterhout-2002', 'smarthistory-chora', 'chora-guide',
-                 'chora-guide-parekklesion', 'wd-q849489'],
+                 'chora-guide-parekklesion', 'wd-q849489', 'ousterhout-introduction'],
     ),
     dict(
         id='komnenian', fromYear=1077, toYear=1315, anchorYear=1077,
@@ -277,38 +291,35 @@ CHORA_STRATA = [
         title=loc('The Komnenian church, 1077–1315',
                   'Kommenosların kilisesi, 1077–1315'),
         body=loc(
-            'Most of the masonry standing today was built in 1077–1081, when '
+            'The naos walls were established around 1077–1081, when '
             'Maria Doukaina, mother-in-law of Alexios I Komnenos, rebuilt the '
             'monastery church as a cross-in-square: a central dome on four '
-            'columns, the plan that still shapes the naos.\n\n'
+            'columns.\n\n'
             'A partial collapse early in the twelfth century, probably after '
             'an earthquake, was repaired by Isaac Komnenos, a son of Alexios '
-            'I. The naos mosaics — the Dormition and the two proskynetaria '
-            'of Christ and the Virgin — belong to this Komnenian church.\n\n'
-            'The Deesis panel with two kneeling donors, Isaac and the nun '
-            'Melane, “the Lady of the Mongols”, is the oldest mosaic to '
-            'survive here; Metochites kept it two centuries later. In the '
+            'I. Sturdy piers replaced the columns and carried a larger dome.\n\n'
+            'The surviving naos mosaics and the Deesis belong to the '
+            'fourteenth-century decoration, not to this rebuilding. In the '
             'monastery’s last Byzantine century the scholar Maximus '
             'Planudes worked here, bringing Ptolemy’s Geography back to '
             'Byzantine readers.',
-            'Bugün ayakta duran duvar dokusunun çoğu 1077–1081 arasında, I. '
+            'Naos duvarlarının yerleri yaklaşık 1077–1081 arasında, I. '
             'Aleksios Komnenos’un kayınvalidesi Maria Dukaina’nın manastır '
             'kilisesini kapalı Yunan haçı planında — dört sütun üzerine '
-            'oturan merkezî bir kubbeyle — yeniden yaptırdığı dönemde inşa '
-            'edildi.\n\n'
+            'oturan merkezî bir kubbeyle — yeniden yaptırdığı dönemde '
+            'belirlendi.\n\n'
             '12. yüzyıl başında, büyük olasılıkla bir deprem sonrasında '
             'kısmen çöken yapıyı I. Aleksios’un oğlu İsaakios Komnenos '
-            'onarttı. Naos mozaikleri — Koimesis ile İsa ve Meryem’in iki '
-            'proskynetarion panosu — bu Komnenos kilisesine aittir.\n\n'
-            'İki bağışçının — İsaakios ile “Moğolların Hanımı” rahibe '
-            'Melane’nin — diz çöktüğü Deesis panosu buradaki en eski '
-            'mozaiktir; Metokhites onu iki yüzyıl sonra korumuştur. '
+            'onarttı. Sütunların yerini daha büyük kubbeyi taşıyan '
+            'sağlam payeler aldı.\n\n'
+            'Günümüze ulaşan naos mozaikleri ile Deesis bu yapı evresine '
+            'değil, 14. yüzyıl bezemesine aittir. '
             'Manastırın son Bizans yüzyılında bilgin Maksimos Planudes '
             'burada çalıştı ve Batlamyus’un Coğrafya’sını Bizans’a yeniden '
             'kazandırdı.'),
         media=[],
-        artworks=['M01', 'M02', 'M03', 'M12'],
-        sources=['ousterhout-2002', 'wd-q849489', 'chora-guide'],
+        artworks=[],
+        sources=['ousterhout-2002', 'wd-q849489', 'chora-guide', 'ousterhout-introduction'],
     ),
     dict(
         id='first-monastery', fromYear=300, toYear=1077, anchorYear=330,
@@ -316,7 +327,7 @@ CHORA_STRATA = [
         title=loc('The monastery in the country',
                   'Kırlıktaki manastır'),
         body=loc(
-            'A monastery stood here before the city came out to meet it. '
+            'Byzantine tradition places Christian use here before the city grew outward. '
             'Constantine the Great’s walls ran to the east; the church of '
             'the Holy Saviour “in the Chora” — in the countryside — kept '
             'its name after the walls of Theodosius II drew the city line '
@@ -325,10 +336,11 @@ CHORA_STRATA = [
             'narthex mosaics call Christ “the Land of the Living” and the '
             'Virgin “the container of the uncontainable” — the same Greek '
             'word, chora, in both inscriptions.\n\n'
-            'The first recorded rebuilding dates to the sixth century, in '
-            'the reign of Justinian; the church that Maria Doukaina rebuilt '
+            'The earliest excavated foundations date to the sixth century; '
+            'a saint’s life attributes a rebuilding to Justinian. '
+            'The church that Maria Doukaina rebuilt '
             'in the eleventh century stood on that foundation.',
-            'Şehir buraya ulaşmadan önce burada bir manastır vardı. I. '
+            'Bizans geleneği buradaki Hristiyan kullanımını şehrin büyümesinden önceye koyar. I. '
             'Konstantinos’un surları doğuda kalıyordu; “Hora’daki” — '
             'kırlıktaki — Kutsal Kurtarıcı kilisesi, II. Theodosius’un '
             'surları 413–414’te şehir çizgisini kapısının önünden '
@@ -337,12 +349,13 @@ CHORA_STRATA = [
             'mozaikleri İsa’yı “Yaşayanların Diyarı”, Meryem’i '
             '“Sığdırılamayanı Sığdıran” diye anar — iki yazıtta da aynı '
             'Yunanca sözcük geçer: hora.\n\n'
-            'Kaynaklardaki ilk yeniden yapım 6. yüzyıla, I. Justinianus '
-            'dönemine tarihlenir; Maria Dukaina’nın 11. yüzyılda yaptırdığı '
+            'Kazılardaki en eski temeller 6. yüzyıla tarihlenir; bir aziz '
+            'yaşamöyküsü yeniden yapımı Justinianus’a bağlar. '
+            'Maria Dukaina’nın 11. yüzyılda yaptırdığı '
             'kilise bu temelin üzerine oturur.'),
         media=[],
         artworks=[],
-        sources=['wd-q849489', 'ousterhout-2002', 'chora-museum'],
+        sources=['wd-q849489', 'ousterhout-2002', 'chora-museum', 'ousterhout-introduction'],
     ),
 ]
 
@@ -409,7 +422,8 @@ PLACE_SOURCES = {
               'underwood-1956', 'underwood-1958', 'smarthistory-chora',
               'chora-guide-parekklesion', 'muze-kariye',
               'daily-sabah-kariye-2024', 'hyperallergic-kariye-2024',
-              'sozcu-kariye-2024', 'cumhuriyet-kariye-2024', 'chora-museum'],
+              'sozcu-kariye-2024', 'cumhuriyet-kariye-2024', 'chora-museum',
+              'ousterhout-introduction', 'aa-kariye-postponed-2020'],
     'hagia-sophia': ['wd-q12506', 'smarthistory-hagia-sophia',
                      'britannica-hagia-sophia', 'whc-istanbul'],
 }

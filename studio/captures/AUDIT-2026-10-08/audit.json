@@ -1,0 +1,209 @@
+{
+  "auditedAt": "2026-10-08",
+  "summary": "Foundation implemented locally through P05; acceptance open. P06 preparation only. P07–P40 not started.",
+  "readiness": {
+    "points": 1696,
+    "maximum": 5600,
+    "dimensions": 56,
+    "percent": 30.3,
+    "changed": false
+  },
+  "phases": {
+    "P00": "implemented locally",
+    "P01": "implemented locally",
+    "P02": "implemented locally",
+    "P03": "implemented locally",
+    "P04": "implemented locally",
+    "P05": "implemented and repaired; acceptance open",
+    "P06": "preparation only",
+    "P07": "not started",
+    "P08": "not started",
+    "P09": "not started",
+    "P10": "not started",
+    "P11": "not started",
+    "P12": "not started",
+    "P13": "not started",
+    "P14": "not started",
+    "P15": "not started",
+    "P16": "not started",
+    "P17": "not started",
+    "P18": "not started",
+    "P19": "not started",
+    "P20": "not started",
+    "P21": "not started",
+    "P22": "not started",
+    "P23": "not started",
+    "P24": "not started",
+    "P25": "not started",
+    "P26": "not started",
+    "P27": "not started",
+    "P28": "not started",
+    "P29": "not started",
+    "P30": "not started",
+    "P31": "not started",
+    "P32": "not started",
+    "P33": "not started",
+    "P34": "not started",
+    "P35": "not started",
+    "P36": "not started",
+    "P37": "not started",
+    "P38": "not started",
+    "P39": "not started",
+    "P40": "not started"
+  },
+  "repaired": [
+    "AGP 9 build failure from sensors_plus 6.1.2",
+    "Missing bundled plate subdirectories",
+    "River flow mask BGR/RGB channel swap",
+    "Held/cancelled depth-gauge drags and stale scroll completion",
+    "Seed builder dropping later-phase registry index entries",
+    "Chora hours, art-layer attribution, vault location, foundation/concealment certainty and 2020 event claim",
+    "Visit-source publisher attribution",
+    "Visit-card golden missing its real background"
+  ],
+  "validation": {
+    "analyzer": "clean",
+    "appTests": 187,
+    "goldensIncluded": 110,
+    "captureTestsRerun": 3,
+    "captureTestsHistorical": 11,
+    "pythonRebuildTests": 3,
+    "registry": "VALID (schema 1)",
+    "byteIdenticalRebuiltContentFiles": 13,
+    "selectedQidHashes": 155,
+    "bundledPhotoHashes": 2,
+    "fontHashesLicensesGreekTurkish": "pass",
+    "releaseApks": 3,
+    "releaseAab": "pass",
+    "releaseSigning": "Android Debug (O05 open)",
+    "releasePermissions": "CAMERA, ACCESS_NETWORK_STATE, internal receiver guard; no audio/legacy storage",
+    "plateMapsBundledPerArtifact": 7,
+    "plateShaderCompiled": true
+  },
+  "counters": {
+    "places": 155,
+    "artworks": 103,
+    "milestones": 48,
+    "sources": 224,
+    "media": 2,
+    "details": 17,
+    "reviewedPlaces": 0,
+    "approvedMilestones": 0,
+    "uiKeysPerLanguage": 349,
+    "turkishContentFields": 1227,
+    "localizedContentFields": 2090,
+    "missingTurkishFields": 863,
+    "authoredDartLines": 11201,
+    "generatedLocalizationDartLines": 4578,
+    "generatedOsmDartLines": 31,
+    "totalDartLines": 15810
+  },
+  "unverified": [
+    "No current Android phone or emulator/AVD; historical device evidence retained",
+    "Profile scrolling, physical typography/haptics/TalkBack and Go intent",
+    "Current release camera/ONNX, cold start, sensor performance/memory",
+    "Native-language and field content review",
+    "P06 manifests/player, runtime controls/sensors/lights/wipe/story beats, light goldens and hook clips"
+  ],
+  "openOwnerItems": [
+    "O01 reference device",
+    "O08 native review",
+    "O15 field visit checks",
+    "O17 support email",
+    "O22 Anastasis master source URL",
+    "O05 upload signing before public release"
+  ],
+  "nextPhase": "P06: manifest/player integration and remastered I–II acceptance",
+  "artifacts": {
+    "screenshots": 37,
+    "digClip": {
+      "path": "studio/captures/AUDIT-2026-10-08/chora-dig-9s.mp4",
+      "seconds": 9,
+      "frames": 216,
+      "fps": 24
+    },
+    "releases": [
+      {
+        "path": "build/app/outputs/flutter-apk/app-arm64-v8a-release.apk",
+        "bytes": 95854819,
+        "sha256": "ea7bcbcc1f4b107b53b4a95cdc49f1eed65603dd23a9f98f24e42a300918792d",
+        "plateMaps": [
+          "assets/flutter_assets/assets/plates/anastasis/damaged.png",
+          "assets/flutter_assets/assets/plates/anastasis/gold.png",
+          "assets/flutter_assets/assets/plates/anastasis/surface.png",
+          "assets/flutter_assets/assets/plates/judgment/gold.png",
+          "assets/flutter_assets/assets/plates/judgment/river.png",
+          "assets/flutter_assets/assets/plates/judgment/scroll.png",
+          "assets/flutter_assets/assets/plates/judgment/surface.png"
+        ],
+        "compiledPlateShader": "assets/flutter_assets/shaders/plate.frag"
+      },
+      {
+        "path": "build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk",
+        "bytes": 88333143,
+        "sha256": "e18043fee9cdca627534f2ee6c138b330f4bc16996f209a778c0bb3e458a55c4",
+        "plateMaps": [
+          "assets/flutter_assets/assets/plates/anastasis/damaged.png",
+          "assets/flutter_assets/assets/plates/anastasis/gold.png",
+          "assets/flutter_assets/assets/plates/anastasis/surface.png",
+          "assets/flutter_assets/assets/plates/judgment/gold.png",
+          "assets/flutter_assets/assets/plates/judgment/river.png",
+          "assets/flutter_assets/assets/plates/judgment/scroll.png",
+          "assets/flutter_assets/assets/plates/judgment/surface.png"
+        ],
+        "compiledPlateShader": "assets/flutter_assets/shaders/plate.frag"
+      },
+      {
+        "path": "build/app/outputs/flutter-apk/app-x86_64-release.apk",
+        "bytes": 101163227,
+        "sha256": "54ffd7aa4a563ee7f6daef83338c137e353f138cfa8d035e0cd111b0e824d231",
+        "plateMaps": [
+          "assets/flutter_assets/assets/plates/anastasis/damaged.png",
+          "assets/flutter_assets/assets/plates/anastasis/gold.png",
+          "assets/flutter_assets/assets/plates/anastasis/surface.png",
+          "assets/flutter_assets/assets/plates/judgment/gold.png",
+          "assets/flutter_assets/assets/plates/judgment/river.png",
+          "assets/flutter_assets/assets/plates/judgment/scroll.png",
+          "assets/flutter_assets/assets/plates/judgment/surface.png"
+        ],
+        "compiledPlateShader": "assets/flutter_assets/shaders/plate.frag"
+      },
+      {
+        "path": "build/app/outputs/bundle/release/app-release.aab",
+        "bytes": 142022037,
+        "sha256": "7c11f309a831b8c9a6649521e7a0073e7ff2374d00d0d5a6e00cee21efc2ba09",
+        "plateMaps": [
+          "base/assets/flutter_assets/assets/plates/anastasis/damaged.png",
+          "base/assets/flutter_assets/assets/plates/anastasis/gold.png",
+          "base/assets/flutter_assets/assets/plates/anastasis/surface.png",
+          "base/assets/flutter_assets/assets/plates/judgment/gold.png",
+          "base/assets/flutter_assets/assets/plates/judgment/river.png",
+          "base/assets/flutter_assets/assets/plates/judgment/scroll.png",
+          "base/assets/flutter_assets/assets/plates/judgment/surface.png"
+        ],
+        "compiledPlateShader": "base/assets/flutter_assets/shaders/plate.frag"
+      }
+    ]
+  },
+  "recheckedContentSources": [
+    {
+      "title": "Kariye Mosque — Müze İstanbul (visiting information)",
+      "url": "https://muze.gen.tr/muze-detay/kariye",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "title": "The Kariye Camii: An Introduction — history, decoration and architecture",
+      "url": "https://www.columbia.edu/cu/wallach/exhibitions/Byzantium/pdf/ousterhout_intro.pdf",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "title": "Kariye Mosque opening postponed — 29 October 2020",
+      "url": "https://www.aa.com.tr/tr/turkiye/kariye-camisinin-acilisi-ertelendi/2023331",
+      "accessedAt": "2026-10-08"
+    }
+  ],
+  "documents": [
+    "PHASES.md",
+    "PROGRESS.md"
+  ]
+}

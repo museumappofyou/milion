@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
@@ -51,35 +52,44 @@ void main() {
         }
         expect(stratum.sourceIds, isNotEmpty, reason: stratum.id);
         for (final source in stratum.sourceIds) {
-          expect(registry.source(source), isNotNull, reason: '$stratum: $source');
+          expect(
+            registry.source(source),
+            isNotNull,
+            reason: '$stratum: $source',
+          );
         }
       }
       // The Metochites layer is the entry point of the Chora Milestones.
       final metochites = chora.strata[3];
-      expect(
-        registry.milestonesIn(metochites).map((m) => m.numeral),
-        ['I', 'II', 'III', 'IV', 'V'],
-      );
+      expect(registry.milestonesIn(metochites).map((m) => m.numeral), [
+        'I',
+        'II',
+        'III',
+        'IV',
+        'V',
+      ]);
       expect(registry.artworksIn(metochites).first.id, 'F02');
       expect(
         registry.artworksIn(metochites).map((a) => a.id),
         containsAll(['F02', 'F05']),
       );
-      // The Komnenian layer holds the twelfth-century naos mosaics.
+      // The Komnenian walls and the fourteenth-century decoration are
+      // separate building campaigns (Ousterhout, Introduction pp. 1–4).
       expect(
-        registry.artworksIn(chora.strata[4]).map((a) => a.id),
-        containsAll(['M01', 'M02', 'M03']),
+        registry.artworksIn(metochites).map((a) => a.id),
+        containsAll(['M01', 'M02', 'M03', 'M12']),
       );
+      expect(registry.artworksIn(chora.strata[4]), isEmpty);
       // Milestones only enter a layer through its own artworks.
       expect(registry.milestonesIn(chora.strata[0]), isEmpty);
     });
 
     test('the Hagia Sophia draft page is two JSON layers only', () {
       final hagia = registry.place('hagia-sophia')!;
-      expect(
-        hagia.strata.map((s) => s.id),
-        ['mosque-after-1453', 'justinian-church'],
-      );
+      expect(hagia.strata.map((s) => s.id), [
+        'mosque-after-1453',
+        'justinian-church',
+      ]);
       for (final stratum in hagia.strata) {
         expect(stratum.paragraphs('en').length, inInclusiveRange(2, 4));
         expect(stratum.paragraphs('tr').length, inInclusiveRange(2, 4));
@@ -91,8 +101,10 @@ void main() {
 
     test('the visit card is remotely checked and cited', () {
       final visit = registry.place('chora')!.visit!;
-      expect(visit.checkedAt, DateTime(2026, 10, 7));
-      expect(visit.hoursCheckedAt, DateTime(2026, 10, 7));
+      expect(visit.checkedAt, DateTime(2026, 10, 8));
+      expect(visit.hoursCheckedAt, DateTime(2026, 10, 8));
+      expect(visit.hours!.en, startsWith('Daily except Friday'));
+      expect(visit.hours!.tr, startsWith('Cuma hariç her gün'));
       expect(visit.hours!.tr, isNotEmpty);
       expect(visit.entry!.tr, isNotEmpty);
       expect(visit.etiquette!.tr, isNotEmpty);
@@ -106,10 +118,9 @@ void main() {
         expect(registry.source(source), isNotNull);
       }
       // Every other place carries no visit card yet; nothing was invented.
-      expect(
-        registry.places.where((p) => p.visit != null).map((p) => p.id),
-        ['chora'],
-      );
+      expect(registry.places.where((p) => p.visit != null).map((p) => p.id), [
+        'chora',
+      ]);
       // Accessibility is honestly absent for Chora and renders unverified.
       expect(visit.accessibility, isNull);
     });
@@ -126,11 +137,7 @@ void main() {
             isFalse,
             reason: stratum.id,
           );
-          expect(
-            banned.hasMatch(stratum.body.en),
-            isFalse,
-            reason: stratum.id,
-          );
+          expect(banned.hasMatch(stratum.body.en), isFalse, reason: stratum.id);
           expect(
             banned.hasMatch(stratum.title.tr ?? ''),
             isFalse,
@@ -146,16 +153,42 @@ void main() {
     });
 
     test('P05 facts entered the Daily and On-this-day pools', () {
-      final seeds = File('tool/content/editorial_seeds.json').readAsStringSync();
+      final seeds = File('tool/content/editorial_seeds.json')
+          .readAsStringSync();
       for (final id in [
         'p05-wrist',
         'p05-metochites-hat',
         'p05-curtains',
         'p05-reopening',
         'p05-decree',
-        'p05-first-prayer',
+        'p05-opening-postponed',
       ]) {
         expect(seeds, contains(id));
+      }
+    });
+
+    test('the postponed opening is not published as a completed event', () {
+      final seeds = jsonDecode(
+        File('tool/content/editorial_seeds.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
+      final event = (seeds['onThisDay'] as List).singleWhere(
+        (entry) => entry['id'] == 'p05-opening-postponed',
+      );
+      expect(event['date'], '2020-10-29');
+      expect(event['sources'], contains('aa-kariye-postponed-2020'));
+      expect(event['text']['en'], contains('postponed'));
+      for (final language in ['en', 'tr']) {
+        final text = registry
+            .place('chora')!
+            .strata
+            .first
+            .body
+            .inLanguage(language);
+        expect(
+          text,
+          isNot(contains('first Friday prayer in 72 years was held')),
+        );
+        expect(text, isNot(contains('72 yıl sonra ilk cuma namazı kılındı')));
       }
     });
   });
@@ -323,25 +356,24 @@ void main() {
   });
 
   group('P05 links', () {
-    test('walking directions prefer the entrance and ask for walking mode', () async {
-      final registry = await loadRegistry();
-      final chora = registry.place('chora')!;
-      final uri = walkingDirectionsUri(chora);
-      expect(uri.host, 'www.google.com');
-      expect(uri.path, '/maps/dir/');
-      expect(uri.query, contains('travelmode=walking'));
-      expect(uri.query, contains('destination=${chora.coordinates.lat},'));
-    });
+    test(
+      'walking directions prefer the entrance and ask for walking mode',
+      () async {
+        final registry = await loadRegistry();
+        final chora = registry.place('chora')!;
+        final uri = walkingDirectionsUri(chora);
+        expect(uri.host, 'www.google.com');
+        expect(uri.path, '/maps/dir/');
+        expect(uri.query, contains('travelmode=walking'));
+        expect(uri.query, contains('destination=${chora.coordinates.lat},'));
+      },
+    );
 
     test('Report a change stays hidden while O17 is open', () async {
       expect(milionSupportEmail, isEmpty);
       final registry = await loadRegistry();
       expect(
-        reportChangeUri(
-          registry.place('chora')!,
-          subject: 's',
-          body: 'b',
-        ),
+        reportChangeUri(registry.place('chora')!, subject: 's', body: 'b'),
         isNull,
       );
     });

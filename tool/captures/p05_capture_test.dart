@@ -12,7 +12,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 import '../../test/helpers.dart';
 
-const out = 'studio/captures/P05';
+const out = String.fromEnvironment(
+  'MILION_CAPTURE_DIR',
+  defaultValue: 'studio/captures/P05',
+);
 const frames = '$out/chora-dig-frames';
 
 Future<void> capture(
@@ -32,11 +35,7 @@ Future<void> capture(
   });
 }
 
-Future<void> captureTo(
-  WidgetTester tester,
-  GlobalKey key,
-  String path,
-) async {
+Future<void> captureTo(WidgetTester tester, GlobalKey key, String path) async {
   await tester.runAsync(() async {
     final boundary =
         key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
@@ -156,7 +155,11 @@ void main() {
     for (var i = 0; i < total; i++) {
       await gesture.moveBy(Offset(0, -extent / total));
       await tester.pump(const Duration(milliseconds: 1000 ~/ 24));
-      await captureTo(tester, key, '$frames/frame-${i.toString().padLeft(3, '0')}.png');
+      await captureTo(
+        tester,
+        key,
+        '$frames/frame-${i.toString().padLeft(3, '0')}.png',
+      );
     }
     await gesture.up();
     await tester.pumpAndSettle();

@@ -4,7 +4,13 @@
 
 The Milion (Turkish: *Milyon Taşı*) was the zero-mile stone of Constantinople: every road distance in the empire was measured from it. A fragment still stands on Divanyolu beside the Basilica Cistern. The app measures the whole city from that point: distance outward in Roman miles, depth downward through time.
 
-**How to use this file.** Run the phases in order, respecting the dependencies. Open a new Claude Code session in the workspace, copy one phase's code block and paste it. Every phase finishes by updating this file (Decisions, Open issues) and `PROGRESS.md` (scores, counters, ledger). These are the only two Markdown files in the project. The earlier İzvoya-era documents are archived in `archive/izvoya-era-docs-2026-09-26.tar.gz`.
+**How to use this file.** Run the phases in order, respecting the dependencies. Open a new coding session in the workspace, copy one phase's code block and paste it. Every phase finishes by updating this file (Decisions, Open issues) and `PROGRESS.md` (scores, counters, ledger). These are the two authoritative product tracking files; the separate phase-routing notes are auxiliary. The earlier İzvoya-era documents are archived in `archive/izvoya-era-docs-2026-09-26.tar.gz`.
+
+**Current checkpoint — audited 2026-10-08.** The project is at the end of Foundation implementation, with acceptance work still open. P00–P04 are implemented locally and their retained tests pass. P05 is implemented and repaired, but profile scrolling, physical TalkBack/haptics and the Google Maps intent have not been verified on a device; the feedback row also awaits O17. P06 has a shader, seven maps and a remaster script, but no `PlateManifest`/`PlatePlayer` or runtime integration. P07–P40 are not started. A phase's implementation date does not close its device, field, native-copy or owner checks.
+
+**Next work.** Build P06 from the existing preparation: manifest/player integration, controls, opt-in sensors, light modes, masked wipe, story beats and reduced-motion equivalents, then the three required clips. Keep I–II as prototypes until their acceptance gates pass. When O01 is available, validate the outstanding P03–P05 flows and the P06 performance/memory budgets. O08, O15, O17 and O22 remain open; none requires invented content to continue local implementation.
+
+**Audit evidence.** `studio/captures/AUDIT-2026-10-08/` holds the failing-before and passing-after logs, 37 EN/TR stills, a 9.00-second dig clip, provenance/font checks, a byte-identical 13-file content rebuild and Android artifact manifests. Final gates: analyzer clean; 187 app tests (110 goldens); three fresh P05 capture tests; three Python rebuild tests; content schema valid; all three release APKs and the AAB build. No Android phone or emulator is currently available, so historical P04 emulator evidence has not been rerun. See `PROGRESS.md` for the phase audit and remaining work.
 
 ---
 
@@ -214,7 +220,7 @@ Every hook is a claim that must be verified and sourced in its phase before appr
 
 ## 7. Phase prompts
 
-### P00 — Milion identity and plan (done 2026-09-26)
+### P00 — Milion identity and plan — IMPLEMENTED LOCALLY (2026-09-26)
 
 ```text
 Phase P00 — Milion identity and plan (re-run = audit only). Workspace: /Users/memre/Desktop/milion. Android-only Flutter app.
@@ -233,7 +239,7 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P01 — Clean slate (done 2026-09-27)
+### P01 — Clean slate — IMPLEMENTED LOCALLY (2026-09-27)
 
 ```text
 Phase P01 — Clean slate: version control, pruning, reproducible tooling. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
@@ -257,7 +263,7 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P02 — Content registry and mile-zero geography — DONE (2026-09-27)
+### P02 — Content registry and mile-zero geography — IMPLEMENTED LOCALLY (2026-09-27)
 
 ```text
 Phase P02 — Content registry and mile-zero geography. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
@@ -289,7 +295,7 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P03 — Design language "Porphyry & Tessera" — DONE (2026-09-28)
+### P03 — Design language "Porphyry & Tessera" — IMPLEMENTED LOCALLY (2026-09-28)
 
 ```text
 Phase P03 — Design language "Porphyry & Tessera". Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
@@ -329,7 +335,7 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P04 — Shell, Today and the first ten seconds — DONE (2026-10-01)
+### P04 — Shell, Today and the first ten seconds — IMPLEMENTED LOCALLY (2026-10-01)
 
 ```text
 Phase P04 — Shell, Today and the first ten seconds. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
@@ -367,15 +373,15 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P05 — Place page: the dig — DONE (2026-10-07)
+### P05 — Place page: the dig — IMPLEMENTED; ACCEPTANCE OPEN (audited 2026-10-08)
 
 ```text
 Phase P05 — Place page: the dig. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
 Read PHASES.md and PROGRESS.md first. Depends on P04.
 
 Goal: every place is a vertical archaeological section; scrolling down goes back in time.
-Use the P02 registry and its reviewed-place filter. Replace the temporary `sceneForArtwork` adapter as artwork widgets become typed; do not reintroduce catalogue data into the classifier.
-Grow the P04 present-day header (`lib/city/place_screen.dart`) into the dig; unreviewed draft points keep showing only their checked name, position and sources (P04 Decisions).
+Use the P02 registry. Replace the temporary `sceneForArtwork` adapter as artwork widgets become typed; do not reintroduce catalogue data into the classifier.
+Grow the P04 present-day header (`lib/city/place_screen.dart`) into the dig. Per the P05 Decisions, individually sourced strata can render on an explicitly labelled draft; drafts without authored strata show only their checked name, position and sources (P04 Decisions). Place-level approval remains with the wave reviews.
 1. Composition:
    - The top is the present: today's photo, current name and function, status with its checked date, mil distance, and "Go", which opens Google Maps walking directions by intent.
    - Scrolling down passes through only the relevant strata: Republic, Late Ottoman, Classical Ottoman, Late Byzantine, Middle Byzantine, Early Byzantine, Roman/Byzantion, Prehistory.
@@ -387,12 +393,12 @@ Grow the P04 present-day header (`lib/city/place_screen.dart`) into the dig; unr
    - Accessibility notes, and the nearest tram/metro/ferry stop with walking minutes.
    - "Report a change": a mailto link to the owner's address (O17).
 4. Build Chora as the first full page, from data only. Its layers, each verified and cited:
-   - The monastery "in the country" outside Constantine's walls.
-   - The Komnenian rebuilding (Maria Doukaina, then Isaac Komnenos).
+   - The Byzantine foundation tradition "in the country" outside Constantine's walls, distinguished from the excavated sixth-century foundations.
+   - The Komnenian rebuilding (Maria Doukaina, then Isaac Komnenos); surviving fourteenth-century mosaics belong to the Metochites layer.
    - Theodore Metochites, 1315–21.
    - Mosque in 1511.
    - Byzantine Institute restoration and the museum years.
-   - Mosque again in 2020 and the 2024 reopening.
+   - Mosque status again in 2020, the postponed October opening, and the 2024 reopening.
 5. No place-specific widgets: add a draft Hagia Sophia page with two strata purely from JSON to prove it.
 Acceptance:
 - Chora complete in EN+TR with sources.
@@ -407,7 +413,9 @@ Close the phase:
 3. No other .md files. Commit "Pxx: <summary>".
 ```
 
-### P06 — Plate engine and remastered Milestones I–II
+### P06 — Plate engine and remastered Milestones I–II — PREPARATION ONLY (audited 2026-10-08)
+
+Existing preparation: `shaders/plate.frag`, `assets/plates/{anastasis,judgment}/` and `tool/plate/remaster_maps.py`. The audit fixed bundling and the river-mask channel, and moved `sensors_plus` to 7.1.1 for AGP 9 compatibility. These assets compile and decode; the old explorer still runs. All player capabilities, manifests, integration, player tests, light-mode goldens, device budgets and P06 hook clips below remain to be built or verified.
 
 ```text
 Phase P06 — Plate engine (2.5D v2) and remastered Milestones I–II. Workspace: /Users/memre/Desktop/milion. Android-only Flutter app "Milion".
@@ -1361,25 +1369,25 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 
 | ID | What is needed from you (or outside) | Why / what it blocks | Needed by | Status |
 | --- | --- | --- | --- | --- |
-| O01 | Connect the Samsung Galaxy A52s over USB with USB debugging on, and keep it unlocked while a phase runs device checks. | Every performance, gyroscope, camera and TalkBack claim stays *unverified* without a physical device. | P06 | Resolved 2026-09-26: SM-A528B (Android 14) is listed by adb and runs the release build. It must be unlocked for automated UI checks. No device connected during P02, P03 or P04 (`studio/captures/P04/devices.txt`); physical typography, haptics, TalkBack and the P04 cold start remain unverified. P04 created a `Milion_A14_Phone` AVD (Android 14, 411×914 dp) for emulator checks. The `Pixel_Fold_API_36` AVD has under 500 MB free and refuses installs: wipe or enlarge it when convenient (it also holds `com.historiq`, left untouched). P05 found neither a device nor any AVD/emulator installed on this machine (`studio/captures/P05/devices.txt`): profile scrolling, hardware TalkBack, haptics and the Go intent remain unverified. |
+| O01 | Connect the Samsung Galaxy A52s over USB with USB debugging on, and keep it unlocked while a phase runs device checks. | Every performance, gyroscope, camera and TalkBack claim stays *unverified* without a physical device. | P05 acceptance / P06 | Open again, checked 2026-10-08: no Android device is connected and no Android emulator/AVD is installed on this machine (`studio/captures/AUDIT-2026-10-08/devices.txt`). The SM-A528B release run recorded on 2026-09-26 and P04's Android 14/16 emulator checks are historical evidence, not validation of the current build. Physical typography, haptics, TalkBack, camera/ONNX, cold start, dig scrolling and the Go intent remain unverified; P06 sensors and performance will also need this device. |
 | O02 | Decide whether the 5.3 GB Chora capture corpus (`~/Desktop/chora-ar/captures`) stays outside the repo (via `MILION_CAPTURES`) or is copied in with LFS. | Reproducible plate and recognition builds. | P01 | Resolved 2026-09-27: stays outside the repo; `MILION_CAPTURES` replaces the hard-coded paths (default: `../chora-ar/captures` next to the repo) and the three preparation scripts fail with a clear message when it is missing. |
 | O03 | On-site photos: current-day photos of each ghost-lens viewpoint, and real-light photos of key mosaics and tiles for recognition. | The P20 lens and P23 recognition quality. | P20 | Open |
 | O04 | A Google Play Console developer account and ownership of the listing. | Internal testing (P39) and release (P40). | P39 | Open |
 | O05 | Create the upload keystore, store it safely outside the repo, and fill in `android/key.properties`. | Signed release builds. | P39 | Open (P01: release builds read `android/key.properties` when present and otherwise print a loud Gradle warning and fall back to the debug key; no change until the keystore exists). |
 | O06 | A private GitHub repository (for CI), and optionally a domain (e.g. milion.app) for App Links. | P38 CI and P17 https deep links (a custom scheme works meanwhile). | P17 / P38 | Partly resolved 2026-09-27: `github.com/museumappofyou/milion` exists and `origin` pushes over SSH. CI (P38) and the optional domain remain open. |
 | O07 | Taste check: compare [A, lamp first](studio/captures/P03/direction-A-390.png) and [B, marble/porphyry](studio/captures/P03/direction-B-390.png), or long-press the About wordmark in debug for `/design`. | Non-blocking; B is implemented as the default. | P03 / P04 | Open — P04 built the real Today on B (marble with porphyry, artwork panel in lamp); see `studio/captures/P04/today-390-en*.png`. Owner preference can still tune later phases. |
-| O08 | Language review: you review the Turkish copy; a native English reader reviews the English. | P34 acceptance. | P34 | Open — P02 seeds have EN/TR names and hooks, all draft; 863 legacy Chora fields still need Turkish (P11). P03 completes 229 EN/TR UI ARB keys, including Registry, with a saved language override. P04 brings it to 313 keys plus 17 bilingual detail sentences and 48 register titles, all written natively but unreviewed. P05 adds 36 UI keys and 8 dig layers (6 Chora, 2 Hagia Sophia) plus the visit card, all EN+TR; the Chora layer copy is the next thing a native reader should review. Owner/native-reader review is still pending. |
+| O08 | Language review: you review the Turkish copy; a native English reader reviews the English. | P34 acceptance. | P34 | Open — P02 seeds have EN/TR names and hooks, all draft; 863 legacy Chora fields still need Turkish (P11). P03 completes 229 EN/TR UI ARB keys, including Registry, with a saved language override. P04 brings it to 313 keys plus 17 bilingual detail sentences and 48 register titles, all authored but unreviewed. P05 adds 36 UI keys and 8 dig layers (6 Chora, 2 Hagia Sophia) plus the visit card, all EN+TR; the Chora layer copy, including the 2026-10-08 corrections, is the next thing a native reader should review. Owner/native-reader review is still pending. |
 | O09 | Narration: accept Android TTS, or record human narration (you or a voice artist). | P22 quality level. | P22 | Open |
 | O10 | Field trial: 5–10 people and 3 half-days in Istanbul. | P23 recognition footage and P39. | P39 | Open |
 | O11 | Rights and licensing for images, fonts, 3D references, audio, Panorama 1453 and trademarks. Deferred by your decision. | Public release only. | P40 | Partly resolved P03: three selected fonts have official OFLs bundled and registered, with source/blob/hash evidence in `studio/design/fonts/sources.json`. Image/model/audio and other rights remain deferred. P04 uses OpenStreetMap data (ODbL; attribution in About, inputs and hashes in `studio/first_run/`). |
 | O12 | Crash-reporting provider (Firebase Crashlytics needs a Firebase project; Sentry needs an account). Optionally Firebase Test Lab. | P37 and P38. | P37 | Open |
 | O13 | Hosting for content packs, only if Play Asset Delivery proves insufficient. | P36 fallback. | P36 | Open (probably not needed) |
 | O14 | Impulse responses: permission to use published Hagia Sophia measurements, or an on-site recording. | XI authenticity (a synthetic IR is the fallback). | P22 | Open |
-| O15 | On-site verification of mosque visiting rules and museum hours shortly before release. | Freshness of the visit cards. | P39 | Open — P02 deliberately stores unknown status, null checkedAt and null entrance for unverified drafts. Wave reviews must fill dated evidence before promotion. P05 adds the visit card and checks Chora remotely against the official Müze İstanbul page (hours Tue–Sun, €20, etiquette, transit, checkedAt 2026-10-07) while accessibility stays absent; the field check and all other places remain open. |
+| O15 | On-site verification of mosque visiting rules and museum hours shortly before release. | Freshness of the visit cards. | P39 | Open — drafts keep unknown status, null status checkedAt and null entrance until reviewed. Chora's visit card was rechecked remotely on 2026-10-08: the [Müze İstanbul visiting page](https://muze.gen.tr/muze-detay/kariye) says daily except Friday, 09:00–18:00, box office 17:55, €20 for foreign visitors and prayer closures. It describes curtained naos mosaics; their visibility outside prayers is not assumed. Accessibility, the entrance/walking route and current visiting practice still need field verification. Other places remain open. |
 | O16 | Old installs of "chora_scene_finder" and "İzvoya" on your phone are separate apps with separate notes and cannot be migrated automatically. Export anything you need, then uninstall them. | Avoids confusion during device testing. | P01 | Open |
 | O17 | A support or feedback email address for "Report a change" and the store listing. | P05 visit card and P40 listing. | P05 | Open — P05 ships the row and a tested `mailto` builder (`lib/city/external_links.dart`), but it stays hidden until an address is set; add the owner's address to reveal it (and fix the copy if the address changes the wording). |
 | O18 | Business model: free, paid, tip jar or paid chapters (you said you will decide later). | P40 listing and any billing work. | P40 | Open |
-| O19 | Upstream `flutter_onnxruntime` (masicai) still has the line `apply plugin: "kotlin-android"`, which Flutter flags as KGP use. Optional: file the issue using Flutter's template (docs.flutter.dev, migrate-to-built-in-kotlin). | Until upstream changes, the app uses the patched copy in `third_party/flutter_onnxruntime`. Remove it when a fixed release exists. | P01 check | Open — checked 2026-09-27: pub.dev's latest is still 1.8.5 (published 2026-09-08), so the patched copy and the `dependency_overrides` entry stay. Re-check before P38. |
+| O19 | Review upstream `flutter_onnxruntime` before removing the local built-in-Kotlin patch. | The app uses `third_party/flutter_onnxruntime` until the P01 removal criterion is met and a replacement build passes. | P01 check / P38 | Open — rechecked 2026-10-08: [1.9.0 was released on 2026-10-06](https://pub.dev/packages/flutter_onnxruntime/changelog), but its [Android Gradle file](https://raw.githubusercontent.com/masicai/flutter_onnxruntime/v1.9.0/android/build.gradle) retains a conditional `apply plugin: "kotlin-android"` branch. The patched 1.8.5 override stays; no ONNX upgrade or device runtime validation is claimed. |
 | O20 | Install git-lfs on this machine and migrate the large binaries (`*.jpg *.png *.bin *.onnx *.mp4`) when convenient, or keep the repository private and exclude it from CI caches. | The repo carries roughly 250 MB of binaries inside normal git objects; clone and CI costs grow every phase. P01 captured a plain baseline because git-lfs was not installed. | P38 | Open |
 | O21 | Survey gate entrances and clarify conflicting/site-spanning geography: Kerkoporta marker versus disputed gate, quarter points at Silivri/Mevlana/Topkapı/Edirnekapı, Hisart’s Şişli description versus Kağıthane map point, and access points for walls/waterways. | Draft representative points are unsuitable as walking destinations; `tool/content/verification.json` records each exception. | P15 / P30 / P32 / P39 | Open — needs field observations or authoritative institutional confirmation. |
 | O22 | Name the source of `assets/anastasis/conch_reference.jpg`. It is the Anastasis explorer master and, since P04, also Today's image for the nine Milestone I details. `studio/anastasis_25d/source_audit.csv` derives it from a 2026-09-23 web-viewer screenshot (`Screenshot 2026-09-23 at 17.18.48.png`) whose page URL was never recorded. | Standing rule 8 (record every image source URL) and O11 rights clearance before public release; Today's credits cannot name it yet. | P40 (before any public build) | Open — needs the owner to identify the viewer (for example a museum or Kültür Envanteri tour) or replace the master. |
@@ -1389,7 +1397,7 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 - **2026-09-26: the name is Milion.** It means the Byzantine zero-mile stone, and reads as a pun on "million" (details) in both English and Turkish ("Milyon Taşı"). It gives the app its organising idea: distance from mile zero and depth in time. It replaces İzvoya.
 - **2026-09-26: the mark is an M holding the zero.** The inscriptional M of Milion holds the gilded zero of the Milion stone in its vertex, so the mark reads as the name and as mile zero at once. It replaces the P00 draft (a dome on pendentives from below, which read as a camera aperture). Porphyry, marble and tessera gold.
 - **2026-09-26: identifiers.** Package `milion`, application ID `app.milion`, workspace `/Users/memre/Desktop/milion`. The new ID installs as a separate app (O16).
-- **2026-09-26: only two Markdown files.** The 14 İzvoya-era Markdown files (the old PHASES and PROGRESS plus 12 READMEs) are archived in `archive/izvoya-era-docs-2026-09-26.tar.gz`.
+- **2026-09-26: two authoritative product tracking files.** The 14 İzvoya-era Markdown files (the old PHASES and PROGRESS plus 12 READMEs) are archived in `archive/izvoya-era-docs-2026-09-26.tar.gz`. PHASES and PROGRESS own product status; auxiliary routing notes do not override their ledger.
 - **2026-09-26: figure puppetry is demoted** to an optional IMAGINED "Gesture study". The 4K AI repaint becomes a local wipe only. Rationale in §3.
 - **2026-09-26: Android only; no iOS phases.** Copyright work is deferred until a public release.
 - **2026-09-26: built-in Kotlin.** `android.builtInKotlin=true`: AGP 9 compiles Kotlin and no module applies KGP, so the build is ready for the Flutter version that makes KGP fatal. `flutter_onnxruntime` 1.8.5, still the latest release, keeps a literal `apply plugin: "kotlin-android"` that triggers Flutter's warning. It is therefore overridden with a patched local copy (`third_party/flutter_onnxruntime`, MIT) whose `android/build.gradle` has the KGP classpath and apply removed. The Dart and Kotlin sources are unchanged. Revert when upstream is fixed (O19).
@@ -1440,4 +1448,9 @@ Every phase re-reads this table, adds new needs and closes what it resolved.
 - **2026-10-07, P05: the dig is one data-driven page.** The place page is a vertical section: the present header, then strata newest to oldest, each with a dated title, 2–4 sourced paragraphs, media, that layer's artworks (typed rows), that layer's Milestones and collapsible sources; the visit card lives in the present layer. A pinned plate crossfades to the layer under the reading line, and the edge depth gauge previews on drag, snaps on release and both scrolls and announces through one adjustable TalkBack node. No place-specific widgets: `StratumView`/`DigPlate`/`DigGauge`/`VisitCard` render any record, proven by the two-layer Hagia Sophia draft authored purely in JSON.
 - **2026-10-07, P05: authored strata show on draft places; the place-level review stays with the waves.** Chora cannot be promoted yet (no field-checked entrance/status, O15), but P05 must build and demonstrate its dig. The layers and visit card are therefore individually sourced and rendered while the record keeps `review: draft` and its "Not reviewed yet" notice; drafts without authored strata keep the P04 header only (P04 Decisions still govern their hooks, function and status). P11/P12 review the content, promote the records and may correct any layer.
 - **2026-10-07, P05: the scene adapter is gone.** The temporary `Scene` model, `sceneForArtwork`, `ScenesTab` and `SceneDetailSheet` are deleted; the catalogue (`ArtworksTab`), the Mosaic note list, the scanner and the dig all render typed `Artwork` records through `ArtworkSheet`, and the classifier returns `ArtworkMatch`. The classifier still only maps prediction indices to artwork ids; catalogue data never enters it. Note keys (`scene_note_<id>`) and their bytes are unchanged.
-- **2026-10-07, P05: visit facts are dated and the report row waits for O17.** `visit` carries hours with their own `hoursCheckedAt`, entry, etiquette, accessibility, transit with walking minutes, sources and a whole-card `checkedAt`; the validator rejects undated hours. Chora's card was checked remotely against the official Müze İstanbul page and press sources on 2026-10-07 (accessibility honestly absent), and field verification remains O15/P39. "Report a change" and its testable `mailto` builder ship, but the row stays hidden until an address exists (`milionSupportEmail`, O17).
+- **2026-10-07, P05: visit facts are dated and the report row waits for O17.** `visit` carries hours with their own `hoursCheckedAt`, entry, etiquette, accessibility, transit with walking minutes, sources and a whole-card `checkedAt`; the validator rejects undated hours. Chora's card was checked remotely against the Müze İstanbul visiting page and press sources on 2026-10-07 (corrected and rechecked 2026-10-08; accessibility honestly absent), and field verification remains O15/P39. "Report a change" and its testable `mailto` builder ship, but the row stays hidden until an address exists (`milionSupportEmail`, O17).
+
+- **2026-10-08, audit: implementation and acceptance are separate.** Re-read P00–P06 requirements against code, prior commits and captures, then reran local gates. P00–P04 retain local implementation; P05's device acceptance remains open; P06 has preparation only; P07–P40 remain not started. Reopened O01 instead of treating the September device connection as current. No place or Milestone was promoted. The 56 scores remain 1,696/5,600 (30.3%): repairing regressions restores the existing scope and does not complete device, content-review or release gates.
+- **2026-10-08, audit: repaired gestures and reproducibility.** The gauge commits taps on release, previews held drags, clears cancelled drags without committing and paints the preview detent. Obsolete scroll-animation completions cannot overwrite a newer selection. The seed builder merges the existing index instead of dropping the later register/details/source documents. `python3 tool/content/rebuild.py` runs the P02–P05 builders in order; all 13 registry JSON files reproduce byte-for-byte. Regression tests cover gestures, index retention/idempotence/schema rejection and the postponed-opening draft.
+- **2026-10-08, audit: corrected Chora claims with dated sources.** Corrected visit hours and removed an assurance that curtained naos mosaics are visible outside prayers, using the [published visiting information](https://muze.gen.tr/muze-detay/kariye). Moved the surviving naos mosaics to the Metochites layer and corrected the vault location, foundation certainty and Ottoman concealment claims against [Ousterhout's architectural introduction](https://www.columbia.edu/cu/wallach/exhibitions/Byzantium/pdf/ousterhout_intro.pdf). Replaced the asserted 30 October 2020 first prayer with the [29 October postponement announcement](https://www.aa.com.tr/tr/turkiye/kariye-camisinin-acilisi-ertelendi/2023331), also reported by [TRT](https://www.trthaber.com/haber/turkiye/kariye-camiinin-acilisi-ertelendi-526971.html). Source dates change only for rechecked/new sources; remote research does not establish field review.
+- **2026-10-08, audit: P06 preparation must build before it counts.** The uncommitted sensor dependency failed AGP 9 release compilation; `sensors_plus` 7.1.1 supports the [built-in-Kotlin path](https://pub.dev/packages/sensors_plus/changelog) and the release now passes. Added explicit plate subdirectories because [Flutter directory declarations exclude nested directories](https://docs.flutter.dev/ui/assets/assets-and-images). Fixed OpenCV BGR encoding so the river mask is in the shader's R channel; it covers about 5.4% of the plate instead of every pixel. All seven maps decode at the master dimensions and ship with the compiled shader in APKs/AAB. Source photographs and their hashes are unchanged. This verifies preparation, not a running PlatePlayer or gyroscope feature.

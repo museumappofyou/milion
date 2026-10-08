@@ -1,0 +1,62 @@
+[
+  {
+    "path": "build/app/outputs/flutter-apk/app-arm64-v8a-release.apk",
+    "bytes": 95854819,
+    "sha256": "ea7bcbcc1f4b107b53b4a95cdc49f1eed65603dd23a9f98f24e42a300918792d",
+    "plateMaps": [
+      "assets/flutter_assets/assets/plates/anastasis/damaged.png",
+      "assets/flutter_assets/assets/plates/anastasis/gold.png",
+      "assets/flutter_assets/assets/plates/anastasis/surface.png",
+      "assets/flutter_assets/assets/plates/judgment/gold.png",
+      "assets/flutter_assets/assets/plates/judgment/river.png",
+      "assets/flutter_assets/assets/plates/judgment/scroll.png",
+      "assets/flutter_assets/assets/plates/judgment/surface.png"
+    ],
+    "compiledPlateShader": "assets/flutter_assets/shaders/plate.frag"
+  },
+  {
+    "path": "build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk",
+    "bytes": 88333143,
+    "sha256": "e18043fee9cdca627534f2ee6c138b330f4bc16996f209a778c0bb3e458a55c4",
+    "plateMaps": [
+      "assets/flutter_assets/assets/plates/anastasis/damaged.png",
+      "assets/flutter_assets/assets/plates/anastasis/gold.png",
+      "assets/flutter_assets/assets/plates/anastasis/surface.png",
+      "assets/flutter_assets/assets/plates/judgment/gold.png",
+      "assets/flutter_assets/assets/plates/judgment/river.png",
+      "assets/flutter_assets/assets/plates/judgment/scroll.png",
+      "assets/flutter_assets/assets/plates/judgment/surface.png"
+    ],
+    "compiledPlateShader": "assets/flutter_assets/shaders/plate.frag"
+  },
+  {
+    "path": "build/app/outputs/flutter-apk/app-x86_64-release.apk",
+    "bytes": 101163227,
+    "sha256": "54ffd7aa4a563ee7f6daef83338c137e353f138cfa8d035e0cd111b0e824d231",
+    "plateMaps": [
+      "assets/flutter_assets/assets/plates/anastasis/damaged.png",
+      "assets/flutter_assets/assets/plates/anastasis/gold.png",
+      "assets/flutter_assets/assets/plates/anastasis/surface.png",
+      "assets/flutter_assets/assets/plates/judgment/gold.png",
+      "assets/flutter_assets/assets/plates/judgment/river.png",
+      "assets/flutter_assets/assets/plates/judgment/scroll.png",
+      "assets/flutter_assets/assets/plates/judgment/surface.png"
+    ],
+    "compiledPlateShader": "assets/flutter_assets/shaders/plate.frag"
+  },
+  {
+    "path": "build/app/outputs/bundle/release/app-release.aab",
+    "bytes": 142022037,
+    "sha256": "7c11f309a831b8c9a6649521e7a0073e7ff2374d00d0d5a6e00cee21efc2ba09",
+    "plateMaps": [
+      "base/assets/flutter_assets/assets/plates/anastasis/damaged.png",
+      "base/assets/flutter_assets/assets/plates/anastasis/gold.png",
+      "base/assets/flutter_assets/assets/plates/anastasis/surface.png",
+      "base/assets/flutter_assets/assets/plates/judgment/gold.png",
+      "base/assets/flutter_assets/assets/plates/judgment/river.png",
+      "base/assets/flutter_assets/assets/plates/judgment/scroll.png",
+      "base/assets/flutter_assets/assets/plates/judgment/surface.png"
+    ],
+    "compiledPlateShader": "base/assets/flutter_assets/shaders/plate.frag"
+  }
+]

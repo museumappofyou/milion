@@ -16,6 +16,7 @@ class DigGauge extends StatefulWidget {
     required this.displayYear,
     required this.onPreview,
     required this.onCommit,
+    this.onCancel,
   });
   final List<Stratum> strata;
   final int selected;
@@ -26,12 +27,22 @@ class DigGauge extends StatefulWidget {
 
   /// Tap or release: snap the page to the layer.
   final ValueChanged<int> onCommit;
+
+  /// Abandon a drag preview and return to the year under the reading line.
+  final VoidCallback? onCancel;
   @override
   State<DigGauge> createState() => _DigGaugeState();
 }
 
 class _DigGaugeState extends State<DigGauge> {
   int? _dragIndex;
+
+  void _cancelPreview() {
+    if (_dragIndex == null) return;
+    setState(() => _dragIndex = null);
+    widget.onCancel?.call();
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = context.l10n, c = MeasureColors.of(context);
@@ -80,43 +91,52 @@ class _DigGaugeState extends State<DigGauge> {
               ),
               Expanded(
                 child: LayoutBuilder(
-                  builder: (context, constraints) => GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTapDown: (details) => widget.onCommit(
-                      indexAt(details.localPosition.dy, constraints.maxHeight),
-                    ),
-                    onVerticalDragStart: (details) {
-                      final index = indexAt(
-                        details.localPosition.dy,
-                        constraints.maxHeight,
-                      );
-                      _dragIndex = index;
-                      widget.onPreview(index);
-                    },
-                    onVerticalDragUpdate: (details) {
-                      final index = indexAt(
-                        details.localPosition.dy,
-                        constraints.maxHeight,
-                      );
-                      if (index != _dragIndex) {
-                        _dragIndex = index;
-                        MotionToken.detent();
-                        widget.onPreview(index);
-                      }
-                    },
-                    onVerticalDragEnd: (_) {
-                      final index = _dragIndex;
-                      _dragIndex = null;
-                      if (index != null) widget.onCommit(index);
-                    },
-                    child: CustomPaint(
-                      painter: _GaugePainter(
-                        count: n,
-                        selected: widget.selected,
-                        accent: c.accent,
-                        line: c.line,
+                  // Flutter ends an accepted drag even on PointerCancelEvent.
+                  // Clear the preview at the raw-pointer boundary first.
+                  builder: (context, constraints) => Listener(
+                    onPointerCancel: (_) => _cancelPreview(),
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTapUp: (details) => widget.onCommit(
+                        indexAt(
+                          details.localPosition.dy,
+                          constraints.maxHeight,
+                        ),
                       ),
-                      child: const SizedBox.expand(),
+                      onVerticalDragStart: (details) {
+                        final index = indexAt(
+                          details.localPosition.dy,
+                          constraints.maxHeight,
+                        );
+                        setState(() => _dragIndex = index);
+                        widget.onPreview(index);
+                      },
+                      onVerticalDragUpdate: (details) {
+                        final index = indexAt(
+                          details.localPosition.dy,
+                          constraints.maxHeight,
+                        );
+                        if (index != _dragIndex) {
+                          setState(() => _dragIndex = index);
+                          MotionToken.detent();
+                          widget.onPreview(index);
+                        }
+                      },
+                      onVerticalDragEnd: (_) {
+                        final index = _dragIndex;
+                        setState(() => _dragIndex = null);
+                        if (index != null) widget.onCommit(index);
+                      },
+                      onVerticalDragCancel: _cancelPreview,
+                      child: CustomPaint(
+                        painter: _GaugePainter(
+                          count: n,
+                          selected: _dragIndex ?? widget.selected,
+                          accent: c.accent,
+                          line: c.line,
+                        ),
+                        child: const SizedBox.expand(),
+                      ),
                     ),
                   ),
                 ),

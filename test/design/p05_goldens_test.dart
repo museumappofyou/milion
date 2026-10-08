@@ -150,10 +150,13 @@ void main() {
           body: Center(
             child: RepaintBoundary(
               key: const Key('sample'),
-              child: SizedBox(
-                width: 342,
-                child: SingleChildScrollView(
-                  child: VisitCard(place: chora, registry: registry),
+              child: ColoredBox(
+                color: DesignTheme.marble.scaffoldBackgroundColor,
+                child: SizedBox(
+                  width: 342,
+                  child: SingleChildScrollView(
+                    child: VisitCard(place: chora, registry: registry),
+                  ),
                 ),
               ),
             ),
