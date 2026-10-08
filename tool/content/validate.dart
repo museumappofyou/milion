@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:milion/content/registry.dart';
 import 'package:milion/content/repository.dart';
+import 'package:milion/plate/catalog.dart';
 
 Future<void> main(List<String> args) async {
   try {
@@ -39,6 +40,25 @@ Future<void> main(List<String> args) async {
       ]) {
         if (!File(path).existsSync()) report.errors.add('Missing asset: $path');
       }
+      final plates = await PlateCatalog.load(
+        registry,
+        (p) => File(p).readAsString(),
+      );
+      for (final p in plates.plates) {
+        for (final path in [...p.imagePaths, p.mesh.geometry, p.mesh.figures]) {
+          if (!File(path).existsSync()) {
+            report.errors.add('Missing plate asset: $path');
+          }
+        }
+        final rig = jsonDecode(
+          await File(p.mesh.figures).readAsString(),
+        ) as Map<String, dynamic>;
+        if (rig['poses'] is String &&
+            !File(rig['poses'] as String).existsSync()) {
+          report.errors.add('Missing plate poses: ${rig['poses']}');
+        }
+      }
+      stdout.writeln('Plates: ${plates.plates.length} typed manifests');
     }
     for (final error in report.errors) {
       stderr.writeln('ERROR: $error');

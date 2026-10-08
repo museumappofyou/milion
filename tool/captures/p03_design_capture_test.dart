@@ -24,8 +24,7 @@ import 'package:milion/widgets/artwork_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../test/helpers.dart' show loadThemeFonts, ready;
-import '../../test/scene_explorer_test.dart'
-    show assetsReady, openGesture, visibleTap;
+import '../../test/scene_explorer_test.dart' show assetsReady, state;
 
 const out = 'studio/captures/P03';
 Future<void> capture(WidgetTester tester, GlobalKey key, String name) async {
@@ -195,23 +194,10 @@ void main() {
             '$name-${width.toInt()}-${(scale * 100).round()}',
           );
           if (width == 390 && scale == 1) {
-            await tester.tap(find.byType(DropdownButtonFormField<String>));
-            await tester.pumpAndSettle();
-            await tester.tap(
-              find.text(name == 'anastasis' ? 'Christ' : 'Deesis').last,
-            );
+            final player = state(tester);
+            player.focus(player.widget.manifest.details.first.id);
             await tester.pumpAndSettle();
             await capture(tester, key, '$name-detail');
-            await visibleTap(tester, 'Reconstruction');
-            await assetsReady(tester);
-            await capture(tester, key, '$name-reconstruction');
-            await visibleTap(tester, 'Original');
-            await tester.pumpAndSettle();
-            await openGesture(tester);
-            await visibleTap(tester, 'Play one gesture');
-            await tester.pump();
-            await tester.pump(const Duration(seconds: 2));
-            await capture(tester, key, '$name-imagined');
           }
           await tester.pumpWidget(const SizedBox.shrink());
         }

@@ -1,0 +1,35 @@
+{
+  "capture": "native Flutter test player frames; simulated drag/timeline, not device video",
+  "clips": [
+    {
+      "path": "studio/captures/P06/gold-tilt-8s.mp4",
+      "bytes": 2735949,
+      "sha256": "5453498436b068a6cbdb1b9f55b4dbef469c7f55c988e6e884e1fdca526a1bcf",
+      "durationSeconds": 8.0,
+      "frames": 192,
+      "frameRate": "24/1",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "studio/captures/P06/river-flow-8s.mp4",
+      "bytes": 460796,
+      "sha256": "c62526411646b5b76331139f4a9e455d69d325cd270f2d33dff4a0a42eb6f677",
+      "durationSeconds": 8.0,
+      "frames": 192,
+      "frameRate": "24/1",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "studio/captures/P06/wrist-grip-8s.mp4",
+      "bytes": 1889685,
+      "sha256": "ef22b45ba37761e41e5003baa3a4ba9906823be0f8600077dd17827d2466539e",
+      "durationSeconds": 8.0,
+      "frames": 192,
+      "frameRate": "24/1",
+      "width": 390,
+      "height": 844
+    }
+  ]
+}

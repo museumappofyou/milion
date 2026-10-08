@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../content/registry.dart';
+import '../plate/catalog.dart';
 
 /// Content, clock and recognition coverage loaded once at start.
 class AppScope extends InheritedWidget {
@@ -11,9 +12,11 @@ class AppScope extends InheritedWidget {
     required this.retry,
     required this.clock,
     required this.recognised,
+    this.plates = const PlateCatalog.empty(),
     required super.child,
   });
   final ContentRegistry? registry;
+  final PlateCatalog plates;
   final Object? error;
   final VoidCallback retry;
   final DateTime Function() clock;
@@ -34,6 +37,7 @@ class AppScope extends InheritedWidget {
   @override
   bool updateShouldNotify(AppScope old) =>
       registry != old.registry ||
+      plates != old.plates ||
       error != old.error ||
       recognised != old.recognised ||
       clock != old.clock;

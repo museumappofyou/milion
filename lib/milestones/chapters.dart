@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../content/models.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
-import '../shell/navigation.dart';
+import '../shell/app_scope.dart';
 
 /// The register's chapters in §1 content order, by numeral range.
 class Chapter {
@@ -66,7 +66,9 @@ class ChapterBand extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = context.l10n, lang = context.language;
-    final playable = pieces.where((m) => explorerFor(m) != null).length;
+    final playable = pieces
+        .where((m) => AppScope.of(context).plates.forMilestone(m) != null)
+        .length;
     final approved = pieces
         .where((m) => m.status == MilestoneStatus.approved)
         .length;

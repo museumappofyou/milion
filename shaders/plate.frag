@@ -8,14 +8,15 @@
 //   3 candle: a warm point light under the finger, flicker below 3 Hz
 //   4 flow: flow-map UV scrolling inside the mask (micro-motion)
 //   5 spiral: a UV twist inside the mask (the scroll of heaven)
+//   6 wipe: reconstruction only where damage and the user's wipe intersect
 //
 // uTexture : the layer being shown (original / relief)
 // uSurface : RGB = normal map (0..1), A = height (0..1)
 // uMask    : R = coverage, GB = flow direction (0.5 + dir * 0.5) when used
 //
 // The painter draws this only inside the fitted frame rect and passes uFrame
-// (left, top, width, height in device px), so uv maps exactly to the frame.
-// Uniform order must match PlateUniforms in lib/plate/plate_painter.dart.
+// (left, top, width, height in local canvas units), so uv maps to the frame.
+// Uniform order must match lib/plate/painter.dart.
 
 precision highp float;
 
@@ -48,13 +49,20 @@ void main() {
   vec3 base = texture(uTexture, tc).rgb;
   vec4 mask = texture(uMask, uv);
 
+  if (uMode > 5.5) {
+    float wipe = 1.0 - smoothstep(uLight.x - 0.006, uLight.x + 0.006, uv.x);
+    float alpha = clamp(mask.r * wipe * uAmount, 0.0, 1.0);
+    fragColor = vec4(base * alpha, alpha);
+    return;
+  }
+
   if (uMode < 0.5) {
     fragColor = vec4(base, 1.0);
     return;
   }
 
   vec3 n = surface.rgb * 2.0 - 1.0;
-  vec2 t = normalize(uTilt + vec2(0.0001));
+  vec2 t = clamp(uTilt, vec2(-1.0), vec2(1.0));
   vec3 L = normalize(vec3(-t.x * 0.85, t.y * 0.85, 1.0));
   vec3 V = vec3(0.0, 0.0, 1.0);
   float ndl = clamp(dot(n, L), 0.0, 1.0);
@@ -99,10 +107,11 @@ void main() {
   if (uMode < 4.5) {
     // Micro-motion: scroll the paint along the flow field inside the mask.
     vec2 dir = (mask.gb * 2.0 - 1.0);
-    vec2 offset = dir * uFlow * uTime * mask.r;
+    vec2 offset = dir * uFlow * fract(uTime / 8.0) * mask.r;
     vec3 flowColor = texture(uTexture, uv - offset + uTilt * (height - 0.5) * uDepth).rgb;
     float feather = smoothstep(0.0, 0.35, mask.r);
-    fragColor = vec4(mix(base, flowColor, feather), 1.0);
+    // Masked passes must not overwrite another pass outside their coverage.
+    fragColor = vec4(flowColor * feather, feather);
     return;
   }
 
@@ -118,5 +127,5 @@ void main() {
   q.x /= uImageSize.x / uImageSize.y;
   vec2 spiralUv = uCenter + q;
   vec3 spiralColor = texture(uTexture, spiralUv + uTilt * (height - 0.5) * uDepth).rgb;
-  fragColor = vec4(mix(base, spiralColor, edge), 1.0);
+  fragColor = vec4(spiralColor * edge, edge);
 }

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../design/components.dart';
 import '../design/theme.dart';
 import '../l10n/strings.dart';
-import '../models/explorable_scene.dart';
+import '../shell/app_scope.dart';
+import '../shell/navigation.dart';
 import '../services/classifier.dart';
 import 'scan_tab.dart';
-import 'scene_explorer_screen.dart';
 
 /// The camera-eye action on places and artworks with recognition support.
 /// The model and camera load only here; nothing asks for camera access before.
@@ -29,9 +29,17 @@ class _ScanScreenState extends State<ScanScreen> {
     super.dispose();
   }
 
-  void _explore(ExplorableScene scene) => Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => SceneExplorerScreen(scene: scene)),
-  );
+  void _explore(String artworkId) {
+    final app = AppScope.of(context);
+    final m = app.registry!.milestones
+        .where(
+          (m) =>
+              m.artworkIds.contains(artworkId) &&
+              app.plates.forMilestone(m) != null,
+        )
+        .firstOrNull;
+    if (m != null) openMilestone(context, m);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +51,8 @@ class _ScanScreenState extends State<ScanScreen> {
             !snapshot.hasError) {
           return ScanTab(
             classifier: _classifier,
-            onExploreAnastasis: () => _explore(ExplorableScene.anastasis),
-            onExploreLastJudgment: () => _explore(ExplorableScene.judgment),
+            onExploreAnastasis: () => _explore('F02'),
+            onExploreLastJudgment: () => _explore('F05'),
           );
         }
         return Theme(

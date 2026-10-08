@@ -2196,6 +2196,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Current use'**
   String get placeFunction;
+
+  /// No description provided for @plateStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Story'**
+  String get plateStory;
+
+  /// No description provided for @plateLayers.
+  ///
+  /// In en, this message translates to:
+  /// **'Layers'**
+  String get plateLayers;
+
+  /// No description provided for @platePlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Play story'**
+  String get platePlay;
+
+  /// No description provided for @platePause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause story'**
+  String get platePause;
+
+  /// No description provided for @platePrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous still'**
+  String get platePrevious;
+
+  /// No description provided for @plateNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next still'**
+  String get plateNext;
+
+  /// No description provided for @plateTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Story position'**
+  String get plateTimeline;
+
+  /// No description provided for @plateGilded.
+  ///
+  /// In en, this message translates to:
+  /// **'Gilded light'**
+  String get plateGilded;
+
+  /// No description provided for @plateRaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Raking light'**
+  String get plateRaking;
+
+  /// No description provided for @plateCandle.
+  ///
+  /// In en, this message translates to:
+  /// **'Candle'**
+  String get plateCandle;
+
+  /// No description provided for @plateNoLight.
+  ///
+  /// In en, this message translates to:
+  /// **'No added light'**
+  String get plateNoLight;
+
+  /// No description provided for @plateGyro.
+  ///
+  /// In en, this message translates to:
+  /// **'Tilt with the phone'**
+  String get plateGyro;
+
+  /// No description provided for @plateGyroHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Off until you choose it. Touch the artwork to recenter.'**
+  String get plateGyroHint;
+
+  /// No description provided for @plateGyroUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No gyroscope reading. Drag the artwork to tilt.'**
+  String get plateGyroUnavailable;
+
+  /// No description provided for @plateDragHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to tilt; pinch to zoom.'**
+  String get plateDragHint;
+
+  /// No description provided for @plateRakingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the light across the paint.'**
+  String get plateRakingHint;
+
+  /// No description provided for @plateCandleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold the warm light under your finger.'**
+  String get plateCandleHint;
+
+  /// No description provided for @plateWipeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to reveal reconstruction in damaged areas. Hold to see the original.'**
+  String get plateWipeHint;
+
+  /// No description provided for @plateOriginalHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the label to return to the original.'**
+  String get plateOriginalHint;
+
+  /// No description provided for @platePaintMotion.
+  ///
+  /// In en, this message translates to:
+  /// **'River of fire'**
+  String get platePaintMotion;
+
+  /// No description provided for @plateScrollMotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Scroll of heaven'**
+  String get plateScrollMotion;
+
+  /// No description provided for @plateStillHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Motion is off. Use Next and Previous to read the same story as stills.'**
+  String get plateStillHint;
+
+  /// No description provided for @plateMotionCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'One imagined wrist-grip gesture; the photograph is one tap away.'**
+  String get plateMotionCaption;
+
+  /// No description provided for @plateDebug.
+  ///
+  /// In en, this message translates to:
+  /// **'Gesture and rendering study'**
+  String get plateDebug;
+
+  /// No description provided for @plateClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close controls'**
+  String get plateClose;
+
+  /// No description provided for @plateDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details in the photograph'**
+  String get plateDetails;
+
+  /// No description provided for @plateReveal.
+  ///
+  /// In en, this message translates to:
+  /// **'10-second reveal'**
+  String get plateReveal;
+
+  /// No description provided for @plateExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore the plate'**
+  String get plateExplore;
+
+  /// No description provided for @plateStartReveal.
+  ///
+  /// In en, this message translates to:
+  /// **'Play reveal'**
+  String get plateStartReveal;
+
+  /// No description provided for @plateSources.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources and photograph'**
+  String get plateSources;
+
+  /// No description provided for @plateLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing the plate'**
+  String get plateLoading;
 }
 
 class _AppLocalizationsDelegate

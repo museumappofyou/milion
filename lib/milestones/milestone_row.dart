@@ -7,11 +7,15 @@ import '../design/components.dart';
 import '../design/technique.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
-import '../shell/navigation.dart';
+import '../shell/app_scope.dart';
 
-SlotState slotFor(Milestone m, {required bool opened}) => opened
+SlotState slotFor(
+  Milestone m, {
+  required bool opened,
+  required bool playable,
+}) => opened
     ? SlotState.set
-    : explorerFor(m) != null
+    : playable
     ? SlotState.available
     : SlotState.planned;
 
@@ -61,7 +65,12 @@ class MilestoneRow extends StatelessWidget {
     final s = context.l10n,
         c = MeasureColors.of(context),
         lang = context.language;
-    final m = milestone, state = slotFor(m, opened: opened);
+    final m = milestone,
+        state = slotFor(
+          m,
+          opened: opened,
+          playable: AppScope.of(context).plates.forMilestone(m) != null,
+        );
     return MergeSemantics(
       child: InkWell(
         key: ValueKey('milestone-${m.numeral}'),

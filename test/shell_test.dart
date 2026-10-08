@@ -15,7 +15,7 @@ import 'package:milion/mosaic/mosaic_tab.dart';
 import 'package:milion/screens/about_tab.dart';
 import 'package:milion/screens/scan_screen.dart';
 import 'package:milion/screens/scan_tab.dart';
-import 'package:milion/screens/scene_explorer_screen.dart';
+import 'package:milion/plate/player.dart';
 import 'package:milion/screens/artworks_tab.dart';
 import 'package:milion/shell/app_shell.dart';
 import 'package:milion/today/detail_crop.dart';
@@ -244,7 +244,7 @@ void main() {
         await tester.pump();
         await tester.pump();
         Finder landing() => find.descendant(
-          of: find.byType(SceneExplorerScreen),
+          of: find.byType(PlatePlayer),
           matching: find.byWidgetPredicate(
             (w) => w is Hero && w.tag == detailHeroTag(detail),
           ),
@@ -255,8 +255,8 @@ void main() {
           reason: 'shared element lands in the Milestone',
         );
         await assetsReady(tester);
-        final explorer = tester.state<SceneExplorerScreenState>(
-          find.byType(SceneExplorerScreen),
+        final explorer = tester.state<PlatePlayerState>(
+          find.byType(PlatePlayer),
         );
         expect(
           explorer.zoom,
@@ -508,7 +508,7 @@ void main() {
         );
         await tester.tap(first);
         await assetsReady(tester);
-        expect(find.byType(SceneExplorerScreen), findsOneWidget);
+        expect(find.byType(PlatePlayer), findsOneWidget);
       },
     );
 

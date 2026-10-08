@@ -7,9 +7,10 @@ masters, and writes the runtime maps under assets/plates/:
   anastasis/gold.png     gilded-zone mask (mandorla cluster + gold pigment)
   anastasis/damaged.png  damaged-zone mask for the reconstruction wipe
   judgment/surface.png   same, from the Last Judgment build
-  judgment/gold.png      gilded-zone mask (mandorla + halos + gold pigment)
+  judgment/gold.png      authored gilded-zone mask (mandorla + halos)
   judgment/river.png     river of fire mask + flow direction in GB
   judgment/scroll.png    rolled-heaven mask for the UV spiral
+  judgment/damaged.png   damaged-zone mask for the reconstruction wipe
 
 Inputs (all committed or studio-kept): the v5 height/normal maps, the Part
 labels of the Last Judgment build (the parts order matches
@@ -40,19 +41,6 @@ def surface_map(height16, normals, height_max):
     return np.dstack([b, g, r, (h * 255).astype(np.uint8)])
 
 
-def gold_from_pigment(bgr, limit=None):
-    """Pigment heuristic: warm yellow, bright, saturated paint."""
-    hsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)
-    h, s, v = hsv[..., 0], hsv[..., 1], hsv[..., 2]
-    mask = ((h >= 12) & (h <= 34) & (s >= 70) & (v >= 110)).astype(np.uint8)
-    if limit is not None:
-        mask = (mask * (limit > 0)).astype(np.uint8)
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
-    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=2)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel, iterations=1)
-    return (cv2.GaussianBlur(mask * 255, (0, 0), 2.0)).astype(np.uint8)
-
-
 def clean_mask(mask, close=5, open_=3, blur=1.6):
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (close, close))
     mask = cv2.morphologyEx((mask > 0).astype(np.uint8) * 255, cv2.MORPH_CLOSE, kernel, iterations=2)
@@ -72,6 +60,18 @@ def largest_components(mask, count=3, min_area=4000):
     return out
 
 
+def damage_map(master, restored_path):
+    restored = cv2.imread(str(restored_path))
+    if restored is None:
+        raise SystemExit(f'Missing reconstruction study: {restored_path}')
+    restored = cv2.resize(restored, (master.shape[1], master.shape[0]), interpolation=cv2.INTER_AREA)
+    diff = np.abs(restored.astype(np.float32) - master.astype(np.float32)).mean(2)
+    hsv = cv2.cvtColor(master, cv2.COLOR_BGR2HSV)
+    pale = ((hsv[..., 1] < 55) & (diff > 22)).astype(np.uint8)
+    damaged = largest_components(clean_mask(pale * 255, close=9, open_=5, blur=6.0), count=4)
+    return clean_mask(damaged * 255, close=7, blur=4.0)
+
+
 def anastasis():
     master = cv2.imread(str(ROOT / 'assets/anastasis/conch_reference.jpg'))
     height16 = cv2.imread(str(STUDIO_A / 'build/height16.png'), cv2.IMREAD_UNCHANGED)
@@ -82,24 +82,20 @@ def anastasis():
 
     write(OUT / 'anastasis/surface.png', surface_map(height16, normals, 90.0))
 
-    # The mandorla cluster of the semantic map plus the gold pigment of the
-    # halos and stars. Both are part of the same painted gold idea.
-    sem = cv2.imread(str(ROOT / 'assets/anastasis/relief_v5/semantic_layers.png'))
-    mandorla = ((np.abs(sem[..., 2].astype(int) - 40) < 30) &
-                (np.abs(sem[..., 1].astype(int) - 215) < 30) &
-                (np.abs(sem[..., 0].astype(int) - 225) < 30)).astype(np.uint8) * 255
+    # Authored mandorla/halo masks, not a warm-pigment heuristic across robes
+    # and plaster. The prepared heuristic had gilded two thirds of the plate.
+    mandorla = cv2.imread(str(STUDIO_A / 'authoring/sam/mandorla.png'), cv2.IMREAD_GRAYSCALE)
+    halos = cv2.imread(str(STUDIO_A / 'authoring/sam/l_rear_halos.png'), cv2.IMREAD_GRAYSCALE)
+    if mandorla is None or halos is None:
+        raise SystemExit('Anastasis authored gold masks missing')
+    assert mandorla.shape == halos.shape == master.shape[:2]
+    cv2.circle(halos, (968, 398), 52, 255, -1)  # authoring/layers.json: christ_halo
     mandorla = clean_mask(mandorla, close=9, blur=3.0)
-    gold = np.maximum(mandorla, gold_from_pigment(master))
+    gold = np.maximum(mandorla, clean_mask(halos, blur=2.0))
     write(OUT / 'anastasis/gold.png', gold)
 
     # Damaged zones: where the 4K study repaints most and the pigment is pale.
-    restored = cv2.imread(str(ROOT / 'assets/restoration/anastasis_restored_4k_v2.jpg'))
-    restored = cv2.resize(restored, (master.shape[1], master.shape[0]), interpolation=cv2.INTER_AREA)
-    diff = np.abs(restored.astype(np.float32) - master.astype(np.float32)).mean(2)
-    hsv = cv2.cvtColor(master, cv2.COLOR_BGR2HSV)
-    pale = ((hsv[..., 1] < 55) & (diff > 22)).astype(np.uint8)
-    damaged = largest_components(clean_mask(pale * 255, close=9, open_=5, blur=6.0), count=4)
-    damaged = clean_mask(damaged * 255, close=7, blur=4.0)
+    damaged = damage_map(master, ROOT / 'assets/restoration/anastasis_restored_4k_v2.jpg')
     write(OUT / 'anastasis/damaged.png', damaged)
     print('anastasis gold px', int((gold > 96).sum()), 'damaged px', int((damaged > 96).sum()))
 
@@ -123,8 +119,10 @@ def judgment():
 
     halos = [id for id in index if id.endswith('_halo')]
     gold_parts = mask_of('mandorla', 'christ_halo', *halos)
-    gold = np.maximum(clean_mask(gold_parts, close=7, blur=2.5), gold_from_pigment(master))
+    gold = clean_mask(gold_parts, close=7, blur=2.5)
     write(OUT / 'judgment/gold.png', gold)
+    write(OUT / 'judgment/damaged.png', damage_map(master,
+          ROOT / 'assets/restoration/last_judgment_restored_4k_v2.jpg'))
 
     river = clean_mask(mask_of('river_of_fire'), close=7, blur=1.8)
     ys, xs = np.nonzero(river > 96)

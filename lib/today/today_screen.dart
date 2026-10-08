@@ -138,7 +138,7 @@ class _DetailPanel extends StatelessWidget {
         c = MeasureColors.of(context),
         lang = context.language;
     final milestone = registry.milestone(detail.milestoneId)!;
-    final scene = explorerFor(milestone)!;
+    final scene = AppScope.of(context).plates.forMilestone(milestone)!;
     final artwork = registry.artwork(detail.artworkId);
     final place = registry.place(artwork.placeId)!;
     final screen = MediaQuery.sizeOf(context);
@@ -189,7 +189,7 @@ class _DetailPanel extends StatelessWidget {
                   builder: (context, box) {
                     final g = CropGeometry(
                       box.biggest,
-                      scene.size,
+                      Size(scene.width.toDouble(), scene.height.toDouble()),
                       detail.window,
                     );
                     return Stack(
@@ -201,7 +201,10 @@ class _DetailPanel extends StatelessWidget {
                             transitionOnUserGestures: true,
                             child: DetailCrop(
                               asset: scene.original,
-                              source: scene.size,
+                              source: Size(
+                                scene.width.toDouble(),
+                                scene.height.toDouble(),
+                              ),
                               window: detail.window,
                             ),
                           ),
@@ -534,9 +537,13 @@ class _ChapterSection extends StatelessWidget {
     // Playable pieces first, then the next planned slots in register order.
     final next = [
       ...pieces.where(
-        (m) => explorerFor(m) != null && !progress.isOpened(m.id),
+        (m) =>
+            AppScope.of(context).plates.forMilestone(m) != null &&
+            !progress.isOpened(m.id),
       ),
-      ...pieces.where((m) => explorerFor(m) == null),
+      ...pieces.where(
+        (m) => AppScope.of(context).plates.forMilestone(m) == null,
+      ),
     ].take(4);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

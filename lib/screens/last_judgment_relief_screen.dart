@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../models/explorable_scene.dart';
-import 'scene_explorer_screen.dart';
+import '../plate/screen.dart';
 
 class LastJudgmentReliefScreen extends StatelessWidget {
-  const LastJudgmentReliefScreen({super.key, this.initialFocus = 'Overview'});
-  final String initialFocus;
+  const LastJudgmentReliefScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => SceneExplorerScreen(
-    scene: ExplorableScene.judgment,
-    initialFocus: initialFocus,
-  );
+  Widget build(BuildContext context) =>
+      const PlateScreen(asset: 'assets/plates/judgment/manifest.json');
 }

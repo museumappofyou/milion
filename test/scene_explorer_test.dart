@@ -1,32 +1,31 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:milion/models/explorable_scene.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/design/components.dart';
 import 'package:milion/l10n/strings.dart';
+import 'package:milion/plate/assets.dart';
+import 'package:milion/plate/manifest.dart';
+import 'package:milion/plate/player.dart';
+import 'package:milion/plate/sheets.dart';
+import 'package:milion/screens/anastasis_relief_screen.dart';
+import 'package:milion/screens/last_judgment_relief_screen.dart';
 
 import 'helpers.dart' show loadThemeFonts;
 
-import 'package:milion/services/explorer_assets.dart';
-import 'package:milion/widgets/interactive_relief_surface.dart';
-import 'package:milion/screens/anastasis_relief_screen.dart';
-import 'package:milion/screens/last_judgment_relief_screen.dart';
-import 'package:milion/screens/restoration_studies_screen.dart';
-import 'package:milion/screens/scene_explorer_screen.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
-
+Future<PlateManifest> loadPlate(String name) async => PlateManifest.fromJson(
+  jsonDecode(File('assets/plates/$name/manifest.json').readAsStringSync())
+      as Map<String, dynamic>,
+);
 Future<void> assetsReady(WidgetTester tester) async {
   await tester.runAsync(() async {
     for (var i = 0; i < 200; i++) {
       await Future<void>.delayed(const Duration(milliseconds: 50));
       await tester.pump();
-      if (i >= 20 && find.byType(TesseraLoader).evaluate().isEmpty) {
-        break;
-      }
+      if (i >= 10 && find.byType(TesseraLoader).evaluate().isEmpty) break;
     }
   });
   await tester.pumpAndSettle();
@@ -58,362 +57,309 @@ Future<void> openScene(
   await assetsReady(tester);
 }
 
-SceneExplorerScreenState state(WidgetTester tester) =>
-    tester.state<SceneExplorerScreenState>(find.byType(SceneExplorerScreen));
-
+PlatePlayerState state(WidgetTester tester) =>
+    tester.state<PlatePlayerState>(find.byType(PlatePlayer));
 Future<void> visibleTap(WidgetTester tester, String label) async {
   final target = find.text(label).last;
   await tester.ensureVisible(target);
-  await tester.pump(const Duration(milliseconds: 100));
+  await tester.pump();
   await tester.tap(target);
   await tester.pump();
 }
 
-Future<void> openGesture(WidgetTester tester) async {
-  if (find.text('Play one gesture').evaluate().isEmpty &&
-      find.text('Pause gesture').evaluate().isEmpty) {
-    await visibleTap(tester, 'Gesture study');
-    await tester.pumpAndSettle();
-  }
-}
-
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-
-  test(
-    'both scenes retain all source images and valid sampled v5 geometry',
-    () async {
-      for (final scene in [
-        ExplorableScene.anastasis,
-        ExplorableScene.judgment,
-      ]) {
-        final geometry = jsonDecode(
-          await rootBundle.loadString(scene.geometry),
-        ) as Map<String, dynamic>;
-        final heights = (geometry['height'] as List).cast<num>();
-        expect(
-          heights.length,
-          (geometry['cols'] as int) * (geometry['rows'] as int),
-        );
-        expect(heights.every((v) => v.isFinite && v >= 0 && v < .1), isTrue);
-        expect(heights.any((v) => v > .02), isTrue);
-        for (final file in {
-          scene.original,
-          scene.relief,
-          scene.restored,
-          ...scene.studies.expand((study) => [study.original, study.study]),
-        }) {
-          final bytes = await rootBundle.load(file);
-          expect(bytes.lengthInBytes, greaterThan(10000), reason: file);
-        }
-        for (final d in scene.details) {
-          expect(const Rect.fromLTWH(0, 0, 1, 1).contains(d.point), isTrue);
-          expect(d.window.width, greaterThan(0));
-          expect(d.window.height, greaterThan(0));
-          expect(d.window.right, lessThanOrEqualTo(1));
-          expect(d.window.bottom, lessThanOrEqualTo(1));
-        }
-      }
-    },
-  );
-
-  test(
-    'restored scenes are single 4K exports with the source aspect',
-    () async {
-      for (final scene in [
-        ExplorableScene.anastasis,
-        ExplorableScene.judgment,
-      ]) {
-        final bytes = await rootBundle.load(scene.restored);
-        final codec = await ui.instantiateImageCodec(
-          bytes.buffer.asUint8List(),
-        );
-        final image = (await codec.getNextFrame()).image;
-        expect(image.width, 3840);
-        expect(
-          image.width / image.height,
-          closeTo(scene.size.aspectRatio, .001),
-        );
-        expect(scene.studies, hasLength(1));
-        expect(scene.studies.first.study, scene.restored);
-        expect(scene.studies.first.initialBlend, 1);
-        image.dispose();
-        codec.dispose();
-      }
-    },
-  );
-
   for (final (name, home) in [
     ('Anastasis', const AnastasisReliefScreen()),
-    ('Last Judgment', const LastJudgmentReliefScreen()),
+    ('Judgment', const LastJudgmentReliefScreen()),
   ]) {
-    testWidgets('$name zooms, pans and compares original, relief, restored', (
-      tester,
-    ) async {
-      await openScene(tester, home);
-      final explorer = state(tester);
-      expect(explorer.zoom, 1);
-      await tester.tap(find.byTooltip('Zoom in'));
-      await tester.pumpAndSettle();
-      expect(explorer.zoom, closeTo(1.5, .01));
-      await tester.drag(
-        find.byKey(const ValueKey('scene-interactive-viewer')),
-        const Offset(40, 0),
-      );
-      await tester.pumpAndSettle();
-      expect(explorer.transformation.value.getTranslation().x, isNot(0));
-      final current = explorer.transformation.value.clone();
-      await visibleTap(tester, 'Original');
-      await tester.pumpAndSettle();
-      expect(explorer.variant, 'Original');
-      expect(explorer.transformation.value, current);
-      await visibleTap(tester, 'Reconstruction');
-      await assetsReady(tester);
-      expect(explorer.variant, 'Restored');
-      expect(explorer.restorationAmount, 1);
-      expect(
-        find.text('Reconstruction · source photograph preserved'),
-        findsOneWidget,
-      );
-      expect(explorer.zoom, closeTo(1.5, .01));
-      await tester.tap(find.byTooltip('Reset view'));
-      await tester.pumpAndSettle();
-      expect(explorer.zoom, closeTo(1, .001));
-      await tester.tap(find.byTooltip('Scene options'));
-      await tester.pumpAndSettle();
-      expect(find.text('Classic v5 viewer'), findsNothing);
-      expect(tester.takeException(), isNull);
-    });
-
     testWidgets(
-      '$name plays one gentle labelled gesture and preserves camera and textures',
+      '$name original first, zoom bounds, one-tap comparison and disposal',
       (tester) async {
         await openScene(tester, home);
-        final explorer = state(tester);
-        expect(explorer.variant, 'Original');
-        expect(explorer.motionAmount, .25);
-        await openGesture(tester);
-        await visibleTap(tester, 'Play one gesture');
-        await tester.pump();
-        await tester.pump(const Duration(seconds: 2));
-        expect(explorer.isMotionPlaying, isTrue);
-        expect(explorer.figurePose, closeTo(1 / 3, .01));
-        expect(find.text('IMAGINED'), findsNWidgets(2));
-        final camera = explorer.transformation.value.clone();
-        final boundary = tester.renderObject<RenderRepaintBoundary>(
-          find.byKey(const ValueKey('figure-canvas')),
+        final p = state(tester), c = p.controller;
+        expect(c.layer, PlateLayerId.original);
+        expect(c.playing, isFalse);
+        expect(p.tilt.subscribed, isFalse);
+        expect(p.ticking, isFalse);
+        expect(p.assets.textureBytes, lessThanOrEqualTo(150000000));
+        expect(
+          p.assets.rig!.cols * p.assets.rig!.rows,
+          lessThanOrEqualTo(60000),
         );
-        Future<List<int>> pixels() async {
-          final image = await boundary.toImage(pixelRatio: 1);
-          final data = (await image.toByteData(
-            format: ui.ImageByteFormat.rawRgba,
-          ))!;
-          image.dispose();
-          return data.buffer.asUint8List().toList();
-        }
-
-        final moving = await tester.runAsync(pixels);
-        final surface =
-            tester
-                    .widget<CustomPaint>(
-                      find.descendant(
-                        of: find.byKey(const ValueKey('figure-canvas')),
-                        matching: find.byType(CustomPaint),
-                      ),
-                    )
-                    .painter!
-                as InteractiveReliefSurface;
-        expect(surface.posed, isTrue);
-        await visibleTap(tester, 'Pause gesture');
+        p.zoomBy(2 / p.zoom);
         await tester.pumpAndSettle();
-        final pose = explorer.figurePose;
-        final paused = await tester.runAsync(pixels);
-        await tester.pump(const Duration(seconds: 8));
-        expect(explorer.figurePose, pose);
-        expect(await tester.runAsync(pixels), paused);
-        await visibleTap(tester, 'Play one gesture');
+        expect(p.zoom, closeTo(2, .01));
+        final camera = p.transformation.value.clone();
+        c.setLayer(PlateLayerId.reconstruction);
         await tester.pump();
-        await tester.pump(const Duration(seconds: 7));
+        expect(find.text('RECONSTRUCTION'), findsOneWidget);
+        c.peek(true);
         await tester.pump();
-        expect(explorer.isMotionPlaying, isFalse);
-        expect(explorer.figurePose, 1);
-        await tester.pump(const Duration(seconds: 7));
-        expect(explorer.figurePose, 1);
-        expect(explorer.transformation.value, camera);
-        await visibleTap(tester, 'Still');
+        expect(find.text('ORIGINAL'), findsOneWidget);
+        c.peek(false);
+        await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('plate-original')));
+        await tester.pump();
+        expect(c.layer, PlateLayerId.original);
+        expect(p.transformation.value, camera);
+        p.zoomBy(100);
         await tester.pumpAndSettle();
-        expect(explorer.figurePose, 0);
-        expect(await tester.runAsync(pixels), isNot(equals(moving)));
-        final intensity = find.byKey(const ValueKey('figure-intensity'));
-        await tester.ensureVisible(intensity);
+        expect(p.zoom, closeTo(8, .01));
+        p.zoomBy(.001);
         await tester.pumpAndSettle();
-        await tester.drag(intensity, const Offset(300, 0));
-        await tester.pumpAndSettle();
-        expect(explorer.motionAmount, closeTo(.35, .001));
-        for (final label in ['Depth', 'Reconstruction', 'Original']) {
-          await visibleTap(tester, label);
-          await assetsReady(tester);
-          expect(explorer.transformation.value, camera);
-        }
+        expect(p.zoom, closeTo(1, .01));
+        c.setLight(PlateLight.candle);
+        await tester.pump();
+        expect(p.ticking, isTrue);
+        await tester.pumpWidget(const SizedBox.shrink());
+        expect(p.assets.disposed, isTrue);
+        expect(p.assets.images, isEmpty);
+        expect(c.disposed, isTrue);
         expect(tester.takeException(), isNull);
       },
     );
   }
-
-  testWidgets('pinch, double tap and mouse wheel change zoom within bounds', (
-    tester,
-  ) async {
-    await openScene(tester, const AnastasisReliefScreen());
-    final viewer = find.byKey(const ValueKey('scene-interactive-viewer'));
-    final center = tester.getCenter(viewer);
-    final first = await tester.startGesture(
-      center - const Offset(35, 0),
-      pointer: 1,
-    );
-    final second = await tester.startGesture(
-      center + const Offset(35, 0),
-      pointer: 2,
-    );
-    await tester.pump();
-    await first.moveTo(center - const Offset(85, 0));
-    await second.moveTo(center + const Offset(85, 0));
-    await tester.pump();
-    await first.up();
-    await second.up();
-    await tester.pumpAndSettle();
-    expect(state(tester).zoom, greaterThan(1));
-    await tester.tap(find.byTooltip('Reset view'));
-    await tester.pumpAndSettle();
-    await tester.tapAt(center);
-    await tester.pump(const Duration(milliseconds: 100));
-    await tester.tapAt(center);
-    await tester.pumpAndSettle();
-    expect(state(tester).zoom, closeTo(2, .01));
-    await tester.sendEventToBinding(
-      PointerScrollEvent(position: center, scrollDelta: const Offset(0, -100)),
-    );
-    await tester.pumpAndSettle();
-    expect(state(tester).zoom, greaterThan(2));
-    state(tester).zoomBy(100);
-    await tester.pumpAndSettle();
-    expect(state(tester).zoom, closeTo(8, .01));
-    state(tester).zoomBy(.0001);
-    await tester.pumpAndSettle();
-    expect(state(tester).zoom, closeTo(1, .01));
-  });
-
   testWidgets(
-    'reduced motion allows manual poses and lifecycle pauses figures',
+    'single-finger drag controls tilt, raking light and reconstruction wipe',
     (tester) async {
-      await openScene(tester, const LastJudgmentReliefScreen(), reduced: true);
-      await openGesture(tester);
-      await visibleTap(tester, 'Play one gesture');
+      await openScene(tester, const AnastasisReliefScreen());
+      final p = state(tester), c = p.controller;
+      final view = find.byKey(const ValueKey('plate-interactive-viewer'));
+      c.setLight(PlateLight.gilded);
       await tester.pump();
-      expect(state(tester).isMotionPlaying, isFalse);
-      await tester.ensureVisible(find.byKey(const ValueKey('figure-pose')));
+      await tester.drag(view, const Offset(80, 30));
+      await tester.pump();
+      expect(p.tilt.normalized.distance, greaterThan(.01));
+      c.setLight(PlateLight.raking);
+      await tester.pump();
+      await tester.drag(view, const Offset(-70, 20));
+      await tester.pump();
+      expect(p.lightPosition, isNot(const Offset(.5, .5)));
+      c.setLayer(PlateLayerId.reconstruction);
+      await tester.pump();
+      await tester.drag(view, const Offset(70, 0));
+      await tester.pump();
+      expect(c.wipe, isNot(.5));
+      c.original();
+      await tester.pump();
+      p.controls(PlatePanel.light);
       await tester.pumpAndSettle();
-      await tester.drag(
-        find.byKey(const ValueKey('figure-pose')),
-        const Offset(40, 0),
-      );
-      await tester.pumpAndSettle();
-      expect(state(tester).figurePose, greaterThan(0));
-      await tester.pumpWidget(const SizedBox.shrink());
-      await openScene(tester, const LastJudgmentReliefScreen());
-      await openGesture(tester);
-      await visibleTap(tester, 'Play one gesture');
-      await tester.pump(const Duration(seconds: 1));
-      state(tester).didChangeAppLifecycleState(AppLifecycleState.inactive);
-      await tester.pumpAndSettle();
-      final pose = state(tester).figurePose;
-      await tester.pump(const Duration(seconds: 2));
-      expect(state(tester).isMotionPlaying, isFalse);
-      expect(state(tester).figurePose, pose);
-      state(tester).didChangeAppLifecycleState(AppLifecycleState.resumed);
-      await openGesture(tester);
-      await visibleTap(tester, 'Play one gesture');
-      await tester.pump(const Duration(seconds: 1));
-      await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pump(const Duration(seconds: 10));
+      expect(find.text('Tilt with the phone'), findsOneWidget);
       expect(tester.takeException(), isNull);
     },
   );
-
-  test(
-    'figure rigs keep scenery fixed and never fold during a complete gesture',
-    () async {
-      for (final scene in [
-        ExplorableScene.anastasis,
-        ExplorableScene.judgment,
-      ]) {
-        final owner = ExplorerAssets();
-        final rig = await owner.figures(scene.figures);
-        expect(rig.frameCount, 48);
-        final frame = Offset.zero & scene.size;
-        final initial = rig.positions(0, frame);
-        final moving = rig.vertices.toSet();
-        expect(moving.length, greaterThan(1000));
-        expect(moving.length, lessThan(rig.cols * rig.rows * .65));
-        double maxTravel = 0;
-        double minimumArea = double.infinity;
-        var fixedScenery = true;
-        for (var sample = 0; sample <= 32; sample++) {
-          final points = rig.positions(sample / 32, frame);
-          for (var i = 0; i < rig.cols * rig.rows; i++) {
-            if (!moving.contains(i)) {
-              fixedScenery &=
-                  points[i * 2] == initial[i * 2] &&
-                  points[i * 2 + 1] == initial[i * 2 + 1];
-            } else {
-              final distance = Offset(
-                points[i * 2] - initial[i * 2],
-                points[i * 2 + 1] - initial[i * 2 + 1],
-              ).distance;
-              if (distance > maxTravel) maxTravel = distance;
-            }
-          }
-          for (var j = 0; j < rig.indices.length; j += 3) {
-            final a = rig.indices[j] * 2,
-                b = rig.indices[j + 1] * 2,
-                c = rig.indices[j + 2] * 2;
-            final cross =
-                (points[b] - points[a]) * (points[c + 1] - points[a + 1]) -
-                (points[b + 1] - points[a + 1]) * (points[c] - points[a]);
-            if (cross < minimumArea) minimumArea = cross;
-          }
-        }
-        expect(fixedScenery, isTrue);
-        expect(minimumArea, greaterThan(0));
-        expect(
-          maxTravel,
-          greaterThan(scene == ExplorableScene.anastasis ? 45 : 28),
-        );
-        expect(rig.positions(1, frame), orderedEquals(initial));
-        expect(rig.positions(.25, frame, intensity: 0), orderedEquals(initial));
-        owner.dispose();
-      }
+  testWidgets(
+    'pinch, pan and double-tap preserve the original camera controls',
+    (tester) async {
+      await openScene(tester, const AnastasisReliefScreen());
+      final p = state(tester),
+          view = find.byKey(const ValueKey('plate-interactive-viewer'));
+      final center = tester.getCenter(view), initial = p.zoom;
+      final a = await tester.startGesture(
+        center - const Offset(35, 0),
+        pointer: 1,
+      );
+      final b = await tester.startGesture(
+        center + const Offset(35, 0),
+        pointer: 2,
+      );
+      await tester.pump();
+      await a.moveTo(center - const Offset(60, 0));
+      await b.moveTo(center + const Offset(60, 0));
+      await tester.pump();
+      await a.up();
+      await b.up();
+      await tester.pumpAndSettle();
+      expect(p.zoom, greaterThan(initial));
+      final before = p.transformation.value.getTranslation().x;
+      await tester.drag(view, const Offset(35, 0));
+      await tester.pumpAndSettle();
+      expect(p.transformation.value.getTranslation().x, isNot(before));
+      p.focus(null);
+      await tester.pumpAndSettle();
+      await tester.tapAt(center);
+      await tester.pump(const Duration(milliseconds: 100));
+      await tester.tapAt(center);
+      await tester.pumpAndSettle();
+      expect(p.zoom, closeTo(2, .01));
+      expect(tester.takeException(), isNull);
     },
   );
-
-  testWidgets('the 4K restoration study retains the original comparison', (
+  testWidgets('story pauses, scrubs and performs one bounded wrist gesture', (
     tester,
   ) async {
-    await openScene(tester, const LastJudgmentReliefScreen());
-    await tester.tap(find.byTooltip('Scene options'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Restoration studies'));
-    await assetsReady(tester);
-    expect(find.byType(RestorationStudiesScreen), findsOneWidget);
-    expect(
-      find.byKey(const ValueKey('study-interactive-viewer')),
-      findsOneWidget,
-    );
-    await visibleTap(tester, 'Original');
-    await tester.pumpAndSettle();
-    expect(
-      find.textContaining('source photograph is unchanged'),
-      findsOneWidget,
-    );
-    expect(tester.takeException(), isNull);
+    await openScene(tester, const AnastasisReliefScreen());
+    final p = state(tester), c = p.controller;
+    c.seek(10.6);
+    await tester.pump();
+    expect(c.visibleGesture, closeTo(.5, .001));
+    expect(find.text('IMAGINED'), findsOneWidget);
+    c.play();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(c.visibleGesture, 0);
+    expect(c.seconds, greaterThan(11.5));
+    c.pause();
+    await tester.pump();
+    final t = c.seconds;
+    await tester.pump(const Duration(seconds: 8));
+    expect(c.seconds, t);
+    c.seek(31);
+    c.play();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 3));
+    expect(c.seconds, 32);
+    expect(c.playing, isFalse);
+    await tester.pump(const Duration(seconds: 8));
+    expect(c.seconds, 32);
+    c.original();
+    await tester.pump();
+    expect(p.ticking, isFalse);
+  });
+  testWidgets(
+    'reduced motion has the whole story as manual stills and stops lifecycle motion',
+    (tester) async {
+      await openScene(tester, const LastJudgmentReliefScreen(), reduced: true);
+      final p = state(tester), c = p.controller;
+      await tester.tap(find.byKey(const ValueKey('plate-story')));
+      await tester.pumpAndSettle();
+      expect(find.text('Play story'), findsNothing);
+      for (final beat in c.manifest.beats) {
+        await visibleTap(tester, 'Next still');
+        await tester.pump();
+        expect(c.sample!.beat.id, beat.id);
+        expect(c.seconds, beat.start);
+        expect(c.visibleGesture, 0);
+        expect(p.ticking, isFalse);
+      }
+      c.scrubGesture(.3);
+      await tester.pump();
+      expect(c.visibleGesture, .3);
+      expect(c.gesturePlaying, isFalse);
+      await tester.tap(find.byTooltip('Close controls'));
+      await tester.pumpAndSettle();
+      c.setReduced(false);
+      c.play();
+      await tester.pump();
+      p.didChangeAppLifecycleState(AppLifecycleState.inactive);
+      await tester.pump();
+      expect(c.playing, isFalse);
+      expect(p.ticking, isFalse);
+      p.didChangeAppLifecycleState(AppLifecycleState.resumed);
+      await tester.pump();
+      expect(c.playing, isFalse);
+      expect(tester.takeException(), isNull);
+    },
+  );
+  testWidgets(
+    'exiting during asynchronous loading safely releases late resources',
+    (tester) async {
+      final manifest = await loadPlate('anastasis');
+      await tester.pumpWidget(
+        MaterialApp(home: PlatePlayer(manifest: manifest)),
+      );
+      final p = state(tester);
+      var completed = false;
+      p.loading.then(
+        (_) => completed = true,
+        onError: (Object _) => completed = true,
+      );
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.runAsync(() async {
+        for (var i = 0; i < 200 && !completed; i++) {
+          await Future<void>.delayed(const Duration(milliseconds: 25));
+          await tester.pump();
+        }
+      });
+      expect(completed, isTrue);
+      expect(p.assets.images, isEmpty);
+      expect(p.assets.disposed, isTrue);
+      expect(tester.takeException(), isNull);
+    },
+  );
+  test('both rigs keep scenery fixed, return to the source, and never fold at the allowed intensity', () async {
+    for (final name in ['anastasis', 'judgment']) {
+      final manifest = await loadPlate(name), owner = PlateAssets();
+      final rig = await owner.readRig(manifest.mesh.figures);
+      final frame = Rect.fromLTWH(
+        0,
+        0,
+        manifest.width.toDouble(),
+        manifest.height.toDouble(),
+      );
+      final initial = rig.positions(0, frame), moving = rig.vertices.toSet();
+      var minArea = double.infinity, maxTravel = 0.0;
+      for (var sample = 0; sample <= 32; sample++) {
+        final points = rig.positions(sample / 32, frame, intensity: .35);
+        for (var i = 0; i < rig.cols * rig.rows; i++) {
+          if (!moving.contains(i)) {
+            expect(points[i * 2], initial[i * 2]);
+            expect(points[i * 2 + 1], initial[i * 2 + 1]);
+          } else {
+            final travel = Offset(
+              points[i * 2] - initial[i * 2],
+              points[i * 2 + 1] - initial[i * 2 + 1],
+            ).distance;
+            if (travel > maxTravel) maxTravel = travel;
+          }
+        }
+        for (var j = 0; j < rig.indices.length; j += 3) {
+          final a = rig.indices[j] * 2,
+              b = rig.indices[j + 1] * 2,
+              c = rig.indices[j + 2] * 2;
+          final cross =
+              (points[b] - points[a]) * (points[c + 1] - points[a + 1]) -
+              (points[b + 1] - points[a + 1]) * (points[c] - points[a]);
+          if (cross < minArea) minArea = cross;
+        }
+      }
+      expect(minArea, greaterThan(0));
+      expect(maxTravel, greaterThan(5));
+      expect(rig.positions(1, frame), orderedEquals(initial));
+      if (name == 'anastasis') {
+        final gesture = manifest.beats
+            .where((b) => b.gesture != null)
+            .single
+            .gesture!;
+        final windows = [
+          for (final w in gesture.windows)
+            Rect.fromLTRB(w.left, w.top, w.right, w.bottom),
+        ];
+        final points = rig.positions(
+          .25,
+          frame,
+          intensity: gesture.strength,
+          windows: windows,
+        );
+        var changed = 0;
+        for (var i = 0; i < rig.cols * rig.rows; i++) {
+          final uv = Offset(rig.coordinates[i * 2], rig.coordinates[i * 2 + 1]);
+          final differs =
+              points[i * 2] != initial[i * 2] ||
+              points[i * 2 + 1] != initial[i * 2 + 1];
+          if (differs) {
+            changed++;
+            expect(windows.any((w) => w.contains(uv)), isTrue);
+          }
+        }
+        expect(changed, greaterThan(100));
+      }
+      owner.dispose();
+    }
+  });
+  test('reconstruction exports preserve source aspect and are 4K', () async {
+    for (final name in ['anastasis', 'judgment']) {
+      final p = await loadPlate(name),
+          bytes = await rootBundle.load(
+            p.layer(PlateLayerId.reconstruction).asset,
+          );
+      final codec = await ui.instantiateImageCodec(bytes.buffer.asUint8List());
+      final image = (await codec.getNextFrame()).image;
+      expect(image.width, 3840);
+      expect(image.width / image.height, closeTo(p.width / p.height, .001));
+      image.dispose();
+      codec.dispose();
+    }
   });
 }

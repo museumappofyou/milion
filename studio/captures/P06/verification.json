@@ -1,0 +1,37 @@
+{
+  "phase": "P06",
+  "date": "2026-10-08",
+  "implementation": "local implementation complete; device/human acceptance open",
+  "appTests": 197,
+  "goldenBaselines": 122,
+  "newGoldenBaselines": 12,
+  "captureTests": 2,
+  "pngStills": 57,
+  "clips": 3,
+  "pythonTests": 3,
+  "registryJsonAndManifests": 15,
+  "runtimeMaps": 8,
+  "uiKeysPerLocale": 380,
+  "reviewedPlaces": 0,
+  "approvedMilestones": 0,
+  "nextImplementation": "P07",
+  "readinessPercent": 32.7,
+  "scorePoints": 1832,
+  "textureBytes": [
+    76113920,
+    87123200
+  ],
+  "meshVertices": [
+    54891,
+    59800
+  ],
+  "unverified": [
+    "A52s 60 fps",
+    "total device GPU memory",
+    "physical gyro feel",
+    "physical plate TalkBack",
+    "native copy and image review"
+  ],
+  "signing": "debug fallback; O05 open",
+  "finalAffectedTests": 20
+}

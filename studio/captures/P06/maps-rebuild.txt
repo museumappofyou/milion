@@ -1,0 +1,22 @@
+anastasis gold px 160559 damaged px 237571
+river px 86854 bbox 804 804 1413 1066
+scroll px 17020 bbox 707 417 857 561
+wrote /Users/memre/Desktop/milion/assets/plates
+
+{
+  "command": "python3.11 tool/plate/remaster_maps.py",
+  "opencv": "5.0.0",
+  "numpy": "2.4.6",
+  "files": 8,
+  "byteIdentical": true,
+  "hashes": {
+    "assets/plates/anastasis/damaged.png": "54329fed82bb9a7c0fd6883ff0f8c13cdfb91d5ea12672ac6f2dfa548259f5cc",
+    "assets/plates/anastasis/gold.png": "7ca3233918f7af746aa912ab3cd81e6a6f90fa2d984f20f68603b906f5e1dc2d",
+    "assets/plates/anastasis/surface.png": "8265c09889a91de5d2daf768353f9059216163937fa32ce7777de414f68b2762",
+    "assets/plates/judgment/damaged.png": "1e72d0900ee9f5f851cd808ce4a8b9ef91a4595a19ec21df0a295b3fd1ff4eff",
+    "assets/plates/judgment/gold.png": "7fe13e3ede888f53cc780070527720c0ec194d35af6d14e1f7a136775f693c68",
+    "assets/plates/judgment/river.png": "e34917b6e3fe7a4a879519890b896ef2ebca7f382f8467257e82758e14f60133",
+    "assets/plates/judgment/scroll.png": "9e4e47b8a50dc38c09c753b72824458daf3fcd6503b3387bedac26186523f381",
+    "assets/plates/judgment/surface.png": "6b2e1600aeac7d538cfde41e82610c7b5ef32303496e6d754d5cf565e8615384"
+  }
+}

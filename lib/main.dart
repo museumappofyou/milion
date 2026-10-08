@@ -18,7 +18,7 @@ import 'services/classifier.dart';
 import 'services/progress_service.dart';
 import 'shell/app_scope.dart';
 import 'shell/app_shell.dart';
-import 'shell/navigation.dart';
+import 'plate/catalog.dart';
 import 'today/detail_crop.dart';
 
 void registerFontLicences() {
@@ -60,6 +60,7 @@ class _MilionAppState extends State<MilionApp> {
   final _progress = MilestoneProgress();
   late final ContentRepository _repository = widget.content ?? bundledContent;
   ContentRegistry? _registry;
+  PlateCatalog _plates = const PlateCatalog.empty();
   Object? _error;
   Set<String> _recognised = const {};
   bool _ready = false;
@@ -80,7 +81,9 @@ class _MilionAppState extends State<MilionApp> {
         _settings.firstRunSeen &&
         registry.details.isNotEmpty) {
       final detail = detailOfDay(registry, (widget.clock ?? DateTime.now)());
-      final scene = explorerFor(registry.milestone(detail.milestoneId)!);
+      final scene = _plates.forMilestone(
+        registry.milestone(detail.milestoneId)!,
+      );
       if (scene != null) {
         try {
           await precacheImage(AssetImage(scene.original), context);
@@ -101,11 +104,13 @@ class _MilionAppState extends State<MilionApp> {
         .catchError((Object _) => const <String>[]);
     try {
       final registry = await _repository.load();
+      final plates = await PlateCatalog.load(registry, _repository.loadText);
       final ids = await classes;
       final known = {for (final a in registry.artworks) a.id};
       if (!mounted) return;
       setState(() {
         _registry = registry;
+        _plates = plates;
         _recognised = {...ids.where(known.contains)};
         _error = null;
       });
@@ -136,6 +141,7 @@ class _MilionAppState extends State<MilionApp> {
       progress: _progress,
       child: AppScope(
         registry: _registry,
+        plates: _plates,
         error: _error,
         retry: () {
           setState(() => _error = null);

@@ -1,0 +1,48 @@
+ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.1.1.101)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.1_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.101 / 61.  1.101
+  libavcodec     63.  1.101 / 63.  1.101
+  libavformat    63.  1.101 / 63.  1.101
+  libavdevice    63.  1.101 / 63.  1.101
+  libavfilter    12.  1.101 / 12.  1.101
+  libswscale     10.  1.101 / 10.  1.101
+  libswresample   7.  1.101 /  7.  1.101
+Input #0, image2, from '/tmp/milion-p06-wrist-grip-frames/%04d.png':
+  Duration: 00:00:08.00, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 390x844, 24 fps, 24 tbr, 24 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0xb47020a80] using cpu capabilities: ARMv8 NEON DotProd
+[libx264 @ 0xb47020a80] profile High, level 3.0, 4:2:0, 8-bit
+[libx264 @ 0xb47020a80] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=15 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=20.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'studio/captures/P06/wrist-grip-8s.mp4':
+  Metadata:
+    encoder         : Lavf63.1.101
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 390x844, q=2-31, 24 fps, 12288 tbn
+    Metadata:
+      encoder         : Lavc63.1.101 libx264
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=   88 fps=0.0 q=25.0 size=    1024KiB time=00:00:03.58 bitrate=2341.1kbits/s speed= 7.1x elapsed=0:00:00.50    [mp4 @ 0xb4701c280] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0xb470089c0] video:1843KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.127114%
+frame=  192 fps=0.0 q=-1.0 Lsize=    1845KiB time=00:00:07.91 bitrate=1909.6kbits/s speed=11.5x elapsed=0:00:00.68    
+[libx264 @ 0xb47020a80] frame I:1     Avg QP:20.40  size: 75324
+[libx264 @ 0xb47020a80] frame P:126   Avg QP:16.78  size: 10168
+[libx264 @ 0xb47020a80] frame B:65    Avg QP:20.89  size:  8155
+[libx264 @ 0xb47020a80] consecutive B-frames: 54.2%  2.1%  0.0% 43.8%
+[libx264 @ 0xb47020a80] mb I  I16..4: 11.8% 27.3% 60.9%
+[libx264 @ 0xb47020a80] mb P  I16..4:  0.3%  0.3%  0.6%  P16..4: 18.9%  4.9%  5.8%  0.0%  0.0%    skip:69.1%
+[libx264 @ 0xb47020a80] mb B  I16..4:  0.0%  0.1%  0.4%  B16..8: 15.1%  9.8%  6.8%  direct: 3.4%  skip:64.3%  L0:40.0% L1:41.3% BI:18.7%
+[libx264 @ 0xb47020a80] 8x8 transform intra:26.7% inter:15.7%
+[libx264 @ 0xb47020a80] coded y,uvDC,uvAC intra: 71.1% 70.4% 56.1% inter: 17.0% 5.0% 1.2%
+[libx264 @ 0xb47020a80] i16 v,h,dc,p: 67% 29%  4%  0%
+[libx264 @ 0xb47020a80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  8% 26% 27%  5%  6%  5%  8%  6%  9%
+[libx264 @ 0xb47020a80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 10% 31% 14%  6%  8%  8%  8%  6%  9%
+[libx264 @ 0xb47020a80] i8c dc,h,v,p: 52% 30% 11%  7%
+[libx264 @ 0xb47020a80] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0xb47020a80] ref P L0: 88.1%  6.4%  4.0%  1.5%
+[libx264 @ 0xb47020a80] ref B L0: 82.0% 16.0%  2.0%
+[libx264 @ 0xb47020a80] ref B L1: 91.1%  8.9%
+[libx264 @ 0xb47020a80] kb/s:1886.60

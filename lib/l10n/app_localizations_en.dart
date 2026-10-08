@@ -1169,4 +1169,102 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get placeFunction => 'Current use';
+
+  @override
+  String get plateStory => 'Story';
+
+  @override
+  String get plateLayers => 'Layers';
+
+  @override
+  String get platePlay => 'Play story';
+
+  @override
+  String get platePause => 'Pause story';
+
+  @override
+  String get platePrevious => 'Previous still';
+
+  @override
+  String get plateNext => 'Next still';
+
+  @override
+  String get plateTimeline => 'Story position';
+
+  @override
+  String get plateGilded => 'Gilded light';
+
+  @override
+  String get plateRaking => 'Raking light';
+
+  @override
+  String get plateCandle => 'Candle';
+
+  @override
+  String get plateNoLight => 'No added light';
+
+  @override
+  String get plateGyro => 'Tilt with the phone';
+
+  @override
+  String get plateGyroHint =>
+      'Off until you choose it. Touch the artwork to recenter.';
+
+  @override
+  String get plateGyroUnavailable =>
+      'No gyroscope reading. Drag the artwork to tilt.';
+
+  @override
+  String get plateDragHint => 'Drag to tilt; pinch to zoom.';
+
+  @override
+  String get plateRakingHint => 'Drag the light across the paint.';
+
+  @override
+  String get plateCandleHint => 'Hold the warm light under your finger.';
+
+  @override
+  String get plateWipeHint =>
+      'Drag to reveal reconstruction in damaged areas. Hold to see the original.';
+
+  @override
+  String get plateOriginalHint => 'Tap the label to return to the original.';
+
+  @override
+  String get platePaintMotion => 'River of fire';
+
+  @override
+  String get plateScrollMotion => 'Scroll of heaven';
+
+  @override
+  String get plateStillHint =>
+      'Motion is off. Use Next and Previous to read the same story as stills.';
+
+  @override
+  String get plateMotionCaption =>
+      'One imagined wrist-grip gesture; the photograph is one tap away.';
+
+  @override
+  String get plateDebug => 'Gesture and rendering study';
+
+  @override
+  String get plateClose => 'Close controls';
+
+  @override
+  String get plateDetails => 'Details in the photograph';
+
+  @override
+  String get plateReveal => '10-second reveal';
+
+  @override
+  String get plateExplore => 'Explore the plate';
+
+  @override
+  String get plateStartReveal => 'Play reveal';
+
+  @override
+  String get plateSources => 'Sources and photograph';
+
+  @override
+  String get plateLoading => 'Preparing the plate';
 }

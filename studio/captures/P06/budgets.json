@@ -1,0 +1,22 @@
+{
+  "measurement": "native Flutter test renderer; decoded images and mesh, not total device GPU memory",
+  "deviceFps": "unverified; no Android phone/emulator connected",
+  "plates": {
+    "anastasis": {
+      "decodedTextureBytes": 76113920,
+      "meshVertices": 54891,
+      "geometryVertices": 11310,
+      "storySeconds": 32.0,
+      "revealSeconds": 10.0,
+      "detailCount": 9
+    },
+    "judgment": {
+      "decodedTextureBytes": 87123200,
+      "meshVertices": 59800,
+      "geometryVertices": 14065,
+      "storySeconds": 32.0,
+      "revealSeconds": 10.0,
+      "detailCount": 8
+    }
+  }
+}

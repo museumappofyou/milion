@@ -6,7 +6,7 @@ import 'package:milion/content/geography.dart';
 import 'package:milion/content/models.dart';
 import 'package:milion/content/registry.dart';
 import 'package:milion/content/repository.dart';
-import 'package:milion/shell/navigation.dart';
+import 'package:milion/plate/catalog.dart';
 import 'package:milion/today/detail_crop.dart';
 import 'package:milion/today/mile_zero_dial.dart';
 
@@ -15,7 +15,11 @@ Future<ContentRegistry> loadRegistry() =>
 
 void main() {
   late ContentRegistry registry;
-  setUpAll(() async => registry = await loadRegistry());
+  late PlateCatalog plates;
+  setUpAll(() async {
+    registry = await loadRegistry();
+    plates = await PlateCatalog.load(registry, (p) => File(p).readAsString());
+  });
 
   test(
     'register: 48 numerals 0–XLVII in order, nine flagships, I–II playable',
@@ -36,7 +40,9 @@ void main() {
         'XXXVI',
       });
       expect(
-        register.where((m) => explorerFor(m) != null).map((m) => m.numeral),
+        register
+            .where((m) => plates.forMilestone(m) != null)
+            .map((m) => m.numeral),
         ['I', 'II'],
       );
       for (final m in register) {
@@ -58,7 +64,7 @@ void main() {
     for (final d in pool) {
       final m = registry.milestone(d.milestoneId)!;
       expect(
-        explorerFor(m),
+        plates.forMilestone(m),
         isNotNull,
         reason: '${d.id} must open a playable Milestone',
       );
@@ -127,20 +133,21 @@ void main() {
 
   test('crop geometry covers the box and keeps the anchor inside it', () {
     for (final d in registry.details) {
-      final scene = explorerFor(registry.milestone(d.milestoneId)!)!;
+      final scene = plates.forMilestone(registry.milestone(d.milestoneId)!)!;
       for (final box in [
         const Size(390, 437),
         const Size(360, 403),
         const Size(430, 481),
       ]) {
-        final g = CropGeometry(box, scene.size, d.window);
+        final g = CropGeometry(
+          box,
+          Size(scene.width.toDouble(), scene.height.toDouble()),
+          d.window,
+        );
         final a = g.toBox(d.anchorX, d.anchorY);
         expect(a.dx, inInclusiveRange(0, box.width), reason: d.id);
         expect(a.dy, inInclusiveRange(0, box.height), reason: d.id);
-        expect(
-          scene.size.width * g.scale,
-          greaterThanOrEqualTo(box.width - .001),
-        );
+        expect(scene.width * g.scale, greaterThanOrEqualTo(box.width - .001));
       }
     }
   });

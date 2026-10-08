@@ -1170,4 +1170,103 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get placeFunction => 'Bugünkü işlev';
+
+  @override
+  String get plateStory => 'Öykü';
+
+  @override
+  String get plateLayers => 'Katmanlar';
+
+  @override
+  String get platePlay => 'Öyküyü oynat';
+
+  @override
+  String get platePause => 'Öyküyü duraklat';
+
+  @override
+  String get platePrevious => 'Önceki kare';
+
+  @override
+  String get plateNext => 'Sonraki kare';
+
+  @override
+  String get plateTimeline => 'Öyküdeki konum';
+
+  @override
+  String get plateGilded => 'Altın ışığı';
+
+  @override
+  String get plateRaking => 'Eğik ışık';
+
+  @override
+  String get plateCandle => 'Mum';
+
+  @override
+  String get plateNoLight => 'Ek ışık yok';
+
+  @override
+  String get plateGyro => 'Telefonu eğerek bak';
+
+  @override
+  String get plateGyroHint =>
+      'Sen açana kadar kapalı. Ortalamak için esere dokun.';
+
+  @override
+  String get plateGyroUnavailable =>
+      'Jiroskop verisi alınamıyor. Eseri sürükleyerek eğ.';
+
+  @override
+  String get plateDragHint =>
+      'Eğmek için sürükle; büyütmek için iki parmağını kullan.';
+
+  @override
+  String get plateRakingHint => 'Işığı resmin üzerinde sürükle.';
+
+  @override
+  String get plateCandleHint => 'Sıcak ışığı parmağının altında tut.';
+
+  @override
+  String get plateWipeHint =>
+      'Hasarlı alanlarda rekonstrüksiyonu açmak için sürükle. Özgün fotoğraf için basılı tut.';
+
+  @override
+  String get plateOriginalHint => 'Özgün fotoğrafa dönmek için etikete dokun.';
+
+  @override
+  String get platePaintMotion => 'Ateş nehri';
+
+  @override
+  String get plateScrollMotion => 'Göğün tomar gibi açılması';
+
+  @override
+  String get plateStillHint =>
+      'Hareket kapalı. Aynı öyküyü kare kare okumak için Sonraki ve Önceki düğmelerini kullan.';
+
+  @override
+  String get plateMotionCaption =>
+      'Bilekten çekişi gösteren tek bir hayalî hareket; fotoğraf bir dokunuş uzağında.';
+
+  @override
+  String get plateDebug => 'Hareket ve çizim çalışması';
+
+  @override
+  String get plateClose => 'Denetimleri kapat';
+
+  @override
+  String get plateDetails => 'Fotoğraftaki ayrıntılar';
+
+  @override
+  String get plateReveal => '10 saniyelik ilk bakış';
+
+  @override
+  String get plateExplore => 'Eseri incele';
+
+  @override
+  String get plateStartReveal => 'İlk bakışı oynat';
+
+  @override
+  String get plateSources => 'Kaynaklar ve fotoğraf';
+
+  @override
+  String get plateLoading => 'Eser hazırlanıyor';
 }

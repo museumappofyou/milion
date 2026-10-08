@@ -76,7 +76,14 @@ class _MosaicTabState extends State<MosaicTab> {
                         children: [
                           for (final m in registry.register)
                             TesseraSlot(
-                              state: slotFor(m, opened: opened.contains(m.id)),
+                              state: slotFor(
+                                m,
+                                opened: opened.contains(m.id),
+                                playable:
+                                    AppScope.of(context).plates
+                                        .forMilestone(m) !=
+                                    null,
+                              ),
                               label: m.numeral,
                               width: 36,
                               height: 36,

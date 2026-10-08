@@ -6,6 +6,7 @@ import '../content/models.dart';
 import '../design/components.dart';
 import '../l10n/strings.dart';
 import '../milestones/milestone_row.dart';
+import '../shell/app_scope.dart';
 
 /// One tessera per register entry: gold when opened, outlined when planned.
 class MosaicStrip extends StatelessWidget {
@@ -27,7 +28,13 @@ class MosaicStrip extends StatelessWidget {
             .where(
               (m) =>
                   !opened.contains(m.id) &&
-                  slotFor(m, opened: false) == SlotState.available,
+                  slotFor(
+                        m,
+                        opened: false,
+                        playable:
+                            AppScope.of(context).plates.forMilestone(m) != null,
+                      ) ==
+                      SlotState.available,
             )
             .firstOrNull ??
         register.where((m) => !opened.contains(m.id)).firstOrNull;
@@ -53,7 +60,13 @@ class MosaicStrip extends StatelessWidget {
                     children: [
                       for (final m in register)
                         TesseraSlot(
-                          state: slotFor(m, opened: opened.contains(m.id)),
+                          state: slotFor(
+                            m,
+                            opened: opened.contains(m.id),
+                            playable:
+                                AppScope.of(context).plates.forMilestone(m) !=
+                                null,
+                          ),
                           width: w,
                           height: math.max(14, w * 1.3),
                         ),

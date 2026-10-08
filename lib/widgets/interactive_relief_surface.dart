@@ -17,6 +17,7 @@ class InteractiveReliefSurface extends CustomPainter {
     this.phase = 0,
     this.motionAmount = 1,
     this.posed = false,
+    this.gestureWindows = const [],
   });
   final ui.Image texture;
   final ui.Image? study;
@@ -25,6 +26,7 @@ class InteractiveReliefSurface extends CustomPainter {
   final FigureRig rig;
   final Rect frame;
   final bool posed;
+  final List<Rect> gestureWindows;
 
   static Rect fitFrame(Size viewport, Size source) {
     final fitted = applyBoxFit(BoxFit.contain, source, viewport).destination;
@@ -53,7 +55,12 @@ class InteractiveReliefSurface extends CustomPainter {
   }
 
   void _mesh(Canvas canvas) {
-    final positions = rig.positions(phase, frame, intensity: motionAmount);
+    final positions = rig.positions(
+      phase,
+      frame,
+      intensity: motionAmount,
+      windows: gestureWindows,
+    );
     if (study == null || studyAmount < 1) {
       _meshLayer(canvas, positions, texture, 1);
     }
@@ -96,5 +103,6 @@ class InteractiveReliefSurface extends CustomPainter {
       old.frame != frame ||
       old.phase != phase ||
       old.motionAmount != motionAmount ||
+      old.gestureWindows != gestureWindows ||
       old.posed != posed;
 }
