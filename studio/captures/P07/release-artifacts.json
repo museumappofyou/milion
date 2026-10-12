@@ -1,0 +1,46 @@
+{
+  "built": "2026-10-12",
+  "signing": "debug fallback (O05)",
+  "artifacts": {
+    "app-arm64-v8a-release.apk": {
+      "bytes": 96744286,
+      "sha256": "d53809299e3d08ba613a77f99676fff6a09dec6370fa28d3785697431c9aa28d",
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/lookup.frag",
+        "shaders/plate.frag"
+      ],
+      "judgmentStudyBundled": false
+    },
+    "app-armeabi-v7a-release.apk": {
+      "bytes": 89271762,
+      "sha256": "311d5adf03899ec80c437c4360caf2c99dc7d4bcef2fbe7ea6751547368148c5",
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/lookup.frag",
+        "shaders/plate.frag"
+      ],
+      "judgmentStudyBundled": false
+    },
+    "app-x86_64-release.apk": {
+      "bytes": 102118230,
+      "sha256": "5834a633227eb87b5056488c099e3822d90bffb7502af237550e26cd7f1d67b0",
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/lookup.frag",
+        "shaders/plate.frag"
+      ],
+      "judgmentStudyBundled": false
+    },
+    "app-release.aab": {
+      "bytes": 143167365,
+      "sha256": "a0050d4ad9dcd9f1d580336b36db184c54b46d38200005a737749f06aea444e2",
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/lookup.frag",
+        "shaders/plate.frag"
+      ],
+      "judgmentStudyBundled": false
+    }
+  }
+}

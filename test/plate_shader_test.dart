@@ -49,7 +49,7 @@ void compareMasked(Uint8List before, Uint8List after, Uint8List mask) {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  for (final name in ['anastasis', 'judgment']) {
+  for (final name in ['anastasis']) {
     test(
       '$name reconstruction changes only damaged zones and long-press returns exact original',
       () async {
@@ -66,7 +66,7 @@ void main() {
         c.setWipe(1);
         final restored = await pixels(p, assets, c);
         final mask =
-            (await assets.images[p.layer(PlateLayerId.reconstruction).mask!]!
+            (await assets.images[p.layer(PlateLayerId.reconstruction)!.mask!]!
                     .toByteData())!
                 .buffer
                 .asUint8List();
@@ -95,14 +95,14 @@ void main() {
       compareMasked(
         base,
         await pixels(p, assets, c),
-        (await assets.images[p.maps.flow!]!.toByteData())!.buffer.asUint8List(),
+        (await assets.images[p.flowEffect!.mask]!.toByteData())!.buffer.asUint8List(),
       );
       c.setPaintMotion(river: false, scroll: true);
       c.effectSeconds = 4;
       compareMasked(
         base,
         await pixels(p, assets, c),
-        (await assets.images[p.maps.scroll!]!.toByteData())!.buffer
+        (await assets.images[p.spiralEffect!.mask]!.toByteData())!.buffer
             .asUint8List(),
       );
       c.dispose();

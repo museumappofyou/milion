@@ -1,0 +1,100 @@
+{
+  "plate": "genealogy",
+  "spec": "studio/plates/genealogy/plate.yaml",
+  "manualMinutes": 35,
+  "stages": {
+    "ingest": {
+      "source": "3-INNER-NARTHEX/C__M13__Christ-Pantokrator-and-the-Ancestors__dome__REF-6/web-ke-01-Isanin-Atalari.jpg",
+      "sourceSha256": "45611b0c0d92a75aba173abc628afe61c892efc1c0a625442426ccccaafe3e6c",
+      "sourceSize": [
+        1600,
+        1067
+      ],
+      "sourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2019/11/Isanin-Atalari.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/genealogy/original.jpg",
+      "masterSha256": "8c54318c04bb8ea4b2a2b365aaa69ada0de464d9d8865516d25925fe59359676",
+      "size": [
+        1600,
+        1067
+      ]
+    },
+    "segment": {
+      "medallion": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0182,
+        "iou": 0.926
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.3 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 1.46,
+      "gold": "heuristic",
+      "goldCoverage": 0.3607,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 53458,
+      "triangles": 105902,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 91,
+        "verticesEased": 5746,
+        "maxHeightChange": 0.512
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 20486400,
+    "textureBudget": 150000000,
+    "meshVertices": 53458,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/genealogy/manifest.json",
+    "maps": {
+      "surface": "assets/plates/genealogy/surface.webp",
+      "gold": "assets/plates/genealogy/gold.webp"
+    },
+    "details": 6,
+    "beats": 6,
+    "storySeconds": 35,
+    "revealMoment": 5,
+    "lookUp": {
+      "center": [
+        0.483,
+        0.385
+      ],
+      "rimCenter": [
+        0.4875,
+        0.465
+      ],
+      "rimRadii": [
+        0.3075,
+        0.28
+      ],
+      "rimElevation": 75
+    }
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 27.1
+}

@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-metochites",
+  "milestone": "milestone-iii",
+  "artwork": "M11",
+  "title": {
+    "en": "Metochites offers Chora",
+    "tr": "Metokhites Kariye’yi sunuyor"
+  },
+  "description": {
+    "en": "Mosaic lunette over the door from the inner narthex into the naos, about 1315–1321. Christ sits enthroned with a closed Gospel; at left Theodore Metochites, in a broad white hat, kneels and offers him a model of the church.",
+    "tr": "İç narteksten naosa açılan kapının üstündeki mozaik lünet, 1315–1321 dolayları. İsa elinde kapalı bir İncil’le tahtta oturuyor; solda geniş beyaz şapkalı Theodoros Metokhites diz çökmüş, ona kilisenin maketini sunuyor."
+  },
+  "size": [
+    1600,
+    1067
+  ],
+  "manifestPath": "assets/plates/metochites/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/metochites/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/metochites/surface.webp",
+    "gold": "assets/plates/metochites/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-metochites-hat",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The skiadion",
+        "tr": "Skiadion"
+      },
+      "sentence": {
+        "en": "Metochites wears a skiadion, a “sunshade” hat of white fabric, probably silk, with gold stripes edged in red.",
+        "tr": "Metokhites’in başında bir skiadion, yani “güneşlik” var: büyük olasılıkla ipek, beyaz bir kumaş; kırmızı kenarlı altın şeritlerle."
+      },
+      "window": {
+        "left": 0.12,
+        "top": 0.44,
+        "right": 0.33,
+        "bottom": 0.66
+      },
+      "anchorX": 0.235,
+      "anchorY": 0.515,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-metochites-title",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The founder’s title",
+        "tr": "Kurucunun unvanı"
+      },
+      "sentence": {
+        "en": "The Greek beside him reads “The founder, Logothete of the Genikon, Theodore Metochites”: head of the general treasury.",
+        "tr": "Yanındaki Grekçe yazı: “Kurucu, Genikon logothetesi Theodoros Metokhites”; yani genel hazinenin başı."
+      },
+      "window": {
+        "left": 0.08,
+        "top": 0.47,
+        "right": 0.21,
+        "bottom": 0.82
+      },
+      "anchorX": 0.135,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-church-model",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The church in his hands",
+        "tr": "Elindeki kilise"
+      },
+      "sentence": {
+        "en": "His model of Chora leaves out the parekklesion and shows only three bays of the outer narthex.",
+        "tr": "Elindeki Kariye maketi parekklesionu dışarıda bırakıyor; dış narteksin yalnızca üç bölmesini gösteriyor."
+      },
+      "window": {
+        "left": 0.2,
+        "top": 0.55,
+        "right": 0.36,
+        "bottom": 0.82
+      },
+      "anchorX": 0.29,
+      "anchorY": 0.66,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-land-of-the-living",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The land of the living",
+        "tr": "Yaşayanların diyarı"
+      },
+      "sentence": {
+        "en": "Beside Christ: “Ἡ χώρα τῶν ζώντων”, the dwelling-place of the living, a play on the name Chora.",
+        "tr": "İsa’nın iki yanında “Ἡ χώρα τῶν ζώντων” yazıyor: yaşayanların diyarı; Kariye’nin adı Khora’ya bir gönderme."
+      },
+      "window": {
+        "left": 0.3,
+        "top": 0.3,
+        "right": 0.55,
+        "bottom": 0.62
+      },
+      "anchorX": 0.385,
+      "anchorY": 0.4,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966",
+        "ousterhout-2002",
+        "psalm-116-9"
+      ]
+    },
+    {
+      "id": "detail-jewelled-gospel",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The jewelled Gospel",
+        "tr": "Mücevherli İncil"
+      },
+      "sentence": {
+        "en": "Christ blesses with his right hand; the closed Gospel on his left knee is set with white stones and red and green glass.",
+        "tr": "İsa sağ eliyle takdis ediyor; sol dizindeki kapalı İncil beyaz taşlarla, kırmızı ve yeşil camlarla bezeli."
+      },
+      "window": {
+        "left": 0.38,
+        "top": 0.3,
+        "right": 0.62,
+        "bottom": 0.75
+      },
+      "anchorX": 0.53,
+      "anchorY": 0.56,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-scalloped-gold",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The empty side",
+        "tr": "Boş bırakılan yan"
+      },
+      "sentence": {
+        "en": "The side facing Metochites is left empty, its gold tesserae laid in a scalloped pattern.",
+        "tr": "Metokhites’in karşısındaki yan boş bırakılmış; buradaki altın mozaik taşları pul pul dizilmiş."
+      },
+      "window": {
+        "left": 0.64,
+        "top": 0.4,
+        "right": 0.95,
+        "bottom": 0.92
+      },
+      "anchorX": 0.82,
+      "anchorY": 0.62,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "ousterhout-2002"
+      ]
+    },
+    {
+      "id": "detail-kabbadion",
+      "milestone": "milestone-iii",
+      "artwork": "M11",
+      "title": {
+        "en": "The kabbadion",
+        "tr": "Kabbadion"
+      },
+      "sentence": {
+        "en": "His kabbadion caftan is dark bluish green, patterned all over with two leaf forms.",
+        "tr": "Kabbadion denen kaftanı koyu mavimsi yeşil; baştan aşağı iki ayrı yaprak motifiyle desenli."
+      },
+      "window": {
+        "left": 0.04,
+        "top": 0.6,
+        "right": 0.3,
+        "bottom": 0.98
+      },
+      "anchorX": 0.13,
+      "anchorY": 0.84,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "metochites-beat-1",
+      "start": 0,
+      "duration": 6,
+      "detail": "detail-land-of-the-living",
+      "window": {
+        "left": 0.33,
+        "top": 0.3,
+        "right": 0.72,
+        "bottom": 0.5
+      },
+      "caption": {
+        "en": "Beside Christ: “Ἡ χώρα τῶν ζώντων”, the dwelling-place of the living, a play on the name Chora.",
+        "tr": "İsa’nın iki yanında “Ἡ χώρα τῶν ζώντων” yazıyor: yaşayanların diyarı; Kariye’nin adı Khora’ya bir gönderme."
+      },
+      "sources": [
+        "underwood-1966",
+        "ousterhout-2002",
+        "psalm-116-9"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "metochites-beat-2",
+      "start": 6,
+      "duration": 5,
+      "detail": "detail-jewelled-gospel",
+      "window": {
+        "left": 0.38,
+        "top": 0.3,
+        "right": 0.62,
+        "bottom": 0.75
+      },
+      "caption": {
+        "en": "Christ blesses with his right hand; the closed Gospel on his left knee is set with white stones and red and green glass.",
+        "tr": "İsa sağ eliyle takdis ediyor; sol dizindeki kapalı İncil beyaz taşlarla, kırmızı ve yeşil camlarla bezeli."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "metochites-beat-3",
+      "start": 11,
+      "duration": 6,
+      "detail": "detail-church-model",
+      "window": {
+        "left": 0.2,
+        "top": 0.55,
+        "right": 0.36,
+        "bottom": 0.82
+      },
+      "caption": {
+        "en": "His model of Chora leaves out the parekklesion and shows only three bays of the outer narthex.",
+        "tr": "Elindeki Kariye maketi parekklesionu dışarıda bırakıyor; dış narteksin yalnızca üç bölmesini gösteriyor."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "metochites-beat-4",
+      "start": 17,
+      "duration": 6,
+      "detail": "detail-metochites-hat",
+      "window": {
+        "left": 0.12,
+        "top": 0.44,
+        "right": 0.33,
+        "bottom": 0.66
+      },
+      "caption": {
+        "en": "Metochites wears a skiadion, a “sunshade” hat of white fabric, probably silk, with gold stripes edged in red.",
+        "tr": "Metokhites’in başında bir skiadion, yani “güneşlik” var: büyük olasılıkla ipek, beyaz bir kumaş; kırmızı kenarlı altın şeritlerle."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "metochites-beat-5",
+      "start": 23,
+      "duration": 6,
+      "detail": "detail-metochites-title",
+      "window": {
+        "left": 0.08,
+        "top": 0.47,
+        "right": 0.21,
+        "bottom": 0.82
+      },
+      "caption": {
+        "en": "He paid for this work from about 1315 to 1321; exiled in 1328, he returned in 1330 and died here as the monk Theoleptos in 1332.",
+        "tr": "Bu işi yaklaşık 1315–1321 arasında o yaptırdı; 1328’de sürgüne gönderildi, 1330’da döndü ve 1332’de burada keşiş Theoleptos olarak öldü."
+      },
+      "sources": [
+        "underwood-1966",
+        "ousterhout-2002"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "metochites-beat-6",
+      "start": 29,
+      "duration": 6,
+      "detail": "detail-scalloped-gold",
+      "window": {
+        "left": 0.64,
+        "top": 0.4,
+        "right": 0.95,
+        "bottom": 0.92
+      },
+      "caption": {
+        "en": "The side facing Metochites is left empty, its gold tesserae laid in a scalloped pattern.",
+        "tr": "Metokhites’in karşısındaki yan boş bırakılmış; buradaki altın mozaik taşları pul pul dizilmiş."
+      },
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 6,
+  "storySeconds": 35,
+  "reveal": {
+    "id": "metochites-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-metochites-hat",
+    "window": {
+      "left": 0.12,
+      "top": 0.44,
+      "right": 0.33,
+      "bottom": 0.66
+    },
+    "caption": {
+      "en": "Metochites wears a skiadion, a “sunshade” hat of white fabric, probably silk, with gold stripes edged in red.",
+      "tr": "Metokhites’in başında bir skiadion, yani “güneşlik” var: büyük olasılıkla ipek, beyaz bir kumaş; kırmızı kenarlı altın şeritlerle."
+    },
+    "sources": [
+      "underwood-1966"
+    ],
+    "light": "gilded",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Caner Cangül / Kültür Envanteri",
+    "tr": "Caner Cangül / Kültür Envanteri"
+  },
+  "sources": [
+    "underwood-1966",
+    "chora-guide"
+  ],
+  "originalSourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Theodoros-Metokhites-Kariye-Maketini-Hz.-Isaya-Sunusu.jpg",
+  "citations": [
+    {
+      "id": "chora-guide",
+      "title": {
+        "en": "Guide to the Kariye Mosaics",
+        "tr": "Kariye Mozaikleri Rehberi"
+      },
+      "url": "https://kulturenvanteri.com/en/kariye-mozaikleri-rehberi/",
+      "author": {
+        "en": "Caner Cangül, Engin Mutlu, Kader Ali Çayır",
+        "tr": "Caner Cangül, Engin Mutlu, Kader Ali Çayır"
+      },
+      "accessedAt": "2026-09-27",
+      "licence": null
+    },
+    {
+      "id": "ousterhout-2002",
+      "title": {
+        "en": "The Art of the Kariye Camii",
+        "tr": "The Art of the Kariye Camii"
+      },
+      "url": "https://archive.org/details/ousterhout-r.-the-art-of-kariye-camii-2002-compressed",
+      "author": {
+        "en": "Robert G. Ousterhout",
+        "tr": "Robert G. Ousterhout"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "psalm-116-9",
+      "title": {
+        "en": "Psalm 116:9 (King James Version)",
+        "tr": "Mezmurlar 116:9 (King James çevirisi)"
+      },
+      "url": "https://www.biblegateway.com/passage/?search=Psalm%20116%3A9&version=KJV",
+      "author": {
+        "en": "Bible Gateway",
+        "tr": "Bible Gateway"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "underwood-1966",
+      "title": {
+        "en": "The Kariye Djami, Vol. 1: Historical Introduction and Description of the Mosaics and Frescoes",
+        "tr": "The Kariye Djami, 1. cilt: Tarihsel giriş ve mozaik ile fresklerin tanımı"
+      },
+      "url": "https://archive.org/details/kariyedjami0001paul",
+      "author": {
+        "en": "Paul A. Underwood",
+        "tr": "Paul A. Underwood"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    }
+  ]
+}

@@ -14,12 +14,15 @@ class ArtworksTab extends StatefulWidget {
   const ArtworksTab({
     super.key,
     required this.artworks,
-    this.onExamineAnastasis,
-    this.onExamineLastJudgment,
+    this.examinable = const {},
+    this.onExamine,
     this.onScan,
   });
   final List<Artwork> artworks;
-  final VoidCallback? onExamineAnastasis, onExamineLastJudgment;
+
+  /// Artwork ids with a playable plate; [onExamine] opens one by id.
+  final Set<String> examinable;
+  final ValueChanged<String>? onExamine;
 
   /// Camera-eye action for a catalogue the classifier covers.
   final VoidCallback? onScan;
@@ -50,7 +53,7 @@ class _ArtworksTabState extends State<ArtworksTab> {
     if (mounted) setState(() => _notedIds = ids);
   }
 
-  bool _interactive(Artwork a) => a.id == 'F02' || a.id == 'F05';
+  bool _interactive(Artwork a) => widget.examinable.contains(a.id);
   void _clear() => setState(() {
     _query = '';
     _search.clear();
@@ -63,11 +66,9 @@ class _ArtworksTabState extends State<ArtworksTab> {
       isScrollControlled: true,
       builder: (_) => ArtworkSheet(
         artwork: artwork,
-        onExamine: switch (artwork.id) {
-          'F02' => widget.onExamineAnastasis,
-          'F05' => widget.onExamineLastJudgment,
-          _ => null,
-        },
+        onExamine: _interactive(artwork) && widget.onExamine != null
+            ? () => widget.onExamine!(artwork.id)
+            : null,
         onScan: widget.onScan,
       ),
     );

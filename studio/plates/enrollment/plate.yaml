@@ -1,0 +1,37 @@
+# Milestone V, made by the P07 pipeline: SB across the register.
+id: enrollment
+milestone: milestone-v
+artwork: M35
+title: {en: The Enrollment for Taxation, tr: Vergi yazımı}
+description:
+  en: >-
+    Mosaic lunette in the outer narthex, about 1315–1321. At left the governor
+    Cyrenius sits enthroned with a guard; a scribe writes the register; Mary
+    stands before them, and Joseph and his sons follow at right.
+  tr: >-
+    Dış narteksteki mozaik lünet, 1315–1321 dolayları. Solda vali Kirinius
+    yanında bir muhafızla tahtta oturuyor; bir kâtip kaydı yazıyor; Meryem
+    onların önünde duruyor, sağda Yusuf ve oğulları geliyor.
+manualMinutes: 25  # agent authoring estimate (windows, prompts, beats); human time not yet measured
+source:
+  corpus: 4-OUTER-NARTHEX/B__M35__Enrollment-before-the-Governor__vault__REF-0/web-ke-01-Valinin-Onunde-Vergi-Icin-Yapilan-Nufus-Sayimi.jpg
+  sha256: a07cf80c98bb85eefc894540c6898bc960624b26b5369f1449fe9885125d5e53
+  url: https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Valinin-Onunde-Vergi-Icin-Yapilan-Nufus-Sayimi.jpg
+  credit: {en: Caner Cangül / Kültür Envanteri, tr: Caner Cangül / Kültür Envanteri}
+segments:
+  - {id: guard, box: [0.15, 0.56, 0.31, 0.93], points: [[0.21, 0.75]], prior: bulge, weight: 0.55}
+  - {id: governor, box: [0.27, 0.53, 0.44, 0.92], points: [[0.36, 0.75]], prior: bulge, weight: 0.55}
+  - {id: register, box: [0.42, 0.56, 0.6, 0.92], points: [[0.47, 0.75], [0.54, 0.75]], prior: bulge, weight: 0.55}
+  - {id: mary, box: [0.59, 0.56, 0.73, 0.96], points: [[0.65, 0.75]], prior: bulge, weight: 0.55}
+  - {id: joseph, box: [0.71, 0.55, 0.92, 0.96], points: [[0.76, 0.75], [0.84, 0.75]], prior: bulge, weight: 0.55}
+depth: {model: depth-anything-v2-base, modelWeight: 0.3}
+gold: {heuristic: true}
+beats:
+  - {detail: detail-armed-guard, duration: 5, light: none}
+  - {detail: detail-governor-hat, duration: 6, light: none}
+  - {detail: detail-not-a-scroll, duration: 5, light: none}
+  - {detail: detail-the-register, duration: 6, light: none}
+  - {detail: detail-mary-enrolled, duration: 6, light: none}
+  - {detail: detail-joseph-and-sons, duration: 6, light: none}
+reveal: {detail: detail-governor-hat, light: none, moment: 6}
+sources: [underwood-1966, chora-guide]

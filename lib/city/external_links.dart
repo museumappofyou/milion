@@ -11,8 +11,7 @@ Uri walkingDirectionsUri(Place place) {
     scheme: 'https',
     host: 'www.google.com',
     path: '/maps/dir/',
-    query:
-        'api=1&travelmode=walking&destination=${point.lat},${point.lng}',
+    query: 'api=1&travelmode=walking&destination=${point.lat},${point.lng}',
   );
 }
 

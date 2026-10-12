@@ -1,0 +1,20 @@
+test_strip_keeps_pixels_and_drops_exif (__main__.Ingest.test_strip_keeps_pixels_and_drops_exif) ... ok
+test_adaptive_mesh_is_valid_and_within_budget (__main__.Mesh.test_adaptive_mesh_is_valid_and_within_budget) ... ok
+test_validator_catches_flips_and_tears (__main__.Mesh.test_validator_catches_flips_and_tears) ... ok
+test_split_inpaints_only_the_lifted_region (__main__.Popup.test_split_inpaints_only_the_lifted_region) ... ok
+test_i_and_ii (__main__.Reproduction.test_i_and_ii) ... ok
+test_no_scene_specific_code (__main__.Reproduction.test_no_scene_specific_code) ... ok
+test_strict_keys_and_pinned_hash (__main__.Spec.test_strict_keys_and_pinned_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.050s
+
+OK
+test_a_new_registry_still_gets_the_base_documents (tool.content.test_build_seed.SeedIndexTest.test_a_new_registry_still_gets_the_base_documents) ... ok
+test_an_unknown_schema_is_never_overwritten (tool.content.test_build_seed.SeedIndexTest.test_an_unknown_schema_is_never_overwritten) ... ok
+test_later_phase_content_survives_reseeding (tool.content.test_build_seed.SeedIndexTest.test_later_phase_content_survives_reseeding) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/plate/manifest.dart';
 import 'package:milion/plate/player.dart';
 
-import '../scene_explorer_test.dart' show loadPlate, openScene, state;
+import '../plate_player_test.dart' show loadPlate, openScene, state;
 
 Future<void> repaint(WidgetTester tester, GlobalKey key) async {
   void visit(RenderObject object) {
@@ -38,15 +38,17 @@ void main() {
           matchesGoldenFile('../goldens/P06/$name-${light.name}.png'),
         );
       }
-      c.original();
-      c.setLayer(PlateLayerId.reconstruction);
-      c.setWipe(.8);
-      await tester.pump();
-      await repaint(tester, boundary);
-      await expectLater(
-        find.byKey(const ValueKey('plate-paint')),
-        matchesGoldenFile('../goldens/P06/$name-reconstruction.png'),
-      );
+      if (p.has(PlateLayerId.reconstruction)) {
+        c.original();
+        c.setLayer(PlateLayerId.reconstruction);
+        c.setWipe(.8);
+        await tester.pump();
+        await repaint(tester, boundary);
+        await expectLater(
+          find.byKey(const ValueKey('plate-paint')),
+          matchesGoldenFile('../goldens/P06/$name-reconstruction.png'),
+        );
+      }
       c.original();
       c.setReduced(true);
       c.step(1);

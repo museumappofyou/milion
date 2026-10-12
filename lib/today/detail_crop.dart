@@ -8,8 +8,18 @@ import '../content/registry.dart';
 String detailHeroTag(Detail d) => 'detail-${d.id}';
 
 /// The pool rotates by calendar date: same day, same detail, on every device.
-Detail detailOfDay(ContentRegistry registry, DateTime now) {
-  final pool = registry.details;
+/// [playable] keeps only details whose Milestone can open (its plate loaded);
+/// null when nothing in the pool can.
+Detail? detailOfDay(
+  ContentRegistry registry,
+  DateTime now, {
+  bool Function(Detail)? playable,
+}) {
+  final pool = [
+    for (final d in registry.details)
+      if (playable?.call(d) ?? true) d,
+  ];
+  if (pool.isEmpty) return null;
   final day = DateTime.utc(now.year, now.month, now.day);
   final index = day.difference(DateTime.utc(2026)).inDays % pool.length;
   return pool[index];

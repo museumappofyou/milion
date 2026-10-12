@@ -1,0 +1,39 @@
+# Milestone II, rebuilt by the P07 pipeline from P06's authored inputs.
+# P07 audit: no reconstruction wipe (WR is not one of II's techniques and the
+# heuristic mask covered half the fresco); the scroll pivots on its mask.
+id: judgment
+milestone: milestone-ii
+artwork: F05
+title: {en: The Last Judgment, tr: Son Yargı}
+description:
+  en: >-
+    Fresco in the vault of the parekklesion, about 1321. Christ the Judge sits
+    between the Virgin and John the Baptist, with the apostles on benches at
+    either side; above, an angel rolls up the heavens like a scroll, and a
+    river of fire pours from before his feet.
+  tr: >-
+    Parekklesion tonozundaki fresk, 1321 dolayları. Yargıç İsa, Meryem ile
+    Vaftizci Yahya’nın arasında oturuyor; havariler iki yandaki sıralarda.
+    Yukarıda bir melek gökleri bir tomar gibi dürüyor; ayaklarının önünden
+    bir ateş ırmağı akıyor.
+manualMinutes: 0  # inherited from P06; no new manual work in P07
+source:
+  repo: assets/last_judgment/vault_reference.jpg
+  sha256: 51dbb640b2e20bb7ab5e803a11282e992c62fc892c1f73d80dd515571634eb38
+  url: https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Mahser.jpg
+  credit: {en: Caner Cangül / Kültür Envanteri, tr: Caner Cangül / Kültür Envanteri}
+depth:
+  provided: assets/plates/judgment/surface.png
+  measure: [depth-anything-v2-small, depth-anything-v2-base, marigold]
+gold: {provided: assets/plates/judgment/gold.png}
+layers:
+  depth: assets/last_judgment/relief_v5/relief_front.jpg
+flow: {mask: assets/plates/judgment/river.png, period: 8, distance: 0.025}
+spiral: {mask: assets/plates/judgment/scroll.png, center: auto}
+beats:
+  - {detail: detail-deesis, duration: 8, light: gilded}
+  - {detail: detail-scroll-of-heaven, duration: 8, light: none, spiral: true}
+  - {detail: detail-river-of-fire, duration: 8, light: none, flow: true}
+  - {detail: detail-prepared-throne, duration: 8, light: raking}
+reveal: {detail: detail-deesis, light: gilded, flow: true, spiral: true, moment: 7}
+sources: [chora-guide-parekklesion, ousterhout-2002]

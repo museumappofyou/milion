@@ -1,0 +1,43 @@
+# Milestone IV, made by the P07 pipeline: LU look-up from one photograph.
+id: genealogy
+milestone: milestone-iv
+artwork: M13
+title: {en: The Genealogy dome, tr: Soy kütüğü kubbesi}
+description:
+  en: >-
+    The southern dome of the inner narthex, seen from below. Christ fills the
+    crown medallion; Adam and the ancestors stand in the 24 flutes around him,
+    with nine windows in the lower ring.
+  tr: >-
+    İç narteksin güney kubbesi, aşağıdan. Tepedeki madalyonda İsa var; Âdem
+    ve atalar çevresindeki 24 dilimde duruyor, alt sırada dokuz pencere
+    açılıyor.
+manualMinutes: 35  # agent authoring estimate (rim measurement, windows, beats); human time not yet measured
+source:
+  corpus: 3-INNER-NARTHEX/C__M13__Christ-Pantokrator-and-the-Ancestors__dome__REF-6/web-ke-01-Isanin-Atalari.jpg
+  sha256: 45611b0c0d92a75aba173abc628afe61c892efc1c0a625442426ccccaafe3e6c
+  url: https://cdn.kulturenvanteri.com/wp-content/uploads/2019/11/Isanin-Atalari.jpg
+  credit: {en: Caner Cangül / Kültür Envanteri, tr: Caner Cangül / Kültür Envanteri}
+segments:
+  - {id: medallion, box: [0.41, 0.28, 0.56, 0.49], points: [[0.483, 0.385]], prior: bulge, weight: 0.4}
+depth: {model: depth-anything-v2-base, modelWeight: 0.3}
+gold: {heuristic: true}
+lookUp:
+  center: [0.483, 0.385]      # the crown medallion
+  rimCenter: [0.4875, 0.465]  # the dome's base ring, measured on the photograph
+  rimRadii: [0.3075, 0.28]
+  rimElevation: 75
+  rimNote: >-
+    Underwood (1966, p. 57): 3.74 m across, crown 10.54 m above the floor. For a
+    hemispherical dome the base is about 8.67 m up; from a 1.6 m eye under the
+    axis it is atan((8.67 - 1.6) / 1.87) = 75 degrees above the horizon. An
+    approximation, labelled DEPTH, not a survey.
+beats:
+  - {detail: detail-genealogy-medallion, duration: 6, light: gilded}
+  - {detail: detail-adam-and-sons, duration: 6, light: gilded}
+  - {detail: detail-upper-ancestors, duration: 6, light: gilded}
+  - {detail: detail-lower-ancestors, duration: 6, light: none}
+  - {detail: detail-lost-plaster, duration: 5, light: none}
+  - {detail: detail-twenty-four-flutes, duration: 6, light: gilded, window: [0.16, 0.02, 0.81, 0.9]}
+reveal: {detail: detail-genealogy-medallion, light: gilded, moment: 5}
+sources: [underwood-1966, chora-guide]

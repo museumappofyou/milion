@@ -71,11 +71,18 @@ class _TodayScreenState extends State<TodayScreen> with RestorationMixin {
       _registry = registry;
       _places = dialPlaces(registry.plottablePlaces);
     }
-    final detail = detailOfDay(registry, app.clock());
+    final detail = detailOfDay(
+      registry,
+      app.clock(),
+      playable: (d) =>
+          app.plates.forMilestone(registry.milestone(d.milestoneId)!) != null,
+    );
     var selected = _places.indexWhere((p) => p.place.id == _place.value);
     if (selected < 0) {
       // Start the index on the place the detail of the day belongs to.
-      final home = registry.artwork(detail.artworkId).placeId;
+      final home = detail == null
+          ? null
+          : registry.artwork(detail.artworkId).placeId;
       selected = math.max(0, _places.indexWhere((p) => p.place.id == home));
     }
     final top = MediaQuery.paddingOf(context).top;
@@ -86,12 +93,13 @@ class _TodayScreenState extends State<TodayScreen> with RestorationMixin {
           CustomScrollView(
             restorationId: 'today-scroll',
             slivers: [
-              SliverToBoxAdapter(
-                child: Theme(
-                  data: DesignTheme.lamp,
-                  child: _DetailPanel(detail: detail, registry: registry),
+              if (detail != null)
+                SliverToBoxAdapter(
+                  child: Theme(
+                    data: DesignTheme.lamp,
+                    child: _DetailPanel(detail: detail, registry: registry),
+                  ),
                 ),
-              ),
               SliverToBoxAdapter(
                 child: _DialHeader(
                   list: _list.value,

@@ -288,6 +288,11 @@ ValidationReport validateContent(Json data) {
           (s.toYear != null && s.gaugeYear > s.toYear!)) {
         error('${s.id} gauge year outside its range');
       }
+      // Standing rule 4: authored content is bilingual from P03 on.
+      if ((s.title.tr?.trim().isEmpty ?? true) ||
+          (s.body.tr?.trim().isEmpty ?? true)) {
+        error('${s.id} needs Turkish title and body');
+      }
       for (final language in [s.body.en, if (s.body.tr != null) s.body.tr!]) {
         final paragraphs = language
             .split('\n\n')

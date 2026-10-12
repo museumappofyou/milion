@@ -94,8 +94,8 @@ void main() {
         MaterialApp(
           home: ArtworksTab(
             artworks: [byId['F02']!, byId['F05']!],
-            onExamineAnastasis: () => opened = 'F02',
-            onExamineLastJudgment: () => opened = 'F05',
+            examinable: const {'F02', 'F05'},
+            onExamine: (id) => opened = id,
           ),
         ),
       );

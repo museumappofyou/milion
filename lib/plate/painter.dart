@@ -8,7 +8,11 @@ import 'assets.dart';
 import 'controller.dart';
 import 'manifest.dart';
 
-/// Separate cached shader instances keep masked passes composable.
+/// Shader `uEffect` values; see shaders/plate.frag.
+enum PlateEffect { plate, flow, spiral, wipe }
+
+/// Separate cached shader instances keep masked passes composable. Repaints
+/// follow the controller; a camera-only change reuses the painted layer.
 class PlatePainter extends CustomPainter {
   PlatePainter({
     required this.assets,
@@ -17,7 +21,7 @@ class PlatePainter extends CustomPainter {
     required this.controller,
     this.tilt = Offset.zero,
     this.lightPosition = const Offset(.5, .5),
-  });
+  }) : super(repaint: controller);
   final PlateAssets assets;
   final PlateManifest manifest;
   final Rect frame;
@@ -36,15 +40,20 @@ class PlatePainter extends CustomPainter {
       _flat(canvas, original);
       return;
     }
+    final base = assets.images[manifest.depthAsset]!;
     final gesture = controller.visibleGesture;
-    if (gesture > 0 && gesture < 1) {
+    final rig = assets.rig;
+    if (gesture > 0 && gesture < 1 && rig != null) {
       final g = controller.sample?.beat.gesture;
+      // The rig draws the same texture as the story around it, so the beat
+      // starts and settles without a pop. Story beats play one reach and
+      // return: the first half of the rig's two-cycle study loop.
       InteractiveReliefSurface(
-        texture: original,
+        texture: base,
         sourceSize: assets.sourceSize,
-        rig: assets.rig!,
+        rig: rig,
         frame: frame,
-        phase: gesture,
+        phase: g == null ? gesture : gesture * .5,
         posed: true,
         motionAmount: g?.strength ?? controller.gestureStrength,
         gestureWindows: [
@@ -54,58 +63,63 @@ class PlatePainter extends CustomPainter {
       ).paint(canvas, size);
       return;
     }
-    if (controller.layer == PlateLayerId.reconstruction) {
+    final reconstruction = manifest.layer(PlateLayerId.reconstruction);
+    if (controller.layer == PlateLayerId.reconstruction &&
+        reconstruction != null) {
       _flat(canvas, original);
-      final l = manifest.layer(PlateLayerId.reconstruction);
       _pass(
         canvas,
         3,
-        assets.images[l.asset]!,
-        l.mask!,
-        mode: 6,
+        assets.images[reconstruction.asset]!,
+        reconstruction.mask!,
+        effect: PlateEffect.wipe,
         amount: controller.restoration,
-        light: Offset(controller.wipe, .5),
+        point: Offset(controller.wipe, .5),
       );
       return;
     }
     final light = controller.visibleLight;
-    final base = assets.images[manifest.layer(PlateLayerId.depth).asset]!;
     final reduced = controller.reduced;
+    final depth = reduced ? 0.0 : .025;
+    final t = controller.storyActive
+        ? controller.seconds
+        : controller.effectSeconds;
     _pass(
       canvas,
       0,
       base,
       manifest.maps.gold,
-      mode: light.index.toDouble(),
+      light: light,
       time: reduced ? 0 : controller.effectSeconds,
-      amount: 1,
-      depth: reduced ? 0 : .025,
+      depth: depth,
     );
-    final t = controller.storyActive
-        ? controller.seconds
-        : controller.effectSeconds;
-    if (controller.visibleFlow && manifest.maps.flow != null) {
+    final flow = manifest.flowEffect;
+    if (controller.visibleFlow && flow != null) {
       _pass(
         canvas,
         1,
         base,
-        manifest.maps.flow!,
-        mode: 4,
+        flow.mask,
+        effect: PlateEffect.flow,
+        light: light,
         time: t,
-        flow: .025,
-        depth: reduced ? 0 : .025,
+        flow: Offset(flow.period, flow.distance),
+        depth: depth,
       );
     }
-    if (controller.visibleSpiral && manifest.maps.scroll != null) {
+    final spiral = manifest.spiralEffect;
+    if (controller.visibleSpiral && spiral != null) {
       _pass(
         canvas,
         2,
         base,
-        manifest.maps.scroll!,
-        mode: 5,
+        spiral.mask,
+        effect: PlateEffect.spiral,
+        light: light,
         time: t,
-        flow: .7 * (.5 - .5 * math.cos(t * math.pi / 4)),
-        depth: reduced ? 0 : .025,
+        flow: Offset(.7 * (.5 - .5 * math.cos(t * math.pi / 4)), 0),
+        center: Offset(spiral.center[0], spiral.center[1]),
+        depth: depth,
       );
     }
   }
@@ -121,17 +135,21 @@ class PlatePainter extends CustomPainter {
     int slot,
     ui.Image texture,
     String mask, {
-    required double mode,
+    PlateEffect effect = PlateEffect.plate,
+    PlateLight light = PlateLight.none,
     double time = 0,
     double amount = 1,
-    double flow = 0,
+    Offset flow = Offset.zero,
+    Offset center = const Offset(.5, .5),
     double depth = 0,
-    Offset? light,
+    Offset? point,
   }) {
     final shader = assets.shader(slot);
     final p =
-        light ??
-        (mode == 2 ? lightPosition * 2 - const Offset(1, 1) : lightPosition);
+        point ??
+        (light == PlateLight.raking
+            ? lightPosition * 2 - const Offset(1, 1)
+            : lightPosition);
     // Float indices follow shaders/plate.frag; samplers have their own indices.
     final floats = [
       frame.left,
@@ -140,27 +158,43 @@ class PlatePainter extends CustomPainter {
       frame.height,
       texture.width.toDouble(),
       texture.height.toDouble(),
-      mode,
+      light.index.toDouble(),
+      effect.index.toDouble(),
       time,
       controller.reduced ? 0.0 : tilt.dx,
       controller.reduced ? 0.0 : tilt.dy,
       p.dx,
       p.dy,
       amount,
-      flow,
-      manifest.scrollCenter[0],
-      manifest.scrollCenter[1],
+      flow.dx,
+      flow.dy,
+      center.dx,
+      center.dy,
       depth,
     ];
     for (var i = 0; i < floats.length; i++) {
       shader.setFloat(i, floats[i]);
     }
-    shader.setImageSampler(0, texture);
-    shader.setImageSampler(1, assets.images[manifest.maps.surface]!);
-    shader.setImageSampler(2, assets.images[mask]!);
+    shader.setImageSampler(0, texture, filterQuality: FilterQuality.medium);
+    shader.setImageSampler(
+      1,
+      assets.images[manifest.maps.surface]!,
+      filterQuality: FilterQuality.low,
+    );
+    shader.setImageSampler(
+      2,
+      assets.images[mask]!,
+      filterQuality: FilterQuality.low,
+    );
     canvas.drawRect(frame, Paint()..shader = shader);
   }
 
   @override
-  bool shouldRepaint(PlatePainter old) => true;
+  bool shouldRepaint(PlatePainter old) =>
+      old.assets != assets ||
+      old.manifest != manifest ||
+      old.frame != frame ||
+      old.controller != controller ||
+      old.tilt != tilt ||
+      old.lightPosition != lightPosition;
 }

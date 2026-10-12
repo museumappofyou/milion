@@ -164,10 +164,7 @@ class _Field extends StatelessWidget {
           if (note != null)
             Padding(
               padding: const EdgeInsets.only(top: 4),
-              child: Text(
-                note!,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
+              child: Text(note!, style: Theme.of(context).textTheme.bodySmall),
             ),
         ],
       ),

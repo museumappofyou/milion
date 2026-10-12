@@ -1,0 +1,99 @@
+{
+  "plate": "anastasis",
+  "spec": "studio/plates/anastasis/plate.yaml",
+  "manualMinutes": 0,
+  "stages": {
+    "ingest": {
+      "source": "assets/anastasis/conch_reference.jpg",
+      "sourceSha256": "90a4bc2a8e42f60d4f1c03a0bf65ad1f91383e8ce8b9b4acd52ef168aa77230a",
+      "sourceSize": [
+        2048,
+        1091
+      ],
+      "sourceUrl": null,
+      "method": "kept in place",
+      "master": "assets/anastasis/conch_reference.jpg",
+      "masterSha256": "90a4bc2a8e42f60d4f1c03a0bf65ad1f91383e8ce8b9b4acd52ef168aa77230a",
+      "size": [
+        2048,
+        1091
+      ]
+    },
+    "segment": "no segments",
+    "depth": {
+      "method": "provided (assets/plates/anastasis/surface.png)",
+      "measure": {
+        "depth-anything-v2-small": {
+          "spearmanRaw": -0.499,
+          "spearmanDetail": -0.258,
+          "seconds": 5.11,
+          "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99"
+        },
+        "depth-anything-v2-base": {
+          "spearmanRaw": -0.458,
+          "spearmanDetail": -0.142,
+          "seconds": 1.54,
+          "revision": "b1958afc87fb45a9e3746cb387596094de553ed8"
+        },
+        "marigold": {
+          "spearmanRaw": -0.441,
+          "spearmanDetail": -0.007,
+          "seconds": 4.01,
+          "revision": "9571e7123e258cf052b4e54241f17971c290e9a8"
+        }
+      },
+      "gold": "provided (assets/plates/anastasis/gold.png)",
+      "goldCoverage": 0.0708,
+      "heightRange": [
+        0.0,
+        0.925
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 38643,
+      "triangles": 76972,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 41,
+        "verticesEased": 18409,
+        "maxHeightChange": 0.6506
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 76113920,
+    "textureBudget": 150000000,
+    "meshVertices": 38643,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/anastasis/manifest.json",
+    "maps": {
+      "surface": "assets/plates/anastasis/surface.png",
+      "gold": "assets/plates/anastasis/gold.png"
+    },
+    "details": 9,
+    "beats": 5,
+    "storySeconds": 32,
+    "revealMoment": 6.5,
+    "lookUp": null
+  },
+  "preview": {
+    "path": "studio/plates/anastasis/build/preview.mp4",
+    "frames": 144,
+    "seconds": 6.0
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 23.7
+}

@@ -18,13 +18,15 @@ class ScanTab extends StatefulWidget {
   const ScanTab({
     super.key,
     required this.classifier,
-    this.onExploreAnastasis,
-    this.onExploreLastJudgment,
+    this.explorable = const {},
+    this.onExplore,
   });
 
   final Classifier classifier;
-  final VoidCallback? onExploreAnastasis;
-  final VoidCallback? onExploreLastJudgment;
+
+  /// Artwork ids with a playable plate; [onExplore] opens one by id.
+  final Set<String> explorable;
+  final ValueChanged<String>? onExplore;
 
   @override
   State<ScanTab> createState() => _ScanTabState();
@@ -324,11 +326,11 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       builder: (context) => ArtworkSheet(
         artwork: match.artwork,
         confidence: match.probability,
-        onExamine: switch (match.artwork.id) {
-          'F02' => widget.onExploreAnastasis,
-          'F05' => widget.onExploreLastJudgment,
-          _ => null,
-        },
+        onExamine:
+            widget.explorable.contains(match.artwork.id) &&
+                widget.onExplore != null
+            ? () => widget.onExplore!(match.artwork.id)
+            : null,
       ),
     );
   }

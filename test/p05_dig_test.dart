@@ -250,6 +250,37 @@ void main() {
       expect(find.text('Artworks in this layer'), findsOneWidget);
     });
 
+    // P07 audit: a short last layer never reaches the reading line, so the
+    // page end must select it; Hagia Sophia is the JSON-only proof page.
+    for (final (name, last) in [
+      ('Kariye Mosque (Chora)', 'Year 330 · Byzantine'),
+      ('Hagia Sophia Mosque', 'Year 537 · Byzantine'),
+    ]) {
+      testWidgets('$name: the page end selects the oldest layer', (
+        tester,
+      ) async {
+        await pumpShell(tester);
+        await tester.tap(destination('City'));
+        await ready(tester);
+        final row = find.text(name);
+        await tester.scrollUntilVisible(
+          row,
+          400,
+          scrollable: find.byType(Scrollable).last,
+        );
+        await tester.tap(row);
+        await ready(tester);
+        expect(find.byType(DigGauge), findsOneWidget);
+        final page = find.byType(Scrollable).first;
+        for (var i = 0; i < 40; i++) {
+          await tester.drag(page, const Offset(0, -600));
+          await tester.pump();
+        }
+        await tester.pumpAndSettle();
+        expect(find.text(last), findsOneWidget);
+      });
+    }
+
     testWidgets('a draft without layers keeps the P04 header only', (
       tester,
     ) async {

@@ -63,3 +63,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# P07: derived plate meshes (stats in studio/plates/<id>/build/report.json)
+studio/plates/*/build/mesh.bin

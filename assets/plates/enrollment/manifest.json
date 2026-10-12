@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-enrollment",
+  "milestone": "milestone-v",
+  "artwork": "M35",
+  "title": {
+    "en": "The Enrollment for Taxation",
+    "tr": "Vergi yazımı"
+  },
+  "description": {
+    "en": "Mosaic lunette in the outer narthex, about 1315–1321. At left the governor Cyrenius sits enthroned with a guard; a scribe writes the register; Mary stands before them, and Joseph and his sons follow at right.",
+    "tr": "Dış narteksteki mozaik lünet, 1315–1321 dolayları. Solda vali Kirinius yanında bir muhafızla tahtta oturuyor; bir kâtip kaydı yazıyor; Meryem onların önünde duruyor, sağda Yusuf ve oğulları geliyor."
+  },
+  "size": [
+    1600,
+    1068
+  ],
+  "manifestPath": "assets/plates/enrollment/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/enrollment/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/enrollment/surface.webp",
+    "gold": "assets/plates/enrollment/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-governor-hat",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "Governor Cyrenius",
+        "tr": "Vali Kirinius"
+      },
+      "sentence": {
+        "en": "Cyrenius, governor of Syria, wears a hat like Metochites’ skiadion that curves forward to a sharp point.",
+        "tr": "Suriye valisi Kirinius’in başlığı Metokhites’in skiadionuna benziyor, ama öne doğru sivri bir uçla kıvrılıyor."
+      },
+      "window": {
+        "left": 0.27,
+        "top": 0.5,
+        "right": 0.44,
+        "bottom": 0.92
+      },
+      "anchorX": 0.355,
+      "anchorY": 0.58,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966",
+        "luke-2-1-5"
+      ]
+    },
+    {
+      "id": "detail-not-a-scroll",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "Not a scroll",
+        "tr": "Tomar değil"
+      },
+      "sentence": {
+        "en": "The white cylinder in his hand is not a scroll; Underwood reads it as a badge of authority.",
+        "tr": "Elindeki beyaz silindir bir tomar değil; Underwood onu bir yetki nişanı olarak yorumluyor."
+      },
+      "window": {
+        "left": 0.29,
+        "top": 0.64,
+        "right": 0.41,
+        "bottom": 0.82
+      },
+      "anchorX": 0.335,
+      "anchorY": 0.735,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-enrollment-text",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "Luke 2:4–5",
+        "tr": "Luka 2:4–5"
+      },
+      "sentence": {
+        "en": "The three lines above quote Luke 2:4–5: Joseph goes to be enrolled with Mary, “being great with child”.",
+        "tr": "Üstteki üç satır Luka 2:4–5’ten: Yusuf, gebe olan nişanlısı Meryem’le birlikte yazılmaya gidiyor."
+      },
+      "window": {
+        "left": 0.31,
+        "top": 0.37,
+        "right": 0.53,
+        "bottom": 0.48
+      },
+      "anchorX": 0.42,
+      "anchorY": 0.42,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966",
+        "luke-2-1-5"
+      ]
+    },
+    {
+      "id": "detail-armed-guard",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "The guard",
+        "tr": "Muhafız"
+      },
+      "sentence": {
+        "en": "Behind the governor a guard in gilded armour holds a spear and a round shield with blue ornament.",
+        "tr": "Valinin arkasındaki muhafız yaldızlı zırh giymiş; elinde bir mızrak ve mavi süslü yuvarlak bir kalkan var."
+      },
+      "window": {
+        "left": 0.15,
+        "top": 0.55,
+        "right": 0.31,
+        "bottom": 0.92
+      },
+      "anchorX": 0.27,
+      "anchorY": 0.67,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-the-register",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "The register",
+        "tr": "Kayıt"
+      },
+      "sentence": {
+        "en": "A scribe writes the names on an open scroll while an older soldier holds a sheathed sword upright.",
+        "tr": "Bir kâtip adları açık bir tomara yazıyor; yaşlıca bir asker kınındaki kılıcını dik tutuyor."
+      },
+      "window": {
+        "left": 0.42,
+        "top": 0.55,
+        "right": 0.6,
+        "bottom": 0.92
+      },
+      "anchorX": 0.52,
+      "anchorY": 0.66,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-mary-enrolled",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "Mary, alone",
+        "tr": "Tek başına Meryem"
+      },
+      "sentence": {
+        "en": "Mary stands alone and unusually tall, all in blue but for red shoes; ΜΗΡ ΘΥ names her Mother of God.",
+        "tr": "Meryem tek başına ve alışılmadık derecede uzun duruyor, kırmızı ayakkabıları dışında baştan aşağı mavi; ΜΗΡ ΘΥ onu Tanrı’nın Annesi diye adlandırıyor."
+      },
+      "window": {
+        "left": 0.57,
+        "top": 0.5,
+        "right": 0.74,
+        "bottom": 0.97
+      },
+      "anchorX": 0.645,
+      "anchorY": 0.62,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-joseph-and-sons",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "Joseph and his sons",
+        "tr": "Yusuf ve oğulları"
+      },
+      "sentence": {
+        "en": "Haloed Joseph leans towards Mary with open hands; his four sons stand behind him.",
+        "tr": "Haleli Yusuf açık elleriyle Meryem’e doğru eğiliyor; dört oğlu arkasında duruyor."
+      },
+      "window": {
+        "left": 0.71,
+        "top": 0.54,
+        "right": 0.92,
+        "bottom": 0.96
+      },
+      "anchorX": 0.745,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-lost-vault",
+      "milestone": "milestone-v",
+      "artwork": "M35",
+      "title": {
+        "en": "The lost vault",
+        "tr": "Kaybolan tonoz"
+      },
+      "sentence": {
+        "en": "The bare plaster above marks lost mosaic: Underwood found the vault here largely destroyed.",
+        "tr": "Üstteki çıplak sıva kaybolan mozaiği gösteriyor: Underwood bu tonozu büyük ölçüde yok olmuş bulmuştu."
+      },
+      "window": {
+        "left": 0.15,
+        "top": 0.0,
+        "right": 0.58,
+        "bottom": 0.38
+      },
+      "anchorX": 0.35,
+      "anchorY": 0.18,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "enrollment-beat-1",
+      "start": 0,
+      "duration": 5,
+      "detail": "detail-armed-guard",
+      "window": {
+        "left": 0.15,
+        "top": 0.55,
+        "right": 0.31,
+        "bottom": 0.92
+      },
+      "caption": {
+        "en": "Behind the governor a guard in gilded armour holds a spear and a round shield with blue ornament.",
+        "tr": "Valinin arkasındaki muhafız yaldızlı zırh giymiş; elinde bir mızrak ve mavi süslü yuvarlak bir kalkan var."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "enrollment-beat-2",
+      "start": 5,
+      "duration": 6,
+      "detail": "detail-governor-hat",
+      "window": {
+        "left": 0.27,
+        "top": 0.5,
+        "right": 0.44,
+        "bottom": 0.92
+      },
+      "caption": {
+        "en": "Cyrenius, governor of Syria, wears a hat like Metochites’ skiadion that curves forward to a sharp point.",
+        "tr": "Suriye valisi Kirinius’in başlığı Metokhites’in skiadionuna benziyor, ama öne doğru sivri bir uçla kıvrılıyor."
+      },
+      "sources": [
+        "underwood-1966",
+        "luke-2-1-5"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "enrollment-beat-3",
+      "start": 11,
+      "duration": 5,
+      "detail": "detail-not-a-scroll",
+      "window": {
+        "left": 0.29,
+        "top": 0.64,
+        "right": 0.41,
+        "bottom": 0.82
+      },
+      "caption": {
+        "en": "The white cylinder in his hand is not a scroll; Underwood reads it as a badge of authority.",
+        "tr": "Elindeki beyaz silindir bir tomar değil; Underwood onu bir yetki nişanı olarak yorumluyor."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "enrollment-beat-4",
+      "start": 16,
+      "duration": 6,
+      "detail": "detail-the-register",
+      "window": {
+        "left": 0.42,
+        "top": 0.55,
+        "right": 0.6,
+        "bottom": 0.92
+      },
+      "caption": {
+        "en": "A scribe writes the names on an open scroll while an older soldier holds a sheathed sword upright.",
+        "tr": "Bir kâtip adları açık bir tomara yazıyor; yaşlıca bir asker kınındaki kılıcını dik tutuyor."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "enrollment-beat-5",
+      "start": 22,
+      "duration": 6,
+      "detail": "detail-mary-enrolled",
+      "window": {
+        "left": 0.57,
+        "top": 0.5,
+        "right": 0.74,
+        "bottom": 0.97
+      },
+      "caption": {
+        "en": "Mary stands alone and unusually tall, all in blue but for red shoes; ΜΗΡ ΘΥ names her Mother of God.",
+        "tr": "Meryem tek başına ve alışılmadık derecede uzun duruyor, kırmızı ayakkabıları dışında baştan aşağı mavi; ΜΗΡ ΘΥ onu Tanrı’nın Annesi diye adlandırıyor."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "enrollment-beat-6",
+      "start": 28,
+      "duration": 6,
+      "detail": "detail-joseph-and-sons",
+      "window": {
+        "left": 0.71,
+        "top": 0.54,
+        "right": 0.92,
+        "bottom": 0.96
+      },
+      "caption": {
+        "en": "Haloed Joseph leans towards Mary with open hands; his four sons stand behind him.",
+        "tr": "Haleli Yusuf açık elleriyle Meryem’e doğru eğiliyor; dört oğlu arkasında duruyor."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 6,
+  "storySeconds": 34,
+  "reveal": {
+    "id": "enrollment-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-governor-hat",
+    "window": {
+      "left": 0.27,
+      "top": 0.5,
+      "right": 0.44,
+      "bottom": 0.92
+    },
+    "caption": {
+      "en": "Cyrenius, governor of Syria, wears a hat like Metochites’ skiadion that curves forward to a sharp point.",
+      "tr": "Suriye valisi Kirinius’in başlığı Metokhites’in skiadionuna benziyor, ama öne doğru sivri bir uçla kıvrılıyor."
+    },
+    "sources": [
+      "underwood-1966",
+      "luke-2-1-5"
+    ],
+    "light": "none",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Caner Cangül / Kültür Envanteri",
+    "tr": "Caner Cangül / Kültür Envanteri"
+  },
+  "sources": [
+    "underwood-1966",
+    "chora-guide"
+  ],
+  "originalSourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Valinin-Onunde-Vergi-Icin-Yapilan-Nufus-Sayimi.jpg",
+  "citations": [
+    {
+      "id": "chora-guide",
+      "title": {
+        "en": "Guide to the Kariye Mosaics",
+        "tr": "Kariye Mozaikleri Rehberi"
+      },
+      "url": "https://kulturenvanteri.com/en/kariye-mozaikleri-rehberi/",
+      "author": {
+        "en": "Caner Cangül, Engin Mutlu, Kader Ali Çayır",
+        "tr": "Caner Cangül, Engin Mutlu, Kader Ali Çayır"
+      },
+      "accessedAt": "2026-09-27",
+      "licence": null
+    },
+    {
+      "id": "luke-2-1-5",
+      "title": {
+        "en": "Luke 2:1–5 (King James Version)",
+        "tr": "Luka 2:1–5 (King James çevirisi)"
+      },
+      "url": "https://www.biblegateway.com/passage/?search=Luke%202%3A1-5&version=KJV",
+      "author": {
+        "en": "Bible Gateway",
+        "tr": "Bible Gateway"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "underwood-1966",
+      "title": {
+        "en": "The Kariye Djami, Vol. 1: Historical Introduction and Description of the Mosaics and Frescoes",
+        "tr": "The Kariye Djami, 1. cilt: Tarihsel giriş ve mozaik ile fresklerin tanımı"
+      },
+      "url": "https://archive.org/details/kariyedjami0001paul",
+      "author": {
+        "en": "Paul A. Underwood",
+        "tr": "Paul A. Underwood"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    }
+  ]
+}

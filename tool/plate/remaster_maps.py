@@ -10,12 +10,13 @@ masters, and writes the runtime maps under assets/plates/:
   judgment/gold.png      authored gilded-zone mask (mandorla + halos)
   judgment/river.png     river of fire mask + flow direction in GB
   judgment/scroll.png    rolled-heaven mask for the UV spiral
-  judgment/damaged.png   damaged-zone mask for the reconstruction wipe
 
 Inputs (all committed or studio-kept): the v5 height/normal maps, the Part
 labels of the Last Judgment build (the parts order matches
 studio/last_judgment_25d/v5/authoring/layers.json), the semantic cluster map
-of the Anastasis build, and the credited 4K restoration images.
+of the Anastasis build, and the credited 4K Anastasis restoration image.
+These are I and II's hand-authored inputs; tool/plate/build.py reads them as
+provided maps and writes the manifests.
 """
 import json
 from pathlib import Path
@@ -121,8 +122,8 @@ def judgment():
     gold_parts = mask_of('mandorla', 'christ_halo', *halos)
     gold = clean_mask(gold_parts, close=7, blur=2.5)
     write(OUT / 'judgment/gold.png', gold)
-    write(OUT / 'judgment/damaged.png', damage_map(master,
-          ROOT / 'assets/restoration/last_judgment_restored_4k_v2.jpg'))
+    # No reconstruction wipe for II: WR is not one of its techniques, and the
+    # pale-and-differs heuristic swallowed half the fresco (P07 audit).
 
     river = clean_mask(mask_of('river_of_fire'), close=7, blur=1.8)
     ys, xs = np.nonzero(river > 96)

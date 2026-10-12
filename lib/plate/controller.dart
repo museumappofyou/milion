@@ -15,7 +15,14 @@ class PlateController extends ChangeNotifier {
   bool reduced = false, active = true, peekOriginal = false;
   bool gesturePlaying = false;
   bool reveal = false;
+
+  /// LU: the dome photograph mapped back overhead (plates with a projection).
+  bool lookUp = false;
   double seconds = 0, effectSeconds = 0, wipe = .5, restoration = 1;
+
+  /// Bumped whenever the story moves its camera (play, seek, step, tick);
+  /// pausing, peeking or exploring leave the user's camera alone.
+  int cameraRevision = 0;
   double gesturePose = 0, gestureStrength = .25;
   String? selectedDetail;
   bool _resumeAfterPeek = false;
@@ -45,20 +52,27 @@ class PlateController extends ChangeNotifier {
               (visibleLight == PlateLight.candle ||
                   visibleFlow ||
                   visibleSpiral)));
+  bool get canLookUp => manifest.lookUp != null;
+
+  /// §3: moving painted pixels (a gesture, flowing fire, a rolling scroll) is
+  /// invention, so the whole beat that carries it reads IMAGINED.
   Honesty get honesty => peekOriginal
       ? Honesty.ORIGINAL
-      : visibleGesture > 0 && visibleGesture < 1
+      : (visibleGesture > 0 && visibleGesture < 1) ||
+            sample?.beat.gesture != null ||
+            visibleFlow ||
+            visibleSpiral
       ? Honesty.IMAGINED
       : layer == PlateLayerId.reconstruction
       ? Honesty.RECONSTRUCTION
-      : storyActive || layer == PlateLayerId.depth
+      : storyActive || lookUp || layer == PlateLayerId.depth
       ? Honesty.DEPTH
       : Honesty.ORIGINAL;
 
   void original() {
     playing = gesturePlaying = storyActive = flow = spiral = peekOriginal =
         false;
-    reveal = _resumeAfterPeek = false;
+    reveal = _resumeAfterPeek = lookUp = false;
     layer = PlateLayerId.original;
     light = PlateLight.none;
     gesturePose = 0;
@@ -70,6 +84,7 @@ class PlateController extends ChangeNotifier {
       original();
       return;
     }
+    if (!manifest.has(value) && value != PlateLayerId.depth) return;
     playing = gesturePlaying = storyActive = false;
     gesturePose = 0;
     layer = value;
@@ -96,6 +111,14 @@ class PlateController extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setLookUp(bool value) {
+    if (!canLookUp) return;
+    playing = gesturePlaying = storyActive = false;
+    lookUp = value;
+    if (value) layer = PlateLayerId.depth;
+    notifyListeners();
+  }
+
   void focus(String? id) {
     playing = storyActive = false;
     selectedDetail = id;
@@ -114,14 +137,21 @@ class PlateController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void seek(double value) {
+  void seek(double value) => _seek(value, reveal: false);
+
+  /// Scrubbing the reveal stays inside the reveal.
+  void seekReveal(double value) => _seek(value, reveal: true);
+
+  void _seek(double value, {required bool reveal}) {
     if (!value.isFinite) return;
-    seconds = value.clamp(0, manifest.storySeconds);
-    reveal = false;
+    this.reveal = reveal;
+    seconds = value.clamp(0, duration);
     playing = gesturePlaying = false;
     gesturePose = 0;
     storyActive = true;
     layer = PlateLayerId.depth;
+    lookUp = canLookUp;
+    cameraRevision++;
     notifyListeners();
   }
 
@@ -136,12 +166,14 @@ class PlateController extends ChangeNotifier {
     gesturePlaying = false;
     gesturePose = 0;
     layer = PlateLayerId.depth;
+    lookUp = canLookUp;
+    cameraRevision++;
     notifyListeners();
   }
 
   void playReveal() {
     if (reduced) {
-      seek(0);
+      seekReveal(0);
       return;
     }
     seconds = 0;
@@ -150,6 +182,8 @@ class PlateController extends ChangeNotifier {
     gesturePlaying = false;
     gesturePose = 0;
     layer = PlateLayerId.depth;
+    lookUp = canLookUp;
+    cameraRevision++;
     notifyListeners();
   }
 
@@ -170,6 +204,7 @@ class PlateController extends ChangeNotifier {
     if (playing) {
       seconds = (seconds + delta).clamp(0, duration);
       if (seconds >= duration) playing = false;
+      cameraRevision++;
     }
     if (gesturePlaying) {
       gesturePose = (gesturePose + delta / 6).clamp(0, 1);
@@ -186,6 +221,7 @@ class PlateController extends ChangeNotifier {
       playing = gesturePlaying = false;
       gesturePose = 0;
       if (storyActive) seconds = sample!.beat.start;
+      cameraRevision++;
     }
     notifyListeners();
   }

@@ -23,7 +23,7 @@ void main() {
         'judgment',
         1600,
         1067,
-        ['surface', 'gold', 'river', 'scroll', 'damaged'],
+        ['surface', 'gold', 'river', 'scroll'],
       ),
     ]) {
       for (final name in maps) {

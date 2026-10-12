@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../content/models.dart';
 import '../l10n/strings.dart';
-import '../screens/anastasis_relief_screen.dart';
-import '../screens/last_judgment_relief_screen.dart';
+import '../plate/screen.dart';
 import '../theme/milion_theme.dart';
 import 'components.dart';
 import 'motion.dart';
@@ -403,7 +402,11 @@ class TodayDirection extends StatelessWidget {
               const HonestyLabel(Honesty.ORIGINAL),
               const SizedBox(height: 12),
               InkWell(
-                onTap: () => open(const AnastasisReliefScreen()),
+                onTap: () => open(
+                  const PlateScreen(
+                    asset: 'assets/plates/anastasis/manifest.json',
+                  ),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -439,7 +442,11 @@ class TodayDirection extends StatelessWidget {
               Text(s.focusChora, style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 16),
               TextButton.icon(
-                onPressed: () => open(const LastJudgmentReliefScreen()),
+                onPressed: () => open(
+                  const PlateScreen(
+                    asset: 'assets/plates/judgment/manifest.json',
+                  ),
+                ),
                 icon: const MilestoneNumeral('II', size: 24),
                 label: Text(s.openJudgment),
               ),

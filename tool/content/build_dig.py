@@ -35,7 +35,34 @@ def src(id, en, tr, url, author, author_tr, licence=None, accessed_at=DATE):
                 accessedAt=accessed_at, licence=None if licence is None else loc(licence, licence))
 
 
+P07_DATE = '2026-10-12'
+
 SOURCES = [
+    src('resmi-gazete-kariye-2020',
+        'Presidential decision no. 2840 on Kariye Mosque, Official Gazette no. 31220, 21 August 2020',
+        'Kariye Camii hakkında 2840 sayılı Cumhurbaşkanı Kararı, Resmî Gazete sayı 31220, 21 Ağustos 2020',
+        'https://www.resmigazete.gov.tr/eskiler/2020/08/20200821-21.pdf',
+        'T.C. Resmî Gazete', 'T.C. Resmî Gazete', accessed_at=P07_DATE),
+    src('hurriyet-kariye-danistay',
+        'Danıştay caught between Kariye and Hagia Sophia (case history 2010–2019)',
+        'Danıştay Kariye ile Ayasofya arasında sıkışınca',
+        'https://www.hurriyet.com.tr/yazarlar/sedat-ergin/danistay-kariye-ile-ayasofya-arasinda-sikisinca-41556934',
+        'Sedat Ergin, Hürriyet', 'Sedat Ergin, Hürriyet', accessed_at=P07_DATE),
+    src('resmi-gazete-ayasofya-2020',
+        'Presidential decision no. 2729 on Hagia Sophia, Official Gazette no. 31181 (extra), 10 July 2020',
+        'Ayasofya hakkında 2729 sayılı Cumhurbaşkanı Kararı, Resmî Gazete sayı 31181 (mükerrer), 10 Temmuz 2020',
+        'https://www.resmigazete.gov.tr/eskiler/2020/07/20200710M1.htm',
+        'T.C. Resmî Gazete', 'T.C. Resmî Gazete', accessed_at=P07_DATE),
+    src('aa-ayasofya-prayer-2020',
+        'Hagia Sophia opens for worship with Friday prayer after 86 years (24 July 2020)',
+        'Ayasofya-i Kebir Cami-i Şerifi 86 yıl sonra kılınan cuma namazıyla ibadete açıldı',
+        'https://www.aa.com.tr/tr/ayasofya-camii/ayasofya-i-kebir-cami-i-serifi-86-yil-sonra-kilinan-cuma-namaziyla-ibadete-acildi/1921197',
+        'Anadolu Agency', 'Anadolu Ajansı', accessed_at=P07_DATE),
+    src('aa-ayasofya-galleries-2024',
+        'Ticketed visits begin at Hagia Sophia (15 January 2024)',
+        'Ayasofya’da biletli ziyaret uygulaması başladı',
+        'https://www.aa.com.tr/tr/gundem/ayasofyada-biletli-ziyaret-uygulamasi-basladi/3109415',
+        'Anadolu Agency', 'Anadolu Ajansı', accessed_at=P07_DATE),
     src('muze-kariye',
         'Kariye Mosque — Müze İstanbul (visiting information)',
         'Kariye Camii — Müze İstanbul (ziyaret bilgileri)',
@@ -136,7 +163,7 @@ CHORA_STRATA = [
         era='modern',
         title=loc('The mosque again, 2020–', 'Yeniden cami, 2020–'),
         body=loc(
-            'On 21 August 2020 a presidential decree returned the building to '
+            'On 21 August 2020 a presidential decision returned the building to '
             'the Directorate of Religious Affairs. A reopening planned for '
             '30 October 2020 was postponed, as Diyanet announced on '
             '29 October.\n\n'
@@ -149,7 +176,7 @@ CHORA_STRATA = [
             'Turkish citizens and worshippers enter free. Fridays are '
             'reserved for worship, and entry pauses about fifteen minutes '
             'before each prayer.',
-            '21 Ağustos 2020 tarihli kararnameyle yapı Diyanet İşleri '
+            '21 Ağustos 2020’de yayımlanan Cumhurbaşkanı kararıyla yapı Diyanet İşleri '
             'Başkanlığı’na devredildi. 30 Ekim 2020 için planlanan açılış, '
             'Diyanet’in 29 Ekim’deki açıklamasıyla ertelendi.\n\n'
             'Ardından dört yıllık bir koruma programı yürütüldü. Cami 6 '
@@ -164,7 +191,8 @@ CHORA_STRATA = [
         media=['anastasis-original'],
         artworks=[],
         sources=['muze-kariye', 'hyperallergic-kariye-2024',
-                 'daily-sabah-kariye-2024', 'aa-kariye-postponed-2020', 'wd-q849489'],
+                 'daily-sabah-kariye-2024', 'aa-kariye-postponed-2020',
+                 'resmi-gazete-kariye-2020', 'wd-q849489'],
     ),
     dict(
         id='museum-years', fromYear=1945, toYear=2020, anchorYear=1948,
@@ -172,36 +200,45 @@ CHORA_STRATA = [
         title=loc('Museum and restoration, 1945–2020',
                   'Müze ve restorasyon yılları, 1945–2020'),
         body=loc(
-            'In 1945 a cabinet decree made the mosque a national monument; '
-            'from 1948 the Byzantine Institute of America, under Thomas '
+            'On 29 August 1945 a Council of Ministers decision assigned the '
+            'mosque to the Ministry of National Education as a museum; from '
+            '1948 the Byzantine Institute of America, under Thomas '
             'Whittemore and then Paul A. Underwood, removed the plaster and '
-            'whitewash from the mosaics and frescoes. The work continued to '
-            '1958, when Kariye opened as a museum.\n\n'
+            'whitewash from the mosaics and frescoes. The work ran until '
+            '1958, when Kariye opened to visitors as a museum.\n\n'
             'The cleaning brought back the narthex cycles — the Deesis, the '
             'two domes with the ancestors of Christ and of the Virgin — and, '
             'in the parekklesion, the Anastasis and the Last Judgment, all '
             'documented in Underwood’s preliminary reports for Dumbarton '
             'Oaks.\n\n'
-            'The museum years lasted until 2020. The legal road back to a '
-            'mosque began in 2005 with a foundation’s lawsuit; in November '
-            '2019 the Council of State ruled for reconversion, and the '
-            'decree followed in August 2020.',
-            '1945’te Bakanlar Kurulu kararıyla yapı ulusal anıt ilan '
+            'The museum years lasted until 2020. In 2010 an association, the '
+            'Sürekli Vakıflar Derneği, challenged the 1945 decision; after '
+            'earlier rejections, the Council of State’s 10th Chamber annulled '
+            'the museum allocation on 11 November 2019, and a presidential '
+            'decision published on 21 August 2020 handed the building to the '
+            'Diyanet.',
+            '29 Ağustos 1945 tarihli Bakanlar Kurulu kararıyla cami, müze '
+            'olarak kullanılmak üzere Millî Eğitim Bakanlığı’na tahsis '
             'edildi; 1948’den itibaren Amerikan Bizans Enstitüsü, önce '
             'Thomas Whittemore, sonra Paul A. Underwood yönetiminde mozaik '
-            've fresklerin üzerindeki sıva ile badanaları söktü. Çalışma '
-            '1958’de tamamlandı ve Kariye müze olarak açıldı.\n\n'
+            've fresklerin üzerindeki sıva ile badanaları söktü. Çalışmalar '
+            '1958’e kadar sürdü ve Kariye o yıl müze olarak ziyarete '
+            'açıldı.\n\n'
             'Temizlik narteks döngülerini — Deesis’i, İsa ile Meryem’in '
             'atalarının yer aldığı iki kubbeyi — ve pareklezyonda Anastasis '
             'ile Son Yargı’yı yeniden ortaya çıkardı; hepsi Underwood’un '
             'Dumbarton Oaks için yazdığı ön raporlarda belgelendi.\n\n'
-            'Müze yılları 2020’ye kadar sürdü. Camiye dönüşün hukuk yolu '
-            '2005’te bir vakfın davasıyla başladı; Kasım 2019’da Danıştay '
-            'yeniden cami kararı verdi, kararname Ağustos 2020’de geldi.'),
+            'Müze yılları 2020’ye kadar sürdü. Sürekli Vakıflar Tarihi '
+            'Eserlere ve Çevreye Hizmet Derneği 2010’da 1945 kararına itiraz '
+            'etti; dava önce reddedildi, ancak Danıştay 10. Dairesi 11 Kasım '
+            '2019’da müze tahsisini iptal etti. 21 Ağustos 2020’de Resmî '
+            'Gazete’de yayımlanan Cumhurbaşkanı kararıyla yapı Diyanet’e '
+            'devredildi.'),
         media=[],
         artworks=[],
         sources=['underwood-1956', 'underwood-1958', 'ousterhout-2002',
-                 'wd-q849489', 'whc-istanbul'],
+                 'muze-kariye', 'resmi-gazete-kariye-2020',
+                 'hurriyet-kariye-danistay', 'wd-q849489'],
     ),
     dict(
         id='kariye-mosque-1511', fromYear=1511, toYear=1945, anchorYear=1511,
@@ -289,34 +326,33 @@ CHORA_STRATA = [
         id='komnenian', fromYear=1077, toYear=1315, anchorYear=1077,
         era='byzantine',
         title=loc('The Komnenian church, 1077–1315',
-                  'Kommenosların kilisesi, 1077–1315'),
+                  'Komnenosların kilisesi, 1077–1315'),
         body=loc(
-            'The naos walls were established around 1077–1081, when '
+            'The naos walls date from around 1077–1081, when '
             'Maria Doukaina, mother-in-law of Alexios I Komnenos, rebuilt the '
             'monastery church as a cross-in-square: a central dome on four '
             'columns.\n\n'
-            'A partial collapse early in the twelfth century, probably after '
-            'an earthquake, was repaired by Isaac Komnenos, a son of Alexios '
-            'I. Sturdy piers replaced the columns and carried a larger dome.\n\n'
+            'In the 1120s the church was rebuilt again, probably by the '
+            'sebastokrator Isaac Komnenos, a son of Alexios I: sturdy piers '
+            'replaced the columns and carried a larger dome.\n\n'
             'The surviving naos mosaics and the Deesis belong to the '
             'fourteenth-century decoration, not to this rebuilding. In the '
-            'monastery’s last Byzantine century the scholar Maximus '
-            'Planudes worked here, bringing Ptolemy’s Geography back to '
-            'Byzantine readers.',
-            'Naos duvarlarının yerleri yaklaşık 1077–1081 arasında, I. '
-            'Aleksios Komnenos’un kayınvalidesi Maria Dukaina’nın manastır '
-            'kilisesini kapalı Yunan haçı planında — dört sütun üzerine '
-            'oturan merkezî bir kubbeyle — yeniden yaptırdığı dönemde '
-            'belirlendi.\n\n'
-            '12. yüzyıl başında, büyük olasılıkla bir deprem sonrasında '
-            'kısmen çöken yapıyı I. Aleksios’un oğlu İsaakios Komnenos '
-            'onarttı. Sütunların yerini daha büyük kubbeyi taşıyan '
+            '1290s the scholar-monk Maximos Planudes worked here; he left '
+            'around 1300, lamenting the reduced state of the monastery’s '
+            'library.',
+            'Naosun duvarları 1077–1081 dolaylarına, I. Aleksios '
+            'Komnenos’un kayınvalidesi Maria Dukaina’nın manastır kilisesini '
+            'kapalı Yunan haçı planında — dört sütun üzerine oturan merkezî '
+            'bir kubbeyle — yeniden yaptırdığı döneme uzanır.\n\n'
+            'Kilise 1120’lerde, büyük olasılıkla I. Aleksios’un oğlu '
+            'sebastokrator İsaakios Komnenos tarafından bir kez daha yeniden '
+            'yapıldı: sütunların yerini daha büyük bir kubbeyi taşıyan '
             'sağlam payeler aldı.\n\n'
             'Günümüze ulaşan naos mozaikleri ile Deesis bu yapı evresine '
             'değil, 14. yüzyıl bezemesine aittir. '
-            'Manastırın son Bizans yüzyılında bilgin Maksimos Planudes '
-            'burada çalıştı ve Batlamyus’un Coğrafya’sını Bizans’a yeniden '
-            'kazandırdı.'),
+            '1290’larda bilgin keşiş Maksimos Planudes burada çalıştı; '
+            'manastır kütüphanesinin gerilemesinden yakınarak 1300 '
+            'dolaylarında ayrıldı.'),
         media=[],
         artworks=[],
         sources=['ousterhout-2002', 'wd-q849489', 'chora-guide', 'ousterhout-introduction'],
@@ -325,7 +361,7 @@ CHORA_STRATA = [
         id='first-monastery', fromYear=300, toYear=1077, anchorYear=330,
         era='byzantine',
         title=loc('The monastery in the country',
-                  'Kırlıktaki manastır'),
+                  'Kırdaki manastır'),
         body=loc(
             'Byzantine tradition places Christian use here before the city grew outward. '
             'Constantine the Great’s walls ran to the east; the church of '
@@ -362,31 +398,36 @@ CHORA_STRATA = [
 # --- Hagia Sophia: two draft layers prove the page is data only (newest first). ---
 HAGIA_SOPHIA_STRATA = [
     dict(
-        id='mosque-after-1453', fromYear=1453, toYear=1934, anchorYear=1453,
+        id='mosque-after-1453', fromYear=1453, toYear=None, anchorYear=1453,
         era='ottoman',
-        title=loc('Mosque after 1453', '1453’ten sonra cami'),
+        title=loc('Mosque, museum, mosque again, 1453–',
+                  'Cami, müze, yeniden cami, 1453–'),
         body=loc(
             'Mehmed II entered the city on 29 May 1453 and turned Hagia '
             'Sophia into a mosque; the first Friday prayer followed that '
             'June. For nearly five centuries minarets, a mihrab, a minbar '
             'and imperial lodges were added around Justinian’s shell.\n\n'
-            'In 1934 the Council of Ministers turned it into a museum. In '
-            '1985 it entered the UNESCO World Heritage listing of the '
-            'Historic Areas of Istanbul, and in July 2020 the Council of '
-            'State annulled the museum decree; it opened for prayer again, '
-            'with the galleries visited separately.',
-            'Mehmed II 29 Mayıs 1453’te şehre girdi ve Ayasofya’yı camiye '
+            'The Council of Ministers decision of 24 November 1934 made it a '
+            'museum, and in 1985 it entered UNESCO’s World Heritage listing '
+            'of the Historic Areas of Istanbul. A presidential decision of '
+            '10 July 2020 returned it to the Diyanet as a mosque, and Friday '
+            'prayers resumed on 24 July 2020; since 15 January 2024 foreign '
+            'visitors pay €25 for a separate route to the upper galleries.',
+            'II. Mehmed 29 Mayıs 1453’te şehre girdi ve Ayasofya’yı camiye '
             'çevirdi; ilk cuma namazı o yılın haziran ayında kılındı. '
-            'Justinianus’un kabuğunun çevresine yaklaşık beş yüzyıl boyunca '
+            'Yaklaşık beş yüzyıl boyunca Justinianus’un yapısının çevresine '
             'minareler, mihrap, minber ve hünkâr mahfilleri eklendi.\n\n'
-            '1934’te Bakanlar Kurulu yapıyı müzeye çevirdi. 1985’te '
-            'İstanbul’un Tarihi Alanları UNESCO Dünya Mirası listesine '
-            'girdi; Temmuz 2020’de Danıştay müze kararını iptal etti ve '
-            'yapı, üst galeriler ayrıca gezilecek biçimde yeniden ibadete '
-            'açıldı.'),
+            '24 Kasım 1934 tarihli Bakanlar Kurulu kararıyla müzeye '
+            'çevrildi; 1985’te İstanbul’un Tarihi Alanları UNESCO Dünya '
+            'Mirası listesine girdi. 10 Temmuz 2020 tarihli Cumhurbaşkanı '
+            'kararıyla yeniden cami olarak Diyanet’e devredildi ve 24 Temmuz '
+            '2020’de cuma namazıyla ibadete açıldı; 15 Ocak 2024’ten beri '
+            'yabancı ziyaretçiler üst galerilere ayrı bir yoldan 25 avroyla '
+            'çıkıyor.'),
         media=[],
         artworks=[],
-        sources=['britannica-hagia-sophia', 'whc-istanbul', 'wd-q12506'],
+        sources=['britannica-hagia-sophia', 'whc-istanbul', 'resmi-gazete-ayasofya-2020',
+                 'aa-ayasofya-prayer-2020', 'aa-ayasofya-galleries-2024', 'wd-q12506'],
     ),
     dict(
         id='justinian-church', fromYear=532, toYear=537, anchorYear=537,

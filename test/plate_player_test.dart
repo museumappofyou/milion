@@ -11,8 +11,7 @@ import 'package:milion/plate/assets.dart';
 import 'package:milion/plate/manifest.dart';
 import 'package:milion/plate/player.dart';
 import 'package:milion/plate/sheets.dart';
-import 'package:milion/screens/anastasis_relief_screen.dart';
-import 'package:milion/screens/last_judgment_relief_screen.dart';
+import 'package:milion/plate/screen.dart';
 
 import 'helpers.dart' show loadThemeFonts;
 
@@ -70,8 +69,14 @@ Future<void> visibleTap(WidgetTester tester, String label) async {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   for (final (name, home) in [
-    ('Anastasis', const AnastasisReliefScreen()),
-    ('Judgment', const LastJudgmentReliefScreen()),
+    (
+      'Anastasis',
+      const PlateScreen(asset: 'assets/plates/anastasis/manifest.json'),
+    ),
+    (
+      'Judgment',
+      const PlateScreen(asset: 'assets/plates/judgment/manifest.json'),
+    ),
   ]) {
     testWidgets(
       '$name original first, zoom bounds, one-tap comparison and disposal',
@@ -83,17 +88,18 @@ void main() {
         expect(p.tilt.subscribed, isFalse);
         expect(p.ticking, isFalse);
         expect(p.assets.textureBytes, lessThanOrEqualTo(150000000));
-        expect(
-          p.assets.rig!.cols * p.assets.rig!.rows,
-          lessThanOrEqualTo(60000),
-        );
+        final rig = p.assets.rig;
+        expect(rig == null ? 0 : rig.cols * rig.rows, lessThanOrEqualTo(60000));
+        expect(rig != null, p.widget.manifest.hasGesture);
         p.zoomBy(2 / p.zoom);
         await tester.pumpAndSettle();
         expect(p.zoom, closeTo(2, .01));
         final camera = p.transformation.value.clone();
+        // II has no reconstruction wipe; asking for one changes nothing.
+        final wipe = p.widget.manifest.has(PlateLayerId.reconstruction);
         c.setLayer(PlateLayerId.reconstruction);
         await tester.pump();
-        expect(find.text('RECONSTRUCTION'), findsOneWidget);
+        expect(find.text(wipe ? 'RECONSTRUCTION' : 'ORIGINAL'), findsOneWidget);
         c.peek(true);
         await tester.pump();
         expect(find.text('ORIGINAL'), findsOneWidget);
@@ -123,7 +129,10 @@ void main() {
   testWidgets(
     'single-finger drag controls tilt, raking light and reconstruction wipe',
     (tester) async {
-      await openScene(tester, const AnastasisReliefScreen());
+      await openScene(
+        tester,
+        const PlateScreen(asset: 'assets/plates/anastasis/manifest.json'),
+      );
       final p = state(tester), c = p.controller;
       final view = find.byKey(const ValueKey('plate-interactive-viewer'));
       c.setLight(PlateLight.gilded);
@@ -152,7 +161,10 @@ void main() {
   testWidgets(
     'pinch, pan and double-tap preserve the original camera controls',
     (tester) async {
-      await openScene(tester, const AnastasisReliefScreen());
+      await openScene(
+        tester,
+        const PlateScreen(asset: 'assets/plates/anastasis/manifest.json'),
+      );
       final p = state(tester),
           view = find.byKey(const ValueKey('plate-interactive-viewer'));
       final center = tester.getCenter(view), initial = p.zoom;
@@ -189,7 +201,10 @@ void main() {
   testWidgets('story pauses, scrubs and performs one bounded wrist gesture', (
     tester,
   ) async {
-    await openScene(tester, const AnastasisReliefScreen());
+    await openScene(
+      tester,
+      const PlateScreen(asset: 'assets/plates/anastasis/manifest.json'),
+    );
     final p = state(tester), c = p.controller;
     c.seek(10.6);
     await tester.pump();
@@ -220,7 +235,11 @@ void main() {
   testWidgets(
     'reduced motion has the whole story as manual stills and stops lifecycle motion',
     (tester) async {
-      await openScene(tester, const LastJudgmentReliefScreen(), reduced: true);
+      await openScene(
+        tester,
+        const PlateScreen(asset: 'assets/plates/judgment/manifest.json'),
+        reduced: true,
+      );
       final p = state(tester), c = p.controller;
       await tester.tap(find.byKey(const ValueKey('plate-story')));
       await tester.pumpAndSettle();
@@ -278,10 +297,10 @@ void main() {
       expect(tester.takeException(), isNull);
     },
   );
-  test('both rigs keep scenery fixed, return to the source, and never fold at the allowed intensity', () async {
-    for (final name in ['anastasis', 'judgment']) {
+  test('the gesture rig keeps scenery fixed, returns to the source, and never folds at the allowed intensity', () async {
+    for (final name in ['anastasis']) {
       final manifest = await loadPlate(name), owner = PlateAssets();
-      final rig = await owner.readRig(manifest.mesh.figures);
+      final rig = await owner.readRig(manifest.rig!.path);
       final frame = Rect.fromLTWH(
         0,
         0,
@@ -349,10 +368,13 @@ void main() {
     }
   });
   test('reconstruction exports preserve source aspect and are 4K', () async {
-    for (final name in ['anastasis', 'judgment']) {
+    final judgment = await loadPlate('judgment');
+    expect(judgment.has(PlateLayerId.reconstruction), isFalse);
+    expect(judgment.rig, isNull);
+    for (final name in ['anastasis']) {
       final p = await loadPlate(name),
           bytes = await rootBundle.load(
-            p.layer(PlateLayerId.reconstruction).asset,
+            p.layer(PlateLayerId.reconstruction)!.asset,
           );
       final codec = await ui.instantiateImageCodec(bytes.buffer.asUint8List());
       final image = (await codec.getNextFrame()).image;

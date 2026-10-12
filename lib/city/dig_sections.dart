@@ -31,7 +31,9 @@ class DigStratumView extends StatelessWidget {
   final Widget? extra;
   @override
   Widget build(BuildContext context) {
-    final s = context.l10n, c = MeasureColors.of(context), lang = context.language;
+    final s = context.l10n,
+        c = MeasureColors.of(context),
+        lang = context.language;
     final artworks = registry.artworksIn(stratum);
     final milestones = registry.milestonesIn(stratum);
     final sources = [
@@ -72,7 +74,8 @@ class DigStratumView extends StatelessWidget {
                     Expanded(
                       child: Text(
                         [
-                          registry.source(registry.mediaItem(id)!.sourceId)
+                          registry
+                                  .source(registry.mediaItem(id)!.sourceId)
                                   ?.title
                                   .inLanguage(lang) ??
                               registry.mediaItem(id)!.path,
@@ -86,7 +89,10 @@ class DigStratumView extends StatelessWidget {
               ),
         if (artworks.isNotEmpty) ...[
           const SizedBox(height: 24),
-          Text(s.digLayerArtworks, style: Theme.of(context).textTheme.titleMedium),
+          Text(
+            s.digLayerArtworks,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           const SizedBox(height: 4),
           for (final artwork in artworks)
             _ArtworkRow(artwork: artwork, onTap: () => onOpenArtwork(artwork)),
@@ -179,7 +185,9 @@ class _SourceListState extends State<SourceList> {
   bool _open = false;
   @override
   Widget build(BuildContext context) {
-    final s = context.l10n, c = MeasureColors.of(context), lang = context.language;
+    final s = context.l10n,
+        c = MeasureColors.of(context),
+        lang = context.language;
     final reduced = MediaQuery.disableAnimationsOf(context);
     if (widget.sources.isEmpty) return const SizedBox.shrink();
     return Column(

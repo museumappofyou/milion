@@ -1,0 +1,103 @@
+{
+  "plate": "metochites",
+  "spec": "studio/plates/metochites/plate.yaml",
+  "manualMinutes": 25,
+  "stages": {
+    "ingest": {
+      "source": "3-INNER-NARTHEX/C__M11__Theodore-Metochites-Presents-Chora__flat__REF-14/web-ke-01-Theodoros-Metokhites-Kariye-Maketini-Hz.-Isaya-Sunusu.jpg",
+      "sourceSha256": "059f53cb1fba2b92e81c590595599d8635c8d3d96eaababda5dfa7c0c77ca8ed",
+      "sourceSize": [
+        1600,
+        1067
+      ],
+      "sourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Theodoros-Metokhites-Kariye-Maketini-Hz.-Isaya-Sunusu.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/metochites/original.jpg",
+      "masterSha256": "518143e95dffe2d802d80a68668be5305c93d5b753b8b0d459f342f8da05ff1e",
+      "size": [
+        1600,
+        1067
+      ]
+    },
+    "segment": {
+      "christ": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.1086,
+        "iou": 0.885
+      },
+      "metochites": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0735,
+        "iou": 0.893
+      },
+      "model": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0118,
+        "iou": 0.927
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.3 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 1.29,
+      "gold": "heuristic",
+      "goldCoverage": 0.4585,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 54879,
+      "triangles": 108727,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 71,
+        "verticesEased": 8506,
+        "maxHeightChange": 0.3532
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 20486400,
+    "textureBudget": 150000000,
+    "meshVertices": 54879,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/metochites/manifest.json",
+    "maps": {
+      "surface": "assets/plates/metochites/surface.webp",
+      "gold": "assets/plates/metochites/gold.webp"
+    },
+    "details": 7,
+    "beats": 6,
+    "storySeconds": 35,
+    "revealMoment": 6,
+    "lookUp": null
+  },
+  "preview": {
+    "path": "studio/plates/metochites/build/preview.mp4",
+    "frames": 144,
+    "seconds": 6.0
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 46.3
+}

@@ -72,6 +72,10 @@ class _PlaceScreenState extends State<PlaceScreen> {
       if (box == null || !box.attached) continue;
       if (box.localToGlobal(Offset.zero).dy <= top + 1) current = i;
     }
+    // A short last layer never reaches the reading line; the page end selects it.
+    if (_scroll.hasClients && _scroll.position.extentAfter < 1) {
+      current = _strata.length - 1;
+    }
     if (current != _selected) {
       MotionToken.detent();
       setState(() => _selected = current);
@@ -112,7 +116,11 @@ class _PlaceScreenState extends State<PlaceScreen> {
           curve: MotionToken.curves[MeasureMotion.dig]!,
         )
         .then((_) {
-          if (mounted && request == _scrollRequest) {
+          if (!mounted || request != _scrollRequest) return;
+          // animateTo also completes when a finger interrupts it.
+          if ((_scroll.offset - target).abs() > 1) {
+            _onScroll();
+          } else {
             setState(() => _selected = index);
           }
         });
@@ -135,7 +143,11 @@ class _PlaceScreenState extends State<PlaceScreen> {
               '${registry.source(media.sourceId)?.title.inLanguage(lang) ?? ''}';
     return Scaffold(
       appBar: AppBar(
-        title: Text(place.names.inLanguage(lang), maxLines: 2),
+        title: Text(
+          place.names.inLanguage(lang),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
         actions: [
           if (app.placeRecognised(place.id))
             IconButton(
@@ -357,14 +369,17 @@ class PresentHeader extends StatelessWidget {
               ],
             ],
           );
-          final go = OutlinedButton.icon(
-            key: const ValueKey('place-go'),
-            onPressed: () => launchUrl(
-              walkingDirectionsUri(p),
-              mode: LaunchMode.externalApplication,
+          final go = Tooltip(
+            message: s.digGoTooltip,
+            child: OutlinedButton.icon(
+              key: const ValueKey('place-go'),
+              onPressed: () => launchUrl(
+                walkingDirectionsUri(p),
+                mode: LaunchMode.externalApplication,
+              ),
+              icon: const PlanIcon(PlanSymbol.route, size: 18),
+              label: Text(s.digGo),
             ),
-            icon: const PlanIcon(PlanSymbol.route, size: 18),
-            label: Text(s.digGo),
           );
           final largeText = MediaQuery.textScalerOf(context).scale(16) > 20;
           if (largeText) {

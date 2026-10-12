@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "kind": "plate",
+  "id": "plate-judgment",
+  "milestone": "milestone-ii",
+  "artwork": "F05",
+  "title": {
+    "en": "The Last Judgment",
+    "tr": "Son Yargı"
+  },
+  "size": [
+    1600,
+    1067
+  ],
+  "manifestPath": "assets/plates/judgment/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/last_judgment/vault_reference.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    },
+    {
+      "id": "depth",
+      "asset": "assets/last_judgment/relief_v5/relief_front.jpg",
+      "honesty": "DEPTH",
+      "mask": null
+    },
+    {
+      "id": "reconstruction",
+      "asset": "assets/restoration/last_judgment_restored_4k_v2.jpg",
+      "honesty": "RECONSTRUCTION",
+      "mask": "assets/plates/judgment/damaged.png"
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/judgment/surface.png",
+    "gold": "assets/plates/judgment/gold.png",
+    "flow": "assets/plates/judgment/river.png",
+    "scroll": "assets/plates/judgment/scroll.png"
+  },
+  "mesh": {
+    "geometry": "assets/explorer/last_judgment_geometry.json",
+    "figures": "assets/explorer/last_judgment_figures_v2.json",
+    "maxVertices": 60000
+  },
+  "details": [
+    {
+      "id": "detail-scroll-of-heaven",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The rolled-up heavens",
+        "tr": "Dürülen gökler"
+      },
+      "sentence": {
+        "en": "An angel rolls up the heavens like a scroll, with the sun, moon and stars on it.",
+        "tr": "Bir melek gökleri tomar gibi dürüyor; tomarın üstünde güneş, ay ve yıldızlar var."
+      },
+      "window": {
+        "left": 0.34,
+        "top": 0.2,
+        "right": 0.66,
+        "bottom": 0.73
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.44,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958",
+        "revelation-6-14"
+      ]
+    },
+    {
+      "id": "detail-river-of-fire",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The river of fire",
+        "tr": "Ateş ırmağı"
+      },
+      "sentence": {
+        "en": "A fiery stream pours from before Christ’s feet toward the lake of fire.",
+        "tr": "İsa’nın ayaklarının önünden doğan ateş ırmağı, ateş gölüne doğru akıyor."
+      },
+      "window": {
+        "left": 0.48,
+        "top": 0.5,
+        "right": 0.82,
+        "bottom": 1.0
+      },
+      "anchorX": 0.6,
+      "anchorY": 0.8,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958",
+        "daniel-7-10"
+      ]
+    },
+    {
+      "id": "detail-deesis",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The Deesis",
+        "tr": "Deesis"
+      },
+      "sentence": {
+        "en": "The Virgin and John the Baptist stand either side of Christ the Judge, pleading.",
+        "tr": "Meryem ile Vaftizci Yahya, Yargıç İsa’nın iki yanında yakarıyor."
+      },
+      "window": {
+        "left": 0.34,
+        "top": 0.42,
+        "right": 0.68,
+        "bottom": 0.92
+      },
+      "anchorX": 0.506,
+      "anchorY": 0.64,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958",
+        "chora-guide-parekklesion"
+      ]
+    },
+    {
+      "id": "detail-apostles",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The apostles’ bench",
+        "tr": "Havarilerin sırası"
+      },
+      "sentence": {
+        "en": "The twelve apostles sit on benches either side, books open, with angels in a row behind.",
+        "tr": "On iki havari iki yandaki sıralarda kitapları açık oturuyor; arkalarında bir sıra melek var."
+      },
+      "window": {
+        "left": 0.16,
+        "top": 0.42,
+        "right": 0.5,
+        "bottom": 0.88
+      },
+      "anchorX": 0.27,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958"
+      ]
+    },
+    {
+      "id": "detail-choirs-of-the-elect",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The choir of bishops",
+        "tr": "Piskoposlar korosu"
+      },
+      "sentence": {
+        "en": "Choirs of the elect kneel on clouds, each named in Greek; the bishops’ vestments are patterned with black crosses.",
+        "tr": "Seçilmişlerin koroları bulutlarda diz çökmüş, her birinin adı Yunanca yazılı; piskoposların giysileri siyah haçlarla bezeli."
+      },
+      "window": {
+        "left": 0.56,
+        "top": 0.12,
+        "right": 0.86,
+        "bottom": 0.62
+      },
+      "anchorX": 0.74,
+      "anchorY": 0.37,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958"
+      ]
+    },
+    {
+      "id": "detail-lost-band",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The lost strip",
+        "tr": "Kaybolan şerit"
+      },
+      "sentence": {
+        "en": "A strip of lost paint, filled with toned plaster, cuts across the apostles on the right.",
+        "tr": "Sağdaki havarilerin üzerinden, boyası tümüyle yitmiş ve renklendirilmiş sıvayla doldurulmuş bir şerit geçiyor."
+      },
+      "window": {
+        "left": 0.52,
+        "top": 0.42,
+        "right": 0.86,
+        "bottom": 0.92
+      },
+      "anchorX": 0.7,
+      "anchorY": 0.65,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958"
+      ]
+    },
+    {
+      "id": "detail-prepared-throne",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The prepared throne",
+        "tr": "Hazırlanmış taht"
+      },
+      "sentence": {
+        "en": "Below Christ, Adam and Eve bow with covered hands before the prepared throne.",
+        "tr": "İsa’nın altında Âdem ile Havva, örtülü elleriyle hazırlanmış tahtın önünde eğiliyor."
+      },
+      "window": {
+        "left": 0.36,
+        "top": 0.5,
+        "right": 0.7,
+        "bottom": 1.0
+      },
+      "anchorX": 0.515,
+      "anchorY": 0.83,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958",
+        "chora-guide-parekklesion"
+      ]
+    },
+    {
+      "id": "detail-weighing-of-souls",
+      "milestone": "milestone-ii",
+      "artwork": "F05",
+      "title": {
+        "en": "The balance",
+        "tr": "Terazi"
+      },
+      "sentence": {
+        "en": "A balance hangs from the throne’s foot; a black devil drags one pan down with a hooked stick.",
+        "tr": "Tahtın ayağından bir terazi sarkıyor; kara bir şeytan kancalı bir sopayla kefelerden birini aşağı çekiyor."
+      },
+      "window": {
+        "left": 0.34,
+        "top": 0.5,
+        "right": 0.68,
+        "bottom": 1.0
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.925,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1958"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "judgment-beat-1",
+      "start": 0,
+      "duration": 8,
+      "detail": "detail-deesis",
+      "window": {
+        "left": 0.34,
+        "top": 0.42,
+        "right": 0.68,
+        "bottom": 0.92
+      },
+      "caption": {
+        "en": "The Virgin and John the Baptist stand either side of Christ the Judge, pleading.",
+        "tr": "Meryem ile Vaftizci Yahya, Yargıç İsa’nın iki yanında yakarıyor."
+      },
+      "sources": [
+        "underwood-1958",
+        "chora-guide-parekklesion"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "judgment-beat-2",
+      "start": 8,
+      "duration": 8,
+      "detail": "detail-scroll-of-heaven",
+      "window": {
+        "left": 0.34,
+        "top": 0.2,
+        "right": 0.66,
+        "bottom": 0.73
+      },
+      "caption": {
+        "en": "An angel rolls up the heavens like a scroll, with the sun, moon and stars on it.",
+        "tr": "Bir melek gökleri tomar gibi dürüyor; tomarın üstünde güneş, ay ve yıldızlar var."
+      },
+      "sources": [
+        "underwood-1958",
+        "revelation-6-14"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": true,
+      "gesture": null
+    },
+    {
+      "id": "judgment-beat-3",
+      "start": 16,
+      "duration": 8,
+      "detail": "detail-river-of-fire",
+      "window": {
+        "left": 0.48,
+        "top": 0.5,
+        "right": 0.82,
+        "bottom": 1.0
+      },
+      "caption": {
+        "en": "A fiery stream pours from before Christ’s feet toward the lake of fire.",
+        "tr": "İsa’nın ayaklarının önünden doğan ateş ırmağı, ateş gölüne doğru akıyor."
+      },
+      "sources": [
+        "underwood-1958",
+        "daniel-7-10"
+      ],
+      "light": "none",
+      "flow": true,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "judgment-beat-4",
+      "start": 24,
+      "duration": 8,
+      "detail": "detail-prepared-throne",
+      "window": {
+        "left": 0.36,
+        "top": 0.5,
+        "right": 0.7,
+        "bottom": 1.0
+      },
+      "caption": {
+        "en": "Below Christ, Adam and Eve bow with covered hands before the prepared throne.",
+        "tr": "İsa’nın altında Âdem ile Havva, örtülü elleriyle hazırlanmış tahtın önünde eğiliyor."
+      },
+      "sources": [
+        "underwood-1958",
+        "chora-guide-parekklesion"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "storySeconds": 32,
+  "reveal": {
+    "id": "judgment-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-deesis",
+    "window": {
+      "left": 0.34,
+      "top": 0.42,
+      "right": 0.68,
+      "bottom": 0.92
+    },
+    "caption": {
+      "en": "The Virgin and John the Baptist stand either side of Christ the Judge, pleading.",
+      "tr": "Meryem ile Vaftizci Yahya, Yargıç İsa’nın iki yanında yakarıyor."
+    },
+    "sources": [
+      "underwood-1958",
+      "chora-guide-parekklesion"
+    ],
+    "light": "gilded",
+    "flow": true,
+    "spiral": true,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Caner Cangül / Kültür Envanteri",
+    "tr": "Caner Cangül / Kültür Envanteri"
+  },
+  "sources": [
+    "chora-guide-parekklesion",
+    "ousterhout-2002"
+  ],
+  "originalSourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Mahser.jpg",
+  "scrollCenter": [
+    0.508,
+    0.395
+  ],
+  "citations": [
+    {
+      "id": "chora-guide-parekklesion",
+      "title": {
+        "en": "Guide to the Kariye Mosaics — G. Parekklesion frescoes",
+        "tr": "Kariye Mozaikleri Rehberi — G. Parekklesion freskleri"
+      },
+      "url": "https://kulturenvanteri.com/tr/kariye-mozaikleri-rehberi/#g-parekklesion-freskleri-pareklezyon",
+      "author": {
+        "en": "Caner Cangül, Engin Mutlu, Kader Ali Çayır",
+        "tr": "Caner Cangül, Engin Mutlu, Kader Ali Çayır"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "daniel-7-10",
+      "title": {
+        "en": "Daniel 7:10 (King James Version)",
+        "tr": "Daniel 7:10 (King James çevirisi)"
+      },
+      "url": "https://www.biblegateway.com/passage/?search=Daniel%207%3A10&version=KJV",
+      "author": {
+        "en": "Bible Gateway",
+        "tr": "Bible Gateway"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "ousterhout-2002",
+      "title": {
+        "en": "The Art of the Kariye Camii",
+        "tr": "The Art of the Kariye Camii"
+      },
+      "url": "https://archive.org/details/ousterhout-r.-the-art-of-kariye-camii-2002-compressed",
+      "author": {
+        "en": "Robert G. Ousterhout",
+        "tr": "Robert G. Ousterhout"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "revelation-6-14",
+      "title": {
+        "en": "Revelation 6:14 (King James Version)",
+        "tr": "Vahiy 6:14 (King James çevirisi)"
+      },
+      "url": "https://www.biblegateway.com/passage/?search=Revelation%206%3A14&version=KJV",
+      "author": {
+        "en": "Bible Gateway",
+        "tr": "Bible Gateway"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "underwood-1958",
+      "title": {
+        "en": "Third Preliminary Report on the Restoration of the Frescoes in the Kariye Camii at Istanbul by the Byzantine Institute, 1956 (Dumbarton Oaks Papers 12)",
+        "tr": "Third Preliminary Report on the Restoration of the Frescoes in the Kariye Camii at Istanbul by the Byzantine Institute, 1956 (Dumbarton Oaks Papers 12)"
+      },
+      "url": "https://archive.org/details/DOP12_09_Underwood",
+      "author": {
+        "en": "Paul A. Underwood",
+        "tr": "Paul A. Underwood"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    }
+  ]
+}

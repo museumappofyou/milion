@@ -27,14 +27,17 @@ class _PlateScreenState extends State<PlateScreen> {
   Widget build(BuildContext context) => FutureBuilder<PlateManifest>(
     future: manifest,
     builder: (context, snapshot) => snapshot.hasData
-        ? PlatePlayer(manifest: snapshot.data!)
+        ? PlatePlayer(
+            key: ValueKey(snapshot.data!.id),
+            manifest: snapshot.data!,
+          )
         : Scaffold(
             body: Center(
               child: snapshot.hasError
                   ? ContentState(
                       error: true,
                       title: context.l10n.sceneUnavailable,
-                      message: context.l10n.studyUnavailable,
+                      message: context.l10n.plateUnavailable,
                     )
                   : const TesseraLoader(),
             ),

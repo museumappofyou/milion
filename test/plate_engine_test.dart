@@ -10,16 +10,29 @@ import 'package:milion/plate/timeline.dart';
 import 'package:milion/plate/tilt.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
-Map<String, dynamic> plateJson() =>
-    jsonDecode(File('assets/plates/anastasis/manifest.json').readAsStringSync())
-        as Map<String, dynamic>;
+Map<String, dynamic> plateJson([
+  String path = 'assets/plates/anastasis/manifest.json',
+]) => jsonDecode(File(path).readAsStringSync()) as Map<String, dynamic>;
 PlateManifest plate() => PlateManifest.fromJson(plateJson());
+PlateManifest plateAt(String path) => PlateManifest.fromJson(plateJson(path));
 void main() {
   test('strict manifests reject malformed schemas, claims, timeline and gesture budgets', () {
     for (final mutate in <void Function(Map<String, dynamic>)>[
       (j) => j['typo'] = true,
-      (j) => j['schemaVersion'] = 2,
-      (j) => j['mesh']['maxVertices'] = 60001,
+      (j) => j['schemaVersion'] = 1,
+      (j) => j['rig']['maxVertices'] = 60001,
+      (j) => j['rig'] = null,
+      (j) => j['layers'].removeAt(0),
+      (j) => j['layers'][1]['honesty'] = 'ORIGINAL',
+      (j) => j['description']['tr'] = '',
+      (j) => j['revealMoment'] = 10.5,
+      (j) => j['flow'] = {'mask': 'a.png', 'period': 8, 'distance': .5},
+      (j) => j['lookUp'] = {
+        'center': [.9, .5],
+        'rimCenter': [.5, .5],
+        'rimRadii': [.1, .1],
+        'rimElevation': 50,
+      },
       (j) => j['layers'][2]['mask'] = null,
       (j) => j['beats'][1]['start'] = 6,
       (j) => j['beats'][1]['gesture']['duration'] = 2,

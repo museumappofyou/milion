@@ -1,0 +1,115 @@
+{
+  "plate": "enrollment",
+  "spec": "studio/plates/enrollment/plate.yaml",
+  "manualMinutes": 25,
+  "stages": {
+    "ingest": {
+      "source": "4-OUTER-NARTHEX/B__M35__Enrollment-before-the-Governor__vault__REF-0/web-ke-01-Valinin-Onunde-Vergi-Icin-Yapilan-Nufus-Sayimi.jpg",
+      "sourceSha256": "a07cf80c98bb85eefc894540c6898bc960624b26b5369f1449fe9885125d5e53",
+      "sourceSize": [
+        1600,
+        1068
+      ],
+      "sourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Valinin-Onunde-Vergi-Icin-Yapilan-Nufus-Sayimi.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/enrollment/original.jpg",
+      "masterSha256": "11d7191e09ac97349b889cd1349b5fe873992be7dcfc992853f7cbc454f661dc",
+      "size": [
+        1600,
+        1068
+      ]
+    },
+    "segment": {
+      "guard": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0229,
+        "iou": 0.894
+      },
+      "governor": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0292,
+        "iou": 0.918
+      },
+      "register": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0342,
+        "iou": 0.89
+      },
+      "mary": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0224,
+        "iou": 0.974
+      },
+      "joseph": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0406,
+        "iou": 0.892
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.3 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 1.39,
+      "gold": "heuristic",
+      "goldCoverage": 0.2625,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 59263,
+      "triangles": 117655,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 81,
+        "verticesEased": 11864,
+        "maxHeightChange": 0.4447
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 20505600,
+    "textureBudget": 150000000,
+    "meshVertices": 59263,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/enrollment/manifest.json",
+    "maps": {
+      "surface": "assets/plates/enrollment/surface.webp",
+      "gold": "assets/plates/enrollment/gold.webp"
+    },
+    "details": 8,
+    "beats": 6,
+    "storySeconds": 34,
+    "revealMoment": 6,
+    "lookUp": null
+  },
+  "preview": {
+    "path": "studio/plates/enrollment/build/preview.mp4",
+    "frames": 144,
+    "seconds": 6.0
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 47.5
+}

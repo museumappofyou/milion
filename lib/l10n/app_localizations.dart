@@ -1028,12 +1028,6 @@ abstract class AppLocalizations {
   /// **'Restoration studies'**
   String get studies;
 
-  /// No description provided for @studyUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'Restoration study could not be loaded.'**
-  String get studyUnavailable;
-
   /// No description provided for @sceneUnavailable.
   ///
   /// In en, this message translates to:
@@ -2382,6 +2376,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Preparing the plate'**
   String get plateLoading;
+
+  /// No description provided for @plateLookUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Look up'**
+  String get plateLookUp;
+
+  /// No description provided for @plateLookUpHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to look around the dome, pinch to zoom, double-tap to return to the top.'**
+  String get plateLookUpHint;
+
+  /// No description provided for @plateLookUpSensor.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold the phone overhead'**
+  String get plateLookUpSensor;
+
+  /// No description provided for @plateLookUpSensorHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Off until you choose it. The view follows the phone\'s rotation sensor.'**
+  String get plateLookUpSensorHint;
+
+  /// No description provided for @plateUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The plate’s images could not be loaded.'**
+  String get plateUnavailable;
 }
 
 class _AppLocalizationsDelegate

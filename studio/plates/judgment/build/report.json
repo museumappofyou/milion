@@ -1,0 +1,94 @@
+{
+  "plate": "judgment",
+  "spec": "studio/plates/judgment/plate.yaml",
+  "manualMinutes": 0,
+  "stages": {
+    "ingest": {
+      "source": "assets/last_judgment/vault_reference.jpg",
+      "sourceSha256": "51dbb640b2e20bb7ab5e803a11282e992c62fc892c1f73d80dd515571634eb38",
+      "sourceSize": [
+        1600,
+        1067
+      ],
+      "sourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Mahser.jpg",
+      "method": "kept in place",
+      "master": "assets/last_judgment/vault_reference.jpg",
+      "masterSha256": "51dbb640b2e20bb7ab5e803a11282e992c62fc892c1f73d80dd515571634eb38",
+      "size": [
+        1600,
+        1067
+      ]
+    },
+    "segment": "no segments",
+    "depth": {
+      "method": "provided (assets/plates/judgment/surface.png)",
+      "measure": {
+        "depth-anything-v2-small": {
+          "spearmanRaw": -0.518,
+          "spearmanDetail": 0.125,
+          "seconds": 0.89,
+          "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99"
+        },
+        "depth-anything-v2-base": {
+          "spearmanRaw": -0.505,
+          "spearmanDetail": 0.104,
+          "seconds": 1.56,
+          "revision": "b1958afc87fb45a9e3746cb387596094de553ed8"
+        },
+        "marigold": {
+          "spearmanRaw": -0.27,
+          "spearmanDetail": 0.115,
+          "seconds": 3.9,
+          "revision": "9571e7123e258cf052b4e54241f17971c290e9a8"
+        }
+      },
+      "gold": "provided (assets/plates/judgment/gold.png)",
+      "goldCoverage": 0.0251,
+      "heightRange": [
+        0.0,
+        0.682
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 38116,
+      "triangles": 76110,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 28,
+        "verticesEased": 10863,
+        "maxHeightChange": 0.3169
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 40972800,
+    "textureBudget": 150000000,
+    "meshVertices": 38116,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/judgment/manifest.json",
+    "maps": {
+      "surface": "assets/plates/judgment/surface.png",
+      "gold": "assets/plates/judgment/gold.png"
+    },
+    "details": 8,
+    "beats": 4,
+    "storySeconds": 32,
+    "revealMoment": 7,
+    "lookUp": null
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 1.3
+}

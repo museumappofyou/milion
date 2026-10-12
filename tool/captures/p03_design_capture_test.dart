@@ -16,15 +16,14 @@ import '../../test/design/design_contract_test.dart' show contrast;
 
 import 'package:milion/l10n/strings.dart';
 
-import 'package:milion/screens/anastasis_relief_screen.dart';
-import 'package:milion/screens/last_judgment_relief_screen.dart';
+import 'package:milion/plate/screen.dart';
 import 'package:milion/screens/scan_tab.dart';
 import 'package:milion/services/classifier.dart';
 import 'package:milion/widgets/artwork_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../test/helpers.dart' show loadThemeFonts, ready;
-import '../../test/scene_explorer_test.dart' show assetsReady, state;
+import '../../test/plate_player_test.dart' show assetsReady, state;
 
 const out = 'studio/captures/P03';
 Future<void> capture(WidgetTester tester, GlobalKey key, String name) async {
@@ -119,7 +118,7 @@ void main() {
         // The proposed composition links to a real, original-first artwork view.
         await tester.tap(find.byType(Image).first);
         await assetsReady(tester);
-        expect(find.byType(AnastasisReliefScreen), findsOneWidget);
+        expect(find.byType(PlateScreen), findsOneWidget);
         await tester.pumpWidget(const SizedBox.shrink());
         for (final scale in [1.0, 2.0]) {
           final sheetKey = GlobalKey();
@@ -174,8 +173,14 @@ void main() {
     await loadThemeFonts(tester);
     tester.view.devicePixelRatio = 1;
     for (final (name, home) in [
-      ('anastasis', const AnastasisReliefScreen()),
-      ('judgment', const LastJudgmentReliefScreen()),
+      (
+        'anastasis',
+        const PlateScreen(asset: 'assets/plates/anastasis/manifest.json'),
+      ),
+      (
+        'judgment',
+        const PlateScreen(asset: 'assets/plates/judgment/manifest.json'),
+      ),
     ]) {
       for (final width in [360.0, 390.0, 430.0]) {
         for (final scale in [1.0, 2.0]) {

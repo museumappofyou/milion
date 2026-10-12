@@ -45,17 +45,20 @@ Future<void> main(List<String> args) async {
         (p) => File(p).readAsString(),
       );
       for (final p in plates.plates) {
-        for (final path in [...p.imagePaths, p.mesh.geometry, p.mesh.figures]) {
+        for (final path in [...p.imagePaths, ?p.rig?.path]) {
           if (!File(path).existsSync()) {
             report.errors.add('Missing plate asset: $path');
           }
         }
-        final rig = jsonDecode(
-          await File(p.mesh.figures).readAsString(),
-        ) as Map<String, dynamic>;
-        if (rig['poses'] is String &&
-            !File(rig['poses'] as String).existsSync()) {
-          report.errors.add('Missing plate poses: ${rig['poses']}');
+        final rigPath = p.rig?.path;
+        if (rigPath != null) {
+          final rig =
+              jsonDecode(await File(rigPath).readAsString())
+                  as Map<String, dynamic>;
+          if (rig['poses'] is String &&
+              !File(rig['poses'] as String).existsSync()) {
+            report.errors.add('Missing plate poses: ${rig['poses']}');
+          }
         }
       }
       stdout.writeln('Plates: ${plates.plates.length} typed manifests');

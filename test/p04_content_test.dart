@@ -22,7 +22,7 @@ void main() {
   });
 
   test(
-    'register: 48 numerals 0–XLVII in order, nine flagships, I–II playable',
+    'register: 48 numerals 0–XLVII in order, nine flagships, I–V playable',
     () {
       final register = registry.register;
       expect(register.map((m) => m.numeral), [
@@ -43,7 +43,7 @@ void main() {
         register
             .where((m) => plates.forMilestone(m) != null)
             .map((m) => m.numeral),
-        ['I', 'II'],
+        ['I', 'II', 'III', 'IV', 'V'],
       );
       for (final m in register) {
         expect(m.honesty, contains(Honesty.ORIGINAL), reason: m.numeral);
@@ -111,22 +111,22 @@ void main() {
     () {
       final day = DateTime(2026, 10, 1, 8);
       expect(
-        detailOfDay(registry, day).id,
-        detailOfDay(registry, DateTime(2026, 10, 1, 23, 59)).id,
+        detailOfDay(registry, day)!.id,
+        detailOfDay(registry, DateTime(2026, 10, 1, 23, 59))!.id,
       );
       expect(
-        detailOfDay(registry, day).id,
-        isNot(detailOfDay(registry, DateTime(2026, 10, 2)).id),
+        detailOfDay(registry, day)!.id,
+        isNot(detailOfDay(registry, DateTime(2026, 10, 2))!.id),
       );
       final seen = {
         for (var i = 0; i < registry.details.length; i++)
-          detailOfDay(registry, DateTime(2026, 10, 1 + i)).id,
+          detailOfDay(registry, DateTime(2026, 10, 1 + i))!.id,
       };
       expect(seen.length, registry.details.length);
       // Across a DST change (TR has none; the rule must not depend on it).
       expect(
-        detailOfDay(registry, DateTime(2027, 3, 28)).id,
-        detailOfDay(registry, DateTime(2027, 3, 28, 23)).id,
+        detailOfDay(registry, DateTime(2027, 3, 28))!.id,
+        detailOfDay(registry, DateTime(2027, 3, 28, 23))!.id,
       );
     },
   );

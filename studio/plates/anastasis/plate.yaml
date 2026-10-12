@@ -1,0 +1,50 @@
+# Milestone I, rebuilt by the P07 pipeline from P06's authored inputs.
+# The relief, gold and damage maps are hand-built (tool/plate/remaster_maps.py),
+# so they enter as provided maps; the models are only measured against them.
+id: anastasis
+milestone: milestone-i
+artwork: F02
+title: {en: Anastasis, tr: Anastasis}
+description:
+  en: >-
+    Fresco in the apse of the parekklesion, about 1321. Christ, in white inside
+    a mandorla scattered with stars, pulls Adam and Eve from their tombs by the
+    wrist, standing over the broken gates of Hell.
+  tr: >-
+    Parekklesion apsisindeki fresk, 1321 dolayları. Yıldızlarla bezeli bir
+    mandorla içinde beyazlar giymiş İsa, cehennemin kırık kapılarının üzerinde
+    durarak Âdem ile Havva’yı bileklerinden tutup mezarlarından çekiyor.
+manualMinutes: 0  # inherited from P06; no new manual work in P07
+source:
+  repo: assets/anastasis/conch_reference.jpg
+  sha256: 90a4bc2a8e42f60d4f1c03a0bf65ad1f91383e8ce8b9b4acd52ef168aa77230a
+  url: null  # O22: the viewer page was never recorded
+  credit:
+    en: The source page of this photograph was not recorded.
+    tr: Bu fotoğrafın kaynak sayfası kaydedilmemiş.
+depth:
+  provided: assets/plates/anastasis/surface.png
+  measure: [depth-anything-v2-small, depth-anything-v2-base, marigold]
+gold: {provided: assets/plates/anastasis/gold.png}
+layers:
+  depth: assets/anastasis/relief_v5/relief_front.jpg
+  reconstruction:
+    asset: assets/restoration/anastasis_restored_4k_v2.jpg
+    mask: assets/plates/anastasis/damaged.png
+rig: {path: assets/explorer/anastasis_figures_v2.json, maxVertices: 60000}
+beats:
+  - {detail: detail-mandorla-stars, duration: 7, light: gilded}
+  - detail: detail-adam-wrist
+    duration: 8
+    light: none
+    window: [0.25, 0.28, 0.77, 0.87]
+    gesture:
+      offset: 3
+      duration: 1.2
+      strength: 0.25
+      windows: [[0.29, 0.48, 0.46, 0.70], [0.55, 0.48, 0.67, 0.70]]
+  - {detail: detail-eve-wrist, duration: 7, light: none}
+  - {detail: detail-gates-of-hell, duration: 5, light: raking}
+  - {detail: detail-anastasis-title, duration: 5, light: gilded}
+reveal: {detail: detail-mandorla-stars, light: gilded, moment: 6.5}
+sources: [chora-guide-parekklesion, ousterhout-2002]

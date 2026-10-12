@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-genealogy",
+  "milestone": "milestone-iv",
+  "artwork": "M13",
+  "title": {
+    "en": "The Genealogy dome",
+    "tr": "Soy kütüğü kubbesi"
+  },
+  "description": {
+    "en": "The southern dome of the inner narthex, seen from below. Christ fills the crown medallion; Adam and the ancestors stand in the 24 flutes around him, with nine windows in the lower ring.",
+    "tr": "İç narteksin güney kubbesi, aşağıdan. Tepedeki madalyonda İsa var; Âdem ve atalar çevresindeki 24 dilimde duruyor, alt sırada dokuz pencere açılıyor."
+  },
+  "size": [
+    1600,
+    1067
+  ],
+  "manifestPath": "assets/plates/genealogy/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/genealogy/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/genealogy/surface.webp",
+    "gold": "assets/plates/genealogy/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": {
+    "center": [
+      0.483,
+      0.385
+    ],
+    "rimCenter": [
+      0.4875,
+      0.465
+    ],
+    "rimRadii": [
+      0.3075,
+      0.28
+    ],
+    "rimElevation": 75
+  },
+  "details": [
+    {
+      "id": "detail-genealogy-medallion",
+      "milestone": "milestone-iv",
+      "artwork": "M13",
+      "title": {
+        "en": "Christ in the crown",
+        "tr": "Tepedeki İsa"
+      },
+      "sentence": {
+        "en": "The crown medallion, 1.24 m across, is labelled only IC XC; “Pantokrator” names the type, not an inscription.",
+        "tr": "Tepedeki 1,24 m çapındaki madalyonda yalnızca IC XC yazıyor; “Pantokrator” bir yazıt değil, tasvir tipinin adı."
+      },
+      "window": {
+        "left": 0.4,
+        "top": 0.27,
+        "right": 0.57,
+        "bottom": 0.5
+      },
+      "anchorX": 0.483,
+      "anchorY": 0.385,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-adam-and-sons",
+      "milestone": "milestone-iv",
+      "artwork": "M13",
+      "title": {
+        "en": "Adam below Christ",
+        "tr": "İsa’nın altında Âdem"
+      },
+      "sentence": {
+        "en": "White-bearded Adam stands on Christ’s axis, between his sons Abel, at left, and Seth, at right.",
+        "tr": "Ak sakallı Âdem, İsa’nın ekseninde, oğulları Habil (solda) ile Şit’in (sağda) arasında duruyor."
+      },
+      "window": {
+        "left": 0.44,
+        "top": 0.5,
+        "right": 0.61,
+        "bottom": 0.78
+      },
+      "anchorX": 0.522,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966",
+        "ousterhout-2002"
+      ]
+    },
+    {
+      "id": "detail-upper-ancestors",
+      "milestone": "milestone-iv",
+      "artwork": "M13",
+      "title": {
+        "en": "Adam to Jacob",
+        "tr": "Âdem’den Yakup’a"
+      },
+      "sentence": {
+        "en": "The upper ring holds 24 ancestors from Adam to Jacob; Abel and Japheth are added to Luke’s list.",
+        "tr": "Üst sırada Âdem’den Yakup’a 24 ata var; Luka’nın listesine Habil ile Yafet eklenmiş."
+      },
+      "window": {
+        "left": 0.28,
+        "top": 0.08,
+        "right": 0.5,
+        "bottom": 0.42
+      },
+      "anchorX": 0.36,
+      "anchorY": 0.2,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-lower-ancestors",
+      "milestone": "milestone-iv",
+      "artwork": "M13",
+      "title": {
+        "en": "Jacob’s sons",
+        "tr": "Yakup’un oğulları"
+      },
+      "sentence": {
+        "en": "The lower ring has 15 figures: Jacob’s twelve sons with Perez, Zerah and Hezron.",
+        "tr": "Alt sırada 15 figür var: Yakup’un on iki oğlu ile Peres, Zerah ve Hesron."
+      },
+      "window": {
+        "left": 0.3,
+        "top": 0.72,
+        "right": 0.7,
+        "bottom": 0.9
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.82,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-lost-plaster",
+      "milestone": "milestone-iv",
+      "artwork": "M13",
+      "title": {
+        "en": "Plaster for lost mosaic",
+        "tr": "Kayıp mozaiğin sıvası"
+      },
+      "sentence": {
+        "en": "The flat grey-yellow patches are plaster laid by the restorers from 1952 where the mosaic was lost.",
+        "tr": "Düz gri-sarı yüzeyler, mozaiğin kaybolduğu yerlere restoratörlerin 1952’den itibaren sürdüğü sıva."
+      },
+      "window": {
+        "left": 0.56,
+        "top": 0.38,
+        "right": 0.78,
+        "bottom": 0.62
+      },
+      "anchorX": 0.65,
+      "anchorY": 0.5,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    },
+    {
+      "id": "detail-twenty-four-flutes",
+      "milestone": "milestone-iv",
+      "artwork": "M13",
+      "title": {
+        "en": "24 flutes, nine windows",
+        "tr": "24 dilim, dokuz pencere"
+      },
+      "sentence": {
+        "en": "The dome has 24 flutes and nine windows; it is 3.74 m across, its crown 10.54 m above the floor.",
+        "tr": "Kubbe 24 dilimli ve dokuz pencereli; çapı 3,74 m, tepesi yerden 10,54 m yükseklikte."
+      },
+      "window": {
+        "left": 0.15,
+        "top": 0.25,
+        "right": 0.45,
+        "bottom": 0.7
+      },
+      "anchorX": 0.2,
+      "anchorY": 0.47,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "underwood-1966"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "genealogy-beat-1",
+      "start": 0,
+      "duration": 6,
+      "detail": "detail-genealogy-medallion",
+      "window": {
+        "left": 0.4,
+        "top": 0.27,
+        "right": 0.57,
+        "bottom": 0.5
+      },
+      "caption": {
+        "en": "The crown medallion, 1.24 m across, is labelled only IC XC; “Pantokrator” names the type, not an inscription.",
+        "tr": "Tepedeki 1,24 m çapındaki madalyonda yalnızca IC XC yazıyor; “Pantokrator” bir yazıt değil, tasvir tipinin adı."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "genealogy-beat-2",
+      "start": 6,
+      "duration": 6,
+      "detail": "detail-adam-and-sons",
+      "window": {
+        "left": 0.44,
+        "top": 0.5,
+        "right": 0.61,
+        "bottom": 0.78
+      },
+      "caption": {
+        "en": "White-bearded Adam stands on Christ’s axis, between his sons Abel, at left, and Seth, at right.",
+        "tr": "Ak sakallı Âdem, İsa’nın ekseninde, oğulları Habil (solda) ile Şit’in (sağda) arasında duruyor."
+      },
+      "sources": [
+        "underwood-1966",
+        "ousterhout-2002"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "genealogy-beat-3",
+      "start": 12,
+      "duration": 6,
+      "detail": "detail-upper-ancestors",
+      "window": {
+        "left": 0.28,
+        "top": 0.08,
+        "right": 0.5,
+        "bottom": 0.42
+      },
+      "caption": {
+        "en": "The upper ring holds 24 ancestors from Adam to Jacob; Abel and Japheth are added to Luke’s list.",
+        "tr": "Üst sırada Âdem’den Yakup’a 24 ata var; Luka’nın listesine Habil ile Yafet eklenmiş."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "genealogy-beat-4",
+      "start": 18,
+      "duration": 6,
+      "detail": "detail-lower-ancestors",
+      "window": {
+        "left": 0.3,
+        "top": 0.72,
+        "right": 0.7,
+        "bottom": 0.9
+      },
+      "caption": {
+        "en": "The lower ring has 15 figures: Jacob’s twelve sons with Perez, Zerah and Hezron.",
+        "tr": "Alt sırada 15 figür var: Yakup’un on iki oğlu ile Peres, Zerah ve Hesron."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "genealogy-beat-5",
+      "start": 24,
+      "duration": 5,
+      "detail": "detail-lost-plaster",
+      "window": {
+        "left": 0.56,
+        "top": 0.38,
+        "right": 0.78,
+        "bottom": 0.62
+      },
+      "caption": {
+        "en": "The flat grey-yellow patches are plaster laid by the restorers from 1952 where the mosaic was lost.",
+        "tr": "Düz gri-sarı yüzeyler, mozaiğin kaybolduğu yerlere restoratörlerin 1952’den itibaren sürdüğü sıva."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "genealogy-beat-6",
+      "start": 29,
+      "duration": 6,
+      "detail": "detail-twenty-four-flutes",
+      "window": {
+        "left": 0.16,
+        "top": 0.02,
+        "right": 0.81,
+        "bottom": 0.9
+      },
+      "caption": {
+        "en": "The dome has 24 flutes and nine windows; it is 3.74 m across, its crown 10.54 m above the floor.",
+        "tr": "Kubbe 24 dilimli ve dokuz pencereli; çapı 3,74 m, tepesi yerden 10,54 m yükseklikte."
+      },
+      "sources": [
+        "underwood-1966"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 5,
+  "storySeconds": 35,
+  "reveal": {
+    "id": "genealogy-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-genealogy-medallion",
+    "window": {
+      "left": 0.4,
+      "top": 0.27,
+      "right": 0.57,
+      "bottom": 0.5
+    },
+    "caption": {
+      "en": "The crown medallion, 1.24 m across, is labelled only IC XC; “Pantokrator” names the type, not an inscription.",
+      "tr": "Tepedeki 1,24 m çapındaki madalyonda yalnızca IC XC yazıyor; “Pantokrator” bir yazıt değil, tasvir tipinin adı."
+    },
+    "sources": [
+      "underwood-1966"
+    ],
+    "light": "gilded",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Caner Cangül / Kültür Envanteri",
+    "tr": "Caner Cangül / Kültür Envanteri"
+  },
+  "sources": [
+    "underwood-1966",
+    "chora-guide"
+  ],
+  "originalSourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2019/11/Isanin-Atalari.jpg",
+  "citations": [
+    {
+      "id": "chora-guide",
+      "title": {
+        "en": "Guide to the Kariye Mosaics",
+        "tr": "Kariye Mozaikleri Rehberi"
+      },
+      "url": "https://kulturenvanteri.com/en/kariye-mozaikleri-rehberi/",
+      "author": {
+        "en": "Caner Cangül, Engin Mutlu, Kader Ali Çayır",
+        "tr": "Caner Cangül, Engin Mutlu, Kader Ali Çayır"
+      },
+      "accessedAt": "2026-09-27",
+      "licence": null
+    },
+    {
+      "id": "ousterhout-2002",
+      "title": {
+        "en": "The Art of the Kariye Camii",
+        "tr": "The Art of the Kariye Camii"
+      },
+      "url": "https://archive.org/details/ousterhout-r.-the-art-of-kariye-camii-2002-compressed",
+      "author": {
+        "en": "Robert G. Ousterhout",
+        "tr": "Robert G. Ousterhout"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "underwood-1966",
+      "title": {
+        "en": "The Kariye Djami, Vol. 1: Historical Introduction and Description of the Mosaics and Frescoes",
+        "tr": "The Kariye Djami, 1. cilt: Tarihsel giriş ve mozaik ile fresklerin tanımı"
+      },
+      "url": "https://archive.org/details/kariyedjami0001paul",
+      "author": {
+        "en": "Paul A. Underwood",
+        "tr": "Paul A. Underwood"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    }
+  ]
+}

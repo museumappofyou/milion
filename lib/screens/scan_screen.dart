@@ -51,8 +51,12 @@ class _ScanScreenState extends State<ScanScreen> {
             !snapshot.hasError) {
           return ScanTab(
             classifier: _classifier,
-            onExploreAnastasis: () => _explore('F02'),
-            onExploreLastJudgment: () => _explore('F05'),
+            explorable: {
+              for (final m in AppScope.of(context).registry!.milestones)
+                if (AppScope.of(context).plates.forMilestone(m) != null)
+                  ...m.artworkIds,
+            },
+            onExplore: _explore,
           );
         }
         return Theme(

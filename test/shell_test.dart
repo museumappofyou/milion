@@ -24,7 +24,7 @@ import 'package:milion/today/today_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'helpers.dart';
-import 'scene_explorer_test.dart' show assetsReady;
+import 'plate_player_test.dart' show assetsReady;
 
 /// Records platform calls: haptics and SystemNavigator.pop.
 List<MethodCall> recordPlatform() {
@@ -235,7 +235,7 @@ void main() {
       'the date’s detail, numeral and label; tap flies to that detail',
       (tester) async {
         await pumpShell(tester);
-        final detail = detailOfDay(registry, p04Date);
+        final detail = detailOfDay(registry, p04Date)!;
         final milestone = registry.milestone(detail.milestoneId)!;
         expect(find.text(detail.sentence.en), findsOneWidget);
         expect(find.text(milestone.numeral), findsWidgets);
@@ -289,11 +289,11 @@ void main() {
     testWidgets('a different day shows a different detail', (tester) async {
       await pumpShell(tester, date: DateTime(2026, 10, 2));
       expect(
-        find.text(detailOfDay(registry, DateTime(2026, 10, 2)).sentence.en),
+        find.text(detailOfDay(registry, DateTime(2026, 10, 2))!.sentence.en),
         findsOneWidget,
       );
       expect(
-        find.text(detailOfDay(registry, p04Date).sentence.en),
+        find.text(detailOfDay(registry, p04Date)!.sentence.en),
         findsNothing,
       );
     });
@@ -409,7 +409,7 @@ void main() {
         300,
         scrollable: find.byType(Scrollable).first,
       );
-      expect(find.text('2 of 23 playable · 0 approved'), findsOneWidget);
+      expect(find.text('5 of 23 playable · 0 approved'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('mosaic-strip')));
       await tester.pumpAndSettle();
       expect(shell(tester).current, Destination.mosaic);
@@ -486,7 +486,7 @@ void main() {
         await tester.tap(destination('Milestones'));
         await tester.pumpAndSettle();
         expect(
-          find.text('48 Milestones · 2 playable · 0 approved · 46 planned'),
+          find.text('48 Milestones · 5 playable · 0 approved · 43 planned'),
           findsOneWidget,
         );
         final last = find.byKey(const ValueKey('milestone-XLVII'));

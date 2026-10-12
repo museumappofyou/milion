@@ -507,9 +507,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get studies => 'Rekonstrüksiyon çalışmaları';
 
   @override
-  String get studyUnavailable => 'Rekonstrüksiyon görseli yüklenemedi.';
-
-  @override
   String get sceneUnavailable => 'Eser dosyaları açılamadı.';
 
   @override
@@ -1269,4 +1266,21 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get plateLoading => 'Eser hazırlanıyor';
+
+  @override
+  String get plateLookUp => 'Yukarı bak';
+
+  @override
+  String get plateLookUpHint =>
+      'Kubbede gezinmek için sürükle, büyütmek için iki parmağını kullan, tepeye dönmek için iki kez dokun.';
+
+  @override
+  String get plateLookUpSensor => 'Telefonu başının üstüne kaldır';
+
+  @override
+  String get plateLookUpSensorHint =>
+      'Sen açana kadar kapalı. Görüntü, telefonun dönüş sensörünü izler.';
+
+  @override
+  String get plateUnavailable => 'Eserin görselleri yüklenemedi.';
 }

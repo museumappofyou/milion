@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 
 import '../content/models.dart';
 import '../design/components.dart';
@@ -11,6 +12,7 @@ import '../l10n/strings.dart';
 import 'assets.dart';
 import 'camera.dart';
 import 'controller.dart';
+import 'look_up.dart';
 import 'manifest.dart';
 import 'sheets.dart';
 import 'tilt.dart';
@@ -23,10 +25,12 @@ class PlatePlayer extends StatefulWidget {
     required this.manifest,
     this.initialDetail,
     this.gyroEvents,
+    this.rotationEvents,
   });
   final PlateManifest manifest;
   final Detail? initialDetail;
   final GyroStream? gyroEvents;
+  final RotationStream? rotationEvents;
   @override
   PlatePlayerState createState() => PlatePlayerState();
 }
@@ -36,6 +40,9 @@ class PlatePlayerState extends State<PlatePlayer>
   late final controller = PlateController(widget.manifest);
   final assets = PlateAssets();
   late final tilt = PlateTilt(events: widget.gyroEvents);
+  late final orientation = PlateOrientation(events: widget.rotationEvents);
+  int _cameraRevision = -1;
+  bool _portraitLocked = false;
   final transformation = TransformationController();
   late final Future<void> loading;
   late final Ticker _ticker;
@@ -130,7 +137,12 @@ class PlatePlayerState extends State<PlatePlayer>
   }
 
   void _changed() {
-    if (controller.storyActive && viewport.isEmpty == false) {
+    // Only the story's own moves drive the camera; a pause or a peek must not
+    // undo the user's zoom.
+    if (controller.storyActive &&
+        !viewport.isEmpty &&
+        controller.cameraRevision != _cameraRevision) {
+      _cameraRevision = controller.cameraRevision;
       _move.stop();
       transformation.value = plateWindowCamera(
         viewport,
@@ -138,6 +150,7 @@ class PlatePlayerState extends State<PlatePlayer>
         controller.sample!.window,
       );
     }
+    _lockPortrait(tilt.enabled || (controller.lookUp && orientation.enabled));
     if (controller.needsTicker && !_ticker.isActive) {
       _lastTick = Duration.zero;
       _ticker.start();
@@ -204,6 +217,28 @@ class PlatePlayerState extends State<PlatePlayer>
   void original() {
     controller.original();
     tilt.setEnabled(false);
+    orientation.setEnabled(false);
+  }
+
+  /// Sensor axes are read in portrait; lock it while a sensor steers.
+  void _lockPortrait(bool value) {
+    if (value == _portraitLocked) return;
+    _portraitLocked = value;
+    SystemChrome.setPreferredOrientations(
+      value ? const [DeviceOrientation.portraitUp] : const [],
+    );
+  }
+
+  void setGyro(bool value) {
+    if (value) controller.setLayer(PlateLayerId.depth);
+    tilt.setEnabled(value);
+    _changed();
+  }
+
+  void setLookUpSensor(bool value) {
+    if (value) controller.setLookUp(true);
+    orientation.setEnabled(value);
+    _changed();
   }
 
   void beginExplore() {
@@ -214,19 +249,33 @@ class PlatePlayerState extends State<PlatePlayer>
 
   Offset get visibleTilt {
     if (controller.reduced || controller.peekOriginal) return Offset.zero;
+    final Offset value;
     if (controller.playing && !tilt.enabled) {
-      return Offset(
+      value = Offset(
         math.sin(controller.seconds * .65) * .5,
         math.sin(controller.seconds * .4) * .25,
       );
+    } else {
+      value = tilt.normalized;
     }
-    return tilt.normalized;
+    // The rig draws without parallax, so ease the tilt out around a gesture.
+    final g = controller.sample?.beat.gesture;
+    if (g == null) return value;
+    final t = controller.seconds;
+    final gap = math.max(g.start - t, t - (g.start + g.duration));
+    return value * (gap / .6).clamp(0.0, 1.0);
   }
 
   void drag(Offset point) {
-    if (controller.reduced) {
-      if (controller.layer != PlateLayerId.reconstruction) return;
-    }
+    // Reduced motion keeps the hand-held light and wipe; only the automatic
+    // parallax is off.
+    final hand =
+        controller.layer == PlateLayerId.reconstruction ||
+        [
+          PlateLight.raking,
+          PlateLight.candle,
+        ].contains(controller.visibleLight);
+    if (controller.reduced && !hand) return;
     final frame = plateFrame(viewport, sourceSize);
     final p = transformation.toScene(point);
     final uv = Offset(
@@ -261,11 +310,23 @@ class PlatePlayerState extends State<PlatePlayer>
     if (state == AppLifecycleState.resumed) {
       controller.resume();
       tilt.resume();
+      orientation.resume();
     } else {
       controller.suspend();
       tilt.suspend();
+      orientation.suspend();
       _move.stop();
     }
+  }
+
+  @override
+  void didUpdateWidget(PlatePlayer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // The state owns one manifest's images, shaders and sensors.
+    assert(
+      oldWidget.manifest.id == widget.manifest.id,
+      'Key each PlatePlayer by its manifest id (ValueKey(manifest.id)).',
+    );
   }
 
   @override
@@ -277,6 +338,8 @@ class PlatePlayerState extends State<PlatePlayer>
     _move.dispose();
     transformation.dispose();
     tilt.dispose();
+    orientation.dispose();
+    _lockPortrait(false);
     controller.dispose();
     assets.dispose();
     super.dispose();
@@ -303,7 +366,7 @@ class PlatePlayerState extends State<PlatePlayer>
                         child: ContentState(
                           error: true,
                           title: s.sceneUnavailable,
-                          message: s.studyUnavailable,
+                          message: s.plateUnavailable,
                         ),
                       );
                     }
@@ -321,7 +384,12 @@ class PlatePlayerState extends State<PlatePlayer>
                         ],
                       );
                     }
-                    return PlateViewport(player: this);
+                    return ListenableBuilder(
+                      listenable: controller,
+                      builder: (context, _) => controller.lookUp
+                          ? PlateLookUpScene(player: this)
+                          : PlateViewport(player: this),
+                    );
                   },
                 ),
               ),

@@ -509,9 +509,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get studies => 'Restoration studies';
 
   @override
-  String get studyUnavailable => 'Restoration study could not be loaded.';
-
-  @override
   String get sceneUnavailable => 'Scene assets unavailable.';
 
   @override
@@ -1267,4 +1264,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get plateLoading => 'Preparing the plate';
+
+  @override
+  String get plateLookUp => 'Look up';
+
+  @override
+  String get plateLookUpHint =>
+      'Drag to look around the dome, pinch to zoom, double-tap to return to the top.';
+
+  @override
+  String get plateLookUpSensor => 'Hold the phone overhead';
+
+  @override
+  String get plateLookUpSensorHint =>
+      'Off until you choose it. The view follows the phone\'s rotation sensor.';
+
+  @override
+  String get plateUnavailable => 'The plate’s images could not be loaded.';
 }

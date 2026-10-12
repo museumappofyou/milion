@@ -16,7 +16,11 @@ class PlateSheet extends StatelessWidget {
   final PlatePanel panel;
   @override
   Widget build(BuildContext context) => ListenableBuilder(
-    listenable: Listenable.merge([player.controller, player.tilt]),
+    listenable: Listenable.merge([
+      player.controller,
+      player.tilt,
+      player.orientation,
+    ]),
     builder: (context, _) {
       final s = context.l10n, c = player.controller, p = player.widget.manifest;
       final heading = switch (panel) {
@@ -88,9 +92,7 @@ class PlateSheet extends StatelessWidget {
                     label: '${c.seconds.toStringAsFixed(1)} s',
                     semanticFormatterCallback: (v) =>
                         '${v.round()} / ${c.duration.round()}',
-                    onChanged: (v) => c.reveal
-                        ? c.seek(v / c.duration * p.storySeconds)
-                        : c.seek(v),
+                    onChanged: (v) => c.reveal ? c.seekReveal(v) : c.seek(v),
                   ),
                   if (c.sample != null)
                     Text(c.sample!.beat.caption.inLanguage(context.language)),
@@ -141,12 +143,7 @@ class PlateSheet extends StatelessWidget {
                           : s.plateGyroHint,
                     ),
                     value: player.tilt.enabled,
-                    onChanged: c.reduced
-                        ? null
-                        : (value) {
-                            if (value) c.setLayer(PlateLayerId.depth);
-                            player.tilt.setEnabled(value);
-                          },
+                    onChanged: c.reduced || c.lookUp ? null : player.setGyro,
                   ),
                   if (c.reduced) Text(s.plateStillHint),
                 ],
@@ -158,17 +155,39 @@ class PlateSheet extends StatelessWidget {
                       for (final item in [
                         (PlateLayerId.original, s.original),
                         (PlateLayerId.depth, s.depth),
-                        (PlateLayerId.reconstruction, s.reconstruction),
+                        if (p.has(PlateLayerId.reconstruction))
+                          (PlateLayerId.reconstruction, s.reconstruction),
                       ])
                         ChoiceChip(
                           label: Text(item.$2),
-                          selected: c.layer == item.$1,
+                          selected: !c.lookUp && c.layer == item.$1,
                           onSelected: (_) => item.$1 == PlateLayerId.original
                               ? player.original()
-                              : c.setLayer(item.$1),
+                              : (c..setLookUp(false)).setLayer(item.$1),
+                        ),
+                      if (c.canLookUp)
+                        ChoiceChip(
+                          key: const ValueKey('plate-look-up-chip'),
+                          label: Text(s.plateLookUp),
+                          selected: c.lookUp,
+                          onSelected: (v) => c.setLookUp(v),
                         ),
                     ],
                   ),
+                  if (c.lookUp) ...[
+                    Text(s.plateLookUpHint),
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(s.plateLookUpSensor),
+                      subtitle: Text(
+                        player.orientation.unavailable
+                            ? s.plateGyroUnavailable
+                            : s.plateLookUpSensorHint,
+                      ),
+                      value: player.orientation.enabled,
+                      onChanged: player.setLookUpSensor,
+                    ),
+                  ],
                   if (c.layer == PlateLayerId.reconstruction) ...[
                     Text(s.plateWipeHint),
                     Slider(
@@ -216,7 +235,7 @@ class PlateSheet extends StatelessWidget {
                       ),
                     ],
                   ),
-                  if (p.maps.flow != null)
+                  if (p.flowEffect != null)
                     SwitchListTile(
                       contentPadding: EdgeInsets.zero,
                       title: Text(s.platePaintMotion),
@@ -225,7 +244,7 @@ class PlateSheet extends StatelessWidget {
                           ? null
                           : (v) => c.setPaintMotion(river: v),
                     ),
-                  if (p.maps.scroll != null)
+                  if (p.spiralEffect != null)
                     SwitchListTile(
                       contentPadding: EdgeInsets.zero,
                       title: Text(s.plateScrollMotion),
@@ -251,31 +270,36 @@ class PlateSheet extends StatelessWidget {
                     ),
                 ],
                 if (panel == PlatePanel.debug) ...[
-                  const HonestyLabel(Honesty.IMAGINED),
-                  Text(s.singleGesture),
-                  Text(s.pose),
-                  Slider(
-                    key: const ValueKey('plate-pose'),
-                    value: c.gesturePose,
-                    onChanged: c.scrubGesture,
-                  ),
-                  Text(s.movement),
-                  Slider(
-                    key: const ValueKey('plate-strength'),
-                    value: c.gestureStrength,
-                    min: .1,
-                    max: .35,
-                    onChanged: c.setStrength,
-                  ),
-                  if (!c.reduced)
-                    OutlinedButton(
-                      onPressed: c.gesturePlaying ? c.pause : c.playGesture,
-                      child: Text(
-                        c.gesturePlaying ? s.pauseGesture : s.playGesture,
-                      ),
+                  // Only a plate with a rig has a gesture study to scrub.
+                  if (player.assets.rig != null) ...[
+                    const HonestyLabel(Honesty.IMAGINED),
+                    Text(s.singleGesture),
+                    Text(s.pose),
+                    Slider(
+                      key: const ValueKey('plate-pose'),
+                      value: c.gesturePose,
+                      onChanged: c.scrubGesture,
                     ),
-                  Text(s.restorationAmount),
-                  Slider(value: c.restoration, onChanged: c.setRestoration),
+                    Text(s.movement),
+                    Slider(
+                      key: const ValueKey('plate-strength'),
+                      value: c.gestureStrength,
+                      min: .1,
+                      max: .35,
+                      onChanged: c.setStrength,
+                    ),
+                    if (!c.reduced)
+                      OutlinedButton(
+                        onPressed: c.gesturePlaying ? c.pause : c.playGesture,
+                        child: Text(
+                          c.gesturePlaying ? s.pauseGesture : s.playGesture,
+                        ),
+                      ),
+                  ],
+                  if (p.has(PlateLayerId.reconstruction)) ...[
+                    Text(s.restorationAmount),
+                    Slider(value: c.restoration, onChanged: c.setRestoration),
+                  ],
                   if (c.reduced) Text(s.plateStillHint),
                 ],
                 if (panel == PlatePanel.sources) ...[

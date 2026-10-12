@@ -12,7 +12,7 @@ import 'package:milion/plate/manifest.dart';
 import 'package:milion/plate/player.dart';
 
 import '../../test/helpers.dart' show loadThemeFonts;
-import '../../test/scene_explorer_test.dart' show assetsReady, loadPlate, state;
+import '../../test/plate_player_test.dart' show assetsReady, loadPlate, state;
 
 const out = 'studio/captures/P06';
 Future<void> capture(WidgetTester tester, GlobalKey key, String path) async {
@@ -112,9 +112,9 @@ void layoutCaptures() {
         final player = state(tester);
         budgets[name] = {
           'decodedTextureBytes': player.assets.textureBytes,
-          'meshVertices': player.assets.rig!.cols * player.assets.rig!.rows,
-          'geometryVertices':
-              player.assets.geometry!.cols * player.assets.geometry!.rows,
+          'rigVertices': ?player.assets.rig == null
+              ? null
+              : player.assets.rig!.cols * player.assets.rig!.rows,
           'storySeconds': p.storySeconds,
           'revealSeconds': p.revealSeconds,
           'detailCount': p.details.length,

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "kind": "plate",
   "id": "plate-judgment",
   "milestone": "milestone-ii",
@@ -7,6 +7,10 @@
   "title": {
     "en": "The Last Judgment",
     "tr": "Son Yargı"
+  },
+  "description": {
+    "en": "Fresco in the vault of the parekklesion, about 1321. Christ the Judge sits between the Virgin and John the Baptist, with the apostles on benches at either side; above, an angel rolls up the heavens like a scroll, and a river of fire pours from before his feet.",
+    "tr": "Parekklesion tonozundaki fresk, 1321 dolayları. Yargıç İsa, Meryem ile Vaftizci Yahya’nın arasında oturuyor; havariler iki yandaki sıralarda. Yukarıda bir melek gökleri bir tomar gibi dürüyor; ayaklarının önünden bir ateş ırmağı akıyor."
   },
   "size": [
     1600,
@@ -25,25 +29,26 @@
       "asset": "assets/last_judgment/relief_v5/relief_front.jpg",
       "honesty": "DEPTH",
       "mask": null
-    },
-    {
-      "id": "reconstruction",
-      "asset": "assets/restoration/last_judgment_restored_4k_v2.jpg",
-      "honesty": "RECONSTRUCTION",
-      "mask": "assets/plates/judgment/damaged.png"
     }
   ],
   "maps": {
     "surface": "assets/plates/judgment/surface.png",
-    "gold": "assets/plates/judgment/gold.png",
-    "flow": "assets/plates/judgment/river.png",
-    "scroll": "assets/plates/judgment/scroll.png"
+    "gold": "assets/plates/judgment/gold.png"
   },
-  "mesh": {
-    "geometry": "assets/explorer/last_judgment_geometry.json",
-    "figures": "assets/explorer/last_judgment_figures_v2.json",
-    "maxVertices": 60000
+  "flow": {
+    "mask": "assets/plates/judgment/river.png",
+    "period": 8,
+    "distance": 0.025
   },
+  "spiral": {
+    "mask": "assets/plates/judgment/scroll.png",
+    "center": [
+      0.489,
+      0.46
+    ]
+  },
+  "rig": null,
+  "lookUp": null,
   "details": [
     {
       "id": "detail-scroll-of-heaven",
@@ -349,6 +354,7 @@
     }
   ],
   "revealSeconds": 10,
+  "revealMoment": 7,
   "storySeconds": 32,
   "reveal": {
     "id": "judgment-reveal",
@@ -383,10 +389,6 @@
     "ousterhout-2002"
   ],
   "originalSourceUrl": "https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Mahser.jpg",
-  "scrollCenter": [
-    0.508,
-    0.395
-  ],
   "citations": [
     {
       "id": "chora-guide-parekklesion",

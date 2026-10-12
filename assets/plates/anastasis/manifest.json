@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "kind": "plate",
   "id": "plate-anastasis",
   "milestone": "milestone-i",
@@ -7,6 +7,10 @@
   "title": {
     "en": "Anastasis",
     "tr": "Anastasis"
+  },
+  "description": {
+    "en": "Fresco in the apse of the parekklesion, about 1321. Christ, in white inside a mandorla scattered with stars, pulls Adam and Eve from their tombs by the wrist, standing over the broken gates of Hell.",
+    "tr": "Parekklesion apsisindeki fresk, 1321 dolayları. Yıldızlarla bezeli bir mandorla içinde beyazlar giymiş İsa, cehennemin kırık kapılarının üzerinde durarak Âdem ile Havva’yı bileklerinden tutup mezarlarından çekiyor."
   },
   "size": [
     2048,
@@ -35,15 +39,15 @@
   ],
   "maps": {
     "surface": "assets/plates/anastasis/surface.png",
-    "gold": "assets/plates/anastasis/gold.png",
-    "flow": null,
-    "scroll": null
+    "gold": "assets/plates/anastasis/gold.png"
   },
-  "mesh": {
-    "geometry": "assets/explorer/anastasis_geometry.json",
-    "figures": "assets/explorer/anastasis_figures_v2.json",
+  "flow": null,
+  "spiral": null,
+  "rig": {
+    "path": "assets/explorer/anastasis_figures_v2.json",
     "maxVertices": 60000
   },
+  "lookUp": null,
   "details": [
     {
       "id": "detail-adam-wrist",
@@ -415,6 +419,7 @@
     }
   ],
   "revealSeconds": 10,
+  "revealMoment": 6.5,
   "storySeconds": 32,
   "reveal": {
     "id": "anastasis-reveal",
@@ -448,10 +453,6 @@
     "ousterhout-2002"
   ],
   "originalSourceUrl": null,
-  "scrollCenter": [
-    0.508,
-    0.395
-  ],
   "citations": [
     {
       "id": "chora-guide-parekklesion",

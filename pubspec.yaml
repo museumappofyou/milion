@@ -68,6 +68,7 @@ flutter:
 
   shaders:
     - shaders/plate.frag
+    - shaders/lookup.frag
 
   assets:
     - assets/model/
@@ -80,6 +81,9 @@ flutter:
     - assets/plates/
     - assets/plates/anastasis/
     - assets/plates/judgment/
+    - assets/plates/metochites/
+    - assets/plates/genealogy/
+    - assets/plates/enrollment/
     - assets/anastasis/
     - assets/anastasis/relief_v5/
     - assets/last_judgment/

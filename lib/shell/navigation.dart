@@ -23,7 +23,11 @@ Future<void> openMilestone(
   ProgressScope.of(context).open(milestone.id);
   await _push<void>(
     context,
-    PlatePlayer(manifest: scene, initialDetail: detail),
+    PlatePlayer(
+      key: ValueKey(scene.id),
+      manifest: scene,
+      initialDetail: detail,
+    ),
   );
 }
 
@@ -53,12 +57,8 @@ Future<void> openArtworks(BuildContext context, String placeId) {
         for (final a in registry.artworks)
           if (a.placeId == placeId) a,
       ],
-      onExamineAnastasis: milestones.containsKey('F02')
-          ? () => explore('F02')
-          : null,
-      onExamineLastJudgment: milestones.containsKey('F05')
-          ? () => explore('F05')
-          : null,
+      examinable: milestones.keys.toSet(),
+      onExamine: explore,
       onScan: app.placeRecognised(placeId) ? () => openScan(context) : null,
     ),
   );

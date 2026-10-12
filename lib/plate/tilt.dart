@@ -8,7 +8,9 @@ import 'package:sensors_plus/sensors_plus.dart';
 typedef GyroStream = Stream<GyroscopeEvent> Function();
 
 /// Angular-velocity integration with a low-pass output and a ±6° hard bound.
-/// The stream is opened only after an explicit opt-in.
+/// The integrated angle relaxes back to centre (time constant [settle]), so
+/// gyro drift cannot pin the plate at the bound; smoothing is time-based, not
+/// per sample. The stream is opened only after an explicit opt-in.
 class PlateTilt extends ChangeNotifier {
   PlateTilt({GyroStream? events})
     : _events =
@@ -19,6 +21,7 @@ class PlateTilt extends ChangeNotifier {
   final GyroStream _events;
   StreamSubscription<GyroscopeEvent>? _subscription;
   static const maxRadians = math.pi / 30;
+  static const settle = 2.5, smoothing = .08;
   bool enabled = false, unavailable = false, _active = true, _disposed = false;
   Offset _angle = Offset.zero, _filtered = Offset.zero;
   DateTime? _last;
@@ -76,11 +79,12 @@ class PlateTilt extends ChangeNotifier {
     if (last == null) return;
     final dt = event.timestamp.difference(last).inMicroseconds / 1000000;
     if (dt <= 0 || dt > .2) return;
+    final decay = math.exp(-dt / settle);
     _angle = Offset(
-      (_angle.dx + event.y * dt).clamp(-maxRadians, maxRadians),
-      (_angle.dy + event.x * dt).clamp(-maxRadians, maxRadians),
+      (_angle.dx * decay + event.y * dt).clamp(-maxRadians, maxRadians),
+      (_angle.dy * decay + event.x * dt).clamp(-maxRadians, maxRadians),
     );
-    _filtered += (_angle - _filtered) * .18;
+    _filtered += (_angle - _filtered) * (1 - math.exp(-dt / smoothing));
     notifyListeners();
   }
 

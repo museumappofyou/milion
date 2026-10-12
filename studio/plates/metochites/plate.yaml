@@ -1,0 +1,43 @@
+# Milestone III, made by the P07 pipeline from one photograph.
+id: metochites
+milestone: milestone-iii
+artwork: M11
+title: {en: Metochites offers Chora, tr: Metokhites Kariye’yi sunuyor}
+description:
+  en: >-
+    Mosaic lunette over the door from the inner narthex into the naos, about
+    1315–1321. Christ sits enthroned with a closed Gospel; at left Theodore
+    Metochites, in a broad white hat, kneels and offers him a model of the
+    church.
+  tr: >-
+    İç narteksten naosa açılan kapının üstündeki mozaik lünet, 1315–1321
+    dolayları. İsa elinde kapalı bir İncil’le tahtta oturuyor; solda geniş
+    beyaz şapkalı Theodoros Metokhites diz çökmüş, ona kilisenin maketini
+    sunuyor.
+manualMinutes: 25  # agent authoring estimate (windows, prompts, beats); human time not yet measured
+source:
+  corpus: 3-INNER-NARTHEX/C__M11__Theodore-Metochites-Presents-Chora__flat__REF-14/web-ke-01-Theodoros-Metokhites-Kariye-Maketini-Hz.-Isaya-Sunusu.jpg
+  sha256: 059f53cb1fba2b92e81c590595599d8635c8d3d96eaababda5dfa7c0c77ca8ed
+  url: https://cdn.kulturenvanteri.com/wp-content/uploads/2024/05/Theodoros-Metokhites-Kariye-Maketini-Hz.-Isaya-Sunusu.jpg
+  credit: {en: Caner Cangül / Kültür Envanteri, tr: Caner Cangül / Kültür Envanteri}
+segments:
+  - {id: christ, box: [0.36, 0.28, 0.66, 0.96], points: [[0.5, 0.5]], prior: bulge, weight: 0.6}
+  - {id: metochites, box: [0.04, 0.44, 0.33, 0.98], points: [[0.17, 0.78], [0.23, 0.52]], prior: bulge, weight: 0.6}
+  - {id: model, box: [0.22, 0.6, 0.35, 0.8], points: [[0.29, 0.69]], prior: bulge, weight: 0.5}
+depth: {model: depth-anything-v2-base, modelWeight: 0.3}
+gold: {heuristic: true}
+beats:
+  - {detail: detail-land-of-the-living, duration: 6, light: gilded, window: [0.33, 0.3, 0.72, 0.5]}
+  - {detail: detail-jewelled-gospel, duration: 5, light: gilded}
+  - {detail: detail-church-model, duration: 6, light: raking}
+  - {detail: detail-metochites-hat, duration: 6, light: gilded}
+  - detail: detail-metochites-title
+    duration: 6
+    light: none
+    caption:
+      en: He paid for this work from about 1315 to 1321; exiled in 1328, he returned in 1330 and died here as the monk Theoleptos in 1332.
+      tr: Bu işi yaklaşık 1315–1321 arasında o yaptırdı; 1328’de sürgüne gönderildi, 1330’da döndü ve 1332’de burada keşiş Theoleptos olarak öldü.
+    sources: [underwood-1966, ousterhout-2002]  # Underwood pp. 14–15; Ousterhout pp. 14–15
+  - {detail: detail-scalloped-gold, duration: 6, light: gilded}
+reveal: {detail: detail-metochites-hat, light: gilded, moment: 6}
+sources: [underwood-1966, chora-guide]

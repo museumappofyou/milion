@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 
 import '../design/components.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../today/detail_crop.dart';
 import 'camera.dart';
+import 'look_up.dart';
 import 'manifest.dart';
 import 'painter.dart';
 import 'player.dart';
@@ -23,17 +25,12 @@ class PlateViewport extends StatelessWidget {
         listenable: Listenable.merge([c, player.tilt, player.transformation]),
         builder: (context, _) {
           final detail = player.detail;
-          final caption =
-              c.sample?.beat.caption.inLanguage(context.language) ??
-              detail?.sentence.inLanguage(context.language);
           final interactive = c.layer == PlateLayerId.original;
           return Stack(
             children: [
               Positioned.fill(
-                child: Semantics(
-                  label: player.widget.manifest.title.inLanguage(
-                    context.language,
-                  ),
+                child: PlateSemantics(
+                  player: player,
                   child: GestureDetector(
                     onTapDown: (_) => player.tilt.recenter(),
                     onLongPressStart: (_) => c.peek(true),
@@ -116,54 +113,114 @@ class PlateViewport extends StatelessWidget {
                     ),
                   ),
                 ),
-              Positioned(
-                top: 8,
-                left: 12,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).scaffoldBackgroundColor
-                        .withValues(alpha: .94),
-                  ),
-                  child: Tooltip(
-                    message: context.l10n.plateOriginalHint,
-                    child: TextButton(
-                      key: const ValueKey('plate-original'),
-                      onPressed: player.original,
-                      child: HonestyLabel(c.honesty),
-                    ),
-                  ),
-                ),
-              ),
-              if (caption != null)
-                Positioned(
-                  bottom: 8,
-                  left: 12,
-                  right: 12,
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: player.viewport.height * .28,
-                    ),
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).scaffoldBackgroundColor
-                            .withValues(alpha: .94),
-                      ),
-                      child: SingleChildScrollView(
-                        padding: const EdgeInsets.all(12),
-                        child: Semantics(
-                          liveRegion: !c.playing,
-                          child: Text(
-                            caption,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+              ...plateOverlay(context, player),
             ],
           );
         },
+      );
+    },
+  );
+}
+
+/// TalkBack: the plate's description, plus the story and Original actions.
+class PlateSemantics extends StatelessWidget {
+  const PlateSemantics({super.key, required this.player, required this.child});
+  final PlatePlayerState player;
+  final Widget child;
+  @override
+  Widget build(BuildContext context) {
+    final m = player.widget.manifest, c = player.controller, s = context.l10n;
+    return Semantics(
+      label:
+          '${m.title.inLanguage(context.language)}. '
+          '${m.description.inLanguage(context.language)}',
+      customSemanticsActions: {
+        CustomSemanticsAction(label: s.original): player.original,
+        CustomSemanticsAction(label: s.plateNext): () => c.step(1),
+        CustomSemanticsAction(label: s.platePrevious): () => c.step(-1),
+      },
+      child: child,
+    );
+  }
+}
+
+/// The honesty label (one tap back to ORIGINAL) and the beat or detail
+/// caption, shared by the flat plate and the look-up.
+List<Widget> plateOverlay(BuildContext context, PlatePlayerState player) {
+  final c = player.controller;
+  final caption =
+      c.sample?.beat.caption.inLanguage(context.language) ??
+      player.detail?.sentence.inLanguage(context.language);
+  final ground = Theme.of(context).scaffoldBackgroundColor
+      .withValues(alpha: .94);
+  return [
+    Positioned(
+      top: 8,
+      left: 12,
+      child: DecoratedBox(
+        decoration: BoxDecoration(color: ground),
+        child: Tooltip(
+          message: context.l10n.plateOriginalHint,
+          child: TextButton(
+            key: const ValueKey('plate-original'),
+            onPressed: player.original,
+            child: HonestyLabel(c.honesty),
+          ),
+        ),
+      ),
+    ),
+    if (caption != null)
+      Positioned(
+        bottom: 8,
+        left: 12,
+        right: 12,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxHeight: player.viewport.height * .28),
+          child: DecoratedBox(
+            decoration: BoxDecoration(color: ground),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(12),
+              // Captions change once per beat, so they are announced.
+              child: Semantics(
+                liveRegion: true,
+                child: Text(
+                  caption,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+  ];
+}
+
+/// LU: the dome overhead, with the same label, caption and actions.
+class PlateLookUpScene extends StatelessWidget {
+  const PlateLookUpScene({super.key, required this.player});
+  final PlatePlayerState player;
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, constraints) {
+      player.sizeChanged(constraints.biggest);
+      return ListenableBuilder(
+        listenable: player.controller,
+        builder: (context, _) => Stack(
+          children: [
+            Positioned.fill(
+              child: PlateSemantics(
+                player: player,
+                child: PlateLookUpView(
+                  assets: player.assets,
+                  manifest: player.widget.manifest,
+                  controller: player.controller,
+                  orientation: player.orientation,
+                ),
+              ),
+            ),
+            ...plateOverlay(context, player),
+          ],
+        ),
       );
     },
   );

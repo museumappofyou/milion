@@ -13,7 +13,7 @@ import 'package:milion/first_run/first_run_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../test/helpers.dart';
-import '../../test/scene_explorer_test.dart' show assetsReady;
+import '../../test/plate_player_test.dart' show assetsReady;
 
 const out = 'studio/captures/P04';
 

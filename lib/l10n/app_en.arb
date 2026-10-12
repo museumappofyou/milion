@@ -221,7 +221,6 @@
   "resetView": "Reset view",
   "sceneOptions": "Scene options",
   "studies": "Restoration studies",
-  "studyUnavailable": "Restoration study could not be loaded.",
   "sceneUnavailable": "Scene assets unavailable.",
   "loadingArtwork": "Loading artwork",
   "overview": "Overview",
@@ -686,5 +685,10 @@
   "plateExplore": "Explore the plate",
   "plateStartReveal": "Play reveal",
   "plateSources": "Sources and photograph",
-  "plateLoading": "Preparing the plate"
+  "plateLoading": "Preparing the plate",
+  "plateLookUp": "Look up",
+  "plateLookUpHint": "Drag to look around the dome, pinch to zoom, double-tap to return to the top.",
+  "plateLookUpSensor": "Hold the phone overhead",
+  "plateLookUpSensorHint": "Off until you choose it. The view follows the phone's rotation sensor.",
+  "plateUnavailable": "The plate’s images could not be loaded."
 }

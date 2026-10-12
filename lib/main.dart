@@ -80,10 +80,15 @@ class _MilionAppState extends State<MilionApp> {
     if (registry != null &&
         _settings.firstRunSeen &&
         registry.details.isNotEmpty) {
-      final detail = detailOfDay(registry, (widget.clock ?? DateTime.now)());
-      final scene = _plates.forMilestone(
-        registry.milestone(detail.milestoneId)!,
+      final detail = detailOfDay(
+        registry,
+        (widget.clock ?? DateTime.now)(),
+        playable: (d) =>
+            _plates.forMilestone(registry.milestone(d.milestoneId)!) != null,
       );
+      final scene = detail == null
+          ? null
+          : _plates.forMilestone(registry.milestone(detail.milestoneId)!);
       if (scene != null) {
         try {
           await precacheImage(AssetImage(scene.original), context);
@@ -104,7 +109,14 @@ class _MilionAppState extends State<MilionApp> {
         .catchError((Object _) => const <String>[]);
     try {
       final registry = await _repository.load();
-      final plates = await PlateCatalog.load(registry, _repository.loadText);
+      final plates = await PlateCatalog.load(
+        registry,
+        _repository.loadText,
+        strict: false,
+      );
+      for (final error in plates.errors) {
+        debugPrint('Plate skipped: $error');
+      }
       final ids = await classes;
       final known = {for (final a in registry.artworks) a.id};
       if (!mounted) return;

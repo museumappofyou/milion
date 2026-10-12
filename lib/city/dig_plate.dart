@@ -223,8 +223,11 @@ class _SectionDiagramPainter extends CustomPainter {
     final dimension = Paint()
       ..color = ink.withValues(alpha: .75)
       ..strokeWidth = 1;
-    canvas.drawLine(const Offset(10, 12), Offset(10, size.height - 12),
-        dimension);
+    canvas.drawLine(
+      const Offset(10, 12),
+      Offset(10, size.height - 12),
+      dimension,
+    );
     for (final y in [12.0, size.height - 12]) {
       canvas.drawLine(Offset(6, y), Offset(14, y), dimension);
     }
