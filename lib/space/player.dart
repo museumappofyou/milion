@@ -297,7 +297,9 @@ class SpaceViewport extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (c.section) ...sectionHandle(context, c, p),
+                // The handle is for exploring; a playing reveal or story is
+                // the shot people share, so it stays clean.
+                if (c.section && !c.playing) ...sectionHandle(context, c, p),
                 // Label and year share one wrapping row, so neither covers
                 // the other at 200% text.
                 Positioned(

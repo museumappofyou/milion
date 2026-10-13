@@ -243,6 +243,9 @@ void main() {
     await openPanel(tester, 'space-assemble');
     await tester.tap(find.byKey(const ValueKey('space-reveal')));
     await tester.pump();
+    // A playing reveal is a clean shot: no section handle or outline.
+    expect(c.playing, isTrue);
+    expect(find.byKey(const ValueKey('space-section-handle')), findsNothing);
     await closePanel(tester);
     expect(c.reveal, isTrue);
     for (var i = 0; i < 90; i++) {
@@ -251,6 +254,7 @@ void main() {
     expect(c.playing, isFalse);
     expect(player.ticking, isFalse);
     expect(find.textContaining('how a 31 m dome stands'), findsOneWidget);
+    expect(find.byKey(const ValueKey('space-section-handle')), findsOneWidget);
     final renderer = player.renderer!;
     await tester.pumpWidget(const SizedBox.shrink());
     expect(renderer.disposed, isTrue);

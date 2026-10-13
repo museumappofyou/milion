@@ -118,9 +118,8 @@ class SpaceSheet extends StatelessWidget {
                       value: c.visibleEpoch.toDouble(),
                       max: (c.study.epochs.length - 1).toDouble(),
                       divisions: c.study.epochs.length - 1,
-                      label: c.study.epochs[c.visibleEpoch].label.inLanguage(
-                        lang,
-                      ),
+                      // The stops are named below; a value label would make
+                      // TalkBack read the year twice.
                       semanticFormatterCallback: (v) =>
                           c.study.epochs[v.round()].label.inLanguage(lang),
                       onChanged: (v) => c.setEpoch(v.round()),

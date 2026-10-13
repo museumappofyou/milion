@@ -27,7 +27,7 @@ Got dependencies!
 Try `flutter pub outdated` for more information.
 Running Gradle task 'assembleRelease'...                        
 Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 1876 bytes (99.9% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
-Running Gradle task 'assembleRelease'...                           37.4s
+Running Gradle task 'assembleRelease'...                           38.8s
 ✓ Built build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk (89.7MB)
 ✓ Built build/app/outputs/flutter-apk/app-arm64-v8a-release.apk (97.1MB)
 ✓ Built build/app/outputs/flutter-apk/app-x86_64-release.apk (102.4MB)
@@ -60,5 +60,5 @@ Got dependencies!
 Try `flutter pub outdated` for more information.
 Running Gradle task 'bundleRelease'...                          
 Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 1876 bytes (99.9% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
-Running Gradle task 'bundleRelease'...                             33.1s
+Running Gradle task 'bundleRelease'...                             20.2s
 ✓ Built build/app/outputs/bundle/release/app-release.aab (143.9MB)
