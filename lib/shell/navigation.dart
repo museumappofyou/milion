@@ -8,6 +8,8 @@ import '../screens/artworks_tab.dart';
 import '../screens/about_tab.dart';
 import '../screens/scan_screen.dart';
 import '../services/progress_service.dart';
+import '../space/player.dart';
+import '../space/study.dart';
 import 'app_scope.dart';
 
 Future<T?> _push<T>(BuildContext context, Widget page) =>
@@ -30,6 +32,9 @@ Future<void> openMilestone(
     ),
   );
 }
+
+Future<void> openStudy(BuildContext context, SpaceStudy study) =>
+    _push<void>(context, SpacePlayer(key: ValueKey(study.id), study: study));
 
 Future<void> openPlace(BuildContext context, Place place) =>
     _push<void>(context, PlaceScreen(place: place));

@@ -453,6 +453,7 @@ HAGIA_SOPHIA_STRATA = [
             'büyük ölçüde bu ikinci kubbedir.'),
         media=[],
         artworks=[],
+        studies=['how-a-dome-stands'],
         sources=['smarthistory-hagia-sophia', 'britannica-hagia-sophia',
                  'wd-q12506'],
     ),

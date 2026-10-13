@@ -1,0 +1,520 @@
+{
+  "candidate": "flutter_scene (Flutter GPU, Impeller)",
+  "packageVersion": "0.23.0",
+  "packageVersionReason": "Newest flutter_scene release published more than 2 weeks before the spike (0.23.0 on 2026-08-25; every 0.24.x release is from 2026-10-05..09, under a week old). It requires Flutter >=3.47.0 and resolved and built first time with no errors. As an A/B, 0.24.3 (latest) was also built and run on macOS; its APK is listed under benchmarkApkVariants because its changelog claims big Android/mobile GPU fixes (see risks).",
+  "flutterVersion": "3.47.2 stable (framework d3b14c8769, engine 1cf1c4773f), Dart 3.13.2, macOS arm64 host",
+  "benchSha256": "7b7622bbe2d3ec801ef43d0a6267c391e058a4da48945171e9b0ec3e18a709dd",
+  "benchModel": {
+    "file": "/Users/memre/Desktop/milion/studio/spikes/p08/bench-50k.glb",
+    "bytes": 716824,
+    "triangles": 49864,
+    "sourceVertices": 25098,
+    "nodes": 25,
+    "attributes": [
+      "POSITION",
+      "_AO"
+    ],
+    "materials": 0,
+    "derivedCopyNeeded": false
+  },
+  "buildOk": true,
+  "buildNotes": "Release APKs (flutter build apk --release --split-per-abi --target-platform android-arm64) built with no errors and no code changes for 0.23.0, for 0.24.3, and for the GLES-forced 0.23.0 variant. A macOS release build also works.",
+  "baselineApkBytes": 15487482,
+  "candidateApkBytes": 19026142,
+  "apkDeltaBytes": 3538660,
+  "apkDeltaBreakdownCompressedBytes": {
+    "flutter_scene shader bundles (one openglEs+vulkan bundle set)": 1580813,
+    "flutter_scene bundled assets (royal_esplanade.png IBL 810663, ltc.bin, smaa tables)": 899182,
+    "libapp.so (Dart AOT code)": 851968,
+    "bench-50k.glb asset (716824 raw)": 319682,
+    "cupertino_icons font present only in the template baseline": -115944,
+    "other": 979,
+    "packageAttributableDeltaBytes (delta minus GLB, plus the template font)": 3334922
+  },
+  "apkVariants": {
+    "0.24.3": {
+      "bytes": 19976531,
+      "deltaBytes": 4489049,
+      "note": "+950 KB over 0.23.0: bigger shader bundles (the lean mobile lit-shader variant, per its CHANGELOG) and more Dart code"
+    },
+    "0.23.0-GLES-forced": {
+      "bytes": 19026198,
+      "deltaBytes": 3538716
+    }
+  },
+  "manifestChanges": [
+    "Required: <meta-data android:name=\"io.flutter.embedding.android.EnableFlutterGPU\" android:value=\"true\"/> inside <application>. Flutter GPU is off by default; libflutter.so carries the error 'Flutter GPU must be enabled via the Flutter GPU manifest setting...' and GpuContext construction throws it (flutter_gpu/lib/src/context.dart:15-19). See AndroidManifest.snippet.xml.",
+    "macOS/iOS: <key>FLTEnableFlutterGPU</key><true/> in Runner/Info.plist (used for the macOS proxy run).",
+    "No Impeller opt-in needed: Impeller is the default Android renderer in 3.47.",
+    "Optional (GLES A/B APK only): <meta-data android:name=\"io.flutter.embedding.android.ImpellerBackend\" android:value=\"opengles\"/>. The key is confirmed in FlutterEngineFlags.class, and libflutter accepts 'opengles' or 'vulkan'."
+  ],
+  "glbLoadMs": {
+    "importMs": {
+      "medianOfRuns": 15.26,
+      "range": [
+        15.08,
+        16.66
+      ],
+      "what": "Node.fromGlbBytes only: parse, pack (incl. flat-normal de-indexing) and GPU buffer upload of the 25 primitives"
+    },
+    "totalMs": {
+      "medianOfRuns": 109.95,
+      "range": [
+        109.56,
+        134.93
+      ],
+      "what": "Scene.initializeStaticResources (one-off engine shader bundles + IBL) + asset read + import + material swap"
+    },
+    "staticResourcesInitMs": {
+      "medianOfRuns": 94.39,
+      "range": [
+        94.13,
+        117.77
+      ]
+    },
+    "firstTwoFramesAfterLoadMs": {
+      "warmMedian": 22.53,
+      "range": [
+        21.96,
+        33.56
+      ],
+      "coldFirstLaunchObserved": {
+        "0.23.0": 483.8,
+        "0.24.3": 966.0
+      },
+      "note": "The cold numbers are pipeline/shader compiles on the very first launch after install or build; later launches hit the OS pipeline cache. Expect a visible hitch on a phone unless SceneView(warmUp: true) or a load screen hides it."
+    },
+    "measuredOn": "macOS M-series proxy, not the reference device: Apple M1 Pro (MacBookPro18,1, 16-core GPU, 32 GB), macOS 26.5.2, 120 Hz ProMotion panel, Flutter 3.47.2 release build, Impeller Metal (engine log: 'Using the Impeller rendering backend (MetalSDF)'), default 800x600 logical window = 1600x1200 physical px, 4x MSAA (AntiAliasingMode.auto -> msaa)",
+    "variant_0.24.3": {
+      "importMsPerRun": [
+        17.421,
+        16.773
+      ],
+      "totalMsPerRun": [
+        60.469,
+        77.819
+      ],
+      "staticResourcesMsPerRun": [
+        42.662,
+        27.451
+      ]
+    },
+    "android": "unmeasured (no device available to this spike; the benchmark APK measures it, see runInstructions)"
+  },
+  "fps": {
+    "measuredOn": "macOS M-series proxy, not the reference device: Apple M1 Pro (MacBookPro18,1, 16-core GPU, 32 GB), macOS 26.5.2, 120 Hz ProMotion panel, Flutter 3.47.2 release build, Impeller Metal (engine log: 'Using the Impeller rendering backend (MetalSDF)'), default 800x600 logical window = 1600x1200 physical px, 4x MSAA (AntiAliasingMode.auto -> msaa)",
+    "method": "SchedulerBinding.addTimingsCallback FrameTiming (build = UI thread incl. flutter_scene command encoding; raster = raster thread), filtered to each 10 s phase by engine vsync timestamps. fps = UI frames / wall-clock seconds. 3 runs of 0.23.0.",
+    "orbit10s": {
+      "fps": {
+        "medianOfRuns": 119.13,
+        "perRun": [
+          119.07,
+          119.48,
+          119.13
+        ]
+      },
+      "buildMsMedian": {
+        "medianOfRuns": 0.6,
+        "perRun": [
+          0.43,
+          0.6,
+          0.64
+        ]
+      },
+      "buildMsP90": {
+        "medianOfRuns": 1.0,
+        "perRun": [
+          0.5,
+          1.0,
+          1.31
+        ]
+      },
+      "buildMsMax": {
+        "medianOfRuns": 4.06,
+        "perRun": [
+          0.56,
+          4.59,
+          4.06
+        ]
+      },
+      "rasterMsMedian": {
+        "medianOfRuns": 0.27,
+        "perRun": [
+          0.2,
+          0.27,
+          0.3
+        ]
+      },
+      "rasterMsP90": {
+        "medianOfRuns": 0.45,
+        "perRun": [
+          0.27,
+          0.45,
+          0.55
+        ]
+      },
+      "rasterMsMax": {
+        "medianOfRuns": 15.95,
+        "perRun": [
+          15.95,
+          13.33,
+          16.56
+        ]
+      },
+      "totalSpanMsMedian": {
+        "medianOfRuns": 1.07,
+        "perRun": [
+          0.82,
+          1.07,
+          1.13
+        ]
+      },
+      "totalSpanMsP90": {
+        "medianOfRuns": 1.87,
+        "perRun": [
+          0.94,
+          1.87,
+          2.18
+        ]
+      },
+      "framesPerRun": [
+        1189,
+        1192,
+        1190
+      ]
+    },
+    "interiorWalk10s_eyeHeight": {
+      "fps": {
+        "medianOfRuns": 120.0,
+        "perRun": [
+          119.2,
+          120.0,
+          120.0
+        ]
+      },
+      "buildMsMedian": {
+        "medianOfRuns": 0.51,
+        "perRun": [
+          0.35,
+          0.51,
+          0.54
+        ]
+      },
+      "buildMsP90": {
+        "medianOfRuns": 1.14,
+        "perRun": [
+          0.43,
+          1.14,
+          1.19
+        ]
+      },
+      "buildMsMax": {
+        "medianOfRuns": 3.21,
+        "perRun": [
+          0.71,
+          3.21,
+          3.98
+        ]
+      },
+      "rasterMsMedian": {
+        "medianOfRuns": 0.29,
+        "perRun": [
+          0.19,
+          0.29,
+          0.31
+        ]
+      },
+      "rasterMsP90": {
+        "medianOfRuns": 0.66,
+        "perRun": [
+          0.24,
+          0.68,
+          0.66
+        ]
+      },
+      "rasterMsMax": {
+        "medianOfRuns": 2.18,
+        "perRun": [
+          1.35,
+          2.18,
+          3.1
+        ]
+      },
+      "totalSpanMsMedian": {
+        "medianOfRuns": 0.97,
+        "perRun": [
+          0.65,
+          0.97,
+          1.04
+        ]
+      },
+      "totalSpanMsP90": {
+        "medianOfRuns": 1.99,
+        "perRun": [
+          0.82,
+          1.99,
+          2.08
+        ]
+      },
+      "framesPerRun": [
+        1192,
+        1200,
+        1200
+      ]
+    },
+    "variant_0.24.3_2runs": {
+      "orbit": {
+        "fps": {
+          "medianOfRuns": 119.94,
+          "perRun": [
+            119.94,
+            119.94
+          ]
+        },
+        "buildMsMedian": {
+          "medianOfRuns": 0.49,
+          "perRun": [
+            0.47,
+            0.52
+          ]
+        },
+        "buildMsP90": {
+          "medianOfRuns": 0.61,
+          "perRun": [
+            0.64,
+            0.59
+          ]
+        },
+        "buildMsMax": {
+          "medianOfRuns": 1.67,
+          "perRun": [
+            2.61,
+            0.72
+          ]
+        },
+        "rasterMsMedian": {
+          "medianOfRuns": 0.24,
+          "perRun": [
+            0.24,
+            0.24
+          ]
+        },
+        "rasterMsP90": {
+          "medianOfRuns": 0.32,
+          "perRun": [
+            0.33,
+            0.3
+          ]
+        },
+        "rasterMsMax": {
+          "medianOfRuns": 1.47,
+          "perRun": [
+            1.77,
+            1.17
+          ]
+        },
+        "totalSpanMsMedian": {
+          "medianOfRuns": 0.91,
+          "perRun": [
+            0.88,
+            0.94
+          ]
+        },
+        "totalSpanMsP90": {
+          "medianOfRuns": 1.11,
+          "perRun": [
+            1.15,
+            1.08
+          ]
+        },
+        "framesPerRun": [
+          1086,
+          1198
+        ]
+      },
+      "interiorWalk": {
+        "fps": {
+          "medianOfRuns": 120.0,
+          "perRun": [
+            120.05,
+            119.95
+          ]
+        },
+        "buildMsMedian": {
+          "medianOfRuns": 0.41,
+          "perRun": [
+            0.36,
+            0.45
+          ]
+        },
+        "buildMsP90": {
+          "medianOfRuns": 0.49,
+          "perRun": [
+            0.47,
+            0.52
+          ]
+        },
+        "buildMsMax": {
+          "medianOfRuns": 0.91,
+          "perRun": [
+            0.68,
+            1.14
+          ]
+        },
+        "rasterMsMedian": {
+          "medianOfRuns": 0.21,
+          "perRun": [
+            0.19,
+            0.23
+          ]
+        },
+        "rasterMsP90": {
+          "medianOfRuns": 0.29,
+          "perRun": [
+            0.28,
+            0.3
+          ]
+        },
+        "rasterMsMax": {
+          "medianOfRuns": 1.4,
+          "perRun": [
+            1.4,
+            1.39
+          ]
+        },
+        "totalSpanMsMedian": {
+          "medianOfRuns": 0.73,
+          "perRun": [
+            0.65,
+            0.82
+          ]
+        },
+        "totalSpanMsP90": {
+          "medianOfRuns": 0.9,
+          "perRun": [
+            0.85,
+            0.95
+          ]
+        },
+        "framesPerRun": [
+          1200,
+          1199
+        ]
+      }
+    },
+    "caveats": "Capped at the 120 Hz vsync: every run held ~119-120 fps with sub-2 ms CPU build+raster medians, so this proves only that GPU time per frame is under 8.3 ms on an M1 Pro at 1600x1200 with 4x MSAA. FrameTiming does not include GPU execution time; GPU time is unmeasured. The occasional rasterMsMax of 13-17 ms in the orbit phase is the first frame(s) after reveal. Android fps: unmeasured (no device)."
+  },
+  "measuredOn": "macOS M-series proxy, not the reference device: Apple M1 Pro (MacBookPro18,1, 16-core GPU, 32 GB), macOS 26.5.2, 120 Hz ProMotion panel, Flutter 3.47.2 release build, Impeller Metal (engine log: 'Using the Impeller rendering backend (MetalSDF)'), default 800x600 logical window = 1600x1200 physical px, 4x MSAA (AntiAliasingMode.auto -> msaa). Android: nothing measured on a device; the APKs measure themselves on launch.",
+  "lines": {
+    "summary": "Partial. There are no true hairlines beyond native 1 px lines, and constant-pixel-width wide lines cost CPU every frame. Screen-space edge detection through a custom render pass with depth and normals is the realistic drawing-style route.",
+    "nativeHairline": "Geometry.primitiveType = PrimitiveType.line / lineStrip draws native lines at a fixed 1 px, with no width control (lib/src/geometry/geometry.dart:145-153).",
+    "wideScreenPixelLines": "PolylineGeometry(widthMode: screenPixels | worldUnits, caps, dashes). It is a camera-facing triangle strip rebuilt ON THE CPU every frame via updateForCamera(); the library says GPU expansion is a 'planned follow-up' (lib/src/geometry/polyline_geometry.dart:10-21, 59-78, 241-258).",
+    "wideWorldLinesBulk": "LineSegmentsGeometry is GPU-expanded in the vertex shader, one instanced draw, but its width is fixed in WORLD units, not pixels (lib/src/geometry/line_segments_geometry.dart:13-31).",
+    "edgeExtraction": "MeshData.extractEdges({creaseAngleDegrees}) yields feature edges (crease and boundary) from a mesh, to feed either line type (lib/src/geometry/mesh_data.dart:590-598).",
+    "screenSpaceEdges": "CustomRenderPass (Scene.addRenderPass) can read linear depth and view-space normals (RenderInput.depth/normals) and run full-screen shaders. A Sobel-style ink-edge pass is buildable; the built-in selection outline uses the same mechanism (lib/src/render/custom_render_pass.dart:79-94, 118-143).",
+    "newerVersions": "0.24.0 adds barycentric wireframe helpers (#include <wireframe.glsl> + MeshData.unweld barycentrics) per the 0.24.3 CHANGELOG."
+  },
+  "customShaders": {
+    "summary": "Yes: GLSL fragment and vertex stages via declarative .fmat materials, a raw ShaderMaterial escape hatch, PostEffect, and CustomRenderPass full-screen passes. All are compiled to .shaderbundle at BUILD time by a native-assets hook running impellerc, so there is no on-device shader compilation of user GLSL.",
+    "fmat": ".fmat keys include culling, depth_write, varyings, attributes (custom per-vertex float..vec4), engine_inputs (scene_color, scene_depth) plus vertex{} and fragment{} blocks (lib/src/fmat/fmat_parser.dart:564-571). Helpers include GetWorldPosition/GetWorldNormal/GetViewDirection (fmat_parser.dart:545-549). The scene_depth sampler is emitted at lib/src/fmat/fmat_emitter.dart:267-279. Compiled by the app's hook (buildMaterials); runtime_compile.dart is editor tooling only (spawns impellerc on a desktop host, not exported) (lib/src/fmat/runtime_compile.dart:1-6).",
+    "shaderMaterial": "ShaderMaterial({fragmentShader, vertexShader, ...}) with setUniformBlock/setTexture, shaders compiled through the flutter_gpu_shaders hook (lib/src/material/shader_material.dart; skills/flutter_scene-idioms/references/what-exists.md:243-256).",
+    "postAndCustomPasses": "PostEffect (lib/src/post_process/post_effect.dart:20-58) and CustomRenderPass with depth/normals/shadow inputs (lib/src/render/custom_render_pass.dart:79-94, 118-143).",
+    "hatchingFeasibility": "Object-space or screen-space hatching is feasible in an unlit .fmat (world position, normal and view direction available) plus an edge pass. Per-vertex AO could drive tone, but the glTF importer drops _AO: it must be re-supplied via Geometry.setCustomAttribute (matching the de-indexed vertex count) or by baking _AO into COLOR_0 in a derived GLB.",
+    "knownIssue": "On 0.23.0, unlit .fmat materials could draw NOTHING on Impeller Vulkan (fixed in 0.24.0 per its CHANGELOG). This is directly relevant to an unlit drawing-style shader on Android."
+  },
+  "sectionPlane": {
+    "summary": "No built-in clipping/section-plane API. Buildable, but with caveats.",
+    "evidence": "The only clip-plane code is the oblique near-plane projection for planar reflections (lib/src/render/planar_reflection.dart:94-101).",
+    "howTo": "A .fmat fragment that discards where dot(GetWorldPosition(), plane) > 0, plus a cap (a stencil-less approach needs back-face colouring or a separate cap mesh). The depth prepass (only scheduled for AO, SSR or custom depth/normal inputs, lib/src/scene.dart:2275-2301) and the shadow pass use engine depth shaders that only honour alpha-masking (lib/src/render/depth_prepass.dart:362-379), so clipped geometry would still cast shadows and write prepass depth. Alternatively, cut geometry on the CPU (MeshData derivations) per section."
+  },
+  "depthBuffer": "Yes. The scene pass renders with a depth-stencil attachment (lib/src/render/scene_pass.dart:240; on macOS the context reports d32FloatS8UInt). Linear view-space depth is available to custom passes (RenderInput.depth, lib/src/render/custom_render_pass.dart:88-94) and to .fmat materials (engine_inputs: [scene_depth], fmat_emitter.dart:267-279). 0.24.0 adds reversed-Z where supported (Metal, not Vulkan/GLES per its CHANGELOG).",
+  "vulkan": "Supported by design but UNMEASURED on a device here. Android ships one shader bundle compiled for 'openglEs,vulkan' (the generated manifest.json target field). The spike APK infers the backend from gpuContext.doesSupportFramebufferRenderMipmap (true on Vulkan and Metal, false on GLES; flutter_gpu context.dart:61-66) and the engine logs 'Using the Impeller rendering backend (Vulkan).' Changelog evidence of Vulkan-specific defects in or after 0.23.0: GPU-bound frames block the UI thread on Vulkan (fixed by maxGpuFramesInFlight in 0.24.0), static shadow re-render crash on Impeller Vulkan (#431, fixed 0.24.0), unlit .fmat invisible on Vulkan (fixed 0.24.0), and in 0.24.3 'Galaxy A16' Vulkan UI stalls p95 230 -> 40 ms.",
+  "gles": "Supported by design but UNMEASURED on a device here. The same bundle carries GLES shaders; flutter_scene has explicit GLES paths (lazy GLES context: lib/src/scene.dart:1520-1528; MSAA unavailable on some GLES devices so auto AA falls back to FXAA: scene.dart:109-119, 276-283). GLES lacks framebuffer-render-mipmap, so prefiltered environment radiance takes a fallback path (lib/src/material/environment.dart:156-157). The engine itself falls back to GLES on 'Known bad Vulkan driver' (libflutter string). A GLES-forced APK is provided for an A/B. Changelog shows a history of GLES bugs: instanced meshes drawing black, crashes on 16-texture-unit drivers, depth test lost when switching AA mode (fixed 0.24.0), and GLES pipeline compiles stalling the UI thread (mitigated 0.24.0).",
+  "maintenance": {
+    "repo": "https://github.com/bdero/flutter_scene (MIT, 914 stars, 100 forks, not archived, default branch master)",
+    "lastCommit": "2026-10-11T06:41:55Z (1f3fc8a9f2 'Merge the WebGPU smoke opt-in into the workspace's existing user-defines'); last push 2026-10-11T08:05:03Z",
+    "commitsLast90Days": 1025,
+    "commitsWindow": "since 2026-07-14T00:00:00Z on master (11 pages of 100 on the commits API, last page 25)",
+    "openIssues": 22,
+    "openPullRequests": 3,
+    "githubOpenIssuesCountField": 25,
+    "latestRelease": "flutter_scene-0.24.3 on 2026-10-09 (GitHub release and pub.dev)",
+    "releaseCadence": "15 pub.dev versions from 0.17.0 (2026-06-10) to 0.24.3 (2026-10-09). README: 'pre-1.0 and evolving quickly. Minor releases can carry breaking changes.'",
+    "busFactor": "Effectively one maintainer: bdero has 1863 commits; the next contributors are dependabot (18) and humans with 12, 8 and 7.",
+    "flutterGpuStatusIn347": "Still preview/experimental. docs/engine/impeller/Flutter-GPU.md at tag 3.47.2, lines 3-7: 'Flutter GPU is in an early preview state and does not guarantee API stability' ... 'Because Flutter GPU is experimental and relies on experimental features, switching to the master channel is strongly recommended'. Line 39: the exported InternalFlutterGpu* symbols 'are considered unstable'. The --enable-flutter-gpu tool flag is hidden from normal help (flutter_tools/lib/src/runner/flutter_command.dart:1284-1294, hide: !verboseHelp). Runtime is off by default (manifest key). The flutter_gpu Dart sources in the SDK carry no explicit experimental annotation."
+  },
+  "buildRequirements": [
+    "Flutter >= 3.47.0 (0.23.0 and 0.24.3 pubspecs). Dart SDK ^3.10.",
+    "flutter_scene's own native-assets build hook (hook/build.dart, packages hooks/code_assets/data_assets) runs on every flutter build and compiles the engine shaders with the SDK's impellerc (bin/cache/artifacts/engine/darwin-x64/impellerc) into .shaderbundle files for the target. Android gets one bundle set targeting 'openglEs,vulkan'. No manual step is needed.",
+    "0.23.0 writes those generated outputs INTO THE PACKAGE'S DIRECTORY IN THE SHARED PUB CACHE (~/.pub-cache/hosted/pub.dev/flutter_scene-0.23.0/flutter_scene_generated and build/shaderbundles), and the package declares that whole directory as an asset.",
+    "Release APK build time (incl. Gradle): ~70-76 s vs 43 s for the empty baseline; macOS release ~93 s.",
+    "Runtime glTF (Node.fromGlbBytes/fromGlbAsset) needs no model import step. The optional asset pipeline (dart run flutter_scene:init -> app hook/build.dart buildScenes/buildMaterials -> .fsceneb) pre-converts .glb at build time for faster loads and is REQUIRED for .fmat custom materials. It was not exercised here.",
+    "Manifest/plist key to enable Flutter GPU (see manifestChanges).",
+    "Custom ShaderMaterial/PostEffect GLSL goes through the flutter_gpu_shaders build hook (also impellerc at build time)."
+  ],
+  "risks": [
+    "Flutter GPU is officially 'early preview' and 'experimental' with no API-stability guarantee in the 3.47.2 docs, and off by default behind a manifest key. A Flutter upgrade can break the renderer.",
+    "flutter_scene is pre-1.0 with breaking minor releases (15 versions in 4 months) and a single maintainer (bus factor 1).",
+    "OBSERVED: with 0.23.0, building macOS after Android left Metal shader bundles in the shared pub-cache folder, and the next Android APK shipped them: 19,583,977 B instead of 19,021,318 B (+562 KB). The fix was clearing ~/.pub-cache/.../flutter_scene-0.23.0/flutter_scene_generated and doing flutter clean. 0.24.0 fixes this ('Apps ship each engine shader bundle once and only for their own platform; a shared pub cache used to ship every platform's bundles'), but 0.24.x is less than 2 weeks old.",
+    "0.23.0 mobile performance is likely worse than current: 0.24.0 added GPU frame pacing because GPU-bound frames stalled the UI thread on Vulkan/Metal; 0.24.3 cites Galaxy A16 Vulkan UI stalls p95 230 -> 40 ms and a lean lit shader that is 1.5-1.8x faster on Mali-G57. Benchmark both the 0.23.0 and 0.24.3 APKs on the phone.",
+    "First-use pipeline compile hitch: 484 ms (0.23.0) and 966 ms (0.24.3) for the first two frames on a cold first launch on an M1 Pro, vs ~22 ms warm. A phone will likely be worse. It needs SceneView(warmUp: true) or Scene.warmUp behind a load screen.",
+    "Importer semantics: the custom _AO attribute is silently dropped (no warning). With no NORMAL, primitives are de-indexed to flat normals (~3x vertices: 149,592 instead of 25,098). With no material, primitives get a white UnlitMaterial that renders as a flat silhouette. Shading and AO need app-side work.",
+    "No constant-pixel-width GPU line primitive: PolylineGeometry rebuilds on the CPU per frame, LineSegmentsGeometry is world-width only, native lines are 1 px. Drawing-style edges would rely on a custom screen-space edge pass.",
+    "No section-plane API. Discard-based clipping is not honoured by the depth prepass or shadow passes.",
+    "GLES backend has a documented history of correctness bugs and lacks MSAA on some devices (falls back to FXAA).",
+    "APK cost: +3.3 MB package-attributable on 0.23.0 (shader bundles 1.58 MB, IBL PNG 0.81 MB, Dart 0.85 MB), +4.3 MB on 0.24.3.",
+    "All performance numbers here are macOS M1 Pro proxies, vsync-capped at 120 Hz, CPU-side only. Android performance is unknown until the APKs run on the reference phone."
+  ],
+  "benchmarkApk": "/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_flutter_scene/apk_out/milion-spike-flutter_scene-0.23.0-arm64-v8a-release.apk",
+  "benchmarkApkSha256": "b2573f6ea789cfb8f9c12ab6a95b2a5efd296b68dee60927d4b79fbe0263ebb4",
+  "benchmarkApkVariants": {
+    "0.24.3 (applicationId app.milion.spike.fs_spike_0243)": {
+      "path": "/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_flutter_scene/apk_out/milion-spike-flutter_scene-0.24.3-arm64-v8a-release.apk",
+      "sha256": "e817e1b824b4a29cea7dfe3fccc09e82dd65c7ad3584ee4c72548323c17b4e30"
+    },
+    "0.23.0 GLES-forced (applicationId app.milion.spike.fs_spike_gles)": {
+      "path": "/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_flutter_scene/apk_out/milion-spike-flutter_scene-0.23.0-GLES-arm64-v8a-release.apk",
+      "sha256": "d0a1698dcd29fcbdb576aa64c36d23d8ecbf5da97b456c8f953e1df8562e3fd5"
+    }
+  },
+  "runInstructions": {
+    "logTag": "Dart print -> logcat tag 'flutter' (Info). One line per run, prefixed 'MILION_SPIKE ' followed by JSON (keys: packageVersion, backend, gpuCaps, antiAliasing, viewPhysicalPx, staticResourcesMs, glbImportMs, glbLoadMs, firstTwoFramesUiMs, triangles, frameCount, fps, buildMsMedian/P90, rasterMsMedian/P90, orbit{...}, interiorWalk{...}, error if any).",
+    "duration": "About 25-30 s after launch: init + load, 10 s orbit, 10 s eye-height interior walk, then a 1.5 s FrameTiming flush. Keep the screen on and unlocked, and do not touch it.",
+    "commands_0.23.0": [
+      "adb install -r '/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_flutter_scene/apk_out/milion-spike-flutter_scene-0.23.0-arm64-v8a-release.apk'",
+      "adb logcat -c",
+      "adb shell am start -W -n app.milion.spike.fs_spike/.MainActivity",
+      "# wait ~30 s",
+      "adb logcat -d -s flutter:I | grep MILION_SPIKE",
+      "adb logcat -d | grep -E 'Impeller rendering backend|Known bad Vulkan driver|Flutter GPU'",
+      "adb shell am force-stop app.milion.spike.fs_spike"
+    ],
+    "commands_0.24.3": [
+      "adb install -r '/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_flutter_scene/apk_out/milion-spike-flutter_scene-0.24.3-arm64-v8a-release.apk'",
+      "adb logcat -c",
+      "adb shell am start -W -n app.milion.spike.fs_spike_0243/app.milion.spike.fs_spike.MainActivity",
+      "# wait ~30 s, then the same logcat greps",
+      "adb shell am force-stop app.milion.spike.fs_spike_0243"
+    ],
+    "commands_gles": [
+      "adb install -r '/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_flutter_scene/apk_out/milion-spike-flutter_scene-0.23.0-GLES-arm64-v8a-release.apk'",
+      "adb logcat -c",
+      "adb shell am start -W -n app.milion.spike.fs_spike_gles/app.milion.spike.fs_spike.MainActivity",
+      "# wait ~30 s, then the same logcat greps; expect 'Using the Impeller rendering backend (OpenGLES).' and backend 'Impeller GLES (inferred)'",
+      "adb shell am force-stop app.milion.spike.fs_spike_gles"
+    ],
+    "repeat": "Run each APK at least twice. The first launch after install includes cold pipeline compiles (watch firstTwoFramesUiMs and rasterMsMax).",
+    "cleanup": "adb uninstall app.milion.spike.fs_spike; adb uninstall app.milion.spike.fs_spike_0243; adb uninstall app.milion.spike.fs_spike_gles",
+    "rebuild": "flutter create --org app.milion.spike --platforms=android,macos --project-name fs_spike app; copy main.dart -> lib/main.dart, pubspec.yaml, the GLB -> assets/bench-50k.glb; add the AndroidManifest.snippet.xml meta-data; flutter build apk --release --split-per-abi --target-platform android-arm64. Clear ~/.pub-cache/hosted/pub.dev/flutter_scene-0.23.0/flutter_scene_generated/* first if a macOS/iOS build of 0.23.0 ever ran on this machine."
+  },
+  "notes": [
+    "The APKs live in this agent's session scratch directory (/private/tmp/...), which may not survive a reboot or cleanup. Copy them out if they are needed later; they are not committed to the repo by design.",
+    "Bench model regenerated mid-spike (arcades). ALL reported measurements and all three APKs use sha256 7b7622bb... (49,864 triangles). Earlier runs on the previous 50,060-triangle model were discarded, except the 0.23.0 cold-first-launch hitch (484 ms), which came from the very first run.",
+    "No derived GLB was needed: the importer accepted the file with zero warnings. _AO is ignored; normals are generated flat.",
+    "Material swap: the GLB has no materials, so the importer assigns UnlitMaterial (flat white; verified in a snapshot). The spike assigns one shared matte PhysicallyBasedMaterial (metallic 0, roughness 0.85) to all 25 primitives so the benchmark pays for PBR + IBL lighting. Everything else is library defaults (studio environment, tone mapping, 4x MSAA via auto). Shadows/AO/SSR are off by default and were not enabled.",
+    "Visual check: a SPIKE_CAPTURE=true build saved RepaintBoundary PNGs 3 s into each phase. The exterior orbit and the interior vault/arcade view both rendered correctly lit. Snapshots are in the scratch dir (cap_v2_orbit.png, cap_v2_interiorWalk.png).",
+    "Android backend in the JSON is INFERRED from gpuContext.doesSupportFramebufferRenderMipmap (Flutter GPU exposes no backend enum). Confirm with the engine's logcat line.",
+    "main.dart in the repo is the exact APK source except for one header-comment correction (fromGlbAsset -> fromGlbBytes) made after the build.",
+    "The 0.24.3 variant needed no source changes (pubspec pin + applicationId only). On macOS it measured importMs ~17 ms, static init 27-43 ms (vs ~94-118 ms on 0.23.0), and the same 120 fps vsync cap."
+  ]
+}

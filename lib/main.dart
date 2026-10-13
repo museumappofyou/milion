@@ -19,6 +19,7 @@ import 'services/progress_service.dart';
 import 'shell/app_scope.dart';
 import 'shell/app_shell.dart';
 import 'plate/catalog.dart';
+import 'space/catalog.dart';
 import 'today/detail_crop.dart';
 
 void registerFontLicences() {
@@ -61,6 +62,7 @@ class _MilionAppState extends State<MilionApp> {
   late final ContentRepository _repository = widget.content ?? bundledContent;
   ContentRegistry? _registry;
   PlateCatalog _plates = const PlateCatalog.empty();
+  SpaceCatalog _spaces = const SpaceCatalog.empty();
   Object? _error;
   Set<String> _recognised = const {};
   bool _ready = false;
@@ -117,12 +119,21 @@ class _MilionAppState extends State<MilionApp> {
       for (final error in plates.errors) {
         debugPrint('Plate skipped: $error');
       }
+      final spaces = await SpaceCatalog.load(
+        registry,
+        _repository.loadText,
+        strict: false,
+      );
+      for (final error in spaces.errors) {
+        debugPrint('Study skipped: $error');
+      }
       final ids = await classes;
       final known = {for (final a in registry.artworks) a.id};
       if (!mounted) return;
       setState(() {
         _registry = registry;
         _plates = plates;
+        _spaces = spaces;
         _recognised = {...ids.where(known.contains)};
         _error = null;
       });
@@ -154,6 +165,7 @@ class _MilionAppState extends State<MilionApp> {
       child: AppScope(
         registry: _registry,
         plates: _plates,
+        spaces: _spaces,
         error: _error,
         retry: () {
           setState(() => _error = null);

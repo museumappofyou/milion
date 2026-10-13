@@ -690,5 +690,49 @@
   "plateLookUpHint": "Drag to look around the dome, pinch to zoom, double-tap to return to the top.",
   "plateLookUpSensor": "Hold the phone overhead",
   "plateLookUpSensorHint": "Off until you choose it. The view follows the phone's rotation sensor.",
-  "plateUnavailable": "The plate’s images could not be loaded."
+  "plateUnavailable": "The plate’s images could not be loaded.",
+  "spaceAssemble": "Assemble",
+  "spaceSection": "Section",
+  "spaceStyle": "Style",
+  "spaceStyleDrawing": "Drawing",
+  "spaceStyleStone": "Stone",
+  "spaceStyleNight": "Night",
+  "spacePlay": "Play the assembly",
+  "spaceAssembly": "Assembly, step by step",
+  "spaceAssemblyValue": "{done} of {total} steps",
+  "@spaceAssemblyValue": {
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "spaceExplode": "Exploded view",
+  "spaceTime": "Time",
+  "spaceSteps": "Steps",
+  "spaceSectionPlane": "Section plane",
+  "spaceSectionHint": "Drag the handle on the drawing to move the cut; the half facing you is removed.",
+  "spaceSectionHandle": "Section plane handle",
+  "spaceCutPlan": "Plan cut",
+  "spaceCutNorthSouth": "North–south cut",
+  "spaceCutEastWest": "East–west cut",
+  "spaceMetres": "{value} m",
+  "@spaceMetres": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "spaceChoisy": "Choisy’s view from below",
+  "spaceChoisyHint": "Auguste Choisy drew vaults this way in 1899: from below, with the plan cut.",
+  "spacePerspective": "Perspective",
+  "spaceGestureHint": "Drag to turn, pinch to zoom, move with two fingers, double-tap for Choisy’s view.",
+  "spaceSources": "Sources",
+  "spaceLoading": "Preparing the drawing",
+  "spaceUnavailable": "The drawing’s model could not be loaded.",
+  "digLayerStudies": "Studies in this layer"
 }

@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:milion/content/registry.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/plate/catalog.dart';
+import 'package:milion/space/catalog.dart';
+import 'package:milion/space/model.dart';
 
 Future<void> main(List<String> args) async {
   try {
@@ -62,6 +64,23 @@ Future<void> main(List<String> args) async {
         }
       }
       stdout.writeln('Plates: ${plates.plates.length} typed manifests');
+      // Studies: manifest, sources, and a model of closed named solids.
+      final spaces = await SpaceCatalog.load(
+        registry,
+        (p) => File(p).readAsString(),
+      );
+      for (final study in spaces.studies) {
+        final model = SpaceModel.fromGlb(
+          (await File(study.model).readAsBytes()).buffer.asByteData(),
+        );
+        study.checkModel(model);
+        for (final part in model.parts) {
+          if (!part.closed) {
+            report.errors.add('${study.id}: ${part.id} is not closed');
+          }
+        }
+      }
+      stdout.writeln('Studies: ${spaces.studies.length} typed manifests');
     }
     for (final error in report.errors) {
       stderr.writeln('ERROR: $error');

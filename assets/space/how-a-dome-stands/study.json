@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "how-a-dome-stands",
+  "title": {
+    "en": "How a dome stands",
+    "tr": "Kubbe nasıl ayakta durur"
+  },
+  "description": {
+    "en": "A drawing of a square bay 31 m wide assembling, seen from below: four piers, four arches, four pendentives, a ring and a dome on 40 windows. The time scrubber braces the same bay two ways: Hagia Sophia’s two semi-domes (537) and the Şehzade Mosque’s four (1548). A diagram, not a survey of either building.",
+    "tr": "31 m genişliğinde kare bir açıklığın aşağıdan görülen çizimi kendini kurar: dört ayak, dört kemer, dört pandantif, bir bilezik ve 40 pencere üstünde bir kubbe. Zaman çubuğu aynı açıklığı iki yolla destekler: Ayasofya’nın iki yarım kubbesi (537) ve Şehzade Camii’nin dördü (1548). Bu bir şemadır, iki yapının da rölövesi değildir."
+  },
+  "model": "assets/space/how-a-dome-stands/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "epochs": [
+    {
+      "year": 537,
+      "label": {
+        "en": "Hagia Sophia, 537",
+        "tr": "Ayasofya, 537"
+      }
+    },
+    {
+      "year": 1548,
+      "label": {
+        "en": "Şehzade Mosque, 1548",
+        "tr": "Şehzade Camii, 1548"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "bay",
+      "parts": [
+        "pier-ne",
+        "pier-nw",
+        "pier-sw",
+        "pier-se"
+      ],
+      "seconds": 4.5,
+      "epochs": [],
+      "sources": [
+        "wp-hagia-sophia-1379544167"
+      ],
+      "label": {
+        "en": "Four piers on a square",
+        "tr": "Kare üzerinde dört ayak"
+      },
+      "caption": {
+        "en": "A square bay 31 m wide, about the span of Hagia Sophia’s dome (30.86–31.24 m), with a pier at each corner.",
+        "tr": "31 m genişliğinde kare bir açıklık, aşağı yukarı Ayasofya kubbesinin çapı kadar (30,86–31,24 m); her köşesinde bir ayak."
+      }
+    },
+    {
+      "id": "arches",
+      "parts": [
+        "arch-n",
+        "arch-w",
+        "arch-s",
+        "arch-e"
+      ],
+      "seconds": 4.5,
+      "epochs": [],
+      "sources": [
+        "choisy-1883"
+      ],
+      "label": {
+        "en": "Four arches",
+        "tr": "Dört kemer"
+      },
+      "caption": {
+        "en": "Four semicircular arches span the sides. Their crowns are the only points of the square that already lie on the dome’s circle.",
+        "tr": "Dört yarım daire kemer kenarları aşar. Karenin kubbe dairesine değen tek noktaları bu kemerlerin tepeleridir."
+      }
+    },
+    {
+      "id": "pendentives",
+      "parts": [
+        "pendentive-ne",
+        "pendentive-nw",
+        "pendentive-sw",
+        "pendentive-se"
+      ],
+      "seconds": 4.5,
+      "epochs": [],
+      "sources": [
+        "britannica-pendentive",
+        "choisy-1883"
+      ],
+      "label": {
+        "en": "Four pendentives",
+        "tr": "Dört pandantif"
+      },
+      "caption": {
+        "en": "Pendentives fill the corners: four triangles cut from one sphere turn the square into a circle. Hagia Sophia (537) is among their earliest and largest uses.",
+        "tr": "Köşeleri pandantifler doldurur: aynı küreden kesilmiş dört üçgen kareyi daireye çevirir. Ayasofya (537) bunların en erken ve en büyük örneklerindendir."
+      }
+    },
+    {
+      "id": "ring",
+      "parts": [
+        "ring"
+      ],
+      "seconds": 4.5,
+      "epochs": [],
+      "sources": [
+        "choisy-1883"
+      ],
+      "label": {
+        "en": "The ring",
+        "tr": "Bilezik"
+      },
+      "caption": {
+        "en": "A cornice ring closes the circle; the dome’s weight comes down through it onto the four arches and pendentives.",
+        "tr": "Bir silme bileziği daireyi kapatır; kubbenin ağırlığı buradan dört kemere ve pandantiflere iner."
+      }
+    },
+    {
+      "id": "dome",
+      "parts": [
+        "windows",
+        "dome"
+      ],
+      "seconds": 4.5,
+      "epochs": [],
+      "sources": [
+        "wp-hagia-sophia-1379544167",
+        "procopius-buildings-1"
+      ],
+      "label": {
+        "en": "A dome on 40 windows",
+        "tr": "40 pencere üzerinde kubbe"
+      },
+      "caption": {
+        "en": "The dome stands on a ring of 40 windows, as Hagia Sophia’s does. Procopius wrote that it seemed not to rest on masonry but to hang from heaven.",
+        "tr": "Kubbe, Ayasofya’daki gibi 40 pencerelik bir halkanın üstünde durur. Prokopios, kubbenin taşa dayanmıyor da gökten asılıymış gibi göründüğünü yazmıştı."
+      }
+    },
+    {
+      "id": "semidomes",
+      "parts": [
+        "semidome-e",
+        "exedra-e",
+        "semidome-w",
+        "exedra-w"
+      ],
+      "seconds": 4,
+      "epochs": [],
+      "sources": [
+        "britannica-hagia-sophia",
+        "wp-hagia-sophia-1379544167"
+      ],
+      "label": {
+        "en": "Two semi-domes",
+        "tr": "İki yarım kubbe"
+      },
+      "caption": {
+        "en": "The arches still push outward, so semi-domes of the same radius lean on them. Hagia Sophia (537) has two, east and west.",
+        "tr": "Kemerler hâlâ dışa doğru iter; bu yüzden aynı yarıçaplı yarım kubbeler onlara yaslanır. Ayasofya’da (537) iki tane vardır: doğuda ve batıda."
+      }
+    },
+    {
+      "id": "tympana",
+      "parts": [
+        "tympanum-n",
+        "tympanum-s"
+      ],
+      "seconds": 3.5,
+      "epochs": [
+        537
+      ],
+      "sources": [
+        "wp-hagia-sophia-1379544167"
+      ],
+      "label": {
+        "en": "Two walled arches",
+        "tr": "Örülmüş iki kemer"
+      },
+      "caption": {
+        "en": "537: to the north and south, Hagia Sophia fills its arches with walls, the tympana.",
+        "tr": "537: Ayasofya kuzey ve güney kemerlerini duvarla, yani timpanlarla doldurur."
+      }
+    },
+    {
+      "id": "four-semidomes",
+      "parts": [
+        "semidome-n",
+        "exedra-n",
+        "semidome-s",
+        "exedra-s"
+      ],
+      "seconds": 5,
+      "epochs": [
+        1548
+      ],
+      "sources": [
+        "wp-sehzade-1367352917",
+        "britannica-sinan"
+      ],
+      "label": {
+        "en": "Four semi-domes",
+        "tr": "Dört yarım kubbe"
+      },
+      "caption": {
+        "en": "1548: Sinan’s Şehzade Mosque puts a semi-dome on all four sides of a 19 m dome, symmetrical in every direction.",
+        "tr": "1548: Mimar Sinan, Şehzade Camii’nde 19 m’lik kubbenin dört yanına da yarım kubbe koyar; plan her yönde simetriktir."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "dome",
+    "seconds": 8,
+    "turnDegrees": 30,
+    "caption": {
+      "en": "Four piers, four arches, four pendentives, a ring and a dome on 40 windows: how a 31 m dome stands on a square.",
+      "tr": "Dört ayak, dört kemer, dört pandantif, bir bilezik ve 40 pencere üstünde bir kubbe: 31 m’lik bir kubbe kare bir planın üstünde böyle durur."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 3.0
+  },
+  "sources": [
+    "choisy-1883",
+    "choisy-1899-2"
+  ],
+  "triangles": 20144,
+  "citations": [
+    {
+      "id": "choisy-1883",
+      "title": {
+        "en": "L'art de bâtir chez les Byzantins (Paris, 1883), scan",
+        "tr": "L'art de bâtir chez les Byzantins (Paris, 1883), tarama"
+      },
+      "url": "https://digit.biblio.polito.it/secure/5914/1/L%20art%20de%20batir%20chez%20les%20byzantines_comp.pdf",
+      "author": {
+        "en": "Auguste Choisy",
+        "tr": "Auguste Choisy"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "choisy-1899-2",
+      "title": {
+        "en": "Histoire de l'architecture, vol. 2 (Paris, 1899)",
+        "tr": "Histoire de l'architecture, 2. cilt (Paris, 1899)"
+      },
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k6584016q",
+      "author": {
+        "en": "Auguste Choisy",
+        "tr": "Auguste Choisy"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "procopius-buildings-1",
+      "title": {
+        "en": "Procopius, Buildings I.1 (Loeb, 1940), §42–46",
+        "tr": "Prokopios, Yapılar I.1 (Loeb, 1940), §42–46"
+      },
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Buildings/1A*.html",
+      "author": {
+        "en": "Procopius, translated by H. B. Dewing",
+        "tr": "Prokopios, çeviren H. B. Dewing"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "britannica-pendentive",
+      "title": {
+        "en": "Pendentive — Encyclopaedia Britannica",
+        "tr": "Pandantif — Encyclopaedia Britannica"
+      },
+      "url": "https://www.britannica.com/technology/pendentive",
+      "author": {
+        "en": "Encyclopaedia Britannica editors",
+        "tr": "Encyclopaedia Britannica editörleri"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "britannica-sinan",
+      "title": {
+        "en": "Sinan — Encyclopaedia Britannica",
+        "tr": "Sinan — Encyclopaedia Britannica"
+      },
+      "url": "https://www.britannica.com/biography/Sinan",
+      "author": {
+        "en": "Encyclopaedia Britannica editors",
+        "tr": "Encyclopaedia Britannica editörleri"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "wp-hagia-sophia-1379544167",
+      "title": {
+        "en": "Hagia Sophia — Wikipedia (revision 1379544167)",
+        "tr": "Hagia Sophia — Wikipedia (1379544167 sürümü)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=Hagia_Sophia&oldid=1379544167",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Wikipedia katkıda bulunanları"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "wp-sehzade-1367352917",
+      "title": {
+        "en": "Şehzade Mosque — Wikipedia (revision 1367352917)",
+        "tr": "Şehzade Mosque — Wikipedia (1367352917 sürümü)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=%C5%9Eehzade_Mosque&oldid=1367352917",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Wikipedia katkıda bulunanları"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "britannica-hagia-sophia",
+      "title": {
+        "en": "Hagia Sophia",
+        "tr": "Ayasofya"
+      },
+      "url": "https://www.britannica.com/topic/Hagia-Sophia",
+      "author": {
+        "en": "Encyclopaedia Britannica",
+        "tr": "Encyclopaedia Britannica"
+      },
+      "accessedAt": "2026-10-07",
+      "licence": null
+    }
+  ]
+}

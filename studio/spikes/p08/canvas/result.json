@@ -1,0 +1,90 @@
+{
+  "candidate": "(a) custom Canvas renderer: projected triangles via one drawVertices call, painter's depth sort, edge/section lines as quads in the same sort",
+  "source": "lib/space/renderer.dart (+ camera.dart, model.dart); device harness tool/space/device_bench.dart",
+  "flutterVersion": "3.47.2",
+  "buildOk": true,
+  "apkDeltaBytes": {
+    "dependencies": 0,
+    "appArm64DeltaVsP07": 307114,
+    "what": "Dart code plus the 300,700 B study model; no native code, no new package"
+  },
+  "glbLoadMs": {
+    "hostJitParse": 9.5,
+    "android": {
+      "study20k": "18.8-24.6 ms",
+      "bench50k": "37.5-39.6 ms"
+    }
+  },
+  "fps": {
+    "host": {
+      "study20k": {
+        "triangles": 20144,
+        "vertices": 10238,
+        "parts": 25,
+        "glbBytes": 300700,
+        "glbParseMs": 9.5,
+        "budgetTriangles": 150000,
+        "orbitWithPlanCut": {
+          "frames": 120,
+          "medianMs": 1.56,
+          "p90Ms": 1.59,
+          "maxMs": 1.81,
+          "maxTrianglesDrawn": 18904
+        },
+        "orbitWhole": {
+          "frames": 120,
+          "medianMs": 1.42,
+          "p90Ms": 1.52,
+          "maxMs": 1.69,
+          "maxTrianglesDrawn": 17568
+        }
+      },
+      "bench50k": {
+        "triangles": 49864,
+        "orbitWithPlanCut": {
+          "frames": 120,
+          "medianMs": 3.65,
+          "p90Ms": 3.89,
+          "maxMs": 4.24,
+          "maxTrianglesDrawn": 39717
+        }
+      },
+      "what": "CPU frame build on an M-series Mac (flutter test JIT); not device fps"
+    },
+    "android": {
+      "device": "A52s SM-A528B, Impeller OpenGL ES fallback, Dart on the merged main thread",
+      "study20kDrawingChoisyCut": "53.7-57.3 fps in 3 runs (build p90 12.6-15.7 ms); 36.7 fps before the renderer rewrite",
+      "study20kDrawingNoCut": "40.9-50.1 fps",
+      "study20kStoneCut": "49.2-55.8 fps",
+      "study20kNightCut": "30.0-30.7 fps",
+      "study13kDrawingChoisyCut": "31.8-37.9 fps (lighter load, lower governor clock)",
+      "bench50kDrawingCut": "27.0-28.3 fps (CPU 24.7-25.7 ms per frame)",
+      "evidence": "studio/captures/P08/device-bench.json"
+    }
+  },
+  "measuredOn": "host proxy and the reference A52s",
+  "lines": "yes: hairline feature edges, per-frame silhouettes and heavy section lines at any pixel width, occluded correctly by the depth sort",
+  "customShaders": "hatching through an ImageShader line-screen texture (row = shade, column = world height); fragment shaders possible but not needed",
+  "sectionPlane": "yes: axis-aligned plane, triangles clipped on the CPU, inside faces of cut solids drawn as poché, cut edges drawn heavy",
+  "depthBuffer": "no: painter's algorithm; small slivers can show where large faces interpenetrate (pendentive tips). Mitigation: keep triangles about 2 m or smaller (P09 kit)",
+  "vulkan": "standard Canvas API: Impeller Vulkan and GLES both supported by the engine; unmeasured on the A52s",
+  "gles": "as above",
+  "offscreen": "yes: renders in flutter test, goldens and offscreen PictureRecorder (P17 share stills and frames)",
+  "maintenance": "Flutter framework API (drawVertices, ImageShader); no third-party package",
+  "benchSha256": "7b7622bbe2d3ec801ef43d0a6267c391e058a4da48945171e9b0ec3e18a709dd",
+  "benchmarkApk": "studio/cache/spikes/milion-space-canvas-bench-profile.apk (git-ignored; rebuild with the command in tool/space/device_bench.dart)",
+  "runInstructions": [
+    "adb push studio/spikes/p08/bench-50k.glb /sdcard/Android/data/app.milion/files/bench-50k.glb",
+    "adb install -r studio/cache/spikes/milion-space-canvas-bench-profile.apk",
+    "adb shell am start -n app.milion/.MainActivity",
+    "wait ~55 s (five 10.5 s cases)",
+    "adb logcat -d -s flutter | grep MILION_SPIKE",
+    "reinstall the release app afterwards (same application id)"
+  ],
+  "decision": "drawing-style backend for studies up to about 20k triangles; device acceptance (>= 50 fps in every drawing view) open: next experiment is DisableMergedPlatformUIThread (bench APK built), then a background-isolate frame builder if needed",
+  "risks": [
+    "CPU-bound: about 0.3-0.5 us per output triangle on the A52s; 50k triangles cannot reach 50 fps",
+    "the CPU governor settles at different clocks run to run (Dart runs on the merged main thread, which the engine does not pin to fast cores); a lighter scene measured slower",
+    "painter's sort: slivers where large faces interpenetrate"
+  ]
+}

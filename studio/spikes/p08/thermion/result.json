@@ -1,0 +1,149 @@
+{
+  "candidate": "thermion (Filament) — candidate (c)",
+  "packageVersion": "thermion_flutter 0.5.0 + thermion_dart 0.5.0 (both published 2026-08-20, exact pins in pubspec.lock); Filament v1.69.1. Transitives: native_toolchain_c 0.17.6, hooks 1.0.3, code_assets 1.0.0, objective_c 8.1.0, ffi 2.2.0",
+  "flutterVersion": "Flutter 3.47.2 stable (framework d3b14c8769, engine 1cf1c4773f), Dart 3.13.2, macOS arm64 host (Apple M1 Pro), NDK 28.2.13676358, CMake 3.22.1, JDK 17, AGP 9.1.0 / Kotlin 2.4.0 (template)",
+  "benchSha256": "7b7622bbe2d3ec801ef43d0a6267c391e058a4da48945171e9b0ec3e18a709dd",
+  "benchDerived": {
+    "file": "assets/bench-50k-color0.glb (1,121,420 bytes)",
+    "sha256": "699f36ddffe432cc9c5b5b5b6bdd59f4fb3add865724b2f7a406419569140316",
+    "why": "Filament 1.69.1 gltfio rejects the custom `_AO` attribute: log 'Unrecognized vertex semantic in <node>' x25 then 'Unknown error loading GLB asset.' -> Dart 'Exception: An error occurred loading the asset' (ffi_filament_app.dart:1158). Missing normals and missing materials were NOT a problem (default ubershader material, normals synthesised).",
+    "change": "Per primitive: removed attribute `_AO`; added COLOR_0 = VEC4 float (ao, ao, ao, 1) appended as new bufferViews/accessors. POSITION, indices, nodes, extras untouched; 49,864 triangles. A second variant that also added smooth NORMALs loaded and rendered identically (21.9 ms load) and is not needed.",
+    "script": "/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion/scripts/derive_glb.py (python3.11 + numpy; not committed — repo writes were limited to this folder's three files)"
+  },
+  "buildOk": {
+    "asShipped": false,
+    "withWorkaround": true,
+    "detail": "As shipped, `flutter build apk --release` FAILS on this network: thermion_dart's native-assets hook downloads Filament prebuilts from https://pub-c8b6266320924116aaddce03b5313c0a.r2.dev/filament-v1.69.1-android-release.zip and the TLS handshake is rejected (Dart: 'HandshakeException: Handshake error in client (OS Error: WRONG_VERSION_NUMBER(tls_record.cc:127))'; curl: 'tlsv1 alert protocol version'; same result inside and outside the tool sandbox while cloudflare.com/github.com work, so r2.dev itself looks blocked on this network). Workaround used (all in scratch): unmodified thermion_dart 0.5.0 via dependency_overrides path, its hook cache pre-seeded with google/filament v1.69.1 release archives (filament-v1.69.1-android-native.tgz, 49.6 MB; filament-v1.69.1-mac.tgz, 44.9 MB) plus libimageio.a(+libpng objects) and libtinyexr.a compiled from Filament v1.69.1 sources (the upstream archives do not ship them; thermion's TEngine.cpp includes imageio). thermion's bundled Filament headers are byte-identical to upstream 1.69.1, and the result linked and ran. Second blocker: ':thermion_flutter:checkReleaseAarMetadata' failed (plugin compileSdk 33 < 34 required) — fixed with the root Gradle snippet in this folder. After that: arm64 release APK builds (first build 43 s incl. ~30 s native C++ compile of 65 thermion sources; incremental 13-24 s). macOS release build also succeeded after raising the deployment target to 13.0."
+  },
+  "baselineApkBytes": 15487482,
+  "candidateApkBytes": 22258566,
+  "apkDeltaBytes": 6771084,
+  "apkDeltaBreakdown": {
+    "lib/arm64-v8a/libthermion_dart.so (stored)": 6743816,
+    "lib/arm64-v8a/libthermion_flutter_android.so": 5528,
+    "bench-50k-color0.glb (compressed in APK)": 359328,
+    "MaterialIcons font not tree-shaken in the spike app (compressed)": 556244,
+    "libapp.so (spike uses WidgetsApp, baseline template uses Material)": -917504,
+    "engineOnlyEstimateBytes": 6760000,
+    "caveat": "libthermion_dart.so was linked against upstream google/filament 1.69.1 static libs, not thermion's own R2 prebuilts (unreachable); the real size may differ slightly. Engine-only cost ~6.76 MB per ABI (arm64 only measured)."
+  },
+  "buildDownloads": [
+    "Intended (unreachable here): Filament prebuilt zip per platform/mode from Cloudflare R2 public bucket https://pub-c8b6266320924116aaddce03b5313c0a.r2.dev/filament-v1.69.1-{android|macos|ios|...}-release.zip, fetched by thermion_dart/hook/build.dart:437-438,501 with dart:io HttpClient; size unknown (could not HEAD it). It is extracted into the PACKAGE ROOT (~/.pub-cache/hosted/pub.dev/thermion_dart-0.5.0/.dart_tool/thermion_dart/lib/v1.69.1/...), i.e. it mutates the shared pub cache. Integrity: only an md5 is logged (build.dart:539) — no pinned checksum/verification.",
+    "Substituted (spike): github.com/google/filament/releases/download/v1.69.1/filament-v1.69.1-android-native.tgz (49,652,690 B, all 4 ABIs) and filament-v1.69.1-mac.tgz (44,906,069 B, arm64 only); ~25 Filament source files from raw.githubusercontent.com for imageio/libpng/tinyexr.",
+    "Gradle, first build only: 138 artifacts / 101.5 MB (com.android.tools.build:gradle:7.3.0 + kotlin-gradle-plugin 1.7.10 and their deps) pulled because thermion_flutter/android/build.gradle:1-17 still declares a legacy buildscript block.",
+    "pub: thermion_flutter, thermion_dart, native_toolchain_c etc. (normal pub get)."
+  ],
+  "manifestChanges": "None. Merged AndroidManifest of the thermion APK is identical to the empty baseline's apart from the package name (no permissions, no uses-feature, no glEsVersion). Plugin manifest is empty. minSdk 24 (Flutter default; plugin declares 22), target/compileSdk 36. Gradle: one root build.gradle.kts snippet (see android_root_build.gradle.kts.snippet) forcing compileSdk 36 on :thermion_flutter.",
+  "glbLoadMs": {
+    "macOS_proxy_color0": 19.67,
+    "macOS_proxy_color0_normals": 21.92,
+    "macOS_createViewerMs": 98.47,
+    "android": "unmeasured — no device available to this agent; the APK measures it (glbLoadMs, createViewerMs, firstFramesAfterLoadMs)",
+    "definition": "loadGltfFromBuffer() call to completion (parse + GPU upload on Thermion's render thread), excludes rootBundle read (0.2-2.9 ms)."
+  },
+  "fps": {
+    "label": "macOS M-series proxy (Apple M1 Pro, 120 Hz display, 1600x1200 px Filament texture, Impeller Metal + Filament Metal, release build) — NOT the reference device",
+    "orbitSeconds": 10.0,
+    "flutterFrames": 1198,
+    "flutterFps": 119.77,
+    "flutterBuildMs": {
+      "median": 0.27,
+      "p90": 0.32
+    },
+    "flutterRasterMs": {
+      "median": 0.25,
+      "p90": 0.34
+    },
+    "flutterTotalSpanMs": {
+      "median": 0.7,
+      "p90": 0.84
+    },
+    "filamentFrames": 1200,
+    "filamentFps": 119.97,
+    "filamentFrameIntervalMs": {
+      "median": 8.33,
+      "p90": 8.75,
+      "max": 10.66
+    },
+    "thermionRenderRoundTripAvgMs_per120frames": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.1,
+      0.1,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "thermionDroppedVsyncs": 1,
+    "thermionJankOver20ms": 0,
+    "nonBackgroundPixelPct": 30.08,
+    "interpretation": "Display-capped at 120 Hz with large headroom. 'render round trip' is Thermion's own FrameScheduler diagnostic (Dart -> render thread -> Renderer::endFrame), i.e. CPU submit cost, not GPU time; Filament exposes no GPU timer through thermion. A read-back of the final frame confirmed the model is drawn (30% of pixels differ from background; PNG at /private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion/macos_color0.png).",
+    "android": "unmeasured — run the APK (see runInstructions)"
+  },
+  "measuredOn": "macOS 26.5.2, Apple M1 Pro, release build, 2026-10-12 (proxy only). Android: not run (no device for this agent).",
+  "lines": "Partial. (1) Filament line primitives exist: PrimitiveType.LINES / LINE_STRIP (thermion_dart lib/src/filament/src/interface/primitive.dart:5,7) via createGeometry (filament_app.dart:362) — but Filament has no line-width control, so these are 1-px hairlines (no AA beyond MSAA/FXAA). (2) Wide/AA edges: built-in Wireframe material (materials/wireframe.mat in the repo; WireframeMaterialInstance.setEdgeWidth(pixels) wireframe_material.dart:21; createWireframeMaterialInstance filament_app.dart:264) draws barycentric screen-space edges of EVERY triangle edge, needing loadGltf(rebuildVertices: true) (thermion_viewer_base.dart:155-172), which unwelds vertices (~3x vertex memory). (3) Silhouette outlines: highlight overlay / stencil highlight (view.dart:381,398; materials/edge_outline.mat) — selection outlines, not feature edges. Architectural feature/crease edges would have to be extracted offline and drawn either as 1-px LINES or as camera-facing quads expanded in a custom vertex shader.",
+  "customShaders": "Yes, but offline-compiled. Material.createMaterial(Uint8List .filamat) (filament_app.dart:129) + MaterialInstance setParameterFloat/Float3/Float4/Mat4/Texture/Bool (material.dart:134-144) and setMaterialInstanceAt(entity, primitive) (filament_app.dart:270). Materials are Filament .mat files compiled with `matc` (ships in filament-v1.69.1-mac.tgz bin/matc) for opengl+metal targets; no runtime GLSL. Custom vertex attributes reach materials as CUSTOM0..7 (repo examples/assets/customattributes.mat) — but gltfio will not map glTF `_AO`-style attributes, so baked AO must come in as COLOR_0 or via createGeometry. Hatching = a custom unlit/lit .mat with screen-space or triplanar hatch in the fragment shader: feasible, not prototyped here.",
+  "sectionPlane": "No built-in user clip plane anywhere in thermion's API (grep for clip plane/clipDistance finds only a Vulkan feature flag at native/src/vulkan/linux/LinuxVulkanUtils.cpp:452). A section plane must be a custom material that `discard`s fragments by world position against a plane uniform (getWorldPosition() in the fragment block) — applied to every primitive via setMaterialInstanceAt, plus a cap/hatch fill trick (stencil ops are exposed: material.dart:147-166). Feasible, not built-in.",
+  "depthBuffer": "Yes. Always-on depth buffer; per-material depth write/test/func (material.dart:131-133), default render target DEPTH24_STENCIL8 (thermion_flutter options.dart:57), linear_depth/depth_sampler materials in repo, stencil enable on View (view.dart:313). SSAO: View.setAmbientOcclusionOptions(AmbientOcclusionOptions{radius, power, intensity, quality, bentNormals, ssct...}) (view.dart:64-93, 425) — Filament's SAO + SSCT; also shadows (PCF/VSM), fog, bloom, tone mapping, MSAA/FXAA/TAA (view.dart:311-326,416).",
+  "vulkan": "Filament itself does NOT use Vulkan on Android in thermion: _resolveBackend() returns OPENGL for Android and throws 'Vulkan is only supported on Windows and Linux' if requested (thermion_flutter lib/src/platform/src/thermion_flutter_plugin_native.dart:103-131). Flutter's compositor can still be Impeller Vulkan: Filament renders off-thread into an Android SurfaceTexture (default) or SurfaceProducer (ThermionFlutterPlugin.kt:125-143) shown with a Flutter Texture widget (texture_widget_builder.dart:9) — external texture, not a platform view. Compatibility with Impeller Vulkan on the reference phone: unverified (no device). Plugin comment: SurfaceProducer is needed for premultiplied alpha under Impeller; SurfaceTexture is the default for opaque views.",
+  "gles": "Yes — Filament's Android backend is OpenGL ES (EGL + GLESv3 linked, hook/build.dart Android branch ~l.262-275); requires a GLES 3.0 device. Compositing works with either Impeller backend in principle (texture registry); not verified on device.",
+  "maintenance": {
+    "repo": "github.com/nmfisher/thermion (default branch develop), Apache-2.0, 222 stars, 35 forks, not archived",
+    "lastCommit": "2026-09-29T07:57:18Z (208680aa03 'CI: generate web bindings with Emscripten sysroot (#368)'); pushed_at 2026-10-01T10:05:46Z",
+    "commitsLast90Days": 278,
+    "commitsLast90DaysWindow": "develop since 2026-07-14 (of the latest 100: nmfisher 64, github-actions[bot] 27, others <=3 each)",
+    "openIssues": 12,
+    "openPullRequests": 18,
+    "apiOpenIssuesCount": 30,
+    "contributors": 19,
+    "contributorsInclAnonymous": 22,
+    "busFactor": "1 — nmfisher authored 3,690 commits vs 121 for the CI bot and <=8 for anyone else",
+    "releases": "GitHub Releases unused (single v0.7.0-pre from 2024-06-17); versions ship on pub.dev: 0.5.0 (2026-08-20), 0.5.0-pre.5, 0.4.1, ... still 0.x, API churn (e.g. Deprecated releaseTextureBindingForView)."
+  },
+  "buildRequirements": {
+    "android": "NDK 28.2.13676358 (plugin ndkVersion; also used by native_toolchain_c for the hook's C++ compile), CMake 3.22.1 (tiny JNI shim), compileSdk >= 34 forced via snippet, minSdk 24 (Flutter default; plugin 22), arm64-v8a only officially ('Supports ... Android (arm64)' README:20; hook maps armeabi-v7a/x86_64 too but untested here). Flags: -Wl,-z,max-page-size=16384 (16 KB page-size ready), static libc++.",
+    "macos": "deployment target >= 13.0, Xcode toolchain; Filament Metal backend.",
+    "network": "Build-time access to pub-c8b6266320924116aaddce03b5313c0a.r2.dev (per platform+mode zip) — required on every clean machine/CI unless the hook cache is pre-seeded.",
+    "nativeAssets": "Dart build hooks (hooks 1.0.3 / native_toolchain_c 0.17.6) enabled by default on Flutter 3.47.2 — no flag needed."
+  },
+  "risks": [
+    "Build depends on a single maintainer's Cloudflare R2 bucket (r2.dev) that is NOT reachable from this (owner's) network; no checksum pinning, no mirror, downloads written into the shared pub cache. Every CI runner and developer machine needs that host.",
+    "Workaround builds are linked against upstream google/filament binaries plus hand-built imageio/png/tinyexr — workable but unsupported; any Filament version bump in thermion repeats this.",
+    "Bus factor 1 (nmfisher ~95% of human commits); 0.x API with ongoing churn; 278 commits/90 days means fast-moving, not frozen.",
+    "Android plugin Gradle is stale (compileSdk 33, AGP 7.3.0 / Kotlin 1.7.10 buildscript) — breaks out of the box on Flutter 3.47 / AGP 9 and drags ~101 MB of legacy Gradle artifacts on first build.",
+    "Android path is Filament OpenGL ES only (no Vulkan), rendered off-thread into a SurfaceTexture and composited by Flutter as an external texture: one extra copy/sample per frame, frame pacing driven by AChoreographer + Dart round trip; ImageReader/SurfaceProducer path documented as slower on some devices. Unverified on the reference phone.",
+    "APK +6.76 MB per ABI for the engine (libthermion_dart.so) — arm64 only measured; a fat APK with armeabi-v7a/x86_64 would add roughly that per ABI (untested).",
+    "gltfio rejects custom glTF attributes such as `_AO`: the asset pipeline must emit COLOR_0 (or build geometry via createGeometry). Default lighting without IBL renders unlit faces black; a KTX IBL/skybox asset is needed for acceptable shading (more APK bytes).",
+    "Native compile of 65 C++ sources in the hook on every clean build (~30 s on M1 Pro per ABI).",
+    "Startup: createViewer ~100-135 ms on M1 Pro (engine + render thread + swapchain + texture); expect several times that on a mid-range phone (unmeasured).",
+    "Custom materials need the offline `matc` compiler matching Filament 1.69.1; material binaries must be rebuilt when thermion bumps Filament."
+  ],
+  "benchmarkApk": "/private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion/out/milion-spike-thermion-arm64-release.apk",
+  "benchmarkApkSha256": "939f1add1bf4645851413bc8cceb89b455971275746055354999668eb2b917fa",
+  "runInstructions": {
+    "package": "app.milion.spike.thermion_bench",
+    "logTag": "flutter (line prefix 'MILION_SPIKE ')",
+    "steps": [
+      "adb install -r /private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion/out/milion-spike-thermion-arm64-release.apk",
+      "adb logcat -c",
+      "adb shell am start -W -n app.milion.spike.thermion_bench/.MainActivity",
+      "# keep the screen on and the app in the foreground ~15 s (viewer init + load + 10 s orbit)",
+      "adb logcat -d -s flutter | grep MILION_SPIKE",
+      "adb logcat -d | grep -i -E 'Impeller rendering backend|FEngine|thermion|Filament'   # compositor backend + Filament init/errors",
+      "adb shell am force-stop app.milion.spike.thermion_bench"
+    ],
+    "fields": "createViewerMs, assetReadMs, glbLoadMs, firstFramesAfterLoadMs, viewport, flutterFrames/flutterFps, flutterBuildMs/flutterRasterMs/flutterTotalSpanMs {median,p90}, filamentFrames/filamentFps, filamentIntervalMs {median,p90,max}, thermionRenderRoundTripAvgMs (per 120 frames), thermionDroppedVsyncs, thermionJankOver20ms, nonBackgroundPixelPct (frame read-back sanity check; 0 or 'capture failed' means nothing visible), triangles, backend. On failure a single MILION_SPIKE line with an 'error' key is printed instead.",
+    "rebuild": "cd /private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion/thermion_bench && flutter build apk --release --split-per-abi --target-platform android-arm64 (needs /private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion/thermion_dart_local with its pre-seeded .dart_tool cache)"
+  },
+  "notes": [
+    "Bench model regenerated mid-spike by the main session; all reported measurements, the final APK and benchSha256 use the regenerated file (49,864 tris). An earlier macOS run on the previous revision (50,060 tris) gave glbLoadMs 21.0 and identical 120 fps.",
+    "Orbit: radius 90 m, height 38 m, focus (0,22,0), 24 mm lens, near 0.5 / far 500, one full revolution in 10 s, camera updated from Thermion's request-frame hook (once per Filament frame). One sun light (100k lux), post-processing on, no IBL, default gltfio ubershader material, no shadows/SSAO.",
+    "Scratch artefacts: /private/tmp/claude-501/-Users-memre-Desktop-milion/4ec3bc6a-8634-47e0-9077-fc1f3f8b0fd8/scratchpad/spike_thermion (thermion_bench app, baseline app, logs build_*.log / run_macos_*.log, derived GLBs, scripts/derive_glb.py, scripts/build_missing.sh, frame captures macos_color0.png / macos_normals.png).",
+    "Filament exposes no GPU timing through thermion; the APK's Filament numbers are cadence (interval between render requests) + CPU round trip.",
+    "Not attempted: Android emulator; iOS; thermion's own (R2) Filament binaries; IBL/shadows/SSAO cost; custom .mat compile."
+  ],
+  "recommendation": "Not the drawing-style backend (no line width, no clip plane, hatching/sections need offline-compiled custom materials, gltfio drops custom attributes). Plausible later for the immersive walkable cistern (PBR, SSAO, shadows, real depth; 120 fps with huge headroom on M1 Pro), but not adoptable now: the build is not reproducible from this network (r2.dev blocked), Gradle is stale, bus factor 1, and Android performance is unmeasured. Revisit only after the phone run of this APK shows >= 30 fps with margin and the binary-hosting issue is solved (e.g. self-hosted mirror of the Filament zips)."
+}

@@ -7,6 +7,7 @@ import '../design/plan_icon.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../milestones/milestone_row.dart';
+import '../space/study.dart';
 import 'dig_plate.dart';
 
 /// A layer of the dig: dated title, 2–4 paragraphs, media credits, its
@@ -19,6 +20,8 @@ class DigStratumView extends StatelessWidget {
     required this.opened,
     required this.onOpenArtwork,
     required this.onOpenMilestone,
+    this.studies = const [],
+    this.onOpenStudy,
     this.extra,
   });
   final ContentRegistry registry;
@@ -26,6 +29,10 @@ class DigStratumView extends StatelessWidget {
   final bool Function(Milestone) opened;
   final ValueChanged<Artwork> onOpenArtwork;
   final ValueChanged<Milestone> onOpenMilestone;
+
+  /// The layer's SpacePlayer studies that loaded.
+  final List<SpaceStudy> studies;
+  final ValueChanged<SpaceStudy>? onOpenStudy;
 
   /// Present-layer content (the visit card) between the layer and its sources.
   final Widget? extra;
@@ -112,6 +119,16 @@ class DigStratumView extends StatelessWidget {
               onTap: () => onOpenMilestone(milestone),
             ),
         ],
+        if (studies.isNotEmpty && onOpenStudy != null) ...[
+          const SizedBox(height: 24),
+          Text(
+            s.digLayerStudies,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const SizedBox(height: 8),
+          for (final study in studies)
+            _StudyRow(study: study, onTap: () => onOpenStudy!(study)),
+        ],
         ?extra,
         const SizedBox(height: 16),
         SourceList(sources: sources),
@@ -165,6 +182,59 @@ class _ArtworkRow extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             PlanIcon(PlanSymbol.vitrine, color: c.secondary),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// A 3D study read with this layer: its title and its steps, in order.
+class _StudyRow extends StatelessWidget {
+  const _StudyRow({required this.study, required this.onTap});
+  final SpaceStudy study;
+  final VoidCallback onTap;
+  @override
+  Widget build(BuildContext context) {
+    final c = MeasureColors.of(context), lang = context.language;
+    return InkWell(
+      key: ValueKey('dig-study-${study.id}'),
+      onTap: onTap,
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 56),
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: c.line)),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 48,
+              child: PlanIcon(PlanSymbol.assembly, color: c.accent),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    study.title.inLanguage(lang),
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    study.steps
+                        .where((s) => s.epochs.isEmpty)
+                        .map((s) => s.label.inLanguage(lang))
+                        .join(' · '),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 8),
+            PlanIcon(PlanSymbol.section, color: c.secondary),
           ],
         ),
       ),

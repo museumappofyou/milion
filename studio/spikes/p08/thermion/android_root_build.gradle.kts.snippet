@@ -1,0 +1,32 @@
+// Milion P08 thermion spike: the ONLY Gradle change needed (android/build.gradle.kts,
+// root project), inserted ABOVE the existing
+//   subprojects { project.evaluationDependsOn(":app") }
+// block.
+//
+// Why: thermion_flutter 0.5.0's android/build.gradle pins compileSdkVersion 33
+// (plus a legacy buildscript block: AGP 7.3.0, Kotlin 1.7.10). With Flutter
+// 3.47.2 (AGP 9.1.0, Kotlin 2.4.0) the release build otherwise fails with:
+//   Execution failed for task ':thermion_flutter:checkReleaseAarMetadata'.
+//   > 15 issues were found when checking AAR metadata:
+//     1. Dependency 'androidx.fragment:fragment:1.7.1' requires libraries and
+//        applications that depend on it to compile against version 34 or later
+//        of the Android APIs. :thermion_flutter is currently compiled against android-33.
+//
+// No AndroidManifest.xml change was needed (merged manifest identical to the
+// empty baseline apart from the package name). minSdk stays at Flutter's 24
+// (plugin declares 22).
+subprojects {
+    if (name == "thermion_flutter") {
+        afterEvaluate {
+            (extensions.getByName("android") as com.android.build.api.dsl.LibraryExtension).compileSdk = 36
+        }
+    }
+}
+
+// macOS (proxy run only), not Gradle, for completeness:
+//   macos/Podfile:                     platform :osx, '13.0'   (plugin requires >= 13.0)
+//   Runner.xcodeproj MACOSX_DEPLOYMENT_TARGET = 13.0
+//   macos/Runner/Configs/{Debug,Release}.xcconfig: ARCHS = arm64 / EXCLUDED_ARCHS = x86_64
+//     (only because the substitute upstream Filament mac libs are arm64-only)
+//   macos/Runner/Release.entitlements: app-sandbox false (only so the spike can
+//     write its frame-capture PPM to a scratch path)

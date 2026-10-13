@@ -304,6 +304,11 @@ ValidationReport validateContent(Json data) {
       }
       refs(s.id, s.mediaIds, 'media');
       refs(s.id, s.sourceIds, 'sources', required: true);
+      for (final study in s.studyIds) {
+        if (!RegExp(r'^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$').hasMatch(study)) {
+          error('${s.id} invalid study id $study');
+        }
+      }
       for (final artworkId in s.artworkIds) {
         if (!byKind['artworks']!.contains(artworkId)) {
           error('${s.id} references unknown artwork id: $artworkId');

@@ -1,0 +1,24 @@
+<!--
+  Milion P08 spike, flutter_scene 0.23.0 on Flutter 3.47.2.
+  Paste inside <application> in android/app/src/main/AndroidManifest.xml.
+
+  Flutter GPU is OFF by default; without this key the engine throws
+  "Flutter GPU must be enabled via the Flutter GPU manifest setting..." at the
+  first gpu.gpuContext access. Impeller is already the default renderer on
+  Android in 3.47, so no EnableImpeller key is needed.
+  (macOS / iOS equivalent: <key>FLTEnableFlutterGPU</key><true/> in Runner/Info.plist.)
+-->
+<meta-data
+    android:name="io.flutter.embedding.android.EnableFlutterGPU"
+    android:value="true" />
+
+<!--
+  Optional, used only for the GLES A/B APK: forces Impeller's OpenGL ES
+  backend instead of Vulkan (accepted values: "opengles", "vulkan").
+  The engine also falls back to GLES by itself on known-bad Vulkan drivers.
+-->
+<!--
+<meta-data
+    android:name="io.flutter.embedding.android.ImpellerBackend"
+    android:value="opengles" />
+-->

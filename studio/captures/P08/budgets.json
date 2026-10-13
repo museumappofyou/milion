@@ -1,0 +1,36 @@
+{
+  "measurement": "host (macOS, Flutter test, JIT) CPU frame build; not device fps",
+  "study": {
+    "triangles": 20144,
+    "vertices": 10238,
+    "parts": 25,
+    "glbBytes": 300700,
+    "glbParseMs": 9.5,
+    "budgetTriangles": 150000,
+    "orbitWithPlanCut": {
+      "frames": 120,
+      "medianMs": 1.56,
+      "p90Ms": 1.59,
+      "maxMs": 1.81,
+      "maxTrianglesDrawn": 18904
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.42,
+      "p90Ms": 1.52,
+      "maxMs": 1.69,
+      "maxTrianglesDrawn": 17568
+    }
+  },
+  "bench50k": {
+    "triangles": 49864,
+    "orbitWithPlanCut": {
+      "frames": 120,
+      "medianMs": 3.65,
+      "p90Ms": 3.89,
+      "maxMs": 4.24,
+      "maxTrianglesDrawn": 39717
+    }
+  },
+  "deviceFps": "see device-bench.json when the A52s is connected (O01)"
+}

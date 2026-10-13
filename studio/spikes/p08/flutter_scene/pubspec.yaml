@@ -1,0 +1,22 @@
+name: fs_spike
+description: "Milion P08 spike: flutter_scene / Flutter GPU benchmark."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Pinned: newest release older than ~2 weeks at spike time (2026-10-12).
+  flutter_scene: 0.23.0
+  # SDK package; used only to read backend capability flags.
+  flutter_gpu:
+    sdk: flutter
+  vector_math: ^2.4.3
+
+flutter:
+  assets:
+    # Runtime glTF import (Node.fromGlbAsset); no build-hook asset pipeline.
+    - assets/bench-50k.glb

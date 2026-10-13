@@ -1281,4 +1281,92 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get plateUnavailable => 'The plate’s images could not be loaded.';
+
+  @override
+  String get spaceAssemble => 'Assemble';
+
+  @override
+  String get spaceSection => 'Section';
+
+  @override
+  String get spaceStyle => 'Style';
+
+  @override
+  String get spaceStyleDrawing => 'Drawing';
+
+  @override
+  String get spaceStyleStone => 'Stone';
+
+  @override
+  String get spaceStyleNight => 'Night';
+
+  @override
+  String get spacePlay => 'Play the assembly';
+
+  @override
+  String get spaceAssembly => 'Assembly, step by step';
+
+  @override
+  String spaceAssemblyValue(String done, String total) {
+    return '$done of $total steps';
+  }
+
+  @override
+  String get spaceExplode => 'Exploded view';
+
+  @override
+  String get spaceTime => 'Time';
+
+  @override
+  String get spaceSteps => 'Steps';
+
+  @override
+  String get spaceSectionPlane => 'Section plane';
+
+  @override
+  String get spaceSectionHint =>
+      'Drag the handle on the drawing to move the cut; the half facing you is removed.';
+
+  @override
+  String get spaceSectionHandle => 'Section plane handle';
+
+  @override
+  String get spaceCutPlan => 'Plan cut';
+
+  @override
+  String get spaceCutNorthSouth => 'North–south cut';
+
+  @override
+  String get spaceCutEastWest => 'East–west cut';
+
+  @override
+  String spaceMetres(String value) {
+    return '$value m';
+  }
+
+  @override
+  String get spaceChoisy => 'Choisy’s view from below';
+
+  @override
+  String get spaceChoisyHint =>
+      'Auguste Choisy drew vaults this way in 1899: from below, with the plan cut.';
+
+  @override
+  String get spacePerspective => 'Perspective';
+
+  @override
+  String get spaceGestureHint =>
+      'Drag to turn, pinch to zoom, move with two fingers, double-tap for Choisy’s view.';
+
+  @override
+  String get spaceSources => 'Sources';
+
+  @override
+  String get spaceLoading => 'Preparing the drawing';
+
+  @override
+  String get spaceUnavailable => 'The drawing’s model could not be loaded.';
+
+  @override
+  String get digLayerStudies => 'Studies in this layer';
 }

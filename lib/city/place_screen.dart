@@ -250,6 +250,12 @@ class _PlaceScreenState extends State<PlaceScreen> {
                                         showArtworkSheet(context, artwork),
                                     onOpenMilestone: (milestone) =>
                                         openMilestone(context, milestone),
+                                    studies: [
+                                      for (final id in strata[i].studyIds)
+                                        ?AppScope.of(context).spaces.study(id),
+                                    ],
+                                    onOpenStudy: (study) =>
+                                        openStudy(context, study),
                                     extra: i == 0 && place.visit != null
                                         ? VisitCard(
                                             place: place,

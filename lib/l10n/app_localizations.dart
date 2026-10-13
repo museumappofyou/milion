@@ -2406,6 +2406,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The plate’s images could not be loaded.'**
   String get plateUnavailable;
+
+  /// No description provided for @spaceAssemble.
+  ///
+  /// In en, this message translates to:
+  /// **'Assemble'**
+  String get spaceAssemble;
+
+  /// No description provided for @spaceSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Section'**
+  String get spaceSection;
+
+  /// No description provided for @spaceStyle.
+  ///
+  /// In en, this message translates to:
+  /// **'Style'**
+  String get spaceStyle;
+
+  /// No description provided for @spaceStyleDrawing.
+  ///
+  /// In en, this message translates to:
+  /// **'Drawing'**
+  String get spaceStyleDrawing;
+
+  /// No description provided for @spaceStyleStone.
+  ///
+  /// In en, this message translates to:
+  /// **'Stone'**
+  String get spaceStyleStone;
+
+  /// No description provided for @spaceStyleNight.
+  ///
+  /// In en, this message translates to:
+  /// **'Night'**
+  String get spaceStyleNight;
+
+  /// No description provided for @spacePlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Play the assembly'**
+  String get spacePlay;
+
+  /// No description provided for @spaceAssembly.
+  ///
+  /// In en, this message translates to:
+  /// **'Assembly, step by step'**
+  String get spaceAssembly;
+
+  /// No description provided for @spaceAssemblyValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} steps'**
+  String spaceAssemblyValue(String done, String total);
+
+  /// No description provided for @spaceExplode.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploded view'**
+  String get spaceExplode;
+
+  /// No description provided for @spaceTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get spaceTime;
+
+  /// No description provided for @spaceSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps'**
+  String get spaceSteps;
+
+  /// No description provided for @spaceSectionPlane.
+  ///
+  /// In en, this message translates to:
+  /// **'Section plane'**
+  String get spaceSectionPlane;
+
+  /// No description provided for @spaceSectionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the handle on the drawing to move the cut; the half facing you is removed.'**
+  String get spaceSectionHint;
+
+  /// No description provided for @spaceSectionHandle.
+  ///
+  /// In en, this message translates to:
+  /// **'Section plane handle'**
+  String get spaceSectionHandle;
+
+  /// No description provided for @spaceCutPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan cut'**
+  String get spaceCutPlan;
+
+  /// No description provided for @spaceCutNorthSouth.
+  ///
+  /// In en, this message translates to:
+  /// **'North–south cut'**
+  String get spaceCutNorthSouth;
+
+  /// No description provided for @spaceCutEastWest.
+  ///
+  /// In en, this message translates to:
+  /// **'East–west cut'**
+  String get spaceCutEastWest;
+
+  /// No description provided for @spaceMetres.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} m'**
+  String spaceMetres(String value);
+
+  /// No description provided for @spaceChoisy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choisy’s view from below'**
+  String get spaceChoisy;
+
+  /// No description provided for @spaceChoisyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Auguste Choisy drew vaults this way in 1899: from below, with the plan cut.'**
+  String get spaceChoisyHint;
+
+  /// No description provided for @spacePerspective.
+  ///
+  /// In en, this message translates to:
+  /// **'Perspective'**
+  String get spacePerspective;
+
+  /// No description provided for @spaceGestureHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to turn, pinch to zoom, move with two fingers, double-tap for Choisy’s view.'**
+  String get spaceGestureHint;
+
+  /// No description provided for @spaceSources.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources'**
+  String get spaceSources;
+
+  /// No description provided for @spaceLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing the drawing'**
+  String get spaceLoading;
+
+  /// No description provided for @spaceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The drawing’s model could not be loaded.'**
+  String get spaceUnavailable;
+
+  /// No description provided for @digLayerStudies.
+  ///
+  /// In en, this message translates to:
+  /// **'Studies in this layer'**
+  String get digLayerStudies;
 }
 
 class _AppLocalizationsDelegate

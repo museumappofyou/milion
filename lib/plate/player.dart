@@ -294,13 +294,20 @@ class PlatePlayerState extends State<PlatePlayer>
     }
   }
 
+  /// The sheet is lamp throughout: its surface and plain text too, not only
+  /// its controls (the app's root theme is marble).
   Future<void> controls(PlatePanel panel) async {
+    final lamp = DesignTheme.lamp;
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
+      backgroundColor: lamp.colorScheme.surface,
       builder: (_) => Theme(
-        data: DesignTheme.lamp,
-        child: PlateSheet(player: this, panel: panel),
+        data: lamp,
+        child: DefaultTextStyle(
+          style: lamp.textTheme.bodyMedium!,
+          child: PlateSheet(player: this, panel: panel),
+        ),
       ),
     );
   }

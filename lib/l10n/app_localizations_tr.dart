@@ -1283,4 +1283,92 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get plateUnavailable => 'Eserin görselleri yüklenemedi.';
+
+  @override
+  String get spaceAssemble => 'Kur';
+
+  @override
+  String get spaceSection => 'Kesit';
+
+  @override
+  String get spaceStyle => 'Görünüm';
+
+  @override
+  String get spaceStyleDrawing => 'Çizim';
+
+  @override
+  String get spaceStyleStone => 'Taş';
+
+  @override
+  String get spaceStyleNight => 'Gece';
+
+  @override
+  String get spacePlay => 'Kuruluşu oynat';
+
+  @override
+  String get spaceAssembly => 'Adım adım kuruluş';
+
+  @override
+  String spaceAssemblyValue(String done, String total) {
+    return '$done / $total adım';
+  }
+
+  @override
+  String get spaceExplode => 'Patlatılmış görünüş';
+
+  @override
+  String get spaceTime => 'Zaman';
+
+  @override
+  String get spaceSteps => 'Adımlar';
+
+  @override
+  String get spaceSectionPlane => 'Kesit düzlemi';
+
+  @override
+  String get spaceSectionHint =>
+      'Kesiti kaydırmak için çizimdeki tutamacı sürükle; sana bakan yarı kaldırılır.';
+
+  @override
+  String get spaceSectionHandle => 'Kesit düzlemi tutamacı';
+
+  @override
+  String get spaceCutPlan => 'Plan kesiti';
+
+  @override
+  String get spaceCutNorthSouth => 'Kuzey–güney kesiti';
+
+  @override
+  String get spaceCutEastWest => 'Doğu–batı kesiti';
+
+  @override
+  String spaceMetres(String value) {
+    return '$value m';
+  }
+
+  @override
+  String get spaceChoisy => 'Choisy’nin alttan görünüşü';
+
+  @override
+  String get spaceChoisyHint =>
+      'Auguste Choisy 1899’da tonozları böyle çizdi: alttan, planı keserek.';
+
+  @override
+  String get spacePerspective => 'Perspektif';
+
+  @override
+  String get spaceGestureHint =>
+      'Döndürmek için sürükle, büyütmek için iki parmağını aç, iki parmakla kaydır, Choisy görünüşü için iki kez dokun.';
+
+  @override
+  String get spaceSources => 'Kaynaklar';
+
+  @override
+  String get spaceLoading => 'Çizim hazırlanıyor';
+
+  @override
+  String get spaceUnavailable => 'Çizimin modeli yüklenemedi.';
+
+  @override
+  String get digLayerStudies => 'Bu katmandaki incelemeler';
 }

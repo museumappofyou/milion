@@ -234,6 +234,7 @@ class Stratum {
     this.artworkIds,
     this.sourceIds, {
     this.anchorYear,
+    this.studyIds = const [],
   });
   final String id;
   final int fromYear;
@@ -252,6 +253,9 @@ class Stratum {
 
   /// The gauge's tick year; defaults to [fromYear].
   final int? anchorYear;
+
+  /// SpacePlayer studies read with this layer (`assets/space/<id>/`).
+  final List<String> studyIds;
   int get gaugeYear => anchorYear ?? fromYear;
   List<String> paragraphs(String language) =>
       body.inLanguage(language).split('\n\n');
@@ -268,6 +272,7 @@ class Stratum {
       r.optionalStrings('artworks'),
       r.strings('sources'),
       anchorYear: r.optionalInteger('anchorYear'),
+      studyIds: r.optionalStrings('studies'),
     ),
   );
 }

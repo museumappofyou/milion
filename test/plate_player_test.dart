@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/design/components.dart';
+import 'package:milion/design/tokens.dart';
+import 'package:milion/design/theme.dart';
 import 'package:milion/l10n/strings.dart';
 import 'package:milion/plate/assets.dart';
 import 'package:milion/plate/manifest.dart';
@@ -68,6 +70,7 @@ Future<void> visibleTap(WidgetTester tester, String label) async {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  sheetThemeRegression();
   for (final (name, home) in [
     (
       'Anastasis',
@@ -383,5 +386,40 @@ void main() {
       image.dispose();
       codec.dispose();
     }
+  });
+}
+
+/// 2026-10-12 (P08 audit): under the app's marble root theme the plate
+/// sheets drew a marble surface behind lamp controls, so their headings were
+/// marble on marble. The whole sheet must be lamp.
+void sheetThemeRegression() {
+  testWidgets('plate sheets are lamp throughout under a marble app', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await loadThemeFonts(tester);
+    final p = await loadPlate('genealogy');
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: DesignTheme.marble,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: PlatePlayer(manifest: p),
+      ),
+    );
+    await assetsReady(tester);
+    await tester.tap(find.byKey(const ValueKey('plate-layers')));
+    await tester.pumpAndSettle();
+    final sheet = tester.widget<BottomSheet>(find.byType(BottomSheet));
+    expect(sheet.backgroundColor, DesignTheme.lamp.colorScheme.surface);
+    final heading = find.descendant(
+      of: find.byType(PlateSheet),
+      matching: find.text('Layers'),
+    );
+    final style = DefaultTextStyle.of(tester.element(heading)).style
+        .merge(tester.widget<Text>(heading).style);
+    expect(style.color, MeasureColors.lamp.ink);
   });
 }

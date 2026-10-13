@@ -1,0 +1,70 @@
+{
+  "built": "2026-10-13",
+  "signing": "debug fallback (O05)",
+  "artifacts": {
+    "app-arm64-v8a-release.apk": {
+      "bytes": 97051400,
+      "sha256": "f9c7885fe917400a5fbb5da7fd88495df5f11c1673a123c60659a8017e9927e7",
+      "spaceFiles": [
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json"
+      ],
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/ink_sparkle.frag",
+        "shaders/lookup.frag",
+        "shaders/plate.frag",
+        "shaders/stretch_effect.frag"
+      ],
+      "spikeFilesBundled": false
+    },
+    "app-armeabi-v7a-release.apk": {
+      "bytes": 89660796,
+      "sha256": "1b5d9e0196825ee9ce298b8352209028382ab7c3de5946bb855726fdffa96779",
+      "spaceFiles": [
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json"
+      ],
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/ink_sparkle.frag",
+        "shaders/lookup.frag",
+        "shaders/plate.frag",
+        "shaders/stretch_effect.frag"
+      ],
+      "spikeFilesBundled": false
+    },
+    "app-x86_64-release.apk": {
+      "bytes": 102425344,
+      "sha256": "792ba0dfd98f3ca5f222f1a67417374f2b2ef4cfc91bc5c99d99c35d26d324c2",
+      "spaceFiles": [
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json"
+      ],
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/ink_sparkle.frag",
+        "shaders/lookup.frag",
+        "shaders/plate.frag",
+        "shaders/stretch_effect.frag"
+      ],
+      "spikeFilesBundled": false
+    },
+    "app-release.aab": {
+      "bytes": 143893114,
+      "sha256": "dc332803de7081e80a0a7de6596de9c0023bf7036a29dc9104a727d97a91dceb",
+      "spaceFiles": [
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json"
+      ],
+      "plateFiles": 21,
+      "shaders": [
+        "shaders/ink_sparkle.frag",
+        "shaders/lookup.frag",
+        "shaders/plate.frag",
+        "shaders/stretch_effect.frag"
+      ],
+      "spikeFilesBundled": false
+    }
+  }
+}
