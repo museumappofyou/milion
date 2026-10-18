@@ -70,6 +70,12 @@ class JsonReader {
     return json.containsKey(key) ? list(key, parse) : const [];
   }
 
+  /// Additive schema-1 fields: absent or null means null.
+  String? optionalString(String key) {
+    _read.add(key);
+    return json.containsKey(key) && json[key] != null ? string(key) : null;
+  }
+
   List<String> optionalStrings(String key) {
     _read.add(key);
     return json.containsKey(key) ? strings(key) : const [];
@@ -82,6 +88,12 @@ class JsonReader {
   }
 
   int? nullableInteger(String key) => value(key) == null ? null : integer(key);
+
+  /// Additive schema-1 fields: absent means null, present must be finite.
+  double? optionalNumber(String key) {
+    _read.add(key);
+    return json.containsKey(key) ? number(key) : null;
+  }
 
   double number(String key) {
     final v = value(key);

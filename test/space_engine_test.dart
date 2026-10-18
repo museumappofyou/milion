@@ -32,13 +32,17 @@ const _degree = math.pi / 180;
 ByteData tetrahedronGlb({
   Map<String, Object?> node = const {},
   List<String> required = const [],
+  int? aoCount,
 }) {
   // Y-up glTF positions; counter-clockwise from outside.
   final positions = Float32List.fromList([0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1]);
   final indices = Uint16List.fromList([0, 2, 1, 0, 1, 3, 0, 3, 2, 1, 2, 3]);
+  final ao = Float32List.fromList(List.filled(aoCount ?? 0, 1));
   final bin = BytesBuilder()
     ..add(positions.buffer.asUint8List())
-    ..add(indices.buffer.asUint8List());
+    ..add(indices.buffer.asUint8List())
+    ..add(ao.buffer.asUint8List());
+  final length = 72 + ao.lengthInBytes;
   final doc = {
     'asset': {'version': '2.0'},
     'extensionsRequired': ?(required.isEmpty ? null : required),
@@ -54,7 +58,7 @@ ByteData tetrahedronGlb({
       {
         'primitives': [
           {
-            'attributes': {'POSITION': 0},
+            'attributes': {'POSITION': 0, '_AO': ?(aoCount == null ? null : 2)},
             'indices': 1,
           },
         ],
@@ -63,13 +67,22 @@ ByteData tetrahedronGlb({
     'accessors': [
       {'bufferView': 0, 'componentType': 5126, 'count': 4, 'type': 'VEC3'},
       {'bufferView': 1, 'componentType': 5123, 'count': 12, 'type': 'SCALAR'},
+      if (aoCount != null)
+        {
+          'bufferView': 2,
+          'componentType': 5126,
+          'count': aoCount,
+          'type': 'SCALAR',
+        },
     ],
     'bufferViews': [
       {'buffer': 0, 'byteOffset': 0, 'byteLength': 48},
       {'buffer': 0, 'byteOffset': 48, 'byteLength': 24},
+      if (aoCount != null)
+        {'buffer': 0, 'byteOffset': 72, 'byteLength': ao.lengthInBytes},
     ],
     'buffers': [
-      {'byteLength': 72},
+      {'byteLength': length},
     ],
   };
   var json = utf8.encode(jsonEncode(doc));
@@ -80,11 +93,11 @@ ByteData tetrahedronGlb({
   );
   u32(0x46546C67);
   u32(2);
-  u32(12 + 8 + json.length + 8 + 72);
+  u32(12 + 8 + json.length + 8 + length);
   u32(json.length);
   u32(0x4E4F534A);
   out.add(json);
-  u32(72);
+  u32(length);
   u32(0x004E4942);
   out.add(bin.toBytes());
   return ByteData.sublistView(out.toBytes());
@@ -153,11 +166,16 @@ void main() {
         expect(signedVolume(mirrored), closeTo(1 / 6, 1e-6));
         expect(
           () => SpaceModel.fromGlb(
-            tetrahedronGlb(required: ['EXT_meshopt_compression']),
+            tetrahedronGlb(required: ['KHR_draco_mesh_compression']),
           ),
           throwsFormatException,
         );
         expect(() => SpaceModel.fromGlb(ByteData(24)), throwsFormatException);
+        // An `_AO` accessor must give one value per vertex.
+        expect(
+          () => SpaceModel.fromGlb(tetrahedronGlb(aoCount: 3)),
+          throwsFormatException,
+        );
       },
     );
   });
@@ -351,7 +369,11 @@ void main() {
         ..setView(const SpaceView(elevation: .8));
       c.playReveal();
       expect(c.playing, isTrue);
-      expect(c.view, c.choisyView.copyWith(zoom: SpaceController.revealZoom));
+      expect(c.view, c.revealView);
+      // P08's bay keeps the framing it was tuned to: Choisy's view at 1.3×.
+      expect(c.view.zoom, closeTo(1.3, .01));
+      expect(c.view.targetX, closeTo(c.choisyView.targetX, 1e-3));
+      expect(c.view.targetZ, closeTo(c.choisyView.targetZ, 1e-3));
       expect(c.sectionPlane, SpaceSection(2, 3));
       expect(c.caption, study.reveal.caption);
       for (var i = 0; i < 90; i++) {
@@ -411,7 +433,8 @@ void main() {
           section: const SpaceSection(2, 3),
         ),
       );
-      expect(r.stats.triangles, lessThan(SpaceStudy.triangleBudget));
+      // The spike's ceiling for drawn records, not a study's budget.
+      expect(r.stats.triangles, lessThan(150000));
       recorder.endRecording().dispose();
       r.dispose();
     });
@@ -497,8 +520,14 @@ void main() {
           ),
           strict: false,
         );
-        expect(stale.studies, isEmpty);
-        expect(stale.errors.single, contains('stale study citation'));
+        // A stale citation drops the studies that cite it (the Şehzade
+        // shares this one), not the others.
+        expect(stale.study('how-a-dome-stands'), isNull);
+        expect(stale.study('bodrum-camii'), isNotNull);
+        expect(
+          stale.errors.firstWhere((e) => e.startsWith('how-a-dome-stands')),
+          contains('stale study citation'),
+        );
       },
     );
   });

@@ -1,0 +1,89 @@
+{
+  "measurement": "host (macOS, Flutter test, JIT) CPU frame build; not device fps. P08 is the yardstick: on the A52s it ran 54–57 fps in its default view and 60 fps under touch (P08/device-bench.json).",
+  "budgetTriangles": 20500,
+  "how-a-dome-stands (P08)": {
+    "triangles": 20144,
+    "vertices": 10238,
+    "parts": 25,
+    "glbBytes": 300700,
+    "glbParseMs": 42.9,
+    "orbitChoisyCut": {
+      "frames": 120,
+      "medianMs": 1.61,
+      "p90Ms": 1.76,
+      "maxMs": 1.96,
+      "maxTrianglesDrawn": 17696
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.38,
+      "p90Ms": 1.56,
+      "maxMs": 1.85,
+      "maxTrianglesDrawn": 17568
+    }
+  },
+  "bodrum-camii": {
+    "triangles": 13220,
+    "vertices": 6966,
+    "parts": 38,
+    "glbBytes": 99276,
+    "glbParseMs": 19.2,
+    "orbitChoisyCut": {
+      "frames": 120,
+      "medianMs": 0.91,
+      "p90Ms": 1.04,
+      "maxMs": 1.4,
+      "maxTrianglesDrawn": 9598
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.07,
+      "p90Ms": 1.21,
+      "maxMs": 1.37,
+      "maxTrianglesDrawn": 16034
+    }
+  },
+  "kucuk-ayasofya": {
+    "triangles": 16484,
+    "vertices": 8846,
+    "parts": 32,
+    "glbBytes": 111844,
+    "glbParseMs": 8.8,
+    "orbitChoisyCut": {
+      "frames": 120,
+      "medianMs": 1.3,
+      "p90Ms": 1.45,
+      "maxMs": 2.02,
+      "maxTrianglesDrawn": 15215
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.4,
+      "p90Ms": 1.63,
+      "maxMs": 1.88,
+      "maxTrianglesDrawn": 21722
+    }
+  },
+  "sehzade-camii": {
+    "triangles": 20492,
+    "vertices": 11354,
+    "parts": 41,
+    "glbBytes": 143284,
+    "glbParseMs": 10.6,
+    "orbitChoisyCut": {
+      "frames": 120,
+      "medianMs": 1.84,
+      "p90Ms": 2.03,
+      "maxMs": 2.38,
+      "maxTrianglesDrawn": 24057
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.84,
+      "p90Ms": 2.02,
+      "maxMs": 2.3,
+      "maxTrianglesDrawn": 29853
+    }
+  },
+  "deviceFps": "unverified: the A52s was not connected (O01)"
+}

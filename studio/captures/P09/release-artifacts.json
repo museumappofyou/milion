@@ -1,0 +1,84 @@
+{
+  "built": "2026-10-18",
+  "signing": "debug fallback (O05)",
+  "permissions": [
+    "android.permission.CAMERA",
+    "android.permission.ACCESS_NETWORK_STATE"
+  ],
+  "artifacts": {
+    "app-arm64-v8a-release.apk": {
+      "bytes": 97168053,
+      "sha256": "56fe845fee9c2aa5d140b535f73b62329b9a8ae37b601a7e21471e74b07b9fd9",
+      "spaceFiles": [
+        "assets/space/bodrum-camii/model.glb",
+        "assets/space/bodrum-camii/study.json",
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json",
+        "assets/space/index.json",
+        "assets/space/kucuk-ayasofya/model.glb",
+        "assets/space/kucuk-ayasofya/study.json",
+        "assets/space/sehzade-camii/model.glb",
+        "assets/space/sehzade-camii/study.json"
+      ],
+      "plateFiles": 21,
+      "kitStudies": 3
+    },
+    "app-armeabi-v7a-release.apk": {
+      "bytes": 89793833,
+      "sha256": "cf44cbb7693da40929dee9d7e59fa4613273d353fba83f2daeef9d6ca9ccba0c",
+      "spaceFiles": [
+        "assets/space/bodrum-camii/model.glb",
+        "assets/space/bodrum-camii/study.json",
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json",
+        "assets/space/index.json",
+        "assets/space/kucuk-ayasofya/model.glb",
+        "assets/space/kucuk-ayasofya/study.json",
+        "assets/space/sehzade-camii/model.glb",
+        "assets/space/sehzade-camii/study.json"
+      ],
+      "plateFiles": 21,
+      "kitStudies": 3
+    },
+    "app-x86_64-release.apk": {
+      "bytes": 102541997,
+      "sha256": "66928baae26bf426a38affa73fe31b645677534cfc7cc2666cedd7725b7464d7",
+      "spaceFiles": [
+        "assets/space/bodrum-camii/model.glb",
+        "assets/space/bodrum-camii/study.json",
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json",
+        "assets/space/index.json",
+        "assets/space/kucuk-ayasofya/model.glb",
+        "assets/space/kucuk-ayasofya/study.json",
+        "assets/space/sehzade-camii/model.glb",
+        "assets/space/sehzade-camii/study.json"
+      ],
+      "plateFiles": 21,
+      "kitStudies": 3
+    },
+    "app-release.aab": {
+      "bytes": 144100057,
+      "sha256": "aebaab7a4fecd5cce373a71b7770939ff8e51ebb799e322ad4738edb2228737b",
+      "spaceFiles": [
+        "assets/space/bodrum-camii/model.glb",
+        "assets/space/bodrum-camii/study.json",
+        "assets/space/how-a-dome-stands/model.glb",
+        "assets/space/how-a-dome-stands/study.json",
+        "assets/space/index.json",
+        "assets/space/kucuk-ayasofya/model.glb",
+        "assets/space/kucuk-ayasofya/study.json",
+        "assets/space/sehzade-camii/model.glb",
+        "assets/space/sehzade-camii/study.json"
+      ],
+      "plateFiles": 21,
+      "kitStudies": 3
+    }
+  },
+  "deltaFromP08Bytes": {
+    "app-arm64-v8a-release.apk": 116653,
+    "app-armeabi-v7a-release.apk": 133037,
+    "app-x86_64-release.apk": 116653,
+    "app-release.aab": 206152
+  }
+}

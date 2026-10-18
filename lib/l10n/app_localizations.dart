@@ -2515,6 +2515,24 @@ abstract class AppLocalizations {
   /// **'East–west cut'**
   String get spaceCutEastWest;
 
+  /// No description provided for @spaceCutLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Long section'**
+  String get spaceCutLong;
+
+  /// No description provided for @spaceCutCross.
+  ///
+  /// In en, this message translates to:
+  /// **'Cross section'**
+  String get spaceCutCross;
+
+  /// No description provided for @spaceStudies.
+  ///
+  /// In en, this message translates to:
+  /// **'3D studies'**
+  String get spaceStudies;
+
   /// No description provided for @spaceMetres.
   ///
   /// In en, this message translates to:

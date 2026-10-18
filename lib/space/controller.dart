@@ -158,8 +158,38 @@ class SpaceController extends ChangeNotifier {
   double _fromAssembly = 0, _blend = 1, _viewT = 1;
   SpaceView? _viewFrom, _viewTo;
 
-  SpaceView get choisyView => limits.clamp(SpaceView.choisy(model.bounds));
-  static const revealZoom = 1.3;
+  SpaceView get choisyView => limits.clamp(
+    SpaceView.choisy(
+      model.bounds,
+      elevation: study.choisy.elevationDegrees * math.pi / 180,
+      azimuth: study.choisy.azimuthDegrees * math.pi / 180,
+    ),
+  );
+
+  /// The reveal frames only the parts it assembles: their bounds' centre,
+  /// zoomed so they fill about as much as the whole model does, a little
+  /// less (P08's bay, 0.92 × 58.2 / 41.3 m, gives the 1.3 it was tuned to).
+  static const revealFill = .92;
+  late final SpaceBounds revealBounds = () {
+    final through = study.steps.indexWhere((s) => s.id == study.reveal.through);
+    final ids = {for (final s in study.steps.take(through + 1)) ...s.parts};
+    return SpaceBounds.of([
+      for (final p in model.parts)
+        if (ids.contains(p.id)) p.positions,
+    ]);
+  }();
+  SpaceView get revealView {
+    final b = revealBounds;
+    return limits.clamp(
+      choisyView.copyWith(
+        zoom: math.max(1.0, revealFill * model.bounds.radius / b.radius),
+        targetX: b.centerX,
+        targetY: b.centerY,
+        targetZ: b.centerZ,
+      ),
+    );
+  }
+
   int get epochYear => study.epochs[epoch].year;
   List<SpaceStep> get steps => study.stepsIn(epochYear);
   double get duration => reveal ? study.reveal.seconds : study.storySeconds;
@@ -204,7 +234,11 @@ class SpaceController extends ChangeNotifier {
 
   List<SpacePartState> partStates() {
     final m = moment, bounds = model.bounds;
-    final drop = reduced ? 0.0 : 7.0;
+    // Scaled to the building: P08's 56 m bay in eight steps drops parts
+    // from 7 m and lifts each step 6 m when exploded.
+    final height = math.max(bounds.maxZ - bounds.minZ, 1.0);
+    final drop = reduced ? 0.0 : height * .125;
+    final lift = height * .75 / math.max(1, steps.length - 1);
     return [
       for (var i = 0; i < model.parts.length; i++)
         () {
@@ -220,7 +254,7 @@ class SpaceController extends ChangeNotifier {
           if (p <= 0) return SpacePartState.hidden;
           final rank = j >= 0 ? j : _index[from ?? m.epoch][i];
           final part = model.parts[i];
-          var dz = explode * math.max(rank, 0) * 6.0;
+          var dz = explode * math.max(rank, 0) * lift;
           if (j >= 0 && to < 1) dz += (1 - _smooth(to)) * drop;
           return SpacePartState(
             progress: p,
@@ -366,7 +400,7 @@ class SpaceController extends ChangeNotifier {
     section = true;
     sectionAxis = 2;
     sectionOffset = model.bounds.minZ + study.choisy.sectionHeight;
-    view = limits.clamp(choisyView.copyWith(zoom: revealZoom));
+    view = revealView;
     _viewT = 1;
     cameraRevision++;
     if (reduced) {

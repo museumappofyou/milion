@@ -1342,6 +1342,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get spaceCutEastWest => 'Doğu–batı kesiti';
 
   @override
+  String get spaceCutLong => 'Boyuna kesit';
+
+  @override
+  String get spaceCutCross => 'Enine kesit';
+
+  @override
+  String get spaceStudies => '3B çizimler';
+
+  @override
   String spaceMetres(String value) {
     return '$value m';
   }

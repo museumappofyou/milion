@@ -1,0 +1,526 @@
+# P09 kit spec: the Myrelaion church (Bodrum Camii), Laleli, c. 920.
+# Frame: metres, z up, the upper church floor at z = 0, +y along the
+# west–east axis toward the apse (+x is then south). Cited dimensions are
+# checked against the geometry (tool/space/build_kit.py). Values that no
+# source gives are set in proportion and say so: wall thickness 0.75 m and the
+# buttresses are chosen so the outline matches OSM's; the heights follow the
+# rule that a cross-in-square church is about as high to its cross-arm vaults
+# as its naos is wide (Buchwald, quoted by Ousterhout).
+schemaVersion: 1
+id: bodrum-camii
+place: bodrum-mosque
+title: {en: "The Myrelaion, a church on a church", tr: "Myrelaion: kilise üstünde kilise"}
+description:
+  en: >-
+    A drawing of the Myrelaion (Bodrum Camii) assembling, seen from below: the
+    lower church that lifts it to the level of Romanos I's palace, then a naos
+    8 m square on four columns, its cross vaults and a dome 3.3 m across on a
+    drum with eight windows. The time scrubber turns the church of about 920
+    into today's mosque. Plan dimensions are cited; heights follow a proportion
+    rule. A diagram, not a survey.
+  tr: >-
+    Myrelaion'un (Bodrum Camii) aşağıdan görülen çizimi kendini kurar: onu I.
+    Romanos'un sarayıyla aynı seviyeye çıkaran alt kilise, ardından dört sütun
+    üstünde 8 m'lik kare naos, haç kolu tonozları ve sekiz pencereli kasnağın
+    üstünde 3,3 m çapında bir kubbe. Zaman çubuğu yaklaşık 920'deki kiliseyi
+    bugünkü camiye çevirir. Plan ölçüleri kaynaklıdır; yükseklikler bir oran
+    kuralına dayanır. Bu bir şemadır, rölöve değildir.
+eras: [byzantine, ottoman]
+honesty: RECONSTRUCTION
+orientation:
+  axis: 95.3
+  source: osm-way-198768798
+  footprint:   # [lat, lon], OSM way 198768798 v6 (2023-02-15)
+    - [41.0085532, 28.9556120]
+    - [41.0085389, 28.9558149]
+    - [41.0084692, 28.9558063]
+    - [41.0084490, 28.9558038]
+    - [41.0084508, 28.9557795]
+    - [41.0084634, 28.9557811]
+    - [41.0084664, 28.9557389]
+    - [41.0084423, 28.9557359]
+    - [41.0084468, 28.9556714]
+    - [41.0084519, 28.9555994]
+    - [41.0084816, 28.9556031]
+step: 1.6
+epochs:
+  - {year: 922, label: {en: "Myrelaion church, c. 920", tr: "Myrelaion Kilisesi, y. 920"}}
+  - {year: 2026, label: {en: "Bodrum Camii today", tr: "Bugün Bodrum Camii"}}
+parts:
+  # Lower church (substructure), floor 7.5 m below the church's.
+  - {id: lower-wall-n, kind: slab, material: stone, at: [[-4.375, -0.45]], z: -7.5,
+     params: {width: 0.75, depth: 15.7, thickness: 7.2}}
+  - {id: lower-wall-s, kind: slab, material: stone, at: [[4.375, -0.45]], z: -7.5,
+     params: {width: 0.75, depth: 15.7, thickness: 7.2}}
+  - {id: lower-wall-w, kind: slab, material: stone, at: [[0, -7.85]], z: -7.5,
+     params: {width: 8.0, depth: 0.9, thickness: 7.2}}
+  - {id: lower-wall-x, kind: slab, material: stone, at: [[0, -4.375]], z: -7.5,
+     params: {width: 8.0, depth: 0.75, thickness: 7.2}}
+  - {id: lower-wall-e, kind: slab, material: stone, at: [[0, 7.025]], z: -7.5,
+     params: {width: 8.0, depth: 0.75, thickness: 7.2}}
+  - id: lower-spur
+    kind: slab
+    material: stone
+    note: the two walls projecting from the east wall between the aisles
+    at: [[-2, 5.65], [2, 5.65]]
+    z: -7.5
+    params: {width: 0.5, depth: 2.0, thickness: 4.6}
+  - id: lower-apse
+    kind: exedra
+    material: stone
+    note: the substructure under the three apses
+    at: [[0, 6.65], [-3.0, 6.65], [3.0, 6.65]]
+    z: -7.5
+    params: {radius: 1.7, thickness: 0.75, height: 7.2, outer_sides: 6, solid: true, cap: false}
+  - id: lower-buttresses
+    kind: buttress
+    material: stone
+    note: rectangular, under the half-round buttresses of the church
+    at: [[4.75, -6.2, 90], [4.75, -3.6, 90], [4.75, -1.0, 90], [4.75, 1.6, 90], [4.75, 4.2, 90],
+         [4.75, 6.8, 90], [-4.75, -6.2, -90], [-4.75, -3.6, -90], [-4.75, -1.0, -90],
+         [-4.75, 1.6, -90], [-4.75, 4.2, -90], [-4.75, 6.8, -90], [-1.1, -8.3, 0], [1.1, -8.3, 0]]
+    z: -7.5
+    params: {width: 1.6, depth: 0.8, height: 7.2}
+  - id: lower-columns
+    kind: column
+    material: marble
+    at: [[-2, -2], [2, -2], [-2, 2], [2, 2]]
+    z: -7.5
+    params: {height: 4.2, diameter: 0.5, capital: impost, n: 8}
+  - id: lower-vaults
+    kind: arch
+    material: brick
+    note: the three aisles' barrel vaults (the crossing ones are left out)
+    at: [{at: [0, 1.325], z: -2.9}]
+    params: {span: 3.6, thickness: 0.4, depth: 10.65}
+  - id: lower-aisle-vaults
+    kind: arch
+    material: brick
+    at: [{at: [-3.1, 1.325], z: -2.9}, {at: [3.1, 1.325], z: -2.9}]
+    params: {span: 1.8, thickness: 0.35, depth: 10.65}
+  - id: lower-narthex-vault
+    kind: arch
+    material: brick
+    at: [{at: [0, -6.075], z: -2.9, turn: 90}]
+    params: {span: 2.65, thickness: 0.35, depth: 8.0}
+  - {id: floor, kind: slab, material: marble, at: [[0, -0.45]], z: -0.3,
+     params: {width: 9.5, depth: 15.7, thickness: 0.3}}
+  # The church (upper level).
+  - id: wall-n
+    kind: wall
+    material: brick
+    at: [[-4.375, -8.3, 90]]
+    params:
+      length: 15.7
+      height: 9.0
+      thickness: 0.75
+      openings:
+        - {x: 2.4, width: 1.0, sill: 2.0, head: 4.4, arch: round}
+        - {x: 5.3, width: 1.0, sill: 2.4, head: 5.0, arch: round}
+        - {x: 8.3, width: 1.4, sill: 2.4, head: 5.6, arch: round}
+        - {x: 11.3, width: 1.0, sill: 2.4, head: 5.0, arch: round}
+        - {x: 13.6, width: 0.6, sill: 1.6, head: 4.5, arch: round}
+  - id: wall-s
+    kind: wall
+    material: brick
+    at: [[4.375, -8.3, 90]]
+    params:
+      length: 15.7
+      height: 9.0
+      thickness: 0.75
+      openings:
+        - {x: 2.4, width: 1.0, sill: 2.0, head: 4.4, arch: round}
+        - {x: 5.3, width: 1.0, sill: 2.4, head: 5.0, arch: round}
+        - {x: 8.3, width: 1.4, sill: 2.4, head: 5.6, arch: round}
+        - {x: 11.3, width: 1.0, sill: 2.4, head: 5.0, arch: round}
+        - {x: 13.6, width: 0.6, sill: 1.6, head: 4.5, arch: round}
+  - id: wall-w
+    kind: wall
+    material: brick
+    at: [[-4.0, -7.925]]
+    params:
+      length: 8.0
+      height: 9.0
+      thickness: 0.75
+      openings: [{x: 4.0, width: 1.4, sill: 0, head: 3.4, arch: round}]
+  - id: wall-x
+    kind: wall
+    material: brick
+    note: between the narthex and the naos, three doors
+    at: [[-4.0, -4.375]]
+    params:
+      length: 8.0
+      height: 9.0
+      thickness: 0.75
+      openings:
+        - {x: 1.3, width: 0.9, sill: 0, head: 2.9, arch: round}
+        - {x: 4.0, width: 1.6, sill: 0, head: 3.8, arch: round}
+        - {x: 6.7, width: 0.9, sill: 0, head: 2.9, arch: round}
+  - id: wall-e
+    kind: wall
+    material: brick
+    note: opening into the three apses
+    at: [[-4.0, 7.025]]
+    params:
+      length: 8.0
+      height: 9.0
+      thickness: 0.75
+      openings:
+        - {x: 1.0, width: 1.4, sill: 0, head: 3.6, arch: round}
+        - {x: 4.0, width: 3.4, sill: 0, head: 6.8, arch: round}
+        - {x: 7.0, width: 1.4, sill: 0, head: 3.6, arch: round}
+  - id: buttresses
+    kind: buttress
+    material: brick
+    note: six half-round buttresses on each long side and two flanking the west door
+    at: [[4.75, -6.2, 90], [4.75, -3.6, 90], [4.75, -1.0, 90], [4.75, 1.6, 90], [4.75, 4.2, 90],
+         [4.75, 6.8, 90], [-4.75, -6.2, -90], [-4.75, -3.6, -90], [-4.75, -1.0, -90],
+         [-4.75, 1.6, -90], [-4.75, 4.2, -90], [-4.75, 6.8, -90], [-1.1, -8.3, 0], [1.1, -8.3, 0]]
+    params: {width: 1.6, depth: 0.8, height: 9.0, kind: half-round}
+  - id: apse
+    kind: exedra
+    material: brick
+    note: semicircular inside, three-sided outside
+    at: [[0, 6.65]]
+    params: {radius: 1.7, thickness: 0.75, height: 5.4, outer_sides: 6, windows: 1, sill: 1.6,
+             head: 4.5, share: 0.25, cap_thickness: 0.4}
+  - id: side-apses
+    kind: exedra
+    material: brick
+    at: [[-3.0, 6.65], [3.0, 6.65]]
+    params: {radius: 0.65, thickness: 0.6, height: 3.6, outer_sides: 6, cap_thickness: 0.3}
+  - id: columns
+    kind: column
+    material: marble
+    at: [[-2, -2], [2, -2], [-2, 2], [2, 2]]
+    params: {height: 6.0, diameter: 0.55, capital: impost, n: 10}
+  - id: piers
+    kind: pier
+    material: stone
+    note: the four piers that replaced the columns (date unknown)
+    at: [[-2, -2], [2, -2], [-2, 2], [2, 2]]
+    params: {width: 0.9, depth: 0.9, height: 6.0}
+  - id: vault-arms
+    kind: arch
+    material: brick
+    note: the barrel vaults of the cross arms; the east one runs on over the bema
+    at: [{at: [-3.0, 0], z: 6.0, turn: 90}, {at: [3.0, 0], z: 6.0, turn: 90},
+         {at: [0, -3.0], z: 6.0}]
+    params: {span: 4.0, thickness: 0.4, depth: 2.0}
+  - id: vault-bema
+    kind: arch
+    material: brick
+    at: [{at: [0, 4.325], z: 6.0}]
+    params: {span: 4.0, thickness: 0.4, depth: 4.65}
+  - id: vault-corners
+    kind: sail-vault
+    material: brick
+    at: [{at: [-3, -3], z: 6.0}, {at: [3, -3], z: 6.0}, {at: [-3, 3], z: 6.0}, {at: [3, 3], z: 6.0}]
+    params: {half: 1.0, thickness: 0.3}
+  - id: vault-pastophoria
+    kind: arch
+    material: brick
+    at: [{at: [-3.0, 5.325], z: 5.4}, {at: [3.0, 5.325], z: 5.4}]
+    params: {span: 2.0, thickness: 0.3, depth: 2.65}
+  - id: vault-narthex
+    kind: sail-vault
+    material: brick
+    note: the central bay's shallow domical vault (2.80 m span)
+    at: [{at: [0, -6.15], z: 5.0}]
+    params: {half: 1.4, thickness: 0.3}
+  - id: vault-narthex-ends
+    kind: arch
+    material: brick
+    at: [{at: [-2.7, -6.15], z: 5.0, turn: 90}, {at: [2.7, -6.15], z: 5.0, turn: 90}]
+    params: {span: 2.8, thickness: 0.3, depth: 2.6}
+  - id: pendentives
+    kind: pendentives
+    material: brick
+    at: [{at: [0, 0], z: 6.0}]
+    params: {half: 2.0, top: 2.4}
+  - id: ring
+    kind: ring
+    material: brick
+    at: [{at: [0, 0], z: 8.4}]
+    params: {r0: 1.65, r1: 2.2, z0: 0, z1: 0.3, n: 16}
+  - id: dome
+    kind: dome
+    material: brick
+    note: a melon dome of eight concave cells on a drum with eight windows
+    at: [{at: [0, 0], z: 11.85}]
+    params:
+      radius: 1.65
+      thickness: 0.3
+      gores: 8
+      alternate: false
+      gore_depth: 0.12
+      phase: 0.3927
+      drum: {height: 3.15, thickness: 0.55, windows: 8, sill: 0.6, head: 2.4, share: 0.45,
+             buttresses: {depth: 0.55, width: 0.9}}
+  - id: minaret
+    kind: minaret
+    material: stone
+    note: on the south-west corner of the substructure; its size is an estimate
+    at: [{at: [5.15, -8.7], z: -7.5}]
+    params: {base: 2.4, base_height: 9.0, shaft_diameter: 1.7, shaft_top: 20.5, serefe: [17.0],
+             serefe_depth: 0.6, corbel: 0.9, parapet: 0.9, petek: 2.2, cap: 3.6, finial: 1.0,
+             sides: 12, shoe: 1.0}
+steps:
+  - id: substructure
+    parts: [lower-wall-*, lower-spur, lower-apse, lower-buttresses]
+    seconds: 3.4
+    epochs: []
+    sources: [freely-cakmak-2004, naumann-1966]
+    label: {en: "A platform for a palace church", tr: "Saray kilisesi için bir set"}
+    caption:
+      en: >-
+        The ground falls toward the Marmara, so the church first got a storey
+        under it: a substructure that lifts its floor to the level of Romanos
+        I's palace terrace.
+      tr: >-
+        Arazi Marmara'ya doğru alçalır; bu yüzden kilisenin önce altına bir kat
+        yapıldı: döşemesini I. Romanos'un saray terasıyla aynı seviyeye
+        kaldıran bir alt yapı.
+  - id: lower-church
+    parts: [lower-columns, lower-vaults, lower-aisle-vaults, lower-narthex-vault, floor]
+    seconds: 3.4
+    epochs: []
+    sources: [freely-cakmak-2004, talbot-rice-1933]
+    label: {en: "The lower church", tr: "Alt kilise"}
+    caption:
+      en: >-
+        Inside it, a hall 8 by 10.65 m in three aisles: four columns stand
+        directly under the church's own, and its vaults carry the floor 7.5 m
+        above.
+      tr: >-
+        İçinde üç sahınlı, 8'e 10,65 m'lik bir salon: dört sütun üstteki
+        kilisenin sütunlarının tam altında durur, tonozları 7,5 m yukarıdaki
+        döşemeyi taşır.
+  - id: walls
+    parts: [wall-*, buttresses]
+    seconds: 3.2
+    epochs: []
+    sources: [van-millingen-1912, freely-cakmak-2004]
+    label: {en: "Walls and half-round buttresses", tr: "Duvarlar ve yarım yuvarlak payandalar"}
+    caption:
+      en: >-
+        All brick: a naos 8 m square behind a narthex, its long sides ribbed
+        with six half-round buttresses each, two more flanking the west door.
+      tr: >-
+        Tamamı tuğla: bir son cemaat yerinin arkasında 8 m'lik kare naos; uzun
+        kenarlarında altışar, batı kapısının iki yanında birer yarım yuvarlak
+        payanda.
+  - id: apses
+    parts: [apse*, side-apses*]
+    seconds: 3.2
+    epochs: []
+    sources: [van-millingen-1912, freely-cakmak-2004]
+    label: {en: "Three apses", tr: "Üç apsis"}
+    caption:
+      en: >-
+        Three apses close the east end, each three-sided outside; the main one
+        is round within.
+      tr: >-
+        Doğu ucunu üç apsis kapatır; üçü de dışta üç yüzlüdür, ortadaki içte
+        yuvarlaktır.
+  - id: columns
+    parts: [columns]
+    seconds: 3.2
+    epochs: [922]
+    sources: [freely-cakmak-2004]
+    label: {en: "Four columns", tr: "Dört sütun"}
+    caption:
+      en: >-
+        Four columns mark a cross with arms 4 m wide, dividing the naos into
+        nine bays: the cross-in-square plan.
+      tr: >-
+        Dört sütun kolları 4 m genişliğinde bir haç çizer ve naosu dokuz
+        bölüme ayırır: kapalı Yunan haçı planı.
+  - id: vaults
+    parts: [vault-*]
+    seconds: 3.2
+    epochs: []
+    sources: [freely-cakmak-2004, ousterhout-master-builders]
+    label: {en: "Cross vaults", tr: "Haç kolu tonozları"}
+    caption:
+      en: >-
+        Barrel vaults roof the four arms, small domical vaults the corners. The
+        drawing raises them about as high as the naos is wide, a proportion
+        found in this church.
+      tr: >-
+        Dört kolu beşik tonozlar, köşeleri küçük kubbemsi tonozlar örter. Çizim
+        onları naosun genişliği kadar yükseğe koyar; bu oran bu kilisede
+        gözlenmiştir.
+  - id: pendentives
+    parts: [pendentives, ring]
+    seconds: 3.2
+    epochs: []
+    sources: [choisy-1883]
+    label: {en: "Pendentives", tr: "Pandantifler"}
+    caption:
+      en: >-
+        Over the 4 m crossing, four pendentives turn the square into the ring
+        the drum stands on.
+      tr: >-
+        4 m'lik orta bölümün üstünde dört pandantif kareyi kasnağın oturduğu
+        bileziğe çevirir.
+  - id: drum
+    parts: [dome-drum]
+    seconds: 3.2
+    epochs: []
+    sources: [freely-cakmak-2004]
+    label: {en: "A drum with eight windows", tr: "Sekiz pencereli kasnak"}
+    caption:
+      en: >-
+        A cylindrical drum 5.5 m across and 3.15 m high, its eight round-headed
+        windows separated by triangular buttresses.
+      tr: >-
+        5,5 m çapında, 3,15 m yüksekliğinde silindirik bir kasnak; sekiz
+        yuvarlak kemerli penceresini üçgen payandalar ayırır.
+  - id: dome
+    parts: [dome]
+    seconds: 3.2
+    epochs: []
+    sources: [ousterhout-master-builders, freely-cakmak-2004]
+    label: {en: "A dome 3.3 m across", tr: "3,3 m'lik kubbe"}
+    caption:
+      en: >-
+        The dome is only about 3.3 m in diameter, about ten Byzantine feet,
+        divided inside into eight concave cells.
+      tr: >-
+        Kubbenin çapı yalnızca 3,3 m kadardır, yaklaşık on Bizans ayağı; içten
+        sekiz iç bükey dilime ayrılır.
+  - id: piers
+    parts: [piers]
+    seconds: 3.2
+    epochs: [2026]
+    sources: [freely-cakmak-2004, talbot-rice-1933]
+    label: {en: "Piers for columns", tr: "Sütunların yerine ayaklar"}
+    caption:
+      en: >-
+        At some unrecorded date after the Ottoman conversion (about 1500), the
+        four columns were replaced by the masonry piers that carry the dome
+        today.
+      tr: >-
+        Osmanlı döneminde camiye çevrilmesinden (y. 1500) sonra, tarihi
+        bilinmeyen bir zamanda, dört sütunun yerini bugün kubbeyi taşıyan kâgir
+        ayaklar aldı.
+  - id: minaret
+    parts: [minaret*]
+    seconds: 3.2
+    epochs: [2026]
+    sources: [freely-cakmak-2004, naumann-1966]
+    label: {en: "The minaret", tr: "Minare"}
+    caption:
+      en: >-
+        The minaret stands on the south-west corner of the lower church and
+        projects beyond it on two sides; its height here is an estimate.
+      tr: >-
+        Minare alt kilisenin güneybatı köşesinde durur ve iki yönde onun
+        dışına taşar; buradaki yüksekliği bir tahmindir.
+reveal:
+  through: dome
+  seconds: 8.0
+  turnDegrees: 30
+  caption:
+    en: "A church lifted onto its own lower church, then a dome only 3.3 m across."
+    tr: "Kendi alt kilisesinin üstüne kaldırılmış bir kilise, sonra yalnızca 3,3 m'lik bir kubbe."
+choisy: {sectionHeight: 13.0, elevation: -50, azimuth: 225}
+dimensions:
+  - id: naos-width
+    value: 8.0
+    measure: {kind: gap, from: [wall-n], to: [wall-s], axis: x, within: [[-4, 4], [0, 9]]}
+    source: freely-cakmak-2004
+    quote: "The naos, excluding the bema and pastophoria, measures eight meters on a side."
+  - id: lower-hall-width
+    value: 8.0
+    measure: {kind: gap, from: [lower-wall-n], to: [lower-wall-s], axis: x, within: [[-4, 6], [-7.5, -0.3]]}
+    source: freely-cakmak-2004
+    quote: "a rectangular hall 8 by 10.65 meters in plan, divided longitudinally into three aisles"
+  - id: lower-hall-length
+    value: 10.65
+    measure: {kind: gap, from: [lower-wall-x], to: [lower-wall-e], axis: y}
+    source: freely-cakmak-2004
+    quote: "a rectangular hall 8 by 10.65 meters in plan"
+  - id: lower-narthex-width
+    value: 2.65
+    measure: {kind: gap, from: [lower-wall-w], to: [lower-wall-x], axis: y}
+    source: freely-cakmak-2004
+    quote: "a barrel-vaulted hall, 2.65 meters wide"
+  - id: floor-to-floor
+    value: 7.5
+    measure: {kind: bottom, parts: [lower-wall-*]}
+    source: talbot-rice-1933
+    quote: "3.5 metres above the floor of the lower church or nearly 4 metres below that of the upper"
+  - id: dome-diameter
+    value: 3.3
+    measure: {kind: diameter, parts: [dome], side: inner, band: 0.02}
+    source: ousterhout-master-builders
+    quote: "The Myrelaion's dome is only about 3.3 meters in diameter, or just about ten Byzantine feet"
+  - id: drum-diameter
+    value: 5.5
+    measure: {kind: diameter, parts: [dome-drum], side: outer, band: 0.02}
+    source: freely-cakmak-2004
+    quote: "the dome sits on a high cylindrical drum, 5.50 meters in diameter and rising to a height of 3.15 meters"
+  - id: drum-height
+    value: 3.15
+    measure: {kind: extent, parts: [dome-drum], axis: z}
+    source: freely-cakmak-2004
+    quote: "rising to a height of 3.15 meters"
+  - id: drum-windows
+    value: 8
+    measure: {kind: count, parts: [dome-drum], zmin: 9.3, zmax: 11.1}
+    source: freely-cakmak-2004
+    quote: "penetrated by eight round-headed windows separated by triangular projecting buttresses"
+  - id: length-with-apses
+    value: 17.16
+    measure: {kind: extent, parts: [wall-*, apse, side-apses], axis: y}
+    source: osm-way-198768798
+    quote: "OSM outline, minimum-area rectangle 17.16 × 11.30 m"
+  - id: width-across-buttresses
+    value: 11.30
+    measure: {kind: extent, parts: [wall-*, buttresses], axis: x}
+    source: osm-way-198768798
+    quote: "OSM outline, minimum-area rectangle 17.16 × 11.30 m"
+shared: [choisy-1883]
+sources:
+  - id: freely-cakmak-2004
+    title: {en: "Byzantine Monuments of Istanbul (Cambridge, 2004), pp. 178–186, after Striker (1981)",
+            tr: "Byzantine Monuments of Istanbul (Cambridge, 2004), s. 178–186, Striker'e (1981) dayanarak"}
+    url: https://archive.org/details/byzantinemonumen0000free
+    author: {en: "John Freely and Ahmet S. Çakmak", tr: "John Freely ve Ahmet S. Çakmak"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: ousterhout-master-builders
+    title: {en: "Master Builders of Byzantium (Princeton, 1999)", tr: "Master Builders of Byzantium (Princeton, 1999)"}
+    url: https://archive.org/details/masterbuildersof2008oust
+    author: {en: "Robert Ousterhout", tr: "Robert Ousterhout"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: talbot-rice-1933
+    title: {en: "Excavations at Bodrum Camii 1930, Byzantion 8 (1933), pp. 151–174",
+            tr: "Excavations at Bodrum Camii 1930, Byzantion 8 (1933), s. 151–174"}
+    url: https://archive.org/details/byzantion-06-1931
+    author: {en: "David Talbot Rice", tr: "David Talbot Rice"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: naumann-1966
+    title: {en: "Der antike Rundbau beim Myrelaion und der Palast Romanos I. Lekapenos, IstMitt 16 (1966), pp. 199–216",
+            tr: "Der antike Rundbau beim Myrelaion und der Palast Romanos I. Lekapenos, IstMitt 16 (1966), s. 199–216"}
+    url: https://archive.org/details/48-1998
+    author: {en: "Rudolf Naumann", tr: "Rudolf Naumann"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: van-millingen-1912
+    title: {en: "Byzantine Churches in Constantinople (London, 1912)", tr: "Byzantine Churches in Constantinople (Londra, 1912)"}
+    url: https://www.gutenberg.org/ebooks/29077
+    author: {en: "Alexander Van Millingen, with Ramsay Traquair, W. S. George and A. E. Henderson",
+             tr: "Alexander Van Millingen; Ramsay Traquair, W. S. George ve A. E. Henderson ile"}
+    accessedAt: "2026-10-17"
+    licence: {en: "Public domain", tr: "Kamu malı"}
+  - id: osm-way-198768798
+    title: {en: "OpenStreetMap way 198768798, Bodrum Camii (version 6)", tr: "OpenStreetMap yolu 198768798, Bodrum Camii (6. sürüm)"}
+    url: https://www.openstreetmap.org/way/198768798
+    author: {en: "OpenStreetMap contributors", tr: "OpenStreetMap katkıcıları"}
+    accessedAt: "2026-10-17"
+    licence: {en: "ODbL 1.0", tr: "ODbL 1.0"}

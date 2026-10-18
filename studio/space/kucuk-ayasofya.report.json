@@ -1,0 +1,137 @@
+{
+  "id": "kucuk-ayasofya",
+  "parts": 32,
+  "triangles": 16484,
+  "vertices": 8846,
+  "bytes": 111844,
+  "axis": {
+    "axis": 108.0,
+    "footprintAxis": 107.81,
+    "offDegrees": 0.19,
+    "footprint": [
+      45.08,
+      29.15
+    ],
+    "source": "osm-way-303179753"
+  },
+  "dimensions": [
+    {
+      "id": "interior-length",
+      "measured": 30.801,
+      "cited": 30.78,
+      "tolerance": 0.05,
+      "error": 0.0007
+    },
+    {
+      "id": "interior-breadth",
+      "measured": 23.621,
+      "cited": 23.62,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "octagon-north-south",
+      "measured": 15.496,
+      "cited": 15.39,
+      "tolerance": 0.05,
+      "error": 0.0069
+    },
+    {
+      "id": "piers-to-springing",
+      "measured": 10.21,
+      "cited": 10.21,
+      "tolerance": 0.05,
+      "error": -0.0
+    },
+    {
+      "id": "gallery-level",
+      "measured": 6.1,
+      "cited": 6.1,
+      "tolerance": 0.05,
+      "error": -0.0001
+    },
+    {
+      "id": "columns-per-storey",
+      "measured": 14.0,
+      "cited": 14,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "dome-diameter",
+      "measured": 15.999,
+      "cited": 16.0,
+      "tolerance": 0.05,
+      "error": -0.0001
+    },
+    {
+      "id": "dome-windows",
+      "measured": 8.0,
+      "cited": 8,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "dome-crown",
+      "measured": 21.0,
+      "cited": 21.34,
+      "tolerance": 0.05,
+      "error": -0.0159
+    },
+    {
+      "id": "casing-height",
+      "measured": 4.0,
+      "cited": 4.0,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "length-with-portico",
+      "measured": 43.163,
+      "cited": 44.3,
+      "tolerance": 0.05,
+      "error": -0.0257
+    },
+    {
+      "id": "portico-domes",
+      "measured": 5.0,
+      "cited": 5,
+      "tolerance": 0.05,
+      "error": 0.0
+    }
+  ],
+  "byPart": {
+    "wall-n": 412,
+    "wall-n-upper": 572,
+    "wall-s": 380,
+    "wall-s-upper": 540,
+    "wall-e": 508,
+    "wall-x": 612,
+    "narthex-wall-w": 476,
+    "narthex-ends": 136,
+    "octagon": 1736,
+    "octagon-piers": 352,
+    "octagon-entablature": 228,
+    "octagon-gallery": 2124,
+    "octagon-exedrae": 576,
+    "octagon-arches": 544,
+    "gallery-floor": 280,
+    "gallery-floor-w": 104,
+    "dome": 1536,
+    "dome-windows": 256,
+    "casing": 896,
+    "bema-vault": 68,
+    "apse": 332,
+    "apse-cap": 144,
+    "narthex-vault": 60,
+    "narthex-barrels": 136,
+    "roof": 280,
+    "roof-w": 104,
+    "portico": 648,
+    "portico-arches": 572,
+    "portico-domes": 1040,
+    "minaret": 384,
+    "minaret-serefe": 256,
+    "minaret-cap": 192
+  }
+}

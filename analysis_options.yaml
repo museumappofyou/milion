@@ -16,6 +16,8 @@ analyzer:
     - web/**
     # P08 spike apps: reference sources with their own dependencies.
     - studio/spikes/**
+    # Local scratch (gitignored).
+    - studio/cache/**
 
 linter:
   # The lint rules applied to this project can be customized in the

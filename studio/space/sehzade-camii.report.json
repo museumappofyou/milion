@@ -1,0 +1,160 @@
+{
+  "id": "sehzade-camii",
+  "parts": 41,
+  "triangles": 20492,
+  "vertices": 11354,
+  "bytes": 143284,
+  "axis": {
+    "axis": 137.4,
+    "footprintAxis": 137.72,
+    "offDegrees": 0.32,
+    "footprint": [
+      84.06,
+      47.85
+    ],
+    "source": "osm-relation-7656706"
+  },
+  "dimensions": [
+    {
+      "id": "hall-outside",
+      "measured": 42.0,
+      "cited": 42,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "hall-inside",
+      "measured": 38.0,
+      "cited": 38,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "dome-diameter",
+      "measured": 19.0,
+      "cited": 19,
+      "tolerance": 0.05,
+      "error": -0.0
+    },
+    {
+      "id": "dome-crown",
+      "measured": 37.0,
+      "cited": 37,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "dome-windows",
+      "measured": 24.0,
+      "cited": 24,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "pier-height",
+      "measured": 16.0,
+      "cited": 16.0,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "clear-span",
+      "measured": 17.801,
+      "cited": 17.5,
+      "tolerance": 0.05,
+      "error": 0.0172
+    },
+    {
+      "id": "exedrae",
+      "measured": 8.0,
+      "cited": 8,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "courtyard-side",
+      "measured": 42.0,
+      "cited": 42,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "courtyard-domes",
+      "measured": 16.0,
+      "cited": 16,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "courtyard-columns",
+      "measured": 12.0,
+      "cited": 12,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "serefe",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "length",
+      "measured": 84.0,
+      "cited": 84.07,
+      "tolerance": 0.05,
+      "error": -0.0008
+    },
+    {
+      "id": "width-with-galleries",
+      "measured": 48.65,
+      "cited": 47.87,
+      "tolerance": 0.05,
+      "error": 0.0163
+    }
+  ],
+  "byPart": {
+    "wall-qibla": 172,
+    "wall-qibla-upper": 480,
+    "wall-entrance": 228,
+    "wall-entrance-upper": 480,
+    "wall-left": 228,
+    "wall-left-upper": 480,
+    "wall-right": 228,
+    "wall-right-upper": 480,
+    "buttresses": 176,
+    "piers-sw": 80,
+    "piers-se": 80,
+    "piers-nw": 80,
+    "piers-ne": 80,
+    "arches": 464,
+    "pendentives": 592,
+    "dome": 768,
+    "dome-windows": 480,
+    "semidomes": 1088,
+    "semidomes-windows": 288,
+    "exedrae": 1088,
+    "exedrae-cap": 864,
+    "corner-pendentives": 256,
+    "corner-domes": 768,
+    "corner-domes-windows": 384,
+    "weight-towers": 480,
+    "weight-towers-roof": 96,
+    "gallery-right": 504,
+    "gallery-right-arches": 260,
+    "gallery-right-vaults": 260,
+    "gallery-left": 504,
+    "gallery-left-arches": 260,
+    "gallery-left-vaults": 260,
+    "court-walls": 324,
+    "court": 1008,
+    "court-arches": 1456,
+    "court-domes": 2304,
+    "court-sadirvan": 64,
+    "court-sadirvan-roof": 720,
+    "minarets": 656,
+    "minarets-serefe": 768,
+    "minarets-cap": 256
+  }
+}

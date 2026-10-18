@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:math' as math;
 import 'dart:typed_data';
 
+import 'meshopt.dart';
+
 /// Axis-aligned bounds in metres; Z is up, Y is north.
 class SpaceBounds {
   const SpaceBounds(
@@ -46,8 +48,14 @@ class SpaceBounds {
 /// assembly timeline. Derived data (face normals, edge adjacency) is built
 /// once at load; the renderer only reads it.
 class SpacePart {
-  SpacePart(this.id, this.material, this.positions, this.triangles, this.ao)
-    : assert(positions.length % 3 == 0 && triangles.length % 3 == 0) {
+  SpacePart(
+    this.id,
+    this.material,
+    this.positions,
+    this.triangles,
+    this.ao, {
+    this.crease = creaseDegrees,
+  }) : assert(positions.length % 3 == 0 && triangles.length % 3 == 0) {
     _derive();
   }
   final String id, material;
@@ -65,9 +73,13 @@ class SpacePart {
   late final Uint32List edgeVertices;
   late final Int32List edgeFaces;
 
-  /// 1 where the faces meet at more than [creaseDegrees], or the edge is open.
+  /// 1 where the faces meet at more than [crease] degrees, or the edge is
+  /// open. A curved part tessellated coarsely (a portico dome, a column)
+  /// carries a larger [crease] in its node extras, so its facets draw no
+  /// hairlines: Choisy drew curved masonry with few lines.
   late final Uint8List edgeSharp;
   static const creaseDegrees = 30.0;
+  final double crease;
   int get triangleCount => triangles.length ~/ 3;
   int get vertexCount => positions.length ~/ 3;
   bool get closed => !edgeFaces.any((f) => f < 0);
@@ -124,7 +136,7 @@ class SpacePart {
     }
     edgeVertices = Uint32List.fromList(ev);
     edgeFaces = Int32List.fromList(ef);
-    final crease = math.cos(creaseDegrees * math.pi / 180);
+    final sharp = math.cos(crease * math.pi / 180);
     edgeSharp = Uint8List(ef.length ~/ 2);
     for (var e = 0; e < edgeSharp.length; e++) {
       final f = ef[e * 2], g = ef[e * 2 + 1];
@@ -133,7 +145,7 @@ class SpacePart {
               normals[f * 3] * normals[g * 3] +
                       normals[f * 3 + 1] * normals[g * 3 + 1] +
                       normals[f * 3 + 2] * normals[g * 3 + 2] <
-                  crease
+                  sharp
           ? 1
           : 0;
     }
@@ -156,8 +168,9 @@ class SpaceModel {
 
   /// glTF 2.0 binary: one part per named mesh node (children and node
   /// transforms applied), Y-up converted to Z-up. Reads POSITION, indices and
-  /// the optional `_AO` attribute; refuses required extensions (meshopt comes
-  /// with the P09 kit) and sparse accessors.
+  /// the optional `_AO` attribute, plain or `EXT_meshopt_compression` buffer
+  /// views (the P09 kit); refuses other required extensions and sparse
+  /// accessors.
   factory SpaceModel.fromGlb(ByteData data) {
     if (data.lengthInBytes < 20 ||
         data.getUint32(0, Endian.little) != 0x46546C67 ||
@@ -183,8 +196,9 @@ class SpaceModel {
       binStart + 8 + data.getUint32(binStart, Endian.little),
     );
     final required = (doc['extensionsRequired'] as List?) ?? const [];
-    if (required.isNotEmpty) {
-      throw FormatException('glb: unsupported extensions $required');
+    final unsupported = required.where((e) => e != _GltfReader.meshopt);
+    if (unsupported.isNotEmpty) {
+      throw FormatException('glb: unsupported extensions $unsupported');
     }
     return SpaceModel(_GltfReader(doc, bin).parts());
   }
@@ -192,9 +206,50 @@ class SpaceModel {
 
 class _GltfReader {
   _GltfReader(this.doc, this.bin);
+  static const meshopt = 'EXT_meshopt_compression';
   final Map<String, dynamic> doc;
   final ByteData bin;
+  final _views = <int, ByteData>{};
   List<dynamic> list(String key) => (doc[key] as List?) ?? const [];
+
+  /// The bytes of buffer view [index]: a slice of the BIN chunk, or its
+  /// meshopt stream decoded once.
+  ByteData _bufferView(int index) => _views.putIfAbsent(index, () {
+    final v = list('bufferViews')[index] as Map<String, dynamic>;
+    final ext = (v['extensions'] as Map?)?[meshopt] as Map?;
+    final buffer = (ext ?? v)['buffer'] as int? ?? 0;
+    final offset = ((ext ?? v)['byteOffset'] as int?) ?? 0;
+    final length = (ext ?? v)['byteLength'] as int;
+    if (buffer != 0 || offset + length > bin.lengthInBytes) {
+      throw const FormatException('glb: buffer view outside the BIN chunk');
+    }
+    final stored = ByteData.sublistView(bin, offset, offset + length);
+    if (ext == null) return stored;
+    final count = ext['count'] as int, stride = ext['byteStride'] as int;
+    final src = stored.buffer.asUint8List(stored.offsetInBytes, length);
+    final filter = (ext['filter'] as String?) ?? 'NONE';
+    final Uint8List bytes;
+    switch ((ext['mode'], filter)) {
+      case ('ATTRIBUTES', 'NONE' || 'EXPONENTIAL'):
+        bytes = Meshopt.decodeVertexBuffer(src, count, stride);
+        if (filter == 'EXPONENTIAL') Meshopt.exponential(bytes);
+      case ('TRIANGLES', 'NONE') when stride == 2 || stride == 4:
+        final indices = Meshopt.decodeIndexBuffer(src, count);
+        final out = ByteData(count * stride);
+        for (var i = 0; i < count; i++) {
+          stride == 2
+              ? out.setUint16(i * 2, indices[i], Endian.little)
+              : out.setUint32(i * 4, indices[i], Endian.little);
+        }
+        bytes = out.buffer.asUint8List();
+      default:
+        throw FormatException('glb: meshopt ${ext['mode']} / $filter');
+    }
+    if (bytes.length != v['byteLength']) {
+      throw const FormatException('glb: meshopt view length');
+    }
+    return ByteData.sublistView(bytes);
+  });
 
   List<SpacePart> parts() {
     final scenes = list('scenes');
@@ -248,9 +303,11 @@ class _GltfReader {
       }
       final count = xyz.length ~/ 3;
       final occlusion = attributes['_AO'] as int?;
-      ao.addAll(
-        occlusion == null ? List.filled(count, 1.0) : _floats(occlusion, 1),
-      );
+      final occluded = occlusion == null ? null : _floats(occlusion, 1);
+      if (occluded != null && occluded.length != count) {
+        throw FormatException('$name: one _AO value per vertex');
+      }
+      ao.addAll(occluded ?? List.filled(count, 1.0));
       final indices = p['indices'] as int?;
       final local = indices == null
           ? List.generate(count, (i) => i)
@@ -274,29 +331,34 @@ class _GltfReader {
       Float32List.fromList(positions),
       Uint32List.fromList(triangles),
       Float32List.fromList(ao),
+      crease: (extras['crease'] as num?)?.toDouble() ?? SpacePart.creaseDegrees,
     );
   }
 
-  (int, int, Map<String, dynamic>) _view(int accessor, int width, int size) {
+  (ByteData, int, int, Map<String, dynamic>) _view(
+    int accessor,
+    int width,
+    int size,
+  ) {
     final a = list('accessors')[accessor] as Map<String, dynamic>;
     if (a['sparse'] != null) {
       throw const FormatException('glb: sparse accessors are not supported');
     }
-    final v =
-        list('bufferViews')[a['bufferView'] as int] as Map<String, dynamic>;
-    final offset =
-        ((v['byteOffset'] as int?) ?? 0) + ((a['byteOffset'] as int?) ?? 0);
+    final index = a['bufferView'] as int;
+    final v = list('bufferViews')[index] as Map<String, dynamic>;
+    final data = _bufferView(index);
+    final offset = (a['byteOffset'] as int?) ?? 0;
     final stride = (v['byteStride'] as int?) ?? width * size;
     final count = a['count'] as int;
     if (count > 0 &&
-        offset + stride * (count - 1) + width * size > bin.lengthInBytes) {
+        offset + stride * (count - 1) + width * size > data.lengthInBytes) {
       throw const FormatException('glb: accessor outside the buffer');
     }
-    return (offset, stride, a);
+    return (data, offset, stride, a);
   }
 
   List<double> _floats(int accessor, int width) {
-    final (offset, stride, a) = _view(accessor, width, 4);
+    final (data, offset, stride, a) = _view(accessor, width, 4);
     if (a['componentType'] != 5126) {
       throw const FormatException('glb: float attributes expected');
     }
@@ -304,7 +366,7 @@ class _GltfReader {
     return [
       for (var i = 0; i < count; i++)
         for (var k = 0; k < width; k++)
-          bin.getFloat32(offset + i * stride + k * 4, Endian.little),
+          data.getFloat32(offset + i * stride + k * 4, Endian.little),
     ];
   }
 
@@ -316,13 +378,13 @@ class _GltfReader {
       5125 => 4,
       _ => throw const FormatException('glb: bad index type'),
     };
-    final (offset, stride, _) = _view(accessor, 1, size);
+    final (data, offset, stride, _) = _view(accessor, 1, size);
     return [
       for (var i = 0; i < (a['count'] as int); i++)
         switch (size) {
-          1 => bin.getUint8(offset + i * stride),
-          2 => bin.getUint16(offset + i * stride, Endian.little),
-          _ => bin.getUint32(offset + i * stride, Endian.little),
+          1 => data.getUint8(offset + i * stride),
+          2 => data.getUint16(offset + i * stride, Endian.little),
+          _ => data.getUint32(offset + i * stride, Endian.little),
         },
     ];
   }

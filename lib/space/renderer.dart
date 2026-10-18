@@ -16,6 +16,13 @@ export 'scene.dart';
 /// thin quads in the same sort, so nearer faces hide them; hatching is a
 /// line-screen texture whose row is the shade and whose column runs along
 /// world height, so the lines read as coursing that follows the building.
+///
+/// Section cuts (poché) are filled on the plane itself: everything the cut
+/// keeps lies beyond the plane, so each cut part's section, outlined by the
+/// segments where its triangles cross the plane, is painted after the faces
+/// (even-odd, so holes stay open). Drawing the solids' inside faces instead
+/// (P08) let them sort over thin solids' own outsides and let parts embedded
+/// in one another show through each other's fill.
 class SpaceRenderer {
   /// Records pack the part index into 8 bits.
   static const maxParts = 256;
@@ -38,12 +45,13 @@ class SpaceRenderer {
   final SpaceModel model;
   final List<Float32List> _screen, _side, _key, _aoMean;
 
-  /// Per triangle: 0 removed, 1 front, 2 back kept as poché, 3 back culled.
+  /// Per triangle: 0 removed, 1 front, 2 back of a cut part (it bounds the
+  /// section for silhouettes, not drawn), 3 back culled.
   final List<Uint8List> _facing;
   SpaceStats stats = const SpaceStats();
 
   static const _period = 5.0, _tile = 16.0, _rows = 64;
-  static const _pocheBias = .6, _edgeBias = .25;
+  static const _edgeBias = .25;
   final _images = <SpaceStyle, ui.Image>{};
   SpaceStyle? _colorsFor;
   List<Int32List> _colors = const [];
@@ -53,7 +61,7 @@ class SpaceRenderer {
   int _r = 0;
   Int32List _rec = Int32List(0), _bucket = Int32List(0), _order = Int32List(0);
   Float32List _recKey = Float32List(0);
-  static const _buckets = 16384, _tri = 0, _edgeLine = 1, _cutLine = 2;
+  static const _buckets = 16384, _tri = 0, _edgeLine = 1;
   final _counts = Int32List(_buckets + 1);
 
   /// Output, written once in depth order.
@@ -65,6 +73,13 @@ class SpaceRenderer {
   late final _alphaOf = Int32List(model.parts.length);
   late final _cutOf = Uint8List(model.parts.length);
   late final _offset = Float64List(model.parts.length * 3);
+
+  /// Section segments for this frame (x0, y0, x1, y1 on screen), part by
+  /// part: part i owns [_segFrom[i], _segTo[i]).
+  Float32List _seg = Float32List(0);
+  int _segN = 0;
+  late final _segFrom = Int32List(model.parts.length);
+  late final _segTo = Int32List(model.parts.length);
   final _clip = Float64List(4 * 3), _clipScreen = Float32List(4 * 3);
   final _clipColor = Int32List(4), _ids = Int32List(3), _cols = Int32List(3);
   final _shaders = <SpaceStyle, ImageShader>{};
@@ -257,10 +272,12 @@ class SpaceRenderer {
     final sign = toward >= 0 ? 1.0 : -1.0;
     var faces = 0, pocheCount = 0, edges = 0, cuts = 0;
     _r = 0;
+    _segN = 0;
     // Pass 1: project, cull, clip-test and record what is visible.
     for (var i = 0; i < model.parts.length; i++) {
       final state = scene.parts[i];
       _alphaOf[i] = 0;
+      _segFrom[i] = _segTo[i] = _segN;
       if (state.progress <= 0) continue;
       final part = model.parts[i];
       _alphaOf[i] = (state.progress.clamp(0.0, 1.0) * 255).round();
@@ -327,17 +344,16 @@ class SpaceRenderer {
         facing[t] = front ? 1 : 2;
         final depth = (az + bz + cz) / 3;
         key[t] = depth;
-        _record(_tri, i, t, depth + (front ? 0 : _pocheBias));
         if (front) {
+          _record(_tri, i, t, depth);
           faces++;
-        } else {
-          pocheCount++;
         }
-        if (removed > 0 && palette.cutWidth > 0) {
-          _record(_cutLine, i, t, depth - _edgeBias);
+        if (removed > 0) {
+          _segment(p, i, t);
           cuts++;
         }
       }
+      _segTo[i] = _segN;
       if (!palette.edges) continue;
       final ev = part.edgeVertices, ef = part.edgeFaces, sharp = part.edgeSharp;
       for (var e = 0; e < sharp.length; e++) {
@@ -361,6 +377,7 @@ class SpaceRenderer {
       _write(p, scene, palette, drawing);
       final t1 = watch.elapsedMicroseconds;
       _draw(canvas, drawing ? _hatchShader(scene.style) : null);
+      pocheCount = _sections(canvas, palette);
       _writeMicros = t1 - t0;
       _drawMicros = watch.elapsedMicroseconds - t1;
     }
@@ -379,6 +396,64 @@ class SpaceRenderer {
   }
 
   int _sortMicros = 0, _writeMicros = 0, _drawMicros = 0;
+
+  /// Stores where triangle [t] of part [i] crosses the section plane.
+  void _segment(SpaceProjector p, int i, int t) {
+    _clipTriangle(p, i, t, 0, 0, 0);
+    if (_cutB < 0) return;
+    if (_segN * 4 + 4 > _seg.length) {
+      _seg = Float32List(math.max(1024, _seg.length * 2))..setAll(0, _seg);
+    }
+    final a = _cutA * 3, b = _cutB * 3, o = _segN * 4;
+    _seg[o] = _clipScreen[a];
+    _seg[o + 1] = _clipScreen[a + 1];
+    _seg[o + 2] = _clipScreen[b];
+    _seg[o + 3] = _clipScreen[b + 1];
+    _segN++;
+  }
+
+  /// Fills each cut part's section, then outlines all of them; returns the
+  /// fan triangles filled. A fan from any point over closed outlines covers
+  /// a point once per outline crossing beyond it, so even-odd fills exactly
+  /// the section.
+  int _sections(Canvas canvas, SpacePalette palette) {
+    if (_segN == 0) return 0;
+    final poche = palette.poche.toARGB32(), ink = palette.ink.toARGB32();
+    final seg = _seg;
+    var filled = 0;
+    for (var i = 0; i < model.parts.length; i++) {
+      final from = _segFrom[i], to = _segTo[i];
+      if (to <= from || _alphaOf[i] == 0) continue;
+      final ox = seg[from * 4], oy = seg[from * 4 + 1];
+      final path = Path()..fillType = PathFillType.evenOdd;
+      for (var k = from; k < to; k++) {
+        path
+          ..moveTo(ox, oy)
+          ..lineTo(seg[k * 4], seg[k * 4 + 1])
+          ..lineTo(seg[k * 4 + 2], seg[k * 4 + 3])
+          ..close();
+      }
+      filled += to - from;
+      canvas.drawPath(path, Paint()..color = Color(_alpha(poche, _alphaOf[i])));
+    }
+    if (palette.cutWidth <= 0) return filled;
+    final stroke = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = palette.cutWidth
+      ..strokeCap = StrokeCap.round;
+    for (var i = 0; i < model.parts.length; i++) {
+      final from = _segFrom[i], to = _segTo[i];
+      if (to <= from || _alphaOf[i] == 0) continue;
+      final path = Path();
+      for (var k = from; k < to; k++) {
+        path
+          ..moveTo(seg[k * 4], seg[k * 4 + 1])
+          ..lineTo(seg[k * 4 + 2], seg[k * 4 + 3]);
+      }
+      canvas.drawPath(path, stroke..color = Color(_alpha(ink, _alphaOf[i])));
+    }
+    return filled;
+  }
 
   /// Only the drawing style samples the hatch texture.
   bool _textured = false;
@@ -440,7 +515,7 @@ class SpaceRenderer {
     ly /= ll;
     lz /= ll;
     final hatchScale = p.pixelsPerMetre / _period * _tile;
-    final ink = palette.ink.toARGB32(), poche = palette.poche.toARGB32();
+    final ink = palette.ink.toARGB32();
     for (var j = 0; j < _r; j++) {
       final rec = _rec[_order[j]];
       final kind = rec & 3, i = (rec >> 2) & 0xFF, index = rec >> 10;
@@ -492,43 +567,23 @@ class SpaceRenderer {
         );
         continue;
       }
-      if (kind == _cutLine) {
-        _clipTriangle(p, i, index, 0, 0, 0);
-        if (_cutB >= 0) {
-          final a = _cutA * 3, b = _cutB * 3;
-          _line(
-            _clipScreen[a],
-            _clipScreen[a + 1],
-            _clipScreen[b],
-            _clipScreen[b + 1],
-            palette.cutWidth,
-            _alpha(ink, alpha),
-          );
-        }
-        continue;
-      }
       final t = index, tris = part.triangles, colors = _colors[i];
       final a = tris[t * 3], b = tris[t * 3 + 1], c = tris[t * 3 + 2];
-      final front = _facing[i][t] == 1;
-      final int ca, cb, cc;
+      // Only front faces are recorded; cut faces are filled by _sections.
       var row = .5;
       final normals = part.normals;
       final nx = normals[t * 3],
           ny = normals[t * 3 + 1],
           nz = normals[t * 3 + 2];
-      if (front) {
-        ca = _alpha(colors[t * 3], alpha);
-        cb = _alpha(colors[t * 3 + 1], alpha);
-        cc = _alpha(colors[t * 3 + 2], alpha);
-        if (drawing) {
-          final lit = nx * lx + ny * ly + nz * lz;
-          final tone =
-              (.32 + .68 * (lit > 0 ? lit : 0)) * (.6 + .4 * _aoMean[i][t]);
-          final level = (.78 - tone) / .58;
-          if (level > .04) row = 1.5 + (level < 1 ? level : 1) * (_rows - 2);
-        }
-      } else {
-        ca = cb = cc = _alpha(poche, alpha);
+      final ca = _alpha(colors[t * 3], alpha),
+          cb = _alpha(colors[t * 3 + 1], alpha),
+          cc = _alpha(colors[t * 3 + 2], alpha);
+      if (drawing) {
+        final lit = nx * lx + ny * ly + nz * lz;
+        final tone =
+            (.32 + .68 * (lit > 0 ? lit : 0)) * (.6 + .4 * _aoMean[i][t]);
+        final level = (.78 - tone) / .58;
+        if (level > .04) row = 1.5 + (level < 1 ? level : 1) * (_rows - 2);
       }
       final steep = nz.abs() < .85;
       final side = _side[i];

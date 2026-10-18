@@ -80,7 +80,8 @@ Color materialColor(String material) => switch (material) {
 };
 
 /// Night: lamps hung low in the bay (x, y, z in metres, relative to the
-/// model's centre and floor), warm.
+/// model's centre and floor), warm. They were set for P08's bay, 72.4 m across
+/// with its semi-domes ([nightLampSpan]); other buildings scale them.
 const nightLamps = [
   (0.0, 0.0, 9.0),
   (7.0, 0.0, 7.5),
@@ -88,6 +89,7 @@ const nightLamps = [
   (0.0, 7.0, 7.5),
   (0.0, -7.0, 7.5),
 ];
+const nightLampSpan = 72.4;
 const nightLampColor = Color(0xFFFFB45E);
 
 /// The drawing style's line screen: one hatch line per [tile]-pixel column,
@@ -123,18 +125,22 @@ Int32List cornerColors(SpaceStyle style, SpacePart part, SpaceBounds b) {
         ny = part.normals[t * 3 + 1],
         nz = part.normals[t * 3 + 2];
     var lamp = 0.0, moon = 0.0;
+    final k =
+        math.max(b.maxX - b.minX, b.maxY - b.minY).clamp(1.0, 1e4) /
+        nightLampSpan;
     if (style == SpaceStyle.night) {
       final i0 = part.triangles[t * 3] * 3;
       final px = part.positions[i0],
           py = part.positions[i0 + 1],
           pz = part.positions[i0 + 2];
       for (final (lx, ly, lz) in nightLamps) {
-        final dx = b.centerX + lx - px,
-            dy = b.centerY + ly - py,
-            dz = b.minZ + lz - pz;
+        final dx = b.centerX + lx * k - px,
+            dy = b.centerY + ly * k - py,
+            dz = b.minZ + lz * k - pz;
         final d = math.sqrt(dx * dx + dy * dy + dz * dz);
+        if (d < 1e-6) continue;
         final lambert = math.max(0.0, (nx * dx + ny * dy + nz * dz) / d);
-        lamp += 1.4 * lambert / (1 + d * d / 260);
+        lamp += 1.4 * lambert / (1 + d * d / (260 * k * k));
       }
       moon = .05 + .2 * math.max(0.0, nx * .3 + ny * .45 + nz * .84);
     }

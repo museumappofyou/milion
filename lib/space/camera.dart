@@ -29,8 +29,13 @@ class SpaceView {
   /// Choisy's worm's-eye axonometric: the bay seen from below at the
   /// isometric angle (35.26°), from the south-west.
   static const choisyElevation = -35.26 * _degree;
-  factory SpaceView.choisy(SpaceBounds b) => SpaceView(
-    elevation: choisyElevation,
+  factory SpaceView.choisy(
+    SpaceBounds b, {
+    double elevation = choisyElevation,
+    double azimuth = 225 * _degree,
+  }) => SpaceView(
+    azimuth: azimuth,
+    elevation: elevation,
     targetX: b.centerX,
     targetY: b.centerY,
     targetZ: b.centerZ,

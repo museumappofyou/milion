@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "sehzade-camii",
+  "title": {
+    "en": "The Şehzade: four half-domes",
+    "tr": "Şehzade: dört yarım kubbe"
+  },
+  "description": {
+    "en": "A drawing of the Şehzade Mosque assembling, seen from below: a hall 38 m square inside on four piers, a dome 19 m across with its crown 37 m up, four half-domes skirted by eight exedrae, four corner domes, then the courtyard of sixteen domes on twelve columns and the two minarets. Sinan finished it in 1548. A diagram on cited dimensions, not a survey.",
+    "tr": "Şehzade Camii'nin aşağıdan görülen çizimi kendini kurar: dört ayak üstünde içten 38 m'lik kare bir harim, 19 m çapında, tepesi 37 m'de bir kubbe, sekiz eksedrayla eteklenen dört yarım kubbe, dört köşe kubbesi; ardından on iki sütun üstünde on altı kubbeli avlu ve iki minare. Sinan onu 1548'de bitirdi. Kaynaklı ölçülere dayanan bir şemadır, rölöve değildir."
+  },
+  "model": "assets/space/sehzade-camii/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "sehzade",
+  "orientation": {
+    "axis": 137.4,
+    "source": "osm-relation-7656706"
+  },
+  "epochs": [
+    {
+      "year": 1548,
+      "label": {
+        "en": "Şehzade Mosque, 1548",
+        "tr": "Şehzade Camii, 1548"
+      }
+    },
+    {
+      "year": 1640,
+      "label": {
+        "en": "Murad IV's şadırvan, by 1640",
+        "tr": "IV. Murad'ın şadırvanı, 1640'a dek"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "walls",
+      "parts": [
+        "wall-qibla",
+        "wall-qibla-upper",
+        "wall-entrance",
+        "wall-entrance-upper",
+        "wall-left",
+        "wall-left-upper",
+        "wall-right",
+        "wall-right-upper",
+        "buttresses"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "archnet-sehzade",
+        "artar-2006",
+        "kuran-1986"
+      ],
+      "label": {
+        "en": "A square 42 m wide",
+        "tr": "42 m'lik bir kare"
+      },
+      "caption": {
+        "en": "The hall is a square 42 m wide outside and 38 m inside; buttresses split each wall into five bays.",
+        "tr": "Harim dıştan 42, içten 38 m'lik bir karedir; payandalar her duvarı beş bölüme ayırır."
+      }
+    },
+    {
+      "id": "piers",
+      "parts": [
+        "piers-sw",
+        "piers-se",
+        "piers-nw",
+        "piers-ne"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "archnet-sehzade",
+        "artar-2006"
+      ],
+      "label": {
+        "en": "Four piers",
+        "tr": "Dört ayak"
+      },
+      "caption": {
+        "en": "Four piers close to five metres square, 16 m tall, stand at the corners of the middle nine of a five-by-five grid.",
+        "tr": "Beşe beş bir ızgaranın ortadaki dokuz gözünün köşelerinde, beş metreye yakın kare kesitli, 16 m yüksekliğinde dört ayak durur."
+      }
+    },
+    {
+      "id": "arches",
+      "parts": [
+        "arches"
+      ],
+      "seconds": 3.0,
+      "epochs": [],
+      "sources": [
+        "artar-2006"
+      ],
+      "label": {
+        "en": "Four great arches",
+        "tr": "Dört büyük kemer"
+      },
+      "caption": {
+        "en": "Four pointed arches rise 10.8 m from the piers.",
+        "tr": "Ayaklardan dört sivri kemer 10,8 m yükselir."
+      }
+    },
+    {
+      "id": "pendentives",
+      "parts": [
+        "pendentives"
+      ],
+      "seconds": 3.0,
+      "epochs": [],
+      "sources": [
+        "britannica-pendentive"
+      ],
+      "label": {
+        "en": "Pendentives",
+        "tr": "Pandantifler"
+      },
+      "caption": {
+        "en": "Four pendentives turn the square between the arches into a circle 19 m across.",
+        "tr": "Dört pandantif kemerlerin arasındaki kareyi 19 m çapında bir daireye çevirir."
+      }
+    },
+    {
+      "id": "dome",
+      "parts": [
+        "dome",
+        "dome-windows"
+      ],
+      "seconds": 3.6,
+      "epochs": [],
+      "sources": [
+        "archnet-sehzade",
+        "artar-2006",
+        "wp-sehzade-1367352917"
+      ],
+      "label": {
+        "en": "A dome 19 m across",
+        "tr": "19 m'lik kubbe"
+      },
+      "caption": {
+        "en": "The dome is 19 m across, its crown 37 m above the floor, with 24 windows round its base.",
+        "tr": "Kubbenin çapı 19 m, tepesi döşemeden 37 m yüksektedir; eteğinde 24 pencere vardır."
+      }
+    },
+    {
+      "id": "semidomes",
+      "parts": [
+        "semidomes",
+        "semidomes-windows",
+        "exedrae",
+        "exedrae-cap"
+      ],
+      "seconds": 3.6,
+      "epochs": [],
+      "sources": [
+        "kuran-1986",
+        "artar-2006",
+        "wp-sehzade-1367352917"
+      ],
+      "label": {
+        "en": "Four half-domes",
+        "tr": "Dört yarım kubbe"
+      },
+      "caption": {
+        "en": "Four half-domes, each skirted by two exedrae with three windows, carry the thrust down on every side: the plan Hagia Sophia used on two sides, here on all four.",
+        "tr": "Her biri üç pencereli ikişer eksedrayla eteklenen dört yarım kubbe, itkiyi her yönden aşağı indirir: Ayasofya'nın iki yanda kullandığı düzen burada dört yanda."
+      }
+    },
+    {
+      "id": "corners",
+      "parts": [
+        "corner-pendentives",
+        "corner-domes",
+        "corner-domes-windows",
+        "weight-towers",
+        "weight-towers-roof"
+      ],
+      "seconds": 3.0,
+      "epochs": [],
+      "sources": [
+        "kuran-1986",
+        "ercag-1991"
+      ],
+      "label": {
+        "en": "Corner domes and weight towers",
+        "tr": "Köşe kubbeleri ve ağırlık kuleleri"
+      },
+      "caption": {
+        "en": "Small domes cover the four corners, and the piers rise through the roof as weight towers that press down on them.",
+        "tr": "Dört köşeyi küçük kubbeler örter; ayaklar çatıyı aşıp onları aşağı bastıran ağırlık kuleleri olarak yükselir."
+      }
+    },
+    {
+      "id": "galleries",
+      "parts": [
+        "gallery-right",
+        "gallery-right-arches",
+        "gallery-right-vaults",
+        "gallery-left",
+        "gallery-left-arches",
+        "gallery-left-vaults"
+      ],
+      "seconds": 3.0,
+      "epochs": [],
+      "sources": [
+        "kuran-1986",
+        "ercag-1991"
+      ],
+      "label": {
+        "en": "Side galleries",
+        "tr": "Yan galeriler"
+      },
+      "caption": {
+        "en": "Single-storey galleries, five bays long and about 3 m deep, run along both sides and hide the buttresses.",
+        "tr": "Beş gözlü, 3 m kadar derinlikte tek katlı galeriler iki yan boyunca uzanır ve payandaları gizler."
+      }
+    },
+    {
+      "id": "courtyard",
+      "parts": [
+        "court",
+        "court-walls",
+        "court-arches",
+        "court-domes"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "archnet-sehzade",
+        "artar-2006",
+        "kuran-1986"
+      ],
+      "label": {
+        "en": "The courtyard",
+        "tr": "Avlu"
+      },
+      "caption": {
+        "en": "The courtyard is as large as the hall: sixteen domes on twelve columns round an open square.",
+        "tr": "Avlu harim kadar büyüktür: açık bir karenin çevresinde on iki sütun üstünde on altı kubbe."
+      }
+    },
+    {
+      "id": "minarets",
+      "parts": [
+        "minarets",
+        "minarets-serefe",
+        "minarets-cap"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "kuran-1986",
+        "ercag-1991",
+        "britannica-sinan"
+      ],
+      "label": {
+        "en": "Two minarets",
+        "tr": "İki minare"
+      },
+      "caption": {
+        "en": "Two minarets with two balconies each, their twelve-sided shafts carved in low relief, stand where courtyard and hall meet. Sinan called the mosque the work of his apprenticeship.",
+        "tr": "Avlu ile harimin birleştiği köşelerde, on iki köşeli gövdeleri alçak kabartmalarla bezeli, ikişer şerefeli iki minare yükselir. Sinan bu camiyi çıraklık eseri saydı."
+      }
+    },
+    {
+      "id": "sadirvan",
+      "parts": [
+        "court-sadirvan",
+        "court-sadirvan-roof"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        1640
+      ],
+      "sources": [
+        "tdv-sehzade-2010",
+        "archnet-sehzade"
+      ],
+      "label": {
+        "en": "The şadırvan",
+        "tr": "Şadırvan"
+      },
+      "caption": {
+        "en": "The octagonal şadırvan in the courtyard's middle is later: Murad IV (r. 1623–40) gave it, under a canopy on eight columns.",
+        "tr": "Avlunun ortasındaki sekizgen şadırvan sonradandır: onu IV. Murad (s. 1623–40) yaptırdı, sekiz sütunlu bir saçağın altında."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "semidomes",
+    "seconds": 8.0,
+    "turnDegrees": 36,
+    "caption": {
+      "en": "A dome 19 m across, braced on all four sides by half-domes.",
+      "tr": "19 m'lik bir kubbe, dört yandan yarım kubbelerle desteklenir."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 8.5,
+    "elevation": -50,
+    "azimuth": 225
+  },
+  "sources": [
+    "archnet-sehzade",
+    "artar-2006",
+    "kuran-1986",
+    "osm-relation-7656706"
+  ],
+  "triangles": 20492,
+  "citations": [
+    {
+      "id": "archnet-sehzade",
+      "title": {
+        "en": "Şehzade Külliyesi — ArchNet",
+        "tr": "Şehzade Külliyesi — ArchNet"
+      },
+      "url": "https://www.archnet.org/sites/2018",
+      "author": {
+        "en": "ArchNet",
+        "tr": "ArchNet"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "artar-2006",
+      "title": {
+        "en": "Structural identification of the Şehzade Mehmed Mosque through static and dynamic analyses (MS thesis, Boğaziçi University, 2006)",
+        "tr": "Şehzade Mehmed Camii'nin statik ve dinamik analizlerle yapısal tanımlanması (yüksek lisans tezi, Boğaziçi Üniversitesi, 2006)"
+      },
+      "url": "https://digitalarchive.library.bogazici.edu.tr/items/822e1eac-8205-4d05-8d26-e85ca977ee83/full",
+      "author": {
+        "en": "Musa Artar",
+        "tr": "Musa Artar"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "ercag-1991",
+      "title": {
+        "en": "İstanbul Şehzade Camii Restorasyonu, Vakıf Haftası Dergisi 8 (1991), pp. 213–228",
+        "tr": "İstanbul Şehzade Camii Restorasyonu, Vakıf Haftası Dergisi 8 (1991), s. 213–228"
+      },
+      "url": "https://hdl.handle.net/11352/899",
+      "author": {
+        "en": "Beyhan Erçağ",
+        "tr": "Beyhan Erçağ"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "kuran-1986",
+      "title": {
+        "en": "Mimar Sinan (Istanbul: Hürriyet Vakfı, 1986)",
+        "tr": "Mimar Sinan (İstanbul: Hürriyet Vakfı, 1986)"
+      },
+      "url": "https://archive.org/details/aptullah-kuran-mimar-sinan",
+      "author": {
+        "en": "Aptullah Kuran",
+        "tr": "Aptullah Kuran"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "osm-relation-7656706",
+      "title": {
+        "en": "OpenStreetMap relation 7656706, Şehzadebaşı Camii",
+        "tr": "OpenStreetMap ilişkisi 7656706, Şehzadebaşı Camii"
+      },
+      "url": "https://www.openstreetmap.org/relation/7656706",
+      "author": {
+        "en": "OpenStreetMap contributors",
+        "tr": "OpenStreetMap katkıcıları"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "ODbL 1.0",
+        "tr": "ODbL 1.0"
+      }
+    },
+    {
+      "id": "tdv-sehzade-2010",
+      "title": {
+        "en": "Şehzade Külliyesi, TDV İslâm Ansiklopedisi 38 (2010), pp. 483–485",
+        "tr": "Şehzade Külliyesi, TDV İslâm Ansiklopedisi 38 (2010), s. 483–485"
+      },
+      "url": "https://islamansiklopedisi.org.tr/sehzade-kulliyesi",
+      "author": {
+        "en": "İsmail Orman",
+        "tr": "İsmail Orman"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "britannica-pendentive",
+      "title": {
+        "en": "Pendentive — Encyclopaedia Britannica",
+        "tr": "Pandantif — Encyclopaedia Britannica"
+      },
+      "url": "https://www.britannica.com/technology/pendentive",
+      "author": {
+        "en": "Encyclopaedia Britannica editors",
+        "tr": "Encyclopaedia Britannica editörleri"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "britannica-sinan",
+      "title": {
+        "en": "Sinan — Encyclopaedia Britannica",
+        "tr": "Sinan — Encyclopaedia Britannica"
+      },
+      "url": "https://www.britannica.com/biography/Sinan",
+      "author": {
+        "en": "Encyclopaedia Britannica editors",
+        "tr": "Encyclopaedia Britannica editörleri"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": null
+    },
+    {
+      "id": "wp-sehzade-1367352917",
+      "title": {
+        "en": "Şehzade Mosque — Wikipedia (revision 1367352917)",
+        "tr": "Şehzade Mosque — Wikipedia (1367352917 sürümü)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=%C5%9Eehzade_Mosque&oldid=1367352917",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Wikipedia katkıda bulunanları"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    }
+  ]
+}

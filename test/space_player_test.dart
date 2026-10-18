@@ -130,6 +130,32 @@ void main() {
     expect(c.view, c.choisyView);
   });
 
+  testWidgets('a touch during the reveal keeps the camera where it turned', (
+    tester,
+  ) async {
+    await openStudy(tester);
+    final c = space(tester).controller!;
+    c.playReveal();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 6));
+    final turned = c.visibleView.azimuth;
+    expect((turned - c.choisyView.azimuth).abs(), greaterThan(.3));
+    final finger = await tester.startGesture(
+      tester.getCenter(find.byKey(const ValueKey('space-viewport'))) +
+          const Offset(-80, 120),
+    );
+    await finger.moveBy(const Offset(20, 0));
+    await tester.pump();
+    await finger.moveBy(const Offset(1, 0));
+    await tester.pump();
+    await finger.up();
+    await tester.pump();
+    expect(c.playing, isFalse);
+    // Before the fix the first drag frame jumped back by the reveal's turn.
+    expect((c.view.azimuth - turned).abs(), lessThan(.1));
+    await tester.pump(const Duration(seconds: 1));
+  });
+
   testWidgets('Assemble: steps with captions, scrubbing, the time scrubber', (
     tester,
   ) async {

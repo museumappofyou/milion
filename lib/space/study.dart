@@ -47,10 +47,30 @@ class SpaceReveal {
   final Localized caption;
 }
 
-/// Choisy's view: worm's-eye axonometric with a horizontal plan cut.
+/// Choisy's view: worm's-eye axonometric with a horizontal plan cut
+/// [sectionHeight] above the model's lowest point. A walled building is cut
+/// just under its vaults and seen more steeply, so its near walls do not hide
+/// them: [elevation] and [azimuth] (degrees, the camera's compass direction
+/// in the model's frame, anticlockwise from +x) default to P08's isometric
+/// angle from the south-west.
 class SpaceChoisy {
-  SpaceChoisy(JsonReader r) : sectionHeight = r.number('sectionHeight');
-  final double sectionHeight;
+  SpaceChoisy(JsonReader r)
+    : sectionHeight = r.number('sectionHeight'),
+      elevationDegrees = r.optionalNumber('elevation') ?? -35.26,
+      azimuthDegrees = r.optionalNumber('azimuth') ?? 225;
+  final double sectionHeight, elevationDegrees, azimuthDegrees;
+}
+
+/// Where the drawing sits on the earth: [axis] is the azimuth (degrees from
+/// true north, clockwise) of the model's +y, the building's main axis, from
+/// a cited outline ([sourceId]). Kit models are drawn in the building's own
+/// frame, so sections cut along its axes; P10 and P20 turn them onto a map.
+class SpaceOrientation {
+  SpaceOrientation(JsonReader r)
+    : axis = r.number('axis'),
+      sourceId = r.string('source');
+  final double axis;
+  final String sourceId;
 }
 
 /// A SpacePlayer manifest (`assets/space/<id>/study.json`).
@@ -69,7 +89,12 @@ class SpaceStudy {
       reveal = decode(r.object('reveal'), SpaceReveal.new),
       choisy = decode(r.object('choisy'), SpaceChoisy.new),
       sourceIds = r.strings('sources'),
-      citations = r.list('citations', (j) => Source.fromJson(j as Json));
+      citations = r.list('citations', (j) => Source.fromJson(j as Json)),
+      placeId = r.optionalString('place'),
+      orientation = switch (r.optionalObject('orientation')) {
+        final Json o => decode(o, SpaceOrientation.new),
+        null => null,
+      };
 
   factory SpaceStudy.fromJson(Json j) {
     final study = decode(j, SpaceStudy._);
@@ -78,8 +103,10 @@ class SpaceStudy {
   }
   static const version = 1;
 
-  /// §3 budget for drawing-style 3D.
-  static const triangleBudget = 150000;
+  /// §3 budget for drawing-style 3D: about 20k triangles per study, the
+  /// most the Canvas renderer draws at ≥ 50 fps on the A52s (P08's
+  /// 20,144-triangle study measured 54–57 fps).
+  static const triangleBudget = 20500;
   final int schemaVersion, triangles;
   final String kind, id, model;
   final Localized title, description;
@@ -90,6 +117,10 @@ class SpaceStudy {
   final SpaceChoisy choisy;
   final List<String> sourceIds;
   final List<Source> citations;
+
+  /// The registry place a kit study draws (P09 on); P08's study has none.
+  final String? placeId;
+  final SpaceOrientation? orientation;
   double get storySeconds => steps.fold(0, (t, s) => t + s.seconds);
   List<SpaceStep> stepsIn(int year) =>
       steps.where((s) => s.inEpoch(year)).toList();
@@ -126,6 +157,7 @@ class SpaceStudy {
       bilingual(s.caption);
     }
     for (final e in epochs) {
+      check(stepsIn(e.year).isNotEmpty, '${e.year}: no steps');
       final parts = stepsIn(e.year).expand((s) => s.parts).toList();
       check(parts.length == parts.toSet().length, '${e.year}: a part twice');
     }
@@ -136,13 +168,23 @@ class SpaceStudy {
       'the reveal plays in the first epoch',
     );
     check(reveal.seconds > 0 && reveal.seconds <= 10, 'reveal ≤ 10 s');
+    check(
+      choisy.elevationDegrees >= -70 && choisy.elevationDegrees < 0,
+      "Choisy's view looks up",
+    );
     check(storySeconds >= 20 && storySeconds <= 40, 'story 20–40 s');
     final cited = citations.map((c) => c.id).toSet();
     check(cited.length == citations.length, 'duplicate citation');
     check(
-      cited.containsAll({...sourceIds, ...steps.expand((s) => s.sourceIds)}),
+      cited.containsAll({
+        ...sourceIds,
+        ...steps.expand((s) => s.sourceIds),
+        ?orientation?.sourceId,
+      }),
       'citations required for every claim',
     );
+    final o = orientation;
+    check(o == null || (o.axis >= 0 && o.axis < 360), 'axis in degrees');
   }
 
   /// Every part named by a step exists in the model, and the model is within

@@ -7,6 +7,9 @@ import '../content/registry.dart';
 import '../design/components.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
+import '../shell/app_scope.dart';
+import '../shell/navigation.dart';
+import '../space/study.dart';
 
 class RegistryScreen extends StatefulWidget {
   const RegistryScreen({super.key, this.registry});
@@ -107,6 +110,14 @@ class _RegistryScreenState extends State<RegistryScreen> {
                   ),
                 ],
               ),
+              ExpansionTile(
+                key: const ValueKey('registry-studies'),
+                tilePadding: EdgeInsets.zero,
+                title: Text(s.spaceStudies),
+                children: [
+                  for (final st in _studies(context)) _study(context, st),
+                ],
+              ),
               const SizedBox(height: 16),
               for (final p in places) _place(context, p),
             ],
@@ -115,6 +126,24 @@ class _RegistryScreenState extends State<RegistryScreen> {
       ),
     );
   }
+
+  /// Every study the bundle ships (P08's and the P09 kit's); the kit's are
+  /// reached here until their places' layers name them (P16, P26).
+  List<SpaceStudy> _studies(BuildContext context) => [
+    ...?AppScope.maybeOf(context)?.spaces.studies,
+  ];
+
+  Widget _study(BuildContext context, SpaceStudy study) => ListTile(
+    key: ValueKey('registry-study-${study.id}'),
+    contentPadding: EdgeInsets.zero,
+    title: Text(study.title.inLanguage(context.language)),
+    subtitle: Text(
+      [for (final e in study.epochs) e.label.inLanguage(context.language)]
+          .join(' · '),
+    ),
+    trailing: Text('${study.triangles}', style: TypeRole.measurement),
+    onTap: () => openStudy(context, study),
+  );
 
   Widget _count(BuildContext context, String label, int count) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 8),
@@ -174,6 +203,14 @@ class _RegistryScreenState extends State<RegistryScreen> {
             '${p.district?.spelling ?? context.l10n.outsideProvince} · ${p.qid} · ${p.reviewPhase}',
             style: Theme.of(context).textTheme.bodySmall,
           ),
+          for (final st in [
+            ...?AppScope.maybeOf(context)?.spaces.forPlace(p.id),
+          ])
+            TextButton(
+              key: ValueKey('registry-place-study-${st.id}'),
+              onPressed: () => openStudy(context, st),
+              child: Text(st.title.inLanguage(context.language)),
+            ),
         ],
       ),
     );

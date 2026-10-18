@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "kucuk-ayasofya",
+  "title": {
+    "en": "Sts Sergius and Bacchus: an octagon in a square",
+    "tr": "Sergios ve Bakhos: karenin içinde sekizgen"
+  },
+  "description": {
+    "en": "A drawing of Sts Sergius and Bacchus (Küçük Ayasofya) assembling, seen from below: an irregular enclosure 101 by 77½ feet, an octagon of eight piers askew inside it, two storeys of columns with exedrae on the diagonals, and a dome of sixteen compartments with no pendentives. The time scrubber adds the Ottoman portico and today's minaret. A diagram on cited dimensions, not a survey.",
+    "tr": "Sergios ve Bakhos'un (Küçük Ayasofya) aşağıdan görülen çizimi kendini kurar: 101'e 77½ ayaklık düzensiz bir dış duvar, içinde hafifçe yamuk duran sekiz ayaklı bir sekizgen, köşegenlerde eksedralarla iki kat sütun ve pandantifsiz, on altı dilimli bir kubbe. Zaman çubuğu Osmanlı revakını ve bugünkü minareyi ekler. Kaynaklı ölçülere dayanan bir şemadır, rölöve değildir."
+  },
+  "model": "assets/space/kucuk-ayasofya/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "little-hagia-sophia",
+  "orientation": {
+    "axis": 108.0,
+    "source": "osm-way-303179753"
+  },
+  "epochs": [
+    {
+      "year": 536,
+      "label": {
+        "en": "Sts Sergius and Bacchus, 536",
+        "tr": "Sergios ve Bakhos Kilisesi, 536"
+      }
+    },
+    {
+      "year": 2026,
+      "label": {
+        "en": "Küçük Ayasofya Camii today",
+        "tr": "Bugün Küçük Ayasofya Camii"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "enclosure",
+      "parts": [
+        "wall-n",
+        "wall-n-upper",
+        "wall-s",
+        "wall-s-upper",
+        "wall-e",
+        "wall-x",
+        "narthex-wall-w",
+        "narthex-ends"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912",
+        "byzantine-legacy-sergius"
+      ],
+      "label": {
+        "en": "An irregular square",
+        "tr": "Düzensiz bir kare"
+      },
+      "caption": {
+        "en": "The enclosure measures 101 by 77½ feet inside, with a narthex on the west; it is not square: the south wall, of two thicknesses, is about 2.5 m shorter than the north.",
+        "tr": "Dış duvarlar içten 101'e 77½ ayaktır, batıda bir narteks vardır; kare değildir: iki kat örülmüş güney duvarı kuzeydekinden 2,5 m kadar kısadır."
+      }
+    },
+    {
+      "id": "piers",
+      "parts": [
+        "octagon-piers"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "An octagon, askew",
+        "tr": "Yamuk duran bir sekizgen"
+      },
+      "caption": {
+        "en": "Inside stands an octagon of eight piers, 53½ by 50½ feet, slightly askew in its frame; the piers rise 33½ feet to the arches.",
+        "tr": "İçeride sekiz ayaklı, 53½'e 50½ ayaklık bir sekizgen durur; çerçevesi içinde hafifçe yamuktur. Ayaklar kemerlere dek 33½ ayak yükselir."
+      }
+    },
+    {
+      "id": "colonnade",
+      "parts": [
+        "octagon",
+        "octagon-entablature"
+      ],
+      "seconds": 3.6,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "Fourteen columns and a frieze",
+        "tr": "On dört sütun ve bir friz"
+      },
+      "caption": {
+        "en": "Fourteen columns with melon capitals fill seven sides; their frieze carries a long inscription to Justinian, Theodora and St Sergius.",
+        "tr": "Kavun başlıklı on dört sütun yedi kenarı doldurur; frizlerinde Iustinianos, Theodora ve Aziz Sergios'u onurlandıran uzun bir yazıt vardır."
+      }
+    },
+    {
+      "id": "gallery",
+      "parts": [
+        "gallery-floor",
+        "gallery-floor-w",
+        "octagon-gallery"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "The gallery",
+        "tr": "Galeri"
+      },
+      "caption": {
+        "en": "Twenty feet up runs the gallery, its smaller columns with pseudo-Ionic capitals bound by arches instead of a beam.",
+        "tr": "Yirmi ayak yukarıda galeri uzanır; yalancı İon başlıklı daha küçük sütunlarını bir kiriş yerine kemerler bağlar."
+      }
+    },
+    {
+      "id": "exedrae",
+      "parts": [
+        "octagon-exedrae",
+        "octagon-arches"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "Exedrae and arches",
+        "tr": "Eksedralar ve kemerler"
+      },
+      "caption": {
+        "en": "On the four diagonals the octagon's sides curve out into exedrae; eight arches carry the octagon up to the dome itself, with no pendentives.",
+        "tr": "Dört köşegende sekizgenin kenarları eksedralara doğru kıvrılır; sekiz kemer sekizgeni pandantif olmadan doğrudan kubbeye taşır."
+      }
+    },
+    {
+      "id": "dome",
+      "parts": [
+        "dome",
+        "dome-windows",
+        "casing"
+      ],
+      "seconds": 3.6,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912",
+        "byzantine-legacy-sergius"
+      ],
+      "label": {
+        "en": "Sixteen compartments",
+        "tr": "On altı dilim"
+      },
+      "caption": {
+        "en": "A dome about 16 m across in sixteen compartments: eight flat ones, each with a window, alternate with eight concave ones, inside a sixteen-sided casing 4 m high.",
+        "tr": "Yaklaşık 16 m çapında, on altı dilimli bir kubbe: her birinde bir pencere olan sekiz düz dilim, sekiz iç bükey dilimle sıralanır; 4 m yüksekliğinde on altı kenarlı bir kılıfın içindedir."
+      }
+    },
+    {
+      "id": "east-and-west",
+      "parts": [
+        "apse",
+        "apse-cap",
+        "bema-vault",
+        "narthex-vault",
+        "narthex-barrels"
+      ],
+      "seconds": 3.0,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912",
+        "ebersolt-thiers-1913"
+      ],
+      "label": {
+        "en": "Apse and narthex",
+        "tr": "Apsis ve narteks"
+      },
+      "caption": {
+        "en": "The apse is semicircular within and three-sided outside; the narthex has a small dome between two barrel vaults.",
+        "tr": "Apsis içten yarım daire, dıştan üç yüzlüdür; narteksin ortasında iki beşik tonozun arasında küçük bir kubbe vardır."
+      }
+    },
+    {
+      "id": "roof",
+      "parts": [
+        "roof",
+        "roof-w"
+      ],
+      "seconds": 2.8,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "Roofs",
+        "tr": "Çatılar"
+      },
+      "caption": {
+        "en": "Lead roofs close the ambulatory and gallery around the octagon.",
+        "tr": "Kurşun çatılar sekizgeni çevreleyen dolaşma yolunu ve galeriyi kapatır."
+      }
+    },
+    {
+      "id": "portico",
+      "parts": [
+        "portico",
+        "portico-arches",
+        "portico-domes"
+      ],
+      "seconds": 3.4,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "tdv-kucuk-ayasofya"
+      ],
+      "label": {
+        "en": "The Ottoman portico",
+        "tr": "Osmanlı revakı"
+      },
+      "caption": {
+        "en": "When Hüseyin Ağa made the church a mosque, about 1505, he added a portico of five domed bays on six columns.",
+        "tr": "Hüseyin Ağa kiliseyi y. 1505'te camiye çevirdiğinde altı sütuna dayanan, beş kubbeli bir revak ekledi."
+      }
+    },
+    {
+      "id": "minaret",
+      "parts": [
+        "minaret",
+        "minaret-serefe",
+        "minaret-cap"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "tdv-kucuk-ayasofya"
+      ],
+      "label": {
+        "en": "The minaret",
+        "tr": "Minare"
+      },
+      "caption": {
+        "en": "A single-balcony minaret stands apart at the south-west corner; its shaft was rebuilt in 1955. Its size here is an estimate.",
+        "tr": "Tek şerefeli minare güneybatı köşesinde ayrı durur; gövdesi 1955'te yeniden yapıldı. Buradaki boyutu bir tahmindir."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "dome",
+    "seconds": 8.0,
+    "turnDegrees": 30,
+    "caption": {
+      "en": "An octagon askew inside a square, and a dome that needs no pendentives.",
+      "tr": "Bir karenin içinde yamuk duran bir sekizgen ve pandantife gerek duymayan bir kubbe."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 7.0,
+    "elevation": -50,
+    "azimuth": 225
+  },
+  "sources": [
+    "byzantine-legacy-sergius",
+    "osm-way-303179753",
+    "tdv-kucuk-ayasofya",
+    "van-millingen-1912"
+  ],
+  "triangles": 16484,
+  "citations": [
+    {
+      "id": "byzantine-legacy-sergius",
+      "title": {
+        "en": "Sergius and Bacchus — The Byzantine Legacy",
+        "tr": "Sergius and Bacchus — The Byzantine Legacy"
+      },
+      "url": "https://www.thebyzantinelegacy.com/sergius-bacchus",
+      "author": {
+        "en": "David Hendrix",
+        "tr": "David Hendrix"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "ebersolt-thiers-1913",
+      "title": {
+        "en": "Les églises de Constantinople (Paris, 1913)",
+        "tr": "Les églises de Constantinople (Paris, 1913)"
+      },
+      "url": "https://archive.org/details/0629-doucet-fg-164-04",
+      "author": {
+        "en": "Jean Ebersolt and Adolphe Thiers",
+        "tr": "Jean Ebersolt ve Adolphe Thiers"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "osm-way-303179753",
+      "title": {
+        "en": "OpenStreetMap way 303179753, Küçük Ayasofya Camii (version 15)",
+        "tr": "OpenStreetMap yolu 303179753, Küçük Ayasofya Camii (15. sürüm)"
+      },
+      "url": "https://www.openstreetmap.org/way/303179753",
+      "author": {
+        "en": "OpenStreetMap contributors",
+        "tr": "OpenStreetMap katkıcıları"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "ODbL 1.0",
+        "tr": "ODbL 1.0"
+      }
+    },
+    {
+      "id": "tdv-kucuk-ayasofya",
+      "title": {
+        "en": "Küçük Ayasofya Külliyesi, TDV İslâm Ansiklopedisi 26 (2002), pp. 520–522",
+        "tr": "Küçük Ayasofya Külliyesi, TDV İslâm Ansiklopedisi 26 (2002), s. 520–522"
+      },
+      "url": "https://islamansiklopedisi.org.tr/kucuk-ayasofya-kulliyesi",
+      "author": {
+        "en": "Semavi Eyice",
+        "tr": "Semavi Eyice"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "van-millingen-1912",
+      "title": {
+        "en": "Byzantine Churches in Constantinople (London, 1912)",
+        "tr": "Byzantine Churches in Constantinople (Londra, 1912)"
+      },
+      "url": "https://www.gutenberg.org/ebooks/29077",
+      "author": {
+        "en": "Alexander Van Millingen, with Ramsay Traquair, W. S. George and A. E. Henderson",
+        "tr": "Alexander Van Millingen; Ramsay Traquair, W. S. George ve A. E. Henderson ile"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    }
+  ]
+}

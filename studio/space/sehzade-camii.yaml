@@ -1,0 +1,484 @@
+# P09 kit spec: the Şehzade Mosque (Şehzade Camii), Sinan, 1543–1548.
+# Frame: metres, z up, the prayer-hall floor at z = 0, the hall centred on
+# the origin, +y along the qibla axis (courtyard → mihrab), +x to its right.
+# Cited dimensions are checked against the geometry. Not found in any source
+# and set in proportion: the semi-domes' radius (taken as the dome's, which
+# they meet at the main arches), the exedrae, corner domes and weight towers'
+# sizes, the window rows and the minarets' şerefe heights. The minaret height
+# is disputed (55 m on Wikipedia, unsourced; 41.1 m in Artar 2006 citing
+# Akşit 1981); the drawing uses about 55 m and no caption states it.
+schemaVersion: 1
+id: sehzade-camii
+place: sehzade
+title: {en: "The Şehzade: four half-domes", tr: "Şehzade: dört yarım kubbe"}
+description:
+  en: >-
+    A drawing of the Şehzade Mosque assembling, seen from below: a hall 38 m
+    square inside on four piers, a dome 19 m across with its crown 37 m up,
+    four half-domes skirted by eight exedrae, four corner domes, then the
+    courtyard of sixteen domes on twelve columns and the two minarets. Sinan
+    finished it in 1548. A diagram on cited dimensions, not a survey.
+  tr: >-
+    Şehzade Camii'nin aşağıdan görülen çizimi kendini kurar: dört ayak
+    üstünde içten 38 m'lik kare bir harim, 19 m çapında, tepesi 37 m'de bir
+    kubbe, sekiz eksedrayla eteklenen dört yarım kubbe, dört köşe kubbesi;
+    ardından on iki sütun üstünde on altı kubbeli avlu ve iki minare. Sinan
+    onu 1548'de bitirdi. Kaynaklı ölçülere dayanan bir şemadır, rölöve
+    değildir.
+eras: [ottoman]
+honesty: RECONSTRUCTION
+orientation:
+  axis: 137.4
+  source: osm-relation-7656706
+  footprint:   # [lat, lon], outer way 24234641 of OSM relation 7656706
+    - [41.0140313, 28.9565445]
+    - [41.0134684, 28.9572127]
+    - [41.0137686, 28.9576211]
+    - [41.0141296, 28.9571765]
+    - [41.0142959, 28.9569647]
+step: 4.0
+epochs:
+  - {year: 1548, label: {en: "Şehzade Mosque, 1548", tr: "Şehzade Camii, 1548"}}
+  - {year: 1640, label: {en: "Murad IV's şadırvan, by 1640", tr: "IV. Murad'ın şadırvanı, 1640'a dek"}}
+parts:
+  # Prayer hall: walls 2 m thick, 42 m outside, 38 m inside.
+  - id: wall-qibla
+    kind: wall
+    at: [[-21, 20]]
+    params:
+      length: 42
+      height: 6.0
+      thickness: 2.0
+      step: 6.0
+      openings: &lower42
+        - {x: 5.8, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 13.4, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 28.6, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 36.2, width: 1.8, sill: 1.2, head: 3.8}
+  - id: wall-qibla-upper
+    kind: wall
+    at: [{at: [-21, 20], z: 6.0}]
+    params:
+      length: 42
+      height: 11.3
+      thickness: 2.0
+      step: 6.0
+      openings: &upper42
+        - {x: 5.8, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 13.4, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 21.0, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 28.6, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 36.2, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+  - id: wall-entrance
+    kind: wall
+    at: [[-21, -20]]
+    params:
+      length: 42
+      height: 6.0
+      thickness: 2.0
+      step: 6.0
+      openings:
+        - {x: 5.8, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 13.4, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 21.0, width: 2.6, sill: 0, head: 4.8, arch: pointed}
+        - {x: 28.6, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 36.2, width: 1.8, sill: 1.2, head: 3.8}
+  - id: wall-entrance-upper
+    kind: wall
+    at: [{at: [-21, -20], z: 6.0}]
+    params: {length: 42, height: 11.3, thickness: 2.0, openings: *upper42, step: 6.0}
+  - id: wall-left
+    kind: wall
+    at: [[-20, -19, 90]]
+    params:
+      length: 38
+      height: 6.0
+      thickness: 2.0
+      step: 6.0
+      openings: &lower38
+        - {x: 3.8, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 11.4, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 19.0, width: 2.2, sill: 0, head: 4.2, arch: pointed}
+        - {x: 26.6, width: 1.8, sill: 1.2, head: 3.8}
+        - {x: 34.2, width: 1.8, sill: 1.2, head: 3.8}
+  - id: wall-left-upper
+    kind: wall
+    at: [{at: [-20, -19], z: 6.0, turn: 90}]
+    params:
+      length: 38
+      height: 11.3
+      thickness: 2.0
+      step: 6.0
+      openings: &upper38
+        - {x: 3.8, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 11.4, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 19.0, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 26.6, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+        - {x: 34.2, width: 1.8, sill: 1.6, head: 5.4, arch: pointed}
+  - id: wall-right
+    kind: wall
+    at: [[20, -19, 90]]
+    params: {length: 38, height: 6.0, thickness: 2.0, openings: *lower38, step: 6.0}
+  - id: wall-right-upper
+    kind: wall
+    at: [{at: [20, -19], z: 6.0, turn: 90}]
+    params: {length: 38, height: 11.3, thickness: 2.0, openings: *upper38, step: 6.0}
+  - id: buttresses
+    kind: buttress
+    note: >-
+      buttresses split each outer wall into five bays (Kuran 1986); those on
+      the side walls are hidden under the galleries and not drawn
+    at: [[-11.4, 21, 180], [-3.8, 21, 180], [3.8, 21, 180], [11.4, 21, 180]]
+    params: {width: 2.0, depth: 2.4, height: 17.3}
+  - id: piers
+    kind: pier
+    note: four piers close to five metres square
+    at: [[-11.4, -11.4], [11.4, -11.4], [-11.4, 11.4], [11.4, 11.4]]
+    names: [sw, se, nw, ne]
+    params: {width: 5.0, depth: 5.0, height: 16.0}
+  - id: arches
+    kind: arch
+    note: the four main arches, pointed, rising 10.8 m over the dome's 19 m
+    at: [{at: [0, -11.4], z: 16.0}, {at: [0, 11.4], z: 16.0},
+         {at: [-11.4, 0], z: 16.0, turn: 90}, {at: [11.4, 0], z: 16.0, turn: 90}]
+    params: {span: 19.0, thickness: 1.5, depth: 5.0, kind: pointed, pointed: 0.146, step: 2.0}
+  - id: pendentives
+    kind: pendentives
+    at: [{at: [0, 0], z: 17.3}]
+    params: {half: 9.5, top: 10.2, step: 2.0}
+  - id: dome
+    kind: dome
+    material: lead
+    at: [{at: [0, 0], z: 27.5}]
+    params: {radius: 9.5, thickness: 1.0, windows: 24, band: 3.2, share: 0.5, phase: 0.1309,
+             step: 2.4}
+  - id: semidomes
+    kind: semidome
+    material: lead
+    at: [{at: [0, 9.5], z: 17.3}, {at: [0, -9.5], z: 17.3, turn: 180},
+         {at: [9.5, 0], z: 17.3, turn: -90}, {at: [-9.5, 0], z: 17.3, turn: 90}]
+    params: {radius: 9.5, thickness: 1.0, windows: 5, band: 2.4, share: 0.5, n: 16, rows: 4}
+  - id: exedrae
+    kind: exedra
+    note: two exedrae skirt each half-dome, at its sides; three windows each
+    at: [{at: [8.23, 14.25], turn: -60}, {at: [-8.23, 14.25], turn: 60},
+         {at: [-8.23, -14.25], turn: 120}, {at: [8.23, -14.25], turn: -120},
+         {at: [14.25, -8.23], turn: -120}, {at: [14.25, 8.23], turn: -60},
+         {at: [-14.25, 8.23], turn: 60}, {at: [-14.25, -8.23], turn: 120}]
+    params: {radius: 3.4, height: 13.9, thickness: 0.9, windows: 3, sill: 8.6, head: 12.4,
+             share: 0.4, cap_thickness: 0.7, cap_segments: 8, step: 6.0}
+  - id: corner-pendentives
+    kind: pendentives
+    at: [{at: [15.2, 15.2], z: 12.0}, {at: [-15.2, 15.2], z: 12.0}, {at: [15.2, -15.2], z: 12.0},
+         {at: [-15.2, -15.2], z: 12.0}]
+    params: {half: 3.8, top: 4.2, nu: 2}
+  - id: corner-domes
+    kind: dome
+    material: lead
+    note: the corner domes have seven or eight windows (Erçağ 1991)
+    at: [{at: [15.2, 15.2], z: 16.2}, {at: [-15.2, 15.2], z: 16.2}, {at: [15.2, -15.2], z: 16.2},
+         {at: [-15.2, -15.2], z: 16.2}]
+    params: {radius: 3.8, thickness: 0.6, windows: 8, band: 1.2, share: 0.45, n: 16, rows: 3}
+  - id: weight-towers
+    kind: tower
+    note: the piers carried up as cylindrical weight towers; size estimated
+    at: [{at: [11.4, 11.4], z: 17.3}, {at: [-11.4, 11.4], z: 17.3}, {at: [11.4, -11.4], z: 17.3},
+         {at: [-11.4, -11.4], z: 17.3}]
+    params: {size: 3.4, height: 12.5, kind: round, merlons: false, roof: 3.2}
+  - id: gallery-right
+    kind: portico
+    note: single-storey side galleries, five bays, about 3 m deep
+    at: [[24, -21, 90]]
+    params: {bays: 5, bay: 8.4, depth: 3.0, spring: 3.8, thickness: 0.6, back: false,
+             vault: barrel, transverse: false, step: 6.0,
+             column: {diameter: 0.5, capital: lozenge, arch: pointed, n: 6}}
+  - id: gallery-left
+    kind: portico
+    at: [[-24, 21, -90]]
+    params: {bays: 5, bay: 8.4, depth: 3.0, spring: 3.8, thickness: 0.6, back: false,
+             vault: barrel, transverse: false, step: 6.0,
+             column: {diameter: 0.5, capital: lozenge, arch: pointed, n: 6}}
+  - id: court
+    kind: courtyard
+    note: the courtyard, as large as the hall; the şadırvan is Murad IV's
+    at: [[0, -42]]
+    params:
+      size: 42
+      bays: 5
+      spring: 5.6
+      thickness: 0.7
+      wall: 1.5
+      height: 9.0
+      open_side: n
+      column: {diameter: 0.75, capital: muqarnas, arch: pointed, n: 6}
+      dome_segments: 10
+      dome_rows: 2
+      sadirvan_spec: {radius: 3.0, sides: 8, roof: cone, roof_height: 2.6, column_height: 3.4}
+      step: 5.0
+  - id: minarets
+    kind: minaret
+    note: two minarets, each with two şerefe, at the corners where courtyard and hall meet
+    at: [{at: [23.6, -23.6]}, {at: [-23.6, -23.6]}]
+    params: {base: 4.6, base_height: 12.0, shaft_diameter: 3.4, shaft_top: 43.75,
+             serefe: [35.0, 43.5], serefe_depth: 1.0, corbel: 1.6, parapet: 1.0, petek: 3.0,
+             cap: 6.5, finial: 1.5, sides: 12, shoe: 2.5, tiers: 2, step: 4.0}
+steps:
+  - id: walls
+    parts: [wall-*, buttresses]
+    seconds: 3.4
+    epochs: []
+    sources: [archnet-sehzade, artar-2006, kuran-1986]
+    label: {en: "A square 42 m wide", tr: "42 m'lik bir kare"}
+    caption:
+      en: >-
+        The hall is a square 42 m wide outside and 38 m inside; buttresses
+        split each wall into five bays.
+      tr: >-
+        Harim dıştan 42, içten 38 m'lik bir karedir; payandalar her duvarı beş
+        bölüme ayırır.
+  - id: piers
+    parts: [piers-*]
+    seconds: 3.2
+    epochs: []
+    sources: [archnet-sehzade, artar-2006]
+    label: {en: "Four piers", tr: "Dört ayak"}
+    caption:
+      en: >-
+        Four piers close to five metres square, 16 m tall, stand at the corners
+        of the middle nine of a five-by-five grid.
+      tr: >-
+        Beşe beş bir ızgaranın ortadaki dokuz gözünün köşelerinde, beş metreye
+        yakın kare kesitli, 16 m yüksekliğinde dört ayak durur.
+  - id: arches
+    parts: [arches]
+    seconds: 3.0
+    epochs: []
+    sources: [artar-2006]
+    label: {en: "Four great arches", tr: "Dört büyük kemer"}
+    caption:
+      en: "Four pointed arches rise 10.8 m from the piers."
+      tr: "Ayaklardan dört sivri kemer 10,8 m yükselir."
+  - id: pendentives
+    parts: [pendentives]
+    seconds: 3.0
+    epochs: []
+    sources: [britannica-pendentive]
+    label: {en: "Pendentives", tr: "Pandantifler"}
+    caption:
+      en: "Four pendentives turn the square between the arches into a circle 19 m across."
+      tr: "Dört pandantif kemerlerin arasındaki kareyi 19 m çapında bir daireye çevirir."
+  - id: dome
+    parts: [dome, dome-windows]
+    seconds: 3.6
+    epochs: []
+    sources: [archnet-sehzade, artar-2006, wp-sehzade-1367352917]
+    label: {en: "A dome 19 m across", tr: "19 m'lik kubbe"}
+    caption:
+      en: >-
+        The dome is 19 m across, its crown 37 m above the floor, with 24
+        windows round its base.
+      tr: >-
+        Kubbenin çapı 19 m, tepesi döşemeden 37 m yüksektedir; eteğinde 24
+        pencere vardır.
+  - id: semidomes
+    parts: [semidomes, semidomes-windows, exedrae, exedrae-cap]
+    seconds: 3.6
+    epochs: []
+    sources: [kuran-1986, artar-2006, wp-sehzade-1367352917]
+    label: {en: "Four half-domes", tr: "Dört yarım kubbe"}
+    caption:
+      en: >-
+        Four half-domes, each skirted by two exedrae with three windows, carry
+        the thrust down on every side: the plan Hagia Sophia used on two sides,
+        here on all four.
+      tr: >-
+        Her biri üç pencereli ikişer eksedrayla eteklenen dört yarım kubbe,
+        itkiyi her yönden aşağı indirir: Ayasofya'nın iki yanda kullandığı
+        düzen burada dört yanda.
+  - id: corners
+    parts: [corner-*, weight-towers*]
+    seconds: 3.0
+    epochs: []
+    sources: [kuran-1986, ercag-1991]
+    label: {en: "Corner domes and weight towers", tr: "Köşe kubbeleri ve ağırlık kuleleri"}
+    caption:
+      en: >-
+        Small domes cover the four corners, and the piers rise through the roof
+        as weight towers that press down on them.
+      tr: >-
+        Dört köşeyi küçük kubbeler örter; ayaklar çatıyı aşıp onları aşağı
+        bastıran ağırlık kuleleri olarak yükselir.
+  - id: galleries
+    parts: [gallery-*]
+    seconds: 3.0
+    epochs: []
+    sources: [kuran-1986, ercag-1991]
+    label: {en: "Side galleries", tr: "Yan galeriler"}
+    caption:
+      en: >-
+        Single-storey galleries, five bays long and about 3 m deep, run along
+        both sides and hide the buttresses.
+      tr: >-
+        Beş gözlü, 3 m kadar derinlikte tek katlı galeriler iki yan boyunca
+        uzanır ve payandaları gizler.
+  - id: courtyard
+    parts: [court, court-walls, court-arches, court-domes]
+    seconds: 3.4
+    epochs: []
+    sources: [archnet-sehzade, artar-2006, kuran-1986]
+    label: {en: "The courtyard", tr: "Avlu"}
+    caption:
+      en: >-
+        The courtyard is as large as the hall: sixteen domes on twelve
+        columns round an open square.
+      tr: >-
+        Avlu harim kadar büyüktür: açık bir karenin çevresinde on iki sütun
+        üstünde on altı kubbe.
+  - id: minarets
+    parts: [minarets*]
+    seconds: 3.4
+    epochs: []
+    sources: [kuran-1986, ercag-1991, britannica-sinan]
+    label: {en: "Two minarets", tr: "İki minare"}
+    caption:
+      en: >-
+        Two minarets with two balconies each, their twelve-sided shafts carved
+        in low relief, stand where courtyard and hall meet. Sinan called the
+        mosque the work of his apprenticeship.
+      tr: >-
+        Avlu ile harimin birleştiği köşelerde, on iki köşeli gövdeleri
+        alçak kabartmalarla bezeli, ikişer şerefeli iki minare yükselir. Sinan
+        bu camiyi çıraklık eseri saydı.
+  - id: sadirvan
+    parts: [court-sadirvan*]
+    seconds: 3.0
+    epochs: [1640]
+    sources: [tdv-sehzade-2010, archnet-sehzade]
+    label: {en: "The şadırvan", tr: "Şadırvan"}
+    caption:
+      en: >-
+        The octagonal şadırvan in the courtyard's middle is later: Murad IV
+        (r. 1623–40) gave it, under a canopy on eight columns.
+      tr: >-
+        Avlunun ortasındaki sekizgen şadırvan sonradandır: onu IV. Murad
+        (s. 1623–40) yaptırdı, sekiz sütunlu bir saçağın altında.
+reveal:
+  through: semidomes
+  seconds: 8.0
+  turnDegrees: 36
+  caption:
+    en: "A dome 19 m across, braced on all four sides by half-domes."
+    tr: "19 m'lik bir kubbe, dört yandan yarım kubbelerle desteklenir."
+choisy: {sectionHeight: 8.5, elevation: -50, azimuth: 225}
+dimensions:
+  - id: hall-outside
+    value: 42
+    measure: {kind: extent, parts: [wall-qibla, wall-entrance], axis: x}
+    source: archnet-sehzade
+    quote: "The mosque consists of two blocks, both measuring 42 m square"
+  - id: hall-inside
+    value: 38
+    measure: {kind: gap, from: [wall-left], to: [wall-right], axis: x}
+    source: artar-2006
+    quote: "the interior, 38 meters long and 38 meters wide"
+  - id: dome-diameter
+    value: 19
+    measure: {kind: diameter, parts: [dome-windows], side: inner, band: 0.02}
+    source: archnet-sehzade
+    quote: "paraphrase: ArchNet gives the central dome as 19 m in diameter"
+  - id: dome-crown
+    value: 37
+    measure: {kind: crown, parts: [dome]}
+    source: artar-2006
+    quote: "paraphrase (pp. 37): 37 m from ground level to the top of the main dome"
+  - id: dome-windows
+    value: 24
+    measure: {kind: count, parts: [dome-windows]}
+    source: artar-2006
+    quote: "paraphrase (pp. 32, 35): 24 windows round the base of the main dome"
+  - id: pier-height
+    value: 16.0
+    measure: {kind: top, parts: [piers-*]}
+    source: artar-2006
+    quote: "paraphrase (p. 37): piers 16.00 m high in the structural model"
+  - id: clear-span
+    value: 17.5
+    measure: {kind: gap, from: [piers-nw], to: [piers-ne], axis: x}
+    source: artar-2006
+    quote: "paraphrase (p. 37): 17.50 m between the piers, from the on-site survey"
+  - id: exedrae
+    value: 8
+    measure: {kind: count, parts: [exedrae-cap]}
+    source: kuran-1986
+    quote: "her biri ikişer ekzedra ile eteklenen dört yarım kubbe"
+  - id: courtyard-side
+    value: 42
+    measure: {kind: extent, parts: [court-walls], axis: x}
+    source: archnet-sehzade
+    quote: "The mosque consists of two blocks, both measuring 42 m square"
+  - id: courtyard-domes
+    value: 16
+    measure: {kind: count, parts: [court-domes], zmin: 8.6}
+    source: kuran-1986
+    quote: "paraphrase (catalogue no. 99): sixteen portico domes round the courtyard"
+  - id: courtyard-columns
+    value: 12
+    measure: {kind: count, parts: [court], zmin: 4.7}
+    source: artar-2006
+    quote: "paraphrase (p. 32): twelve columns round the courtyard"
+  - id: serefe
+    value: 4
+    measure: {kind: count, parts: [minarets-serefe], height: 1.0}
+    source: kuran-1986
+    quote: "paraphrase (p. 58): two minarets of two şerefe each"
+  - id: length
+    value: 84.07
+    measure: {kind: extent, parts: [wall-*, court-walls], axis: y}
+    source: osm-relation-7656706
+    quote: "OSM outer ring, south-west long side 84.07 m"
+  - id: width-with-galleries
+    value: 47.87
+    measure: {kind: extent, parts: [wall-*, gallery-*], axis: x}
+    source: osm-relation-7656706
+    quote: "OSM outer ring, qibla end 47.87 m"
+shared: [wp-sehzade-1367352917, britannica-sinan, britannica-pendentive]
+sources:
+  - id: archnet-sehzade
+    title: {en: "Şehzade Külliyesi — ArchNet", tr: "Şehzade Külliyesi — ArchNet"}
+    url: https://www.archnet.org/sites/2018
+    author: {en: "ArchNet", tr: "ArchNet"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: artar-2006
+    title: {en: "Structural identification of the Şehzade Mehmed Mosque through static and dynamic analyses (MS thesis, Boğaziçi University, 2006)",
+            tr: "Şehzade Mehmed Camii'nin statik ve dinamik analizlerle yapısal tanımlanması (yüksek lisans tezi, Boğaziçi Üniversitesi, 2006)"}
+    url: https://digitalarchive.library.bogazici.edu.tr/items/822e1eac-8205-4d05-8d26-e85ca977ee83/full
+    author: {en: "Musa Artar", tr: "Musa Artar"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: kuran-1986
+    title: {en: "Mimar Sinan (Istanbul: Hürriyet Vakfı, 1986)", tr: "Mimar Sinan (İstanbul: Hürriyet Vakfı, 1986)"}
+    url: https://archive.org/details/aptullah-kuran-mimar-sinan
+    author: {en: "Aptullah Kuran", tr: "Aptullah Kuran"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: ercag-1991
+    title: {en: "İstanbul Şehzade Camii Restorasyonu, Vakıf Haftası Dergisi 8 (1991), pp. 213–228",
+            tr: "İstanbul Şehzade Camii Restorasyonu, Vakıf Haftası Dergisi 8 (1991), s. 213–228"}
+    url: https://hdl.handle.net/11352/899
+    author: {en: "Beyhan Erçağ", tr: "Beyhan Erçağ"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: tdv-sehzade-2010
+    title: {en: "Şehzade Külliyesi, TDV İslâm Ansiklopedisi 38 (2010), pp. 483–485",
+            tr: "Şehzade Külliyesi, TDV İslâm Ansiklopedisi 38 (2010), s. 483–485"}
+    url: https://islamansiklopedisi.org.tr/sehzade-kulliyesi
+    author: {en: "İsmail Orman", tr: "İsmail Orman"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: osm-relation-7656706
+    title: {en: "OpenStreetMap relation 7656706, Şehzadebaşı Camii", tr: "OpenStreetMap ilişkisi 7656706, Şehzadebaşı Camii"}
+    url: https://www.openstreetmap.org/relation/7656706
+    author: {en: "OpenStreetMap contributors", tr: "OpenStreetMap katkıcıları"}
+    accessedAt: "2026-10-17"
+    licence: {en: "ODbL 1.0", tr: "ODbL 1.0"}

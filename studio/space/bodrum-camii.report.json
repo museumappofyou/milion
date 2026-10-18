@@ -1,0 +1,136 @@
+{
+  "id": "bodrum-camii",
+  "parts": 38,
+  "triangles": 13220,
+  "vertices": 6966,
+  "bytes": 99276,
+  "axis": {
+    "axis": 95.3,
+    "footprintAxis": 95.33,
+    "offDegrees": 0.03,
+    "footprint": [
+      17.15,
+      11.31
+    ],
+    "source": "osm-way-198768798"
+  },
+  "dimensions": [
+    {
+      "id": "naos-width",
+      "measured": 8.0,
+      "cited": 8.0,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "lower-hall-width",
+      "measured": 8.0,
+      "cited": 8.0,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "lower-hall-length",
+      "measured": 10.65,
+      "cited": 10.65,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "lower-narthex-width",
+      "measured": 2.649,
+      "cited": 2.65,
+      "tolerance": 0.05,
+      "error": -0.0002
+    },
+    {
+      "id": "floor-to-floor",
+      "measured": 7.5,
+      "cited": 7.5,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "dome-diameter",
+      "measured": 3.301,
+      "cited": 3.3,
+      "tolerance": 0.05,
+      "error": 0.0002
+    },
+    {
+      "id": "drum-diameter",
+      "measured": 5.5,
+      "cited": 5.5,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "drum-height",
+      "measured": 3.15,
+      "cited": 3.15,
+      "tolerance": 0.05,
+      "error": 0.0001
+    },
+    {
+      "id": "drum-windows",
+      "measured": 8.0,
+      "cited": 8,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "length-with-apses",
+      "measured": 17.4,
+      "cited": 17.16,
+      "tolerance": 0.05,
+      "error": 0.014
+    },
+    {
+      "id": "width-across-buttresses",
+      "measured": 11.1,
+      "cited": 11.3,
+      "tolerance": 0.05,
+      "error": -0.0177
+    }
+  ],
+  "byPart": {
+    "lower-wall-n": 260,
+    "lower-wall-s": 260,
+    "lower-wall-w": 140,
+    "lower-wall-x": 140,
+    "lower-wall-e": 140,
+    "lower-spur": 88,
+    "lower-apse": 480,
+    "lower-buttresses": 616,
+    "lower-columns": 752,
+    "lower-vaults": 68,
+    "lower-aisle-vaults": 136,
+    "lower-narthex-vault": 68,
+    "floor": 304,
+    "wall-n": 844,
+    "wall-s": 844,
+    "wall-w": 276,
+    "wall-x": 388,
+    "wall-e": 388,
+    "buttresses": 1904,
+    "apse": 304,
+    "apse-cap": 144,
+    "side-apses": 120,
+    "side-apses-cap": 288,
+    "columns": 1008,
+    "piers": 144,
+    "vault-arms": 204,
+    "vault-bema": 68,
+    "vault-corners": 240,
+    "vault-pastophoria": 136,
+    "vault-narthex": 60,
+    "vault-narthex-ends": 136,
+    "pendentives": 272,
+    "ring": 128,
+    "dome": 512,
+    "dome-drum": 592,
+    "minaret": 376,
+    "minaret-serefe": 216,
+    "minaret-cap": 176
+  }
+}

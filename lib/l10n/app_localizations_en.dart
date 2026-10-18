@@ -1340,6 +1340,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get spaceCutEastWest => 'East–west cut';
 
   @override
+  String get spaceCutLong => 'Long section';
+
+  @override
+  String get spaceCutCross => 'Cross section';
+
+  @override
+  String get spaceStudies => '3D studies';
+
+  @override
   String spaceMetres(String value) {
     return '$value m';
   }

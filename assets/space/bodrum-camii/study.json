@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "bodrum-camii",
+  "title": {
+    "en": "The Myrelaion, a church on a church",
+    "tr": "Myrelaion: kilise üstünde kilise"
+  },
+  "description": {
+    "en": "A drawing of the Myrelaion (Bodrum Camii) assembling, seen from below: the lower church that lifts it to the level of Romanos I's palace, then a naos 8 m square on four columns, its cross vaults and a dome 3.3 m across on a drum with eight windows. The time scrubber turns the church of about 920 into today's mosque. Plan dimensions are cited; heights follow a proportion rule. A diagram, not a survey.",
+    "tr": "Myrelaion'un (Bodrum Camii) aşağıdan görülen çizimi kendini kurar: onu I. Romanos'un sarayıyla aynı seviyeye çıkaran alt kilise, ardından dört sütun üstünde 8 m'lik kare naos, haç kolu tonozları ve sekiz pencereli kasnağın üstünde 3,3 m çapında bir kubbe. Zaman çubuğu yaklaşık 920'deki kiliseyi bugünkü camiye çevirir. Plan ölçüleri kaynaklıdır; yükseklikler bir oran kuralına dayanır. Bu bir şemadır, rölöve değildir."
+  },
+  "model": "assets/space/bodrum-camii/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "bodrum-mosque",
+  "orientation": {
+    "axis": 95.3,
+    "source": "osm-way-198768798"
+  },
+  "epochs": [
+    {
+      "year": 922,
+      "label": {
+        "en": "Myrelaion church, c. 920",
+        "tr": "Myrelaion Kilisesi, y. 920"
+      }
+    },
+    {
+      "year": 2026,
+      "label": {
+        "en": "Bodrum Camii today",
+        "tr": "Bugün Bodrum Camii"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "substructure",
+      "parts": [
+        "lower-wall-n",
+        "lower-wall-s",
+        "lower-wall-w",
+        "lower-wall-x",
+        "lower-wall-e",
+        "lower-spur",
+        "lower-apse",
+        "lower-buttresses"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "freely-cakmak-2004",
+        "naumann-1966"
+      ],
+      "label": {
+        "en": "A platform for a palace church",
+        "tr": "Saray kilisesi için bir set"
+      },
+      "caption": {
+        "en": "The ground falls toward the Marmara, so the church first got a storey under it: a substructure that lifts its floor to the level of Romanos I's palace terrace.",
+        "tr": "Arazi Marmara'ya doğru alçalır; bu yüzden kilisenin önce altına bir kat yapıldı: döşemesini I. Romanos'un saray terasıyla aynı seviyeye kaldıran bir alt yapı."
+      }
+    },
+    {
+      "id": "lower-church",
+      "parts": [
+        "lower-columns",
+        "lower-vaults",
+        "lower-aisle-vaults",
+        "lower-narthex-vault",
+        "floor"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "freely-cakmak-2004",
+        "talbot-rice-1933"
+      ],
+      "label": {
+        "en": "The lower church",
+        "tr": "Alt kilise"
+      },
+      "caption": {
+        "en": "Inside it, a hall 8 by 10.65 m in three aisles: four columns stand directly under the church's own, and its vaults carry the floor 7.5 m above.",
+        "tr": "İçinde üç sahınlı, 8'e 10,65 m'lik bir salon: dört sütun üstteki kilisenin sütunlarının tam altında durur, tonozları 7,5 m yukarıdaki döşemeyi taşır."
+      }
+    },
+    {
+      "id": "walls",
+      "parts": [
+        "wall-n",
+        "wall-s",
+        "wall-w",
+        "wall-x",
+        "wall-e",
+        "buttresses"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912",
+        "freely-cakmak-2004"
+      ],
+      "label": {
+        "en": "Walls and half-round buttresses",
+        "tr": "Duvarlar ve yarım yuvarlak payandalar"
+      },
+      "caption": {
+        "en": "All brick: a naos 8 m square behind a narthex, its long sides ribbed with six half-round buttresses each, two more flanking the west door.",
+        "tr": "Tamamı tuğla: bir son cemaat yerinin arkasında 8 m'lik kare naos; uzun kenarlarında altışar, batı kapısının iki yanında birer yarım yuvarlak payanda."
+      }
+    },
+    {
+      "id": "apses",
+      "parts": [
+        "apse",
+        "apse-cap",
+        "side-apses",
+        "side-apses-cap"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912",
+        "freely-cakmak-2004"
+      ],
+      "label": {
+        "en": "Three apses",
+        "tr": "Üç apsis"
+      },
+      "caption": {
+        "en": "Three apses close the east end, each three-sided outside; the main one is round within.",
+        "tr": "Doğu ucunu üç apsis kapatır; üçü de dışta üç yüzlüdür, ortadaki içte yuvarlaktır."
+      }
+    },
+    {
+      "id": "columns",
+      "parts": [
+        "columns"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        922
+      ],
+      "sources": [
+        "freely-cakmak-2004"
+      ],
+      "label": {
+        "en": "Four columns",
+        "tr": "Dört sütun"
+      },
+      "caption": {
+        "en": "Four columns mark a cross with arms 4 m wide, dividing the naos into nine bays: the cross-in-square plan.",
+        "tr": "Dört sütun kolları 4 m genişliğinde bir haç çizer ve naosu dokuz bölüme ayırır: kapalı Yunan haçı planı."
+      }
+    },
+    {
+      "id": "vaults",
+      "parts": [
+        "vault-arms",
+        "vault-bema",
+        "vault-corners",
+        "vault-pastophoria",
+        "vault-narthex",
+        "vault-narthex-ends"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "freely-cakmak-2004",
+        "ousterhout-master-builders"
+      ],
+      "label": {
+        "en": "Cross vaults",
+        "tr": "Haç kolu tonozları"
+      },
+      "caption": {
+        "en": "Barrel vaults roof the four arms, small domical vaults the corners. The drawing raises them about as high as the naos is wide, a proportion found in this church.",
+        "tr": "Dört kolu beşik tonozlar, köşeleri küçük kubbemsi tonozlar örter. Çizim onları naosun genişliği kadar yükseğe koyar; bu oran bu kilisede gözlenmiştir."
+      }
+    },
+    {
+      "id": "pendentives",
+      "parts": [
+        "pendentives",
+        "ring"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "choisy-1883"
+      ],
+      "label": {
+        "en": "Pendentives",
+        "tr": "Pandantifler"
+      },
+      "caption": {
+        "en": "Over the 4 m crossing, four pendentives turn the square into the ring the drum stands on.",
+        "tr": "4 m'lik orta bölümün üstünde dört pandantif kareyi kasnağın oturduğu bileziğe çevirir."
+      }
+    },
+    {
+      "id": "drum",
+      "parts": [
+        "dome-drum"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "freely-cakmak-2004"
+      ],
+      "label": {
+        "en": "A drum with eight windows",
+        "tr": "Sekiz pencereli kasnak"
+      },
+      "caption": {
+        "en": "A cylindrical drum 5.5 m across and 3.15 m high, its eight round-headed windows separated by triangular buttresses.",
+        "tr": "5,5 m çapında, 3,15 m yüksekliğinde silindirik bir kasnak; sekiz yuvarlak kemerli penceresini üçgen payandalar ayırır."
+      }
+    },
+    {
+      "id": "dome",
+      "parts": [
+        "dome"
+      ],
+      "seconds": 3.2,
+      "epochs": [],
+      "sources": [
+        "ousterhout-master-builders",
+        "freely-cakmak-2004"
+      ],
+      "label": {
+        "en": "A dome 3.3 m across",
+        "tr": "3,3 m'lik kubbe"
+      },
+      "caption": {
+        "en": "The dome is only about 3.3 m in diameter, about ten Byzantine feet, divided inside into eight concave cells.",
+        "tr": "Kubbenin çapı yalnızca 3,3 m kadardır, yaklaşık on Bizans ayağı; içten sekiz iç bükey dilime ayrılır."
+      }
+    },
+    {
+      "id": "piers",
+      "parts": [
+        "piers"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "freely-cakmak-2004",
+        "talbot-rice-1933"
+      ],
+      "label": {
+        "en": "Piers for columns",
+        "tr": "Sütunların yerine ayaklar"
+      },
+      "caption": {
+        "en": "At some unrecorded date after the Ottoman conversion (about 1500), the four columns were replaced by the masonry piers that carry the dome today.",
+        "tr": "Osmanlı döneminde camiye çevrilmesinden (y. 1500) sonra, tarihi bilinmeyen bir zamanda, dört sütunun yerini bugün kubbeyi taşıyan kâgir ayaklar aldı."
+      }
+    },
+    {
+      "id": "minaret",
+      "parts": [
+        "minaret",
+        "minaret-serefe",
+        "minaret-cap"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "freely-cakmak-2004",
+        "naumann-1966"
+      ],
+      "label": {
+        "en": "The minaret",
+        "tr": "Minare"
+      },
+      "caption": {
+        "en": "The minaret stands on the south-west corner of the lower church and projects beyond it on two sides; its height here is an estimate.",
+        "tr": "Minare alt kilisenin güneybatı köşesinde durur ve iki yönde onun dışına taşar; buradaki yüksekliği bir tahmindir."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "dome",
+    "seconds": 8.0,
+    "turnDegrees": 30,
+    "caption": {
+      "en": "A church lifted onto its own lower church, then a dome only 3.3 m across.",
+      "tr": "Kendi alt kilisesinin üstüne kaldırılmış bir kilise, sonra yalnızca 3,3 m'lik bir kubbe."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 13.0,
+    "elevation": -50,
+    "azimuth": 225
+  },
+  "sources": [
+    "freely-cakmak-2004",
+    "osm-way-198768798",
+    "ousterhout-master-builders",
+    "talbot-rice-1933"
+  ],
+  "triangles": 13220,
+  "citations": [
+    {
+      "id": "freely-cakmak-2004",
+      "title": {
+        "en": "Byzantine Monuments of Istanbul (Cambridge, 2004), pp. 178–186, after Striker (1981)",
+        "tr": "Byzantine Monuments of Istanbul (Cambridge, 2004), s. 178–186, Striker'e (1981) dayanarak"
+      },
+      "url": "https://archive.org/details/byzantinemonumen0000free",
+      "author": {
+        "en": "John Freely and Ahmet S. Çakmak",
+        "tr": "John Freely ve Ahmet S. Çakmak"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "naumann-1966",
+      "title": {
+        "en": "Der antike Rundbau beim Myrelaion und der Palast Romanos I. Lekapenos, IstMitt 16 (1966), pp. 199–216",
+        "tr": "Der antike Rundbau beim Myrelaion und der Palast Romanos I. Lekapenos, IstMitt 16 (1966), s. 199–216"
+      },
+      "url": "https://archive.org/details/48-1998",
+      "author": {
+        "en": "Rudolf Naumann",
+        "tr": "Rudolf Naumann"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "osm-way-198768798",
+      "title": {
+        "en": "OpenStreetMap way 198768798, Bodrum Camii (version 6)",
+        "tr": "OpenStreetMap yolu 198768798, Bodrum Camii (6. sürüm)"
+      },
+      "url": "https://www.openstreetmap.org/way/198768798",
+      "author": {
+        "en": "OpenStreetMap contributors",
+        "tr": "OpenStreetMap katkıcıları"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "ODbL 1.0",
+        "tr": "ODbL 1.0"
+      }
+    },
+    {
+      "id": "ousterhout-master-builders",
+      "title": {
+        "en": "Master Builders of Byzantium (Princeton, 1999)",
+        "tr": "Master Builders of Byzantium (Princeton, 1999)"
+      },
+      "url": "https://archive.org/details/masterbuildersof2008oust",
+      "author": {
+        "en": "Robert Ousterhout",
+        "tr": "Robert Ousterhout"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "talbot-rice-1933",
+      "title": {
+        "en": "Excavations at Bodrum Camii 1930, Byzantion 8 (1933), pp. 151–174",
+        "tr": "Excavations at Bodrum Camii 1930, Byzantion 8 (1933), s. 151–174"
+      },
+      "url": "https://archive.org/details/byzantion-06-1931",
+      "author": {
+        "en": "David Talbot Rice",
+        "tr": "David Talbot Rice"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": null
+    },
+    {
+      "id": "van-millingen-1912",
+      "title": {
+        "en": "Byzantine Churches in Constantinople (London, 1912)",
+        "tr": "Byzantine Churches in Constantinople (Londra, 1912)"
+      },
+      "url": "https://www.gutenberg.org/ebooks/29077",
+      "author": {
+        "en": "Alexander Van Millingen, with Ramsay Traquair, W. S. George and A. E. Henderson",
+        "tr": "Alexander Van Millingen; Ramsay Traquair, W. S. George ve A. E. Henderson ile"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "choisy-1883",
+      "title": {
+        "en": "L'art de bâtir chez les Byzantins (Paris, 1883), scan",
+        "tr": "L'art de bâtir chez les Byzantins (Paris, 1883), tarama"
+      },
+      "url": "https://digit.biblio.polito.it/secure/5914/1/L%20art%20de%20batir%20chez%20les%20byzantines_comp.pdf",
+      "author": {
+        "en": "Auguste Choisy",
+        "tr": "Auguste Choisy"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    }
+  ]
+}

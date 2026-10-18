@@ -103,7 +103,12 @@ class SpacePlayerState extends State<SpacePlayer>
     }
   }
 
-  void _scaleStart(ScaleStartDetails d) => _gestureStart = controller!.view;
+  /// A touch hands the story back first, so the camera starts from where
+  /// the reveal had turned it, not from its starting view.
+  void _scaleStart(ScaleStartDetails d) {
+    final c = controller!..explore();
+    _gestureStart = c.view;
+  }
 
   void _scaleUpdate(ScaleUpdateDetails d) {
     final c = controller!, start = _gestureStart, p = projector;

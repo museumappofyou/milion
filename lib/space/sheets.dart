@@ -112,37 +112,40 @@ class SpaceSheet extends StatelessWidget {
                       onChanged: c.setExplode,
                       semanticFormatterCallback: (v) => '${(v * 100).round()}%',
                     ),
-                    Text(s.spaceTime),
-                    Slider(
-                      key: const ValueKey('space-time'),
-                      value: c.visibleEpoch.toDouble(),
-                      max: (c.study.epochs.length - 1).toDouble(),
-                      divisions: c.study.epochs.length - 1,
-                      // The stops are named below; a value label would make
-                      // TalkBack read the year twice.
-                      semanticFormatterCallback: (v) =>
-                          c.study.epochs[v.round()].label.inLanguage(lang),
-                      onChanged: (v) => c.setEpoch(v.round()),
-                    ),
-                    // Stops of the scrubber, first and last at its ends;
-                    // long labels wrap rather than overflow at 200% text.
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        for (final (i, e) in c.study.epochs.indexed)
-                          Expanded(
-                            child: Text(
-                              e.label.inLanguage(lang),
-                              textAlign: i == 0
-                                  ? TextAlign.start
-                                  : i == c.study.epochs.length - 1
-                                  ? TextAlign.end
-                                  : TextAlign.center,
-                              style: TypeRole.measurement,
+                    // One epoch: nothing to scrub between.
+                    if (c.study.epochs.length > 1) ...[
+                      Text(s.spaceTime),
+                      Slider(
+                        key: const ValueKey('space-time'),
+                        value: c.visibleEpoch.toDouble(),
+                        max: (c.study.epochs.length - 1).toDouble(),
+                        divisions: c.study.epochs.length - 1,
+                        // The stops are named below; a value label would make
+                        // TalkBack read the year twice.
+                        semanticFormatterCallback: (v) =>
+                            c.study.epochs[v.round()].label.inLanguage(lang),
+                        onChanged: (v) => c.setEpoch(v.round()),
+                      ),
+                      // Stops of the scrubber, first and last at its ends;
+                      // long labels wrap rather than overflow at 200% text.
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          for (final (i, e) in c.study.epochs.indexed)
+                            Expanded(
+                              child: Text(
+                                e.label.inLanguage(lang),
+                                textAlign: i == 0
+                                    ? TextAlign.start
+                                    : i == c.study.epochs.length - 1
+                                    ? TextAlign.end
+                                    : TextAlign.center,
+                                style: TypeRole.measurement,
+                              ),
                             ),
-                          ),
-                      ],
-                    ),
+                        ],
+                      ),
+                    ],
                     const SizedBox(height: 16),
                     Text(
                       s.spaceSteps,
@@ -184,10 +187,18 @@ class SpaceSheet extends StatelessWidget {
                       spacing: 8,
                       runSpacing: 8,
                       children: [
+                        // A kit study is drawn in the building's frame (+y
+                        // along its axis), so its cuts are long and cross
+                        // sections; P08's bay keeps the compass.
                         for (final (a, label) in [
                           (2, s.spaceCutPlan),
-                          (0, s.spaceCutNorthSouth),
-                          (1, s.spaceCutEastWest),
+                          if (c.study.orientation == null) ...[
+                            (0, s.spaceCutNorthSouth),
+                            (1, s.spaceCutEastWest),
+                          ] else ...[
+                            (0, s.spaceCutLong),
+                            (1, s.spaceCutCross),
+                          ],
                         ])
                           ChoiceChip(
                             key: ValueKey('space-cut-$a'),

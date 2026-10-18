@@ -1,0 +1,469 @@
+# P09 kit spec: Sts Sergius and Bacchus (Küçük Ayasofya Camii), c. 527–536.
+# Frame: metres, z up, the church floor at z = 0, the octagon's centre at the
+# origin, +y along the west–east axis toward the apse (+x is then south).
+# Cited dimensions are checked against the geometry; Van Millingen's feet
+# are converted at 0.3048 m. The enclosure is irregular as Van Millingen and
+# The Byzantine Legacy describe it: the south wall is about 2.5 m shorter
+# than the north (the east wall runs askew) and twice as thick, and the
+# octagon stands 3° askew in it. Not found in any text and set in proportion
+# (Henderson's 1912 plates scaled by the researcher, or estimated): the wall
+# thicknesses, the narthex and apse sizes, column heights, the bema vault,
+# the window rows, the portico's height and the whole minaret.
+schemaVersion: 1
+id: kucuk-ayasofya
+place: little-hagia-sophia
+title: {en: "Sts Sergius and Bacchus: an octagon in a square", tr: "Sergios ve Bakhos: karenin içinde sekizgen"}
+description:
+  en: >-
+    A drawing of Sts Sergius and Bacchus (Küçük Ayasofya) assembling, seen
+    from below: an irregular enclosure 101 by 77½ feet, an octagon of eight
+    piers askew inside it, two storeys of columns with exedrae on the
+    diagonals, and a dome of sixteen compartments with no pendentives. The
+    time scrubber adds the Ottoman portico and today's minaret. A diagram on
+    cited dimensions, not a survey.
+  tr: >-
+    Sergios ve Bakhos'un (Küçük Ayasofya) aşağıdan görülen çizimi kendini
+    kurar: 101'e 77½ ayaklık düzensiz bir dış duvar, içinde hafifçe yamuk
+    duran sekiz ayaklı bir sekizgen, köşegenlerde eksedralarla iki kat
+    sütun ve pandantifsiz, on altı dilimli bir kubbe. Zaman çubuğu Osmanlı
+    revakını ve bugünkü minareyi ekler. Kaynaklı ölçülere dayanan bir
+    şemadır, rölöve değildir.
+eras: [byzantine, ottoman]
+honesty: RECONSTRUCTION
+orientation:
+  axis: 108.0
+  source: osm-way-303179753
+  footprint:   # [lat, lon], OSM way 303179753 v15 (2025-10-08)
+    - [41.0027169, 28.9719208]
+    - [41.0029013, 28.9720123]
+    - [41.0028648, 28.9721464]
+    - [41.0028891, 28.9721544]
+    - [41.0028363, 28.9723312]
+    - [41.0028466, 28.9723556]
+    - [41.0028120, 28.9724626]
+    - [41.0027482, 28.9724493]
+    - [41.0027101, 28.9724807]
+    - [41.0026628, 28.9724552]
+    - [41.0026480, 28.9724036]
+    - [41.0025855, 28.9723690]
+    - [41.0026460, 28.9720469]
+    - [41.0026644, 28.9720552]
+    - [41.0026845, 28.9719718]
+    - [41.0027029, 28.9719828]
+step: 2.4
+epochs:
+  - {year: 536, label: {en: "Sts Sergius and Bacchus, 536", tr: "Sergios ve Bakhos Kilisesi, 536"}}
+  - {year: 2026, label: {en: "Küçük Ayasofya Camii today", tr: "Bugün Küçük Ayasofya Camii"}}
+parts:
+  # The enclosure: north wall 1.2 m, south wall 2.2 m thick (two thicknesses).
+  - id: wall-n
+    kind: wall
+    material: brick
+    at: [[-12.41, -13.75, 90]]
+    params:
+      length: 29.15
+      height: 6.1
+      thickness: 1.2
+      openings: &ground
+        - {x: 4.0, width: 1.6, sill: 1.2, head: 3.6}
+        - {x: 10.5, width: 1.6, sill: 1.2, head: 3.6}
+        - {x: 17.0, width: 1.6, sill: 1.2, head: 3.6}
+        - {x: 23.5, width: 1.6, sill: 1.2, head: 3.6}
+  - id: wall-n-upper
+    kind: wall
+    material: brick
+    at: [{at: [-12.41, -13.75], z: 6.1, turn: 90}]
+    params:
+      length: 29.15
+      height: 5.5
+      thickness: 1.2
+      openings: &gallery
+        - {x: 4.0, width: 1.6, sill: 1.0, head: 4.0, arch: round}
+        - {x: 10.5, width: 1.6, sill: 1.0, head: 4.0, arch: round}
+        - {x: 17.0, width: 1.6, sill: 1.0, head: 4.0, arch: round}
+        - {x: 23.5, width: 1.6, sill: 1.0, head: 4.0, arch: round}
+  - id: wall-s
+    kind: wall
+    material: brick
+    at: [[12.91, -13.75, 90]]
+    params: {length: 26.35, height: 6.1, thickness: 2.2, openings: *ground}
+  - id: wall-s-upper
+    kind: wall
+    material: brick
+    at: [{at: [12.91, -13.75], z: 6.1, turn: 90}]
+    params: {length: 26.35, height: 5.5, thickness: 2.2, openings: *gallery}
+  - id: wall-e
+    kind: wall
+    material: brick
+    note: askew, so the south wall is 2.5 m shorter than the north
+    at: [[-13.01, 14.7806, -6.0418]]
+    params:
+      length: 27.17
+      height: 11.6
+      thickness: 1.3
+      openings:
+        - {x: 4.5, width: 1.5, sill: 7.0, head: 9.6, arch: round}
+        - {x: 13.15, width: 7.8, sill: 0, head: 11.4, arch: round}
+        - {x: 21.8, width: 1.5, sill: 7.0, head: 9.6, arch: round}
+  - id: wall-x
+    kind: wall
+    material: brick
+    note: between the narthex and the naos; five arches, the middle one wider and taller
+    at: [[-11.81, -13.25]]
+    params:
+      length: 23.62
+      height: 11.6
+      thickness: 1.0
+      openings:
+        - {x: 2.9, width: 2.0, sill: 0, head: 4.2, arch: round}
+        - {x: 7.4, width: 2.0, sill: 0, head: 4.2, arch: round}
+        - {x: 11.81, width: 3.0, sill: 0, head: 5.2, arch: round}
+        - {x: 16.2, width: 2.0, sill: 0, head: 4.2, arch: round}
+        - {x: 20.7, width: 2.0, sill: 0, head: 4.2, arch: round}
+  - id: narthex-wall-w
+    kind: wall
+    material: brick
+    at: [[-11.6, -18.65]]
+    params:
+      length: 23.2
+      height: 11.6
+      thickness: 1.2
+      openings:
+        - {x: 4.2, width: 1.4, sill: 1.4, head: 3.8}
+        - {x: 11.6, width: 2.2, sill: 0, head: 4.0, arch: round}
+        - {x: 19.0, width: 1.4, sill: 1.4, head: 3.8}
+  - id: narthex-ends
+    kind: slab
+    material: brick
+    at: [[-11.025, -15.9], [11.025, -15.9]]
+    params: {width: 1.15, depth: 4.3, thickness: 11.6}
+  - id: octagon
+    kind: octagon
+    material: marble
+    note: >-
+      Van Millingen's octagon, 53½ by 50½ ft between its side lines, eight
+      piers 33½ ft to the springing of the dome arches, fourteen columns per
+      storey on seven sides (melon capitals below, pseudo-Ionic above)
+    params:
+      ax: 7.70
+      ay: 8.15
+      skew: 3
+      pier: 2.4
+      column: {diameter: 0.55, capital: melon}
+      gallery_column: {diameter: 0.45, capital: impost}
+      ground: 4.4
+      entablature: 5.5
+      gallery: 6.1
+      gallery_height: 3.4
+      spring: 10.21
+      base: 13.0
+      open_side: e
+  - id: gallery-floor
+    kind: slab
+    material: stone
+    note: the gallery over the ambulatory, twenty feet up
+    at: [{at: [-10.2, 0.4], z: 5.75}, {at: [10.2, -0.575], z: 5.75}]
+    params: {width: 3.21, depth: 26.35, thickness: 0.35}
+  - id: gallery-floor-w
+    kind: slab
+    material: stone
+    at: [{at: [0, -10.9], z: 5.75}]
+    params: {width: 17.2, depth: 3.7, thickness: 0.35}
+  - id: dome
+    kind: dome
+    material: lead
+    note: sixteen compartments, the eight flat ones over the dome arches with windows
+    at: [{at: [0, 0], z: 13.0}]
+    params: {radius: 8.0, thickness: 0.45, gores: 16, gore_depth: 0.08, windows: 8, band: 3.0,
+             share: 0.45, phase: 0.05236, step: 2.0}
+  - id: casing
+    kind: ring-wall
+    material: brick
+    note: the sixteen-sided casing that rises 4 m above the springing
+    at: [{at: [0, 0], z: 13.0}]
+    params: {r0: 9.15, r1: 9.85, z0: 0, z1: 4.0, openings: 8, sill: 0.8, head: 3.0, share: 0.3,
+             phase: 0.05236, sides: 16}
+  - id: bema-vault
+    kind: arch
+    material: brick
+    at: [{at: [0, 11.45], z: 8.0}]
+    params: {span: 5.6, thickness: 0.6, depth: 2.6}
+  - id: apse
+    kind: exedra
+    material: brick
+    note: semicircular within, three-sided outside
+    at: [[0, 12.75, -6.0418]]
+    params: {radius: 3.9, thickness: 1.3, height: 7.5, outer_sides: 6, windows: 3, sill: 2.5,
+             head: 6.5, share: 0.3, cap_thickness: 0.6}
+  - id: narthex-vault
+    kind: sail-vault
+    material: brick
+    at: [{at: [0, -15.9], z: 6.4}]
+    params: {half: 2.15, thickness: 0.4}
+  - id: narthex-barrels
+    kind: arch
+    material: brick
+    at: [{at: [-6.375, -15.9], z: 6.4, turn: 90}, {at: [6.375, -15.9], z: 6.4, turn: 90}]
+    params: {span: 4.3, thickness: 0.4, depth: 8.15}
+  - id: roof
+    kind: slab
+    material: lead
+    note: the ambulatory roofs at the top of the enclosure
+    at: [{at: [-10.8, 0.4], z: 11.6}, {at: [11.3, -0.575], z: 11.6}]
+    params: {width: 4.4, depth: 26.35, thickness: 0.3}
+  - id: roof-w
+    kind: slab
+    material: lead
+    at: [{at: [0, -11.1], z: 11.6}]
+    params: {width: 17.2, depth: 4.1, thickness: 0.3}
+  - id: portico
+    kind: portico
+    material: stone
+    note: Hüseyin Ağa's portico of c. 1505, five domed bays on six columns
+    at: [[-11.55, -24.45]]
+    params: {bays: 5, bay: 4.62, depth: 5.2, spring: 4.2, thickness: 0.6, back: false,
+             column: {diameter: 0.5, capital: lozenge, arch: pointed, n: 8}}
+  - id: minaret
+    kind: minaret
+    material: stone
+    note: freestanding at the south-west corner; the shaft dates from 1955; its size is an estimate
+    at: [[14.6, -22.0]]
+    params: {base: 3.0, base_height: 6.0, shaft_diameter: 2.3, shaft_top: 22.75, serefe: [22.5],
+             serefe_depth: 0.7, corbel: 1.2, parapet: 0.9, petek: 2.5, cap: 4.5, finial: 1.0,
+             sides: 16, shoe: 1.5, tiers: 2}
+steps:
+  - id: enclosure
+    parts: [wall-*, narthex-wall-w, narthex-ends]
+    seconds: 3.4
+    epochs: []
+    sources: [van-millingen-1912, byzantine-legacy-sergius]
+    label: {en: "An irregular square", tr: "Düzensiz bir kare"}
+    caption:
+      en: >-
+        The enclosure measures 101 by 77½ feet inside, with a narthex on the
+        west; it is not square: the south wall, of two thicknesses, is about
+        2.5 m shorter than the north.
+      tr: >-
+        Dış duvarlar içten 101'e 77½ ayaktır, batıda bir narteks vardır; kare
+        değildir: iki kat örülmüş güney duvarı kuzeydekinden 2,5 m kadar
+        kısadır.
+  - id: piers
+    parts: [octagon-piers]
+    seconds: 3.2
+    epochs: []
+    sources: [van-millingen-1912]
+    label: {en: "An octagon, askew", tr: "Yamuk duran bir sekizgen"}
+    caption:
+      en: >-
+        Inside stands an octagon of eight piers, 53½ by 50½ feet, slightly
+        askew in its frame; the piers rise 33½ feet to the arches.
+      tr: >-
+        İçeride sekiz ayaklı, 53½'e 50½ ayaklık bir sekizgen durur; çerçevesi
+        içinde hafifçe yamuktur. Ayaklar kemerlere dek 33½ ayak yükselir.
+  - id: colonnade
+    parts: [octagon, octagon-entablature]
+    seconds: 3.6
+    epochs: []
+    sources: [van-millingen-1912]
+    label: {en: "Fourteen columns and a frieze", tr: "On dört sütun ve bir friz"}
+    caption:
+      en: >-
+        Fourteen columns with melon capitals fill seven sides; their frieze
+        carries a long inscription to Justinian, Theodora and St Sergius.
+      tr: >-
+        Kavun başlıklı on dört sütun yedi kenarı doldurur; frizlerinde
+        Iustinianos, Theodora ve Aziz Sergios'u onurlandıran uzun bir yazıt
+        vardır.
+  - id: gallery
+    parts: [gallery-floor*, octagon-gallery]
+    seconds: 3.2
+    epochs: []
+    sources: [van-millingen-1912]
+    label: {en: "The gallery", tr: "Galeri"}
+    caption:
+      en: >-
+        Twenty feet up runs the gallery, its smaller columns with pseudo-Ionic
+        capitals bound by arches instead of a beam.
+      tr: >-
+        Yirmi ayak yukarıda galeri uzanır; yalancı İon başlıklı daha küçük
+        sütunlarını bir kiriş yerine kemerler bağlar.
+  - id: exedrae
+    parts: [octagon-exedrae, octagon-arches]
+    seconds: 3.2
+    epochs: []
+    sources: [van-millingen-1912]
+    label: {en: "Exedrae and arches", tr: "Eksedralar ve kemerler"}
+    caption:
+      en: >-
+        On the four diagonals the octagon's sides curve out into exedrae; eight
+        arches carry the octagon up to the dome itself, with no pendentives.
+      tr: >-
+        Dört köşegende sekizgenin kenarları eksedralara doğru kıvrılır; sekiz
+        kemer sekizgeni pandantif olmadan doğrudan kubbeye taşır.
+  - id: dome
+    parts: [dome, dome-windows, casing]
+    seconds: 3.6
+    epochs: []
+    sources: [van-millingen-1912, byzantine-legacy-sergius]
+    label: {en: "Sixteen compartments", tr: "On altı dilim"}
+    caption:
+      en: >-
+        A dome about 16 m across in sixteen compartments: eight flat ones,
+        each with a window, alternate with eight concave ones, inside a
+        sixteen-sided casing 4 m high.
+      tr: >-
+        Yaklaşık 16 m çapında, on altı dilimli bir kubbe: her birinde bir
+        pencere olan sekiz düz dilim, sekiz iç bükey dilimle sıralanır; 4 m
+        yüksekliğinde on altı kenarlı bir kılıfın içindedir.
+  - id: east-and-west
+    parts: [apse*, bema-vault, narthex-vault, narthex-barrels]
+    seconds: 3.0
+    epochs: []
+    sources: [van-millingen-1912, ebersolt-thiers-1913]
+    label: {en: "Apse and narthex", tr: "Apsis ve narteks"}
+    caption:
+      en: >-
+        The apse is semicircular within and three-sided outside; the narthex
+        has a small dome between two barrel vaults.
+      tr: >-
+        Apsis içten yarım daire, dıştan üç yüzlüdür; narteksin ortasında iki
+        beşik tonozun arasında küçük bir kubbe vardır.
+  - id: roof
+    parts: [roof*]
+    seconds: 2.8
+    epochs: []
+    sources: [van-millingen-1912]
+    label: {en: "Roofs", tr: "Çatılar"}
+    caption:
+      en: "Lead roofs close the ambulatory and gallery around the octagon."
+      tr: "Kurşun çatılar sekizgeni çevreleyen dolaşma yolunu ve galeriyi kapatır."
+  - id: portico
+    parts: [portico*]
+    seconds: 3.4
+    epochs: [2026]
+    sources: [tdv-kucuk-ayasofya]
+    label: {en: "The Ottoman portico", tr: "Osmanlı revakı"}
+    caption:
+      en: >-
+        When Hüseyin Ağa made the church a mosque, about 1505, he added a
+        portico of five domed bays on six columns.
+      tr: >-
+        Hüseyin Ağa kiliseyi y. 1505'te camiye çevirdiğinde altı sütuna dayanan,
+        beş kubbeli bir revak ekledi.
+  - id: minaret
+    parts: [minaret*]
+    seconds: 3.0
+    epochs: [2026]
+    sources: [tdv-kucuk-ayasofya]
+    label: {en: "The minaret", tr: "Minare"}
+    caption:
+      en: >-
+        A single-balcony minaret stands apart at the south-west corner; its
+        shaft was rebuilt in 1955. Its size here is an estimate.
+      tr: >-
+        Tek şerefeli minare güneybatı köşesinde ayrı durur; gövdesi 1955'te
+        yeniden yapıldı. Buradaki boyutu bir tahmindir.
+reveal:
+  through: dome
+  seconds: 8.0
+  turnDegrees: 30
+  caption:
+    en: "An octagon askew inside a square, and a dome that needs no pendentives."
+    tr: "Bir karenin içinde yamuk duran bir sekizgen ve pandantife gerek duymayan bir kubbe."
+choisy: {sectionHeight: 7.0, elevation: -50, azimuth: 225}
+dimensions:
+  - id: interior-length
+    value: 30.78
+    measure: {kind: gap, from: [narthex-wall-w], to: [wall-e], axis: y, within: [[-1, 1], [0, 11.6]]}
+    source: van-millingen-1912
+    quote: "The length of the rectangular enclosure from west to east is 101 feet"
+  - id: interior-breadth
+    value: 23.62
+    measure: {kind: gap, from: [wall-n], to: [wall-s], axis: x, within: [[-1, 1], [0, 6.1]]}
+    source: van-millingen-1912
+    quote: "with an average breadth of 77½ feet from north to south, excluding the recesses"
+  - id: octagon-north-south
+    value: 15.39
+    measure: {kind: gap, from: [octagon-entablature], to: [octagon-entablature], axis: x, split: 0,
+              within: [[-1.5, 1.5], [4.4, 5.5]]}
+    source: van-millingen-1912
+    quote: "It measures 53-1/2 feet by 50-1/2 feet."
+  - id: piers-to-springing
+    value: 10.21
+    measure: {kind: top, parts: [octagon-piers]}
+    source: van-millingen-1912
+    quote: "The eight piers at its angles rise to a height of 33-1/2 feet from the floor to the springing of the dome arches."
+  - id: gallery-level
+    value: 6.10
+    measure: {kind: top, parts: [gallery-floor*]}
+    source: van-millingen-1912
+    quote: "Two feet above the cornice, or twenty feet from the floor of the church, the level of the gallery is reached."
+  - id: columns-per-storey
+    value: 14
+    measure: {kind: count, parts: [octagon], zmin: 3.9}
+    source: van-millingen-1912
+    quote: "making seven sides of the octagon a beautiful open screen of fourteen columns"
+  - id: dome-diameter
+    value: 16.0
+    measure: {kind: diameter, parts: [dome-windows], side: inner, band: 0.02}
+    source: byzantine-legacy-sergius
+    quote: "has a diameter of around 16 m"
+  - id: dome-windows
+    value: 8
+    measure: {kind: count, parts: [dome-windows]}
+    source: van-millingen-1912
+    quote: "The eight compartments directly above the dome arches are flat ... and in each of them is a semicircular-headed window."
+  - id: dome-crown
+    value: 21.34
+    measure: {kind: crown, parts: [dome]}
+    source: van-millingen-1912
+    quote: "derived: the gallery (20 ft) is to the summit of the dome as 1 to 3.5 (Antoniadi, quoted in note 111), so about 70 ft"
+  - id: casing-height
+    value: 4.0
+    measure: {kind: extent, parts: [casing], axis: z}
+    source: van-millingen-1912
+    quote: "The dome stands within a polygon of sixteen sides, that rises four metres above the springing line"
+  - id: length-with-portico
+    value: 44.3
+    measure: {kind: extent, parts: [wall-*, narthex-*, apse, portico*], axis: y}
+    source: osm-way-303179753
+    quote: "OSM outline: 44.3 m from the west front to the apse face along the axis"
+  - id: portico-domes
+    value: 5
+    measure: {kind: count, parts: [portico-domes], zmin: 6.2}
+    source: tdv-kucuk-ayasofya
+    quote: "altı sütuna dayanan revak beş bölüme ayrılmış, her bölümün üstü bir kubbe"
+shared: []
+sources:
+  - id: van-millingen-1912
+    title: {en: "Byzantine Churches in Constantinople (London, 1912)", tr: "Byzantine Churches in Constantinople (Londra, 1912)"}
+    url: https://www.gutenberg.org/ebooks/29077
+    author: {en: "Alexander Van Millingen, with Ramsay Traquair, W. S. George and A. E. Henderson",
+             tr: "Alexander Van Millingen; Ramsay Traquair, W. S. George ve A. E. Henderson ile"}
+    accessedAt: "2026-10-17"
+    licence: {en: "Public domain", tr: "Kamu malı"}
+  - id: ebersolt-thiers-1913
+    title: {en: "Les églises de Constantinople (Paris, 1913)", tr: "Les églises de Constantinople (Paris, 1913)"}
+    url: https://archive.org/details/0629-doucet-fg-164-04
+    author: {en: "Jean Ebersolt and Adolphe Thiers", tr: "Jean Ebersolt ve Adolphe Thiers"}
+    accessedAt: "2026-10-17"
+    licence: {en: "Public domain", tr: "Kamu malı"}
+  - id: byzantine-legacy-sergius
+    title: {en: "Sergius and Bacchus — The Byzantine Legacy", tr: "Sergius and Bacchus — The Byzantine Legacy"}
+    url: https://www.thebyzantinelegacy.com/sergius-bacchus
+    author: {en: "David Hendrix", tr: "David Hendrix"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: tdv-kucuk-ayasofya
+    title: {en: "Küçük Ayasofya Külliyesi, TDV İslâm Ansiklopedisi 26 (2002), pp. 520–522",
+            tr: "Küçük Ayasofya Külliyesi, TDV İslâm Ansiklopedisi 26 (2002), s. 520–522"}
+    url: https://islamansiklopedisi.org.tr/kucuk-ayasofya-kulliyesi
+    author: {en: "Semavi Eyice", tr: "Semavi Eyice"}
+    accessedAt: "2026-10-17"
+    licence: null
+  - id: osm-way-303179753
+    title: {en: "OpenStreetMap way 303179753, Küçük Ayasofya Camii (version 15)", tr: "OpenStreetMap yolu 303179753, Küçük Ayasofya Camii (15. sürüm)"}
+    url: https://www.openstreetmap.org/way/303179753
+    author: {en: "OpenStreetMap contributors", tr: "OpenStreetMap katkıcıları"}
+    accessedAt: "2026-10-17"
+    licence: {en: "ODbL 1.0", tr: "ODbL 1.0"}

@@ -1,10 +1,12 @@
-"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P08 authored content.
+"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P09 authored content.
 
 Run the seed, register, daily-detail and dig builders in dependency order, then
 the P07 plate pipeline for every studio/plates/*/plate.yaml (without previews;
 `tool/plate/build.py <yaml>` renders those). The plate step must follow the
 register, because each plate owns its Milestone's path, status and honesty.
-The P08 study "How a dome stands" follows (model, manifest and its sources).
+The P08 study "How a dome stands" follows (model, manifest and its sources),
+then the P09 kit's buildings from studio/space/*.yaml (models, manifests,
+their sources and the study index).
 The migrated Chora catalogue and source photographs are kept untouched.
 Validate afterwards with `dart run tool/content/validate.dart`.
 """
@@ -22,6 +24,8 @@ def main():
     subprocess.run([sys.executable, str(ROOT / 'tool/plate/build.py'), '--all', '--no-preview'],
                    cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/space/how_a_dome_stands.py')],
+                   cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tool/space/build_kit.py')],
                    cwd=ROOT, check=True)
 
 

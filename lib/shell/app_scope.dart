@@ -34,8 +34,11 @@ class AppScope extends InheritedWidget {
       ) ??
       false;
 
-  static AppScope of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<AppScope>()!;
+  static AppScope of(BuildContext context) => maybeOf(context)!;
+
+  /// Null outside the app (a debug screen pumped on its own in a test).
+  static AppScope? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<AppScope>();
 
   @override
   bool updateShouldNotify(AppScope old) =>

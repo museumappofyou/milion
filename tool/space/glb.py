@@ -10,12 +10,20 @@ Output: one .glb whose nodes keep that order. glTF is Y-up, so (x, y, z)
 is written as (x, z, -y); `lib/space/model.dart` converts back. No normals are
 written: glTF clients then shade flat, which is what the drawing style wants.
 The bytes depend only on the input (sorted JSON keys, fixed padding).
+
+`write_glb(..., compress=True)` (the P09 kit) stores every buffer view as an
+`EXT_meshopt_compression` stream: positions and AO through the EXPONENTIAL
+filter on fixed grids (2^-10 m, 2^-8), so they decode exactly; triangles and
+vertices reordered for the index codec, which may also rotate a triangle's
+corners (never its winding).
 """
 from pathlib import Path
 import json
 import struct
 
 import numpy as np
+
+import meshopt
 
 FLOAT, USHORT, UINT = 5126, 5123, 5125
 ARRAY_BUFFER, ELEMENT_ARRAY_BUFFER = 34962, 34963
@@ -81,6 +89,95 @@ def write_glb(path, parts, extras=None):
     }
     if extras:
         document['extras'] = extras
+    return _pack(path, document, blob)
+
+
+POSITION_EXP, AO_EXP = -10, -8
+EXT = 'EXT_meshopt_compression'
+
+
+def write_compressed(path, parts, extras=None):
+    blob = bytearray()
+    fallback = 0
+    views, accessors, meshes, nodes = [], [], [], []
+
+    def view(encoded, count, stride, mode, target, filt=None):
+        nonlocal fallback
+        while len(blob) % 4:
+            blob.append(0)
+        ext = {'buffer': 0, 'byteOffset': len(blob), 'byteLength': len(encoded),
+               'byteStride': stride, 'count': count, 'mode': mode}
+        if filt:
+            ext['filter'] = filt
+        blob.extend(encoded)
+        v = {'buffer': 1, 'byteOffset': fallback, 'byteLength': count * stride,
+             'target': target, 'extensions': {EXT: ext}}
+        if mode == 'ATTRIBUTES':
+            v['byteStride'] = stride
+        fallback += count * stride
+        fallback += -fallback % 4
+        views.append(v)
+        return len(views) - 1
+
+    def accessor(index, component, kind, count, bounds=None):
+        a = {'bufferView': index, 'componentType': component, 'count': int(count), 'type': kind}
+        if bounds is not None:
+            a['min'], a['max'] = ([float(v) for v in b] for b in bounds)
+        accessors.append(a)
+        return len(accessors) - 1
+
+    for part in parts:
+        faces, order = meshopt.optimise(part['faces'])
+        positions = meshopt.quantise(np.asarray(part['positions'], np.float64)[order], POSITION_EXP)
+        if not np.array_equal(positions, np.asarray(part['positions'], np.float64)[order]):
+            raise ValueError(f"{part['name']}: positions are not on the 2^-10 m grid")
+        g = to_gltf(positions).astype(np.float64)
+        n = len(g)
+        words = meshopt.exponential(g.reshape(-1), POSITION_EXP)
+        attributes = {'POSITION': accessor(
+            view(meshopt.encode_vertex_buffer(words.tobytes(), n, 12), n, 12, 'ATTRIBUTES',
+                 ARRAY_BUFFER, 'EXPONENTIAL'),
+            FLOAT, 'VEC3', n, (g.min(axis=0), g.max(axis=0)))}
+        if part.get('ao') is not None:
+            ao = np.asarray(part['ao'], np.float64)
+            if ao.shape != (len(part['positions']),):
+                raise ValueError(f"{part['name']}: one AO value per vertex")
+            ao = meshopt.quantise(np.clip(ao[order], 0, 1), AO_EXP)
+            attributes['_AO'] = accessor(
+                view(meshopt.encode_vertex_buffer(meshopt.exponential(ao, AO_EXP).tobytes(), n, 4),
+                     n, 4, 'ATTRIBUTES', ARRAY_BUFFER, 'EXPONENTIAL'),
+                FLOAT, 'SCALAR', n)
+        flat = faces.reshape(-1)
+        small = n <= 0xFFFF
+        meshes.append({'name': part['name'], 'primitives': [{
+            'attributes': attributes,
+            'indices': accessor(view(meshopt.encode_index_buffer(flat), len(flat), 2 if small else 4,
+                                     'TRIANGLES', ELEMENT_ARRAY_BUFFER),
+                                USHORT if small else UINT, 'SCALAR', len(flat)),
+            'mode': 4}]})
+        node = {'name': part['name'], 'mesh': len(meshes) - 1}
+        if part.get('extras'):
+            node['extras'] = part['extras']
+        nodes.append(node)
+
+    while len(blob) % 4:
+        blob.append(0)
+    document = {
+        'asset': {'version': '2.0', 'generator': 'milion tool/space kit'},
+        'extensionsUsed': [EXT], 'extensionsRequired': [EXT],
+        'scene': 0,
+        'scenes': [{'nodes': list(range(len(nodes)))}],
+        'nodes': nodes, 'meshes': meshes, 'accessors': accessors,
+        'bufferViews': views,
+        'buffers': [{'byteLength': len(blob)},
+                    {'byteLength': fallback, 'extensions': {EXT: {'fallback': True}}}],
+    }
+    if extras:
+        document['extras'] = extras
+    return _pack(path, document, blob)
+
+
+def _pack(path, document, blob):
     text = json.dumps(document, sort_keys=True, separators=(',', ':'),
                       ensure_ascii=False).encode('utf-8')
     text += b' ' * (-len(text) % 4)
@@ -109,8 +206,19 @@ def read_glb(path):
         v = document['bufferViews'][a['bufferView']]
         dtype = {FLOAT: np.float32, USHORT: np.uint16, UINT: np.uint32}[a['componentType']]
         width = {'SCALAR': 1, 'VEC3': 3}[a['type']]
-        out = np.frombuffer(blob, dtype=dtype, count=a['count'] * width,
-                            offset=v['byteOffset'])
+        ext = v.get('extensions', {}).get(EXT)
+        if ext is None:
+            out = np.frombuffer(blob, dtype=dtype, count=a['count'] * width,
+                                offset=v['byteOffset'])
+        else:
+            src = blob[ext['byteOffset']:ext['byteOffset'] + ext['byteLength']]
+            if ext['mode'] == 'TRIANGLES':
+                out = meshopt.decode_index_buffer(src, ext['count']).astype(dtype)
+            else:
+                raw = meshopt.decode_vertex_buffer(src, ext['count'], ext['byteStride'])
+                words = np.frombuffer(raw, dtype=np.uint32)
+                out = (meshopt.unexponential(words) if ext.get('filter') == 'EXPONENTIAL'
+                       else words.view(np.float32)).astype(np.float32)
         return out.reshape(-1, width) if width > 1 else out
 
     parts = []
