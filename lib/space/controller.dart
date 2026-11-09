@@ -133,7 +133,7 @@ class SpaceController extends ChangeNotifier {
     assembly = _assemblyTarget = steps.length.toDouble();
     section = true;
     sectionAxis = 2;
-    sectionOffset = model.bounds.minZ + study.choisy.sectionHeight;
+    sectionOffset = _inRange(model.bounds.minZ + study.choisy.sectionHeight, 2);
   }
   final SpaceStudy study;
   final SpaceModel model;
@@ -207,8 +207,12 @@ class SpaceController extends ChangeNotifier {
       );
   int get visibleEpoch => moment.epoch;
   Honesty get honesty => study.honesty;
-  SpaceSection? get sectionPlane =>
-      section ? SpaceSection(sectionAxis, sectionOffset) : null;
+
+  /// The plane as drawn: kept in [sectionRange] for the visible epoch, which
+  /// the time scrubber or the story can change under a plane set earlier.
+  SpaceSection? get sectionPlane => section
+      ? SpaceSection(sectionAxis, _inRange(sectionOffset, sectionAxis))
+      : null;
   SpaceView get visibleView {
     final turn = sample?.turn ?? 0;
     return turn == 0 ? view : limits.clamp(view.orbit(turn, 0));
@@ -294,7 +298,7 @@ class SpaceController extends ChangeNotifier {
   void choisy() {
     section = true;
     sectionAxis = 2;
-    sectionOffset = model.bounds.minZ + study.choisy.sectionHeight;
+    sectionOffset = _inRange(model.bounds.minZ + study.choisy.sectionHeight, 2);
     animateView(choisyView);
   }
 
@@ -311,21 +315,55 @@ class SpaceController extends ChangeNotifier {
   void setSectionAxis(int axis) {
     if (axis == sectionAxis) return;
     sectionAxis = axis;
-    sectionOffset = [
-      model.bounds.centerX,
-      model.bounds.centerY,
-      model.bounds.minZ + study.choisy.sectionHeight,
-    ][axis];
+    sectionOffset = _inRange(
+      [
+        model.bounds.centerX,
+        model.bounds.centerY,
+        model.bounds.minZ + study.choisy.sectionHeight,
+      ][axis],
+      axis,
+    );
     section = true;
     notifyListeners();
   }
 
+  /// How much of the building a cut must keep along its axis.
+  static const keptFraction = .2;
+
+  /// Where the section plane may go along [axis] (default: the current one).
+  /// A cut never keeps nothing: on 2026-11-09 dragging the plan cut's handle
+  /// up past the roof left an empty drawing on the A52s. A plan cut keeps
+  /// what stands above it, so it may go down to the floor but stops a fifth
+  /// of the height below the top; a vertical cut keeps the side away from
+  /// the camera, either side, so it stays a fifth in from both ends.
+  /// Measured on what the visible epoch draws: the model's bounds also hold
+  /// later epochs' parts (P08's study reaches 36 m out for the Şehzade's
+  /// semi-domes, its 537 bay only about 20 m), so a fifth of those bounds
+  /// can still be empty.
+  (double, double) sectionRange([int? axis]) {
+    final a = axis ?? sectionAxis, b = _epochBounds[visibleEpoch];
+    final lo = b.min(a), hi = b.max(a), margin = (hi - lo) * keptFraction;
+    return a == 2 ? (lo, hi - margin) : (lo + margin, hi - margin);
+  }
+
+  late final List<SpaceBounds> _epochBounds = [
+    for (final row in _index)
+      row.any((j) => j >= 0)
+          ? SpaceBounds.of([
+              for (var i = 0; i < row.length; i++)
+                if (row[i] >= 0) model.parts[i].positions,
+            ])
+          : model.bounds,
+  ];
+
+  double _inRange(double value, int axis) {
+    final (lo, hi) = sectionRange(axis);
+    return value.clamp(lo, hi);
+  }
+
   void setSectionOffset(double value) {
     if (!value.isFinite) return;
-    sectionOffset = value.clamp(
-      model.bounds.min(sectionAxis),
-      model.bounds.max(sectionAxis),
-    );
+    sectionOffset = _inRange(value, sectionAxis);
     section = true;
     notifyListeners();
   }
@@ -399,7 +437,7 @@ class SpaceController extends ChangeNotifier {
   void playReveal() {
     section = true;
     sectionAxis = 2;
-    sectionOffset = model.bounds.minZ + study.choisy.sectionHeight;
+    sectionOffset = _inRange(model.bounds.minZ + study.choisy.sectionHeight, 2);
     view = revealView;
     _viewT = 1;
     cameraRevision++;

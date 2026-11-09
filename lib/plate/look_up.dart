@@ -104,6 +104,10 @@ extension LookUpProjection on PlateLookUp {
 /// otherwise a flat pan with a finger. Looking up starts at the zenith with
 /// the photograph's top (+Y) at the top of the screen, i.e. facing azimuth
 /// -pi/2 with the head tipped back.
+///
+/// As with [PlateTilt], listeners hear only the sensor's state (on, off,
+/// unavailable); each reading, pan, pinch or recentre ticks [motion], which
+/// only the look-up painter follows.
 class PlateOrientation extends ChangeNotifier {
   PlateOrientation({RotationStream? events}) : _events = events ?? _platform;
   static const _channel = EventChannel('milion/rotation');
@@ -125,6 +129,12 @@ class PlateOrientation extends ChangeNotifier {
   static const minFov = 20 * math.pi / 180, maxFov = 90 * math.pi / 180;
   bool get subscribed => _subscription != null;
 
+  /// Ticks whenever [basis] or [fov] may have changed.
+  final ValueNotifier<int> motion = ValueNotifier(0);
+  void _moved() {
+    if (!_disposed) motion.value++;
+  }
+
   LookBasis get basis {
     final m = _matrix;
     if (enabled && m != null) return LookBasis.device(m, _heading ?? 0);
@@ -141,6 +151,7 @@ class PlateOrientation extends ChangeNotifier {
     } else {
       _stop();
     }
+    _moved();
     notifyListeners();
   }
 
@@ -158,6 +169,7 @@ class PlateOrientation extends ChangeNotifier {
     unavailable = true;
     enabled = false;
     _stop();
+    _moved();
     notifyListeners();
   }
 
@@ -172,7 +184,7 @@ class PlateOrientation extends ChangeNotifier {
     _matrix = m;
     // The first reading becomes [home]'s heading, however the phone is held.
     _heading ??= LookBasis.device(m, 0).angles.azimuth - home.azimuth;
-    notifyListeners();
+    _moved();
   }
 
   /// Continue by hand from wherever the story or the sensor was looking.
@@ -181,7 +193,7 @@ class PlateOrientation extends ChangeNotifier {
       a.azimuth,
       a.elevation.clamp(-math.pi / 6, math.pi / 2),
     );
-    notifyListeners();
+    _moved();
   }
 
   /// Flat pan: the dome follows the finger.
@@ -193,7 +205,7 @@ class PlateOrientation extends ChangeNotifier {
       (_manual.elevation + delta.dy * k).clamp(-math.pi / 6, math.pi / 2),
     );
     if (enabled) setEnabled(false);
-    notifyListeners();
+    _moved();
   }
 
   void beginZoom() => _fovAtGesture = fov;
@@ -202,13 +214,13 @@ class PlateOrientation extends ChangeNotifier {
   void zoom(double scale) {
     if (scale <= 0 || !scale.isFinite) return;
     fov = (_fovAtGesture / scale).clamp(minFov, maxFov);
-    notifyListeners();
+    _moved();
   }
 
   void recenter() {
     _manual = home;
     _heading = null;
-    if (!_disposed) notifyListeners();
+    _moved();
   }
 
   void suspend() {
@@ -225,6 +237,7 @@ class PlateOrientation extends ChangeNotifier {
   void dispose() {
     _disposed = true;
     _stop();
+    motion.dispose();
     super.dispose();
   }
 }
@@ -303,7 +316,11 @@ class PlateLookUpView extends StatelessWidget {
         },
         onDoubleTap: orientation.recenter,
         child: ListenableBuilder(
-          listenable: Listenable.merge([controller, orientation]),
+          listenable: Listenable.merge([
+            controller,
+            orientation,
+            orientation.motion,
+          ]),
           builder: (context, _) => CustomPaint(
             size: size,
             painter: LookUpPainter(

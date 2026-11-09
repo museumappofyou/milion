@@ -17,6 +17,7 @@ import 'renderer.dart';
 import 'sheets.dart';
 import 'study.dart';
 import 'style.dart';
+import 'snapshot_builder.dart';
 
 typedef LoadBytes = Future<ByteData> Function(String asset);
 
@@ -255,136 +256,68 @@ class SpacePlayerState extends State<SpacePlayer>
 class SpaceViewport extends StatelessWidget {
   const SpaceViewport({super.key, required this.player});
   final SpacePlayerState player;
+
+  // Playback ticks the controller every frame. The painter follows it on its
+  // own (`repaint`), so only the section handle is rebuilt per frame; the
+  // Semantics, labels and live caption rebuild when what they say changes.
+  // Rebuilding them per frame sent TalkBack an update every frame
+  // (2026-11-09, as with the plates' tilt).
   @override
   Widget build(BuildContext context) {
-    final c = player.controller!, s = context.l10n;
-    return ListenableBuilder(
-      listenable: c,
-      builder: (context, _) {
-        final lang = context.language, step = c.currentStep;
-        final caption = c.caption?.inLanguage(lang);
-        final ground = Theme.of(context).scaffoldBackgroundColor
-            .withValues(alpha: .94);
-        return LayoutBuilder(
-          builder: (context, constraints) {
-            final size = constraints.biggest;
-            final p = SpaceProjector(c.visibleView, size, c.model.bounds);
-            return Stack(
-              children: [
-                Positioned.fill(
-                  child: Semantics(
-                    label:
-                        '${c.study.title.inLanguage(lang)}. '
-                        '${c.study.description.inLanguage(lang)}',
-                    customSemanticsActions: {
-                      CustomSemanticsAction(label: s.plateNext): () =>
-                          c.step(1),
-                      CustomSemanticsAction(label: s.platePrevious): () =>
-                          c.step(-1),
-                      CustomSemanticsAction(label: s.spaceChoisy): c.choisy,
-                    },
-                    child: GestureDetector(
-                      key: const ValueKey('space-viewport'),
-                      onScaleStart: player._scaleStart,
-                      onScaleUpdate: player._scaleUpdate,
-                      onDoubleTap: c.choisy,
-                      child: RepaintBoundary(
-                        key: const ValueKey('space-paint'),
-                        child: CustomPaint(
-                          size: Size.infinite,
-                          painter: SpacePainter(
-                            player.renderer!,
-                            c,
-                            (projector) => player.projector = projector,
-                          ),
-                        ),
+    final c = player.controller!, s = context.l10n, lang = context.language;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final size = constraints.biggest;
+        return Stack(
+          children: [
+            Positioned.fill(
+              child: Semantics(
+                label:
+                    '${c.study.title.inLanguage(lang)}. '
+                    '${c.study.description.inLanguage(lang)}',
+                customSemanticsActions: {
+                  CustomSemanticsAction(label: s.plateNext): () => c.step(1),
+                  CustomSemanticsAction(label: s.platePrevious): () =>
+                      c.step(-1),
+                  CustomSemanticsAction(label: s.spaceChoisy): c.choisy,
+                },
+                child: GestureDetector(
+                  key: const ValueKey('space-viewport'),
+                  onScaleStart: player._scaleStart,
+                  onScaleUpdate: player._scaleUpdate,
+                  onDoubleTap: c.choisy,
+                  child: RepaintBoundary(
+                    key: const ValueKey('space-paint'),
+                    child: CustomPaint(
+                      size: Size.infinite,
+                      painter: SpacePainter(
+                        player.renderer!,
+                        c,
+                        (projector) => player.projector = projector,
                       ),
                     ),
                   ),
                 ),
-                // The handle is for exploring; a playing reveal or story is
-                // the shot people share, so it stays clean.
-                if (c.section && !c.playing) ...sectionHandle(context, c, p),
-                // Label and year share one wrapping row, so neither covers
-                // the other at 200% text.
-                Positioned(
-                  top: 8,
-                  left: 12,
-                  right: 12,
-                  child: Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: [
-                      DecoratedBox(
-                        decoration: BoxDecoration(color: ground),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: HonestyLabel(
-                            c.honesty,
-                            key: const ValueKey('space-honesty'),
-                          ),
+              ),
+            ),
+            // The handle is for exploring; a playing reveal or story is
+            // the shot people share, so it stays clean.
+            Positioned.fill(
+              child: ListenableBuilder(
+                listenable: c,
+                builder: (context, _) => c.section && !c.playing
+                    ? Stack(
+                        children: sectionHandle(
+                          context,
+                          c,
+                          SpaceProjector(c.visibleView, size, c.model.bounds),
                         ),
-                      ),
-                      DecoratedBox(
-                        decoration: BoxDecoration(color: ground),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 4,
-                          ),
-                          child: Text(
-                            c.study.epochs[c.visibleEpoch].label.inLanguage(
-                              lang,
-                            ),
-                            key: const ValueKey('space-epoch'),
-                            style: TypeRole.measurement,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                if (caption != null)
-                  Positioned(
-                    bottom: 8,
-                    left: 12,
-                    right: 12,
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(maxHeight: size.height * .3),
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(color: ground),
-                        child: SingleChildScrollView(
-                          padding: const EdgeInsets.all(12),
-                          child: Semantics(
-                            liveRegion: true,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                if (step != null &&
-                                    !(c.reveal && c.storyActive))
-                                  Text(
-                                    step.label.inLanguage(lang),
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleSmall,
-                                  ),
-                                Text(
-                                  caption,
-                                  key: const ValueKey('space-caption'),
-                                  style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
-            );
-          },
+                      )
+                    : const SizedBox.shrink(),
+              ),
+            ),
+            _SpaceLabels(controller: c, captionHeight: size.height * .3),
+          ],
         );
       },
     );
@@ -397,15 +330,29 @@ class SpaceViewport extends StatelessWidget {
     SpaceProjector p,
   ) {
     final b = c.model.bounds, axis = c.sectionAxis;
-    final centre = [b.centerX, b.centerY, b.centerZ]..[axis] = c.sectionOffset;
-    final at = p.toScreen(centre[0], centre[1], centre[2]);
+    final offset = c.sectionPlane?.offset ?? c.sectionOffset;
     final dir = p.screenDirection(
       axis == 0 ? 1 : 0,
       axis == 1 ? 1 : 0,
       axis == 2 ? 1 : 0,
     );
     final colour = MeasureColors.of(context).accent;
-    final outline = sectionOutline(p, b, SpaceSection(axis, c.sectionOffset));
+    final outline = sectionOutline(p, b, SpaceSection(axis, offset));
+    // The handle sits on the outline's lowest corner on screen, not at the
+    // plane's centre: the centre falls in the middle of the drawing, where
+    // an orbit drag starts, and on the A52s (2026-11-09) such a drag moved
+    // the cut instead. The centre is the fallback when no corner fits.
+    final inside =
+        (p.size.topLeft(Offset.zero) + const Offset(24, 24)) &
+        (p.size - const Offset(48, 48) as Size);
+    final corners = [
+      for (final o in outline)
+        if (inside.contains(o)) o,
+    ]..sort((u, v) => v.dy.compareTo(u.dy));
+    final centre = [b.centerX, b.centerY, b.centerZ]..[axis] = offset;
+    final at = corners.isNotEmpty
+        ? corners.first
+        : p.toScreen(centre[0], centre[1], centre[2]);
     return [
       Positioned.fill(
         child: IgnorePointer(
@@ -425,7 +372,7 @@ class SpaceViewport extends StatelessWidget {
                 final length = dir.distanceSquared;
                 if (length < 1e-6) return;
                 c.setSectionOffset(
-                  c.sectionOffset +
+                  (c.sectionPlane?.offset ?? c.sectionOffset) +
                       (d.delta.dx * dir.dx + d.delta.dy * dir.dy) / length,
                 );
               },
@@ -438,6 +385,110 @@ class SpaceViewport extends StatelessWidget {
           ),
         ),
     ];
+  }
+}
+
+/// The honesty label, the epoch and the live caption: rebuilt only when
+/// one of them changes, not on every playback frame.
+class _SpaceLabels extends StatelessWidget {
+  const _SpaceLabels({required this.controller, required this.captionHeight});
+  final SpaceController controller;
+  final double captionHeight;
+
+  @override
+  Widget build(BuildContext context) => SnapshotBuilder(
+    listenable: controller,
+    snapshot: () => (
+      controller.honesty,
+      controller.visibleEpoch,
+      controller.caption,
+      controller.currentStep,
+      controller.reveal && controller.storyActive,
+    ),
+    builder: _labels,
+  );
+
+  Widget _labels(BuildContext context) {
+    final c = controller, lang = context.language;
+    final step = c.currentStep, caption = c.caption?.inLanguage(lang);
+    final ground = Theme.of(context).scaffoldBackgroundColor
+        .withValues(alpha: .94);
+    return Stack(
+      children: [
+        // Label and year share one wrapping row, so neither covers
+        // the other at 200% text.
+        Positioned(
+          top: 8,
+          left: 12,
+          right: 12,
+          child: Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              DecoratedBox(
+                decoration: BoxDecoration(color: ground),
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: HonestyLabel(
+                    c.honesty,
+                    key: const ValueKey('space-honesty'),
+                  ),
+                ),
+              ),
+              DecoratedBox(
+                decoration: BoxDecoration(color: ground),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  child: Text(
+                    c.study.epochs[c.visibleEpoch].label.inLanguage(lang),
+                    key: const ValueKey('space-epoch'),
+                    style: TypeRole.measurement,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        if (caption != null)
+          Positioned(
+            bottom: 8,
+            left: 12,
+            right: 12,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: captionHeight),
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: ground),
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(12),
+                  child: Semantics(
+                    liveRegion: true,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (step != null && !(c.reveal && c.storyActive))
+                          Text(
+                            step.label.inLanguage(lang),
+                            style: Theme.of(context).textTheme.titleSmall,
+                          ),
+                        Text(
+                          caption,
+                          key: const ValueKey('space-caption'),
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
   }
 }
 

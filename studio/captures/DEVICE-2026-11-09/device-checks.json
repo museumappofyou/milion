@@ -1,0 +1,53 @@
+{
+  "device": "Samsung Galaxy A52s 5G SM-A528B, Android 14 (UP1A.231005.007.A528BXXSBGYI3), 1080x2400 at 60 Hz, USB debugging",
+  "date": "2026-11-09",
+  "builds": "release arm64 from this commit's tree (debug-key fallback, O05); profile builds only for tool/space/device_bench.dart and one systrace",
+  "coldStartMs": {
+    "release (am start -W, after force-stop)": [457, 472, 502, 543],
+    "note": "the first launch after each reinstall read 712-945 ms"
+  },
+  "permissions": {
+    "afterLaunch": "CAMERA granted=false; asked in context from Chora's camera-eye action; tested with 'Only this time'",
+    "apk": "CAMERA, ACCESS_NETWORK_STATE (unchanged)"
+  },
+  "plates": {
+    "gpuMemory (dumpsys meminfo Graphics, KB)": {
+      "I Anastasis": 165964,
+      "II Last Judgment": 139464,
+      "III Metochites": 111052,
+      "V Enrollment": 111360,
+      "IV Genealogy": 111548
+    },
+    "fps": "see frame-pacing.json: reveals and stories 59.3-60.0 fps untouched; at most 19 frames over 20 ms in a 30 s story, none over 34 ms",
+    "gyroTilt": "lsm6dso Gyroscope registered by app.milion (uid 10466) only after 'Tilt with the phone'; released when switched off and when the app goes to the background, re-registered on return",
+    "lookUp": "Game Rotation Vector registered only after 'Hold the phone overhead'; requestedOrientation PORTRAIT while it steers, UNSPECIFIED after",
+    "fixed": [
+      "Both sensors were read at the 20 ms game rate and each reading repaints: 49 fps with a 33 ms gap ~11 times a second. Now 10 ms: look-up 59.9 fps, tilt 60.0 fps at rest.",
+      "Every gyro reading rebuilt the plate's Semantics: uiautomator reported 'could not get idle state' while tilting (TalkBack received an update every frame). Readings now repaint only the picture; uiautomator idles and the tree is current."
+    ]
+  },
+  "dig": {
+    "Chora scrolling": "finger drags: no frame over 20 ms; flings: 1 in 5.5 s; reaches the 330 layer",
+    "depth gauge": "rail drag moves 330 -> 2026; TalkBack value '2026, Depth gauge'",
+    "Go": "opens com.google.android.apps.maps walking directions to 41.031111,28.939167 (Kariye Mosque)"
+  },
+  "scan": "ONNX recogniser in release: live recognition running ('No scene detected' on a desk); gallery input of the Metochites plate photograph -> M11 Theodore Metochites Presents Chora, 100%. The test photo was pushed to the phone and deleted afterwards.",
+  "shell": "Back from City returns to Today; Back from Today leaves the app. Milestone 0 lite replay: 60.0 fps, no frame over 20 ms. Turkish UI switched in About and restored to Device language.",
+  "spaceStudy": {
+    "real app, untouched, before the fixes": "reveal 43.7 fps, assembly 48.8 fps (controls sheet open)",
+    "after": "reveal 47.4 / assembly 56.5 fps with the sheet open; 55.9 / 59.6 fps with it closed",
+    "fixed": [
+      "The space viewport, its Semantics, labels and caption, and the open sheet rebuilt on every playback frame; now the painter follows the controller and the rest rebuilds when what it shows changes (tests: 120 semantics updates in 120 frames before, a handful after).",
+      "Owner report: dragging upward made the structure disappear. Two causes: the section handle sat mid-drawing, so an orbit drag moved the plan cut past the roof (nothing kept); and with the camera above the plan cut only the 3 m below it was drawn. A plan cut now keeps what stands above it from every angle (poché only from below), the plane stays within a range measured on the visible epoch (never empty), and the handle sits on the outline's lowest corner."
+    ]
+  },
+  "kitStudies": "see kit-device-bench.json: under touch every view of the Şehzade, Küçük Ayasofya, Bodrum Camii and P08's study holds 59.9-60.1 fps (Şehzade build p90 9.9-10.8 ms vs P08's 9.5-10.1); untouched 31-55 fps depending on the governor",
+  "oldApps": "no chora_scene_finder or İzvoya package installed (O16)",
+  "notChecked": [
+    "how tilt and look-up feel in the hand, and the look-up's axes held overhead",
+    "haptics (dial, gauge)",
+    "TalkBack listening on the phone",
+    "200% system font and reduced motion (system settings were not changed)",
+    "launcher icon on the home screen"
+  ]
+}

@@ -269,7 +269,14 @@ class SpaceRenderer {
         : axis == 1
         ? -p.fy
         : -p.fz;
-    final sign = toward >= 0 ? 1.0 : -1.0;
+    // A vertical cut removes the side toward the camera, so its cut faces
+    // the camera from either side. A plan cut (axis 2) keeps what stands
+    // above it from every angle: removing the camera's side from above left
+    // only the stubs under the plane, the building gone (A52s, 2026-11-09).
+    // Its cut faces down, so the poché shows only from below.
+    final plan = section != null && axis == 2;
+    final sign = plan ? -1.0 : (toward >= 0 ? 1.0 : -1.0);
+    final showCut = !plan || toward < 0;
     var faces = 0, pocheCount = 0, edges = 0, cuts = 0;
     _r = 0;
     _segN = 0;
@@ -348,7 +355,7 @@ class SpaceRenderer {
           _record(_tri, i, t, depth);
           faces++;
         }
-        if (removed > 0) {
+        if (removed > 0 && showCut) {
           _segment(p, i, t);
           cuts++;
         }

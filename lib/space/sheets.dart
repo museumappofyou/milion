@@ -7,6 +7,7 @@ import '../l10n/strings.dart';
 import 'camera.dart';
 import 'player.dart';
 import 'style.dart';
+import 'snapshot_builder.dart';
 
 enum SpacePanel { assemble, section, style, sources }
 
@@ -20,9 +21,26 @@ class SpaceSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = player.controller!;
-    return ListenableBuilder(
+    // Only what the sheet shows: the assembly slider draws its thumb at its
+    // divisions (four per step), so playback rebuilds it a few dozen times,
+    // not every frame.
+    return SnapshotBuilder(
       listenable: c,
-      builder: (context, _) {
+      snapshot: () => (
+        c.reduced,
+        c.playing,
+        (c.moment.assembly.clamp(0, c.steps.length) * 4).round(),
+        c.explode,
+        c.visibleEpoch,
+        c.currentStep,
+        c.section,
+        c.sectionAxis,
+        c.sectionOffset,
+        c.style,
+        c.view.projection,
+        c.honesty,
+      ),
+      builder: (context) {
         final s = context.l10n, lang = context.language;
         final metres = NumberFormat('0.0', lang);
         final heading = switch (panel) {
@@ -31,7 +49,8 @@ class SpaceSheet extends StatelessWidget {
           SpacePanel.style => s.spaceStyle,
           SpacePanel.sources => s.spaceSources,
         };
-        final b = c.model.bounds, axis = c.sectionAxis;
+        final axis = c.sectionAxis;
+        final (lo, hi) = c.sectionRange();
         return SafeArea(
           child: ConstrainedBox(
             constraints: BoxConstraints(
@@ -210,9 +229,9 @@ class SpaceSheet extends StatelessWidget {
                     ),
                     Slider(
                       key: const ValueKey('space-section-offset'),
-                      value: c.sectionOffset.clamp(b.min(axis), b.max(axis)),
-                      min: b.min(axis),
-                      max: b.max(axis),
+                      value: c.sectionOffset.clamp(lo, hi),
+                      min: lo,
+                      max: hi,
                       label: s.spaceMetres(metres.format(c.sectionOffset)),
                       semanticFormatterCallback: (v) =>
                           s.spaceMetres(metres.format(v)),

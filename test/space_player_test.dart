@@ -72,6 +72,78 @@ Future<void> closePanel(WidgetTester tester) async {
 }
 
 void main() {
+  // Playback ticks the controller every frame. Before 2026-11-09 the whole
+  // viewport, its Semantics and the live caption rebuilt per frame, so
+  // TalkBack got an update every frame of the reveal and assembly.
+  testWidgets('with the Assemble sheet open, the reveal updates semantics '
+      'when the slider moves a division, not every frame', (tester) async {
+    final semantics = tester.ensureSemantics();
+    await openStudy(tester);
+    final c = space(tester).controller!;
+    await openPanel(tester, 'space-assemble');
+    final owner = tester.binding.renderViews.first.owner!.semanticsOwner!;
+    var updates = 0, ticks = 0;
+    final shown = <Object>{};
+    void counted() => updates++;
+    void watch() {
+      ticks++;
+      shown.add((
+        (c.moment.assembly.clamp(0, c.steps.length) * 4).round(),
+        c.caption,
+        c.playing,
+      ));
+    }
+
+    c.playReveal();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 16));
+    owner.addListener(counted);
+    c.addListener(watch);
+    for (var i = 0; i < 120; i++) {
+      await tester.pump(const Duration(milliseconds: 16));
+    }
+    owner.removeListener(counted);
+    c.removeListener(watch);
+    expect(ticks, greaterThan(100));
+    expect(updates, lessThanOrEqualTo(shown.length + 2));
+    expect(updates, lessThan(ticks ~/ 2));
+    await tester.pumpWidget(const SizedBox.shrink());
+    semantics.dispose();
+  });
+
+  testWidgets('a playing reveal paints every frame but updates semantics '
+      'only when its caption changes', (tester) async {
+    final semantics = tester.ensureSemantics();
+    await openStudy(tester);
+    final c = space(tester).controller!;
+    final owner = tester.binding.renderViews.first.owner!.semanticsOwner!;
+    var updates = 0, captions = 0, ticks = 0;
+    void counted() => updates++;
+    Object? lastCaption = c.caption;
+    void watch() {
+      ticks++;
+      if (!identical(c.caption, lastCaption)) {
+        lastCaption = c.caption;
+        captions++;
+      }
+    }
+
+    c.playReveal();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 16));
+    owner.addListener(counted);
+    c.addListener(watch);
+    for (var i = 0; i < 120; i++) {
+      await tester.pump(const Duration(milliseconds: 16));
+    }
+    owner.removeListener(counted);
+    c.removeListener(watch);
+    expect(ticks, greaterThan(100)); // the reveal animated every frame
+    expect(updates, lessThanOrEqualTo(captions + 2));
+    await tester.pumpWidget(const SizedBox.shrink());
+    semantics.dispose();
+  });
+
   testWidgets(
     'opens on the drawing: RECONSTRUCTION, 537, Choisy, no autoplay',
     (tester) async {

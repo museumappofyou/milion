@@ -8,6 +8,11 @@
 //   adb shell am start -n app.milion/.MainActivity
 //   adb logcat -d -s flutter | grep MILION_SPIKE
 // Prints one `MILION_SPIKE {json}` line when all cases have run.
+//
+// Kit mode (2026-11-09, P09's device check): `--dart-define=BENCH=kit` orbits
+// the P09 kit studies, the Şehzade first, and P08's study as the yardstick,
+// each from its own manifest's Choisy view and section plane, as the player
+// opens it. Cases are named `<study>-<style>[-cut]`.
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
@@ -18,8 +23,18 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:milion/space/camera.dart';
 import 'package:milion/space/model.dart';
+import 'package:milion/space/controller.dart';
 import 'package:milion/space/renderer.dart';
+import 'package:milion/space/study.dart';
 import 'package:milion/space/style.dart';
+
+const kitMode = String.fromEnvironment('BENCH') == 'kit';
+const kitStudies = [
+  'sehzade-camii',
+  'kucuk-ayasofya',
+  'bodrum-camii',
+  'how-a-dome-stands',
+];
 
 const benchPath =
     '/storage/emulated/0/Android/data/app.milion/files/bench-50k.glb';
@@ -30,11 +45,13 @@ void main() {
 }
 
 class _Case {
-  const _Case(this.name, this.model, this.style, this.section);
+  _Case(this.name, this.model, this.style, this.section, [SpaceView? view])
+    : view = view ?? SpaceView.choisy(model.bounds);
   final String name;
   final SpaceModel model;
   final SpaceStyle style;
   final SpaceSection? section;
+  final SpaceView view;
 }
 
 class _Bench extends StatefulWidget {
@@ -64,6 +81,7 @@ class _BenchState extends State<_Bench> with SingleTickerProviderStateMixin {
   }
 
   Future<void> _load() async {
+    if (kitMode) return _loadKit();
     final watch = Stopwatch()..start();
     final study = SpaceModel.fromGlb(
       await rootBundle.load('assets/space/how-a-dome-stands/model.glb'),
@@ -97,6 +115,28 @@ class _BenchState extends State<_Bench> with SingleTickerProviderStateMixin {
       _cases.add(_Case('bench50k-drawing-cut', bench, SpaceStyle.drawing, cut));
     } else {
       _results['bench'] = 'missing: push bench-50k.glb to $benchPath';
+    }
+    _next();
+  }
+
+  Future<void> _loadKit() async {
+    for (final id in kitStudies) {
+      final study = SpaceStudy.fromJson(
+        jsonDecode(await rootBundle.loadString('assets/space/$id/study.json'))
+            as Map<String, dynamic>,
+      );
+      final watch = Stopwatch()..start();
+      final model = SpaceModel.fromGlb(await rootBundle.load(study.model));
+      _results['$id-loadMs'] = watch.elapsedMicroseconds / 1000;
+      _results['$id-triangles'] = model.triangleCount;
+      final c = SpaceController(study, model);
+      final view = c.choisyView, cut = c.sectionPlane;
+      c.dispose();
+      _cases.addAll([
+        _Case('$id-drawing-cut', model, SpaceStyle.drawing, cut, view),
+        _Case('$id-drawing', model, SpaceStyle.drawing, null, view),
+        _Case('$id-night-cut', model, SpaceStyle.night, cut, view),
+      ]);
     }
     _next();
   }
@@ -232,7 +272,7 @@ class _Painter extends CustomPainter {
       canvas,
       size,
       SpaceScene(
-        view: SpaceView.choisy(c.model.bounds).orbit(t * 2 * math.pi / 10, 0),
+        view: c.view.orbit(t * 2 * math.pi / 10, 0),
         style: c.style,
         parts: [for (final _ in c.model.parts) const SpacePartState()],
         section: c.section,

@@ -36,7 +36,15 @@ private class RotationStream(context: Context) : EventChannel.StreamHandler, Sen
             return
         }
         sink = events
-        sensors.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME)
+        // The view repaints only when a reading arrives, so readings must come
+        // faster than the display: SENSOR_DELAY_GAME (20 ms, 50 Hz) left a
+        // 33 ms gap about ten times a second on the A52s's 60 Hz screen
+        // (2026-11-09). 10 ms stays under Android 12's 200 Hz limit.
+        sensors.registerListener(this, sensor, SAMPLING_PERIOD_US)
+    }
+
+    companion object {
+        const val SAMPLING_PERIOD_US = 10_000
     }
 
     override fun onCancel(arguments: Any?) {

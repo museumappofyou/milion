@@ -11,15 +11,23 @@ typedef GyroStream = Stream<GyroscopeEvent> Function();
 /// The integrated angle relaxes back to centre (time constant [settle]), so
 /// gyro drift cannot pin the plate at the bound; smoothing is time-based, not
 /// per sample. The stream is opened only after an explicit opt-in.
+///
+/// Listeners hear only what a control shows (on, off, unavailable); every
+/// reading or drag that moves the picture ticks [motion] instead. Rebuilding
+/// the plate's Semantics per reading sent TalkBack an update every frame on
+/// the A52s (2026-11-09), so only the painter follows [motion].
 class PlateTilt extends ChangeNotifier {
   PlateTilt({GyroStream? events})
     : _events =
           events ??
-          (() => gyroscopeEventStream(
-            samplingPeriod: SensorInterval.gameInterval,
-          ));
+          (() => gyroscopeEventStream(samplingPeriod: samplingPeriod));
   final GyroStream _events;
   StreamSubscription<GyroscopeEvent>? _subscription;
+
+  /// Readings must come faster than the display, since each one repaints:
+  /// the 20 ms game interval left ~10 dropped frames a second at 60 Hz on
+  /// the A52s (2026-11-09). Matches the look-up's native rate.
+  static const samplingPeriod = Duration(milliseconds: 10);
   static const maxRadians = math.pi / 30;
   static const settle = 2.5, smoothing = .08;
   bool enabled = false, unavailable = false, _active = true, _disposed = false;
@@ -27,6 +35,13 @@ class PlateTilt extends ChangeNotifier {
   DateTime? _last;
   Offset get normalized => _filtered / maxRadians;
   bool get subscribed => _subscription != null;
+
+  /// Ticks whenever [normalized] may have changed.
+  final ValueNotifier<int> motion = ValueNotifier(0);
+  void _moved() {
+    if (!_disposed) motion.value++;
+  }
+
   void setEnabled(bool value) {
     enabled = value;
     unavailable = false;
@@ -85,7 +100,7 @@ class PlateTilt extends ChangeNotifier {
       (_angle.dy * decay + event.x * dt).clamp(-maxRadians, maxRadians),
     );
     _filtered += (_angle - _filtered) * (1 - math.exp(-dt / smoothing));
-    notifyListeners();
+    _moved();
   }
 
   void drag(Offset normalized) {
@@ -93,13 +108,13 @@ class PlateTilt extends ChangeNotifier {
     _angle = _filtered =
         Offset(normalized.dx.clamp(-1, 1), normalized.dy.clamp(-1, 1)) *
         maxRadians;
-    notifyListeners();
+    _moved();
   }
 
   void recenter() {
     _angle = _filtered = Offset.zero;
     _last = null;
-    if (!_disposed) notifyListeners();
+    _moved();
   }
 
   void suspend() {
@@ -117,6 +132,7 @@ class PlateTilt extends ChangeNotifier {
   void dispose() {
     _disposed = true;
     _stop();
+    motion.dispose();
     super.dispose();
   }
 }

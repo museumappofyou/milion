@@ -62,14 +62,19 @@ class PlateViewport extends StatelessWidget {
                         child: SizedBox.expand(
                           child: loading
                               ? const SizedBox.shrink()
-                              : CustomPaint(
-                                  painter: PlatePainter(
-                                    assets: player.assets,
-                                    manifest: player.widget.manifest,
-                                    frame: frame,
-                                    controller: c,
-                                    tilt: player.visibleTilt,
-                                    lightPosition: player.lightPosition,
+                              // Readings repaint the picture only; the
+                              // Semantics above rebuild on state changes.
+                              : ValueListenableBuilder<int>(
+                                  valueListenable: player.tilt.motion,
+                                  builder: (context, _, _) => CustomPaint(
+                                    painter: PlatePainter(
+                                      assets: player.assets,
+                                      manifest: player.widget.manifest,
+                                      frame: frame,
+                                      controller: c,
+                                      tilt: player.visibleTilt,
+                                      lightPosition: player.lightPosition,
+                                    ),
                                   ),
                                 ),
                         ),

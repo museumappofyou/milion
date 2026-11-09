@@ -418,6 +418,105 @@ void main() {
       },
     );
 
+    // On the A52s (2026-11-09) the drawing vanished twice: orbiting above
+    // the plan cut kept only the 3 m stubs under it, and dragging the cut's
+    // handle up past the roof kept nothing at all.
+    SpaceStats draw(SpaceRenderer r, SpaceController c, SpaceView view) {
+      final recorder = ui.PictureRecorder();
+      r.paint(
+        Canvas(recorder),
+        const Size(390, 700),
+        SpaceScene(
+          view: view,
+          style: c.style,
+          parts: c.partStates(),
+          section: c.sectionPlane,
+        ),
+      );
+      recorder.endRecording().dispose();
+      return r.stats;
+    }
+
+    test('a plan cut keeps the building above it from every angle', () {
+      final c = SpaceController(study, model), r = SpaceRenderer(model);
+      expect(c.sectionAxis, 2);
+      for (final deg in [-60, -35, -5, 0, 5, 30, 60, 85]) {
+        final view = c.limits.clamp(
+          c.choisyView.copyWith(elevation: deg * math.pi / 180),
+        );
+        c.setSection(false);
+        final whole = draw(r, c, view).faces;
+        c.setSection(true);
+        final cut = draw(r, c, view);
+        expect(cut.faces, greaterThan(whole * .8), reason: '$deg°');
+        // The cut faces down: its poché shows only from below.
+        if (deg < 0) {
+          expect(cut.poche, greaterThan(0), reason: '$deg°');
+        } else {
+          expect(cut.poche, 0, reason: '$deg°');
+        }
+      }
+      r.dispose();
+      c.dispose();
+    });
+
+    test('no section plane position leaves an empty drawing', () {
+      final c = SpaceController(study, model), r = SpaceRenderer(model);
+      for (final axis in [0, 1, 2]) {
+        c.setSectionAxis(axis);
+        for (final far in [-1e9, 1e9]) {
+          c.setSectionOffset(far);
+          final (lo, hi) = c.sectionRange();
+          expect(c.sectionOffset, far < 0 ? lo : hi);
+          for (final azimuth in [0, 90, 180, 270]) {
+            for (final deg in [-35, 30]) {
+              final view = c.limits.clamp(
+                c.choisyView.copyWith(
+                  azimuth: azimuth * math.pi / 180,
+                  elevation: deg * math.pi / 180,
+                ),
+              );
+              expect(
+                draw(r, c, view).faces,
+                // A fifth of the building, seen from its cut side.
+                greaterThan(model.triangleCount * .02),
+                reason: 'axis $axis at $far, $azimuth°/$deg°',
+              );
+            }
+          }
+        }
+      }
+      r.dispose();
+      c.dispose();
+    });
+
+    test('a plane set in one epoch is kept on what the next one draws', () {
+      final c = SpaceController(study, model), r = SpaceRenderer(model);
+      final last = study.epochs.length - 1;
+      expect(last, greaterThan(0));
+      c
+        ..setEpoch(last)
+        ..setSectionAxis(1)
+        ..setSectionOffset(1e9);
+      final wide = c.sectionOffset;
+      c.setEpoch(0);
+      final (_, hi) = c.sectionRange();
+      expect(hi, lessThan(wide), reason: '537 is narrower than 1548');
+      expect(c.sectionPlane!.offset, hi);
+      for (final azimuth in [0, 90, 180, 270]) {
+        final view = c.limits.clamp(
+          c.choisyView.copyWith(azimuth: azimuth * math.pi / 180),
+        );
+        expect(
+          draw(r, c, view).faces,
+          greaterThan(model.triangleCount * .02),
+          reason: '$azimuth°',
+        );
+      }
+      r.dispose();
+      c.dispose();
+    });
+
     test('the 50k-triangle spike model stays within the drawing budget', () {
       final bench = loadModel('studio/spikes/p08/bench-50k.glb');
       expect(bench.triangleCount, inInclusiveRange(49000, 51000));
