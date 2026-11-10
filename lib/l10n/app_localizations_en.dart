@@ -1378,4 +1378,230 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get digLayerStudies => 'Studies in this layer';
+
+  @override
+  String get atlasMap => 'Map';
+
+  @override
+  String get atlasList => 'List';
+
+  @override
+  String get atlasLoading => 'Drawing the city';
+
+  @override
+  String get atlasUnavailable => 'The map could not be loaded.';
+
+  @override
+  String get atlasFilters => 'Filters';
+
+  @override
+  String atlasFiltersActive(String count) {
+    return 'Filters · $count on';
+  }
+
+  @override
+  String get atlasClearFilters => 'Clear all';
+
+  @override
+  String atlasShowPlaces(String count) {
+    return 'Show $count places';
+  }
+
+  @override
+  String atlasCount(String count) {
+    return '$count places';
+  }
+
+  @override
+  String get atlasNoMatches => 'No places match these filters.';
+
+  @override
+  String get filterWave => 'Wave';
+
+  @override
+  String get filterEra => 'Era';
+
+  @override
+  String get filterCategory => 'Kind of place';
+
+  @override
+  String get filterDistrict => 'District';
+
+  @override
+  String get filterOpenNow => 'Open now';
+
+  @override
+  String get filterOpenNowHint =>
+      'Only places whose weekly hours are recorded; others are left out rather than guessed.';
+
+  @override
+  String get filterHasMilestone => 'Has a Milestone';
+
+  @override
+  String get atlasWaveByzantine => 'Byzantine';
+
+  @override
+  String get atlasWaveMosques => 'Mosques';
+
+  @override
+  String get atlasWaveMuseums => 'Museums';
+
+  @override
+  String get atlasWaveCity => 'City';
+
+  @override
+  String get atlasWaveAbroad => 'Abroad';
+
+  @override
+  String get atlasEra330 => 'Constantine’s new city';
+
+  @override
+  String get atlasEra537 => 'Justinian’s city';
+
+  @override
+  String get atlasEra1200 => 'Before the Fourth Crusade';
+
+  @override
+  String get atlasEra1453 => 'The siege';
+
+  @override
+  String get atlasEra1560 => 'Süleyman’s city';
+
+  @override
+  String get atlasEra1900 => 'The late Ottoman city';
+
+  @override
+  String get atlasEraToday => 'Today';
+
+  @override
+  String get atlasTimeSlider => 'Year shown on the map';
+
+  @override
+  String get atlasPlay => 'Play from 330 to today';
+
+  @override
+  String get atlasPause => 'Pause';
+
+  @override
+  String get atlasRings => 'Mile rings';
+
+  @override
+  String atlasRingsHint(String centre) {
+    return 'Roman miles of 1,480 m, counted from $centre';
+  }
+
+  @override
+  String get atlasMileZero => 'mile zero';
+
+  @override
+  String get atlasYou => 'you';
+
+  @override
+  String get atlasFromMe => 'From me';
+
+  @override
+  String get atlasFromMilion => 'From mile zero';
+
+  @override
+  String get atlasLocating => 'Finding where you are';
+
+  @override
+  String get atlasLocationDenied =>
+      'Location was not granted. The map works the same without it.';
+
+  @override
+  String get atlasLocationOff => 'Location is turned off on this phone.';
+
+  @override
+  String get atlasLocationFailed => 'Your position could not be found.';
+
+  @override
+  String get atlasBelow => 'Below';
+
+  @override
+  String get atlasBelowHint =>
+      'Cisterns, palace substructures, the Yenikapı excavation and tunnels';
+
+  @override
+  String get atlasNorth => 'Turn north up';
+
+  @override
+  String get atlasZoomIn => 'Zoom in';
+
+  @override
+  String get atlasZoomOut => 'Zoom out';
+
+  @override
+  String get atlasRecenter => 'Back to the peninsula';
+
+  @override
+  String atlasMapLabel(String year, String count) {
+    return 'Map of Istanbul in $year, $count places. The list shows the same places.';
+  }
+
+  @override
+  String atlasCluster(String count) {
+    return '$count places here';
+  }
+
+  @override
+  String get atlasClusterHint => 'zooms in';
+
+  @override
+  String atlasStandingSince(String year) {
+    return 'Standing since $year';
+  }
+
+  @override
+  String atlasStandingByEra(String year) {
+    return 'From about $year, by its era';
+  }
+
+  @override
+  String atlasNotYet(String year) {
+    return 'Not yet built in $year';
+  }
+
+  @override
+  String get atlasOpenNow => 'Open now';
+
+  @override
+  String get atlasClosedNow => 'Closed now';
+
+  @override
+  String get atlasOpenDig => 'Open the dig';
+
+  @override
+  String atlasYearBc(String year) {
+    return '$year BC';
+  }
+
+  @override
+  String get atlasAttribution =>
+      'Map data © OpenStreetMap contributors (ODbL). Historic layers are drawn from cited sources.';
+
+  @override
+  String get atlasHistoricSources => 'Historic layers and their sources';
+
+  @override
+  String get atlasCertaintySurviving => 'Survives';
+
+  @override
+  String get atlasCertaintyTraced => 'Traced from remains';
+
+  @override
+  String get atlasCertaintyApproximate => 'Approximate line';
+
+  @override
+  String get atlasCertaintyConjectural => 'Conjectural';
+
+  @override
+  String atlasDistanceFromMe(String distance) {
+    return '$distance from you';
+  }
+
+  @override
+  String atlasMapLabelToday(String count) {
+    return 'Map of Istanbul today, $count places. The list shows the same places.';
+  }
 }

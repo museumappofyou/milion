@@ -1,0 +1,44 @@
+/opt/homebrew/lib/python3.11/site-packages/deepeval/__init__.py:47: UserWarning: You are using deepeval version 1.0.0, however version 4.3.3 is available. You should consider upgrading via the "pip install --upgrade deepeval" command.
+  warnings.warn(
+============================= test session starts ==============================
+platform darwin -- Python 3.11.10, pytest-8.3.2, pluggy-1.5.0 -- /opt/homebrew/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/memre/Desktop/milion
+plugins: deepeval-1.0.0, repeat-0.9.3, anyio-4.4.0, xdist-3.6.1
+collecting ... collected 31 items
+
+tool/space/test_kit.py::ElementTest::test_every_piece_is_closed_outward_and_on_the_grid PASSED [  3%]
+tool/space/test_kit.py::ElementTest::test_pointed_arch_rise PASSED       [  6%]
+tool/space/test_kit.py::ElementTest::test_serefe_count PASSED            [  9%]
+tool/space/test_kit.py::ElementTest::test_window_counts PASSED           [ 12%]
+tool/space/test_kit.py::MeshoptTest::test_decodes_meshoptimizer_reference_vectors PASSED [ 16%]
+tool/space/test_kit.py::MeshoptTest::test_exponential_is_exact_on_its_grid PASSED [ 19%]
+tool/space/test_kit.py::MeshoptTest::test_round_trip PASSED              [ 22%]
+tool/space/test_kit.py::SpecTest::test_every_spec_meets_its_dimensions_budget_and_axis PASSED [ 25%]
+tool/space/test_kit.py::SpecTest::test_footprint_axis PASSED             [ 29%]
+tool/space/test_kit.py::SpecTest::test_shipped_models_decode_to_closed_solids PASSED [ 32%]
+tool/space/test_space.py::SpaceStudyTest::test_every_part_is_a_closed_outward_solid PASSED [ 35%]
+tool/space/test_space.py::SpaceStudyTest::test_geometry_follows_the_construction PASSED [ 38%]
+tool/space/test_space.py::SpaceStudyTest::test_glb_round_trip_and_determinism PASSED [ 41%]
+tool/space/test_space.py::SpaceStudyTest::test_open_and_inside_out_solids_are_refused PASSED [ 45%]
+tool/space/test_space.py::SpaceStudyTest::test_shipped_model_matches_its_manifest PASSED [ 48%]
+tool/plate/test_build.py::Reproduction::test_i_and_ii PASSED             [ 51%]
+tool/plate/test_build.py::Reproduction::test_no_scene_specific_code PASSED [ 54%]
+tool/plate/test_build.py::Ingest::test_strip_keeps_pixels_and_drops_exif PASSED [ 58%]
+tool/plate/test_build.py::Mesh::test_adaptive_mesh_is_valid_and_within_budget PASSED [ 61%]
+tool/plate/test_build.py::Mesh::test_validator_catches_flips_and_tears PASSED [ 64%]
+tool/plate/test_build.py::Popup::test_split_inpaints_only_the_lifted_region PASSED [ 67%]
+tool/plate/test_build.py::Spec::test_strict_keys_and_pinned_hash PASSED  [ 70%]
+tool/content/test_build_seed.py::SeedIndexTest::test_a_new_registry_still_gets_the_base_documents PASSED [ 74%]
+tool/content/test_build_seed.py::SeedIndexTest::test_an_unknown_schema_is_never_overwritten PASSED [ 77%]
+tool/content/test_build_seed.py::SeedIndexTest::test_later_phase_content_survives_reseeding PASSED [ 80%]
+tool/atlas/test_atlas.py::Encoding::test_simplification_keeps_ends_and_drops_noise PASSED [ 83%]
+tool/atlas/test_atlas.py::Encoding::test_varints_round_trip PASSED       [ 87%]
+tool/atlas/test_atlas.py::Spec::test_every_feature_is_dated_sourced_and_bilingual PASSED [ 90%]
+tool/atlas/test_atlas.py::Spec::test_hand_points_only_where_the_line_is_uncertain PASSED [ 93%]
+tool/atlas/test_atlas.py::Built::test_assets_match_their_evidence PASSED [ 96%]
+tool/atlas/test_atlas.py::Built::test_the_shore_then_only_removes_land_on_the_marmara_side PASSED [100%]Running teardown with pytest sessionfinish...
+
+
+============================== 31 passed in 3.19s ==============================
+EXIT 0

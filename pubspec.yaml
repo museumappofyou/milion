@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: ^2.5.5
   url_launcher: ^6.3.3
   sensors_plus: ^7.1.1
+  geolocator: ^14.1.2
 
 # Patched local copy until upstream stops applying the Kotlin Gradle Plugin
 # (see third_party/flutter_onnxruntime/pubspec.yaml).
@@ -72,6 +73,7 @@ flutter:
 
   assets:
     - assets/model/
+    - assets/atlas/
     - assets/content/
     - assets/content/places/
     - assets/content/artworks/

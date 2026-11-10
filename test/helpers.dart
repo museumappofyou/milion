@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:milion/atlas/atlas_assets.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/main.dart';
 import 'package:milion/shell/app_scope.dart';
@@ -48,6 +49,29 @@ Future<void> ready(WidgetTester tester) async {
 Finder destination(String name) =>
     find.descendant(of: find.byType(NavigationBar), matching: find.text(name));
 
+/// The Atlas loads its assets off the UI isolate; give it real time.
+Future<void> waitForAtlas(WidgetTester tester) async {
+  bool loaded() => find
+      .byKey(const ValueKey('atlas-canvas'), skipOffstage: false)
+      .evaluate()
+      .isNotEmpty;
+  await tester.runAsync(() async {
+    for (var i = 0; i < 200 && !loaded(); i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+      await tester.pump();
+    }
+  });
+  await tester.pump();
+}
+
+/// The City tab in list mode (P10 opens it on the Atlas map).
+Future<void> openCityList(WidgetTester tester) async {
+  await tester.tap(destination('City'));
+  await tester.pump();
+  await tester.tap(find.byKey(const ValueKey('city-mode')));
+  await ready(tester);
+}
+
 /// The fixed date the P04 tests and captures are written against.
 final p04Date = DateTime(2026, 10, 1, 9);
 
@@ -73,6 +97,7 @@ Future<void> pumpShell(
     'milion_first_run_seen': true,
     ...prefs,
   });
+  AtlasAssets.debugForgetPendingLoad();
   await loadThemeFonts(tester);
   final app = testApp(date: date);
   await tester.pumpWidget(

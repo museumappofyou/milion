@@ -1,0 +1,313 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "mese",
+    "layer": "streets",
+    "kind": "street",
+    "names": {
+     "en": "Mese",
+     "tr": "Mese"
+    },
+    "from": 330,
+    "to": 1453,
+    "certainty": "approximate",
+    "sources": [
+     "wp-mese-1333909142",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The main street, 25 metres wide and colonnaded, from the Milion through the forums of Constantine and Theodosius to the Philadelphion. Drawn as straight lines between those positions.",
+     "tr": "Milion’dan Konstantin ve Theodosius forumlarından geçip Philadelphion’a uzanan, 25 metre genişliğinde, revaklı ana cadde. Bu konumlar arasında düz çizgilerle çizildi."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.978066,
+      41.008043
+     ],
+     [
+      28.971,
+      41.009
+     ],
+     [
+      28.9636111,
+      41.0097222
+     ],
+     [
+      28.956892,
+      41.014086
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "mese-north",
+    "layer": "streets",
+    "kind": "street",
+    "names": {
+     "en": "Mese, northern branch",
+     "tr": "Mese, kuzey kolu"
+    },
+    "from": 413,
+    "to": 1453,
+    "certainty": "approximate",
+    "sources": [
+     "wp-mese-1333909142",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Past the Theodosian forum the Mese divided: this branch ran northwest past the Church of the Holy Apostles (where the Fatih Mosque stands) to the Gate of Charisius.",
+     "tr": "Theodosius Forumu’ndan sonra Mese ikiye ayrılırdı: bu kol kuzeybatıya, Havariler Kilisesi’nin (bugün Fatih Camii’nin) önünden Kharisios Kapısı’na giderdi."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.956892,
+      41.014086
+     ],
+     [
+      28.949722,
+      41.019722
+     ],
+     [
+      28.935419,
+      41.030178
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "mese-south",
+    "layer": "streets",
+    "kind": "street",
+    "names": {
+     "en": "Mese, southern branch",
+     "tr": "Mese, güney kolu"
+    },
+    "from": 413,
+    "to": 1453,
+    "certainty": "approximate",
+    "sources": [
+     "wp-mese-1333909142",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The other branch ran southwest through the Forum of the Ox and the Forum of Arcadius to the Golden Gate, where it joined the Via Egnatia.",
+     "tr": "Diğer kol güneybatıya, Bous ve Arkadios forumlarından geçip Altın Kapı’ya giderek Via Egnatia’ya bağlanırdı."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.956892,
+      41.014086
+     ],
+     [
+      28.9530556,
+      41.01
+     ],
+     [
+      28.943,
+      41.0077
+     ],
+     [
+      28.9225,
+      40.9928
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "augustaion",
+    "layer": "streets",
+    "kind": "forum",
+    "names": {
+     "en": "Augustaion",
+     "tr": "Augusteion"
+    },
+    "from": 330,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-augustaion-1266611461",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The ceremonial square before Hagia Sophia; it survived until the late Byzantine period, in ruins.",
+     "tr": "Ayasofya’nın önündeki tören meydanı; geç Bizans dönemine kadar, harap hâlde de olsa ayakta kaldı."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.979,
+     41.008
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "forum-of-constantine",
+    "layer": "streets",
+    "kind": "forum",
+    "names": {
+     "en": "Forum of Constantine",
+     "tr": "Konstantin Forumu"
+    },
+    "from": 330,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-forum-of-constantine-1253152892",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Built at the foundation of the city, round, with the Column of Constantine at its centre; the column still stands.",
+     "tr": "Şehrin kuruluşunda yapıldı; yuvarlaktı, ortasında Çemberlitaş vardı. Sütun hâlâ ayakta."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.971,
+     41.009
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "forum-of-theodosius",
+    "layer": "streets",
+    "kind": "forum",
+    "names": {
+     "en": "Forum of Theodosius",
+     "tr": "Theodosius Forumu"
+    },
+    "from": 393,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-forum-of-theodosius-1307424872",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Constantine’s Forum of the Bull, rebuilt and renamed for Theodosius I in 393; today Beyazıt Square.",
+     "tr": "Konstantin’in Boğa Forumu; 393’te I. Theodosius için yeniden yapılıp adı değiştirildi. Bugün Beyazıt Meydanı."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9636111,
+     41.0097222
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "philadelphion",
+    "layer": "streets",
+    "kind": "forum",
+    "names": {
+     "en": "Philadelphion",
+     "tr": "Philadelphion"
+    },
+    "from": 330,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-philadelphion-1222481634",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The square where the Mese forked.",
+     "tr": "Mese’nin ikiye ayrıldığı meydan."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.956892,
+     41.014086
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "forum-of-the-ox",
+    "layer": "streets",
+    "kind": "forum",
+    "names": {
+     "en": "Forum of the Ox",
+     "tr": "Bous Forumu"
+    },
+    "from": 330,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-forum-of-the-ox-1270066911",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "A square in the Lycus valley on the southern Mese; it disappeared completely after the end of the Byzantine Empire. Its founding date is not known.",
+     "tr": "Güney Mese üzerinde, Likos vadisinde bir meydan; Bizans’ın sonundan sonra tamamen kayboldu. Kuruluş tarihi bilinmiyor."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9530556,
+     41.01
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "forum-of-arcadius",
+    "layer": "streets",
+    "kind": "forum",
+    "names": {
+     "en": "Forum of Arcadius",
+     "tr": "Arkadios Forumu"
+    },
+    "from": 403,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-forum-of-arcadius-1383265770",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Built in 403 on the Xerolophos, the last forum before the Constantinian wall.",
+     "tr": "403’te Kserolofos tepesinde yapıldı; Konstantin Suru’ndan önceki son forum."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.943,
+     41.0077
+    ]
+   }
+  }
+ ]
+}

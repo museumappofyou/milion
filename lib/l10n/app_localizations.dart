@@ -2586,6 +2586,402 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Studies in this layer'**
   String get digLayerStudies;
+
+  /// No description provided for @atlasMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Map'**
+  String get atlasMap;
+
+  /// No description provided for @atlasList.
+  ///
+  /// In en, this message translates to:
+  /// **'List'**
+  String get atlasList;
+
+  /// No description provided for @atlasLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Drawing the city'**
+  String get atlasLoading;
+
+  /// No description provided for @atlasUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The map could not be loaded.'**
+  String get atlasUnavailable;
+
+  /// No description provided for @atlasFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get atlasFilters;
+
+  /// No description provided for @atlasFiltersActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters · {count} on'**
+  String atlasFiltersActive(String count);
+
+  /// No description provided for @atlasClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all'**
+  String get atlasClearFilters;
+
+  /// No description provided for @atlasShowPlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Show {count} places'**
+  String atlasShowPlaces(String count);
+
+  /// No description provided for @atlasCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} places'**
+  String atlasCount(String count);
+
+  /// No description provided for @atlasNoMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'No places match these filters.'**
+  String get atlasNoMatches;
+
+  /// No description provided for @filterWave.
+  ///
+  /// In en, this message translates to:
+  /// **'Wave'**
+  String get filterWave;
+
+  /// No description provided for @filterEra.
+  ///
+  /// In en, this message translates to:
+  /// **'Era'**
+  String get filterEra;
+
+  /// No description provided for @filterCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Kind of place'**
+  String get filterCategory;
+
+  /// No description provided for @filterDistrict.
+  ///
+  /// In en, this message translates to:
+  /// **'District'**
+  String get filterDistrict;
+
+  /// No description provided for @filterOpenNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Open now'**
+  String get filterOpenNow;
+
+  /// No description provided for @filterOpenNowHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Only places whose weekly hours are recorded; others are left out rather than guessed.'**
+  String get filterOpenNowHint;
+
+  /// No description provided for @filterHasMilestone.
+  ///
+  /// In en, this message translates to:
+  /// **'Has a Milestone'**
+  String get filterHasMilestone;
+
+  /// No description provided for @atlasWaveByzantine.
+  ///
+  /// In en, this message translates to:
+  /// **'Byzantine'**
+  String get atlasWaveByzantine;
+
+  /// No description provided for @atlasWaveMosques.
+  ///
+  /// In en, this message translates to:
+  /// **'Mosques'**
+  String get atlasWaveMosques;
+
+  /// No description provided for @atlasWaveMuseums.
+  ///
+  /// In en, this message translates to:
+  /// **'Museums'**
+  String get atlasWaveMuseums;
+
+  /// No description provided for @atlasWaveCity.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get atlasWaveCity;
+
+  /// No description provided for @atlasWaveAbroad.
+  ///
+  /// In en, this message translates to:
+  /// **'Abroad'**
+  String get atlasWaveAbroad;
+
+  /// No description provided for @atlasEra330.
+  ///
+  /// In en, this message translates to:
+  /// **'Constantine’s new city'**
+  String get atlasEra330;
+
+  /// No description provided for @atlasEra537.
+  ///
+  /// In en, this message translates to:
+  /// **'Justinian’s city'**
+  String get atlasEra537;
+
+  /// No description provided for @atlasEra1200.
+  ///
+  /// In en, this message translates to:
+  /// **'Before the Fourth Crusade'**
+  String get atlasEra1200;
+
+  /// No description provided for @atlasEra1453.
+  ///
+  /// In en, this message translates to:
+  /// **'The siege'**
+  String get atlasEra1453;
+
+  /// No description provided for @atlasEra1560.
+  ///
+  /// In en, this message translates to:
+  /// **'Süleyman’s city'**
+  String get atlasEra1560;
+
+  /// No description provided for @atlasEra1900.
+  ///
+  /// In en, this message translates to:
+  /// **'The late Ottoman city'**
+  String get atlasEra1900;
+
+  /// No description provided for @atlasEraToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get atlasEraToday;
+
+  /// No description provided for @atlasTimeSlider.
+  ///
+  /// In en, this message translates to:
+  /// **'Year shown on the map'**
+  String get atlasTimeSlider;
+
+  /// No description provided for @atlasPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Play from 330 to today'**
+  String get atlasPlay;
+
+  /// No description provided for @atlasPause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get atlasPause;
+
+  /// No description provided for @atlasRings.
+  ///
+  /// In en, this message translates to:
+  /// **'Mile rings'**
+  String get atlasRings;
+
+  /// No description provided for @atlasRingsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Roman miles of 1,480 m, counted from {centre}'**
+  String atlasRingsHint(String centre);
+
+  /// No description provided for @atlasMileZero.
+  ///
+  /// In en, this message translates to:
+  /// **'mile zero'**
+  String get atlasMileZero;
+
+  /// No description provided for @atlasYou.
+  ///
+  /// In en, this message translates to:
+  /// **'you'**
+  String get atlasYou;
+
+  /// No description provided for @atlasFromMe.
+  ///
+  /// In en, this message translates to:
+  /// **'From me'**
+  String get atlasFromMe;
+
+  /// No description provided for @atlasFromMilion.
+  ///
+  /// In en, this message translates to:
+  /// **'From mile zero'**
+  String get atlasFromMilion;
+
+  /// No description provided for @atlasLocating.
+  ///
+  /// In en, this message translates to:
+  /// **'Finding where you are'**
+  String get atlasLocating;
+
+  /// No description provided for @atlasLocationDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Location was not granted. The map works the same without it.'**
+  String get atlasLocationDenied;
+
+  /// No description provided for @atlasLocationOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Location is turned off on this phone.'**
+  String get atlasLocationOff;
+
+  /// No description provided for @atlasLocationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Your position could not be found.'**
+  String get atlasLocationFailed;
+
+  /// No description provided for @atlasBelow.
+  ///
+  /// In en, this message translates to:
+  /// **'Below'**
+  String get atlasBelow;
+
+  /// No description provided for @atlasBelowHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Cisterns, palace substructures, the Yenikapı excavation and tunnels'**
+  String get atlasBelowHint;
+
+  /// No description provided for @atlasNorth.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn north up'**
+  String get atlasNorth;
+
+  /// No description provided for @atlasZoomIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom in'**
+  String get atlasZoomIn;
+
+  /// No description provided for @atlasZoomOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom out'**
+  String get atlasZoomOut;
+
+  /// No description provided for @atlasRecenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to the peninsula'**
+  String get atlasRecenter;
+
+  /// No description provided for @atlasMapLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Map of Istanbul in {year}, {count} places. The list shows the same places.'**
+  String atlasMapLabel(String year, String count);
+
+  /// No description provided for @atlasCluster.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} places here'**
+  String atlasCluster(String count);
+
+  /// No description provided for @atlasClusterHint.
+  ///
+  /// In en, this message translates to:
+  /// **'zooms in'**
+  String get atlasClusterHint;
+
+  /// No description provided for @atlasStandingSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Standing since {year}'**
+  String atlasStandingSince(String year);
+
+  /// No description provided for @atlasStandingByEra.
+  ///
+  /// In en, this message translates to:
+  /// **'From about {year}, by its era'**
+  String atlasStandingByEra(String year);
+
+  /// No description provided for @atlasNotYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet built in {year}'**
+  String atlasNotYet(String year);
+
+  /// No description provided for @atlasOpenNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Open now'**
+  String get atlasOpenNow;
+
+  /// No description provided for @atlasClosedNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed now'**
+  String get atlasClosedNow;
+
+  /// No description provided for @atlasOpenDig.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the dig'**
+  String get atlasOpenDig;
+
+  /// No description provided for @atlasYearBc.
+  ///
+  /// In en, this message translates to:
+  /// **'{year} BC'**
+  String atlasYearBc(String year);
+
+  /// No description provided for @atlasAttribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Map data © OpenStreetMap contributors (ODbL). Historic layers are drawn from cited sources.'**
+  String get atlasAttribution;
+
+  /// No description provided for @atlasHistoricSources.
+  ///
+  /// In en, this message translates to:
+  /// **'Historic layers and their sources'**
+  String get atlasHistoricSources;
+
+  /// No description provided for @atlasCertaintySurviving.
+  ///
+  /// In en, this message translates to:
+  /// **'Survives'**
+  String get atlasCertaintySurviving;
+
+  /// No description provided for @atlasCertaintyTraced.
+  ///
+  /// In en, this message translates to:
+  /// **'Traced from remains'**
+  String get atlasCertaintyTraced;
+
+  /// No description provided for @atlasCertaintyApproximate.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate line'**
+  String get atlasCertaintyApproximate;
+
+  /// No description provided for @atlasCertaintyConjectural.
+  ///
+  /// In en, this message translates to:
+  /// **'Conjectural'**
+  String get atlasCertaintyConjectural;
+
+  /// No description provided for @atlasDistanceFromMe.
+  ///
+  /// In en, this message translates to:
+  /// **'{distance} from you'**
+  String atlasDistanceFromMe(String distance);
+
+  /// No description provided for @atlasMapLabelToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Map of Istanbul today, {count} places. The list shows the same places.'**
+  String atlasMapLabelToday(String count);
 }
 
 class _AppLocalizationsDelegate

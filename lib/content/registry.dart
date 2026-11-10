@@ -329,6 +329,9 @@ ValidationReport validateContent(Json data) {
       if (visit.hours != null && visit.hoursCheckedAt == null) {
         error('${p.id}.visit opening hours require hoursCheckedAt');
       }
+      if (visit.weekly.isNotEmpty && visit.hours == null) {
+        error('${p.id}.visit structured hours need the stated hours too');
+      }
       for (final transit in visit.transit) {
         if (transit.minutes < 1 || transit.minutes > 120) {
           error('${p.id}.visit transit minutes out of range');

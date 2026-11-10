@@ -1,0 +1,113 @@
+{
+ "method": "SurfaceFlinger present timestamps of the app's Flutter surface (dumpsys SurfaceFlinger --latency, sampled each second and merged), release arm64 build on the A52s (SM-A528B), 2026-11-11. A frame is presented only when the picture changes: gaps between adb swipes and the time-lapse holds show as intervals over 34 ms; jank20to100ms counts missed frames.",
+ "runs": [
+  {
+   "label": "Atlas pan, peninsula overview, today (modern tiles)",
+   "frames": 1056,
+   "spanS": 19.88,
+   "fps": 53.1,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.73,
+   "intervalMaxMs": 183.6,
+   "over20ms": 23,
+   "over34ms": 15,
+   "jank20to100ms": 8
+  },
+  {
+   "label": "Atlas pan, peninsula overview, today, tiles cached",
+   "frames": 1067,
+   "spanS": 20.0,
+   "fps": 53.3,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 166.92,
+   "over20ms": 26,
+   "over34ms": 15,
+   "jank20to100ms": 11
+  },
+  {
+   "label": "Atlas pan, one continuous 10 s drag, today",
+   "frames": 584,
+   "spanS": 9.75,
+   "fps": 59.8,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 33.41,
+   "over20ms": 1,
+   "over34ms": 0,
+   "jank20to100ms": 1
+  },
+  {
+   "label": "Atlas pan x16 after settle fix, today",
+   "frames": 1072,
+   "spanS": 20.02,
+   "fps": 53.5,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 166.88,
+   "over20ms": 23,
+   "over34ms": 15,
+   "jank20to100ms": 8
+  },
+  {
+   "label": "Atlas pan zoomed in (footprints), one 10 s drag, today",
+   "frames": 580,
+   "spanS": 9.78,
+   "fps": 59.2,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.71,
+   "intervalMaxMs": 50.12,
+   "over20ms": 6,
+   "over34ms": 1,
+   "jank20to100ms": 6
+  },
+  {
+   "label": "Atlas pan, peninsula, 537 (manuscript tiles), one 10 s drag",
+   "frames": 583,
+   "spanS": 9.73,
+   "fps": 59.8,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 33.42,
+   "over20ms": 1,
+   "over34ms": 0,
+   "jank20to100ms": 1
+  },
+  {
+   "label": "Atlas time-lapse: Play from 330 to today (untouched)",
+   "frames": 372,
+   "spanS": 12.75,
+   "fps": 29.1,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 16.74,
+   "intervalMaxMs": 951.28,
+   "over20ms": 13,
+   "over34ms": 9,
+   "jank20to100ms": 6
+  },
+  {
+   "label": "Atlas time-lapse after prefetch: Play 330 to today (untouched)",
+   "frames": 397,
+   "spanS": 12.14,
+   "fps": 32.6,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 950.93,
+   "over20ms": 7,
+   "over34ms": 6,
+   "jank20to100ms": 1
+  },
+  {
+   "label": "Atlas pan x16, overview, today, final build",
+   "frames": 1066,
+   "spanS": 19.9,
+   "fps": 53.5,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 183.54,
+   "over20ms": 21,
+   "over34ms": 15,
+   "jank20to100ms": 6
+  }
+ ]
+}

@@ -737,5 +737,158 @@
   "spaceSources": "Sources",
   "spaceLoading": "Preparing the drawing",
   "spaceUnavailable": "The drawing’s model could not be loaded.",
-  "digLayerStudies": "Studies in this layer"
+  "digLayerStudies": "Studies in this layer",
+  "atlasMap": "Map",
+  "atlasList": "List",
+  "atlasLoading": "Drawing the city",
+  "atlasUnavailable": "The map could not be loaded.",
+  "atlasFilters": "Filters",
+  "atlasFiltersActive": "Filters · {count} on",
+  "@atlasFiltersActive": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasClearFilters": "Clear all",
+  "atlasShowPlaces": "Show {count} places",
+  "@atlasShowPlaces": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasCount": "{count} places",
+  "@atlasCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasNoMatches": "No places match these filters.",
+  "filterWave": "Wave",
+  "filterEra": "Era",
+  "filterCategory": "Kind of place",
+  "filterDistrict": "District",
+  "filterOpenNow": "Open now",
+  "filterOpenNowHint": "Only places whose weekly hours are recorded; others are left out rather than guessed.",
+  "filterHasMilestone": "Has a Milestone",
+  "atlasWaveByzantine": "Byzantine",
+  "atlasWaveMosques": "Mosques",
+  "atlasWaveMuseums": "Museums",
+  "atlasWaveCity": "City",
+  "atlasWaveAbroad": "Abroad",
+  "atlasEra330": "Constantine’s new city",
+  "atlasEra537": "Justinian’s city",
+  "atlasEra1200": "Before the Fourth Crusade",
+  "atlasEra1453": "The siege",
+  "atlasEra1560": "Süleyman’s city",
+  "atlasEra1900": "The late Ottoman city",
+  "atlasEraToday": "Today",
+  "atlasTimeSlider": "Year shown on the map",
+  "atlasPlay": "Play from 330 to today",
+  "atlasPause": "Pause",
+  "atlasRings": "Mile rings",
+  "atlasRingsHint": "Roman miles of 1,480 m, counted from {centre}",
+  "@atlasRingsHint": {
+    "placeholders": {
+      "centre": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasMileZero": "mile zero",
+  "atlasYou": "you",
+  "atlasFromMe": "From me",
+  "atlasFromMilion": "From mile zero",
+  "atlasLocating": "Finding where you are",
+  "atlasLocationDenied": "Location was not granted. The map works the same without it.",
+  "atlasLocationOff": "Location is turned off on this phone.",
+  "atlasLocationFailed": "Your position could not be found.",
+  "atlasBelow": "Below",
+  "atlasBelowHint": "Cisterns, palace substructures, the Yenikapı excavation and tunnels",
+  "atlasNorth": "Turn north up",
+  "atlasZoomIn": "Zoom in",
+  "atlasZoomOut": "Zoom out",
+  "atlasRecenter": "Back to the peninsula",
+  "atlasMapLabel": "Map of Istanbul in {year}, {count} places. The list shows the same places.",
+  "@atlasMapLabel": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasCluster": "{count} places here",
+  "@atlasCluster": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasClusterHint": "zooms in",
+  "atlasStandingSince": "Standing since {year}",
+  "@atlasStandingSince": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasStandingByEra": "From about {year}, by its era",
+  "@atlasStandingByEra": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasNotYet": "Not yet built in {year}",
+  "@atlasNotYet": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasOpenNow": "Open now",
+  "atlasClosedNow": "Closed now",
+  "atlasOpenDig": "Open the dig",
+  "atlasYearBc": "{year} BC",
+  "@atlasYearBc": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasAttribution": "Map data © OpenStreetMap contributors (ODbL). Historic layers are drawn from cited sources.",
+  "atlasHistoricSources": "Historic layers and their sources",
+  "atlasCertaintySurviving": "Survives",
+  "atlasCertaintyTraced": "Traced from remains",
+  "atlasCertaintyApproximate": "Approximate line",
+  "atlasCertaintyConjectural": "Conjectural",
+  "atlasDistanceFromMe": "{distance} from you",
+  "@atlasDistanceFromMe": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "atlasMapLabelToday": "Map of Istanbul today, {count} places. The list shows the same places.",
+  "@atlasMapLabelToday": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  }
 }

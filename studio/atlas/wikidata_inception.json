@@ -1,0 +1,1651 @@
+{
+ "endpoint": "https://query.wikidata.org/sparql",
+ "query": "SELECT ?item ?time ?precision WHERE { VALUES ?item { wd:Q1003322 wd:Q1014806 wd:Q1015617 wd:Q1020668 wd:Q105078358 wd:Q1137511 wd:Q1144576 wd:Q11787082 wd:Q1187329 wd:Q1247287 wd:Q1247312 wd:Q12506 wd:Q12808583 wd:Q131523725 wd:Q132681951 wd:Q133859803 wd:Q134728609 wd:Q1394625 wd:Q140042770 wd:Q1420984 wd:Q1430090 wd:Q1463961 wd:Q1472490 wd:Q1551419 wd:Q1572049 wd:Q1572431 wd:Q1572457 wd:Q1572472 wd:Q1581190 wd:Q15961492 wd:Q163490 wd:Q1662392 wd:Q170495 wd:Q172988 wd:Q1741 wd:Q1749015 wd:Q1755906 wd:Q1758501 wd:Q176380 wd:Q178643 wd:Q179839 wd:Q17989029 wd:Q18210713 wd:Q18341384 wd:Q184534 wd:Q197094 wd:Q20474042 wd:Q2086068 wd:Q21526905 wd:Q216511 wd:Q2305473 wd:Q2330055 wd:Q2334536 wd:Q2334567 wd:Q23586307 wd:Q241631 wd:Q2424612 wd:Q246275 wd:Q2483550 wd:Q25212994 wd:Q25338955 wd:Q2537376 wd:Q2705343 wd:Q2706262 wd:Q2712287 wd:Q2719230 wd:Q2719785 wd:Q2719788 wd:Q272681 wd:Q2728644 wd:Q2734907 wd:Q273783 wd:Q274141 wd:Q2743371 wd:Q284489 wd:Q28599952 wd:Q3081830 wd:Q3150393 wd:Q3269761 wd:Q3288771 wd:Q3294735 wd:Q337381 wd:Q3394722 wd:Q3395851 wd:Q3404565 wd:Q3515347 wd:Q35958 wd:Q38251235 wd:Q387548 wd:Q43387 wd:Q475338 wd:Q4833521 wd:Q487013 wd:Q501817 wd:Q505954 wd:Q522862 wd:Q525939 wd:Q55698717 wd:Q55698753 wd:Q588892 wd:Q590900 wd:Q6023693 wd:Q6040439 wd:Q6043703 wd:Q6069887 wd:Q6071018 wd:Q6073055 wd:Q6073061 wd:Q6076508 wd:Q6080282 wd:Q6090202 wd:Q6096486 wd:Q614237 wd:Q632795 wd:Q636978 wd:Q639014 wd:Q639240 wd:Q641 wd:Q6442920 wd:Q644677 wd:Q668641 wd:Q673073 wd:Q7199786 wd:Q732028 wd:Q736676 wd:Q739547 wd:Q742474 wd:Q75459 wd:Q756189 wd:Q763854 wd:Q793169 wd:Q794349 wd:Q794351 wd:Q80541 wd:Q8082523 wd:Q810796 wd:Q81523 wd:Q81650 wd:Q840258 wd:Q848397 wd:Q849489 wd:Q857056 wd:Q857107 wd:Q85817770 wd:Q862848 wd:Q89917 wd:Q90801 wd:Q911720 wd:Q911734 wd:Q91274 wd:Q91682094 wd:Q938548 wd:Q952924 wd:Q956677 wd:Q99397898 } ?item p:P571 ?st . ?st psv:P571 ?v . ?v wikibase:timeValue ?time ; wikibase:timePrecision ?precision . FILTER NOT EXISTS { ?st wikibase:rank wikibase:DeprecatedRank } }",
+ "fetchedAt": "2026-11-10",
+ "licence": "CC0 1.0 (Wikidata)",
+ "result": {
+  "head": {
+   "vars": [
+    "item",
+    "time",
+    "precision"
+   ]
+  },
+  "results": {
+   "bindings": [
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6096486"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1638-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q505954"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1455-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q794351"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1928-06-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q639014"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1928-06-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q90801"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1451-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6442920"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1845-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1420984"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1100-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q246275"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1100-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2719788"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1584-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q641"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0421-03-26T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1581190"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1562-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q178643"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1550-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q911720"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1597-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q12506"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0537-12-29T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q794349"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1865-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1144576"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0526-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q588892"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "-0500-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q12506"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0532-02-25T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q81523"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1992-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q15961492"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2012-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q763854"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "-1500-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q43387"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0125-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q848397"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1110-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q590900"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1763-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1572431"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1581-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4833521"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1945-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6040439"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1635-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1463961"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2003-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q274141"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1823-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1430090"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1755-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1741"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "-0100-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q55698717"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1566-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q184534"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1575-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q20474042"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2010-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q25338955"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2010-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1662392"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2005-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3404565"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1994-12-13T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q172988"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0828-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q12506"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0415-10-11T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q12506"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0360-02-16T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q614237"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1826-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q911734"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1790-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q80541"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1609-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3395851"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2002-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q487013"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0460-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "8"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q668641"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1660-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q197094"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1136-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6090202"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2009-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q739547"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1992-06-03T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q938548"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1992-06-03T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2719230"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1953-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q862848"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1578-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2712287"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1556-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q736676"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0501-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1187329"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0310-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2334567"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1710-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q840258"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1987-07-04T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q284489"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1987-07-04T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q639240"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1987-07-04T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q857056"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1987-07-04T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q91274"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1349-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2705343"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2009-05-07T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q632795"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1458-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q956677"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1458-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q522862"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "-1899-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q8082523"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1859-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q11787082"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1897-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q337381"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "-0679-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q18341384"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2019-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q170495"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1475-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3269761"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1830-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1572049"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1572-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1572457"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1590-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6069887"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1959-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756189"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1464-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q176380"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1856-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3294735"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1472-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1572472"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1665-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2483550"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1586-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q636978"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1869-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1755906"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1944-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q525939"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1914-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1015617"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1262-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2305473"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0901-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2424612"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0901-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q641"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0452-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q857107"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1930-09-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2537376"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1548-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q644677"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1548-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q849489"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1001-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q736676"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0350-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q7199786"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1573-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1137511"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1561-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q81650"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1393-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q170495"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1460-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2719785"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1871-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2086068"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1855-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2330055"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1855-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q12808583"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "1846-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "9"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1551419"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0401-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q17989029"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "0401-01-01T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "7"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2743371"
+     },
+     "time": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "type": "literal",
+      "value": "2005-04-23T00:00:00Z"
+     },
+     "precision": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+      "type": "literal",
+      "value": "11"
+     }
+    }
+   ]
+  }
+ }
+}

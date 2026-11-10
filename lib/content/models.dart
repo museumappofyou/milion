@@ -296,6 +296,57 @@ class TransitStop {
   );
 }
 
+enum Weekday { mon, tue, wed, thu, fri, sat, sun }
+
+/// Istanbul keeps UTC+3 all year (no daylight saving since 2016).
+const istanbulUtcOffset = Duration(hours: 3);
+
+/// One line of a place's opening week, in Istanbul time: open on [days] from
+/// [opens] to [closes] (minutes after midnight, closing the same day).
+class OpeningSpan {
+  OpeningSpan(this.days, this.opens, this.closes);
+  final Set<Weekday> days;
+  final int opens, closes;
+
+  static int _minutes(String hhmm) {
+    final m = RegExp(r'^([01]\d|2[0-3]):([0-5]\d)$').firstMatch(hhmm);
+    if (m == null) throw FormatException('not a HH:MM time: $hhmm');
+    return int.parse(m[1]!) * 60 + int.parse(m[2]!);
+  }
+
+  factory OpeningSpan.fromJson(Json j) => decode(j, (r) {
+    final days = [
+      for (final d in r.strings('days'))
+        Weekday.values.asNameMap()[d] ??
+            (throw FormatException('unknown weekday $d')),
+    ];
+    final span = OpeningSpan(
+      days.toSet(),
+      _minutes(r.string('opens')),
+      _minutes(r.string('closes')),
+    );
+    if (days.isEmpty || span.days.length != days.length) {
+      throw const FormatException('opening days must be non-empty and unique');
+    }
+    if (span.closes <= span.opens) {
+      throw const FormatException('an opening span must close after it opens');
+    }
+    return span;
+  });
+}
+
+/// Whether [weekly] has the place open at [instant]; null when the week is
+/// unknown (empty), so callers can tell "closed" from "no data".
+bool? isOpenAt(List<OpeningSpan> weekly, DateTime instant) {
+  if (weekly.isEmpty) return null;
+  final local = instant.toUtc().add(istanbulUtcOffset);
+  final day = Weekday.values[local.weekday - 1];
+  final minute = local.hour * 60 + local.minute;
+  return weekly.any(
+    (s) => s.days.contains(day) && minute >= s.opens && minute < s.closes,
+  );
+}
+
 /// The visit card of a reviewed place or a remotely checked draft. Every
 /// field is optional; the UI shows an honest empty state for what is missing.
 class VisitInfo {
@@ -307,11 +358,16 @@ class VisitInfo {
     this.etiquette,
     this.accessibility,
     this.transit,
-    this.sourceIds,
-  );
+    this.sourceIds, {
+    this.weekly = const [],
+  });
   final DateTime? checkedAt;
   final Localized? hours;
   final DateTime? hoursCheckedAt;
+
+  /// [hours] in structured form for the Atlas's "open now"; empty when the
+  /// hours are not regular enough to state this way.
+  final List<OpeningSpan> weekly;
   final Localized? entry;
   final Localized? etiquette;
   final Localized? accessibility;
@@ -336,6 +392,7 @@ class VisitInfo {
           : Localized.fromJson(r.object('accessibility')),
       r.optionalList('transit', (j) => TransitStop.fromJson(j as Json)),
       r.optionalStrings('sources'),
+      weekly: r.optionalList('weekly', (j) => OpeningSpan.fromJson(j as Json)),
     ),
   );
 }

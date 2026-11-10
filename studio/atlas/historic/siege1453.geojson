@@ -1,0 +1,223 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "siege-chain",
+    "layer": "siege1453",
+    "kind": "siege",
+    "names": {
+     "en": "The chain across the Golden Horn",
+     "tr": "Haliç zinciri"
+    },
+    "from": 1453,
+    "to": 1453,
+    "certainty": "approximate",
+    "sources": [
+     "wp-walls-of-constantinople-1383343183",
+     "wp-fall-of-constantinople-1384652386",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "A chain on floating barrels closed the Golden Horn, from the Tower of Eugenius at Sirkeci to the Kastellion in Galata, whose basement became the Yeraltı Mosque.",
+     "tr": "Yüzen fıçılar üzerindeki bir zincir Haliç’i kapattı: Sirkeci’deki Eugenios Kulesi’nden, bodrumu sonra Yeraltı Camii olan Galata’daki Kastellion’a."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.9795971,
+      41.0196381
+     ],
+     [
+      28.9764833,
+      41.0225333
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "siege-ships",
+    "layer": "siege1453",
+    "kind": "siege",
+    "names": {
+     "en": "The fleet dragged overland, 22 April",
+     "tr": "Karadan yürütülen donanma, 22 Nisan"
+    },
+    "from": 1453,
+    "to": 1453,
+    "certainty": "conjectural",
+    "sources": [
+     "wp-fall-of-constantinople-1384652386"
+    ],
+    "note": {
+     "en": "Mehmed had a road of greased logs built across Galata and dragged his ships over the hill into the Golden Horn, bypassing the chain. The source gives no exact route; this line, from the Bosphorus shore to Kasımpaşa, is schematic.",
+     "tr": "Mehmed Galata’nın arkasına yağlanmış kütüklerden bir yol yaptırdı ve gemilerini tepenin üzerinden Haliç’e indirerek zinciri aştı. Kaynak kesin güzergâh vermiyor; Boğaz kıyısından Kasımpaşa’ya uzanan bu çizgi şematiktir."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.9875,
+      41.03
+     ],
+     [
+      28.98,
+      41.0345
+     ],
+     [
+      28.973,
+      41.0352
+     ],
+     [
+      28.9668,
+      41.0322
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "siege-mesoteichion",
+    "layer": "siege1453",
+    "kind": "siege",
+    "names": {
+     "en": "Mesoteichion: the guns and the Janissaries",
+     "tr": "Mesoteikhion: toplar ve yeniçeriler"
+    },
+    "from": 1453,
+    "to": 1453,
+    "certainty": "traced",
+    "sources": [
+     "wp-fall-of-constantinople-1384652386",
+     "wp-walls-of-constantinople-1383343183",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The stretch of the land walls in the Lycus valley, from the Gate of St Romanus to the Gate of Charisius. Mehmed pitched his tent near it, where the guns and the elite Janissary regiments stood.",
+     "tr": "Kara surlarının Likos vadisindeki bölümü, Romanos Kapısı’ndan Kharisios Kapısı’na. Mehmed çadırını toplar ve seçkin yeniçeri birliklerinin bulunduğu bu kesimin yakınına kurdu."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.926298,
+      41.021759
+     ],
+     [
+      28.926842,
+      41.02216
+     ],
+     [
+      28.927301,
+      41.022629
+     ],
+     [
+      28.927786,
+      41.023048
+     ],
+     [
+      28.928257,
+      41.023529
+     ],
+     [
+      28.928724,
+      41.023895
+     ],
+     [
+      28.929787,
+      41.02483
+     ],
+     [
+      28.93018,
+      41.02533
+     ],
+     [
+      28.930655,
+      41.025803
+     ],
+     [
+      28.931192,
+      41.026272
+     ],
+     [
+      28.931673,
+      41.026817
+     ],
+     [
+      28.931826,
+      41.026978
+     ],
+     [
+      28.932364,
+      41.027439
+     ],
+     [
+      28.9330215,
+      41.0277939
+     ],
+     [
+      28.933458,
+      41.028217
+     ],
+     [
+      28.933949,
+      41.028652
+     ],
+     [
+      28.934635,
+      41.029339
+     ],
+     [
+      28.934822,
+      41.029541
+     ],
+     [
+      28.935043,
+      41.029789
+     ],
+     [
+      28.935209,
+      41.030132
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "rumeli-hisari-1452",
+    "layer": "siege1453",
+    "kind": "siege",
+    "names": {
+     "en": "Rumeli Hisarı, built 1452",
+     "tr": "Rumeli Hisarı, 1452"
+    },
+    "from": 1452,
+    "to": 1453,
+    "certainty": "surviving",
+    "sources": [
+     "wp-rumelihisari-1369216085"
+    ],
+    "note": {
+     "en": "Built by Mehmed II in 1452 to close the Bosphorus before the siege.",
+     "tr": "II. Mehmed, kuşatmadan önce Boğaz’ı kapatmak için 1452’de yaptırdı."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     29.056111111111,
+     41.084722222222
+    ]
+   }
+  }
+ ]
+}

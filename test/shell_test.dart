@@ -464,6 +464,9 @@ void main() {
       await pumpShell(tester);
       await tester.tap(destination('City'));
       await tester.pumpAndSettle();
+      // The Atlas opens on the map; the list keeps its own scroll.
+      await tester.tap(find.byKey(const ValueKey('city-mode')));
+      await tester.pumpAndSettle();
       await tester.drag(find.byType(Scrollable).last, const Offset(0, -900));
       await tester.pumpAndSettle();
       final offset = scrollOf(tester, CityTab).pixels;
@@ -516,8 +519,7 @@ void main() {
       'City by mil distance; camera-eye only where recognition exists',
       (tester) async {
         await pumpShell(tester);
-        await tester.tap(destination('City'));
-        await tester.pumpAndSettle();
+        await openCityList(tester);
         expect(
           find.textContaining(
             'places · positions checked on Wikidata · 0 reviewed',
@@ -588,6 +590,15 @@ void main() {
         for (final label in labels) {
           await tester.tap(destination(label));
           await ready(tester);
+          if (label == labels[1]) {
+            // The Atlas: its controls and time bar at 200%, then the list.
+            await waitForAtlas(tester);
+            await tester.pump(const Duration(seconds: 1));
+            expect(tester.takeException(), isNull, reason: 'atlas');
+            expect(find.byKey(const ValueKey('atlas-time')), findsOneWidget);
+            await tester.tap(find.byKey(const ValueKey('city-mode')));
+            await ready(tester);
+          }
           final scrollable = find.byType(Scrollable).last;
           for (var i = 0; i < 8; i++) {
             await tester.drag(

@@ -1,0 +1,215 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-1",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "I",
+     "tr": "I"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The first hill, where Byzantium was founded: Seraglio Point, Hagia Sophia, the Topkapı Palace.",
+     "tr": "Bizantion’un kurulduğu birinci tepe: Sarayburnu, Ayasofya, Topkapı Sarayı."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.98,
+     41.00833333333333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-2",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "II",
+     "tr": "II"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The second hill: the Column of Constantine, the Grand Bazaar, Nuruosmaniye.",
+     "tr": "İkinci tepe: Çemberlitaş, Kapalıçarşı, Nuruosmaniye."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.971111,
+     41.008611
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-3",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "III",
+     "tr": "III"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The third hill: Istanbul University, the Bayezid II and Süleymaniye mosques.",
+     "tr": "Üçüncü tepe: İstanbul Üniversitesi, Beyazıt ve Süleymaniye camileri."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.963888888889,
+     41.016111111111
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-4",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "IV",
+     "tr": "IV"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The fourth hill: the Church of the Holy Apostles, then the Fatih Mosque.",
+     "tr": "Dördüncü tepe: Havariler Kilisesi, sonra Fatih Camii."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.949722,
+     41.019722
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-5",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "V",
+     "tr": "V"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The fifth hill: the Mosque of Sultan Selim.",
+     "tr": "Beşinci tepe: Yavuz Selim Camii."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9513,
+     41.0266
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-6",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "VI",
+     "tr": "VI"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The sixth hill: Edirnekapı and the Mihrimah Sultan Mosque.",
+     "tr": "Altıncı tepe: Edirnekapı ve Mihrimah Sultan Camii."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.935833333333,
+     41.029166666667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "hill-7",
+    "layer": "hills",
+    "kind": "hill",
+    "names": {
+     "en": "VII",
+     "tr": "VII"
+    },
+    "from": -700,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-seven-hills-1374999074",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The seventh hill, the Xerolophos or “dry hill”, marked here by the base of the Column of Arcadius.",
+     "tr": "Yedinci tepe, Kserolofos ya da “kuru tepe”; burada Arkadios Sütunu’nun kaidesiyle gösterildi."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9431,
+     41.0078
+    ]
+   }
+  }
+ ]
+}

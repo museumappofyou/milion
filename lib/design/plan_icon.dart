@@ -71,12 +71,30 @@ class _PlanPainter extends CustomPainter {
   final PlanSymbol symbol;
   final Color color;
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(Canvas canvas, Size size) =>
+      paintPlanSymbol(canvas, symbol, Offset.zero & size, color);
+
+  @override
+  bool shouldRepaint(_PlanPainter old) =>
+      old.symbol != symbol || old.color != color;
+}
+
+/// Draws [symbol] into [bounds] (square), as [PlanIcon] does; the Atlas uses it
+/// for its markers.
+void paintPlanSymbol(
+  Canvas canvas,
+  PlanSymbol symbol,
+  Rect bounds,
+  Color color, {
+  double strokeWidth = 1.25,
+}) {
+  {
     canvas.save();
-    canvas.scale(size.width / 24, size.height / 24);
+    canvas.translate(bounds.left, bounds.top);
+    canvas.scale(bounds.width / 24, bounds.height / 24);
     final p = Paint()
       ..color = color
-      ..strokeWidth = 1.25
+      ..strokeWidth = strokeWidth
       ..style = PaintingStyle.stroke
       ..strokeJoin = StrokeJoin.miter;
     void line(double x, double y, double a, double b) =>
@@ -379,8 +397,4 @@ class _PlanPainter extends CustomPainter {
     }
     canvas.restore();
   }
-
-  @override
-  bool shouldRepaint(_PlanPainter old) =>
-      old.symbol != symbol || old.color != color;
 }

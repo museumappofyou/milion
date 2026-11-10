@@ -1,0 +1,318 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-basilica-cistern",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Basilica Cistern",
+     "tr": "Yerebatan Sarnıcı"
+    },
+    "from": 532,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "wp-basilica-cistern-1365846547",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Built under Justinian I in the 6th century; shown from 532.",
+     "tr": "VI. yüzyılda I. Justinianus döneminde yapıldı; 532’den itibaren gösterilir."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9783826,
+     41.0084795
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-philoxenos",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Cistern of Philoxenos",
+     "tr": "Binbirdirek Sarnıcı"
+    },
+    "from": 450,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "wp-cistern-of-philoxenos-1365179166",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Built under a palace in the 5th century; shown from 450.",
+     "tr": "V. yüzyılda bir sarayın altına yapıldı; 450’den itibaren gösterilir."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.974444444444,
+     41.0075
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-theodosius-cistern",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Theodosius Cistern",
+     "tr": "Şerefiye Sarnıcı"
+    },
+    "from": 443,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "wp-theodosius-cistern-1365081953",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Built 428–443.",
+     "tr": "428–443 yılları arasında yapıldı."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9726,
+     41.00725
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-great-palace",
+    "layer": "below",
+    "kind": "substructure",
+    "names": {
+     "en": "Great Palace terraces",
+     "tr": "Büyük Saray terasları"
+    },
+    "from": 330,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-great-palace-1369328015",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "The palace descended some 33 m from the Hippodrome to the shore on six terraces carried on substructures and vaults. Outline through the Chalke, the Magnaura, the Ahırkapı gate and the Boukoleon.",
+     "tr": "Saray Hipodrom’dan kıyıya yaklaşık 33 m, altyapılar ve tonozlar üzerinde altı terasla inerdi. Sınır Khalke, Magnaura, Ahırkapı ve Bukoleon üzerinden."
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       28.9772222,
+       41.0058333
+      ],
+      [
+       28.9803619,
+       41.006012
+      ],
+      [
+       28.98184,
+       41.0037
+      ],
+      [
+       28.9768257,
+       41.0024071
+      ],
+      [
+       28.9755556,
+       41.0025
+      ],
+      [
+       28.9772222,
+       41.0058333
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-sphendone",
+    "layer": "below",
+    "kind": "substructure",
+    "names": {
+     "en": "Sphendone of the Hippodrome",
+     "tr": "Hipodrom Sfendonu"
+    },
+    "from": 330,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "wp-hippodrome-1364835690",
+     "osm-walls-2026-11-10"
+    ],
+    "note": {
+     "en": "The curved southern end of the Hippodrome, whose vaulted lower part still survives. Line as surveyed in OpenStreetMap.",
+     "tr": "Hipodrom’un kavisli güney ucu; tonozlu alt kısmı hâlâ ayakta. Çizgi OpenStreetMap ölçümünden."
+    }
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      28.9732572,
+      41.0047511
+     ],
+     [
+      28.9732321,
+      41.0046964
+     ],
+     [
+      28.9731726,
+      41.0044542
+     ],
+     [
+      28.9731761,
+      41.0043648
+     ],
+     [
+      28.9731967,
+      41.0042939
+     ],
+     [
+      28.9732453,
+      41.0042098
+     ],
+     [
+      28.9733047,
+      41.0041428
+     ],
+     [
+      28.9735345,
+      41.0039929
+     ],
+     [
+      28.9736591,
+      41.0039417
+     ],
+     [
+      28.9737664,
+      41.0039249
+     ],
+     [
+      28.9738948,
+      41.003923
+     ],
+     [
+      28.9740775,
+      41.0039735
+     ],
+     [
+      28.9742357,
+      41.0040347
+     ],
+     [
+      28.9744079,
+      41.0041422
+     ],
+     [
+      28.9747937,
+      41.0045006
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-anemas",
+    "layer": "below",
+    "kind": "substructure",
+    "names": {
+     "en": "Anemas Dungeons",
+     "tr": "Anemas Zindanları"
+    },
+    "from": 1107,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "wp-walls-of-constantinople-1383343183",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Vaulted chambers in the walls at Blachernae, named after Michael Anemas, imprisoned there in the early 12th century.",
+     "tr": "Blahernai’de surların içindeki tonozlu odalar; 12. yüzyılın başında burada hapsedilen Mikhail Anemas’ın adını taşır."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.94083,
+     41.03848
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-yenikapi",
+    "layer": "below",
+    "kind": "excavation",
+    "names": {
+     "en": "Yenikapı excavation",
+     "tr": "Yenikapı kazısı"
+    },
+    "from": 2004,
+    "to": null,
+    "certainty": "approximate",
+    "sources": [
+     "wp-yenikapi-1357055213",
+     "wp-harbour-of-eleutherios-1354353475",
+     "wikidata-historic-2026-11-10"
+    ],
+    "note": {
+     "en": "Found in 2004 while building the Marmaray and metro station: the silted Harbour of Theodosius and its shipwrecks. Outline schematic, around the transfer centre.",
+     "tr": "2004’te Marmaray ve metro istasyonu yapılırken bulundu: dolmuş Theodosius Limanı ve batıkları. Sınır şematiktir, aktarma merkezinin çevresinde."
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       28.9488,
+       41.0068
+      ],
+      [
+       28.9545,
+       41.0066
+      ],
+      [
+       28.9548,
+       41.0046
+      ],
+      [
+       28.9486,
+       41.0044
+      ],
+      [
+       28.9488,
+       41.0068
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

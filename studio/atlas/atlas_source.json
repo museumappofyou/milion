@@ -1,0 +1,187 @@
+{
+ "endpoint": "https://overpass-api.de/api/interpreter",
+ "licence": "ODbL 1.0, © OpenStreetMap contributors",
+ "projection": "metres east/north of the Milion (41.008043, 28.978066), equirectangular",
+ "clip": [
+  40.73,
+  27.96,
+  41.68,
+  29.97
+ ],
+ "queries": {
+  "buildings-1": {
+   "query": "[out:json][timeout:300];(way[\"building\"](40.985,28.905,41.015,28.9475);relation[\"building\"](40.985,28.905,41.015,28.9475););out geom;",
+   "osmBase": "2026-11-10T20:52:19Z",
+   "rawSha256": "953aacf28d554bb9293108897daa33cc937f065ca597562b7196967aae5dd031",
+   "elements": 14188
+  },
+  "buildings-2": {
+   "query": "[out:json][timeout:300];(way[\"building\"](41.015,28.905,41.045,28.9475);relation[\"building\"](41.015,28.905,41.045,28.9475););out geom;",
+   "osmBase": "2026-06-01T08:52:28Z",
+   "rawSha256": "ac9057f0d713ddf27a84d8402c4d7c5207590fa024de9b098345ce72d7dd2727",
+   "elements": 17294
+  },
+  "buildings-3": {
+   "query": "[out:json][timeout:300];(way[\"building\"](40.985,28.9475,41.015,28.990);relation[\"building\"](40.985,28.9475,41.015,28.990););out geom;",
+   "osmBase": "2026-11-10T20:56:21Z",
+   "rawSha256": "2823b6099ee45784cd42a1eed718754db452e3b9a392347b88ccba866b3a4749",
+   "elements": 7736
+  },
+  "buildings-4": {
+   "query": "[out:json][timeout:300];(way[\"building\"](41.015,28.9475,41.045,28.990);relation[\"building\"](41.015,28.9475,41.045,28.990););out geom;",
+   "osmBase": "2026-11-10T20:57:20Z",
+   "rawSha256": "b69f3ebb73796fb0e4431c82bec65eb559e0cf96832507db73f3db99b5710afe",
+   "elements": 15133
+  },
+  "coastline": {
+   "query": "[out:json][timeout:240];way[\"natural\"=\"coastline\"](40.68,27.88,41.74,30.05);out geom;",
+   "osmBase": "2026-06-01T08:52:28Z",
+   "rawSha256": "7ddd53d5b1c0f36958145049c052c85fad85c0b007e17846a9355efc6299cdfb",
+   "elements": 464
+  },
+  "districts": {
+   "query": "[out:json][timeout:240];area[\"ISO3166-2\"=\"TR-34\"]->.p;(relation[\"boundary\"=\"administrative\"][\"admin_level\"=\"6\"](area.p);relation[\"boundary\"=\"administrative\"][\"ISO3166-2\"=\"TR-34\"];);out geom;",
+   "osmBase": "2026-11-10T12:23:30Z",
+   "rawSha256": "40027dabb298a0ed5ad6567953f0d580300a7945b1129f4df0515a68e12f08c1",
+   "elements": 40
+  },
+  "parks": {
+   "query": "[out:json][timeout:240];area[\"ISO3166-2\"=\"TR-34\"]->.p;(way[\"leisure\"=\"park\"](area.p);relation[\"leisure\"=\"park\"](area.p););out geom;",
+   "osmBase": "2026-11-10T20:35:05Z",
+   "rawSha256": "a02773a9ae5ce801f2ac245a64902b69e4eb2ab8f73e0559d61ff6fb89c549ac",
+   "elements": 3753
+  },
+  "roads": {
+   "query": "[out:json][timeout:240];area[\"ISO3166-2\"=\"TR-34\"]->.p;(way[\"highway\"~\"^(motorway|trunk|primary)$\"](area.p);way[\"highway\"~\"^(secondary|tertiary)$\"](40.975,28.90,41.095,29.10););out geom;",
+   "osmBase": "2026-11-10T12:24:33Z",
+   "rawSha256": "6bf0932c17bb9d90eba0d91bb94ceb02e20eedd7f82ac05d860f11a9b24a90a0",
+   "elements": 17099
+  },
+  "stops": {
+   "query": "[out:json][timeout:240];area[\"ISO3166-2\"=\"TR-34\"]->.p;(node[\"railway\"~\"^(station|halt|tram_stop)$\"](area.p);node[\"amenity\"=\"ferry_terminal\"](area.p););out;",
+   "osmBase": "2026-11-10T20:19:45Z",
+   "rawSha256": "c31b850166aca44b31318d0087eaac96eb1f3781b7fbb1190d2ec8cd2d920b12",
+   "elements": 492
+  },
+  "transit": {
+   "query": "[out:json][timeout:240];area[\"ISO3166-2\"=\"TR-34\"]->.p;(way[\"railway\"~\"^(rail|light_rail|subway|tram|monorail|funicular|narrow_gauge)$\"](area.p);way[\"route\"=\"ferry\"](area.p););out geom;",
+   "osmBase": "2026-11-10T20:26:51Z",
+   "rawSha256": "8812fa9d47609a1ba13330a26593978914ebb6a86d58ebd4ed82654432c15a3a",
+   "elements": 1784
+  },
+  "water": {
+   "query": "[out:json][timeout:240];area[\"ISO3166-2\"=\"TR-34\"]->.p;(way[\"natural\"=\"water\"][\"water\"~\"^(lake|reservoir|lagoon|basin)$\"](area.p);relation[\"natural\"=\"water\"][\"water\"~\"^(lake|reservoir|lagoon)$\"](area.p););out geom;",
+   "osmBase": "2026-11-10T12:22:28Z",
+   "rawSha256": "a1a10671604341d4661133496e6b271c3a50b37c219ea47e7b06678ed81e111d",
+   "elements": 208
+  }
+ },
+ "tolerancesMetres": {
+  "land": [
+   4,
+   40
+  ],
+  "land_then": [
+   4,
+   40
+  ],
+  "water": [
+   6,
+   40
+  ],
+  "districts": [
+   8,
+   60
+  ],
+  "province": [
+   8,
+   60
+  ],
+  "roads": [
+   4,
+   30
+  ],
+  "rail": [
+   4,
+   30
+  ],
+  "ferry": [
+   15,
+   60
+  ],
+  "parks": [
+   4,
+   30
+  ],
+  "buildings": [
+   0.8,
+   null
+  ]
+ },
+ "counts": {
+  "land": {
+   "features": 64,
+   "points": 13130,
+   "coarsePoints": 2657
+  },
+  "land_then": {
+   "features": 1,
+   "points": 5364,
+   "coarsePoints": 1093
+  },
+  "water": {
+   "features": 51,
+   "points": 9592,
+   "coarsePoints": 2412
+  },
+  "parks": {
+   "features": 1029,
+   "points": 13477,
+   "coarsePoints": 5443
+  },
+  "districts": {
+   "features": 896,
+   "points": 14146,
+   "coarsePoints": 4536
+  },
+  "province": {
+   "features": 73,
+   "points": 1717,
+   "coarsePoints": 661
+  },
+  "roads": {
+   "features": 17099,
+   "points": 55045,
+   "coarsePoints": 37978
+  },
+  "rail": {
+   "features": 794,
+   "points": 5688,
+   "coarsePoints": 2877
+  },
+  "ferry": {
+   "features": 88,
+   "points": 998,
+   "coarsePoints": 647
+  },
+  "buildings": {
+   "features": 53782,
+   "points": 257665
+  },
+  "stops": {
+   "features": 492
+  },
+  "districtLabels": {
+   "features": 39
+  }
+ },
+ "strings": 382,
+ "partial": false,
+ "atlasBinBytes": 2203676,
+ "atlasBinSha256": "86cc8d4b16b9765ffaa233edd1a5dbb72204281f94415c968fd7bec7df359d5b",
+ "historic": {
+  "features": 47,
+  "bytes": 31244,
+  "sha256": "ae3815bafe6aa22174ca49a853d7531513389ebadce6d70f0e03a806f1914f1e"
+ }
+}

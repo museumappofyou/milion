@@ -1380,4 +1380,230 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get digLayerStudies => 'Bu katmandaki incelemeler';
+
+  @override
+  String get atlasMap => 'Harita';
+
+  @override
+  String get atlasList => 'Liste';
+
+  @override
+  String get atlasLoading => 'Şehir çiziliyor';
+
+  @override
+  String get atlasUnavailable => 'Harita yüklenemedi.';
+
+  @override
+  String get atlasFilters => 'Süzgeçler';
+
+  @override
+  String atlasFiltersActive(String count) {
+    return 'Süzgeçler · $count açık';
+  }
+
+  @override
+  String get atlasClearFilters => 'Hepsini temizle';
+
+  @override
+  String atlasShowPlaces(String count) {
+    return '$count yeri göster';
+  }
+
+  @override
+  String atlasCount(String count) {
+    return '$count yer';
+  }
+
+  @override
+  String get atlasNoMatches => 'Bu süzgeçlere uyan yer yok.';
+
+  @override
+  String get filterWave => 'Dalga';
+
+  @override
+  String get filterEra => 'Dönem';
+
+  @override
+  String get filterCategory => 'Yer türü';
+
+  @override
+  String get filterDistrict => 'İlçe';
+
+  @override
+  String get filterOpenNow => 'Şu an açık';
+
+  @override
+  String get filterOpenNowHint =>
+      'Yalnızca haftalık saatleri kayıtlı yerler; diğerleri tahmin edilmez, dışarıda kalır.';
+
+  @override
+  String get filterHasMilestone => 'Kilometre taşı var';
+
+  @override
+  String get atlasWaveByzantine => 'Bizans';
+
+  @override
+  String get atlasWaveMosques => 'Camiler';
+
+  @override
+  String get atlasWaveMuseums => 'Müzeler';
+
+  @override
+  String get atlasWaveCity => 'Şehir';
+
+  @override
+  String get atlasWaveAbroad => 'Yurt dışı';
+
+  @override
+  String get atlasEra330 => 'Konstantin’in yeni şehri';
+
+  @override
+  String get atlasEra537 => 'Justinianus’un şehri';
+
+  @override
+  String get atlasEra1200 => 'Dördüncü Haçlı Seferi’nden önce';
+
+  @override
+  String get atlasEra1453 => 'Kuşatma';
+
+  @override
+  String get atlasEra1560 => 'Süleyman’ın şehri';
+
+  @override
+  String get atlasEra1900 => 'Geç Osmanlı şehri';
+
+  @override
+  String get atlasEraToday => 'Bugün';
+
+  @override
+  String get atlasTimeSlider => 'Haritada gösterilen yıl';
+
+  @override
+  String get atlasPlay => '330’dan bugüne oynat';
+
+  @override
+  String get atlasPause => 'Duraklat';
+
+  @override
+  String get atlasRings => 'Mil halkaları';
+
+  @override
+  String atlasRingsHint(String centre) {
+    return '$centre noktasından sayılan 1.480 m’lik Roma milleri';
+  }
+
+  @override
+  String get atlasMileZero => 'sıfırıncı mil';
+
+  @override
+  String get atlasYou => 'siz';
+
+  @override
+  String get atlasFromMe => 'Benden';
+
+  @override
+  String get atlasFromMilion => 'Sıfırıncı milden';
+
+  @override
+  String get atlasLocating => 'Konumunuz bulunuyor';
+
+  @override
+  String get atlasLocationDenied =>
+      'Konum izni verilmedi. Harita onsuz da aynı çalışır.';
+
+  @override
+  String get atlasLocationOff => 'Bu telefonda konum kapalı.';
+
+  @override
+  String get atlasLocationFailed => 'Konumunuz bulunamadı.';
+
+  @override
+  String get atlasBelow => 'Yerin altı';
+
+  @override
+  String get atlasBelowHint =>
+      'Sarnıçlar, saray altyapıları, Yenikapı kazısı ve tüneller';
+
+  @override
+  String get atlasNorth => 'Kuzeyi yukarı çevir';
+
+  @override
+  String get atlasZoomIn => 'Yakınlaştır';
+
+  @override
+  String get atlasZoomOut => 'Uzaklaştır';
+
+  @override
+  String get atlasRecenter => 'Yarımadaya dön';
+
+  @override
+  String atlasMapLabel(String year, String count) {
+    return '$year yılında İstanbul haritası, $count yer. Liste aynı yerleri gösterir.';
+  }
+
+  @override
+  String atlasCluster(String count) {
+    return 'Burada $count yer';
+  }
+
+  @override
+  String get atlasClusterHint => 'yakınlaştırır';
+
+  @override
+  String atlasStandingSince(String year) {
+    return '$year yılından beri ayakta';
+  }
+
+  @override
+  String atlasStandingByEra(String year) {
+    return 'Dönemine göre yaklaşık $year yılından';
+  }
+
+  @override
+  String atlasNotYet(String year) {
+    return '$year yılında henüz yapılmamıştı';
+  }
+
+  @override
+  String get atlasOpenNow => 'Şu an açık';
+
+  @override
+  String get atlasClosedNow => 'Şu an kapalı';
+
+  @override
+  String get atlasOpenDig => 'Kazıyı aç';
+
+  @override
+  String atlasYearBc(String year) {
+    return 'MÖ $year';
+  }
+
+  @override
+  String get atlasAttribution =>
+      'Harita verisi © OpenStreetMap katkıcıları (ODbL). Tarihî katmanlar, kaynakları belirtilerek çizildi.';
+
+  @override
+  String get atlasHistoricSources => 'Tarihî katmanlar ve kaynakları';
+
+  @override
+  String get atlasCertaintySurviving => 'Ayakta';
+
+  @override
+  String get atlasCertaintyTraced => 'Kalıntılardan izlendi';
+
+  @override
+  String get atlasCertaintyApproximate => 'Yaklaşık hat';
+
+  @override
+  String get atlasCertaintyConjectural => 'Varsayımsal';
+
+  @override
+  String atlasDistanceFromMe(String distance) {
+    return 'Size $distance';
+  }
+
+  @override
+  String atlasMapLabelToday(String count) {
+    return 'Bugünkü İstanbul haritası, $count yer. Liste aynı yerleri gösterir.';
+  }
 }

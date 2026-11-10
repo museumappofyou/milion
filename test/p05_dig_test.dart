@@ -196,8 +196,7 @@ void main() {
   group('P05 dig page', () {
     Future<void> openChora(WidgetTester tester) async {
       await pumpShell(tester);
-      await tester.tap(destination('City'));
-      await ready(tester);
+      await openCityList(tester);
       final chora = find.text('Kariye Mosque (Chora)');
       await tester.scrollUntilVisible(
         chora,
@@ -260,8 +259,7 @@ void main() {
         tester,
       ) async {
         await pumpShell(tester);
-        await tester.tap(destination('City'));
-        await ready(tester);
+        await openCityList(tester);
         final row = find.text(name);
         await tester.scrollUntilVisible(
           row,
@@ -285,8 +283,7 @@ void main() {
       tester,
     ) async {
       await pumpShell(tester);
-      await tester.tap(destination('City'));
-      await ready(tester);
+      await openCityList(tester);
       final suleymaniye = find.text('Süleymaniye Mosque');
       await tester.scrollUntilVisible(
         suleymaniye,

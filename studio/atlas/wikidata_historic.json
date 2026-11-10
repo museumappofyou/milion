@@ -1,0 +1,3921 @@
+{
+"endpoint": "https://query.wikidata.org/sparql",
+"query": "SELECT ?item ?tr ?en ?coord WHERE { { SERVICE wikibase:around { ?item wdt:P625 ?coord . bd:serviceParam wikibase:center \"Point(28.955 41.020)\"^^geo:wktLiteral . bd:serviceParam wikibase:radius \"7\" . } ?item rdfs:label ?tr . FILTER(LANG(?tr) = \"tr\") FILTER(REGEX(?tr, \"^(Kara Surları, Ana Sur, T[0-9]+|Haliç Surları, [0-9]+\\\\. Kule|Marmara Surları, [0-9]+\\\\. Kule)$\")) } UNION { VALUES ?item { wd:Q1003322 wd:Q116046933 wd:Q1187380 wd:Q121423111 wd:Q122051355 wd:Q1231380 wd:Q1247271 wd:Q1247291 wd:Q12885210 wd:Q133493236 wd:Q133817567 wd:Q135429326 wd:Q135429327 wd:Q135429338 wd:Q135429340 wd:Q135429341 wd:Q135429342 wd:Q135479137 wd:Q135479138 wd:Q2630180 wd:Q2724254 wd:Q3908912 wd:Q4845769 wd:Q548109 wd:Q592270 wd:Q776353 wd:Q980626 } ?item wdt:P625 ?coord . } UNION { VALUES ?en { \"Yavuz Selim Mosque\"@en } ?item rdfs:label ?en ; wdt:P625 ?coord . } OPTIONAL { ?item rdfs:label ?tr . FILTER(LANG(?tr) = \"tr\") } OPTIONAL { ?item rdfs:label ?en . FILTER(LANG(?en) = \"en\") } }",
+"fetchedAt": "2026-11-10",
+"licence": "CC0 1.0 (Wikidata)",
+"result": {
+"head": {
+"vars": [
+"item",
+"tr",
+"en",
+"coord"
+]
+},
+"results": {
+"bindings": [
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1231380"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Forum of Constantine"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Konstantin Forumu"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.971 41.009)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1247271"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Forum of Arcadius"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Arkadios Forumu"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.943 41.0077)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1247291"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Forum of Theodosius"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Theodosius Forumu"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.96361111 41.00972222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2565329"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Yavuz Selim Mosque"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Yavuz Selim Camii"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9513 41.0266)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2630180"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Magnaura"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Magnaura"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9803619 41.006012)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2724254"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Chalke"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Halki Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.97722222 41.00583333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3908912"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Second Military Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Belgrad Kapısı (İstanbul)"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.92067 40.99982)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035230"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T84"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T84"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.934822 41.029541)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035231"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T93"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T93"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.938047 41.032421)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035228"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T92"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T92"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.937408 41.032063)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035234"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T94"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T94"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.938669 41.032715)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035233"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T83"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T83"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.934635 41.029339)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035239"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T75"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T75"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.930655 41.025803)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035236"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T74"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T74"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.93018 41.02533)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035237"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T95"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T95"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.939302 41.033016)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035242"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T97"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T97"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.940113 41.033691)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035243"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T76"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T76"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.931192 41.026272)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035240"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T96"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T96"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.939898 41.033394)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035241"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T73"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T73"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.929787 41.02483)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035246"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T64"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T64"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.925854 41.021271)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035247"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T45"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T45"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922445 41.01112)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035244"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T98"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T98"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.940208 41.033997)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035245"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T63"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T63"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.925344 41.020844)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035250"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T68"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T68"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.927301 41.022629)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035251"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T47"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T47"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922203 41.012337)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035248"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T67"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T67"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.926842 41.02216)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035249"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T46"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T46"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922457 41.01165)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035254"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T70"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T70"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.928257 41.023529)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035255"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T49"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T49"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921904 41.013363)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035252"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T69"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T69"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.927786 41.023048)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035253"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T48"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T48"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922001 41.012833)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035258"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T54"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T54"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922438 41.016109)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035259"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T55"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T55"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922796 41.016781)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035256"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T52"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T52"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922186 41.014896)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035257"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T53"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T53"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922331 41.015549)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035262"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T58"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T58"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.923815 41.018475)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035263"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T61"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T61"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.924667 41.019787)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035260"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T56"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T56"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.923145 41.017437)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035261"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T57"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T57"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.923477 41.01796)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035266"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T43"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T43"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922379 41.009876)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035267"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T20"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T20"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920771 40.998661)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035264"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T62"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T62"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.925013 41.020329)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035265"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T19"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T19"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920912 40.998165)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035270"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T21"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T21"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920589 40.999245)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035271"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T24"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T24"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920504 41.00045)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035269"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T44"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T44"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922421 41.010483)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035274"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T27"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T27"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.92083 41.001858)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035275"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T28"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T28"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920948 41.002319)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035272"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T25"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T25"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920544 41.000904)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035273"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T26"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T26"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920671 41.001373)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035278"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T32"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T32"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921436 41.004364)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035279"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T33"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T33"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921534 41.004951)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035276"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T29"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T29"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921112 41.002804)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035282"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T38"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T38"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922052 41.007309)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035283"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T17"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T17"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921204 40.997143)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035280"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T34"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T34"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921656 41.005478)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035281"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T37"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T37"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921907 41.006775)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035286"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T42"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T42"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922367 41.009296)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035287"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T2"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T2"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920059 40.989487)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035284"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T41"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T41"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922392 41.008644)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035285"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T18"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T18"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921087 40.997585)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035290"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T5"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T5"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921034 40.990971)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035291"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T6"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T6"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921509 40.991341)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035288"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T3"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T3"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920362 40.990036)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035289"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T4"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T4"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920582 40.990517)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035295"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T9"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T9"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922441 40.992855)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035292"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T7"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T7"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921982 40.991863)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035293"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T8"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T8"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922518 40.992256)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035299"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T11"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T11"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922167 40.993767)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035296"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T10"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T10"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922304 40.993237)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035302"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T12"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T12"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922041 40.994171)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035303"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T30"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T30"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921213 41.003269)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035301"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T31"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T31"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.92131 41.003826)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035306"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T60"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T60"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.924343 41.019272)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035307"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T15"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T15"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921438 40.995911)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035304"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T14"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T14"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.92157 40.995342)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035311"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T13"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T13"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921694 40.994713)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035308"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T59"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T59"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.924131 41.018967)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035309"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T16"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T16"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921352 40.996506)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035314"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T50"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T50"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921986 41.014004)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035312"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T1"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T1"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.919979 40.989014)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035319"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T35"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T35"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921772 41.005985)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035317"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T51"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T51"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922029 41.014271)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035322"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T22"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T22"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9205 40.999756)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035323"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T23"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T23"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920437 40.999973)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035320"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T36"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T36"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921787 41.006226)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035326"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T66"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T66"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.926298 41.021759)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035325"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T65"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T65"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.926197 41.021576)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035328"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T40"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T40"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922203 41.00808)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035329"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T39"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T39"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.922148 41.007866)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135429326"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Blakhernai Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Blakhernai Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9411144 41.0392189)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135429327"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Gyrolimne Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Gyrolimne Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9395752 41.0379753)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135429338"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Ahır Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Ahır Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.98184 41.0037)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135429342"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Mevlevihane Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Mevlevihane Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921885 41.014137)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135429340"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Cibali Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Cibali Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.958611 41.026188)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135429341"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Samatya Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Samatya Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.932384 40.999516)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135479138"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Silivri Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Silivri Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.921701 41.006126)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135479137"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Edirne Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Edirne Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.935419 41.030178)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4845769"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Forum of the Ox"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Bous Forumu"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.95305556 41.01)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12885210"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Yeraltı Camii"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Yeraltı Camii"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.97648333 41.02253333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q116046933"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marble Tower"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Mermer Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.920822 40.988628)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q121423111"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Aya kapi"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Aya Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.956346641 41.027844323)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q122051355"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Eğri Kapı"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Eğri Kapı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.939388 41.036442)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q133493236"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Boukoleon Palace Tower"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Bukoleon Sarayı Fener Kulesi"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9768257 41.0024071)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035114"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 95"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 95. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9278831 40.9929543)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035115"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 84"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 84. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9352703 41.000927)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035112"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 15"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 15. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.986681 41.0089188)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035118"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 76"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 76. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9461079 41.0034485)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035116"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 82"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 82. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9380779 41.0013313)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035117"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 78"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 78. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9417858 41.0022316)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035122"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 57"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 57. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9582157 41.0043526)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035123"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 45"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 45. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9651051 41.0042496)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035120"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 66"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 66. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9499226 41.0059624)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035121"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 65"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 65. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9510841 41.0064125)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035126"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 32"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 32. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9767933 41.0022697)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035127"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 31"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 31. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9779682 41.0021935)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035124"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 40"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 40. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9688969 41.0028305)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035125"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 36"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 36. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9728794 41.002285)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035139"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 98"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 98. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9255314 40.9914703)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035142"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 94"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 94. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9283791 40.9937401)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035143"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 93"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 93. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9302979 40.9951172)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035140"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 97"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 97. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9259872 40.9917526)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035141"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 96"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 96. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9268665 40.9922562)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035146"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 90"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 90. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9320831 40.997242)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035147"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 88"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 88. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.932497 40.9998131)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035144"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 92"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 92. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9310246 40.9954453)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035145"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 91"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 91. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9316006 40.9964218)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035150"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 39"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 39. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9695644 41.0027657)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035151"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 38"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 38. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9702148 41.0026245)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035148"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 87"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 87. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.932972 41.0000725)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035149"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 85"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 85. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9340038 41.0007591)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035154"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 29"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 29. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9794731 41.0024376)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035155"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 28"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 28. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9798336 41.0024605)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035152"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 37"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 37. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9707355 41.0023499)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035153"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 30"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 30. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9787674 41.0022697)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035156"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 27"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 27. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9806786 41.0028877)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q548109"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Philadelphion"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Filadelfion"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.956892 41.014086)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q592270"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Golden Gate"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Altın Kapı (İstanbul)"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9225 40.9928)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q776353"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Column of Arcadius"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Arkadios Sütunu"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9431 41.0078)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q980626"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Gate of St. Romanus"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Romanus Kapısı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.926297 41.021655)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1003322"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Boukoleon Palace"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Bukoleon Sarayı"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.97555556 41.0025)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1187380"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Augustaion"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Augustaion"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.979 41.008)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035158"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 22"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 22. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9844418 41.0056114)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035159"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 20"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 20. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9854889 41.0063171)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035157"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 24"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 24. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9822521 41.0040779)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035162"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 16"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 16. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9864845 41.0085831)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035163"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 9"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 9. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9875431 41.0114899)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035160"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 19"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 19. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9858818 41.0068932)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035161"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 17"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 17. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9863129 41.0082855)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035166"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 6"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 6. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9872761 41.0133514)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035164"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 8"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 8. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9876575 41.0124245)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035165"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 7"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 7. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9875145 41.0129242)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035168"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 5"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 5. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9872303 41.0137177)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035169"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Marmara Tower No. 4"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Marmara Surları, 4. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9870205 41.0147972)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035177"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Golden Horn Walls, Tower 30"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 30. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9496784 41.0311012)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035206"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T77"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T77"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.931673 41.026817)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035207"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T99"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T99"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.940294 41.034515)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035210"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T79"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T79"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.932364 41.027439)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035208"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T78"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T78"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.931826 41.026978)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035214"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T81"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T81"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.933458 41.028217)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035212"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T82"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T82"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.933949 41.028652)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035218"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T71"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T71"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.928724 41.023895)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035219"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T89"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T89"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.935745 41.030949)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035216"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T88"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T88"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.935596 41.030704)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035222"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T90"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T90"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.936111 41.03146)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035221"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T86"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T86"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.935209 41.030132)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035227"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T85"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T85"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.935043 41.029789)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035224"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T87"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T87"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.935452 41.030453)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035225"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Kara Surları No. T91"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T91"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.936737 41.031792)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q133817567"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Zinciri"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9795971 41.0196381)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035078"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 52. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9574986 41.0266457)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035079"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 33. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9513435 41.0300293)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035077"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 55. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9586887 41.0261459)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035080"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 5. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9434757 41.039299)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035110"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 106. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.981308 41.0162544)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035111"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 107. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9819546 41.0164146)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035170"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 56. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9589005 41.0258598)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035171"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 54. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9584713 41.026413)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035174"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 43. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9533615 41.0283966)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035175"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 32. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9508839 41.0303345)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035172"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 44. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9542389 41.0283852)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035178"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 29. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9494133 41.0314026)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035179"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 22. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9466839 41.0334969)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035176"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 31. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9500751 41.030838)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035182"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 3. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9427605 41.039753)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035183"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 2. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9424152 41.0398941)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035180"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 15. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9458332 41.036129)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035181"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 4. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9431133 41.0395241)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035186"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 14. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9456234 41.0363731)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035184"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Haliç Surları, 1. Kule"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9420815 41.0398598)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135035185"
+},
+"tr": {
+"xml:lang": "tr",
+"type": "literal",
+"value": "Kara Surları, Ana Sur, T80"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9330215 41.0277939)"
+}
+}
+]
+}
+}
+}

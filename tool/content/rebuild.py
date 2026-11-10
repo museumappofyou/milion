@@ -1,4 +1,4 @@
-"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P09 authored content.
+"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P10 authored content.
 
 Run the seed, register, daily-detail and dig builders in dependency order, then
 the P07 plate pipeline for every studio/plates/*/plate.yaml (without previews;
@@ -6,7 +6,11 @@ the P07 plate pipeline for every studio/plates/*/plate.yaml (without previews;
 register, because each plate owns its Milestone's path, status and honesty.
 The P08 study "How a dome stands" follows (model, manifest and its sources),
 then the P09 kit's buildings from studio/space/*.yaml (models, manifests,
-their sources and the study index).
+their sources and the study index), then the P10 Atlas: place years from the
+kept Wikidata response, the historic layers from tool/atlas/historic_spec.py,
+and atlas.bin from the pinned OSM responses (fetched into the gitignored
+studio/cache/atlas/raw/ by tool/atlas/fetch_osm.py; skipped with a note when
+they are absent, since they are tens of MB).
 The migrated Chora catalogue and source photographs are kept untouched.
 Validate afterwards with `dart run tool/content/validate.dart`.
 """
@@ -27,6 +31,13 @@ def main():
                    cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/space/build_kit.py')],
                    cwd=ROOT, check=True)
+    for name in ['place_years.py', 'build_historic.py']:
+        subprocess.run([sys.executable, str(ROOT / 'tool/atlas' / name)], cwd=ROOT, check=True)
+    if (ROOT / 'studio/cache/atlas/raw/coastline.json').exists():
+        subprocess.run([sys.executable, str(ROOT / 'tool/atlas/build_atlas.py')],
+                       cwd=ROOT, check=True)
+    else:
+        print('atlas.bin not rebuilt: fetch the OSM inputs with tool/atlas/fetch_osm.py')
 
 
 if __name__ == '__main__':

@@ -132,6 +132,10 @@ CHORA_VISIT = dict(
         'sırasında turistik ziyaret yapılamaz; her namazdan on beş dakika '
         'önce ziyaretçi girişi durur.'),
     hoursCheckedAt=AUDIT_DATE,
+    # The same hours, structured for the Atlas's "open now" (P10). Prayer
+    # pauses are not modelled; the text above says so.
+    weekly=[dict(days=['mon', 'tue', 'wed', 'thu', 'sat', 'sun'],
+                 opens='09:00', closes='18:00')],
     entry=loc(
         'Foreign visitors pay €20; Turkish citizens and worshippers enter '
         'free. Museum Passes are not accepted. The route starts at the north '
