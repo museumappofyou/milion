@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../city/dig_sections.dart' show SourceList;
+import '../content/geography.dart' show romanNumeral;
 import '../content/models.dart';
 import '../design/components.dart';
 import '../design/plan_icon.dart';
@@ -15,8 +17,12 @@ class ArtworkSheet extends StatefulWidget {
     this.confidence,
     this.onExamine,
     this.onScan,
+    this.sources = const [],
   });
   final Artwork artwork;
+
+  /// The artwork's source records, resolved by the caller.
+  final List<Source> sources;
   final double? confidence;
   final VoidCallback? onExamine;
 
@@ -88,11 +94,100 @@ class _ArtworkSheetState extends State<ArtworkSheet> {
             const SizedBox(height: 16),
             Text(summary),
           ],
-          if (a.cues.isNotEmpty) ...[
+          if (a.lookFor.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Semantics(
+              header: true,
+              child: Text(s.lookForThree, style: theme.textTheme.titleMedium),
+            ),
+            const SizedBox(height: 8),
+            for (final (i, item) in a.lookFor.indexed)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 24,
+                      child: Text(
+                        romanNumeral(i + 1),
+                        style: TypeRole.measurement.copyWith(
+                          color: MeasureColors.of(context).accent,
+                        ),
+                      ),
+                    ),
+                    Expanded(child: Text(item.inLanguage(lang))),
+                  ],
+                ),
+              ),
+          ] else if (a.cues.isNotEmpty) ...[
             const SizedBox(height: 16),
             Text(s.lookFor, style: theme.textTheme.titleMedium),
             const SizedBox(height: 8),
             Text(a.cues.map((c) => c.inLanguage(lang)).join(' · ')),
+          ],
+          if (a.story != null) ...[
+            const SizedBox(height: 16),
+            Semantics(
+              header: true,
+              child: Text(s.artworkStory, style: theme.textTheme.titleMedium),
+            ),
+            const SizedBox(height: 8),
+            Text(a.story!.inLanguage(lang)),
+          ],
+          if (a.inscriptions.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Semantics(
+              header: true,
+              child: Text(
+                s.artworkInscriptions,
+                style: theme.textTheme.titleMedium,
+              ),
+            ),
+            for (final ins in a.inscriptions)
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: MergeSemantics(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        ins.greek,
+                        locale: const Locale('el'),
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontFamily: TypeRole.displayFamily,
+                          fontFamilyFallback: TypeRole.displayFallback,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      Text(
+                        ins.transliteration,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      Text('“${ins.translation.inLanguage(lang)}”'),
+                      if (ins.basis == InscriptionBasis.photograph)
+                        Text(
+                          s.inscriptionFromPhoto,
+                          style: theme.textTheme.bodySmall,
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+          if (a.condition != null) ...[
+            const SizedBox(height: 16),
+            Semantics(
+              header: true,
+              child: Text(
+                s.artworkCondition,
+                style: theme.textTheme.titleMedium,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(a.condition!.inLanguage(lang)),
           ],
           if (widget.onExamine != null) ...[
             const SizedBox(height: 16),
@@ -122,6 +217,10 @@ class _ArtworkSheetState extends State<ArtworkSheet> {
             Text(s.where, style: theme.textTheme.titleMedium),
             const SizedBox(height: 8),
             Text(a.position.inLanguage(lang)),
+          ],
+          if (widget.sources.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            SourceList(sources: widget.sources, title: s.sourcesTitle),
           ],
           const SizedBox(height: 24),
           const Divider(),

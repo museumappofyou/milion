@@ -1606,4 +1606,94 @@ class AppLocalizationsTr extends AppLocalizations {
   String atlasMapLabelToday(String count) {
     return 'Bugünkü İstanbul haritası, $count yer. Liste aynı yerleri gösterir.';
   }
+
+  @override
+  String get lookForThree => 'Bakılacak üç şey';
+
+  @override
+  String get artworkStory => 'Hikâye';
+
+  @override
+  String get artworkInscriptions => 'Yazıtlar';
+
+  @override
+  String get inscriptionFromPhoto =>
+      'Kaynağı belirtilen bir fotoğraftan okundu';
+
+  @override
+  String get artworkCondition => 'Durumu';
+
+  @override
+  String get guidePlan => 'Plan';
+
+  @override
+  String guideTitle(String place, String count) {
+    return '$place: plan ve $count eser';
+  }
+
+  @override
+  String get guideAllRooms => 'Bütün mekânlar';
+
+  @override
+  String guideRoomCount(String room, String count) {
+    return '$room · $count eser';
+  }
+
+  @override
+  String get guideCatalogue => 'Katalog ve arama';
+
+  @override
+  String get guideCycles => 'Bir döngüyü yürüyün';
+
+  @override
+  String guideCycleStop(String n, String total) {
+    return 'Durak $n / $total';
+  }
+
+  @override
+  String get guideNext => 'Sonraki';
+
+  @override
+  String get guidePrevious => 'Önceki';
+
+  @override
+  String get guideEndCycle => 'Yürüyüşü bitir';
+
+  @override
+  String get guideOpenArtwork => 'Eseri aç';
+
+  @override
+  String guidePlanLabel(String place, String rooms) {
+    return '$place planı: $rooms. Eserlerini görmek için aşağıdan bir mekân seçin.';
+  }
+
+  @override
+  String guideYouAreHere(String title) {
+    return '$title önündesiniz';
+  }
+
+  @override
+  String guideFoundByCamera(String title) {
+    return 'Kamerayla bulundu: $title';
+  }
+
+  @override
+  String get guideHunt => 'Kariye avı';
+
+  @override
+  String guideHuntIntro(String count) {
+    return 'Yapıda bulunacak $count şey';
+  }
+
+  @override
+  String get guideHuntAnswer => 'Cevabı göster';
+
+  @override
+  String get guideSurfaceDome => 'Kubbeler';
+
+  @override
+  String get guideSurfaceVault => 'Tonozlar';
+
+  @override
+  String get guideSurfaceWall => 'Duvarlar, kemerler ve nişler';
 }

@@ -7,7 +7,9 @@ import '../design/components.dart';
 import '../design/plan_icon.dart';
 import '../design/theme.dart';
 import '../design/tokens.dart';
+import '../content/models.dart';
 import '../l10n/strings.dart';
+import '../shell/app_scope.dart';
 
 import 'package:image_picker/image_picker.dart';
 
@@ -20,9 +22,15 @@ class ScanTab extends StatefulWidget {
     required this.classifier,
     this.explorable = const {},
     this.onExplore,
+    this.onLocate,
   });
 
   final Classifier classifier;
+
+  /// When the scanner was opened from a place's plan: a confident match is
+  /// handed back with the camera frame's place on screen, so the plan can
+  /// fly it home (P11). Without it a match opens the artwork sheet.
+  final void Function(Artwork artwork, Rect cameraFrame)? onLocate;
 
   /// Artwork ids with a playable plate; [onExplore] opens one by id.
   final Set<String> explorable;
@@ -314,9 +322,20 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       isScrollControlled: true,
       builder: (context) => _ResultsSheet(matches: matches, image: bytes),
     );
-    if (selected != null && mounted) {
-      await _openArtwork(selected);
+    if (selected != null && mounted) _found(selected);
+  }
+
+  /// The scan target's place on screen: where a found artwork flies from.
+  final _targetKey = GlobalKey();
+
+  void _found(ArtworkMatch match) {
+    final locate = widget.onLocate;
+    final box = _targetKey.currentContext?.findRenderObject() as RenderBox?;
+    if (locate == null || box == null) {
+      _openArtwork(match);
+      return;
     }
+    locate(match.artwork, box.localToGlobal(Offset.zero) & box.size);
   }
 
   Future<void> _openArtwork(ArtworkMatch match) async {
@@ -325,6 +344,9 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
       isScrollControlled: true,
       builder: (context) => ArtworkSheet(
         artwork: match.artwork,
+        sources:
+            AppScope.maybeOf(context)?.registry?.sourcesOf(match.artwork) ??
+            const [],
         confidence: match.probability,
         onExamine:
             widget.explorable.contains(match.artwork.id) &&
@@ -394,6 +416,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
                               IgnorePointer(
                                 child: Center(
                                   child: Container(
+                                    key: _targetKey,
                                     width: 220,
                                     height: 220,
                                     decoration: BoxDecoration(
@@ -440,7 +463,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
                               InkWell(
                                 onTap: _liveMatch == null
                                     ? null
-                                    : () => _openArtwork(_liveMatch!),
+                                    : () => _found(_liveMatch!),
                                 child: Padding(
                                   padding: const EdgeInsets.only(bottom: 16),
                                   child: Text(

@@ -1,4 +1,5 @@
 import 'geography.dart';
+import 'guide.dart';
 import 'json_reader.dart';
 import 'models.dart';
 
@@ -12,7 +13,11 @@ const recordKinds = [
   'routes',
   'hunts',
   'details',
+  'guides',
 ];
+
+/// Record kinds added within schema 1; a document may omit them.
+const additiveKinds = {'guides'};
 
 /// Tags marking records that are not a single visitable point.
 const nonPointTags = {'area', 'representative-point', 'location-contested'};
@@ -27,7 +32,8 @@ class ContentRegistry {
       media = _records(data, 'media', Media.fromJson),
       routes = _records(data, 'routes', Route.fromJson),
       hunts = _records(data, 'hunts', Hunt.fromJson),
-      details = _records(data, 'details', Detail.fromJson);
+      details = _records(data, 'details', Detail.fromJson),
+      guides = _records(data, 'guides', PlaceGuide.fromJson);
   factory ContentRegistry.fromJson(Json data) {
     final report = validateContent(data);
     if (!report.isValid) throw FormatException(report.errors.join('\n'));
@@ -41,6 +47,15 @@ class ContentRegistry {
   final List<Route> routes;
   final List<Hunt> hunts;
   final List<Detail> details;
+  final List<PlaceGuide> guides;
+
+  /// The guide for [placeId] (P11: Chora), if one exists.
+  PlaceGuide? guideFor(String placeId) {
+    for (final g in guides) {
+      if (g.placeId == placeId) return g;
+    }
+    return null;
+  }
 
   late final Map<String, Place> _places = {for (final p in places) p.id: p};
   late final Map<String, Milestone> _milestones = {
@@ -87,15 +102,29 @@ class ContentRegistry {
       });
 
   Artwork artwork(String id) => artworks.firstWhere((a) => a.id == id);
+
+  /// An artwork's sources, its inscriptions' included, without repeats.
+  List<Source> sourcesOf(Artwork a) => [
+    for (final id in {
+      ...a.sourceIds,
+      for (final i in a.inscriptions) ...i.sourceIds,
+    })
+      ?source(id),
+  ];
 }
 
 List<T> _records<T>(Json data, String kind, T Function(Json) parse) =>
-    List.unmodifiable((data[kind] as List).map((j) => parse(j as Json)));
+    List.unmodifiable(
+      ((data[kind] as List?) ?? const []).map((j) => parse(j as Json)),
+    );
 
 class ValidationReport {
   final List<String> errors = [];
   final List<String> missingTurkish = [];
   int localizedCount = 0;
+
+  /// Artworks complete in the §4 sense (P11: Chora's 103).
+  int completeArtworks = 0;
   final Map<String, int> categories = {
     for (final c in Category.values) c.name: 0,
   };
@@ -134,6 +163,7 @@ ValidationReport validateContent(Json data) {
     'routes': Route.fromJson,
     'hunts': Hunt.fromJson,
     'details': Detail.fromJson,
+    'guides': PlaceGuide.fromJson,
   };
   void localizations(dynamic value, String path) {
     if (value is Map) {
@@ -156,7 +186,8 @@ ValidationReport validateContent(Json data) {
   for (final kind in recordKinds) {
     byKind[kind] = {};
     parsed[kind] = [];
-    final records = data[kind];
+    // Kinds added after schema 1 shipped may be absent: absent means none.
+    final records = data[kind] ?? (additiveKinds.contains(kind) ? [] : null);
     if (records is! List) {
       error('$kind must be an array');
       continue;
@@ -346,6 +377,67 @@ ValidationReport validateContent(Json data) {
     refs(a.id, [a.placeId], 'places');
     refs(a.id, a.mediaIds, 'media');
     refs(a.id, a.sourceIds, 'sources', required: true);
+    if (a.lookFor.isNotEmpty && a.lookFor.length != 3) {
+      error('${a.id} needs exactly three things to look for');
+    }
+    for (final (i, ins) in a.inscriptions.indexed) {
+      refs(
+        '${a.id}.inscriptions[$i]',
+        ins.sourceIds,
+        'sources',
+        required: true,
+      );
+      if (ins.greek.trim().isEmpty || ins.transliteration.trim().isEmpty) {
+        error('${a.id}.inscriptions[$i] needs the Greek and a transliteration');
+      }
+      if (RegExp('[A-Za-z]').hasMatch(ins.greek)) {
+        error('${a.id}.inscriptions[$i] has Latin letters in the Greek');
+      }
+    }
+    if (a.complete) report.completeArtworks++;
+  }
+  final artworksByPlace = <String, List<Artwork>>{};
+  for (final a in parsed['artworks']!.cast<Artwork>()) {
+    (artworksByPlace[a.placeId] ??= []).add(a);
+  }
+  for (final g in parsed['guides']!.cast<PlaceGuide>()) {
+    refs(g.id, [g.placeId], 'places');
+    refs(g.id, g.sourceIds, 'sources', required: true);
+    final roomIds = {for (final r in g.rooms) r.id};
+    if (roomIds.length != g.rooms.length) error('${g.id} repeats a room id');
+    for (final v in g.vaults) {
+      if (!roomIds.contains(v.room)) {
+        error('${g.id} vault in unknown room ${v.room}');
+      }
+    }
+    final own = {
+      for (final a in artworksByPlace[g.placeId] ?? <Artwork>[]) a.id,
+    };
+    for (final id in own.difference(g.anchors.keys.toSet())) {
+      error('${g.id} has no plan anchor for $id');
+    }
+    for (final a in g.anchors.values) {
+      if (!own.contains(a.artworkId)) {
+        error('${g.id} anchors ${a.artworkId}, not an artwork of ${g.placeId}');
+      }
+      final room = g.room(a.room);
+      if (room == null) {
+        error('${g.id} anchor ${a.artworkId} in unknown room ${a.room}');
+      } else if (!room.contains(a.at)) {
+        error('${g.id} anchor ${a.artworkId} lies outside ${a.room}');
+      }
+    }
+    final cycleIds = <String>{};
+    for (final c in g.cycles) {
+      if (!cycleIds.add(c.id)) error('${g.id} repeats cycle ${c.id}');
+      refs('${g.id}.${c.id}', c.sourceIds, 'sources', required: true);
+      if (c.artworkIds.length < 2) error('${g.id}.${c.id} needs two stops');
+      for (final id in c.artworkIds) {
+        if (!own.contains(id)) {
+          error('${g.id}.${c.id} lists unknown artwork $id');
+        }
+      }
+    }
   }
   final numerals = <String>{};
   for (final m in parsed['milestones']!.cast<Milestone>()) {
@@ -400,6 +492,12 @@ ValidationReport validateContent(Json data) {
     refs(h.id, h.artworkIds, 'artworks');
     refs(h.id, h.sourceIds, 'sources', required: true);
     if (h.clues.isEmpty) error('${h.id} requires clues');
+    final itemIds = <String>{};
+    for (final item in h.items) {
+      if (!itemIds.add(item.id)) error('${h.id} repeats item ${item.id}');
+      refs('${h.id}.${item.id}', item.artworkIds, 'artworks');
+      refs('${h.id}.${item.id}', item.sourceIds, 'sources', required: true);
+    }
   }
   final milestones = {
     for (final m in parsed['milestones']!.cast<Milestone>()) m.id: m,

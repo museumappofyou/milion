@@ -1,0 +1,156 @@
+{
+  "id": "kariye-camii",
+  "parts": 65,
+  "triangles": 16128,
+  "vertices": 8436,
+  "bytes": 149708,
+  "axis": {
+    "axis": 104.5,
+    "footprintAxis": 104.5,
+    "offDegrees": 0.0,
+    "footprint": [
+      36.52,
+      32.38
+    ],
+    "source": "osm-relation-7614527"
+  },
+  "dimensions": [
+    {
+      "id": "naos-dome-diameter",
+      "measured": 7.699,
+      "cited": 7.7,
+      "tolerance": 0.05,
+      "error": -0.0001
+    },
+    {
+      "id": "parekklesion-dome-diameter",
+      "measured": 4.498,
+      "cited": 4.5,
+      "tolerance": 0.05,
+      "error": -0.0005
+    },
+    {
+      "id": "naos-drum-windows",
+      "measured": 8.0,
+      "cited": 8,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "parekklesion-drum-windows",
+      "measured": 12.0,
+      "cited": 12,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "inner-north-dome-windows",
+      "measured": 8.0,
+      "cited": 8,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "outer-narthex-bays",
+      "measured": 7.0,
+      "cited": 7,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "inner-narthex-length",
+      "measured": 18.379,
+      "cited": 18,
+      "tolerance": 0.05,
+      "error": 0.0211
+    },
+    {
+      "id": "inner-narthex-bays",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "parekklesion-bays",
+      "measured": 2.0,
+      "cited": 2,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "columns-1081",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    }
+  ],
+  "byPart": {
+    "substructure": 180,
+    "floor": 192,
+    "naos-wall-n": 212,
+    "naos-wall-s": 212,
+    "naos-wall-w": 288,
+    "bema-n": 36,
+    "bema-s": 36,
+    "naos-columns": 1008,
+    "apse-narrow": 216,
+    "apse-narrow-cap": 144,
+    "naos-piers": 112,
+    "apse": 312,
+    "apse-cap": 144,
+    "prothesis-wall-n": 76,
+    "prothesis-wall-e": 132,
+    "prothesis-wall-w": 56,
+    "diakonikon-wall-w": 36,
+    "diakonikon-wall-s": 76,
+    "diakonikon-wall-e": 132,
+    "side-apses": 88,
+    "side-apses-cap": 288,
+    "naos-arms": 272,
+    "naos-pendentives": 272,
+    "naos-ring": 192,
+    "dome-early": 384,
+    "dome-early-drum": 128,
+    "naos-dome": 384,
+    "naos-dome-drum": 384,
+    "prothesis-dome": 512,
+    "prothesis-dome-drum": 128,
+    "diakonikon-dome": 384,
+    "diakonikon-dome-drum": 128,
+    "annex-wall-n": 116,
+    "annex-floor": 68,
+    "annex-vaults": 136,
+    "inner-wall-w": 272,
+    "inner-wall-n": 56,
+    "inner-wall-s": 56,
+    "inner-pendentives": 272,
+    "inner-dome-n": 1024,
+    "inner-dome-n-drum": 384,
+    "inner-pendentives-s": 272,
+    "inner-dome-s": 1536,
+    "inner-dome-s-drum": 128,
+    "inner-vaults": 120,
+    "outer-wall-w": 596,
+    "outer-wall-n": 60,
+    "outer-wall-s": 92,
+    "outer-vaults": 420,
+    "parek-wall-n": 176,
+    "parek-wall-s": 136,
+    "parek-arcade": 384,
+    "parek-arcade-arches": 204,
+    "parek-pendentives": 272,
+    "parek-dome": 384,
+    "parek-dome-drum": 448,
+    "parek-vault": 60,
+    "parek-apse": 312,
+    "parek-apse-cap": 144,
+    "belfry": 180,
+    "belfry-roof": 24,
+    "flying-buttress": 80,
+    "minaret": 228,
+    "minaret-serefe": 216,
+    "minaret-cap": 128
+  }
+}

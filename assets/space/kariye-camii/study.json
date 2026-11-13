@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "kariye-camii",
+  "title": {
+    "en": "Chora through time",
+    "tr": "Zaman içinde Kariye"
+  },
+  "description": {
+    "en": "Four building campaigns in one small church, drawn from below: the vaulted substructures of the sixth century, Maria Doukaina's church of about 1077–81, its rebuilding with a broad apse early in the twelfth century, and Theodore Metochites' work of about 1316–21, which rebuilt the dome and side chapels and wrapped the church in two narthexes, a north annex, a domed funeral chapel and a belfry. The scrubber ends with the Ottoman mosque, its minaret in the belfry's corner. Plan from Van Millingen's measured drawing; heights are estimates. A diagram, not a survey.",
+    "tr": "Küçük bir kilisede dört yapım evresi, aşağıdan çizilmiş: 6. yüzyılın tonozlu alt yapıları, Maria Dukaina'nın yaklaşık 1077–81 tarihli kilisesi, 12. yüzyılın başında geniş bir apsisle yeniden yapılışı ve Theodoros Metokhites'in yaklaşık 1316–21 tarihli işi: kubbeyi ve yan şapelleri yeniden yaptırdı, kiliseyi iki narteks, kuzey ek yapısı, kubbeli bir mezar şapeli ve bir çan kulesiyle çevirdi. Zaman çubuğu Osmanlı camisiyle biter; minaresi çan kulesinin köşesindedir. Plan Van Millingen'in ölçekli çiziminden; yükseklikler tahmindir. Bu bir şemadır, rölöve değildir."
+  },
+  "model": "assets/space/kariye-camii/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "chora",
+  "orientation": {
+    "axis": 104.5,
+    "source": "osm-relation-7614527"
+  },
+  "epochs": [
+    {
+      "year": 1081,
+      "label": {
+        "en": "Maria Doukaina's church, c. 1077–81",
+        "tr": "Maria Dukaina'nın kilisesi, y. 1077–81"
+      }
+    },
+    {
+      "year": 1120,
+      "label": {
+        "en": "Rebuilt with a broad apse, early 12th century",
+        "tr": "Geniş apsisle yeniden yapım, 12. yüzyıl başı"
+      }
+    },
+    {
+      "year": 1321,
+      "label": {
+        "en": "Metochites' Chora, c. 1316–21",
+        "tr": "Metokhites'in Kariye'si, y. 1316–21"
+      }
+    },
+    {
+      "year": 1511,
+      "label": {
+        "en": "Kariye Camii, by 1511",
+        "tr": "Kariye Camii, 1511'e kadar"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "substructure",
+      "parts": [
+        "substructure"
+      ],
+      "seconds": 2.2,
+      "epochs": [],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "Sixth-century foundations",
+        "tr": "6. yüzyıl temelleri"
+      },
+      "caption": {
+        "en": "The oldest evidence is underground: vaulted substructures of the sixth century in the foundations of the naos. Their shape is not drawn.",
+        "tr": "En eski iz yerin altında: naosun temellerinde 6. yüzyıldan kalma tonozlu alt yapılar. Biçimleri çizilmedi."
+      }
+    },
+    {
+      "id": "walls",
+      "parts": [
+        "floor",
+        "naos-wall-n",
+        "naos-wall-s",
+        "naos-wall-w",
+        "bema-n",
+        "bema-s"
+      ],
+      "seconds": 2.2,
+      "epochs": [],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "Walls of about 1077–81",
+        "tr": "Yaklaşık 1077–81 duvarları"
+      },
+      "caption": {
+        "en": "The north, west and south walls of the naos stand where they were set out in the eleventh century, when Maria Doukaina rebuilt the church.",
+        "tr": "Naosun kuzey, batı ve güney duvarları, Maria Dukaina'nın kiliseyi yeniden yaptırdığı 11. yüzyılda belirlenen yerlerinde duruyor."
+      }
+    },
+    {
+      "id": "columns",
+      "parts": [
+        "naos-columns"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1081
+      ],
+      "sources": [
+        "wp-the-chora-1381788152"
+      ],
+      "label": {
+        "en": "An inscribed cross",
+        "tr": "Kapalı Yunan haçı"
+      },
+      "caption": {
+        "en": "Her church was an inscribed cross: four supports under a central dome. Where they stood is not known; the drawing places them.",
+        "tr": "Onun kilisesi kapalı Yunan haçı planlıydı: merkezi kubbenin altında dört destek. Yerleri bilinmiyor; çizim onları yerleştiriyor."
+      }
+    },
+    {
+      "id": "narrow-apse",
+      "parts": [
+        "apse-narrow",
+        "apse-narrow-cap"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1081
+      ],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "A narrower apse",
+        "tr": "Daha dar bir apsis"
+      },
+      "caption": {
+        "en": "Excavation in 1957–58 found a narrower apse flanked by side apses, probably from this church.",
+        "tr": "1957–58 kazısı yan apsislerle çevrili daha dar bir apsis buldu; büyük olasılıkla bu kiliseden."
+      }
+    },
+    {
+      "id": "side-chapels",
+      "parts": [
+        "prothesis-wall-n",
+        "prothesis-wall-e",
+        "prothesis-wall-w",
+        "diakonikon-wall-w",
+        "diakonikon-wall-s",
+        "diakonikon-wall-e",
+        "side-apses",
+        "side-apses-cap"
+      ],
+      "seconds": 2.2,
+      "epochs": [],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "Side chapels",
+        "tr": "Yan şapeller"
+      },
+      "caption": {
+        "en": "Two chapels flank the sanctuary, each with its own small apse, three faces outside.",
+        "tr": "Kutsal alanın iki yanında birer şapel; her birinin dışta üç yüzlü küçük bir apsisi var."
+      }
+    },
+    {
+      "id": "vaults",
+      "parts": [
+        "naos-arms",
+        "naos-pendentives",
+        "naos-ring"
+      ],
+      "seconds": 2.2,
+      "epochs": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "A short-armed cross",
+        "tr": "Kısa kollu bir haç"
+      },
+      "caption": {
+        "en": "Barrel vaults over short arms and the bema, and pendentives turning the square bay into the ring under the dome.",
+        "tr": "Kısa kollar ve bema üzerinde beşik tonozlar; pandantifler kare bölmeyi kubbenin altındaki bileziğe çevirir."
+      }
+    },
+    {
+      "id": "dome-early",
+      "parts": [
+        "dome-early",
+        "dome-early-drum"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1081,
+        1120
+      ],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "The first dome",
+        "tr": "İlk kubbe"
+      },
+      "caption": {
+        "en": "A dome over the centre; its form before Metochites rebuilt it is not known.",
+        "tr": "Ortada bir kubbe; Metokhites onu yeniden yaptırmadan önceki biçimi bilinmiyor."
+      }
+    },
+    {
+      "id": "piers",
+      "parts": [
+        "naos-piers"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1120,
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "Rebuilt on piers",
+        "tr": "Ayaklar üzerinde yeniden"
+      },
+      "caption": {
+        "en": "Early in the twelfth century the church partly collapsed and was rebuilt with a more stable design: piers in place of columns.",
+        "tr": "12. yüzyılın başında kilise kısmen çöktü ve daha sağlam bir tasarımla yeniden yapıldı: sütunların yerine ayaklar."
+      }
+    },
+    {
+      "id": "broad-apse",
+      "parts": [
+        "apse",
+        "apse-cap"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1120,
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "The broad apse",
+        "tr": "Geniş apsis"
+      },
+      "caption": {
+        "en": "The present broad apse belongs to this rebuilding: five flat faces outside and a triple window.",
+        "tr": "Bugünkü geniş apsis bu yeniden yapıma ait: dışta beş düz yüz ve üçlü bir pencere."
+      }
+    },
+    {
+      "id": "dome",
+      "parts": [
+        "naos-dome",
+        "naos-dome-drum"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912",
+        "wp-the-chora-1381788152"
+      ],
+      "label": {
+        "en": "Metochites' dome, 7.7 m",
+        "tr": "Metokhites'in kubbesi, 7,7 m"
+      },
+      "caption": {
+        "en": "Metochites rebuilt the dome, 7.7 m across, on a ribbed drum of sixteen segments pierced by eight windows. Its crown is Ottoman.",
+        "tr": "Metokhites 7,7 m çapındaki kubbeyi on altı dilimli, sekiz pencereli bir kasnak üzerinde yeniden yaptırdı. Tepesi Osmanlı işi."
+      }
+    },
+    {
+      "id": "chapel-domes",
+      "parts": [
+        "prothesis-dome",
+        "prothesis-dome-drum",
+        "diakonikon-dome",
+        "diakonikon-dome-drum"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "Side chapels rebuilt",
+        "tr": "Yan şapeller yeniden"
+      },
+      "caption": {
+        "en": "He rebuilt the side chapels too: the north one under a dome of eight concave sections, the south one under a plain dome.",
+        "tr": "Yan şapelleri de yeniden yaptırdı: kuzeydekini sekiz iç bükey dilimli bir kubbeyle, güneydekini düz bir kubbeyle."
+      }
+    },
+    {
+      "id": "annex",
+      "parts": [
+        "annex-wall-n",
+        "annex-floor",
+        "annex-vaults"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "A two-storey annex",
+        "tr": "İki katlı ek yapı"
+      },
+      "caption": {
+        "en": "On the north, a two-storey annex: barrel-vaulted, the upper floor with a small window looking into the church.",
+        "tr": "Kuzeyde iki katlı bir ek yapı: beşik tonozlu; üst katında kiliseye bakan küçük bir pencere."
+      }
+    },
+    {
+      "id": "inner-narthex",
+      "parts": [
+        "inner-wall-w",
+        "inner-wall-n",
+        "inner-wall-s",
+        "inner-pendentives",
+        "inner-dome-n",
+        "inner-dome-n-drum",
+        "inner-pendentives-s",
+        "inner-dome-s",
+        "inner-dome-s-drum",
+        "inner-vaults"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "The inner narthex",
+        "tr": "İç narteks"
+      },
+      "caption": {
+        "en": "To the west, an inner narthex of four bays, domes over the end bays: the north one of sixteen segments, the south one larger.",
+        "tr": "Batıda dört bölmeli bir iç narteks; uç bölmelerin üstünde kubbeler: kuzeydeki on altı dilimli, güneydeki daha büyük."
+      }
+    },
+    {
+      "id": "outer-narthex",
+      "parts": [
+        "outer-wall-w",
+        "outer-wall-n",
+        "outer-wall-s",
+        "outer-vaults"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "van-millingen-1912",
+        "ousterhout-2002"
+      ],
+      "label": {
+        "en": "The outer narthex, seven bays",
+        "tr": "Dış narteks, yedi bölme"
+      },
+      "caption": {
+        "en": "An outer narthex of seven bays under dome vaults: five along the front and two returned at the south end, in front of the funeral chapel.",
+        "tr": "Kubbemsi tonozlu yedi bölmeli bir dış narteks: beşi cephe boyunca, ikisi güney uçta mezar şapelinin önüne dönerek."
+      }
+    },
+    {
+      "id": "parekklesion",
+      "parts": [
+        "parek-wall-n",
+        "parek-wall-s",
+        "parek-arcade",
+        "parek-arcade-arches",
+        "parek-pendentives",
+        "parek-dome",
+        "parek-dome-drum",
+        "parek-vault",
+        "parek-apse",
+        "parek-apse-cap"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "van-millingen-1912",
+        "wp-the-chora-1381788152"
+      ],
+      "label": {
+        "en": "The funeral chapel",
+        "tr": "Mezar şapeli"
+      },
+      "caption": {
+        "en": "On the south, the parekklesion: a high drum dome of twelve windows, 4.5 m across, over its west bay, a dome vault over the east bay, an apse.",
+        "tr": "Güneyde parekklesion: batı bölmesinin üstünde on iki pencereli yüksek kasnaklı, 4,5 m çapında bir kubbe, doğu bölmede kubbemsi bir tonoz ve bir apsis."
+      }
+    },
+    {
+      "id": "belfry",
+      "parts": [
+        "belfry",
+        "belfry-roof"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321
+      ],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "A belfry",
+        "tr": "Bir çan kulesi"
+      },
+      "caption": {
+        "en": "A belfry over the south-west corner bay, marked with Metochites' monograms. No document describes it; its height is a guess.",
+        "tr": "Güneybatı köşe bölmesinin üstünde Metokhites'in monogramlarını taşıyan bir çan kulesi. Onu anlatan bir belge yok; yüksekliği tahmindir."
+      }
+    },
+    {
+      "id": "buttress",
+      "parts": [
+        "flying-buttress"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1321,
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction",
+        "van-millingen-1912"
+      ],
+      "label": {
+        "en": "A flying buttress",
+        "tr": "Bir uçan payanda"
+      },
+      "caption": {
+        "en": "Last, a flying buttress to hold the twelfth-century apse, an idea rare in Byzantine building.",
+        "tr": "Son olarak 12. yüzyıl apsisini tutmak için bir uçan payanda; Bizans yapılarında nadir bir fikir."
+      }
+    },
+    {
+      "id": "minaret",
+      "parts": [
+        "minaret",
+        "minaret-serefe",
+        "minaret-cap"
+      ],
+      "seconds": 2.2,
+      "epochs": [
+        1511
+      ],
+      "sources": [
+        "ousterhout-introduction"
+      ],
+      "label": {
+        "en": "The minaret",
+        "tr": "Minare"
+      },
+      "caption": {
+        "en": "Between 1495 and 1511 the church became a mosque: a mihrab in the apse, and a minaret in place of the belfry.",
+        "tr": "1495 ile 1511 arasında kilise camiye çevrildi: apsiste bir mihrap ve çan kulesinin yerine bir minare."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "dome-early",
+    "seconds": 8.0,
+    "turnDegrees": 30,
+    "caption": {
+      "en": "Maria Doukaina's church of about 1077–81: an inscribed cross under a dome, on sixth-century foundations.",
+      "tr": "Maria Dukaina'nın yaklaşık 1077–81 tarihli kilisesi: 6. yüzyıl temelleri üstünde, kubbeli bir kapalı Yunan haçı."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 6.0,
+    "elevation": -50,
+    "azimuth": 225
+  },
+  "sources": [
+    "ousterhout-2002",
+    "van-millingen-1912",
+    "wp-the-chora-1381788152"
+  ],
+  "triangles": 16128,
+  "citations": [
+    {
+      "id": "osm-relation-7614527",
+      "title": {
+        "en": "OpenStreetMap relation 7614527, Kariye Camii",
+        "tr": "OpenStreetMap ilişkisi 7614527, Kariye Camii"
+      },
+      "url": "https://www.openstreetmap.org/relation/7614527",
+      "author": {
+        "en": "OpenStreetMap contributors",
+        "tr": "OpenStreetMap katkıcıları"
+      },
+      "accessedAt": "2026-11-12",
+      "licence": {
+        "en": "ODbL 1.0",
+        "tr": "ODbL 1.0"
+      }
+    },
+    {
+      "id": "van-millingen-1912",
+      "title": {
+        "en": "Byzantine Churches in Constantinople (London, 1912)",
+        "tr": "Byzantine Churches in Constantinople (Londra, 1912)"
+      },
+      "url": "https://www.gutenberg.org/ebooks/29077",
+      "author": {
+        "en": "Alexander Van Millingen, with Ramsay Traquair, W. S. George and A. E. Henderson",
+        "tr": "Alexander Van Millingen; Ramsay Traquair, W. S. George ve A. E. Henderson ile"
+      },
+      "accessedAt": "2026-10-17",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "wp-the-chora-1381788152",
+      "title": {
+        "en": "The Chora — Wikipedia (revision 1381788152)",
+        "tr": "The Chora — Wikipedia (1381788152 numaralı sürüm)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?oldid=1381788152",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Wikipedia katkıcıları"
+      },
+      "accessedAt": "2026-11-12",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "choisy-1883",
+      "title": {
+        "en": "L'art de bâtir chez les Byzantins (Paris, 1883), scan",
+        "tr": "L'art de bâtir chez les Byzantins (Paris, 1883), tarama"
+      },
+      "url": "https://digit.biblio.polito.it/secure/5914/1/L%20art%20de%20batir%20chez%20les%20byzantines_comp.pdf",
+      "author": {
+        "en": "Auguste Choisy",
+        "tr": "Auguste Choisy"
+      },
+      "accessedAt": "2026-10-12",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "ousterhout-2002",
+      "title": {
+        "en": "The Art of the Kariye Camii",
+        "tr": "The Art of the Kariye Camii"
+      },
+      "url": "https://archive.org/details/ousterhout-r.-the-art-of-kariye-camii-2002-compressed",
+      "author": {
+        "en": "Robert G. Ousterhout",
+        "tr": "Robert G. Ousterhout"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": null
+    },
+    {
+      "id": "ousterhout-introduction",
+      "title": {
+        "en": "The Kariye Camii: An Introduction — history, decoration and architecture",
+        "tr": "The Kariye Camii: An Introduction — tarih, bezeme ve mimari"
+      },
+      "url": "https://www.columbia.edu/cu/wallach/exhibitions/Byzantium/pdf/ousterhout_intro.pdf",
+      "author": {
+        "en": "Robert G. Ousterhout",
+        "tr": "Robert G. Ousterhout"
+      },
+      "accessedAt": "2026-10-08",
+      "licence": null
+    }
+  ]
+}

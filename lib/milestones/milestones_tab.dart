@@ -31,7 +31,7 @@ class MilestonesTab extends StatelessWidget {
                     child: Text(
                       s.registerCounts(
                         '${register.length}',
-                        '${register.where((m) => AppScope.of(context).plates.forMilestone(m) != null).length}',
+                        '${register.where(AppScope.of(context).playable).length}',
                         '${register.where((m) => m.status == MilestoneStatus.approved).length}',
                         '${register.where((m) => m.status == MilestoneStatus.planned).length}',
                       ),

@@ -393,7 +393,8 @@ void main() {
         expect(uri.host, 'www.google.com');
         expect(uri.path, '/maps/dir/');
         expect(uri.query, contains('travelmode=walking'));
-        expect(uri.query, contains('destination=${chora.coordinates.lat},'));
+        // P11 gave Chora a checked entrance; directions lead there.
+        expect(uri.query, contains('destination=${chora.entrance!.lat},'));
       },
     );
 

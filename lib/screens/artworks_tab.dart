@@ -6,6 +6,7 @@ import '../design/plan_icon.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../services/notes_service.dart';
+import '../shell/app_scope.dart';
 import '../widgets/artwork_sheet.dart';
 
 /// The catalogue, rendered from typed registry records. The temporary
@@ -66,6 +67,8 @@ class _ArtworksTabState extends State<ArtworksTab> {
       isScrollControlled: true,
       builder: (_) => ArtworkSheet(
         artwork: artwork,
+        sources:
+            AppScope.maybeOf(context)?.registry?.sourcesOf(artwork) ?? const [],
         onExamine: _interactive(artwork) && widget.onExamine != null
             ? () => widget.onExamine!(artwork.id)
             : null,

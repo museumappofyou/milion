@@ -1,5 +1,24 @@
 {
   "schemaVersion": 1,
   "kind": "routes",
-  "records": []
+  "records": [
+    {
+      "id": "chora-visit",
+      "title": {
+        "en": "A visit to Chora",
+        "tr": "Kariye ziyareti"
+      },
+      "body": {
+        "en": "The hunt’s route: the outer and inner narthex, the naos, the parekklesion and the east end outside.",
+        "tr": "Avın güzergâhı: dış ve iç narteks, naos, parekklesion ve dışarıdan doğu ucu."
+      },
+      "places": [
+        "chora"
+      ],
+      "sources": [
+        "ousterhout-2002",
+        "van-millingen-1912"
+      ]
+    }
+  ]
 }

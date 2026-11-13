@@ -890,5 +890,91 @@
         "type": "String"
       }
     }
-  }
+  },
+  "lookForThree": "Three things to look for",
+  "artworkStory": "The story",
+  "artworkInscriptions": "Inscriptions",
+  "inscriptionFromPhoto": "Read from a credited photograph",
+  "artworkCondition": "Condition",
+  "guidePlan": "Plan",
+  "guideTitle": "{place}: the plan and its {count} artworks",
+  "@guideTitle": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "guideAllRooms": "All rooms",
+  "guideRoomCount": "{room} · {count} artworks",
+  "@guideRoomCount": {
+    "placeholders": {
+      "room": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "guideCatalogue": "Catalogue and search",
+  "guideCycles": "Walk a cycle",
+  "guideCycleStop": "Stop {n} of {total}",
+  "@guideCycleStop": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "guideNext": "Next",
+  "guidePrevious": "Previous",
+  "guideEndCycle": "End the walk",
+  "guideOpenArtwork": "Open the artwork",
+  "guidePlanLabel": "Plan of {place}: {rooms}. Choose a room below to list its artworks.",
+  "@guidePlanLabel": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      },
+      "rooms": {
+        "type": "String"
+      }
+    }
+  },
+  "guideYouAreHere": "You are at {title}",
+  "@guideYouAreHere": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "guideFoundByCamera": "Found by the camera: {title}",
+  "@guideFoundByCamera": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "guideHunt": "The Chora hunt",
+  "guideHuntIntro": "{count} things to find in the building",
+  "@guideHuntIntro": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "guideHuntAnswer": "Show the answer",
+  "guideSurfaceDome": "Domes",
+  "guideSurfaceVault": "Vaults",
+  "guideSurfaceWall": "Walls, arches and niches"
 }

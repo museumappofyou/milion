@@ -1,0 +1,1046 @@
+{
+ "group": "naos-passage",
+ "records": [
+  {
+   "id": "M01",
+   "title": {
+    "en": "Dormition of the Virgin",
+    "tr": "Meryem’in Ölümü (Koimesis)"
+   },
+   "room": {
+    "en": "Naos",
+    "tr": "Naos"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "Inside the naos, above the main west door, directly over a carved marble lintel.",
+    "tr": "Naosun içinde, ana batı kapısının üstünde, oymalı mermer lentonun hemen üzerinde."
+   },
+   "summary": {
+    "en": "Mary lies on a draped bier while Christ, framed by a mandorla of grey angels, holds her soul as a swaddled infant.",
+    "tr": "Meryem örtülü bir ölüm yatağında yatıyor; gri tonlu meleklerle dolu mandorlanın içindeki İsa, onun ruhunu kundaklı bir bebek olarak kucağında tutuyor."
+   },
+   "cues": [
+    {
+     "en": "bier",
+     "tr": "ölüm yatağı"
+    },
+    {
+     "en": "censer",
+     "tr": "buhurdan"
+    },
+    {
+     "en": "mandorla",
+     "tr": "mandorla"
+    },
+    {
+     "en": "angels",
+     "tr": "melekler"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "Christ carries Mary’s soul as a tiny swaddled child in the crook of his left arm.",
+     "tr": "İsa, Meryem’in ruhunu sol kolunda kundaklı küçük bir bebek olarak taşıyor."
+    },
+    {
+     "en": "At the head of the bier, Peter swings a censer on long chains.",
+     "tr": "Yatağın baş ucunda Petrus, uzun zincirli bir buhurdanı sallıyor."
+    },
+    {
+     "en": "Below the panel, a sixth-century marble lintel carved with birds and baskets of fruit.",
+     "tr": "Panonun altında, kuşlar ve meyve sepetleriyle bezeli, 6. yüzyıldan kalma bir mermer lento."
+    }
+   ],
+   "story": {
+    "en": "The Koimesis is the only survivor of the naos mosaics, which probably showed the major feasts from the lives of Christ and the Virgin. Christ has come down in glory to carry his mother’s soul to heaven, while apostles, bishops and women crowd around the bier. In the version told by the Kültür Envanteri guide, an angel had warned Mary three days before, and of the apostles only Thomas arrived too late.",
+    "tr": "Koimesis, naosun mozaiklerinden günümüze kalan tek sahnedir; bu alanda büyük olasılıkla İsa’nın ve Meryem’in hayatından bayram sahneleri vardı. İsa annesinin ruhunu göğe taşımak için ışıklar içinde inmiş; ölüm yatağının çevresini havariler, piskoposlar ve kadınlar sarmış. Kültür Envanteri rehberinin aktardığı anlatıya göre bir melek Meryem’e üç gün önceden haber vermişti; havarilerden yalnızca Thomas yetişememişti."
+   },
+   "inscriptions": [
+    {
+     "greek": "Η [ΚΟΙΜΗ]ϹΙϹ ΤΗϹ ΘΚΟΥ",
+     "transliteration": "Hē [koimē]sis tēs Th(eoto)kou",
+     "translation": {
+      "en": "The Dormition of the Theotokos",
+      "tr": "Theotokos’un ölümü (Koimesis)"
+     },
+     "basis": "photograph",
+     "sources": [
+      "chora-guide"
+     ]
+    },
+    {
+     "greek": "ΙϹ ΧϹ",
+     "transliteration": "Iē(sou)s Ch(risto)s",
+     "translation": {
+      "en": "Jesus Christ",
+      "tr": "İsa Mesih"
+     },
+     "basis": "photograph",
+     "sources": [
+      "chora-guide"
+     ]
+    }
+   ],
+   "condition": {
+    "en": "The panel survived because it had been plastered over and painted to look like marble. Plaster now fills losses over the left half of the title and at the lower right corner.",
+    "tr": "Pano, üzeri sıvanıp mermer taklidi boyandığı için korunabildi. Başlık yazısının sol yarısındaki ve sağ alt köşedeki kayıplar bugün sıvayla doldurulmuş."
+   },
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "The Koimesis is the only surviving part of the naos decoration, above the west entrance.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "The only remaining part of this decorative program is the Koimesis, or Dormition of the Virgin, above the western entrance."
+    },
+    {
+     "field": "story",
+     "claim": "The naos vaults probably carried the feast scenes from the lives of Christ and the Virgin.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "The vaults and upper walls were probably decorated with the major scenes from the lives of Christ and the Virgin"
+    },
+    {
+     "field": "story",
+     "claim": "Christ descends in glory to carry her soul, shown as a swaddled infant, to heaven.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "Behind her is Christ, who has descended in a blaze of glory to carry her soul—represented as a swaddled infant—up to heaven."
+    },
+    {
+     "field": "story",
+     "claim": "An angel told Mary she would join her son within three days; Thomas did not arrive in time.",
+     "source": "chora-guide",
+     "locator": "scene 1, Hikaye",
+     "quote": "Meryem’e bir melek görünerek üç gün içerisinde oğluna kavuşacağını haber verir."
+    },
+    {
+     "field": "story",
+     "claim": "Thomas missed Mary’s death.",
+     "source": "chora-guide",
+     "locator": "scene 1, Hikaye",
+     "quote": "Ancak Havari Şüpheci Thomas Meryem’in ölümüne yetişemez."
+    },
+    {
+     "field": "summary",
+     "claim": "The mandorla is filled with grisaille angels.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "surrounded by a mandorla filled with elegant grisaille angels."
+    },
+    {
+     "field": "lookFor",
+     "claim": "Peter swings the censer beside Mary’s head.",
+     "source": "chora-guide",
+     "locator": "scene 1, Betimleme",
+     "quote": "Meryem’in başının yanında Havari Petrus, elinde tütsü kabını sallayarak tasvir edilir."
+    },
+    {
+     "field": "lookFor",
+     "claim": "The lintel below the Dormition is carved with birds and fruit baskets and dates from the sixth century.",
+     "source": "ousterhout-2002",
+     "locator": "p. 100",
+     "quote": "The lintel above the main entrance to the naos, below the Dormition mosaic, is decorated with birds and baskets of fruit."
+    },
+    {
+     "field": "condition",
+     "claim": "The panel was plastered and painted as marble, which preserved it.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "This panel had been plastered and painted to resemble marble and was thus preserved."
+    },
+    {
+     "field": "condition",
+     "claim": "Plaster patches over the left half of the title and at the lower right; visible in the photograph (Kültür Envanteri / Ccangul, 2024).",
+     "source": "chora-guide",
+     "locator": "photograph web-01",
+     "quote": ""
+    },
+    {
+     "field": "inscriptions",
+     "claim": "Title read from the photograph: ‘-ϹΙϹ ΤΗϹ ΘΚΟΥ’ legible, first word partly under a plaster patch; ΙϹ ΧϹ beside the seraph; visible in the photograph.",
+     "source": "chora-guide",
+     "locator": "photograph web-01",
+     "quote": ""
+    }
+   ],
+   "gaps": [
+    "The first word of the title lies partly under a plaster patch; ‘ΚΟΙΜΗ’ is restored from the scene’s standard title, not read.",
+    "The Kültür Envanteri guide lists Anna among the mourners and places the apostles’ gathering in Bethlehem; Ousterhout does not, so neither detail is used."
+   ]
+  },
+  {
+   "id": "M02",
+   "title": {
+    "en": "Hodegetria Virgin",
+    "tr": "Yol Gösterici Meryem (Hodegetria)"
+   },
+   "room": {
+    "en": "Naos",
+    "tr": "Naos"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "In a marble frame to the right of the sanctuary opening; the mosque’s minbar now stands just to its left.",
+    "tr": "Apsis açıklığının sağında, mermer çerçeve içinde; caminin minberi bugün hemen solunda duruyor."
+   },
+   "summary": {
+    "en": "Mary holds the gold-robed Christ child on her arm and gestures toward him, under the title ‘Dwelling-place of the Uncontainable’.",
+    "tr": "Meryem altın giysili çocuk İsa’yı kolunda taşıyıp eliyle onu gösteriyor; başının yanında ‘Sığmayanı sığdıran yer’ unvanı yazılı."
+   },
+   "cues": [
+    {
+     "en": "haloes",
+     "tr": "haleler"
+    },
+    {
+     "en": "gold-robed child",
+     "tr": "altın giysili çocuk"
+    },
+    {
+     "en": "carved canopy",
+     "tr": "oymalı mermer saçak"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "Gold letters at upper left, ΜΗΡ and Η ΧΩΡΑ, begin her two titles.",
+     "tr": "Sol üstteki altın zeminde ΜΗΡ ve Η ΧΩΡΑ harfleri, iki unvanının başlangıcı."
+    },
+    {
+     "en": "The child, robed in gold tesserae, twists round and lifts his face toward his mother.",
+     "tr": "Altın mozaik taşlarından giysili çocuk, dönüp yüzünü annesine doğru kaldırıyor."
+    },
+    {
+     "en": "Above the frame, a carved marble canopy of acanthus leaves with defaced busts of Christ and angels.",
+     "tr": "Çerçevenin üstünde, akantus yapraklı oymalı mermer saçak ve yüzleri tahrip edilmiş İsa ile melek büstleri."
+    }
+   ],
+   "story": {
+    "en": "The Hodegetria, ‘she who shows the way’, was believed to copy a portrait of the Virgin painted by St Luke. This icon and the standing Christ opposite were framed and set on either side of the templon screen that once divided the naos from the bema. Her title, ‘Dwelling-place of the Uncontainable’, plays on the monastery’s name, Chora.",
+    "tr": "Hodegetria, yani ‘yol gösteren’ tipi, Aziz Luka’nın yaptığına inanılan bir Meryem portresine dayanır. Bu ikona ile karşısındaki ayakta İsa, bir zamanlar naosu bemadan ayıran templon perdesinin iki yanına çerçeveli olarak yerleştirilmişti. Meryem’in ‘Sığmayanı sığdıran yer’ unvanı, manastırın adı Khora ile oynayan bir sözdür."
+   },
+   "inscriptions": [
+    {
+     "greek": "ΜΗΡ ΘΥ",
+     "transliteration": "Mē(te)r Th(eo)u",
+     "translation": {
+      "en": "Mother of God",
+      "tr": "Tanrı’nın Annesi"
+     },
+     "basis": "source",
+     "sources": [
+      "chora-guide"
+     ]
+    },
+    {
+     "greek": "Η ΧΩΡΑ ΤΟΥ ΑΧΩΡΗΤΟΥ",
+     "transliteration": "Hē chōra tou achōrētou",
+     "translation": {
+      "en": "Dwelling-place of the Uncontainable",
+      "tr": "Sığmayanı sığdıran yer"
+     },
+     "basis": "source",
+     "sources": [
+      "ousterhout-2002",
+      "chora-guide"
+     ]
+    }
+   ],
+   "condition": {
+    "en": "Ousterhout describes both sanctuary icons as damaged. Most of the gold ground has fallen, exposing the pinkish setting bed, and the right-hand half of the inscription is faint.",
+    "tr": "Ousterhout, apsisin iki yanındaki ikonaların ikisini de hasarlı olarak tanımlar. Altın zeminin çoğu dökülmüş, altındaki pembemsi harç yatağı açığa çıkmış; yazının sağ yarısı da silik."
+   },
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "The Hodegetria type was believed to derive from a portrait by St Luke.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "The image of the Virgin is a common iconic type known as the Hodegetria, believed to be based on a portrait painted by St. Luke."
+    },
+    {
+     "field": "story",
+     "claim": "Hodegetria means the Virgin ‘who shows the way’.",
+     "source": "ousterhout-2002",
+     "locator": "p. 128 (glossary)",
+     "quote": "Hodegetria. An image of the Virgin “who shows the way,”"
+    },
+    {
+     "field": "story",
+     "claim": "The two icons were framed and set either side of the templon screen.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21 (caption)",
+     "quote": "These icons were both framed and set to either side of the templon screen, which separated the naos from the bema."
+    },
+    {
+     "field": "story",
+     "claim": "The epithets play on the monastery’s name, Chora.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "Both play on the name of the monastery, Chora, giving it a mystical meaning as appellations of the Virgin and Christ."
+    },
+    {
+     "field": "inscriptions",
+     "claim": "The Virgin is inscribed ‘Dwelling-place of the Uncontainable’.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "The Virgin is inscribed “Dwelling-place (chora) of the Uncontainable.”"
+    },
+    {
+     "field": "inscriptions",
+     "claim": "Greek text of both titles beside the Virgin’s head.",
+     "source": "chora-guide",
+     "locator": "scene 2, Betimleme",
+     "quote": "“Tanrı Anası” anlamındaki Meter Theon (Mηρ Θv) ve “Sığdırılamayanı Sığdıran” anlamında He Khora tou akhoretu (ἡ χώρα τοῦ ἀχωρήτου) yazar."
+    },
+    {
+     "field": "lookFor",
+     "claim": "The canopy above the Virgin is carved with acanthus; its figures are Christ and angels with destroyed faces.",
+     "source": "ousterhout-2002",
+     "locator": "p. 100",
+     "quote": "Although the faces of the figures have been destroyed, we can still identify them as Christ and angels."
+    },
+    {
+     "field": "condition",
+     "claim": "Both sanctuary icons are damaged.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "Both are damaged."
+    },
+    {
+     "field": "condition",
+     "claim": "Gold ground largely lost and right half of the inscription faint; visible in the photograph (Kültür Envanteri / Caner Cangül).",
+     "source": "chora-guide",
+     "locator": "photograph web-ke-02",
+     "quote": ""
+    }
+   ],
+   "gaps": [
+    "The record’s former cues ‘platform’ and ‘scroll’ could not be confirmed in the photographs (the lower part of the panel is lost); they are replaced.",
+    "The right-hand inscription (ΘΥ … ΤΟΥ ΑΧΩΡΗΤΟΥ) is too faint in the photographs to read independently; its text comes from the sources."
+   ]
+  },
+  {
+   "id": "M03",
+   "title": {
+    "en": "Standing Christ Pantokrator",
+    "tr": "Ayakta İsa Mesih (Pantokrator)"
+   },
+   "room": {
+    "en": "Naos",
+    "tr": "Naos"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "In a marble frame to the left of the sanctuary opening, facing the Hodegetria on the other side.",
+    "tr": "Apsis açıklığının solunda, mermer çerçeve içinde; öbür yandaki Hodegetria ile karşılıklı."
+   },
+   "summary": {
+    "en": "Christ stands in a blue mantle holding a gospel book open at Matthew 11:28, his right hand laid against his chest.",
+    "tr": "Mavi himationlu İsa, Matta 11:28’de açılmış bir İncil tutuyor; sağ elini göğsüne dayamış."
+   },
+   "cues": [
+    {
+     "en": "gospel book",
+     "tr": "İncil"
+    },
+    {
+     "en": "halo",
+     "tr": "hale"
+    },
+    {
+     "en": "platform",
+     "tr": "kaide"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "The open book begins ΔΕΥΤΕ ΠΡΟϹ ΜΕ, ‘Come unto me’, in black letters.",
+     "tr": "Açık kitaptaki siyah harfli yazı ΔΕΥΤΕ ΠΡΟϹ ΜΕ, yani ‘Bana gelin’ diye başlıyor."
+    },
+    {
+     "en": "His right hand rests on his chest, palm turned inward toward himself.",
+     "tr": "Sağ eli göğsünde, avucu kendine dönük duruyor."
+    },
+    {
+     "en": "Sandalled feet stand on a low platform at the bottom of the panel.",
+     "tr": "Panonun altında, sandaletli ayaklar alçak bir kaidenin üzerinde duruyor."
+    }
+   ],
+   "story": {
+    "en": "This Christ and the Hodegetria opposite were framed icons flanking the templon screen, and the pair recurs as matching images throughout the building. The open book quotes Matthew 11:28: ‘Come unto me, all ye that labour and are heavy laden.’ His epithet, now mostly lost, read ‘Dwelling-place of the Living’, another play on the name Chora.",
+    "tr": "Bu İsa ile karşısındaki Hodegetria, templon perdesinin iki yanındaki çerçeveli ikonalardı; ikili, yapının her yerinde karşılıklı imgeler olarak tekrar eder. Açık kitap Matta 11:28’den alıntıdır: ‘Ey bütün yorgunlar ve yükü ağır olanlar, bana gelin.’ Bugün büyük kısmı kayıp olan unvanı ‘Yaşayanların Diyarı’ idi; bu da Khora adına bir göndermedir."
+   },
+   "inscriptions": [
+    {
+     "greek": "ΔΕΥΤΕ ΠΡΟϹ ΜΕ ΠΑΝΤΕϹ ΟΙ ΚΟΠΙΩΝΤΕϹ ΚΑΙ ΠΕΦΟΡΤΙϹΜΕΝΟΙ ΚΑΓΩ",
+     "transliteration": "Deute pros me pantes hoi kopiōntes kai pephortismenoi kagō",
+     "translation": {
+      "en": "Come unto me, all ye that labour and are heavy laden, and I … (Matthew 11:28)",
+      "tr": "Ey bütün yorgunlar ve yükü ağır olanlar, bana gelin; ben de … (Matta 11:28)"
+     },
+     "basis": "photograph",
+     "sources": [
+      "chora-guide",
+      "ousterhout-2002"
+     ]
+    },
+    {
+     "greek": "Η ΧΩΡΑ ΤΩΝ ΖΩΝΤΩΝ",
+     "transliteration": "Hē chōra tōn zōntōn",
+     "translation": {
+      "en": "Dwelling-place of the Living",
+      "tr": "Yaşayanların Diyarı"
+     },
+     "basis": "source",
+     "sources": [
+      "ousterhout-2002",
+      "chora-guide"
+     ]
+    }
+   ],
+   "condition": {
+    "en": "Ousterhout describes both sanctuary icons as damaged: around the head most tesserae have fallen, leaving a trace of the halo. The carved canopy over this frame has disappeared, though the corbels beneath the icon survive.",
+    "tr": "Ousterhout apsisin iki yanındaki ikonaları hasarlı olarak tanımlar: başın çevresindeki mozaik taşlarının çoğu dökülmüş, haleden yalnızca bir iz kalmış. Bu çerçevenin oymalı saçağı yok olmuş; ikonanın altındaki konsollar ise duruyor."
+   },
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "Christ and the Virgin flank the sanctuary and appear as pendant images throughout the building.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "framed mosaic icons of Christ (1) and the Virgin (2), who are shown in pendant images throughout the building."
+    },
+    {
+     "field": "story",
+     "claim": "Christ holds the gospels open at Matthew 11:28.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "Christ is depicted holding the gospels open at Matthew 11:28: “Come unto me, all ye that labor and are heavy laden"
+    },
+    {
+     "field": "story",
+     "claim": "Christ’s epithet is only partly preserved and read ‘Dwelling-place of the Living’.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "Christ's inscription is only partially preserved but originally read as \"Dwelling-place (chora) of the Living.\""
+    },
+    {
+     "field": "inscriptions",
+     "claim": "The book carries Matthew 11:28; the Greek letters are legible in the photograph.",
+     "source": "chora-guide",
+     "locator": "scene 3, Betimleme; photograph web-ke-02",
+     "quote": "Elindeki açık sayfada Matta 11:28’de bulunan şu bab yazılıdır"
+    },
+    {
+     "field": "inscriptions",
+     "claim": "Greek of the epithet beside the head.",
+     "source": "chora-guide",
+     "locator": "scene 3, Betimleme",
+     "quote": "“Yaşayanların Diyarı” anlamında He Khora Ton Zonton (ἡ χώρα τών ζώντων) yazar."
+    },
+    {
+     "field": "lookFor",
+     "claim": "The right hand turns inward toward himself.",
+     "source": "chora-guide",
+     "locator": "scene 3, Betimleme",
+     "quote": "sağ eli kendini işaret eder biçimde içe dönüktür."
+    },
+    {
+     "field": "lookFor",
+     "claim": "Christ stands on a podium in contrapposto.",
+     "source": "chora-guide",
+     "locator": "scene 3, Betimleme",
+     "quote": "Podyum üzerinde kontrapost denilen vücut ağırlığının tek bacağa verildiği pozisyonda durur."
+    },
+    {
+     "field": "condition",
+     "claim": "Both sanctuary icons are damaged.",
+     "source": "ousterhout-2002",
+     "locator": "p. 21",
+     "quote": "Both are damaged."
+    },
+    {
+     "field": "condition",
+     "claim": "Most tesserae around the head are lost but the halo’s trace remains.",
+     "source": "chora-guide",
+     "locator": "scene 3, Betimleme",
+     "quote": "Başı kısmında mozaiklerin çoğu dökülmüş olsa da halesinin izi bellidir."
+    },
+    {
+     "field": "condition",
+     "claim": "The corbels survive under the Christ icon but its canopy is gone.",
+     "source": "ousterhout-2002",
+     "locator": "p. 100",
+     "quote": "The corbels survive beneath the icon of Christ, although the canopy has disappeared"
+    }
+   ],
+   "gaps": [
+    "The epithet Η ΧΩΡΑ ΤΩΝ ΖΩΝΤΩΝ and the ΙϹ ΧϹ monogram are not legible in the photographs viewed; the epithet is given from the sources only.",
+    "Some word endings on the book are compressed or abbreviated in the mosaic; the Greek is given in full, and the text breaks off after ΚΑΓΩ."
+   ]
+  },
+  {
+   "id": "M04",
+   "title": {
+    "en": "Christ Pantokrator, Land of the Living",
+    "tr": "Pantokrator İsa, Yaşayanların Diyarı"
+   },
+   "room": {
+    "en": "Passage",
+    "tr": "Geçit"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "In the lunette over the door from the outer into the inner narthex, facing visitors who enter from the west.",
+    "tr": "Dış narteksten iç nartekse açılan kapının üstündeki lünette; batıdan girenlerin tam karşısında."
+   },
+   "summary": {
+    "en": "A half-length Christ holds a jewelled gospel book and gestures with his right hand, flanked by ‘Jesus Christ, the Land of the Living’.",
+    "tr": "Belden yukarısı görünen İsa mücevherli bir İncil tutuyor ve sağ eliyle işaret ediyor; iki yanında ‘İsa Mesih, Yaşayanların Diyarı’ yazıyor."
+   },
+   "cues": [
+    {
+     "en": "gospel book",
+     "tr": "İncil"
+    },
+    {
+     "en": "cross halo",
+     "tr": "haçlı hale"
+    },
+    {
+     "en": "lunette",
+     "tr": "lünet"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "Black letters on gold either side of the head: ΙϹ ΧϹ and Η ΧΩΡΑ ΤΩΝ ΖΩΝΤΩΝ.",
+     "tr": "Başın iki yanında altın üzerine siyah harfler: ΙϹ ΧϹ ve Η ΧΩΡΑ ΤΩΝ ΖΩΝΤΩΝ."
+    },
+    {
+     "en": "A cross inside the halo, its arms drawn in thin red lines.",
+     "tr": "Halenin içinde, kolları ince kırmızı çizgilerle çizilmiş bir haç."
+    },
+    {
+     "en": "The fingers gripping the jewelled book are spread apart.",
+     "tr": "Mücevherli kitabı kavrayan parmaklar birbirinden ayrık."
+    }
+   ],
+   "story": {
+    "en": "This is the first image met on entering from the west, set opposite the Virgin Blachernitissa over the main entrance. Ousterhout traces the epithet ‘Land of the Living’ to Psalm 116 and the funeral liturgy, where it means the reward of the faithful in heaven. The Kültür Envanteri guide adds that Christ looks across at the Virgin’s panel rather than at the viewer, and that his ears were made unequal so the face seems to move as visitors walk.",
+    "tr": "Batıdan girenlerin ilk gördüğü görüntü budur ve ana girişin üstündeki Blachernitissa Meryem panosunun tam karşısındadır. Ousterhout, ‘Yaşayanların Diyarı’ unvanını 116. Mezmur’a ve cenaze ayinine bağlar; ifade, inananları cennette bekleyen ödülü anlatır. Kültür Envanteri rehberine göre İsa izleyiciye değil karşıdaki Meryem panosuna bakar; kulakları da ziyaretçi yürürken yüz hareket ediyormuş gibi görünsün diye asimetrik yapılmıştır."
+   },
+   "inscriptions": [
+    {
+     "greek": "ΙϹ ΧϹ",
+     "transliteration": "Iē(sou)s Ch(risto)s",
+     "translation": {
+      "en": "Jesus Christ",
+      "tr": "İsa Mesih"
+     },
+     "basis": "photograph",
+     "sources": [
+      "chora-guide"
+     ]
+    },
+    {
+     "greek": "Η ΧΩΡΑ ΤΩΝ ΖΩΝΤΩΝ",
+     "transliteration": "Hē chōra tōn zōntōn",
+     "translation": {
+      "en": "The Land (Dwelling-place) of the Living",
+      "tr": "Yaşayanların Diyarı"
+     },
+     "basis": "photograph",
+     "sources": [
+      "chora-guide",
+      "ousterhout-2002"
+     ]
+    }
+   ],
+   "condition": {
+    "en": "Christ’s figure and both inscriptions are largely intact. At both lower corners of the lunette the gold ground is lost and filled with plain plaster.",
+    "tr": "İsa figürü ve iki yazı büyük ölçüde sağlam. Lünetin iki alt köşesinde altın zemin dökülmüş, yerini düz sıva almış."
+   },
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide",
+    "psalm-116-9"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "Visitors entering from the west face the Pantokrator over the door to the inner narthex.",
+     "source": "ousterhout-2002",
+     "locator": "p. 23",
+     "quote": "one is confronted by a monumental image of Christ Pantokrator (or Judge of All) above the door to the inner narthex."
+    },
+    {
+     "field": "story",
+     "claim": "The Virgin Blachernitissa over the main entrance faces Christ as its pendant.",
+     "source": "ousterhout-2002",
+     "locator": "p. 23",
+     "quote": "Facing Christ is the pendant image of The Virgin Blachernitissa, directly above the main entrance."
+    },
+    {
+     "field": "story",
+     "claim": "The epithet comes from Psalm 116 and the funeral liturgy and refers to the reward of the faithful.",
+     "source": "ousterhout-2002",
+     "locator": "p. 104",
+     "quote": "a line borrowed from Psalm 116 and the funeral liturgy—referring to the eternal reward of the faithful in heaven"
+    },
+    {
+     "field": "story",
+     "claim": "Psalm 116:9 speaks of the land of the living.",
+     "source": "psalm-116-9",
+     "locator": "Psalm 116:9 (KJV)",
+     "quote": "I will walk before the LORD in the land of the living."
+    },
+    {
+     "field": "story",
+     "claim": "Christ looks at the Virgin panel opposite, not at the viewer.",
+     "source": "chora-guide",
+     "locator": "scene 4, Betimleme",
+     "quote": "İsa bu sahnede izleyiciye değil tam karşısında yer alan Meryem panosuna bakmaktadır."
+    },
+    {
+     "field": "story",
+     "claim": "The ears were made asymmetrical so that Christ seems to move with the visitor.",
+     "source": "chora-guide",
+     "locator": "scene 4, Betimleme",
+     "quote": "Ziyaretçinin yapı içerisinde hareket edince İsa’nın da hareketli görünmesi için sağ ve sol kulakları asimetrik yapılmıştır."
+    },
+    {
+     "field": "summary",
+     "claim": "Christ holds the gospel in one hand and gestures with the other.",
+     "source": "ousterhout-2002",
+     "locator": "p. 23",
+     "quote": "He holds the gospel in one hand and gestures with the other."
+    },
+    {
+     "field": "lookFor",
+     "claim": "The fingers holding the book are spread apart.",
+     "source": "chora-guide",
+     "locator": "scene 4, Betimleme",
+     "quote": "Kitabı tutan parmakları İsa’ya özgü şekilde ayrık yapılmıştır."
+    },
+    {
+     "field": "inscriptions",
+     "claim": "The inscription reads ‘Jesus Christ, Dwelling-Place of the Living’; ΙϹ ΧϹ and Η ΧΩΡΑ ΤΩΝ ΖΩΝΤΩΝ are legible in the photograph.",
+     "source": "ousterhout-2002",
+     "locator": "p. 23",
+     "quote": "The inscription reads \"Jesus Christ, Dwelling-Place of the Living.\""
+    },
+    {
+     "field": "condition",
+     "claim": "Gold ground lost and plastered at both lower corners of the lunette; visible in the photograph (Kültür Envanteri / Caner Cangül).",
+     "source": "chora-guide",
+     "locator": "photograph web-ke-01",
+     "quote": ""
+    }
+   ],
+   "gaps": [
+    "The deliberate asymmetry of the ears and the gaze toward the Virgin panel come from the Kültür Envanteri guide only; Ousterhout does not mention them.",
+    "Title changed from ‘Christ Pantokrator at the Passage’: Ousterhout has no room called ‘Passage’ (see the group notes)."
+   ]
+  },
+  {
+   "id": "M06",
+   "title": {
+    "en": "Hodegetria Virgin beside the Door",
+    "tr": "Kapı Yanındaki Yol Gösterici Meryem"
+   },
+   "room": {
+    "en": "Passage",
+    "tr": "Geçit"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "In the arched panel immediately left of the door from the outer into the inner narthex.",
+    "tr": "Dış narteksten iç nartekse açılan kapının hemen solundaki kemerli panoda."
+   },
+   "summary": {
+    "en": "Mary, in a dark blue maphorion, holds the Christ child on her left arm and points to him with her right hand.",
+    "tr": "Koyu mavi maphorionlu Meryem, çocuk İsa’yı sol kolunda taşıyor ve sağ eliyle onu gösteriyor."
+   },
+   "cues": [
+    {
+     "en": "monogram",
+     "tr": "monogram"
+    },
+    {
+     "en": "fragmented tesserae",
+     "tr": "dökülmüş mozaik"
+    },
+    {
+     "en": "marble arch frame",
+     "tr": "mermer kemerli çerçeve"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "Only ΘΥ survives of the ‘Mother of God’ monogram, at the upper right.",
+     "tr": "‘Tanrı’nın Annesi’ kısaltmasından sağ üstte yalnızca ΘΥ kalmış."
+    },
+    {
+     "en": "The child’s head is lost; only a sliver of his gold halo shows beside Mary’s.",
+     "tr": "Çocuğun başı kayıp; Meryem’in halesinin yanında onun altın halesinden yalnızca küçük bir parça görünüyor."
+    },
+    {
+     "en": "The arch around the panel alternates grey and pink marble voussoirs.",
+     "tr": "Panoyu çevreleyen kemerde gri ve pembe mermer kemer taşları sırayla diziliyor."
+    }
+   ],
+   "story": {
+    "en": "Ousterhout notes that framed icons of standing saints once lined the pilasters of the outer narthex, and that the Virgin and John the Baptist flank this entrance. With the Christ Pantokrator above the door, the three read as a Deesis, Christ between his two intercessors. The Kültür Envanteri guide points out that this Hodegetria mirrors the one in the naos.",
+    "tr": "Ousterhout’a göre dış narteksin payelerini bir zamanlar ayakta duran azizlerin çerçeveli ikonaları süslüyordu; bu girişin iki yanında Meryem ile Vaftizci Yahya yer alır. Kapının üstündeki Pantokrator İsa ile birlikte üçü, İsa’yı iki şefaatçisi arasında gösteren bir Deisis gibi okunur. Kültür Envanteri rehberi, bu Hodegetria’nın naostakinin ayna görüntüsü olduğuna dikkat çeker."
+   },
+   "inscriptions": [
+    {
+     "greek": "ΘΥ",
+     "transliteration": "Th(eo)u",
+     "translation": {
+      "en": "of God (the surviving half of ‘Mother of God’)",
+      "tr": "Tanrı’nın (‘Tanrı’nın Annesi’ yazısından kalan kısım)"
+     },
+     "basis": "photograph",
+     "sources": [
+      "chora-guide"
+     ]
+    }
+   ],
+   "condition": {
+    "en": "Most of the panel is lost: the child’s head and much of the gold ground are now bare plaster, and only part of the monogram remains.",
+    "tr": "Panonun büyük kısmı kayıp: çocuğun başı ve altın zeminin çoğu bugün çıplak sıva; monogramın da yalnızca bir kısmı kalmış."
+   },
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "Framed icons of standing saints decorated the outer narthex pilasters; few details survive.",
+     "source": "ousterhout-2002",
+     "locator": "p. 30",
+     "quote": "Framed icons of standing saints decorated the pilasters of the outer narthex, although only a few details survive."
+    },
+    {
+     "field": "story",
+     "claim": "The Virgin and John the Baptist flank the main entrance.",
+     "source": "ousterhout-2002",
+     "locator": "p. 75",
+     "quote": "The Virgin and John the Baptist flank the main entrance."
+    },
+    {
+     "field": "story",
+     "claim": "A Deesis shows Christ between the Virgin and John the Baptist as intercessors.",
+     "source": "ousterhout-2002",
+     "locator": "p. 128 (glossary)",
+     "quote": "Deesis. The representation of Christ enthroned between the Virgin and St. John the Baptist, who intercede on behalf of mankind."
+    },
+    {
+     "field": "story",
+     "claim": "With the Pantokrator and John the panel evokes a Deesis.",
+     "source": "chora-guide",
+     "locator": "scene 6, Hikayesi",
+     "quote": "geniş bir bağışlanma (deisis) sahnesini andırır."
+    },
+    {
+     "field": "story",
+     "claim": "This Hodegetria is reversed relative to the naos panel.",
+     "source": "chora-guide",
+     "locator": "scene 6, Betimleme",
+     "quote": "Meryem ana ibadet yerinde bulunan diğer Hodegetria sahnesinin aksi yönünde resmedilmiştir."
+    },
+    {
+     "field": "inscriptions",
+     "claim": "Only the ΘΥ part of the monogram remains; legible in the photograph.",
+     "source": "chora-guide",
+     "locator": "scene 6, Betimleme",
+     "quote": "Meryem’in başının solunda “Tanrı Anası” monogramının* sadece Theon (Θv) kısmı kalmıştır."
+    },
+    {
+     "field": "condition",
+     "claim": "Most of the scene is destroyed.",
+     "source": "chora-guide",
+     "locator": "scene 6, Betimleme",
+     "quote": "Sahnenin büyük bir kısmı tahrip olmuştur."
+    },
+    {
+     "field": "condition",
+     "claim": "Child’s head and much of the gold ground are bare plaster; visible in the photograph (Kültür Envanteri / Caner Cangül).",
+     "source": "chora-guide",
+     "locator": "photograph web-ke-01",
+     "quote": ""
+    }
+   ],
+   "gaps": [
+    "The Kültür Envanteri guide contradicts itself on John the Baptist’s side: scene 6 puts him left of the door, scene 8 right; the record follows scene 8 and the photographs’ placement.",
+    "Ousterhout does not say which Virgin type flanks the entrance; the Hodegetria identification is the guide’s."
+   ]
+  },
+  {
+   "id": "M07",
+   "title": {
+    "en": "Virgin of Tenderness (Eleousa)",
+    "tr": "Şefkatli Meryem (Eleousa)"
+   },
+   "room": {
+    "en": "Passage",
+    "tr": "Geçit"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "In the second arched panel to the left of the door from the outer into the inner narthex.",
+    "tr": "Dış narteksten iç nartekse açılan kapının solundaki ikinci kemerli panoda."
+   },
+   "summary": {
+    "en": "Only Mary’s bowed head, halo and rose-red maphorion survive of an icon in which she pressed her cheek to the child’s.",
+    "tr": "Meryem’in yanağını çocuğunkine dayadığı bir ikonadan geriye yalnızca eğik başı, halesi ve gül kırmızısı maphorionu kalmış."
+   },
+   "cues": [
+    {
+     "en": "maphorion",
+     "tr": "maphorion"
+    },
+    {
+     "en": "halo",
+     "tr": "hale"
+    },
+    {
+     "en": "fragmented tesserae",
+     "tr": "dökülmüş mozaik"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "Mary’s head tilts sharply to the right, toward the doorway into the inner narthex.",
+     "tr": "Meryem’in başı sağa, iç nartekse açılan kapıya doğru belirgin biçimde eğik."
+    },
+    {
+     "en": "Her maphorion is rose-red, unlike the dark blue of the Hodegetria beside the door.",
+     "tr": "Maphorionu, kapının yanındaki Hodegetria’nın koyu mavisinden farklı olarak gül kırmızısı."
+    },
+    {
+     "en": "Below the fragment, the rest of the tall arched panel is blank plaster.",
+     "tr": "Parçanın altında, uzun kemerli panonun geri kalanı boş sıva."
+    }
+   ],
+   "story": {
+    "en": "Eleousa means ‘compassionate’: in this type the Virgin holds the child close and presses her cheek to his. The Kültür Envanteri guide identifies the panel as an Eleousa turned toward the door into the inner narthex, with the now-lost child in her arms. In such images the infant clasps either his mother’s cheek or her shoulders.",
+    "tr": "Eleousa ‘şefkatli, merhametli’ demektir; bu tipte Meryem çocuğu kendine yaslar ve yanağını onun yanağına dayar. Kültür Envanteri rehberi panoyu, iç nartekse açılan kapıya yönelmiş, kucağında bugün kaybolmuş çocuk İsa’yı tutan bir Eleousa olarak tanımlar. Bu tür tasvirlerde bebek ya annesinin yanağına ya da omuzlarına sarılır."
+   },
+   "inscriptions": [],
+   "condition": {
+    "en": "Most of the mosaic is lost: the child has almost entirely gone, and only Mary’s head, halo and shoulders remain against bare plaster.",
+    "tr": "Mozaiğin büyük bölümü kayıp: çocuk neredeyse tamamen yok olmuş, boş sıvanın üzerinde yalnızca Meryem’in başı, halesi ve omuzları kalmış."
+   },
+   "sources": [
+    "chora-guide",
+    "ousterhout-2002"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "Eleousa is the Compassionate Virgin.",
+     "source": "ousterhout-2002",
+     "locator": "p. 128 (glossary)",
+     "quote": "Eleousa. An image of the Virgin, known as the Compassionate Virgin."
+    },
+    {
+     "field": "story",
+     "claim": "Mary is turned toward the door to the inner narthex and presses her cheek to the child’s.",
+     "source": "chora-guide",
+     "locator": "scene 7, Betimleme",
+     "quote": "Meryem iç nartekse geçiş kapısına yönelmiş vaziyette kucağında çocuk İsa ile resmedilmiştir. Meryem yanağını İsa’nın yanağına bastırır."
+    },
+    {
+     "field": "story",
+     "claim": "In Eleousa images the child hugs either the cheek or the shoulders.",
+     "source": "chora-guide",
+     "locator": "scene 7, Hikayesi",
+     "quote": "Bazen annesinin yanağına sarılırken bazen de omuzlarına sarılır."
+    },
+    {
+     "field": "summary",
+     "claim": "Mary wears a pink-red maphorion; the child’s clothing cannot be made out.",
+     "source": "chora-guide",
+     "locator": "scene 7, Betimleme",
+     "quote": "Meryem’in üzerinde pembe-kırmızı tonlarda maphorion* vardır. İsa’nın kıyafeti belli değildir."
+    },
+    {
+     "field": "condition",
+     "claim": "Most of the mosaic is destroyed.",
+     "source": "chora-guide",
+     "locator": "scene 7, Betimleme",
+     "quote": "Panodaki mozaiklerin büyük bölümü tahrip olmuştur."
+    },
+    {
+     "field": "condition",
+     "claim": "Only the head, halo and shoulders survive against bare plaster; visible in the photograph (Kültür Envanteri / Caner Cangül).",
+     "source": "chora-guide",
+     "locator": "photograph web-ke-01",
+     "quote": ""
+    }
+   ],
+   "gaps": [
+    "Ousterhout mentions only ‘the Virgin and John the Baptist’ flanking the entrance (p. 30) and does not describe this second Marian panel; its Eleousa identification rests on the Kültür Envanteri guide.",
+    "No inscription is visible in the photographs."
+   ]
+  },
+  {
+   "id": "M08",
+   "title": {
+    "en": "John the Baptist Fragment",
+    "tr": "Vaftizci Yahya (parça)"
+   },
+   "room": {
+    "en": "Passage",
+    "tr": "Geçit"
+   },
+   "surface": {
+    "en": "flat",
+    "tr": "düz yüzey"
+   },
+   "position": {
+    "en": "In the arched panel immediately right of the door from the outer into the inner narthex.",
+    "tr": "Dış narteksten iç nartekse açılan kapının hemen sağındaki kemerli panoda."
+   },
+   "summary": {
+    "en": "A long lock of hair, part of a gold halo and a shoulder in a shaggy hide garment survive of a standing John the Baptist.",
+    "tr": "Ayakta duran bir Vaftizci Yahya tasvirinden geriye uzun bir saç tutamı, altın halenin bir parçası ve tüylü post giysili bir omuz kalmış."
+   },
+   "cues": [
+    {
+     "en": "animal-skin garment",
+     "tr": "hayvan postundan giysi"
+    },
+    {
+     "en": "halo",
+     "tr": "hale"
+    },
+    {
+     "en": "fragmented tesserae",
+     "tr": "dökülmüş mozaik"
+    }
+   ],
+   "lookFor": [
+    {
+     "en": "A long wavy lock of hair falls from under the gold halo.",
+     "tr": "Altın halenin altından uzun, dalgalı bir saç tutamı iniyor."
+    },
+    {
+     "en": "Grey, curly tesserae at the shoulder render his hairy hide garment.",
+     "tr": "Omuzdaki gri, kıvırcık dokulu taşlar kıllı post giysisini gösteriyor."
+    },
+    {
+     "en": "The face and everything below the chest are lost to plain plaster.",
+     "tr": "Yüz ve göğsün altındaki her şey kayıp; yerinde düz sıva var."
+    }
+   ],
+   "story": {
+    "en": "Ousterhout names the Virgin and John the Baptist as the icons flanking the main entrance, beneath the Christ over the door. John is recognised here only by his long hair and hide garment, the camel’s hair that Matthew and Mark describe. Known as the Forerunner because he announced and baptised Christ, he is the Virgin’s partner as intercessor in a Deesis.",
+    "tr": "Ousterhout, ana girişin iki yanındaki ikonaları, kapının üstündeki İsa’nın altında yer alan Meryem ve Vaftizci Yahya olarak adlandırır. Yahya burada yalnızca uzun saçı ve post giysisinden tanınıyor; Matta ve Markos İncilleri onun deve tüyünden giysisini anlatır. İsa’yı müjdeleyip vaftiz ettiği için ‘Öncü’ diye anılan Yahya, Deisis’te Meryem’le birlikte iki şefaatçiden biridir."
+   },
+   "inscriptions": [],
+   "condition": {
+    "en": "Almost the whole panel is lost; only the hair, part of the halo, a shoulder and part of the chest survive.",
+    "tr": "Panonun neredeyse tamamı kayıp; yalnızca saç, halenin bir kısmı, bir omuz ve göğsün bir bölümü kalmış."
+   },
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ],
+   "evidence": [
+    {
+     "field": "story",
+     "claim": "The Virgin and John the Baptist flank the main entrance.",
+     "source": "ousterhout-2002",
+     "locator": "p. 75",
+     "quote": "The Virgin and John the Baptist flank the main entrance."
+    },
+    {
+     "field": "story",
+     "claim": "The fur garment and long hair identify John.",
+     "source": "chora-guide",
+     "locator": "scene 8, Betimleme",
+     "quote": "kıyafetlerinin hayvan kürkü olması ve saçlarının uzun olmasından ikonanın Vaftizci Yahya olduğu anlaşılmaktadır."
+    },
+    {
+     "field": "story",
+     "claim": "Matthew and Mark describe a garment of camel’s hair.",
+     "source": "chora-guide",
+     "locator": "scene 8, Hikaye",
+     "quote": "Matta ve Markos İncillerinde deve tüyünden bir kıyafet giydiği yazmaktadir."
+    },
+    {
+     "field": "story",
+     "claim": "John is called the forerunner and is important because he announced and baptised Christ.",
+     "source": "chora-guide",
+     "locator": "scene 8, Hikaye",
+     "quote": "İsa’yı müjdelediği ve onu vaftiz* ettiği için ikonografide oldukça önemlidir."
+    },
+    {
+     "field": "story",
+     "claim": "In a Deesis the Virgin and John intercede.",
+     "source": "ousterhout-2002",
+     "locator": "p. 128 (glossary)",
+     "quote": "Deesis. The representation of Christ enthroned between the Virgin and St. John the Baptist, who intercede on behalf of mankind."
+    },
+    {
+     "field": "condition",
+     "claim": "Almost the whole panel is destroyed; shoulder, chest, part of the hair and the halo remain.",
+     "source": "chora-guide",
+     "locator": "scene 8, Betimleme",
+     "quote": "İkonadan geriye sadece sol omuz, gögüs ve saçın bir kısmı ile halesi kalmıştır."
+    },
+    {
+     "field": "condition",
+     "claim": "Face and lower body are plain plaster; visible in the photograph (Kültür Envanteri / Caner Cangül).",
+     "source": "chora-guide",
+     "locator": "photograph web-ke-01",
+     "quote": ""
+    }
+   ],
+   "gaps": [
+    "The guide calls the surviving shoulder the left one; from the photograph alone the side could not be confirmed, so it is not stated.",
+    "No inscription is visible in the photographs."
+   ]
+  }
+ ],
+ "sources": [],
+ "notes": "Passage: Ousterhout (2002) uses no room called ‘Passage’. He places the Christ Pantokrator (M04, his no. 4) ‘above the door to the inner narthex’, the first image seen on entering from the west (p. 23), and describes the framed icons flanking that door (M06–M08, his no. 10) as icons on ‘the pilasters of the outer narthex’ (p. 30). All four are therefore on the east wall of the outer narthex (exonarthex) around the door into the inner narthex; ‘Dış Narteks’ / ‘Outer Narthex’ would match Ousterhout. The Kültür Envanteri guide groups them as ‘Giriş Mozaikleri’ (entrance mosaics), also not a room. Records keep room = Passage/Geçit so app grouping does not change; positions now say outer/inner narthex door. Other changes: surface of M06 and M08 changed from ‘other’ to ‘flat’ (framed flat panels, like M07); M02 cues ‘platform’ and ‘scroll’ replaced (not visible); M07 cue ‘haloes’ → ‘halo’ (child lost). Title corrections: M04 ‘Christ Pantokrator at the Passage’ → ‘Christ Pantokrator, Land of the Living’; M06 ‘Second Hodegetria Virgin’ → ‘Hodegetria Virgin beside the Door’; M07 adds ‘(Eleousa)’. Numbering: KE scenes 1–3 = M01–M03 but Ousterhout’s naos numbers differ (his 1 = Christ = M03, 2 = Virgin = M02, 3 = Koimesis = M01)."
+}

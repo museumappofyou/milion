@@ -1,0 +1,706 @@
+# P11 kit spec: Chora (Kariye Camii), Milestone VI "Chora through time".
+# Frame: metres, z up, the naos floor at z = 0, the origin under the centre of
+# the naos dome, +y along the axis toward the apse (bearing 104.5°), +x then
+# to the south. Plan positions are traced from Van Millingen's measured plan
+# (1912, Fig. 105; tool/content/chora_plan.py, the guide's plan, uses the same
+# readings): x = −v, y = u there. Cited dimensions are checked against the
+# geometry. No accessible text gives Chora's heights or wall thicknesses: the
+# walls (naos 9.5 m, narthexes 7–8 m, parekklesion 9 m), vault springings,
+# drums and the belfry and minaret are estimates in proportion, and say so.
+schemaVersion: 1
+id: kariye-camii
+place: chora
+title: {en: "Chora through time", tr: "Zaman içinde Kariye"}
+description:
+  en: >-
+    Four building campaigns in one small church, drawn from below: the vaulted
+    substructures of the sixth century, Maria Doukaina's church of about
+    1077–81, its rebuilding with a broad apse early in the twelfth century,
+    and Theodore Metochites' work of about 1316–21, which rebuilt the dome and
+    side chapels and wrapped the church in two narthexes, a north annex, a
+    domed funeral chapel and a belfry. The scrubber ends with the Ottoman
+    mosque, its minaret in the belfry's corner. Plan from Van Millingen's
+    measured drawing; heights are estimates. A diagram, not a survey.
+  tr: >-
+    Küçük bir kilisede dört yapım evresi, aşağıdan çizilmiş: 6. yüzyılın
+    tonozlu alt yapıları, Maria Dukaina'nın yaklaşık 1077–81 tarihli
+    kilisesi, 12. yüzyılın başında geniş bir apsisle yeniden yapılışı ve
+    Theodoros Metokhites'in yaklaşık 1316–21 tarihli işi: kubbeyi ve yan
+    şapelleri yeniden yaptırdı, kiliseyi iki narteks, kuzey ek yapısı, kubbeli
+    bir mezar şapeli ve bir çan kulesiyle çevirdi. Zaman çubuğu Osmanlı
+    camisiyle biter; minaresi çan kulesinin köşesindedir. Plan Van
+    Millingen'in ölçekli çiziminden; yükseklikler tahmindir. Bu bir şemadır,
+    rölöve değildir.
+eras: [byzantine, ottoman]
+honesty: RECONSTRUCTION
+orientation:
+  axis: 104.5
+  source: osm-relation-7614527
+  footprint:   # [lat, lon], outer way 528553708 of OSM relation 7614527
+    - [41.0313769, 28.9388964]
+    - [41.0313720, 28.9389210]
+    - [41.0313274, 28.9391491]
+    - [41.0313091, 28.9391428]
+    - [41.0313011, 28.9391835]
+    - [41.0312784, 28.9391757]
+    - [41.0312704, 28.9392161]
+    - [41.0312309, 28.9392025]
+    - [41.0312165, 28.9392221]
+    - [41.0311965, 28.9392287]
+    - [41.0311867, 28.9392792]
+    - [41.0311652, 28.9392718]
+    - [41.0311750, 28.9392213]
+    - [41.0311569, 28.9392057]
+    - [41.0311510, 28.9391751]
+    - [41.0311412, 28.9391788]
+    - [41.0311287, 28.9391748]
+    - [41.0311207, 28.9391646]
+    - [41.0311119, 28.9391859]
+    - [41.0310946, 28.9391997]
+    - [41.0310759, 28.9391998]
+    - [41.0310608, 28.9391890]
+    - [41.0310506, 28.9391690]
+    - [41.0310493, 28.9391401]
+    - [41.0310883, 28.9389411]
+    - [41.0310957, 28.9389028]
+    - [41.0311020, 28.9388711]
+    - [41.0310821, 28.9388643]
+    - [41.0310948, 28.9387993]
+    - [41.0311366, 28.9388137]
+    - [41.0312466, 28.9388516]
+step: 2.4
+epochs:
+  - {year: 1081, label: {en: "Maria Doukaina's church, c. 1077–81", tr: "Maria Dukaina'nın kilisesi, y. 1077–81"}}
+  - {year: 1120, label: {en: "Rebuilt with a broad apse, early 12th century", tr: "Geniş apsisle yeniden yapım, 12. yüzyıl başı"}}
+  - {year: 1321, label: {en: "Metochites' Chora, c. 1316–21", tr: "Metokhites'in Kariye'si, y. 1316–21"}}
+  - {year: 1511, label: {en: "Kariye Camii, by 1511", tr: "Kariye Camii, 1511'e kadar"}}
+parts:
+  # The sixth century: vaulted substructures under the naos (their shape is
+  # not drawn; a block marks where they are).
+  - {id: substructure, kind: slab, material: stone, at: [[0, 0.2]], z: -3.0,
+     note: "sixth-century vaulted substructures in the naos foundations; shape schematic",
+     params: {width: 12.0, depth: 12.0, thickness: 2.7}}
+  - {id: floor, kind: slab, material: marble, at: [[0, 0.2]], z: -0.3,
+     params: {width: 12.6, depth: 12.6, thickness: 0.3}}
+  # The naos: north, west and south walls on the eleventh-century lines.
+  - id: naos-wall-n
+    kind: wall
+    material: brick
+    at: [[-5.98, -6.9, 90]]
+    params:
+      length: 12.25
+      height: 9.5
+      thickness: 1.0
+      openings: [{x: 6.9, width: 1.2, sill: 3.2, head: 5.8, arch: round}]
+  - id: naos-wall-s
+    kind: wall
+    material: brick
+    at: [[5.66, -6.9, 90]]
+    params:
+      length: 12.25
+      height: 9.5
+      thickness: 1.0
+      openings: [{x: 6.9, width: 1.2, sill: 3.2, head: 5.8, arch: round}]
+  - id: naos-wall-w
+    kind: wall
+    material: brick
+    note: two doors from the inner narthex, central and north
+    at: [[-6.48, -5.95]]
+    params:
+      length: 12.64
+      height: 9.5
+      thickness: 1.9
+      openings:
+        - {x: 6.48, width: 1.6, sill: 0, head: 3.6, arch: round}
+        - {x: 4.08, width: 1.1, sill: 0, head: 3.0, arch: round}
+  - {id: bema-n, kind: slab, material: brick, at: [[-4.0, 4.65]], z: 0,
+     params: {width: 2.0, depth: 1.5, thickness: 9.5}}
+  - {id: bema-s, kind: slab, material: brick, at: [[4.1, 4.65]], z: 0,
+     params: {width: 2.1, depth: 1.5, thickness: 9.5}}
+  # c. 1077–81: an inscribed cross on four columns, a narrower apse.
+  - id: naos-columns
+    kind: column
+    material: marble
+    note: the quincunx's four columns; their positions are schematic
+    at: [[-2.6, -2.6], [2.6, -2.6], [-2.6, 2.6], [2.6, 2.6]]
+    params: {height: 7.0, diameter: 0.6, capital: impost, n: 10}
+  - id: apse-narrow
+    kind: exedra
+    material: brick
+    at: [[0, 5.4]]
+    params: {radius: 1.9, thickness: 0.9, height: 6.4, outer_sides: 6, windows: 1, sill: 1.8,
+             head: 4.6, share: 0.25, cap_thickness: 0.4}
+  # Early twelfth century: piers and the present broad apse.
+  - id: naos-piers
+    kind: pier
+    material: stone
+    at: [[-3.25, -4.45], [3.25, -4.45], [-4.69, 3.5], [4.53, 3.5]]
+    params: {width: 1.3, depth: 1.1, height: 7.0}
+  - id: apse
+    kind: exedra
+    material: brick
+    note: five sides of a flat polygon outside, a triple window (Van Millingen)
+    at: [[0, 5.4]]
+    params: {radius: 3.0, thickness: 1.0, height: 7.0, outer_sides: 10, windows: 3, sill: 2.0,
+             head: 5.4, share: 0.3, cap_thickness: 0.5}
+  # The side chapels (pastophoria), with their apses.
+  - {id: prothesis-wall-n, kind: wall, material: brick, at: [[-9.56, 4.95, 90]],
+     params: {length: 5.2, height: 7.5, thickness: 0.8}}
+  - id: prothesis-wall-e
+    kind: wall
+    material: brick
+    at: [[-9.96, 9.75]]
+    params:
+      length: 5.4
+      height: 7.5
+      thickness: 0.8
+      openings: [{x: 2.9, width: 1.8, sill: 0, head: 4.2, arch: round}]
+  - {id: prothesis-wall-w, kind: wall, material: brick, at: [[-9.96, 4.95]],
+     params: {length: 3.5, height: 7.5, thickness: 0.8}}
+  - {id: diakonikon-wall-w, kind: wall, material: brick, at: [[6.16, 5.6]],
+     params: {length: 2.04, height: 7.5, thickness: 0.8}}
+  - {id: diakonikon-wall-s, kind: wall, material: brick, at: [[7.8, 5.6, 90]],
+     params: {length: 5.0, height: 7.5, thickness: 0.8}}
+  - id: diakonikon-wall-e
+    kind: wall
+    material: brick
+    at: [[4.76, 10.59]]
+    params:
+      length: 3.44
+      height: 7.5
+      thickness: 0.8
+      openings: [{x: 1.52, width: 1.4, sill: 0, head: 3.8, arch: round}]
+  - id: side-apses
+    kind: exedra
+    material: brick
+    note: three faces outside each (Van Millingen)
+    at: [[-7.07, 10.15], [6.28, 10.99]]
+    params: {radius: 0.8, thickness: 0.6, height: 4.4, outer_sides: 6, cap_thickness: 0.3}
+  # The naos vaults, pendentives and ring under the dome.
+  - id: naos-arms
+    kind: arch
+    material: brick
+    note: barrel vaults over the north and south cross arms, the west arm and the bema
+    at: [{at: [-4.69, -0.45], z: 7.0, turn: 90}, {at: [4.53, -0.45], z: 7.0, turn: 90},
+         {at: [0, -4.45], z: 7.0}, {at: [0, 4.65], z: 7.0}]
+    params: {span: 6.0, thickness: 0.5, depth: 1.5}
+  - id: naos-pendentives
+    kind: pendentives
+    material: brick
+    at: [{at: [0, 0], z: 7.0}]
+    params: {half: 3.85, top: 4.6}
+  - id: naos-ring
+    kind: ring
+    material: brick
+    at: [{at: [0, 0], z: 11.6}]
+    params: {r0: 3.85, r1: 4.65, z0: 0, z1: 0.3, n: 24}
+  - id: dome-early
+    kind: dome
+    material: brick
+    note: the dome before Metochites rebuilt it; its form is not known
+    at: [{at: [0, 0], z: 13.1}]
+    params:
+      radius: 3.85
+      thickness: 0.4
+      drum: {height: 1.2, thickness: 0.6, windows: 0}
+  - id: naos-dome
+    kind: dome
+    material: brick
+    note: Metochites' rebuilt dome on a drum with eight windows; the crown is Ottoman
+    at: [{at: [0, 0], z: 14.5}]
+    params:
+      radius: 3.85
+      thickness: 0.4
+      drum: {height: 2.6, thickness: 0.7, windows: 8, sill: 0.5, head: 2.2, share: 0.45}
+  - id: prothesis-dome
+    kind: dome
+    material: brick
+    note: eight concave sections (Van Millingen)
+    at: [{at: [-7.07, 7.35], z: 8.0}]
+    params:
+      radius: 1.5
+      thickness: 0.3
+      gores: 8
+      alternate: false
+      gore_depth: 0.1
+      drum: {height: 1.2, thickness: 0.5, windows: 0}
+  - id: diakonikon-dome
+    kind: dome
+    material: brick
+    at: [{at: [6.28, 8.1], z: 8.0}]
+    params:
+      radius: 1.1
+      thickness: 0.3
+      drum: {height: 1.0, thickness: 0.45, windows: 0}
+  # c. 1316–21: Metochites' additions. The north annex, in two storeys.
+  - {id: annex-wall-n, kind: wall, material: brick, at: [[-10.85, -5.61, 90]],
+     params: {length: 10.19, height: 8.0, thickness: 0.8}}
+  - {id: annex-floor, kind: slab, material: brick, at: [[-8.78, -0.52]], z: 3.6,
+     params: {width: 3.35, depth: 10.19, thickness: 0.4}}
+  - id: annex-vaults
+    kind: arch
+    material: brick
+    at: [{at: [-8.78, -0.52], z: 1.9, turn: 90}, {at: [-8.78, -0.52], z: 5.9, turn: 90}]
+    params: {span: 3.35, thickness: 0.35, depth: 10.19}
+  # The inner narthex: four bays, domes over the end bays.
+  - id: inner-wall-w
+    kind: wall
+    material: brick
+    note: the door from the outer narthex on the axis
+    at: [[-10.32, -10.85]]
+    params:
+      length: 18.38
+      height: 8.0
+      thickness: 0.8
+      openings: [{x: 10.32, width: 1.4, sill: 0, head: 3.4, arch: round}]
+  - {id: inner-wall-n, kind: wall, material: brick, at: [[-10.72, -11.25, 90]],
+     params: {length: 4.75, height: 8.0, thickness: 0.8}}
+  - {id: inner-wall-s, kind: wall, material: brick, at: [[8.46, -11.25, 90]],
+     params: {length: 4.75, height: 8.0, thickness: 0.8}}
+  - id: inner-pendentives
+    kind: pendentives
+    material: brick
+    at: [{at: [-6.77, -8.58], z: 5.5}]
+    params: {half: 1.78, top: 2.1}
+  - id: inner-dome-n
+    kind: dome
+    material: brick
+    note: sixteen hollow segments, eight windows (Van Millingen)
+    at: [{at: [-6.77, -8.58], z: 9.0}]
+    params:
+      radius: 1.78
+      thickness: 0.3
+      gores: 16
+      alternate: false
+      gore_depth: 0.1
+      drum: {height: 1.4, thickness: 0.5, windows: 8, sill: 0.3, head: 1.1, share: 0.45}
+  - id: inner-pendentives-s
+    kind: pendentives
+    material: brick
+    at: [{at: [4.65, -8.45], z: 5.5}]
+    params: {half: 2.15, top: 2.5}
+  - id: inner-dome-s
+    kind: dome
+    material: brick
+    note: the larger south dome; its windows are not counted in any source
+    at: [{at: [4.65, -8.45], z: 9.4}]
+    params:
+      radius: 2.15
+      thickness: 0.3
+      gores: 24
+      alternate: false
+      gore_depth: 0.08
+      drum: {height: 1.4, thickness: 0.5, windows: 0}
+  - id: inner-vaults
+    kind: sail-vault
+    material: brick
+    at: [{at: [-2.9, -8.58], z: 5.5}, {at: [0, -8.58], z: 5.5}]
+    params: {half: 1.45, thickness: 0.3}
+  # The outer narthex: five bays along the front, two returned at the south.
+  - id: outer-wall-w
+    kind: wall
+    material: brick
+    note: the single west door on the axis
+    at: [[-11.45, -16.66]]
+    params:
+      length: 26.77
+      height: 7.0
+      thickness: 0.8
+      openings:
+        - {x: 11.45, width: 1.6, sill: 0, head: 3.6, arch: round}
+        - {x: 3.6, width: 1.4, sill: 1.6, head: 4.2, arch: round}
+        - {x: 7.6, width: 1.4, sill: 1.6, head: 4.2, arch: round}
+        - {x: 15.6, width: 1.4, sill: 1.6, head: 4.2, arch: round}
+        - {x: 19.4, width: 1.4, sill: 1.6, head: 4.2, arch: round}
+  - {id: outer-wall-n, kind: wall, material: brick, at: [[-11.05, -16.66, 90]],
+     params: {length: 4.92, height: 7.0, thickness: 0.8}}
+  - {id: outer-wall-s, kind: wall, material: brick, at: [[14.92, -16.66, 90]],
+     params: {length: 10.72, height: 7.0, thickness: 0.8}}
+  - id: outer-vaults
+    kind: sail-vault
+    material: brick
+    note: dome vaults; the central bay is the largest (Van Millingen)
+    at: [{at: [-8.74, -14.0], z: 5.0}, {at: [-4.92, -14.0], z: 5.0}, {at: [-0.81, -14.0], z: 5.0},
+         {at: [3.3, -14.0], z: 5.0}, {at: [7.12, -14.0], z: 5.0}, {at: [11.78, -14.0], z: 5.0},
+         {at: [11.78, -8.84], z: 5.0}]
+    params: {half: 1.8, thickness: 0.3}
+  # The parekklesion, the funeral chapel: two bays and an apse.
+  - id: parek-wall-n
+    kind: wall
+    material: brick
+    note: thick, with the passages to the naos in it (Van Millingen)
+    at: [[7.5, -5.61, 90]]
+    params: {length: 13.87, height: 9.0, thickness: 2.68}
+  - {id: parek-wall-s, kind: wall, material: brick, at: [[14.89, -5.61, 90]],
+     params: {length: 13.87, height: 9.0, thickness: 1.0}}
+  - id: parek-arcade
+    kind: arcade
+    material: marble
+    note: the triple arcade from the return bays (Van Millingen)
+    at: [[8.84, -5.61]]
+    params: {length: 5.55, bays: 3, spring: 3.4, support: {kind: column, diameter: 0.45},
+             thickness: 0.4, depth: 0.6, piers_at_ends: true}
+  - id: parek-pendentives
+    kind: pendentives
+    material: brick
+    at: [{at: [11.61, -0.77], z: 7.0}]
+    params: {half: 2.25, top: 2.6}
+  - id: parek-dome
+    kind: dome
+    material: brick
+    note: a high twelve-sided drum, a window in each side (Van Millingen)
+    at: [{at: [11.61, -0.77], z: 12.6}]
+    params:
+      radius: 2.25
+      thickness: 0.35
+      drum: {height: 3.0, thickness: 0.6, windows: 12, sill: 0.6, head: 2.5, share: 0.5}
+  - id: parek-vault
+    kind: sail-vault
+    material: brick
+    at: [{at: [11.61, 5.1], z: 7.0}]
+    params: {half: 2.4, thickness: 0.35}
+  - id: parek-apse
+    kind: exedra
+    material: brick
+    note: five sides outside, a triple window (Van Millingen)
+    at: [[11.61, 8.26]]
+    params: {radius: 2.77, thickness: 1.0, height: 7.0, outer_sides: 10, windows: 3, sill: 2.0,
+             head: 5.2, share: 0.3, cap_thickness: 0.45}
+  - id: belfry
+    kind: tower
+    material: brick
+    note: over the south-west corner bay; its height is an estimate
+    at: [{at: [11.78, -14.0], z: 7.0}]
+    params: {size: 5.6, height: 14.0, kind: square, merlons: false, roof: 3.0}
+  - id: flying-buttress
+    kind: buttress
+    material: brick
+    note: against the apse; drawn as a stepped buttress
+    at: [[0.15, 9.5, 90]]
+    params: {width: 2.6, depth: 4.0, height: 8.0, kind: rect, steps: 3}
+  # By 1511: the mosque. The belfry is gone; a minaret stands at the corner.
+  - id: minaret
+    kind: minaret
+    material: stone
+    note: at the south-west corner; its size is an estimate
+    at: [{at: [15.9, -15.2]}]
+    params: {base: 2.4, base_height: 8.0, shaft_diameter: 1.7, shaft_top: 19.0, serefe: [15.5],
+             serefe_depth: 0.6, corbel: 0.9, parapet: 0.9, petek: 2.0, cap: 3.4, finial: 1.0,
+             sides: 12, shoe: 1.0}
+steps:
+  - id: substructure
+    parts: [substructure]
+    seconds: 2.2
+    epochs: []
+    sources: [ousterhout-introduction]
+    label: {en: "Sixth-century foundations", tr: "6. yüzyıl temelleri"}
+    caption:
+      en: >-
+        The oldest evidence is underground: vaulted substructures of the sixth
+        century in the foundations of the naos. Their shape is not drawn.
+      tr: >-
+        En eski iz yerin altında: naosun temellerinde 6. yüzyıldan kalma
+        tonozlu alt yapılar. Biçimleri çizilmedi.
+  - id: walls
+    parts: [floor, naos-wall-*, bema-*]
+    seconds: 2.2
+    epochs: []
+    sources: [ousterhout-introduction]
+    label: {en: "Walls of about 1077–81", tr: "Yaklaşık 1077–81 duvarları"}
+    caption:
+      en: >-
+        The north, west and south walls of the naos stand where they were set
+        out in the eleventh century, when Maria Doukaina rebuilt the church.
+      tr: >-
+        Naosun kuzey, batı ve güney duvarları, Maria Dukaina'nın kiliseyi
+        yeniden yaptırdığı 11. yüzyılda belirlenen yerlerinde duruyor.
+  - id: columns
+    parts: [naos-columns]
+    seconds: 2.2
+    epochs: [1081]
+    sources: [wp-the-chora-1381788152]
+    label: {en: "An inscribed cross", tr: "Kapalı Yunan haçı"}
+    caption:
+      en: >-
+        Her church was an inscribed cross: four supports under a central dome.
+        Where they stood is not known; the drawing places them.
+      tr: >-
+        Onun kilisesi kapalı Yunan haçı planlıydı: merkezi kubbenin altında
+        dört destek. Yerleri bilinmiyor; çizim onları yerleştiriyor.
+  - id: narrow-apse
+    parts: [apse-narrow*]
+    seconds: 2.2
+    epochs: [1081]
+    sources: [ousterhout-introduction]
+    label: {en: "A narrower apse", tr: "Daha dar bir apsis"}
+    caption:
+      en: >-
+        Excavation in 1957–58 found a narrower apse flanked by side apses,
+        probably from this church.
+      tr: >-
+        1957–58 kazısı yan apsislerle çevrili daha dar bir apsis buldu;
+        büyük olasılıkla bu kiliseden.
+  - id: side-chapels
+    parts: [prothesis-wall-*, diakonikon-wall-*, side-apses*]
+    seconds: 2.2
+    epochs: []
+    sources: [ousterhout-introduction, van-millingen-1912]
+    label: {en: "Side chapels", tr: "Yan şapeller"}
+    caption:
+      en: >-
+        Two chapels flank the sanctuary, each with its own small apse, three
+        faces outside.
+      tr: >-
+        Kutsal alanın iki yanında birer şapel; her birinin dışta üç yüzlü
+        küçük bir apsisi var.
+  - id: vaults
+    parts: [naos-arms, naos-pendentives, naos-ring]
+    seconds: 2.2
+    epochs: []
+    sources: [van-millingen-1912]
+    label: {en: "A short-armed cross", tr: "Kısa kollu bir haç"}
+    caption:
+      en: >-
+        Barrel vaults over short arms and the bema, and pendentives turning
+        the square bay into the ring under the dome.
+      tr: >-
+        Kısa kollar ve bema üzerinde beşik tonozlar; pandantifler kare bölmeyi
+        kubbenin altındaki bileziğe çevirir.
+  - id: dome-early
+    parts: [dome-early*]
+    seconds: 2.2
+    epochs: [1081, 1120]
+    sources: [ousterhout-introduction]
+    label: {en: "The first dome", tr: "İlk kubbe"}
+    caption:
+      en: >-
+        A dome over the centre; its form before Metochites rebuilt it is not
+        known.
+      tr: >-
+        Ortada bir kubbe; Metokhites onu yeniden yaptırmadan önceki biçimi
+        bilinmiyor.
+  - id: piers
+    parts: [naos-piers]
+    seconds: 2.2
+    epochs: [1120, 1321, 1511]
+    sources: [ousterhout-introduction]
+    label: {en: "Rebuilt on piers", tr: "Ayaklar üzerinde yeniden"}
+    caption:
+      en: >-
+        Early in the twelfth century the church partly collapsed and was
+        rebuilt with a more stable design: piers in place of columns.
+      tr: >-
+        12. yüzyılın başında kilise kısmen çöktü ve daha sağlam bir tasarımla
+        yeniden yapıldı: sütunların yerine ayaklar.
+  - id: broad-apse
+    parts: [apse, apse-cap]
+    seconds: 2.2
+    epochs: [1120, 1321, 1511]
+    sources: [ousterhout-introduction, van-millingen-1912]
+    label: {en: "The broad apse", tr: "Geniş apsis"}
+    caption:
+      en: >-
+        The present broad apse belongs to this rebuilding: five flat faces
+        outside and a triple window.
+      tr: >-
+        Bugünkü geniş apsis bu yeniden yapıma ait: dışta beş düz yüz ve üçlü
+        bir pencere.
+  - id: dome
+    parts: [naos-dome*]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [ousterhout-introduction, van-millingen-1912, wp-the-chora-1381788152]
+    label: {en: "Metochites' dome, 7.7 m", tr: "Metokhites'in kubbesi, 7,7 m"}
+    caption:
+      en: >-
+        Metochites rebuilt the dome, 7.7 m across, on a ribbed drum of sixteen
+        segments pierced by eight windows. Its crown is Ottoman.
+      tr: >-
+        Metokhites 7,7 m çapındaki kubbeyi on altı dilimli, sekiz pencereli
+        bir kasnak üzerinde yeniden yaptırdı. Tepesi Osmanlı işi.
+  - id: chapel-domes
+    parts: [prothesis-dome*, diakonikon-dome*]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [ousterhout-introduction, van-millingen-1912]
+    label: {en: "Side chapels rebuilt", tr: "Yan şapeller yeniden"}
+    caption:
+      en: >-
+        He rebuilt the side chapels too: the north one under a dome of eight
+        concave sections, the south one under a plain dome.
+      tr: >-
+        Yan şapelleri de yeniden yaptırdı: kuzeydekini sekiz iç bükey dilimli
+        bir kubbeyle, güneydekini düz bir kubbeyle.
+  - id: annex
+    parts: [annex-*]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [ousterhout-introduction, van-millingen-1912]
+    label: {en: "A two-storey annex", tr: "İki katlı ek yapı"}
+    caption:
+      en: >-
+        On the north, a two-storey annex: barrel-vaulted, the upper floor with
+        a small window looking into the church.
+      tr: >-
+        Kuzeyde iki katlı bir ek yapı: beşik tonozlu; üst katında kiliseye
+        bakan küçük bir pencere.
+  - id: inner-narthex
+    parts: [inner-*]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [ousterhout-introduction, van-millingen-1912]
+    label: {en: "The inner narthex", tr: "İç narteks"}
+    caption:
+      en: >-
+        To the west, an inner narthex of four bays, domes over the end bays:
+        the north one of sixteen segments, the south one larger.
+      tr: >-
+        Batıda dört bölmeli bir iç narteks; uç bölmelerin üstünde kubbeler:
+        kuzeydeki on altı dilimli, güneydeki daha büyük.
+  - id: outer-narthex
+    parts: [outer-*]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [van-millingen-1912, ousterhout-2002]
+    label: {en: "The outer narthex, seven bays", tr: "Dış narteks, yedi bölme"}
+    caption:
+      en: >-
+        An outer narthex of seven bays under dome vaults: five along the front
+        and two returned at the south end, in front of the funeral chapel.
+      tr: >-
+        Kubbemsi tonozlu yedi bölmeli bir dış narteks: beşi cephe boyunca,
+        ikisi güney uçta mezar şapelinin önüne dönerek.
+  - id: parekklesion
+    parts: [parek-*]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [van-millingen-1912, wp-the-chora-1381788152]
+    label: {en: "The funeral chapel", tr: "Mezar şapeli"}
+    caption:
+      en: >-
+        On the south, the parekklesion: a high drum dome of twelve windows,
+        4.5 m across, over its west bay, a dome vault over the east bay, an
+        apse.
+      tr: >-
+        Güneyde parekklesion: batı bölmesinin üstünde on iki pencereli yüksek
+        kasnaklı, 4,5 m çapında bir kubbe, doğu bölmede kubbemsi bir tonoz ve
+        bir apsis.
+  - id: belfry
+    parts: [belfry*]
+    seconds: 2.2
+    epochs: [1321]
+    sources: [ousterhout-introduction]
+    label: {en: "A belfry", tr: "Bir çan kulesi"}
+    caption:
+      en: >-
+        A belfry over the south-west corner bay, marked with Metochites'
+        monograms. No document describes it; its height is a guess.
+      tr: >-
+        Güneybatı köşe bölmesinin üstünde Metokhites'in monogramlarını taşıyan
+        bir çan kulesi. Onu anlatan bir belge yok; yüksekliği tahmindir.
+  - id: buttress
+    parts: [flying-buttress]
+    seconds: 2.2
+    epochs: [1321, 1511]
+    sources: [ousterhout-introduction, van-millingen-1912]
+    label: {en: "A flying buttress", tr: "Bir uçan payanda"}
+    caption:
+      en: >-
+        Last, a flying buttress to hold the twelfth-century apse, an idea
+        rare in Byzantine building.
+      tr: >-
+        Son olarak 12. yüzyıl apsisini tutmak için bir uçan payanda; Bizans
+        yapılarında nadir bir fikir.
+  - id: minaret
+    parts: [minaret*]
+    seconds: 2.2
+    epochs: [1511]
+    sources: [ousterhout-introduction]
+    label: {en: "The minaret", tr: "Minare"}
+    caption:
+      en: >-
+        Between 1495 and 1511 the church became a mosque: a mihrab in the
+        apse, and a minaret in place of the belfry.
+      tr: >-
+        1495 ile 1511 arasında kilise camiye çevrildi: apsiste bir mihrap ve
+        çan kulesinin yerine bir minare.
+reveal:
+  through: dome-early
+  seconds: 8.0
+  turnDegrees: 30
+  caption:
+    en: "Maria Doukaina's church of about 1077–81: an inscribed cross under a dome, on sixth-century foundations."
+    tr: "Maria Dukaina'nın yaklaşık 1077–81 tarihli kilisesi: 6. yüzyıl temelleri üstünde, kubbeli bir kapalı Yunan haçı."
+choisy: {sectionHeight: 6.0, elevation: -50, azimuth: 225}
+dimensions:
+  - id: naos-dome-diameter
+    value: 7.7
+    measure: {kind: diameter, parts: [naos-dome], side: inner, band: 0.02}
+    source: wp-the-chora-1381788152
+    quote: "The largest dome in the church (7.7 m in diameter) is above the centre of the naos"
+  - id: parekklesion-dome-diameter
+    value: 4.5
+    measure: {kind: diameter, parts: [parek-dome], side: inner, band: 0.02, centre: [11.61, -0.77]}
+    source: wp-the-chora-1381788152
+    quote: "The second largest dome (4.5 m diameter) in the church graces the centre of the roof of the parecclesion"
+  - id: naos-drum-windows
+    value: 8
+    measure: {kind: count, parts: [naos-dome-drum], zmin: 12.4, zmax: 14.1}
+    source: van-millingen-1912
+    quote: "The dome rests on a ribbed drum of sixteen concave segments, and is pierced by eight windows"
+  - id: parekklesion-drum-windows
+    value: 12
+    measure: {kind: count, parts: [parek-dome-drum], zmin: 10.2, zmax: 12.1}
+    source: van-millingen-1912
+    quote: "The western bay is covered by a high twelve-sided drum dome, with windows in each side"
+  - id: inner-north-dome-windows
+    value: 8
+    measure: {kind: count, parts: [inner-dome-n-drum], zmin: 7.9, zmax: 8.7}
+    source: van-millingen-1912
+    quote: "The northern end bay is covered with a drum dome of sixteen hollow segments pierced by eight windows"
+  - id: outer-narthex-bays
+    value: 7
+    measure: {kind: count, parts: [outer-vaults]}
+    source: ousterhout-2002
+    quote: "Turning the corner into the seventh bay of the outer narthex"
+  - id: inner-narthex-length
+    value: 18
+    measure: {kind: gap, axis: x, from: [inner-wall-n], to: [inner-wall-s]}
+    source: wp-the-chora-1381788152
+    quote: "Like the exonarthex, the esonarthex is 4 m wide, but it is slightly shorter, 18 m long"
+  - id: inner-narthex-bays
+    value: 4
+    measure: {kind: count, parts: [inner-dome-n, inner-dome-s, inner-vaults]}
+    source: van-millingen-1912
+    quote: "It is divided into four bays, and is not symmetrically placed to the church"
+  - id: parekklesion-bays
+    value: 2
+    measure: {kind: count, parts: [parek-dome, parek-vault]}
+    source: ousterhout-2002
+    quote: "Divided into two square bays, flanked by a barrel vault to the west and apse to the east"
+  - id: columns-1081
+    value: 4
+    measure: {kind: count, parts: [naos-columns], zmin: 0.27, zmax: 6.49}
+    source: ousterhout-2002
+    quote: "a cross-in-square type, with a small dome raised above four columns"
+shared: [choisy-1883, ousterhout-introduction, ousterhout-2002]
+sources:
+  - id: van-millingen-1912
+    title: {en: "Byzantine Churches in Constantinople (London, 1912)", tr: "Byzantine Churches in Constantinople (Londra, 1912)"}
+    url: https://www.gutenberg.org/ebooks/29077
+    author: {en: "Alexander Van Millingen, with Ramsay Traquair, W. S. George and A. E. Henderson",
+             tr: "Alexander Van Millingen; Ramsay Traquair, W. S. George ve A. E. Henderson ile"}
+    accessedAt: "2026-10-17"
+    licence: {en: "Public domain", tr: "Kamu malı"}
+  - id: wp-the-chora-1381788152
+    title: {en: "The Chora — Wikipedia (revision 1381788152)", tr: "The Chora — Wikipedia (1381788152 numaralı sürüm)"}
+    url: https://en.wikipedia.org/w/index.php?oldid=1381788152
+    author: {en: "Wikipedia contributors", tr: "Wikipedia katkıcıları"}
+    accessedAt: "2026-11-12"
+    licence: {en: "CC BY-SA 4.0", tr: "CC BY-SA 4.0"}
+  - id: osm-relation-7614527
+    title: {en: "OpenStreetMap relation 7614527, Kariye Camii", tr: "OpenStreetMap ilişkisi 7614527, Kariye Camii"}
+    url: https://www.openstreetmap.org/relation/7614527
+    author: {en: "OpenStreetMap contributors", tr: "OpenStreetMap katkıcıları"}
+    accessedAt: "2026-11-12"
+    licence: {en: "ODbL 1.0", tr: "ODbL 1.0"}

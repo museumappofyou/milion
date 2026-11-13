@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../content/models.dart';
+
 import '../design/components.dart';
 import '../design/theme.dart';
 import '../l10n/strings.dart';
@@ -11,7 +13,10 @@ import 'scan_tab.dart';
 /// The camera-eye action on places and artworks with recognition support.
 /// The model and camera load only here; nothing asks for camera access before.
 class ScanScreen extends StatefulWidget {
-  const ScanScreen({super.key});
+  const ScanScreen({super.key, this.onLocate});
+
+  /// See [ScanTab.onLocate].
+  final void Function(Artwork artwork, Rect cameraFrame)? onLocate;
   @override
   State<ScanScreen> createState() => _ScanScreenState();
 }
@@ -57,6 +62,7 @@ class _ScanScreenState extends State<ScanScreen> {
                   ...m.artworkIds,
             },
             onExplore: _explore,
+            onLocate: widget.onLocate,
           );
         }
         return Theme(

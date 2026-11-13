@@ -10,6 +10,7 @@ import 'package:milion/content/registry.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/design/plan_icon.dart';
 import 'package:milion/first_run/first_run_screen.dart';
+import 'package:milion/guide/guide_screen.dart';
 import 'package:milion/l10n/strings.dart';
 import 'package:milion/mosaic/mosaic_tab.dart';
 import 'package:milion/screens/about_tab.dart';
@@ -409,7 +410,7 @@ void main() {
         300,
         scrollable: find.byType(Scrollable).first,
       );
-      expect(find.text('5 of 23 playable · 0 approved'), findsOneWidget);
+      expect(find.text('6 of 23 playable · 0 approved'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('mosaic-strip')));
       await tester.pumpAndSettle();
       expect(shell(tester).current, Destination.mosaic);
@@ -489,7 +490,7 @@ void main() {
         await tester.tap(destination('Milestones'));
         await tester.pumpAndSettle();
         expect(
-          find.text('48 Milestones · 5 playable · 0 approved · 43 planned'),
+          find.text('48 Milestones · 6 playable · 0 approved · 42 planned'),
           findsOneWidget,
         );
         final last = find.byKey(const ValueKey('milestone-XLVII'));
@@ -522,7 +523,7 @@ void main() {
         await openCityList(tester);
         expect(
           find.textContaining(
-            'places · positions checked on Wikidata · 0 reviewed',
+            'places · positions checked on Wikidata · 1 reviewed',
           ),
           findsOneWidget,
         );
@@ -536,11 +537,17 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.byType(PlaceScreen), findsOneWidget);
         expect(find.byKey(const ValueKey('place-camera-eye')), findsOneWidget);
-        expect(find.text('Not reviewed yet'), findsOneWidget);
+        // P11 reviewed Chora; its artworks open the guide's plan first.
+        expect(find.text('Not reviewed yet'), findsNothing);
         await tester.tap(find.byKey(const ValueKey('place-artworks')));
+        await tester.pumpAndSettle();
+        expect(find.byType(GuideScreen), findsOneWidget);
+        await tester.tap(find.byKey(const ValueKey('guide-catalogue')));
         await tester.pumpAndSettle();
         expect(find.byType(ArtworksTab), findsOneWidget);
         expect(find.text('103 artworks · Chora / Kariye'), findsOneWidget);
+        await tester.pageBack();
+        await tester.pumpAndSettle();
         await tester.pageBack();
         await tester.pumpAndSettle();
         await tester.pageBack();

@@ -1604,4 +1604,93 @@ class AppLocalizationsEn extends AppLocalizations {
   String atlasMapLabelToday(String count) {
     return 'Map of Istanbul today, $count places. The list shows the same places.';
   }
+
+  @override
+  String get lookForThree => 'Three things to look for';
+
+  @override
+  String get artworkStory => 'The story';
+
+  @override
+  String get artworkInscriptions => 'Inscriptions';
+
+  @override
+  String get inscriptionFromPhoto => 'Read from a credited photograph';
+
+  @override
+  String get artworkCondition => 'Condition';
+
+  @override
+  String get guidePlan => 'Plan';
+
+  @override
+  String guideTitle(String place, String count) {
+    return '$place: the plan and its $count artworks';
+  }
+
+  @override
+  String get guideAllRooms => 'All rooms';
+
+  @override
+  String guideRoomCount(String room, String count) {
+    return '$room · $count artworks';
+  }
+
+  @override
+  String get guideCatalogue => 'Catalogue and search';
+
+  @override
+  String get guideCycles => 'Walk a cycle';
+
+  @override
+  String guideCycleStop(String n, String total) {
+    return 'Stop $n of $total';
+  }
+
+  @override
+  String get guideNext => 'Next';
+
+  @override
+  String get guidePrevious => 'Previous';
+
+  @override
+  String get guideEndCycle => 'End the walk';
+
+  @override
+  String get guideOpenArtwork => 'Open the artwork';
+
+  @override
+  String guidePlanLabel(String place, String rooms) {
+    return 'Plan of $place: $rooms. Choose a room below to list its artworks.';
+  }
+
+  @override
+  String guideYouAreHere(String title) {
+    return 'You are at $title';
+  }
+
+  @override
+  String guideFoundByCamera(String title) {
+    return 'Found by the camera: $title';
+  }
+
+  @override
+  String get guideHunt => 'The Chora hunt';
+
+  @override
+  String guideHuntIntro(String count) {
+    return '$count things to find in the building';
+  }
+
+  @override
+  String get guideHuntAnswer => 'Show the answer';
+
+  @override
+  String get guideSurfaceDome => 'Domes';
+
+  @override
+  String get guideSurfaceVault => 'Vaults';
+
+  @override
+  String get guideSurfaceWall => 'Walls, arches and niches';
 }

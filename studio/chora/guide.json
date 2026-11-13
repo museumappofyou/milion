@@ -1,0 +1,895 @@
+{
+ "id": "chora-plan",
+ "place": "chora",
+ "axisDeg": 104.5,
+ "note": "Plan rooms and vaults come from tool/content/chora_plan.py (Van Millingen 1912, Fig. 105); anchors place each artwork from its position in the drafts and the KE guide.",
+ "anchors": {
+  "M01": {
+   "room": "naos",
+   "at": [
+    -4.6,
+    0.0
+   ]
+  },
+  "M02": {
+   "room": "naos",
+   "at": [
+    3.6,
+    -2.6
+   ]
+  },
+  "M03": {
+   "room": "naos",
+   "at": [
+    3.6,
+    2.6
+   ]
+  },
+  "M04": {
+   "room": "passage",
+   "at": [
+    -11.45,
+    0.0
+   ]
+  },
+  "M06": {
+   "room": "passage",
+   "at": [
+    -11.45,
+    1.7
+   ]
+  },
+  "M07": {
+   "room": "passage",
+   "at": [
+    -11.45,
+    2.7
+   ]
+  },
+  "M08": {
+   "room": "passage",
+   "at": [
+    -11.45,
+    -1.7
+   ]
+  },
+  "M10": {
+   "room": "inner-narthex",
+   "at": [
+    -9.8,
+    9.95
+   ]
+  },
+  "M11": {
+   "room": "inner-narthex",
+   "at": [
+    -7.2,
+    0.0
+   ]
+  },
+  "M12": {
+   "room": "inner-narthex",
+   "at": [
+    -7.2,
+    -4.65
+   ]
+  },
+  "M13": {
+   "room": "inner-narthex",
+   "at": [
+    -8.45,
+    -4.65
+   ]
+  },
+  "M14": {
+   "room": "inner-narthex",
+   "at": [
+    -8.58,
+    6.77
+   ]
+  },
+  "M15": {
+   "room": "inner-narthex",
+   "at": [
+    -9.8,
+    8.0
+   ]
+  },
+  "M16": {
+   "room": "inner-narthex",
+   "at": [
+    -7.4,
+    5.5
+   ]
+  },
+  "M17": {
+   "room": "inner-narthex",
+   "at": [
+    -8.2,
+    9.95
+   ]
+  },
+  "M18": {
+   "room": "inner-narthex",
+   "at": [
+    -7.15,
+    6.77
+   ]
+  },
+  "M19": {
+   "room": "inner-narthex",
+   "at": [
+    -7.6,
+    4.65
+   ]
+  },
+  "M20": {
+   "room": "inner-narthex",
+   "at": [
+    -7.15,
+    2.9
+   ]
+  },
+  "M21": {
+   "room": "inner-narthex",
+   "at": [
+    -8.0,
+    2.9
+   ]
+  },
+  "M22": {
+   "room": "inner-narthex",
+   "at": [
+    -9.2,
+    2.9
+   ]
+  },
+  "M23": {
+   "room": "inner-narthex",
+   "at": [
+    -7.6,
+    1.45
+   ]
+  },
+  "M24": {
+   "room": "inner-narthex",
+   "at": [
+    -8.0,
+    0.0
+   ]
+  },
+  "M25": {
+   "room": "inner-narthex",
+   "at": [
+    -9.2,
+    0.0
+   ]
+  },
+  "M26": {
+   "room": "inner-narthex",
+   "at": [
+    -7.6,
+    -1.9
+   ]
+  },
+  "M27": {
+   "room": "inner-narthex",
+   "at": [
+    -9.7,
+    -1.9
+   ]
+  },
+  "M28": {
+   "room": "inner-narthex",
+   "at": [
+    -9.7,
+    1.45
+   ]
+  },
+  "M29": {
+   "room": "inner-narthex",
+   "at": [
+    -10.1,
+    2.9
+   ]
+  },
+  "M30": {
+   "room": "inner-narthex",
+   "at": [
+    -9.7,
+    4.65
+   ]
+  },
+  "M31": {
+   "room": "inner-narthex",
+   "at": [
+    -10.1,
+    0.0
+   ]
+  },
+  "M32": {
+   "room": "inner-narthex",
+   "at": [
+    -10.1,
+    6.77
+   ]
+  },
+  "M33": {
+   "room": "inner-narthex",
+   "at": [
+    -9.8,
+    5.5
+   ]
+  },
+  "M62": {
+   "room": "inner-narthex",
+   "at": [
+    -9.8,
+    -6.0
+   ]
+  },
+  "M63": {
+   "room": "inner-narthex",
+   "at": [
+    -9.8,
+    -3.3
+   ]
+  },
+  "M64": {
+   "room": "inner-narthex",
+   "at": [
+    -7.4,
+    -3.3
+   ]
+  },
+  "M65": {
+   "room": "inner-narthex",
+   "at": [
+    -7.4,
+    -6.0
+   ]
+  },
+  "M66": {
+   "room": "inner-narthex",
+   "at": [
+    -7.6,
+    -7.4
+   ]
+  },
+  "M67": {
+   "room": "inner-narthex",
+   "at": [
+    -9.7,
+    -7.4
+   ]
+  },
+  "M68": {
+   "room": "inner-narthex",
+   "at": [
+    -10.1,
+    -4.65
+   ]
+  },
+  "M05": {
+   "room": "outer-narthex",
+   "at": [
+    -15.6,
+    0.32
+   ]
+  },
+  "M09": {
+   "room": "outer-narthex",
+   "at": [
+    -15.7,
+    6.5
+   ]
+  },
+  "M34": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    10.3
+   ]
+  },
+  "M35": {
+   "room": "outer-narthex",
+   "at": [
+    -12.1,
+    8.52
+   ]
+  },
+  "M36": {
+   "room": "outer-narthex",
+   "at": [
+    -12.1,
+    4.52
+   ]
+  },
+  "M37": {
+   "room": "outer-narthex",
+   "at": [
+    -12.1,
+    -3.74
+   ]
+  },
+  "M38": {
+   "room": "outer-narthex",
+   "at": [
+    -12.1,
+    -7.1
+   ]
+  },
+  "M39": {
+   "room": "outer-narthex",
+   "at": [
+    -6.4,
+    -11.74
+   ]
+  },
+  "M40": {
+   "room": "outer-narthex",
+   "at": [
+    -8.32,
+    -14.1
+   ]
+  },
+  "M41": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    -14.1
+   ]
+  },
+  "M42": {
+   "room": "outer-narthex",
+   "at": [
+    -15.85,
+    -11.74
+   ]
+  },
+  "M43": {
+   "room": "outer-narthex",
+   "at": [
+    -15.85,
+    -7.1
+   ]
+  },
+  "M44": {
+   "room": "outer-narthex",
+   "at": [
+    -15.85,
+    -3.74
+   ]
+  },
+  "M45": {
+   "room": "outer-narthex",
+   "at": [
+    -15.85,
+    4.52
+   ]
+  },
+  "M46": {
+   "room": "outer-narthex",
+   "at": [
+    -15.85,
+    8.52
+   ]
+  },
+  "M47": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    9.3
+   ]
+  },
+  "M48": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    5.5
+   ]
+  },
+  "M49_1": {
+   "room": "outer-narthex",
+   "at": [
+    -13.0,
+    3.7
+   ]
+  },
+  "M49_2": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    3.1
+   ]
+  },
+  "M49_3": {
+   "room": "outer-narthex",
+   "at": [
+    -15.0,
+    3.7
+   ]
+  },
+  "M49_4": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    4.2
+   ]
+  },
+  "M50": {
+   "room": "outer-narthex",
+   "at": [
+    -14.0,
+    0.32
+   ]
+  },
+  "M51": {
+   "room": "outer-narthex",
+   "at": [
+    -12.9,
+    1.4
+   ]
+  },
+  "M52": {
+   "room": "outer-narthex",
+   "at": [
+    -13.5,
+    -0.9
+   ]
+  },
+  "M53": {
+   "room": "outer-narthex",
+   "at": [
+    -15.1,
+    1.4
+   ]
+  },
+  "M54": {
+   "room": "outer-narthex",
+   "at": [
+    -12.9,
+    -3.74
+   ]
+  },
+  "M55": {
+   "room": "outer-narthex",
+   "at": [
+    -15.2,
+    -12.9
+   ]
+  },
+  "M56": {
+   "room": "outer-narthex",
+   "at": [
+    -13.3,
+    -10.9
+   ]
+  },
+  "M57": {
+   "room": "outer-narthex",
+   "at": [
+    -13.3,
+    -12.6
+   ]
+  },
+  "M58": {
+   "room": "outer-narthex",
+   "at": [
+    -12.4,
+    -13.6
+   ]
+  },
+  "M59": {
+   "room": "outer-narthex",
+   "at": [
+    -12.4,
+    -9.9
+   ]
+  },
+  "M60": {
+   "room": "outer-narthex",
+   "at": [
+    -15.6,
+    -9.9
+   ]
+  },
+  "M61": {
+   "room": "outer-narthex",
+   "at": [
+    -8.32,
+    -12.9
+   ]
+  },
+  "F01": {
+   "room": "parekklesion",
+   "at": [
+    10.4,
+    -11.61
+   ]
+  },
+  "F02": {
+   "room": "parekklesion",
+   "at": [
+    9.2,
+    -11.61
+   ]
+  },
+  "F03": {
+   "room": "parekklesion",
+   "at": [
+    7.8,
+    -10.0
+   ]
+  },
+  "F04": {
+   "room": "parekklesion",
+   "at": [
+    7.8,
+    -13.2
+   ]
+  },
+  "F05": {
+   "room": "parekklesion",
+   "at": [
+    5.35,
+    -11.61
+   ]
+  },
+  "F06": {
+   "room": "parekklesion",
+   "at": [
+    3.8,
+    -13.3
+   ]
+  },
+  "F07": {
+   "room": "parekklesion",
+   "at": [
+    3.8,
+    -9.9
+   ]
+  },
+  "F08": {
+   "room": "parekklesion",
+   "at": [
+    6.9,
+    -9.9
+   ]
+  },
+  "F09": {
+   "room": "parekklesion",
+   "at": [
+    6.9,
+    -13.3
+   ]
+  },
+  "F10": {
+   "room": "parekklesion",
+   "at": [
+    6.0,
+    -14.0
+   ]
+  },
+  "F11": {
+   "room": "parekklesion",
+   "at": [
+    5.0,
+    -9.2
+   ]
+  },
+  "F12": {
+   "room": "parekklesion",
+   "at": [
+    -0.77,
+    -11.61
+   ]
+  },
+  "F13": {
+   "room": "parekklesion",
+   "at": [
+    0.8,
+    -10.0
+   ]
+  },
+  "F14": {
+   "room": "parekklesion",
+   "at": [
+    0.8,
+    -13.2
+   ]
+  },
+  "F15": {
+   "room": "parekklesion",
+   "at": [
+    -2.3,
+    -13.2
+   ]
+  },
+  "F16": {
+   "room": "parekklesion",
+   "at": [
+    -2.3,
+    -10.0
+   ]
+  },
+  "F17": {
+   "room": "parekklesion",
+   "at": [
+    -1.8,
+    -9.2
+   ]
+  },
+  "F18": {
+   "room": "parekklesion",
+   "at": [
+    0.3,
+    -9.2
+   ]
+  },
+  "F19": {
+   "room": "parekklesion",
+   "at": [
+    2.4,
+    -9.6
+   ]
+  },
+  "F20": {
+   "room": "parekklesion",
+   "at": [
+    4.3,
+    -14.0
+   ]
+  },
+  "F21": {
+   "room": "parekklesion",
+   "at": [
+    2.4,
+    -13.6
+   ]
+  },
+  "F22": {
+   "room": "parekklesion",
+   "at": [
+    0.3,
+    -14.0
+   ]
+  },
+  "F23": {
+   "room": "parekklesion",
+   "at": [
+    -1.8,
+    -14.0
+   ]
+  },
+  "F24": {
+   "room": "parekklesion",
+   "at": [
+    -3.5,
+    -13.4
+   ]
+  },
+  "F25": {
+   "room": "parekklesion",
+   "at": [
+    -3.5,
+    -9.8
+   ]
+  },
+  "F26": {
+   "room": "parekklesion",
+   "at": [
+    -3.5,
+    -11.61
+   ]
+  },
+  "F27": {
+   "room": "parekklesion",
+   "at": [
+    -5.2,
+    -11.61
+   ]
+  },
+  "F28": {
+   "room": "parekklesion",
+   "at": [
+    -2.6,
+    -11.61
+   ]
+  },
+  "F29": {
+   "room": "parekklesion",
+   "at": [
+    1.1,
+    -11.61
+   ]
+  },
+  "F30": {
+   "room": "parekklesion",
+   "at": [
+    2.4,
+    -11.61
+   ]
+  },
+  "F31": {
+   "room": "parekklesion",
+   "at": [
+    7.8,
+    -11.61
+   ]
+  },
+  "F32": {
+   "room": "parekklesion",
+   "at": [
+    7.9,
+    -14.1
+   ]
+  }
+ },
+ "cycles": [
+  {
+   "id": "life-of-the-virgin",
+   "title": {
+    "en": "The Life of the Virgin",
+    "tr": "Meryem’in Hayatı"
+   },
+   "intro": {
+    "en": "Nineteen scenes in the inner narthex, in Ousterhout’s order: from Joachim and Anne longing for a child to Joseph coming home to find Mary with child. The cycle begins at the north end and turns back along the west wall.",
+    "tr": "İç narteksteki on dokuz sahne, Ousterhout’un sırasıyla: Yuakim ile Anna’nın çocuk özleminden, Yusuf’un eve dönüp Meryem’i hamile bulmasına kadar. Döngü kuzey uçta başlar ve batı duvarı boyunca geri döner."
+   },
+   "artworks": [
+    "M17",
+    "M15",
+    "M16",
+    "M18",
+    "M19",
+    "M20",
+    "M23",
+    "M22",
+    "M21",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M31",
+    "M28",
+    "M29",
+    "M30",
+    "M33",
+    "M32"
+   ],
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ]
+  },
+  {
+   "id": "infancy-of-christ",
+   "title": {
+    "en": "The Infancy of Christ",
+    "tr": "İsa’nın Çocukluğu"
+   },
+   "intro": {
+    "en": "Thirteen lunettes of the outer narthex take up the story where the inner narthex leaves it: from Joseph’s dream to the boy Jesus taken to Jerusalem for Passover, one and a half circuits of the room.",
+    "tr": "Dış narteksin on üç lüneti hikâyeyi iç narteksin bıraktığı yerden alır: Yusuf’un rüyasından, çocuk İsa’nın Fısıh için Kudüs’e götürülmesine kadar; odanın bir buçuk turu."
+   },
+   "artworks": [
+    "M34",
+    "M35",
+    "M36",
+    "M37",
+    "M38",
+    "M39",
+    "M40",
+    "M41",
+    "M42",
+    "M43",
+    "M44",
+    "M45",
+    "M46"
+   ],
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ]
+  },
+  {
+   "id": "ministry-of-christ",
+   "title": {
+    "en": "The Ministry of Christ",
+    "tr": "İsa’nın Hizmeti"
+   },
+   "intro": {
+    "en": "Twenty-five scenes in the domical vaults of the outer narthex and the south bay of the inner narthex: from Christ among the Doctors and John the Baptist’s witness, through the Temptation and the miracles at Cana, to the healing miracles under the south dome.",
+    "tr": "Dış narteksin kubbemsi tonozlarında ve iç narteksin güney bölmesinde yirmi beş sahne: İsa’nın tapınakta bilginler arasında bulunmasından ve Vaftizci Yahya’nın tanıklığından, Şeytan’ın sınamaları ve Kana mucizeleri üzerinden, güney kubbesinin altındaki şifa mucizelerine kadar."
+   },
+   "artworks": [
+    "M47",
+    "M48",
+    "M49_1",
+    "M49_2",
+    "M49_3",
+    "M49_4",
+    "M50",
+    "M53",
+    "M51",
+    "M52",
+    "M54",
+    "M56",
+    "M59",
+    "M55",
+    "M60",
+    "M57",
+    "M58",
+    "M61",
+    "M62",
+    "M63",
+    "M64",
+    "M65",
+    "M66",
+    "M67",
+    "M68"
+   ],
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide"
+   ]
+  },
+  {
+   "id": "parekklesion",
+   "title": {
+    "en": "The parekklesion’s programme",
+    "tr": "Parekklesionun programı"
+   },
+   "intro": {
+    "en": "Metochites’ funeral chapel, walked from the entrance east: the Virgin and her Old Testament prefigurations in the domed west bay, the Last Judgment in the vault of the east bay, and the Anastasis in the apse, with the raisings of a boy and a girl on the arch before it.",
+    "tr": "Metokhites’in mezar şapeli, girişten doğuya yürünerek: kubbeli batı bölmede Meryem ve Eski Ahit’teki ön imgeleri, doğu bölmenin tonozunda Son Yargı, apsiste Anastasis ve önündeki kemerde bir oğlanla bir kızın diriltilmesi."
+   },
+   "artworks": [
+    "F27",
+    "F26",
+    "F25",
+    "F24",
+    "F28",
+    "F12",
+    "F16",
+    "F17",
+    "F18",
+    "F13",
+    "F19",
+    "F30",
+    "F29",
+    "F21",
+    "F14",
+    "F22",
+    "F23",
+    "F15",
+    "F05",
+    "F07",
+    "F11",
+    "F08",
+    "F06",
+    "F20",
+    "F10",
+    "F09",
+    "F31",
+    "F03",
+    "F04",
+    "F02",
+    "F01",
+    "F32"
+   ],
+   "sources": [
+    "ousterhout-2002",
+    "chora-guide-parekklesion"
+   ]
+  }
+ ],
+ "sources": [
+  "van-millingen-1912",
+  "osm-relation-7614527",
+  "ousterhout-2002",
+  "chora-guide"
+ ],
+ "newSources": []
+}

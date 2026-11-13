@@ -106,6 +106,9 @@ void main() {
       ]) {
         await tester.tap(find.text(title));
         await tester.pumpAndSettle();
+        // P11's complete records make the sheet scroll.
+        await tester.ensureVisible(find.text('Open artwork'));
+        await tester.pumpAndSettle();
         await tester.tap(find.text('Open artwork'));
         await tester.pumpAndSettle();
         expect(opened, id);

@@ -1,0 +1,258 @@
+{
+  "note": "The Chora hunt (P11, for P21): eight things a visitor can find in the building. Each answer rests on the quoted source; the checks on site are open (O15).",
+  "title": {
+    "en": "The Chora hunt",
+    "tr": "Kariye avı"
+  },
+  "route": {
+    "id": "chora-visit",
+    "title": {
+      "en": "A visit to Chora",
+      "tr": "Kariye ziyareti"
+    },
+    "body": {
+      "en": "The hunt’s route: the outer and inner narthex, the naos, the parekklesion and the east end outside.",
+      "tr": "Avın güzergâhı: dış ve iç narteks, naos, parekklesion ve dışarıdan doğu ucu."
+    },
+    "places": [
+      "chora"
+    ],
+    "sources": [
+      "ousterhout-2002",
+      "van-millingen-1912"
+    ]
+  },
+  "items": [
+    {
+      "id": "metochites-hat",
+      "room": "Inner narthex",
+      "artworkIds": [
+        "M11"
+      ],
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "title": {
+        "en": "The founder’s hat",
+        "tr": "Kurucunun şapkası"
+      },
+      "clue": {
+        "en": "Above the door into the naos, find the man offering a model of the church. What is on his head?",
+        "tr": "Naosa açılan kapının üstünde kilisenin maketini sunan adamı bulun. Başında ne var?"
+      },
+      "answer": {
+        "en": "A tall hat of office: Theodore Metochites wears it as a high official, with his court titles written behind him.",
+        "tr": "Yüksek bir makam şapkası: Theodoros Metokhites onu yüksek bir devlet görevlisi olarak takıyor; saray unvanları arkasında yazılı."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "pp. 22–23",
+          "quote": "wears a high hat symbolizing his high office (not only Turks wore turbans), and his court titles are inscribed behind him"
+        }
+      ]
+    },
+    {
+      "id": "hats-in-hell",
+      "room": "Parekklesion",
+      "artworkIds": [
+        "F10"
+      ],
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "title": {
+        "en": "The same hat in hell",
+        "tr": "Cehennemdeki aynı şapka"
+      },
+      "clue": {
+        "en": "In the parekklesion’s Last Judgment, follow the river of fire into the south-east pendentive and look at the faces of the damned.",
+        "tr": "Parekklesiondaki Son Yargı’da ateş ırmağını güneydoğu pandantifine kadar izleyin ve lanetlilerin yüzlerine bakın."
+      },
+      "answer": {
+        "en": "Several of the damned wear court dress and tall hats like Metochites’ own, in the funeral chapel he added to the church.",
+        "tr": "Lanetlilerin birkaçı saray giysisi ve Metokhites’inkine benzeyen yüksek şapkalar giyiyor; hem de onun kiliseye eklettiği mezar şapelinde."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "pp. 76–77",
+          "quote": "faces of tormented souls, including several in court dress, wearing high hats like that of Theodore Metochites"
+        }
+      ]
+    },
+    {
+      "id": "lady-of-the-mongols",
+      "room": "Inner narthex",
+      "artworkIds": [
+        "M12"
+      ],
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "title": {
+        "en": "The Lady of the Mongols",
+        "tr": "Moğolların Hanımı"
+      },
+      "clue": {
+        "en": "In the large Deesis panel of the inner narthex, look at Christ’s feet.",
+        "tr": "İç narteksteki büyük Deesis panosunda İsa’nın ayaklarının dibine bakın."
+      },
+      "answer": {
+        "en": "A nun named in her inscription as Melanie, the Lady of the Mongols: probably Maria, a daughter of Michael VIII married to a Mongol ruler.",
+        "tr": "Yazıtında Melania, Moğolların Hanımı diye anılan bir rahibe: büyük olasılıkla VIII. Mihail’in bir Moğol hükümdarıyla evlendirilen kızı Maria."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "pp. 22–23",
+          "quote": "At the feet of Christ is a nun named in the inscription as Melanie, the Lady of the Mongols"
+        }
+      ]
+    },
+    {
+      "id": "marked-monk",
+      "room": "Parekklesion",
+      "artworkIds": [
+        "F16"
+      ],
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "title": {
+        "en": "The marked monk",
+        "tr": "Damgalı keşiş"
+      },
+      "clue": {
+        "en": "Under the parekklesion’s dome, find the writer in the north-west pendentive.",
+        "tr": "Parekklesion kubbesinin altında, kuzeybatı pandantifindeki yazarı bulun."
+      },
+      "answer": {
+        "en": "Theophanes Graptos, “the marked one”: a ninth-century monk of Chora, branded on the forehead during Iconoclasm and buried here.",
+        "tr": "Theophanes Graptos, yani “damgalı”: 9. yüzyılda Kariye’de keşişti; ikonoklazma döneminde alnı dağlandı ve buraya gömüldü."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "pp. 70–71",
+          "quote": "a ninth-century writer who was a monk at the Chora, where he was buried. He was called Graptos, meaning “the marked one,”"
+        }
+      ]
+    },
+    {
+      "id": "peacock-cornice",
+      "room": "Naos",
+      "artworkIds": [],
+      "sources": [
+        "van-millingen-1912"
+      ],
+      "title": {
+        "en": "Peacocks over the door",
+        "tr": "Kapının üstündeki tavuskuşları"
+      },
+      "clue": {
+        "en": "In the naos, turn round and look above the central door you came in by.",
+        "tr": "Naosta arkanızı dönün ve girdiğiniz orta kapının üstüne bakın."
+      },
+      "answer": {
+        "en": "A porphyry cornice carved with peacocks drinking at fountains, on the inside of the door.",
+        "tr": "Kapının iç yüzünde, çeşmelerden su içen tavuskuşlarıyla oyulmuş porfir bir korniş."
+      },
+      "evidence": [
+        {
+          "source": "van-millingen-1912",
+          "locator": "ch. XXIV, Architectural Features",
+          "quote": "Above the central door, on the interior, is a porphyry cornice carved with peacocks drinking at fountains"
+        }
+      ]
+    },
+    {
+      "id": "dome-monograms",
+      "room": "Naos",
+      "artworkIds": [],
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "title": {
+        "en": "Metochites signs the dome",
+        "tr": "Metokhites kubbeyi imzalıyor"
+      },
+      "clue": {
+        "en": "Look up to the cornice where the naos dome begins.",
+        "tr": "Naos kubbesinin başladığı kornişe bakın."
+      },
+      "answer": {
+        "en": "Metochites rebuilt the naos dome, and its cornice carries his monograms.",
+        "tr": "Naos kubbesini Metokhites yeniden yaptırdı; kornişinde onun monogramları var."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "pp. 14–15",
+          "quote": "He rebuilt the naos dome, the cornice of which is decorated with his monograms"
+        }
+      ]
+    },
+    {
+      "id": "angel-capitals",
+      "room": "Outer narthex",
+      "artworkIds": [],
+      "sources": [
+        "ousterhout-2002"
+      ],
+      "title": {
+        "en": "Angels on old capitals",
+        "tr": "Eski başlıklardaki melekler"
+      },
+      "clue": {
+        "en": "In the south-west corner bay of the outer narthex, look at the tops of the columns.",
+        "tr": "Dış narteksin güneybatı köşe bölmesinde sütunların başlıklarına bakın."
+      },
+      "answer": {
+        "en": "Four eleventh-century marble capitals, reused: each has an angel’s bust and an acanthus roundel round a cross.",
+        "tr": "Yeniden kullanılmış dört 11. yüzyıl mermer başlık: her birinde bir melek büstü ve bir haçı çevreleyen akantus madalyonu var."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "pp. 100–101",
+          "quote": "four eleventh-century marble capitals reused in the southwest corner bay of the exonarthex, decorated with a bust of an angel and an acanthus roundel"
+        }
+      ]
+    },
+    {
+      "id": "flying-buttress",
+      "room": "Outside, east end",
+      "artworkIds": [],
+      "sources": [
+        "ousterhout-2002",
+        "van-millingen-1912"
+      ],
+      "title": {
+        "en": "A Gothic idea at the apse",
+        "tr": "Apsiste Gotik bir fikir"
+      },
+      "clue": {
+        "en": "Walk round to the east end and look at the main apse from outside.",
+        "tr": "Doğu ucuna dolaşın ve ana apsise dışarıdan bakın."
+      },
+      "answer": {
+        "en": "A flying buttress, added in the fourteenth century to steady the apse: borrowed from French Gothic and rare in Byzantine building.",
+        "tr": "Apsisi sağlamlaştırmak için 14. yüzyılda eklenmiş bir uçan payanda: Fransız Gotiğinden alınmış, Bizans yapılarında nadir bir çözüm."
+      },
+      "evidence": [
+        {
+          "source": "ousterhout-2002",
+          "locator": "p. 11",
+          "quote": "the flying buttress was added in the fourteenth century to stabilize the apse. Borrowed from the French Gothic, the flying buttress is unusual in Byzantine architecture"
+        },
+        {
+          "source": "van-millingen-1912",
+          "locator": "ch. XXIV, Architectural Features",
+          "quote": "It was at one time supported by a large double flying buttress, but the lower arch has fallen in"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

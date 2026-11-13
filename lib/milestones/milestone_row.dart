@@ -69,7 +69,7 @@ class MilestoneRow extends StatelessWidget {
         state = slotFor(
           m,
           opened: opened,
-          playable: AppScope.of(context).plates.forMilestone(m) != null,
+          playable: AppScope.of(context).playable(m),
         );
     return MergeSemantics(
       child: InkWell(

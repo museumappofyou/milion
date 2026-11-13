@@ -181,7 +181,8 @@ void main() {
         registry.places.every((p) => RegExp(r'^Q\d+$').hasMatch(p.qid)),
         isTrue,
       );
-      expect(registry.placesByDistance(), isEmpty);
+      // P11 reviewed Chora, the first reviewed place.
+      expect(registry.placesByDistance().map((p) => p.id), ['chora']);
       expect(registry.placesByDistance(includeDrafts: true).first.id, 'milion');
       expect(District.values.length, 39);
       expect(requested.where((p) => p.contains('model')), isEmpty);
@@ -197,17 +198,22 @@ void main() {
       for (final row in legacy['map']) {
         final artwork = registry.artwork(row['scene_id']);
         final info = legacy['info'][artwork.id];
-        expect(artwork.title.inLanguage('en'), row['title']);
-        expect(artwork.room.inLanguage('en'), row['room']);
-        expect(artwork.surface.inLanguage('en'), row['surface']);
+        // P11 rewrote titles, rooms, surfaces, positions, summaries and cues
+        // from the sources (studio/chora/artworks/); ids, folders and kinds
+        // are the legacy ones, and every rewritten field is bilingual.
         expect(artwork.folder, row['scene_folder']);
-        expect(artwork.summary.inLanguage('en'), info['summary']);
-        expect(
-          artwork.cues.map((c) => c.inLanguage('en')).toList(),
-          info['cues'],
-        );
-        expect(artwork.position.inLanguage('en'), info['position']);
         expect(artwork.kind.name, info['artwork_type']);
+        for (final field in [
+          artwork.title,
+          artwork.room,
+          artwork.surface,
+          artwork.position,
+          artwork.summary,
+          ...artwork.cues,
+        ]) {
+          expect(field.inLanguage('en'), isNotEmpty, reason: artwork.id);
+          expect(field.tr, isNotEmpty, reason: artwork.id);
+        }
       }
       final classes = (jsonDecode(
         await File('assets/model/classes.json').readAsString(),

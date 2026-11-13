@@ -1,4 +1,4 @@
-"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P10 authored content.
+"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P11 authored content.
 
 Run the seed, register, daily-detail and dig builders in dependency order, then
 the P07 plate pipeline for every studio/plates/*/plate.yaml (without previews;
@@ -31,6 +31,8 @@ def main():
                    cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/space/build_kit.py')],
                    cwd=ROOT, check=True)
+    # P11: Chora's artworks, plan, cycles, hunt, review and Milestone VI (after the kit).
+    subprocess.run([sys.executable, str(ROOT / 'tool/content/build_chora.py')], cwd=ROOT, check=True)
     for name in ['place_years.py', 'build_historic.py']:
         subprocess.run([sys.executable, str(ROOT / 'tool/atlas' / name)], cwd=ROOT, check=True)
     if (ROOT / 'studio/cache/atlas/raw/coastline.json').exists():

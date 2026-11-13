@@ -455,6 +455,26 @@ class Place {
   final List<String> sourceIds;
 }
 
+enum InscriptionBasis { source, photograph }
+
+/// A Greek inscription on an artwork: as written, transliterated and
+/// translated. [basis] says whether a publication gives it or it was read
+/// from a credited photograph.
+class Inscription {
+  Inscription(JsonReader r)
+    : greek = r.string('greek'),
+      transliteration = r.string('transliteration'),
+      translation = Localized.fromJson(r.object('translation')),
+      basis = r.enumeration('basis', InscriptionBasis.values),
+      sourceIds = r.strings('sources');
+  factory Inscription.fromJson(Json j) => decode(j, Inscription.new);
+  final String greek;
+  final String transliteration;
+  final Localized translation;
+  final InscriptionBasis basis;
+  final List<String> sourceIds;
+}
+
 class Artwork {
   Artwork(JsonReader r)
     : id = r.string('id'),
@@ -468,7 +488,18 @@ class Artwork {
       cues = r.list('cues', (j) => Localized.fromJson(j as Json)),
       folder = r.string('folder'),
       mediaIds = r.strings('media'),
-      sourceIds = r.strings('sources');
+      sourceIds = r.strings('sources'),
+      lookFor = r.optionalList('lookFor', (j) => Localized.fromJson(j as Json)),
+      story = r.optionalObject('story') == null
+          ? null
+          : Localized.fromJson(r.object('story')),
+      inscriptions = r.optionalList(
+        'inscriptions',
+        (j) => Inscription.fromJson(j as Json),
+      ),
+      condition = r.optionalObject('condition') == null
+          ? null
+          : Localized.fromJson(r.object('condition'));
   factory Artwork.fromJson(Json j) => decode(j, Artwork.new);
   final String id;
   final String placeId;
@@ -482,6 +513,38 @@ class Artwork {
   final String folder;
   final List<String> mediaIds;
   final List<String> sourceIds;
+
+  /// Three things to look for (P11).
+  final List<Localized> lookFor;
+  final Localized? story;
+  final List<Inscription> inscriptions;
+
+  /// What is lost, damaged or restored.
+  final Localized? condition;
+
+  /// Complete in the §4 sense: every text in EN and TR, three look-fors, a
+  /// story, condition notes and sources (inscriptions only where present).
+  bool get complete {
+    bool both(Localized? l) =>
+        l != null &&
+        l.en.trim().isNotEmpty &&
+        (l.tr?.trim().isNotEmpty ?? false);
+    return [
+          title,
+          room,
+          surface,
+          position,
+          summary,
+          story,
+          condition,
+        ].every(both) &&
+        cues.isNotEmpty &&
+        cues.every(both) &&
+        lookFor.length == 3 &&
+        lookFor.every(both) &&
+        inscriptions.every((i) => both(i.translation)) &&
+        sourceIds.isNotEmpty;
+  }
 }
 
 class Milestone {
@@ -600,6 +663,38 @@ class Route {
   );
 }
 
+/// One thing to find on a hunt (P11): where to look, and what it is.
+class HuntItem {
+  HuntItem(
+    this.id,
+    this.room,
+    this.title,
+    this.clue,
+    this.answer,
+    this.artworkIds,
+    this.sourceIds,
+  );
+  final String id;
+  final String room;
+  final Localized title;
+  final Localized clue;
+  final Localized answer;
+  final List<String> artworkIds;
+  final List<String> sourceIds;
+  factory HuntItem.fromJson(Json j) => decode(
+    j,
+    (r) => HuntItem(
+      r.string('id'),
+      r.string('room'),
+      Localized.fromJson(r.object('title')),
+      Localized.fromJson(r.object('clue')),
+      Localized.fromJson(r.object('answer')),
+      r.optionalStrings('artworks'),
+      r.strings('sources'),
+    ),
+  );
+}
+
 class Hunt {
   Hunt(
     this.id,
@@ -607,14 +702,18 @@ class Hunt {
     this.routeId,
     this.clues,
     this.artworkIds,
-    this.sourceIds,
-  );
+    this.sourceIds, {
+    this.items = const [],
+  });
   final String id;
   final Localized title;
   final String routeId;
   final List<Localized> clues;
   final List<String> artworkIds;
   final List<String> sourceIds;
+
+  /// The things to find, each with its clue and answer (P11, for P21).
+  final List<HuntItem> items;
   factory Hunt.fromJson(Json j) => decode(
     j,
     (r) => Hunt(
@@ -624,6 +723,7 @@ class Hunt {
       r.list('clues', (j) => Localized.fromJson(j as Json)),
       r.strings('artworks'),
       r.strings('sources'),
+      items: r.optionalList('items', (j) => HuntItem.fromJson(j as Json)),
     ),
   );
 }

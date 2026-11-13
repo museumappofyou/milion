@@ -17,8 +17,8 @@ import 'p05_dig_test.dart' show loadRegistry;
 import 'space_engine_test.dart' show signedVolume;
 import 'space_player_test.dart' show fileBytes, space, openPanel;
 
-/// The three P09 kit buildings (`studio/space/<id>.yaml`).
-const kit = ['bodrum-camii', 'kucuk-ayasofya', 'sehzade-camii'];
+/// The kit buildings (`studio/space/<id>.yaml`): P09's three and P11's Chora.
+const kit = ['bodrum-camii', 'kucuk-ayasofya', 'sehzade-camii', 'kariye-camii'];
 
 Map<String, dynamic> manifestJson(String id) =>
     jsonDecode(File('assets/space/$id/study.json').readAsStringSync())
@@ -112,6 +112,7 @@ void main() {
     expect(catalog.forPlace('sehzade').single.id, 'sehzade-camii');
     expect(catalog.forPlace('little-hagia-sophia').single.id, 'kucuk-ayasofya');
     expect(catalog.forPlace('bodrum-mosque').single.id, 'bodrum-camii');
+    expect(catalog.forPlace('chora').single.id, 'kariye-camii');
     expect(catalog.study('how-a-dome-stands')!.placeId, isNull);
     // A study that names no registry place is refused.
     final orphan = await SpaceCatalog.load(

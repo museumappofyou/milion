@@ -88,25 +88,28 @@
         "lat": 41.031111,
         "lng": 28.939167
       },
-      "entrance": null,
+      "entrance": {
+        "lat": 41.031345,
+        "lng": 28.939155
+      },
       "currentFunction": {
-        "en": "Not yet field-checked",
-        "tr": "Yerinde henüz doğrulanmadı"
+        "en": "A mosque since 2020, reopened on 6 May 2024; visitors enter outside prayer times, and foreign visitors pay at the door.",
+        "tr": "2020’den beri cami; 6 Mayıs 2024’te yeniden açıldı. Ziyaretçiler namaz vakitleri dışında giriyor, yabancı ziyaretçiler kapıda ücret ödüyor."
       },
       "status": {
-        "value": "unknown",
-        "checkedAt": null
+        "value": "open",
+        "checkedAt": "2026-11-12"
       },
       "qid": "Q849489",
       "tags": [
         "seed",
-        "entrance-unverified"
+        "entrance-remote"
       ],
       "hook": {
         "en": "Chora’s church and Kariye’s mosque occupy the same building.",
         "tr": "Hora Kilisesi ile Kariye Camii aynı yapının iki adı."
       },
-      "review": "draft",
+      "review": "reviewed",
       "wave": "byzantine",
       "reviewPhase": "P11",
       "outsideProvince": false,
@@ -286,7 +289,8 @@
         "cumhuriyet-kariye-2024",
         "chora-museum",
         "ousterhout-introduction",
-        "aa-kariye-postponed-2020"
+        "aa-kariye-postponed-2020",
+        "osm-node-2088635511"
       ],
       "visit": {
         "checkedAt": "2026-10-08",

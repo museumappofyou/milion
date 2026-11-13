@@ -2982,6 +2982,156 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Map of Istanbul today, {count} places. The list shows the same places.'**
   String atlasMapLabelToday(String count);
+
+  /// No description provided for @lookForThree.
+  ///
+  /// In en, this message translates to:
+  /// **'Three things to look for'**
+  String get lookForThree;
+
+  /// No description provided for @artworkStory.
+  ///
+  /// In en, this message translates to:
+  /// **'The story'**
+  String get artworkStory;
+
+  /// No description provided for @artworkInscriptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Inscriptions'**
+  String get artworkInscriptions;
+
+  /// No description provided for @inscriptionFromPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Read from a credited photograph'**
+  String get inscriptionFromPhoto;
+
+  /// No description provided for @artworkCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition'**
+  String get artworkCondition;
+
+  /// No description provided for @guidePlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan'**
+  String get guidePlan;
+
+  /// No description provided for @guideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{place}: the plan and its {count} artworks'**
+  String guideTitle(String place, String count);
+
+  /// No description provided for @guideAllRooms.
+  ///
+  /// In en, this message translates to:
+  /// **'All rooms'**
+  String get guideAllRooms;
+
+  /// No description provided for @guideRoomCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{room} · {count} artworks'**
+  String guideRoomCount(String room, String count);
+
+  /// No description provided for @guideCatalogue.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalogue and search'**
+  String get guideCatalogue;
+
+  /// No description provided for @guideCycles.
+  ///
+  /// In en, this message translates to:
+  /// **'Walk a cycle'**
+  String get guideCycles;
+
+  /// No description provided for @guideCycleStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop {n} of {total}'**
+  String guideCycleStop(String n, String total);
+
+  /// No description provided for @guideNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get guideNext;
+
+  /// No description provided for @guidePrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get guidePrevious;
+
+  /// No description provided for @guideEndCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'End the walk'**
+  String get guideEndCycle;
+
+  /// No description provided for @guideOpenArtwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the artwork'**
+  String get guideOpenArtwork;
+
+  /// No description provided for @guidePlanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan of {place}: {rooms}. Choose a room below to list its artworks.'**
+  String guidePlanLabel(String place, String rooms);
+
+  /// No description provided for @guideYouAreHere.
+  ///
+  /// In en, this message translates to:
+  /// **'You are at {title}'**
+  String guideYouAreHere(String title);
+
+  /// No description provided for @guideFoundByCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Found by the camera: {title}'**
+  String guideFoundByCamera(String title);
+
+  /// No description provided for @guideHunt.
+  ///
+  /// In en, this message translates to:
+  /// **'The Chora hunt'**
+  String get guideHunt;
+
+  /// No description provided for @guideHuntIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} things to find in the building'**
+  String guideHuntIntro(String count);
+
+  /// No description provided for @guideHuntAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Show the answer'**
+  String get guideHuntAnswer;
+
+  /// No description provided for @guideSurfaceDome.
+  ///
+  /// In en, this message translates to:
+  /// **'Domes'**
+  String get guideSurfaceDome;
+
+  /// No description provided for @guideSurfaceVault.
+  ///
+  /// In en, this message translates to:
+  /// **'Vaults'**
+  String get guideSurfaceVault;
+
+  /// No description provided for @guideSurfaceWall.
+  ///
+  /// In en, this message translates to:
+  /// **'Walls, arches and niches'**
+  String get guideSurfaceWall;
 }
 
 class _AppLocalizationsDelegate

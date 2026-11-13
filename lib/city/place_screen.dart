@@ -153,7 +153,7 @@ class _PlaceScreenState extends State<PlaceScreen> {
             IconButton(
               key: const ValueKey('place-camera-eye'),
               tooltip: s.recognise,
-              onPressed: () => openScan(context),
+              onPressed: () => openScan(context, placeId: place.id),
               icon: const PlanIcon(PlanSymbol.cameraEye),
             ),
         ],
@@ -319,8 +319,9 @@ void showArtworkSheet(BuildContext context, Artwork artwork) {
     isScrollControlled: true,
     builder: (_) => ArtworkSheet(
       artwork: artwork,
+      sources: app.registry?.sourcesOf(artwork) ?? const [],
       onScan: app.artworkRecognised(artwork.id)
-          ? () => openScan(context)
+          ? () => openScan(context, placeId: artwork.placeId)
           : null,
     ),
   );

@@ -33,6 +33,9 @@ Future<void> main(List<String> args) async {
     stdout.writeln(
       'Missing TR: ${report.missingTurkish.length}/${report.localizedCount} localized fields',
     );
+    stdout.writeln(
+      'Artworks complete: ${report.completeArtworks}/${(data['artworks'] as List).length}',
+    );
     if (report.isValid) {
       final registry = ContentRegistry.fromJson(data);
       for (final path in [
@@ -54,9 +57,9 @@ Future<void> main(List<String> args) async {
         }
         final rigPath = p.rig?.path;
         if (rigPath != null) {
-          final rig =
-              jsonDecode(await File(rigPath).readAsString())
-                  as Map<String, dynamic>;
+          final rig = jsonDecode(
+            await File(rigPath).readAsString(),
+          ) as Map<String, dynamic>;
           if (rig['poses'] is String &&
               !File(rig['poses'] as String).existsSync()) {
             report.errors.add('Missing plate poses: ${rig['poses']}');

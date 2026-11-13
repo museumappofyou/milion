@@ -31,8 +31,7 @@ class MosaicStrip extends StatelessWidget {
                   slotFor(
                         m,
                         opened: false,
-                        playable:
-                            AppScope.of(context).plates.forMilestone(m) != null,
+                        playable: AppScope.of(context).playable(m),
                       ) ==
                       SlotState.available,
             )
@@ -63,9 +62,7 @@ class MosaicStrip extends StatelessWidget {
                           state: slotFor(
                             m,
                             opened: opened.contains(m.id),
-                            playable:
-                                AppScope.of(context).plates.forMilestone(m) !=
-                                null,
+                            playable: AppScope.of(context).playable(m),
                           ),
                           width: w,
                           height: math.max(14, w * 1.3),

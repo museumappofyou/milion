@@ -66,9 +66,7 @@ class ChapterBand extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = context.l10n, lang = context.language;
-    final playable = pieces
-        .where((m) => AppScope.of(context).plates.forMilestone(m) != null)
-        .length;
+    final playable = pieces.where(AppScope.of(context).playable).length;
     final approved = pieces
         .where((m) => m.status == MilestoneStatus.approved)
         .length;

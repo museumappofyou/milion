@@ -155,7 +155,7 @@ class SpecTest(unittest.TestCase):
         self.assertAlmostEqual(short_side, 10, delta=.1)
 
     def test_every_spec_meets_its_dimensions_budget_and_axis(self):
-        self.assertEqual(len(SPECS), 3)
+        self.assertEqual(len(SPECS), 4)  # P09's three and P11's Chora
         known = build_kit.registry_sources(build_kit.SOURCES)
         for path in SPECS:
             spec = kit.load(path)
