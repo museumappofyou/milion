@@ -1,0 +1,44 @@
+{
+ "device": "Samsung Galaxy A52s 5G SM-A528B, 1080x2400 at 60 Hz, USB debugging",
+ "dates": [
+  "2026-11-13",
+  "2026-11-16"
+ ],
+ "builds": "release arm64 split APK (flutter build apk --release --split-per-abi --target-platform android-arm64), 99.7 MB; debug-key fallback (O05)",
+ "coldStartMs": {
+  "2026-11-13": [
+   534,
+   483
+  ],
+  "2026-11-16": [
+   531,
+   476
+  ],
+  "note": "the first launch after a reinstall read 1630 ms"
+ },
+ "register": "48 Milestones · 6 playable · 0 approved · 42 planned; VI shows as a Prototype slot and opens its study",
+ "chora": {
+  "page": "reads as reviewed: 'Open · Status checked November 12, 2026', current use, no draft notice",
+  "guide": "opens from '103 artworks'; the Naos filter lists 3 artworks; a tessera opens M01's sheet; the hunt lists 8 items and reveals answers; Greek inscriptions render in Noto Serif Display",
+  "darkMode": "FOUND: the plan's walls and labels were unreadable under the lamp theme. FIXED: the plan keeps its marble ground in dark mode, as the Atlas does (guide-dark.png)",
+  "cycleWalk": "FOUND: 42 missed frames in six walks (p90 33 ms): the whole plan repainted every frame. FIXED: 'you' paints on its own layer over a RepaintBoundary (8), and the dashed ceiling is measured once per plan and size (5; p90 16.8 ms). frame-pacing.json",
+  "camera": "asked in context from the guide's camera action ('Only this time' chosen; nothing else granted)",
+  "scanFlyIn": "FOUND: a gallery result chosen from the guide's camera opened the artwork sheet over the scan screen: the camera restarts after the picker, so the scan target that the tessera flies from was not on screen. FIXED: a target-sized square at the centre of the camera's area stands in; on 2026-11-16 the M11 result (100%) flew to its anchor in the inner narthex and opened its sheet (scan-gallery-fly-in.mp4, -contact.png; recorded after the picker closed). The test photo was deleted from the phone and its media index afterwards"
+ },
+ "milestoneVI": {
+  "reveal": "52.9 fps untouched (8 s), the P08 governor pattern; orbit under touch p90 16.71 ms",
+  "epochs": "draws correctly through c. 1081, c. 1120, c. 1321 and 1511",
+  "ownerReport2026_11_16": {
+   "opensFromBelow": "FOUND (owner): the study opened in Choisy's worm's-eye view with the plan cut. FIXED: it opens whole and from above (vi-opens-from-above.png); Style offers 'View from above' and Choisy's view; Plan cut from above turns to Choisy (vi-plan-cut-turns-to-choisy.png); the long section reads from above (vi-long-section-from-above.png)",
+   "buildingNotPlayable": "FOUND (owner): steps were added in a modal sheet that hid the drawing. FIXED: Assemble docks under the drawing; − and + and the step chips build while the drawing answers; the step just added drops in and glows gold (vi-build-glow.png, vi-build-by-hand.mp4); five fast − taps all landed (7 → 2) with the controls held in place",
+   "foundOnDevice": "the step strip opened on I–II with VII built (a lazy list never built the last chip), and revealing a chip also scrolled the dock, moving − and + from under the finger; the caption covered the section handle under the Section dock. All three fixed and re-checked on the second build (vi-assemble-docked.png, vi-long-section-from-above.png)",
+   "frameRate": "building by hand: frame median 16.7 ms but about one frame in six at 33 ms after each tap (the untouched-governor pattern); with a finger held, p90 16.73 ms. frame-pacing.json"
+  }
+ },
+ "plates": "Story, Light and Layers dock under the photograph too; on Metochites (III) raking light was chosen and dragged across the mosaic with the dock open (plate-iii-light-docked.png)",
+ "notChecked": [
+  "pinch on the guide's plan (adb cannot pinch; by hand)",
+  "Turkish UI on the phone (the phone's language was not changed; Turkish is covered by widget tests)",
+  "TalkBack by ear (O01)"
+ ]
+}

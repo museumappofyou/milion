@@ -1356,6 +1356,22 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get spaceOverview => 'Yukarıdan görünüş';
+
+  @override
+  String get spaceAddStep => 'Sonraki öğeyi ekle';
+
+  @override
+  String get spaceRemoveStep => 'Son öğeyi kaldır';
+
+  @override
+  String get spaceNothingBuilt => 'Henüz bir şey yok: ilk öğeyi ekleyin.';
+
+  @override
+  String get spaceBuildHint =>
+      'Öğeleri tek tek ekleyin, yerlerine oturuşlarını izleyin.';
+
+  @override
   String get spaceChoisy => 'Choisy’nin alttan görünüşü';
 
   @override

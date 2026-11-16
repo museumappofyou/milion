@@ -127,14 +127,17 @@ void main() {
     expect(orphan.errors.single, contains('unknown place'));
   });
 
-  testWidgets('a kit study opens in its Choisy view and cuts along its axes', (
-    tester,
-  ) async {
+  testWidgets('a kit study opens whole from above, keeps its Choisy view, '
+      'and cuts along its axes', (tester) async {
     await openSpace(tester, kitStudy('sehzade-camii'));
     final c = space(tester).controller!;
-    expect(c.view.elevation, closeTo(-50 * math.pi / 180, 1e-9));
-    expect(c.section, isTrue);
+    expect(c.view, c.overviewView);
+    expect(c.view.azimuth, closeTo(225 * math.pi / 180, 1e-9));
+    expect(c.section, isFalse);
+    expect(c.choisyView.elevation, closeTo(-50 * math.pi / 180, 1e-9));
+    c.choisy();
     expect(c.sectionOffset, closeTo(c.model.bounds.minZ + 8.5, 1e-6));
+    await tester.pumpAndSettle();
     expect(space(tester).renderer!.stats.poche, greaterThan(0));
     await openPanel(tester, 'space-section');
     expect(find.text('Long section'), findsOneWidget);

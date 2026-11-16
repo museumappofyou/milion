@@ -294,9 +294,19 @@ class PlatePlayerState extends State<PlatePlayer>
     }
   }
 
-  /// The sheet is lamp throughout: its surface and plain text too, not only
-  /// its controls (the app's root theme is marble).
+  /// The panel docked under the photograph, if any.
+  PlatePanel? get openPanel => _open;
+  PlatePanel? _open;
+
+  /// Story, Light, Layers and Debug dock under the photograph (a second tap
+  /// on the same button folds them away); Sources opens a sheet. The sheet
+  /// is lamp throughout: its surface and plain text too, not only its
+  /// controls (the app's root theme is marble).
   Future<void> controls(PlatePanel panel) async {
+    if (panel != PlatePanel.sources) {
+      setState(() => _open = _open == panel ? null : panel);
+      return;
+    }
     final lamp = DesignTheme.lamp;
     await showModalBottomSheet<void>(
       context: context,
@@ -311,6 +321,8 @@ class PlatePlayerState extends State<PlatePlayer>
       ),
     );
   }
+
+  void closeControls() => setState(() => _open = null);
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -400,6 +412,20 @@ class PlatePlayerState extends State<PlatePlayer>
                   },
                 ),
               ),
+              if (_open case final panel?)
+                Material(
+                  color: Theme.of(context).colorScheme.surface,
+                  shape: Border(
+                    top: BorderSide(
+                      color: Theme.of(context).dividerColor,
+                      width: .5,
+                    ),
+                  ),
+                  child: DefaultTextStyle(
+                    style: Theme.of(context).textTheme.bodyMedium!,
+                    child: PlateSheet(player: this, panel: panel),
+                  ),
+                ),
               SafeArea(
                 top: false,
                 child: Padding(
@@ -417,8 +443,17 @@ class PlatePlayerState extends State<PlatePlayer>
                         (PlatePanel.light, PlanSymbol.light, s.light),
                         (PlatePanel.layers, PlanSymbol.layers, s.plateLayers),
                       ])
+                        // The open panel's button reads as pressed.
                         TextButton.icon(
                           key: ValueKey('plate-${item.$1.name}'),
+                          style: _open == item.$1
+                              ? TextButton.styleFrom(
+                                  backgroundColor: Theme.of(context)
+                                      .colorScheme
+                                      .primary
+                                      .withValues(alpha: .12),
+                                )
+                              : null,
                           onPressed: () => controls(item.$1),
                           icon: PlanIcon(item.$2),
                           label: Text(item.$3),

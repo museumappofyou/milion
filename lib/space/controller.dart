@@ -128,12 +128,14 @@ class SpaceController extends ChangeNotifier {
             study.stepsIn(e.year).indexWhere((s) => s.parts.contains(p.id)),
         ]),
     ];
-    // Opens in Choisy's view: from below, the plan cut through the piers.
-    view = choisyView;
+    // Opens whole and from above (the owner, 2026-11-16: opening in
+    // Choisy's worm's-eye view read as starting from underneath). Choisy is
+    // a double-tap away, and the section starts as a long cut, which reads
+    // from any angle.
+    view = overviewView;
     assembly = _assemblyTarget = steps.length.toDouble();
-    section = true;
-    sectionAxis = 2;
-    sectionOffset = _inRange(model.bounds.minZ + study.choisy.sectionHeight, 2);
+    sectionAxis = 0;
+    sectionOffset = _inRange(model.bounds.centerX, 0);
   }
   final SpaceStudy study;
   final SpaceModel model;
@@ -154,9 +156,26 @@ class SpaceController extends ChangeNotifier {
   /// Bumped when the story moves the camera itself.
   int cameraRevision = 0;
   bool _captioned = false;
+
+  /// The step last added by hand glows while it lands and a moment after.
+  int? _glowStep;
+  double _glow = 0;
   int? _fromEpoch;
   double _fromAssembly = 0, _blend = 1, _viewT = 1;
   SpaceView? _viewFrom, _viewTo;
+
+  /// The opening view: the whole building from above, at the study's
+  /// Choisy azimuth so both views look at the same corner.
+  static const overviewElevation = 30 * math.pi / 180;
+  SpaceView get overviewView => limits.clamp(
+    SpaceView(
+      azimuth: study.choisy.azimuthDegrees * math.pi / 180,
+      elevation: overviewElevation,
+      targetX: model.bounds.centerX,
+      targetY: model.bounds.centerY,
+      targetZ: model.bounds.centerZ,
+    ),
+  );
 
   SpaceView get choisyView => limits.clamp(
     SpaceView.choisy(
@@ -192,6 +211,10 @@ class SpaceController extends ChangeNotifier {
 
   int get epochYear => study.epochs[epoch].year;
   List<SpaceStep> get steps => study.stepsIn(epochYear);
+
+  /// The steps of the epoch drawn now (the story may be in another).
+  List<SpaceStep> get visibleSteps =>
+      study.stepsIn(study.epochs[visibleEpoch].year);
   double get duration => reveal ? study.reveal.seconds : study.storySeconds;
   SpaceSample? get sample => storyActive
       ? timeline.at(seconds, reveal: reveal, reduced: reduced)
@@ -234,7 +257,14 @@ class SpaceController extends ChangeNotifier {
   bool get needsTicker =>
       active &&
       !reduced &&
-      (playing || _viewT < 1 || _blend < 1 || assembly != _assemblyTarget);
+      (playing ||
+          _viewT < 1 ||
+          _blend < 1 ||
+          assembly != _assemblyTarget ||
+          _glow > 0);
+
+  /// Whole steps the reader is building towards.
+  double get assemblyTarget => _assemblyTarget;
 
   List<SpacePartState> partStates() {
     final m = moment, bounds = model.bounds;
@@ -260,11 +290,21 @@ class SpaceController extends ChangeNotifier {
           final part = model.parts[i];
           var dz = explode * math.max(rank, 0) * lift;
           if (j >= 0 && to < 1) dz += (1 - _smooth(to)) * drop;
+          // Built by hand: what is dropping in glows, and the last step
+          // added keeps the glow a moment after it lands.
+          final glow = storyActive || j < 0
+              ? 0.0
+              : to < 1 && _assemblyTarget > assembly
+              ? 1.0
+              : j == _glowStep
+              ? _glow
+              : 0.0;
           return SpacePartState(
             progress: p,
             dx: explode * (part.bounds.centerX - bounds.centerX) * .35,
             dy: explode * (part.bounds.centerY - bounds.centerY) * .35,
             dz: dz,
+            highlight: glow,
           );
         }(),
     ];
@@ -294,6 +334,13 @@ class SpaceController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Back to the opening view: the whole building from above. A plan cut
+  /// keeps what stands above it, so from above it is turned off.
+  void overview() {
+    if (section && sectionAxis == 2) section = false;
+    animateView(overviewView);
+  }
+
   /// Choisy's worm's-eye axonometric with the plan cut through the piers.
   void choisy() {
     section = true;
@@ -312,8 +359,18 @@ class SpaceController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// A plan cut keeps what stands above it and shows its poché from below
+  /// (2026-11-09), so choosing it from above turns the camera to Choisy's
+  /// view, where the cut reads.
   void setSectionAxis(int axis) {
-    if (axis == sectionAxis) return;
+    if (axis == 2 && view.elevation > 0) {
+      choisy();
+      return;
+    }
+    if (axis == sectionAxis) {
+      if (!section) setSection(true);
+      return;
+    }
     sectionAxis = axis;
     sectionOffset = _inRange(
       [
@@ -395,6 +452,30 @@ class SpaceController extends ChangeNotifier {
     if (!value.isFinite) return;
     explore();
     assembly = _assemblyTarget = value.clamp(0.0, steps.length.toDouble());
+    _glow = 0;
+    _captioned = true;
+    notifyListeners();
+  }
+
+  /// Adds the next step by hand ([delta] 1) or takes the last away (−1),
+  /// where the reader is looking: the parts drop into place and glow.
+  void build(int delta) => buildTo(
+    (delta > 0 ? _assemblyTarget.floor() : _assemblyTarget.ceil()) + delta,
+  );
+
+  /// Builds up or down to [count] whole steps; the parts move a step at a
+  /// time (1.5 steps a second), in order.
+  void buildTo(int count) {
+    explore();
+    final target = count.clamp(0, steps.length).toDouble();
+    if (target > _assemblyTarget) {
+      _glowStep = target.toInt() - 1;
+      _glow = reduced ? 0 : 1;
+    } else {
+      _glow = 0;
+    }
+    _assemblyTarget = target;
+    if (reduced) assembly = target;
     _captioned = true;
     notifyListeners();
   }
@@ -427,7 +508,8 @@ class SpaceController extends ChangeNotifier {
     }
     if (reveal || seconds >= study.storySeconds) seconds = 0;
     reveal = false;
-    if (seconds == 0) animateView(choisyView);
+    // The story builds the whole building from above, as the reader does.
+    if (seconds == 0) overview();
     storyActive = playing = true;
     notifyListeners();
   }
@@ -488,6 +570,8 @@ class SpaceController extends ChangeNotifier {
       final d = _assemblyTarget - assembly;
       final move = delta * 1.5;
       assembly = d.abs() <= move ? _assemblyTarget : assembly + move * d.sign;
+    } else if (_glow > 0) {
+      _glow = math.max(0, _glow - delta / 1.2);
     }
     notifyListeners();
   }
@@ -499,6 +583,7 @@ class SpaceController extends ChangeNotifier {
       playing = false;
       if (_viewT < 1) view = _viewTo!;
       _viewT = _blend = 1;
+      _glow = 0;
       assembly = _assemblyTarget;
       if (storyActive) seconds = sample!.beat.still;
     }

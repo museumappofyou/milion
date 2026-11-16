@@ -20,7 +20,10 @@ void main() {
       }
 
       await openStudy(tester, boundary: boundary);
-      var c = space(tester).controller!;
+      // Studies open from above since 2026-11-16; these baselines are of
+      // Choisy's view, which is asked for.
+      var c = space(tester).controller!..choisy();
+      await tester.pumpAndSettle();
       await golden('choisy-drawing');
       c
         ..setStyle(SpaceStyle.stone)
@@ -45,6 +48,7 @@ void main() {
       );
       c = space(tester).controller!;
       c
+        ..choisy()
         ..step(1)
         ..step(1)
         ..step(1);

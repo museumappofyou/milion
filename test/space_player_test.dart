@@ -66,8 +66,17 @@ Future<void> openPanel(WidgetTester tester, String key) async {
   await tester.pumpAndSettle();
 }
 
+/// Taps a control in the dock, scrolling it into view first.
+Future<void> tapControl(WidgetTester tester, String key) async {
+  final control = find.byKey(ValueKey(key));
+  await tester.ensureVisible(control);
+  await tester.pumpAndSettle();
+  await tester.tap(control);
+}
+
+/// Folds the docked panel away (or closes the Sources sheet).
 Future<void> closePanel(WidgetTester tester) async {
-  await tester.tapAt(const Offset(10, 10));
+  await tester.tap(find.byKey(const ValueKey('space-dock-close')));
   await tester.pumpAndSettle();
 }
 
@@ -145,7 +154,7 @@ void main() {
   });
 
   testWidgets(
-    'opens on the drawing: RECONSTRUCTION, 537, Choisy, no autoplay',
+    'opens on the drawing: RECONSTRUCTION, 537, whole from above, no autoplay',
     (tester) async {
       await openStudy(tester);
       final player = space(tester), c = player.controller!;
@@ -153,9 +162,13 @@ void main() {
       expect(find.text('Hagia Sophia, 537'), findsOneWidget);
       expect(find.byKey(const ValueKey('space-caption')), findsNothing);
       expect(player.ticking, isFalse);
-      expect(c.view, c.choisyView);
+      // The owner, 2026-11-16: not from underneath. Choisy's view is a
+      // double-tap away.
+      expect(c.view, c.overviewView);
+      expect(c.view.elevation, greaterThan(0));
+      expect(c.sectionPlane, isNull);
       expect(player.renderer!.stats.faces, greaterThan(0));
-      expect(player.renderer!.stats.poche, greaterThan(0), reason: 'plan cut');
+      expect(player.renderer!.stats.poche, 0, reason: 'no cut');
       // TalkBack reads the description and offers the story as actions.
       final semantics = tester.getSemantics(
         find.byKey(const ValueKey('space-viewport')),
@@ -234,16 +247,13 @@ void main() {
     await openStudy(tester);
     final c = space(tester).controller!;
     await openPanel(tester, 'space-assemble');
-    await tester.tap(find.byKey(const ValueKey('space-next')));
+    await tapControl(tester, 'space-next');
     await tester.pumpAndSettle();
     expect(c.sample!.beat.step.id, 'bay');
     await closePanel(tester);
     expect(find.textContaining('A square bay 31 m wide'), findsOneWidget);
     await openPanel(tester, 'space-assemble');
-    await tester.ensureVisible(
-      find.byKey(const ValueKey('space-step-pendentives')),
-    );
-    await tester.tap(find.byKey(const ValueKey('space-step-pendentives')));
+    await tapControl(tester, 'space-step-pendentives');
     await tester.pumpAndSettle();
     expect(c.assembly, 3);
     expect(c.currentStep!.id, 'pendentives');
@@ -257,13 +267,101 @@ void main() {
     expect(space(tester).ticking, isFalse, reason: 'cross-fade finished');
   });
 
+  testWidgets('Assemble docks under the drawing: + and − build while the '
+      'drawing stays in view, and the element just added glows', (
+    tester,
+  ) async {
+    // − and + must stay under the finger: a missed tap fails the test.
+    WidgetController.hitTestWarningShouldBeFatal = true;
+    addTearDown(() => WidgetController.hitTestWarningShouldBeFatal = false);
+    await openStudy(tester);
+    final player = space(tester), c = player.controller!;
+    final total = c.steps.length;
+    await openPanel(tester, 'space-assemble');
+    expect(player.openPanel, isNotNull);
+    // The strip opens on the latest step built (on the A52s it opened on
+    // the first two: a lazy list never built the last chip).
+    final last = tester.getRect(
+      find.byKey(ValueKey('space-step-${c.steps.last.id}')),
+    );
+    expect(last.left, greaterThanOrEqualTo(0));
+    expect(last.right, lessThanOrEqualTo(390));
+    // The drawing above the dock still answers a finger.
+    final before = c.view.azimuth;
+    await tester.drag(
+      find.byKey(const ValueKey('space-viewport')),
+      const Offset(-60, 0),
+    );
+    await tester.pump();
+    expect(c.view.azimuth, isNot(before));
+    expect(player.openPanel, isNotNull);
+
+    await tester.tap(find.byKey(const ValueKey('space-build-less')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
+    expect(player.ticking, isTrue, reason: 'the last step lifts away');
+    await tester.pumpAndSettle();
+    expect(c.assembly, total - 1);
+    expect(find.text('${total - 1} of $total steps'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('space-build-more')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
+    expect(c.assembly, inExclusiveRange(total - 1, total));
+    expect(c.partStates().where((p) => p.highlight > 0), isNotEmpty);
+    // The caption reads in the dock, not over the drawing.
+    expect(find.byKey(const ValueKey('space-caption')), findsOneWidget);
+    await tester.pumpAndSettle();
+    expect(c.assembly, total);
+    expect(c.partStates().where((p) => p.highlight > 0), isEmpty);
+    expect(player.ticking, isFalse);
+    await tester.tap(find.byKey(const ValueKey('space-build-more')));
+    await tester.pump();
+    expect(c.assemblyTarget, total, reason: 'nothing more to add');
+
+    // Building from nothing: the first chip builds one step.
+    for (var i = 0; i < total; i++) {
+      await tester.tap(find.byKey(const ValueKey('space-build-less')));
+      await tester.pump();
+    }
+    await tester.pumpAndSettle();
+    expect(c.assembly, 0);
+    expect(
+      find.text('Nothing built yet: add the first element.'),
+      findsOneWidget,
+    );
+    await tester.tap(find.byKey(ValueKey('space-step-${c.steps.first.id}')));
+    await tester.pumpAndSettle();
+    expect(c.assembly, 1);
+    await closePanel(tester);
+    expect(player.openPanel, isNull);
+  });
+
+  testWidgets('a plan cut chosen from above turns to Choisy\'s view', (
+    tester,
+  ) async {
+    await openStudy(tester);
+    final c = space(tester).controller!;
+    await openPanel(tester, 'space-section');
+    await tapControl(tester, 'space-cut-2');
+    await tester.pumpAndSettle();
+    expect(c.sectionPlane?.axis, 2);
+    expect(c.view, c.choisyView);
+    expect(space(tester).renderer!.stats.poche, greaterThan(0));
+    await openPanel(tester, 'space-style');
+    await tapControl(tester, 'space-overview');
+    await tester.pumpAndSettle();
+    expect(c.view, c.overviewView);
+    expect(c.sectionPlane, isNull, reason: 'a plan cut reads only from below');
+  });
+
   testWidgets('Section: off, other axes, and the handle drags the plane', (
     tester,
   ) async {
     await openStudy(tester);
     final c = space(tester).controller!;
     await openPanel(tester, 'space-section');
-    await tester.tap(find.byKey(const ValueKey('space-cut-1')));
+    await tapControl(tester, 'space-cut-1');
     await tester.pumpAndSettle();
     expect(c.sectionAxis, 1);
     await closePanel(tester);
@@ -275,7 +373,7 @@ void main() {
     await tester.pump();
     expect(c.sectionOffset, greaterThan(before));
     await openPanel(tester, 'space-section');
-    await tester.tap(find.byKey(const ValueKey('space-section-switch')));
+    await tapControl(tester, 'space-section-switch');
     await tester.pumpAndSettle();
     expect(c.sectionPlane, isNull);
     await closePanel(tester);
@@ -289,10 +387,10 @@ void main() {
     await openStudy(tester);
     final c = space(tester).controller!;
     await openPanel(tester, 'space-style');
-    await tester.tap(find.byKey(const ValueKey('space-style-night')));
+    await tapControl(tester, 'space-style-night');
     await tester.pumpAndSettle();
     expect(c.style, SpaceStyle.night);
-    await tester.tap(find.byKey(const ValueKey('space-perspective')));
+    await tapControl(tester, 'space-perspective');
     await tester.pumpAndSettle();
     expect(c.view.projection, SpaceProjection.perspective);
     await closePanel(tester);
@@ -313,7 +411,7 @@ void main() {
     expect(find.byKey(const ValueKey('space-play')), findsNothing);
     expect(find.byKey(const ValueKey('space-reveal')), findsNothing);
     for (var i = 0; i < 3; i++) {
-      await tester.tap(find.byKey(const ValueKey('space-next')));
+      await tapControl(tester, 'space-next');
       await tester.pump();
       expect(player.ticking, isFalse);
     }
@@ -339,7 +437,7 @@ void main() {
     await openStudy(tester);
     final player = space(tester), c = player.controller!;
     await openPanel(tester, 'space-assemble');
-    await tester.tap(find.byKey(const ValueKey('space-reveal')));
+    await tapControl(tester, 'space-reveal');
     await tester.pump();
     // A playing reveal is a clean shot: no section handle or outline.
     expect(c.playing, isTrue);

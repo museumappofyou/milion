@@ -135,12 +135,12 @@ STUDY = {
     'id': 'how-a-dome-stands',
     'title': {'en': 'How a dome stands', 'tr': 'Kubbe nasıl ayakta durur'},
     'description': {
-        'en': 'A drawing of a square bay 31 m wide assembling, seen from below: four '
+        'en': 'A drawing of a square bay 31 m wide assembling: four '
               'piers, four arches, four pendentives, a ring and a dome on 40 windows. '
               'The time scrubber braces the same bay two ways: Hagia Sophia’s two '
               'semi-domes (537) and the Şehzade Mosque’s four (1548). A diagram, not a '
               'survey of either building.',
-        'tr': '31 m genişliğinde kare bir açıklığın aşağıdan görülen çizimi kendini '
+        'tr': '31 m genişliğinde kare bir açıklığın çizimi kendini '
               'kurar: dört ayak, dört kemer, dört pandantif, bir bilezik ve 40 pencere '
               'üstünde bir kubbe. Zaman çubuğu aynı açıklığı iki yolla destekler: '
               'Ayasofya’nın iki yarım kubbesi (537) ve Şehzade Camii’nin dördü (1548). '

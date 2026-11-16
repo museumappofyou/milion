@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/painting.dart';
 
+import '../design/tokens.dart';
 import 'camera.dart';
 import 'model.dart';
 import 'scene.dart';
@@ -72,6 +73,10 @@ class SpaceRenderer {
   /// Per part for this frame.
   late final _alphaOf = Int32List(model.parts.length);
   late final _cutOf = Uint8List(model.parts.length);
+  late final _glowOf = Float32List(model.parts.length);
+
+  /// What a step just added by hand is tinted towards (P11 device pass).
+  static final _gold = Pigment.gold.toARGB32();
   late final _offset = Float64List(model.parts.length * 3);
 
   /// Section segments for this frame (x0, y0, x1, y1 on screen), part by
@@ -185,6 +190,9 @@ class SpaceRenderer {
       ? color
       : (color & 0x00FFFFFF) | ((((color >> 24) & 0xFF) * alpha ~/ 255) << 24);
 
+  static int _tint(int color, double glow) =>
+      glow > 0 ? _mix(color, _gold, glow) : color;
+
   static int _mix(int a, int b, double t) {
     int lerp(int shift) {
       final x = (a >>> shift) & 0xFF, y = (b >>> shift) & 0xFF;
@@ -288,6 +296,7 @@ class SpaceRenderer {
       if (state.progress <= 0) continue;
       final part = model.parts[i];
       _alphaOf[i] = (state.progress.clamp(0.0, 1.0) * 255).round();
+      _glowOf[i] = state.highlight.clamp(0.0, 1.0);
       _offset[i * 3] = state.dx;
       _offset[i * 3 + 1] = state.dy;
       _offset[i * 3 + 2] = state.dz;
@@ -570,7 +579,10 @@ class SpaceRenderer {
           x1,
           y1,
           silhouette ? palette.silhouetteWidth : palette.edgeWidth,
-          _alpha(ink, (alpha * palette.edgeAlpha).round()),
+          _alpha(
+            _glowOf[i] > 0 ? _mix(ink, _gold, _glowOf[i] * .8) : ink,
+            (alpha * palette.edgeAlpha).round(),
+          ),
         );
         continue;
       }
@@ -582,9 +594,10 @@ class SpaceRenderer {
       final nx = normals[t * 3],
           ny = normals[t * 3 + 1],
           nz = normals[t * 3 + 2];
-      final ca = _alpha(colors[t * 3], alpha),
-          cb = _alpha(colors[t * 3 + 1], alpha),
-          cc = _alpha(colors[t * 3 + 2], alpha);
+      final glow = _glowOf[i] * .6;
+      final ca = _alpha(_tint(colors[t * 3], glow), alpha),
+          cb = _alpha(_tint(colors[t * 3 + 1], glow), alpha),
+          cc = _alpha(_tint(colors[t * 3 + 2], glow), alpha);
       if (drawing) {
         final lit = nx * lx + ny * ly + nz * lz;
         final tone =

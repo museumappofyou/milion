@@ -284,11 +284,13 @@ void main() {
     int index(String id) => model.parts.indexWhere((p) => p.id == id);
 
     test(
-      'opens assembled, in Choisy view, with the plan cut and no caption',
+      'opens assembled, whole and from above, with no cut and no caption; '
+      "Choisy's view brings the plan cut",
       () {
         final c = SpaceController(study, model);
-        expect(c.view, c.choisyView);
-        expect(c.sectionPlane, SpaceSection(2, 3));
+        expect(c.view, c.overviewView);
+        expect(c.view.elevation, greaterThan(0));
+        expect(c.sectionPlane, isNull);
         expect(c.honesty, Honesty.RECONSTRUCTION);
         expect(c.caption, isNull);
         expect(c.needsTicker, isFalse, reason: 'nothing plays until asked');
@@ -296,6 +298,11 @@ void main() {
         expect(parts[index('tympanum-n')].progress, 1);
         expect(parts[index('semidome-n')].progress, 0);
         expect(parts[index('semidome-e')].progress, 1);
+        expect(parts.every((p) => p.highlight == 0), isTrue);
+        c.choisy();
+        expect(c.sectionPlane, SpaceSection(2, 3));
+        c.setReduced(true); // settles the camera move
+        expect(c.view, c.choisyView);
       },
     );
 
@@ -438,7 +445,8 @@ void main() {
     }
 
     test('a plan cut keeps the building above it from every angle', () {
-      final c = SpaceController(study, model), r = SpaceRenderer(model);
+      final c = SpaceController(study, model)..choisy();
+      final r = SpaceRenderer(model);
       expect(c.sectionAxis, 2);
       for (final deg in [-60, -35, -5, 0, 5, 30, 60, 85]) {
         final view = c.limits.clamp(

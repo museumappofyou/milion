@@ -126,8 +126,18 @@ class SpacePlayerState extends State<SpacePlayer>
     }
   }
 
-  /// The sheet carries the style's own surface and text, whatever the app's.
+  /// The panel docked under the drawing, if any.
+  SpacePanel? get openPanel => _open;
+  SpacePanel? _open;
+
+  /// Assemble, Section and Style dock under the drawing (a second tap on
+  /// the same button folds them away); Sources opens a sheet. The sheet
+  /// carries the style's own surface and text, whatever the app's.
   Future<void> controls(SpacePanel panel) async {
+    if (panel != SpacePanel.sources) {
+      setState(() => _open = _open == panel ? null : panel);
+      return;
+    }
     final theme = _night ? DesignTheme.lamp : DesignTheme.marble;
     await showModalBottomSheet<void>(
       context: context,
@@ -142,6 +152,8 @@ class SpacePlayerState extends State<SpacePlayer>
       ),
     );
   }
+
+  void closeControls() => setState(() => _open = null);
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -207,6 +219,17 @@ class SpacePlayerState extends State<SpacePlayer>
                     },
                   ),
                 ),
+                if (_open case final panel? when controller != null)
+                  Material(
+                    color: Theme.of(context).colorScheme.surface,
+                    shape: Border(
+                      top: BorderSide(
+                        color: Theme.of(context).dividerColor,
+                        width: .5,
+                      ),
+                    ),
+                    child: SpaceSheet(player: this, panel: panel),
+                  ),
                 SafeArea(
                   top: false,
                   child: Padding(
@@ -232,8 +255,17 @@ class SpacePlayerState extends State<SpacePlayer>
                           ),
                           (SpacePanel.style, PlanSymbol.light, s.spaceStyle),
                         ])
+                          // The open panel's button reads as pressed.
                           TextButton.icon(
                             key: ValueKey('space-${item.$1.name}'),
+                            style: _open == item.$1
+                                ? TextButton.styleFrom(
+                                    backgroundColor: Theme.of(context)
+                                        .colorScheme
+                                        .primary
+                                        .withValues(alpha: .12),
+                                  )
+                                : null,
                             onPressed: controller == null
                                 ? null
                                 : () => controls(item.$1),
@@ -316,7 +348,14 @@ class SpaceViewport extends StatelessWidget {
                     : const SizedBox.shrink(),
               ),
             ),
-            _SpaceLabels(controller: c, captionHeight: size.height * .3),
+            _SpaceLabels(
+              controller: c,
+              captionHeight: size.height * .3,
+              // With a panel docked the drawing is smaller; the Assemble
+              // dock reads the caption itself, and the others leave it out
+              // so it covers neither the drawing nor the section handle.
+              caption: player.openPanel == null,
+            ),
           ],
         );
       },
@@ -391,9 +430,14 @@ class SpaceViewport extends StatelessWidget {
 /// The honesty label, the epoch and the live caption: rebuilt only when
 /// one of them changes, not on every playback frame.
 class _SpaceLabels extends StatelessWidget {
-  const _SpaceLabels({required this.controller, required this.captionHeight});
+  const _SpaceLabels({
+    required this.controller,
+    required this.captionHeight,
+    this.caption = true,
+  });
   final SpaceController controller;
   final double captionHeight;
+  final bool caption;
 
   @override
   Widget build(BuildContext context) => SnapshotBuilder(
@@ -410,7 +454,8 @@ class _SpaceLabels extends StatelessWidget {
 
   Widget _labels(BuildContext context) {
     final c = controller, lang = context.language;
-    final step = c.currentStep, caption = c.caption?.inLanguage(lang);
+    final step = c.currentStep;
+    final caption = this.caption ? c.caption?.inLanguage(lang) : null;
     final ground = Theme.of(context).scaffoldBackgroundColor
         .withValues(alpha: .94);
     return Stack(

@@ -2539,6 +2539,36 @@ abstract class AppLocalizations {
   /// **'{value} m'**
   String spaceMetres(String value);
 
+  /// No description provided for @spaceOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'View from above'**
+  String get spaceOverview;
+
+  /// No description provided for @spaceAddStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the next element'**
+  String get spaceAddStep;
+
+  /// No description provided for @spaceRemoveStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the last element away'**
+  String get spaceRemoveStep;
+
+  /// No description provided for @spaceNothingBuilt.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing built yet: add the first element.'**
+  String get spaceNothingBuilt;
+
+  /// No description provided for @spaceBuildHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add elements one at a time and watch them settle into place.'**
+  String get spaceBuildHint;
+
   /// No description provided for @spaceChoisy.
   ///
   /// In en, this message translates to:

@@ -14,6 +14,7 @@ import 'package:milion/plate/manifest.dart';
 import 'package:milion/plate/player.dart';
 import 'package:milion/plate/sheets.dart';
 import 'package:milion/plate/screen.dart';
+import 'package:milion/plate/viewport.dart';
 
 import 'helpers.dart' show loadThemeFonts;
 
@@ -393,7 +394,8 @@ void main() {
 /// sheets drew a marble surface behind lamp controls, so their headings were
 /// marble on marble. The whole sheet must be lamp.
 void sheetThemeRegression() {
-  testWidgets('plate sheets are lamp throughout under a marble app', (
+  testWidgets('plate controls dock under the photograph, lamp throughout '
+      'under a marble app', (
     tester,
   ) async {
     tester.view.physicalSize = const Size(390, 844);
@@ -412,8 +414,18 @@ void sheetThemeRegression() {
     await assetsReady(tester);
     await tester.tap(find.byKey(const ValueKey('plate-layers')));
     await tester.pumpAndSettle();
-    final sheet = tester.widget<BottomSheet>(find.byType(BottomSheet));
-    expect(sheet.backgroundColor, DesignTheme.lamp.colorScheme.surface);
+    // Docked, not a modal sheet: the photograph stays in view.
+    expect(find.byType(BottomSheet), findsNothing);
+    final dock = tester.widget<Material>(
+      find
+          .ancestor(of: find.byType(PlateSheet), matching: find.byType(Material))
+          .first,
+    );
+    expect(dock.color, DesignTheme.lamp.colorScheme.surface);
+    expect(
+      tester.getBottomLeft(find.byType(PlateViewport)).dy,
+      lessThanOrEqualTo(tester.getTopLeft(find.byType(PlateSheet)).dy),
+    );
     final heading = find.descendant(
       of: find.byType(PlateSheet),
       matching: find.text('Layers'),
@@ -421,5 +433,18 @@ void sheetThemeRegression() {
     final style = DefaultTextStyle.of(tester.element(heading)).style
         .merge(tester.widget<Text>(heading).style);
     expect(style.color, MeasureColors.lamp.ink);
+    await tester.tap(find.byKey(const ValueKey('plate-dock-close')));
+    await tester.pumpAndSettle();
+    expect(find.byType(PlateSheet), findsNothing);
+    // Sources is read, not played: it still opens as a sheet.
+    await tester.tap(find.byKey(const ValueKey('plate-layers')));
+    await tester.pumpAndSettle();
+    final sources = find.text('Sources and photograph');
+    await tester.ensureVisible(sources);
+    await tester.pumpAndSettle();
+    await tester.tap(sources);
+    await tester.pumpAndSettle();
+    final sheet = tester.widget<BottomSheet>(find.byType(BottomSheet));
+    expect(sheet.backgroundColor, DesignTheme.lamp.colorScheme.surface);
   });
 }

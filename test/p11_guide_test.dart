@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:milion/content/guide.dart';
 import 'package:milion/content/registry.dart';
 import 'package:milion/design/theme.dart';
 import 'package:milion/guide/guide_screen.dart';
 import 'package:milion/guide/plan_view.dart';
 import 'package:milion/l10n/strings.dart';
+import 'package:milion/screens/scan_tab.dart';
 import 'package:milion/widgets/artwork_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -110,25 +112,32 @@ void main() {
                 .widget<CustomPaint>(find.byKey(const ValueKey('guide-plan')))
                 .painter!
             as PlanPainter;
+    PlanPoint? you() =>
+        (tester
+                .widgetList<CustomPaint>(find.byType(CustomPaint))
+                .map((w) => w.painter)
+                .whereType<PlanYouPainter>()
+                .single)
+            .you();
     expect(painter().state.path, hasLength(2));
-    final start = painter().state.you!;
+    final start = you()!;
     await tester.ensureVisible(find.byKey(const ValueKey('cycle-next')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const ValueKey('cycle-next')));
     await tester.pump(); // the walk's first frame
     await tester.pump(const Duration(milliseconds: 450));
-    final middle = painter().state.you!;
+    final middle = you()!;
     // Under way from F02 (9, 2) to F03 (5, 12).
     expect(middle.x, inExclusiveRange(5, start.x));
     expect(middle.y, inExclusiveRange(start.y, 12));
     await tester.pumpAndSettle();
     expect(find.textContaining('Stop 2 of 2'), findsOneWidget);
-    expect(painter().state.you!.y, 12);
+    expect(you()!.y, 12);
     expect(painter().state.focus, 'F03');
     await tester.ensureVisible(find.byKey(const ValueKey('cycle-end')));
     await tester.tap(find.byKey(const ValueKey('cycle-end')));
     await tester.pumpAndSettle();
-    expect(painter().state.you, isNull);
+    expect(you(), isNull);
   });
 
   testWidgets('a camera find flies to its tessera and opens', (tester) async {
@@ -151,5 +160,15 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('hunt-answer-0')));
     await tester.pumpAndSettle();
     expect(find.text('Wrists, not hands.'), findsOneWidget);
+  });
+
+  test('a gallery find flies from the camera area while the camera '
+      'restarts (A52s, 2026-11-16)', () {
+    const frame = Rect.fromLTWH(0, 80, 390, 500);
+    const target = Rect.fromLTWH(85, 220, 220, 220);
+    expect(scanFlyFrom(target, frame), target);
+    final standIn = scanFlyFrom(null, frame);
+    expect(standIn.center, frame.center);
+    expect(standIn.size, const Size(220, 220));
   });
 }

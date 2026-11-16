@@ -16,6 +16,14 @@ import 'package:image_picker/image_picker.dart';
 import '../services/classifier.dart';
 import '../widgets/artwork_sheet.dart';
 
+/// Where a found artwork flies from: the scan [target], or, while the
+/// camera restarts after the gallery and no target is drawn, a target-sized
+/// square at the centre of the camera's [frame]. On the A52s (2026-11-16) a
+/// gallery result from the guide's camera opened the artwork sheet instead
+/// of flying to the plan, because the target was not on screen.
+Rect scanFlyFrom(Rect? target, Rect frame) =>
+    target ?? Rect.fromCenter(center: frame.center, width: 220, height: 220);
+
 class ScanTab extends StatefulWidget {
   const ScanTab({
     super.key,
@@ -325,17 +333,24 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
     if (selected != null && mounted) _found(selected);
   }
 
-  /// The scan target's place on screen: where a found artwork flies from.
-  final _targetKey = GlobalKey();
+  /// The scan target's place on screen, and the camera's area around it:
+  /// where a found artwork flies from.
+  final _targetKey = GlobalKey(), _frameKey = GlobalKey();
 
   void _found(ArtworkMatch match) {
     final locate = widget.onLocate;
-    final box = _targetKey.currentContext?.findRenderObject() as RenderBox?;
-    if (locate == null || box == null) {
+    Rect? rectOf(GlobalKey key) =>
+        switch (key.currentContext?.findRenderObject()) {
+          final RenderBox box when box.hasSize =>
+            box.localToGlobal(Offset.zero) & box.size,
+          _ => null,
+        };
+    final frame = rectOf(_frameKey);
+    if (locate == null || frame == null) {
       _openArtwork(match);
       return;
     }
-    locate(match.artwork, box.localToGlobal(Offset.zero) & box.size);
+    locate(match.artwork, scanFlyFrom(rectOf(_targetKey), frame));
   }
 
   Future<void> _openArtwork(ArtworkMatch match) async {
@@ -408,6 +423,7 @@ class _ScanTabState extends State<ScanTab> with WidgetsBindingObserver {
               Column(
                 children: [
                   Expanded(
+                    key: _frameKey,
                     child: cameraReady
                         ? Stack(
                             fit: StackFit.expand,

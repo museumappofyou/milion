@@ -39,7 +39,6 @@ class PlanState {
     this.room,
     this.focus,
     this.path = const [],
-    this.you,
     this.dimmed = const {},
   });
 
@@ -51,9 +50,6 @@ class PlanState {
 
   /// A cycle's walking line through its stops.
   final List<PlanPoint> path;
-
-  /// Where "you" stand during a walk (animated between stops).
-  final PlanPoint? you;
 
   /// Artworks drawn faintly (outside the room or cycle in view).
   final Set<String> dimmed;
@@ -113,45 +109,15 @@ class PlanPainter extends CustomPainter {
       );
     }
 
-    // Reflected ceiling: domes with their ribs, vaults as dashed squares.
-    final dashed = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1
-      ..color = Pigment.lamp.withValues(alpha: .45);
-    for (final v in guide.vaults) {
-      final c = f.toScreen(v.center), r = v.radius * f.k;
-      switch (v.kind) {
-        case VaultKind.dome:
-          _dashedCircle(canvas, c, r, dashed);
-          for (var i = 0; i < v.ribs; i++) {
-            final a = i * 2 * math.pi / v.ribs;
-            canvas.drawLine(
-              c + Offset(math.cos(a), math.sin(a)) * r * .25,
-              c + Offset(math.cos(a), math.sin(a)) * r,
-              dashed,
-            );
-          }
-        case VaultKind.vault:
-          final rect = Rect.fromCenter(center: c, width: r * 2, height: r * 2);
-          _dashedPath(canvas, Path()..addRect(rect), dashed);
-          _dashedPath(
-            canvas,
-            Path()
-              ..moveTo(rect.left, rect.top)
-              ..lineTo(rect.right, rect.bottom)
-              ..moveTo(rect.right, rect.top)
-              ..lineTo(rect.left, rect.bottom),
-            dashed,
-          );
-        case VaultKind.apse:
-          _dashedPath(
-            canvas,
-            Path()
-              ..addArc(Rect.fromCircle(center: c, radius: r), math.pi, math.pi),
-            dashed,
-          );
-      }
-    }
+    // Reflected ceiling: domes with their ribs, vaults as dashed squares;
+    // the dashes are measured once per plan and size.
+    canvas.drawPath(
+      _ceiling(f, size),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1
+        ..color = Pigment.lamp.withValues(alpha: .45),
+    );
 
     // A cycle's walking line.
     if (state.path.length > 1) {
@@ -196,14 +162,6 @@ class PlanPainter extends CustomPainter {
       }
     }
 
-    // You, during a walk.
-    final you = state.you;
-    if (you != null) {
-      final c = f.toScreen(you);
-      canvas.drawCircle(c, 9, Paint()..color = Pigment.marble);
-      canvas.drawCircle(c, 6, Paint()..color = Pigment.cobalt);
-    }
-
     // Room names: the short name (before any parenthesis), turned to run
     // along a tall narrow room and shrunk only if it still does not fit.
     for (final r in guide.rooms) {
@@ -240,21 +198,57 @@ class PlanPainter extends CustomPainter {
     }
   }
 
-  static void _dashedCircle(Canvas canvas, Offset c, double r, Paint paint) =>
-      _dashedPath(
-        canvas,
-        Path()..addOval(Rect.fromCircle(center: c, radius: r)),
-        paint,
-      );
+  static final _ceilings = <(PlaceGuide, Size), Path>{};
 
-  static void _dashedPath(Canvas canvas, Path path, Paint paint) {
+  /// Every dome, rib and vault line as one dashed path, cached per plan and
+  /// size: a plan repaints on each tap or stop and measuring the dashes is
+  /// the costly part.
+  Path _ceiling(
+    PlanFrame f,
+    Size size,
+  ) => _ceilings.putIfAbsent((guide, size), () {
+    if (_ceilings.length > 8) _ceilings.clear();
     final out = Path();
+    for (final v in guide.vaults) {
+      final c = f.toScreen(v.center), r = v.radius * f.k;
+      switch (v.kind) {
+        case VaultKind.dome:
+          _dash(out, Path()..addOval(Rect.fromCircle(center: c, radius: r)));
+          for (var i = 0; i < v.ribs; i++) {
+            final a = i * 2 * math.pi / v.ribs;
+            final d = Offset(math.cos(a), math.sin(a));
+            out
+              ..moveTo((c + d * r * .25).dx, (c + d * r * .25).dy)
+              ..lineTo((c + d * r).dx, (c + d * r).dy);
+          }
+        case VaultKind.vault:
+          final rect = Rect.fromCenter(center: c, width: r * 2, height: r * 2);
+          _dash(out, Path()..addRect(rect));
+          _dash(
+            out,
+            Path()
+              ..moveTo(rect.left, rect.top)
+              ..lineTo(rect.right, rect.bottom)
+              ..moveTo(rect.right, rect.top)
+              ..lineTo(rect.left, rect.bottom),
+          );
+        case VaultKind.apse:
+          _dash(
+            out,
+            Path()
+              ..addArc(Rect.fromCircle(center: c, radius: r), math.pi, math.pi),
+          );
+      }
+    }
+    return out;
+  });
+
+  static void _dash(Path out, Path path) {
     for (final m in path.computeMetrics()) {
       for (var d = 0.0; d < m.length; d += 7) {
         out.addPath(m.extractPath(d, d + 4), Offset.zero);
       }
     }
-    canvas.drawPath(out, paint);
   }
 
   @override
@@ -263,6 +257,28 @@ class PlanPainter extends CustomPainter {
       old.guide != guide ||
       old.language != language ||
       old.colors != colors;
+}
+
+/// "You" during a walk: the one thing on the plan that moves every frame,
+/// painted over the plan so the plan itself repaints only when it changes.
+class PlanYouPainter extends CustomPainter {
+  PlanYouPainter(this.guide, this.you, {super.repaint});
+  final PlaceGuide guide;
+
+  /// Read at paint time, so a ticking [repaint] needs no rebuild.
+  final PlanPoint? Function() you;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final at = you();
+    if (at == null) return;
+    final c = PlanFrame(guide, size).toScreen(at);
+    canvas.drawCircle(c, 9, Paint()..color = Pigment.marble);
+    canvas.drawCircle(c, 6, Paint()..color = Pigment.cobalt);
+  }
+
+  @override
+  bool shouldRepaint(PlanYouPainter old) => old.guide != guide;
 }
 
 /// The artwork whose tessera is nearest [screen] within [slop] pixels.

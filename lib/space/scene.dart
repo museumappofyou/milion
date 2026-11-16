@@ -5,16 +5,18 @@ import 'model.dart';
 import 'style.dart';
 
 /// How one part stands in this frame: [progress] 0 is absent, 1 in place
-/// and opaque; the offset is its assembly drop and exploded displacement.
+/// and opaque; the offset is its assembly drop and exploded displacement;
+/// [highlight] (0–1) tints it gold, for a step just added by hand.
 class SpacePartState {
   const SpacePartState({
     this.progress = 1,
     this.dx = 0,
     this.dy = 0,
     this.dz = 0,
+    this.highlight = 0,
   });
   static const hidden = SpacePartState(progress: 0);
-  final double progress, dx, dy, dz;
+  final double progress, dx, dy, dz, highlight;
 }
 
 /// An axis-aligned section plane at [offset] metres along [axis] (0 x,

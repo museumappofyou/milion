@@ -260,33 +260,53 @@ class _GuideScreenState extends State<GuideScreen>
                 widget.place.names.inLanguage(lang),
                 guide.rooms.map((r) => r.name.inLanguage(lang)).join(', '),
               ),
-              child: ExcludeSemantics(
-                child: LayoutBuilder(
-                  builder: (context, box) {
-                    final size = box.biggest;
-                    return InteractiveViewer(
-                      maxScale: 5,
-                      child: GestureDetector(
-                        key: _planKey,
-                        behavior: HitTestBehavior.opaque,
-                        onTapUp: (d) => _tapPlan(size, d.localPosition),
-                        child: AnimatedBuilder(
-                          animation: _walk,
-                          builder: (context, _) => CustomPaint(
-                            key: const ValueKey('guide-plan'),
-                            size: size,
-                            painter: PlanPainter(
-                              guide: guide,
-                              artworks: _artworks,
-                              colors: colors,
-                              language: lang,
-                              state: _planState(),
-                            ),
+              // The plan is a drawing on marble in either scheme, as the
+              // Atlas stays light in dark mode (P10): its poché walls are
+              // porphyry and would vanish into the lamp ground.
+              child: ColoredBox(
+                color: Pigment.marble,
+                child: ExcludeSemantics(
+                  child: LayoutBuilder(
+                    builder: (context, box) {
+                      final size = box.biggest;
+                      return InteractiveViewer(
+                        maxScale: 5,
+                        child: GestureDetector(
+                          key: _planKey,
+                          behavior: HitTestBehavior.opaque,
+                          onTapUp: (d) => _tapPlan(size, d.localPosition),
+                          // The plan repaints when its state changes; only
+                          // "you" follows the walk, frame by frame (P09 rule).
+                          child: Stack(
+                            children: [
+                              RepaintBoundary(
+                                child: CustomPaint(
+                                  key: const ValueKey('guide-plan'),
+                                  size: size,
+                                  isComplex: true,
+                                  painter: PlanPainter(
+                                    guide: guide,
+                                    artworks: _artworks,
+                                    colors: colors,
+                                    language: lang,
+                                    state: _planState(),
+                                  ),
+                                ),
+                              ),
+                              CustomPaint(
+                                size: size,
+                                painter: PlanYouPainter(
+                                  guide,
+                                  _you,
+                                  repaint: _walk,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
@@ -320,19 +340,25 @@ class _GuideScreenState extends State<GuideScreen>
     );
   }
 
+  /// Where "you" stand: between the last stop and this one as the walk runs.
+  PlanPoint? _you() {
+    final c = _cycle;
+    if (c == null) return null;
+    final here = _at(c.artworkIds[_stop]);
+    final from = _from ?? here;
+    final t = Curves.easeInOut.transform(_walk.value);
+    return PlanPoint(
+      from.x + (here.x - from.x) * t,
+      from.y + (here.y - from.y) * t,
+    );
+  }
+
   PlanState _planState() {
     final c = _cycle;
     if (c != null) {
-      final here = _at(c.artworkIds[_stop]);
-      final from = _from ?? here;
-      final t = Curves.easeInOut.transform(_walk.value);
       return PlanState(
         focus: _focus,
         path: [for (final id in c.artworkIds) _at(id)],
-        you: PlanPoint(
-          from.x + (here.x - from.x) * t,
-          from.y + (here.y - from.y) * t,
-        ),
         dimmed: {
           for (final id in _artworks.keys)
             if (!c.artworkIds.contains(id)) id,

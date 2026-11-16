@@ -1,0 +1,111 @@
+{
+ "device": "Samsung Galaxy A52s 5G SM-A528B, 1080x2400 at 60 Hz, release arm64 build",
+ "method": "SurfaceFlinger present times of the Flutter surface (studio/cache/device-2026-11-13/sf.py); a still screen presents no frames, so long gaps between taps are idle, not jank; jank20to100ms counts missed vsyncs.",
+ "runs": [
+  {
+   "label": "VI reveal, sheet closed (untouched, 8 s)",
+   "frames": 424,
+   "spanS": 8.0,
+   "fps": 52.9,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 33.33,
+   "intervalMaxMs": 50.11,
+   "over20ms": 52,
+   "over34ms": 5,
+   "jank20to100ms": 52,
+   "date": "2026-11-13"
+  },
+  {
+   "label": "VI assembly, sheet closed (untouched)",
+   "frames": 1555,
+   "spanS": 29.99,
+   "fps": 51.8,
+   "intervalMedianMs": 16.67,
+   "intervalP90Ms": 33.33,
+   "intervalMaxMs": 66.66,
+   "over20ms": 194,
+   "over34ms": 50,
+   "jank20to100ms": 194,
+   "date": "2026-11-13"
+  },
+  {
+   "label": "VI orbit under touch (drag swipes)",
+   "frames": 989,
+   "spanS": 19.73,
+   "fps": 50.1,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 16.71,
+   "intervalMaxMs": 200.16,
+   "over20ms": 25,
+   "over34ms": 19,
+   "jank20to100ms": 6,
+   "date": "2026-11-13"
+  },
+  {
+   "label": "guide: cycle walk, 6 Next taps (first build: plan repainted per frame)",
+   "frames": 296,
+   "spanS": 17.36,
+   "fps": 17.0,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 33.39,
+   "intervalMaxMs": 1150.42,
+   "over20ms": 54,
+   "over34ms": 26,
+   "jank20to100ms": 42,
+   "date": "2026-11-13"
+  },
+  {
+   "label": "guide: cycle walk, 6 Next taps (\"you\" on its own layer)",
+   "frames": 346,
+   "spanS": 28.93,
+   "fps": 11.9,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 16.75,
+   "intervalMaxMs": 2401.19,
+   "over20ms": 28,
+   "over34ms": 26,
+   "jank20to100ms": 8,
+   "date": "2026-11-13"
+  },
+  {
+   "label": "guide: cycle walk, 6 Next taps (ceiling path cached)",
+   "frames": 288,
+   "spanS": 20.16,
+   "fps": 14.2,
+   "intervalMedianMs": 16.67,
+   "intervalP90Ms": 16.8,
+   "intervalMaxMs": 1167.1,
+   "over20ms": 19,
+   "over34ms": 18,
+   "jank20to100ms": 5,
+   "date": "2026-11-16"
+  },
+  {
+   "label": "VI build by hand: 4 − then 4 + taps, 0.9 s apart (finger lifted after each tap)",
+   "frames": 385,
+   "spanS": 9.12,
+   "fps": 42.1,
+   "intervalMedianMs": 16.68,
+   "intervalP90Ms": 33.36,
+   "intervalMaxMs": 400.23,
+   "over20ms": 70,
+   "over34ms": 12,
+   "jank20to100ms": 66,
+   "date": "2026-11-16"
+  },
+  {
+   "label": "VI build by hand, a finger held on the screen meanwhile (some taps lost to the held touch)",
+   "frames": 223,
+   "spanS": 7.55,
+   "fps": 29.4,
+   "intervalMedianMs": 16.67,
+   "intervalP90Ms": 16.73,
+   "intervalMaxMs": 633.43,
+   "over20ms": 16,
+   "over34ms": 7,
+   "jank20to100ms": 9,
+   "date": "2026-11-16"
+  }
+ ],
+ "reading": "Under touch the study and the guide hold 60 fps. Building by hand runs like the untouched story (about one frame in six at 33 ms) because each tap ends before the parts land and the governor lowers the clock (P08 decision, 2026-10-13); with a finger down the same animation holds 16.7 ms. The cycle walk went from 42 missed frames in six walks to 8 with \"you\" on its own layer and 5 with the ceiling path cached."
+}

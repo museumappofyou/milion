@@ -53,7 +53,9 @@ void main() {
       );
       await tester.tap(find.byKey(const ValueKey('plate-look-up-chip')));
       await tester.pumpAndSettle();
-      await tester.tapAt(const Offset(10, 10)); // dismiss the sheet
+      // The scene answers under the docked controls; then fold them away.
+      expect(find.byKey(const ValueKey('plate-look-up')), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey('plate-dock-close')));
       await tester.pumpAndSettle();
       expect(c.lookUp, isTrue);
       expect(find.byKey(const ValueKey('plate-look-up')), findsOneWidget);

@@ -1354,6 +1354,22 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get spaceOverview => 'View from above';
+
+  @override
+  String get spaceAddStep => 'Add the next element';
+
+  @override
+  String get spaceRemoveStep => 'Take the last element away';
+
+  @override
+  String get spaceNothingBuilt => 'Nothing built yet: add the first element.';
+
+  @override
+  String get spaceBuildHint =>
+      'Add elements one at a time and watch them settle into place.';
+
+  @override
   String get spaceChoisy => 'Choisy’s view from below';
 
   @override
