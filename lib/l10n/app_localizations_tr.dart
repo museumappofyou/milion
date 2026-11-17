@@ -98,8 +98,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get straightLine => 'Kuş uçuşu uzaklık · 1 Roma mili yaklaşık 1.480 m';
 
   @override
-  String catalogueCount(String count) {
-    return '$count eser · Hora / Kariye';
+  String catalogueCount(String count, String place) {
+    return '$count eser · $place';
   }
 
   @override

@@ -85,12 +85,22 @@ void main() {
       expect(registry.places.single.strata.single.era, Era.byzantine);
       expect(registry.places.single.strata.single.gaugeYear, 1321);
       expect(registry.places.single.strata.single.artworkIds, ['F02']);
-      expect(registry.places.single.visit!.hoursCheckedAt, DateTime(2026, 10, 7));
-      expect(registry.places.single.visit!.transit.single.kind, TransitKind.tram);
+      expect(
+        registry.places.single.visit!.hoursCheckedAt,
+        DateTime(2026, 10, 7),
+      );
+      expect(
+        registry.places.single.visit!.transit.single.kind,
+        TransitKind.tram,
+      );
       expect(registry.media.single.historicalPhoto, isFalse);
       expect(registry.artworks.single.title.inLanguage('tr'), 'Anastasis');
-      expect(registry.milestonesIn(registry.places.single.strata.single)
-          .map((m) => m.numeral), ['I']);
+      expect(
+        registry
+            .milestonesIn(registry.places.single.strata.single)
+            .map((m) => m.numeral),
+        ['I'],
+      );
     },
   );
 
@@ -160,77 +170,81 @@ void main() {
     },
   );
 
-  test(
-    '103 Chora artworks load without any model asset or ONNX session',
-    () async {
-      final requested = <String>[];
-      final repository = ContentRepository((path) {
-        requested.add(path);
-        expect(path, startsWith('assets/content/'));
-        return File(path).readAsString();
-      });
-      final registry = await repository.load();
-      expect(identical(await repository.load(), registry), isTrue);
-      expect(registry.artworks.length, 103);
-      expect(registry.artworks.every((a) => a.placeId == 'chora'), isTrue);
-      expect(
-        registry.places.where((p) => p.review == ReviewStatus.draft).length,
-        greaterThanOrEqualTo(90),
-      );
-      expect(
-        registry.places.every((p) => RegExp(r'^Q\d+$').hasMatch(p.qid)),
-        isTrue,
-      );
-      // P11 reviewed Chora, the first reviewed place.
-      expect(registry.placesByDistance().map((p) => p.id), ['chora']);
-      expect(registry.placesByDistance(includeDrafts: true).first.id, 'milion');
-      expect(District.values.length, 39);
-      expect(requested.where((p) => p.contains('model')), isEmpty);
-      expect(
-        registry.milestones.singleWhere((m) => m.numeral == 'I').artworkIds,
-        ['F02'],
-      );
-      expect(
-        registry.milestones.singleWhere((m) => m.numeral == 'II').artworkIds,
-        ['F05'],
-      );
-      final legacy = await fixture('legacy_chora');
-      for (final row in legacy['map']) {
-        final artwork = registry.artwork(row['scene_id']);
-        final info = legacy['info'][artwork.id];
-        // P11 rewrote titles, rooms, surfaces, positions, summaries and cues
-        // from the sources (studio/chora/artworks/); ids, folders and kinds
-        // are the legacy ones, and every rewritten field is bilingual.
-        expect(artwork.folder, row['scene_folder']);
-        expect(artwork.kind.name, info['artwork_type']);
-        for (final field in [
-          artwork.title,
-          artwork.room,
-          artwork.surface,
-          artwork.position,
-          artwork.summary,
-          ...artwork.cues,
-        ]) {
-          expect(field.inLanguage('en'), isNotEmpty, reason: artwork.id);
-          expect(field.tr, isNotEmpty, reason: artwork.id);
-        }
+  test('112 artworks (Chora and Hagia Sophia) load without any model asset or ONNX session', () async {
+    final requested = <String>[];
+    final repository = ContentRepository((path) {
+      requested.add(path);
+      expect(path, startsWith('assets/content/'));
+      return File(path).readAsString();
+    });
+    final registry = await repository.load();
+    expect(identical(await repository.load(), registry), isTrue);
+    expect(registry.artworks.length, 112);
+    expect(registry.artworks.where((a) => a.placeId == 'chora').length, 103);
+    expect(
+      registry.artworks.where((a) => a.placeId == 'hagia-sophia').length,
+      9,
+    );
+    expect(
+      registry.places.where((p) => p.review == ReviewStatus.draft).length,
+      greaterThanOrEqualTo(90),
+    );
+    expect(
+      registry.places.every((p) => RegExp(r'^Q\d+$').hasMatch(p.qid)),
+      isTrue,
+    );
+    // P11 reviewed Chora, P12 Hagia Sophia, which stands nearer the Milion.
+    expect(registry.placesByDistance().map((p) => p.id), [
+      'hagia-sophia',
+      'chora',
+    ]);
+    expect(registry.placesByDistance(includeDrafts: true).first.id, 'milion');
+    expect(District.values.length, 39);
+    expect(requested.where((p) => p.contains('model')), isEmpty);
+    expect(
+      registry.milestones.singleWhere((m) => m.numeral == 'I').artworkIds,
+      ['F02'],
+    );
+    expect(
+      registry.milestones.singleWhere((m) => m.numeral == 'II').artworkIds,
+      ['F05'],
+    );
+    final legacy = await fixture('legacy_chora');
+    for (final row in legacy['map']) {
+      final artwork = registry.artwork(row['scene_id']);
+      final info = legacy['info'][artwork.id];
+      // P11 rewrote titles, rooms, surfaces, positions, summaries and cues
+      // from the sources (studio/chora/artworks/); ids, folders and kinds
+      // are the legacy ones, and every rewritten field is bilingual.
+      expect(artwork.folder, row['scene_folder']);
+      expect(artwork.kind.name, info['artwork_type']);
+      for (final field in [
+        artwork.title,
+        artwork.room,
+        artwork.surface,
+        artwork.position,
+        artwork.summary,
+        ...artwork.cues,
+      ]) {
+        expect(field.inLanguage('en'), isNotEmpty, reason: artwork.id);
+        expect(field.tr, isNotEmpty, reason: artwork.id);
       }
-      final classes = (jsonDecode(
-        await File('assets/model/classes.json').readAsString(),
-      ) as List).cast<String>();
-      final map = PredictionMap(classes, registry);
-      expect(map.artworkIdAt(0), classes.first);
-      final reordered = PredictionMap(classes.reversed.toList(), registry);
-      expect(reordered.artworkIdAt(0), classes.last);
-      expect(map.artworkIdAt(0), classes.first);
-      expect(registry.artworks.length, 103);
-      expect(() => PredictionMap(['missing'], registry), throwsFormatException);
-      expect(
-        () => PredictionMap(['F02', 'F02'], registry),
-        throwsFormatException,
-      );
-    },
-  );
+    }
+    final classes = (jsonDecode(
+      await File('assets/model/classes.json').readAsString(),
+    ) as List).cast<String>();
+    final map = PredictionMap(classes, registry);
+    expect(map.artworkIdAt(0), classes.first);
+    final reordered = PredictionMap(classes.reversed.toList(), registry);
+    expect(reordered.artworkIdAt(0), classes.last);
+    expect(map.artworkIdAt(0), classes.first);
+    expect(registry.artworks.length, 112);
+    expect(() => PredictionMap(['missing'], registry), throwsFormatException);
+    expect(
+      () => PredictionMap(['F02', 'F02'], registry),
+      throwsFormatException,
+    );
+  });
 
   test(
     'v0 notes survive migration for every artwork, including I and II',
@@ -297,7 +311,7 @@ void main() {
         return File(p).readAsString();
       });
       await expectLater(repository.load(), throwsFormatException);
-      expect((await repository.load()).artworks.length, 103);
+      expect((await repository.load()).artworks.length, 112);
     },
   );
 }

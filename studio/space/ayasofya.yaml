@@ -1,0 +1,559 @@
+# P12 kit spec: Hagia Sophia (Ayasofya), 532–537, its dome rebuilt 558–562.
+# Milestone IX, "The dome that fell": Justinian's church with its first,
+# flatter dome; the fall of 7 May 558; Isidore the Younger's higher dome of
+# 562 with its ring of forty windows; the buttresses and minarets by the
+# 1570s. Frame: metres, z up, the nave floor at z = 0, the dome's centre on
+# the origin, +y along the axis toward the apse (east-south-east), +x to its
+# right (south).
+# Cited and checked against the geometry: the dome about 31 m across, its
+# crown about 55.6 m above the floor, forty windows at its base, and the
+# first dome 20 Byzantine feet (about 6.25 m) lower. Not taken from any
+# source and set in proportion, so no caption states them: the piers'
+# size, the arches' springing (24.5 m), the aisles, galleries and narthexes,
+# the exedrae and apse, the buttress towers, the later buttresses' places and
+# the minarets' heights. The first dome's profile is not known: it is drawn
+# as the same dome flattened to the lower crown. A diagram on cited
+# dimensions, not a survey.
+schemaVersion: 1
+id: ayasofya
+place: hagia-sophia
+title: {en: "The dome that fell", tr: "Çöken kubbe"}
+description:
+  en: >-
+    Hagia Sophia as a drawing: Justinian's church of 537 under its first
+    dome, the fall of 7 May 558, and the higher dome Isidore the Younger
+    finished in 562 on a ring of forty windows, which still stands; then the
+    buttresses and minarets added by the 1570s. A diagram on cited
+    dimensions, not a survey; the first dome's profile is not known.
+  tr: >-
+    Bir çizim olarak Ayasofya: Justinianus'un 537'deki kilisesi ilk
+    kubbesinin altında, 7 Mayıs 558'deki çöküş ve Genç İsidoros'un 562'de
+    kırk pencereli bir halkanın üstünde tamamladığı, bugün de ayakta duran
+    daha yüksek kubbe; ardından 1570'lere dek eklenen payandalar ve
+    minareler. Kaynaklı ölçülere dayanan bir şemadır, rölöve değildir; ilk
+    kubbenin kesiti bilinmiyor.
+eras: [byzantine, ottoman]
+honesty: RECONSTRUCTION
+orientation:
+  axis: 124.6
+  source: osm-way-109862851
+  footprint:   # [lat, lon], OSM way 109862851 (the building with its later additions)
+    - [41.0086528, 28.980617]
+    - [41.0087109, 28.980497]
+    - [41.0088375, 28.9806119]
+    - [41.0089492, 28.9804377]
+    - [41.0088753, 28.9803659]
+    - [41.0089016, 28.9803196]
+    - [41.0088311, 28.9802539]
+    - [41.0088484, 28.9802171]
+    - [41.008932, 28.9802996]
+    - [41.0090109, 28.9801574]
+    - [41.0089173, 28.9800762]
+    - [41.0089498, 28.9800136]
+    - [41.0090727, 28.9801198]
+    - [41.0091476, 28.979972]
+    - [41.009182, 28.9799026]
+    - [41.0090987, 28.9798265]
+    - [41.0091322, 28.9797572]
+    - [41.0090757, 28.9797094]
+    - [41.009111, 28.979637]
+    - [41.009153, 28.9796725]
+    - [41.009183, 28.9796122]
+    - [41.0090672, 28.979513]
+    - [41.0090025, 28.9796459]
+    - [41.0089084, 28.9795657]
+    - [41.0089287, 28.979524]
+    - [41.0089111, 28.9795086]
+    - [41.0088902, 28.9795495]
+    - [41.0088542, 28.9795184]
+    - [41.0088733, 28.9794782]
+    - [41.0088551, 28.9794627]
+    - [41.0088361, 28.979503]
+    - [41.0088171, 28.9794869]
+    - [41.0087992, 28.9794714]
+    - [41.0088194, 28.9794305]
+    - [41.0088017, 28.9794144]
+    - [41.0087791, 28.9794545]
+    - [41.0087485, 28.9794279]
+    - [41.0087704, 28.9793854]
+    - [41.0087467, 28.9793664]
+    - [41.008725, 28.9794088]
+    - [41.0086439, 28.9793396]
+    - [41.0087171, 28.9791998]
+    - [41.0086472, 28.9791387]
+    - [41.0086333, 28.9791632]
+    - [41.0085376, 28.9790782]
+    - [41.0084851, 28.9791825]
+    - [41.0084019, 28.9791094]
+    - [41.0083585, 28.9791945]
+    - [41.0083459, 28.9792179]
+    - [41.0083636, 28.9792339]
+    - [41.008329, 28.9792993]
+    - [41.0081727, 28.9791545]
+    - [41.0081374, 28.9792176]
+    - [41.0082264, 28.9792998]
+    - [41.008143, 28.9794677]
+    - [41.0081988, 28.9795195]
+    - [41.0081549, 28.9796062]
+    - [41.0081974, 28.9796429]
+    - [41.0082939, 28.9797246]
+    - [41.0082822, 28.9797503]
+    - [41.0081911, 28.9796738]
+    - [41.0081516, 28.9797572]
+    - [41.00824, 28.9798301]
+    - [41.0081992, 28.9798981]
+    - [41.0081196, 28.9798325]
+    - [41.0080734, 28.9799318]
+    - [41.0081501, 28.9799982]
+    - [41.0081154, 28.9800663]
+    - [41.0080399, 28.9800026]
+    - [41.0080168, 28.980046]
+    - [41.0079193, 28.9799523]
+    - [41.0078395, 28.9801026]
+    - [41.0080029, 28.98026]
+    - [41.0079848, 28.9802963]
+    - [41.0083841, 28.9806672]
+    - [41.0083309, 28.9807645]
+    - [41.0084143, 28.980847]
+    - [41.0084851, 28.9809169]
+    - [41.008524, 28.98084]
+    - [41.0085756, 28.9808942]
+    - [41.0086122, 28.9808181]
+    - [41.0086011, 28.9808086]
+    - [41.0086839, 28.9806421]
+step: 4.0
+epochs:
+  - {year: 537, label: {en: "Justinian's church, 537", tr: "Justinianus'un kilisesi, 537"}}
+  - {year: 558, collapse: true, label: {en: "The dome falls, 558", tr: "Kubbe çöküyor, 558"}}
+  - {year: 562, label: {en: "The higher dome, 562", tr: "Daha yüksek kubbe, 562"}}
+  - {year: 1573, label: {en: "Buttresses and minarets, by the 1570s", tr: "Payandalar ve minareler, 1570'lere dek"}}
+parts:
+  # Outer walls: the nave with its aisles and galleries, 63 m long inside
+  # the east and west walls, two storeys, 24 m.
+  - id: wall-north
+    kind: wall
+    at: [[-35, -31.5, 90]]
+    params:
+      length: 63
+      height: 24
+      thickness: 1.5
+      step: 8.0
+      openings: &aisle-windows
+        - {x: 5.5, width: 2.6, sill: 3, head: 8, arch: round}
+        - {x: 23, width: 2.6, sill: 3, head: 8, arch: round}
+        - {x: 31.5, width: 2.6, sill: 3, head: 8, arch: round}
+        - {x: 40, width: 2.6, sill: 3, head: 8, arch: round}
+        - {x: 57.5, width: 2.6, sill: 3, head: 8, arch: round}
+  - id: wall-south
+    kind: wall
+    at: [[35, -31.5, 90]]
+    params: {length: 63, height: 24, thickness: 1.5, step: 8.0, openings: *aisle-windows}
+  - id: wall-east
+    kind: wall
+    note: the east wall either side of the apse
+    at: [[-35, 31.5], [10.5, 31.5]]
+    params: {length: 24.5, height: 24, thickness: 1.5, step: 8.0}
+  - id: wall-west
+    kind: wall
+    note: the nave's west wall, with the five doors from the inner narthex
+    at: [[-35, -31.5]]
+    params:
+      length: 70
+      height: 24
+      thickness: 1.5
+      step: 8.0
+      openings:
+        - {x: 23, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 29, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 35, width: 4.4, sill: 0, head: 9, arch: round}
+        - {x: 41, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 47, width: 3.0, sill: 0, head: 7, arch: round}
+  - id: narthex-west
+    kind: wall
+    at: [[-35, -41]]
+    params:
+      length: 70
+      height: 22
+      thickness: 1.5
+      step: 8.0
+      openings:
+        - {x: 29, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 35, width: 3.6, sill: 0, head: 8, arch: round}
+        - {x: 41, width: 3.0, sill: 0, head: 7, arch: round}
+  - id: narthex-ends
+    kind: wall
+    at: [[-35, -41, 90], [35, -41, 90]]
+    params: {length: 9.5, height: 22, thickness: 1.5, step: 8.0}
+  - id: exonarthex-west
+    kind: wall
+    at: [[-35, -47]]
+    params:
+      length: 70
+      height: 10
+      thickness: 1.2
+      step: 8.0
+      openings:
+        - {x: 35, width: 3.6, sill: 0, head: 6, arch: round}
+  - id: exonarthex-ends
+    kind: wall
+    at: [[-35, -47, 90], [35, -47, 90]]
+    params: {length: 6, height: 10, thickness: 1.2, step: 8.0}
+  - id: piers
+    kind: pier
+    note: four main piers, their inner faces on the dome's 31 m square
+    at: [[-19, -18.5], [-19, 18.5], [19, -18.5], [19, 18.5]]
+    names: [nw, ne, sw, se]
+    params: {width: 7, depth: 6, height: 24.5}
+  - id: buttress-towers
+    kind: pier
+    note: the four buttress towers north and south that take the great arches' thrust
+    at: [[-38.5, -18.5], [-38.5, 18.5], [38.5, -18.5], [38.5, 18.5]]
+    params: {width: 5.5, depth: 7.5, height: 30}
+  - id: arcade-ground
+    kind: arcade
+    note: the colonnades between the piers, north and south, under the galleries
+    at: [{at: [-17, -15.5], turn: 90}, {at: [17, -15.5], turn: 90}]
+    params: {length: 31, bays: 5, spring: 7, thickness: 0.8, depth: 1.4, top: 13, step: 6.0,
+             piers_at_ends: false, support: {kind: column, diameter: 1.2, capital: impost, n: 6}}
+  - id: arcade-gallery
+    kind: arcade
+    at: [{at: [-17, -15.5], z: 13, turn: 90}, {at: [17, -15.5], z: 13, turn: 90}]
+    note: the gallery's columns are drawn as plain piers, to stay within the budget
+    params: {length: 31, bays: 5, spring: 4.5, thickness: 0.6, depth: 1.2, top: 7, step: 6.0,
+             piers_at_ends: false, support: {kind: pier, width: 0.8}}
+  - id: tympana
+    kind: tympanum
+    note: the walls under the great arches north and south, two rows of windows
+    at: [{at: [-17, 0], z: 20, turn: 90}, {at: [17, 0], z: 20, turn: 90}]
+    params:
+      radius: 15.5
+      base: 4.5
+      thickness: 1.2
+      step: 6.0
+      windows:
+        - {x: -10, width: 2.4, sill: 5.5, head: 10}
+        - {x: -5, width: 2.4, sill: 5.5, head: 10}
+        - {x: 0, width: 2.4, sill: 5.5, head: 10}
+        - {x: 5, width: 2.4, sill: 5.5, head: 10}
+        - {x: 10, width: 2.4, sill: 5.5, head: 10}
+        - {x: -5, width: 2.4, sill: 12, head: 16}
+        - {x: 0, width: 2.4, sill: 12, head: 16}
+        - {x: 5, width: 2.4, sill: 12, head: 16}
+  - id: arches
+    kind: arch
+    note: the four great arches, 31 m wide
+    at: [{at: [0, -18.5], z: 24.5}, {at: [0, 18.5], z: 24.5},
+         {at: [-19, 0], z: 24.5, turn: 90}, {at: [19, 0], z: 24.5, turn: 90}]
+    params: {span: 31, thickness: 1.8, depth: 6, step: 2.5}
+  - id: pendentives
+    kind: pendentives
+    at: [{at: [0, 0], z: 24.5}]
+    params: {half: 15.5, top: 15.5, step: 2.5}
+  - id: semidomes
+    kind: semidome
+    material: lead
+    note: east and west half-domes, five windows each
+    at: [{at: [0, 15.5], z: 24.5}, {at: [0, -15.5], z: 24.5, turn: 180}]
+    params: {radius: 15.5, thickness: 1.0, windows: 5, band: 2.4, share: 0.5, n: 16, rows: 4}
+  - id: exedrae
+    kind: exedra
+    note: two exedrae under each half-dome, on columns under a gallery wall
+    at: [{at: [13.42, 23.25], turn: -60}, {at: [-13.42, 23.25], turn: 60},
+         {at: [13.42, -23.25], turn: -120}, {at: [-13.42, -23.25], turn: 120}]
+    params: {radius: 7.75, height: 16, thickness: 1.0, columns: 2, beam: 4,
+             column: {diameter: 1.2, capital: impost, n: 6}, cap_thickness: 0.8, cap_segments: 8,
+             step: 6.0}
+  - id: apse
+    kind: exedra
+    at: [{at: [0, 31]}]
+    params: {radius: 7.75, height: 16, thickness: 1.5, windows: 3, sill: 6, head: 12, share: 0.4,
+             outer_sides: 6, cap_thickness: 0.8, cap_segments: 8, step: 5.0}
+  - id: roof-aisles
+    kind: slab
+    at: [{at: [-28.75, 0], z: 24}, {at: [28.75, 0], z: 24}]
+    params: {width: 13.5, depth: 64.5, thickness: 0.8, step: 8.0}
+  - id: roof-narthex
+    kind: slab
+    at: [{at: [0, -36.25], z: 22}]
+    params: {width: 71.5, depth: 11, thickness: 0.8, step: 8.0}
+  - id: roof-exonarthex
+    kind: slab
+    at: [{at: [0, -44], z: 10}]
+    params: {width: 71.2, depth: 6.2, thickness: 0.6, step: 8.0}
+  - id: dome-537
+    kind: dome
+    material: lead
+    note: >-
+      the first dome, its crown 20 Byzantine feet lower than today's; its
+      profile is not known and is drawn as today's dome flattened. Its
+      eastern half (+y) fell in 558, as Theophanes tells it; the western half
+      stood until Isidore the Younger rebuilt the whole dome
+    at: [{at: [0, 0], z: 40}]
+    names: [east]
+    params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5, rise: 9.25,
+             n: 40, rows: 4, sector: [0, 180]}
+  - id: dome-537
+    kind: dome
+    material: lead
+    at: [{at: [0, 0], z: 40}]
+    names: [west]
+    params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5, rise: 9.25,
+             n: 40, rows: 4, sector: [180, 360]}
+  - id: debris
+    kind: dome
+    note: a heap where the dome fell on the altar, ciborium and ambo (its form is a sign, not evidence)
+    at: [{at: [0, 6], z: 0}]
+    params: {radius: 9, thickness: 1.2, rise: 1.6, n: 16, rows: 2}
+  - id: dome-562
+    kind: dome
+    material: lead
+    note: the dome of 562, about 31 m across, its crown about 55.6 m up, forty windows at its base
+    at: [{at: [0, 0], z: 40}]
+    params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5, n: 40, rows: 6,
+             light: true}
+  - id: buttresses
+    kind: buttress
+    note: >-
+      buttresses added between the 10th or 14th century and the 1570s;
+      their places here are schematic
+    at: [[-35.75, 27, -90], [-35.75, 6, -90], [35.75, 27, 90], [35.75, 6, 90],
+         [-24, 32.25, 180], [24, 32.25, 180]]
+    params: {width: 4, depth: 7, height: 22, step: 8.0}
+  - id: minarets
+    kind: minaret
+    note: the four minarets; heights and şerefe set in proportion, not measured
+    at: [{at: [-38.5, -45]}, {at: [38.5, -45]}, {at: [-38.5, 35]}, {at: [38.5, 35]}]
+    names: [nw, sw, ne, se]
+    params: {base: 4.4, base_height: 9.0, shaft_diameter: 3.0, shaft_top: 46, serefe: [34, 44],
+             serefe_depth: 0.9, corbel: 1.4, parapet: 1.0, petek: 2.6, cap: 7.0, finial: 1.5,
+             sides: 8, shoe: 2.2, tiers: 2, step: 6.0}
+steps:
+  - id: walls
+    parts: [wall-*, narthex-*, exonarthex-*]
+    seconds: 3.0
+    epochs: []
+    sources: [procopius-buildings-1, tdv-ayasofya]
+    label: {en: "The church of 537", tr: "537'deki kilise"}
+    caption:
+      en: >-
+        After the Nika revolt burned the old church in January 532, Justinian
+        had Anthemius of Tralles and Isidore of Miletus build this one; it was
+        consecrated on 27 December 537.
+      tr: >-
+        Nika ayaklanması eski kiliseyi Ocak 532'de yakınca Justinianus bu
+        kiliseyi Trallesli Anthemios ile Miletoslu İsidoros'a yaptırdı;
+        27 Aralık 537'de kutsandı.
+  - id: piers
+    parts: [piers-*, buttress-towers]
+    seconds: 2.8
+    epochs: []
+    sources: [procopius-buildings-1]
+    label: {en: "Four piers", tr: "Dört ayak"}
+    caption:
+      en: >-
+        Four piers of squared stone carry the dome; Procopius says their
+        joints were bound with lead.
+      tr: >-
+        Kubbeyi kesme taştan dört ayak taşır; Prokopios derzlerine kurşun
+        döküldüğünü yazar.
+  - id: colonnades
+    parts: [arcade-*, tympana]
+    seconds: 2.8
+    epochs: []
+    sources: [procopius-buildings-1]
+    label: {en: "Colonnades and galleries", tr: "Sütun dizileri ve galeriler"}
+    caption:
+      en: >-
+        Columns open the aisles below and the galleries above onto the
+        nave; walls of windows fill the great arches north and south.
+      tr: >-
+        Sütunlar alttaki yan nefleri ve üstteki galerileri orta mekâna açar;
+        kuzey ve güneyde büyük kemerleri pencereli duvarlar doldurur.
+  - id: arches
+    parts: [arches]
+    seconds: 2.6
+    epochs: []
+    sources: [tdv-ayasofya, istanbultarihi-ayasofya]
+    label: {en: "Four great arches", tr: "Dört büyük kemer"}
+    caption:
+      en: "Four great arches about 31 m wide rise from the piers."
+      tr: "Ayaklardan yaklaşık 31 m genişliğinde dört büyük kemer yükselir."
+  - id: pendentives
+    parts: [pendentives]
+    seconds: 2.6
+    epochs: []
+    sources: [britannica-pendentive]
+    label: {en: "Pendentives", tr: "Pandantifler"}
+    caption:
+      en: "Four pendentives turn the square between the arches into a circle."
+      tr: "Dört pandantif kemerlerin arasındaki kareyi bir daireye çevirir."
+  - id: half-domes
+    parts: [semidomes, semidomes-windows, exedrae, exedrae-cap, apse, apse-cap, roof-*]
+    seconds: 3.0
+    epochs: []
+    sources: [procopius-buildings-1, tdv-ayasofya]
+    label: {en: "Two half-domes", tr: "İki yarım kubbe"}
+    caption:
+      en: >-
+        Half-domes east and west, each opening into smaller exedrae and, at
+        the east, the apse, lengthen the space under the dome.
+      tr: >-
+        Doğuda ve batıda, küçük eksedralara ve doğuda apsise açılan yarım
+        kubbeler, kubbenin altındaki mekânı uzatır.
+  - id: dome-537-west
+    parts: [dome-537-west, dome-537-west-windows]
+    seconds: 3.0
+    epochs: [537, 558]
+    sources: [theophanes-1997, tdv-ayasofya]
+    label: {en: "The first dome", tr: "İlk kubbe"}
+    caption:
+      en: >-
+        The first dome was about 6 m lower than today's. Its exact shape is
+        not known; it is drawn here as today's dome, flattened.
+      tr: >-
+        İlk kubbe bugünkünden yaklaşık 6 m daha alçaktı. Biçimi tam olarak
+        bilinmiyor; burada bugünkü kubbe basıklaştırılarak çizildi.
+  - id: dome-537
+    parts: [dome-537-east, dome-537-east-windows]
+    seconds: 2.6
+    epochs: [537]
+    sources: [theophanes-1997]
+    label: {en: "Its eastern half", tr: "Doğu yarısı"}
+    caption:
+      en: >-
+        Its eastern half, over the sanctuary. This is the part the
+        chroniclers say fell.
+      tr: >-
+        Doğu yarısı, kutsal alanın üstünde. Kronikçilere göre çöken kısım
+        burası.
+  - id: collapse
+    parts: [debris]
+    seconds: 4.2
+    epochs: [558]
+    sources: [theophanes-1997, agathias-mango-1972, tdv-ayasofya]
+    label: {en: "7 May 558", tr: "7 Mayıs 558"}
+    caption:
+      en: >-
+        Weakened by the earthquake of 14 December 557, part of the dome fell
+        on 7 May 558: Theophanes says the eastern part, over the sanctuary,
+        crushing the altar, the ciborium and the ambo.
+      tr: >-
+        14 Aralık 557 depremiyle zayıflayan kubbenin bir kısmı 7 Mayıs
+        558'de çöktü: Theophanes'e göre kutsal alanın üstündeki doğu kısmı;
+        altarı, ciboriumu ve ambonu ezdi.
+  - id: dome-562
+    parts: [dome-562, dome-562-windows]
+    seconds: 3.4
+    epochs: [562, 1573]
+    sources: [theophanes-1997, agathias-mango-1972, tdv-ayasofya, byzantine-legacy-hagia-sophia]
+    label: {en: "Twenty feet higher", tr: "Yirmi ayak daha yüksek"}
+    caption:
+      en: >-
+        Isidore the Younger rebuilt the whole dome, steeper and twenty
+        Byzantine feet higher, about 6.25 m; the church was consecrated again
+        on 24 December 562. Its crown is about 55.6 m above the floor.
+      tr: >-
+        Genç İsidoros kubbenin tamamını daha dik ve yirmi Bizans ayağı,
+        yaklaşık 6,25 m daha yüksek olarak yeniden kurdu; kilise 24 Aralık
+        562'de yeniden kutsandı. Tepesi döşemeden yaklaşık 55,6 m yüksekte.
+  - id: light
+    parts: [dome-562-light]
+    seconds: 3.2
+    epochs: [562, 1573]
+    sources: [procopius-buildings-1, byzantine-legacy-hagia-sophia]
+    label: {en: "Forty windows", tr: "Kırk pencere"}
+    caption:
+      en: >-
+        Forty windows ring its base. Procopius, writing of the first dome,
+        said it seemed not to rest on masonry but to hang from heaven.
+      tr: >-
+        Eteğini kırk pencere çevreler. Prokopios ilk kubbe için onun duvara
+        dayanmıyor, gökten asılı duruyormuş gibi göründüğünü yazmıştı.
+  - id: buttresses
+    parts: [buttresses]
+    seconds: 2.8
+    epochs: [1573]
+    sources: [tdv-ayasofya, istanbultarihi-ayasofya]
+    label: {en: "Buttresses", tr: "Payandalar"}
+    caption:
+      en: >-
+        Buttresses were added over the centuries, among them under
+        Andronikos II in 1317 and, for Selim II, by Sinan.
+      tr: >-
+        Yüzyıllar içinde payandalar eklendi; bunlar arasında II. Andronikos
+        döneminde 1317'de ve II. Selim için Sinan'ın yaptıkları var.
+  - id: minarets
+    parts: [minarets-*]
+    seconds: 3.0
+    epochs: [1573]
+    sources: [tdv-ayasofya, istanbultarihi-ayasofya]
+    label: {en: "Four minarets", tr: "Dört minare"}
+    caption:
+      en: >-
+        After 1453 the church became a mosque; by the end of the 16th century
+        four minarets stood at its corners.
+      tr: >-
+        1453'ten sonra kilise camiye çevrildi; 16. yüzyılın sonunda
+        köşelerinde dört minare yükseliyordu.
+reveal:
+  through: dome-537
+  seconds: 9.0
+  turnDegrees: 36
+  caption:
+    en: "537: a dome about 31 m across. In 558 it fell."
+    tr: "537: yaklaşık 31 m çapında bir kubbe. 558'de çöktü."
+choisy: {sectionHeight: 10, elevation: -45, azimuth: 225}
+dimensions:
+  - id: dome-diameter
+    value: 31
+    measure: {kind: diameter, parts: [dome-562-windows], side: inner, band: 0.02}
+    source: istanbultarihi-ayasofya
+    quote: "Çapı yaklaşık 31 m olan kubbenin"
+  - id: dome-crown
+    value: 55.6
+    measure: {kind: crown, parts: [dome-562]}
+    source: byzantine-legacy-hagia-sophia
+    quote: "a diameter of 31.87 m and a height from the floor level of 55.60 m"
+  - id: dome-windows
+    value: 40
+    measure: {kind: count, parts: [dome-562-light]}
+    source: istanbultarihi-ayasofya
+    quote: "Kubbe üzerinde kırk pencere vardır."
+  - id: first-dome-crown
+    value: 49.35
+    measure: {kind: crown, parts: [dome-537-west, dome-537-east]}
+    source: theophanes-1997
+    quote: "it was raised twenty feet higher than the first building (AM 6051); 55.60 m less 6.25 m (Eyice's conversion)"
+  - id: dome-raise
+    value: 6
+    measure: {kind: raise, parts: [dome-562], below: [dome-537-west, dome-537-east]}
+    source: byzantine-legacy-hagia-sophia
+    quote: "The present dome rises about 6 m higher than the original one."
+  - id: dome-diameter-eyice
+    value: 32
+    measure: {kind: diameter, parts: [dome-562-windows], side: inner, band: 0.02}
+    source: tdv-ayasofya
+    quote: "çapı yaklaşık 31-33 metreyi bulan basık büyük bir kubbe"
+  - id: main-piers
+    value: 4
+    measure: {kind: count, parts: [piers-*]}
+    source: byzantine-legacy-hagia-sophia
+    quote: "The weight of the dome passes through the pendentives to four massive piers."
+  - id: great-arches
+    value: 4
+    measure: {kind: count, parts: [arches]}
+    source: byzantine-legacy-hagia-sophia
+    quote: "The dome seems to float upon four great arches"
+  - id: buttress-towers
+    value: 4
+    measure: {kind: count, parts: [buttress-towers]}
+    source: istanbultarihi-ayasofya
+    quote: "dört adet destek payandası"
+  - id: minarets
+    value: 4
+    measure: {kind: count, parts: [minarets-nw, minarets-sw, minarets-ne, minarets-se], zmin: 1, zmax: 30}
+    source: tdv-ayasofya
+    quote: "paraphrase: the brick minaret, one added under Selim II and the two northern ones added under Murad III"
+shared: [procopius-buildings-1, britannica-pendentive, theophanes-1997, agathias-mango-1972, tdv-ayasofya,
+         istanbultarihi-ayasofya, byzantine-legacy-hagia-sophia, osm-way-109862851]
+sources: []

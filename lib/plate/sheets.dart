@@ -195,6 +195,8 @@ class PlateSheet extends StatelessWidget {
                     (PlateLayerId.depth, s.depth),
                     if (p.has(PlateLayerId.reconstruction))
                       (PlateLayerId.reconstruction, s.reconstruction),
+                    if (p.has(PlateLayerId.imagined))
+                      (PlateLayerId.imagined, s.imagined),
                   ])
                     ChoiceChip(
                       label: Text(item.$2),
@@ -226,7 +228,7 @@ class PlateSheet extends StatelessWidget {
                   onChanged: player.setLookUpSensor,
                 ),
               ],
-              if (c.layer == PlateLayerId.reconstruction) ...[
+              if (maskedLayers.contains(c.layer)) ...[
                 Text(s.plateWipeHint),
                 Slider(
                   key: const ValueKey('plate-wipe'),

@@ -91,7 +91,8 @@ def _beat(spec, b, i, cursor, details):
         light=b.get('light', 'none'), flow=bool(b.get('flow')), spiral=bool(b.get('spiral')),
         gesture=None if g is None else dict(
             start=cursor + g['offset'], duration=g['duration'], strength=g['strength'],
-            windows=[_rect(w) for w in g['windows']]))
+            windows=[_rect(w) for w in g['windows']]),
+        **({'layer': b['layer']} if b.get('layer') else {}))
 
 
 def _rect(v):
@@ -113,10 +114,10 @@ def manifest(spec, master_path, maps, lookup):
     extra = spec.get('layers', {})
     if extra.get('depth'):
         layers.append(dict(id='depth', asset=extra['depth'], honesty='DEPTH', mask=None))
-    if extra.get('reconstruction'):
-        rec = extra['reconstruction']
-        layers.append(dict(id='reconstruction', asset=rec['asset'], honesty='RECONSTRUCTION',
-                           mask=rec['mask']))
+    for key, label in [('reconstruction', 'RECONSTRUCTION'), ('imagined', 'IMAGINED')]:
+        if extra.get(key):
+            rec = extra[key]
+            layers.append(dict(id=key, asset=rec['asset'], honesty=label, mask=rec['mask']))
     flow = spec.get('flow')
     spiral = spec.get('spiral')
     if spiral:
@@ -149,7 +150,7 @@ def honesty(m):
     labels = ['ORIGINAL', 'DEPTH']
     if any(l['id'] == 'reconstruction' for l in m['layers']):
         labels.append('RECONSTRUCTION')
-    if m['rig'] or m['flow'] or m['spiral']:
+    if m['rig'] or m['flow'] or m['spiral'] or any(l['id'] == 'imagined' for l in m['layers']):
         labels.append('IMAGINED')
     return labels
 

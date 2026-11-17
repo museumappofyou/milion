@@ -1,0 +1,40 @@
+{
+ "device": "Samsung Galaxy A52s 5G SM-A528B, 1080x2400 at 60 Hz, USB debugging",
+ "date": "2026-11-17",
+ "builds": "release arm64 split APK (flutter build apk --release --split-per-abi --target-platform android-arm64), 114,584,642 bytes; debug-key fallback (O05)",
+ "coldStartMs": {
+  "2026-11-17": [
+   567,
+   586
+  ],
+  "note": "the first launch after the reinstall read 1048 ms"
+ },
+ "register": "48 Milestones · 10 playable · 0 approved · 38 planned; VII, VIII, IX and X open from the register (device/register-vii-x.png)",
+ "today": "the detail of the day is a Zoe detail from VIII, labelled ORIGINAL, with \"Open VIII at this detail\" (device/today.png)",
+ "hagiaSophia": {
+  "page": "reads as reviewed: the 2024 photograph credited, status checked 16 November 2026, Go, nine artworks, the gauge from 2024; the dig scrolls to 360 and the page end selects it (device/hs-page.png, device/hs-page-end.png)",
+  "scripts": "the runes (six glyphs) and the eight Arabic names render and join correctly on the phone (device/sheet-halvdan.png, device/sheet-roundels.png)",
+  "artworks": "after the fix: \"9 artworks · Hagia Sophia Mosque\", titles without record ids (device/hs-artworks.png)"
+ },
+ "plates": {
+  "VII": "reveal and story at 59.4 fps; the story ends by wiping in the re-laid gold under RECONSTRUCTION with its caption (device/vii-story-wipe.png); graphics 156 MB",
+  "VIII": "reveal 59.6 fps, story 59.8 fps; graphics 211 MB (96 MB of textures, under the 150 MB texture budget); the IMAGINED still empties the head and the name (device/viii-imagined-fixed.png)",
+  "X": "reveal 59.8 fps, story 59.6 fps; the candle beat lights the runes (device/x-story.png); graphics 143 MB"
+ },
+ "milestoneIX": {
+  "fps": "untouched reveal 40.0-44.3 fps and story 40.5 fps, under the 50 fps target; 60 fps under touch; VI alongside at 56.1-56.6 fps (frame-pacing.json)",
+  "drawing": "opens from above on the 537 church (device/ix-open.png); moving the time slider to 558 sinks the east half of the dome in a cloud of dust that settles (device/ix-558-falling.png, device/ix-558-settled.png); graphics 126 MB"
+ },
+ "found": [
+  "FIXED: a manual still of a wipe beat landed on the beat's first frame: VIII showed Constantine's face under an IMAGINED label. Stills of wipe beats now stand where the wipe is complete, and the label names a masked layer only once its wipe has begun (lib/plate/controller.dart; test/p12_hagia_sophia_test.dart).",
+  "FIXED: Hagia Sophia's artworks list said \"9 artworks · Chora / Kariye\" and showed record ids (hs-deesis) as codes, also in the sheet's eyebrow and the note confirmation. The header names the place and only catalogue codes such as Chora's are shown (Artwork.code).",
+  "FIXED before the device pass: the Turkish captions of the two masked layers said \"YENİDEN KURGU\" and \"HAYALİ\" under chips reading \"Rekonstrüksiyon\" and \"Hayalî\"; they now use the chips' words.",
+  "OPEN: IX misses the 50 fps budget untouched (40-44 fps); see milestoneIX."
+ ],
+ "privacy": "one screen recording caught the notification shade pulled down by hand; it was deleted from the phone and the computer unviewed beyond a contact sheet, also deleted.",
+ "notChecked": [
+  "Turkish UI on the phone (the phone's language was not changed; Turkish is covered by widget tests)",
+  "TalkBack by ear (O01)",
+  "tilt feel of the Deesis gold in the hand (O01)"
+ ]
+}

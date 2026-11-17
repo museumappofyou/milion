@@ -6,14 +6,20 @@ import '../content/registry.dart' show safeAssetPath;
 
 enum PlateLight { none, gilded, raking, candle }
 
-enum PlateLayerId { original, depth, reconstruction }
+/// [imagined] (P12): a masked layer like [reconstruction], for what no
+/// evidence shows (Milestone VIII's re-set face slot), labelled IMAGINED.
+enum PlateLayerId { original, depth, reconstruction, imagined }
 
 /// Honesty a layer must carry; also fixed by the §3 doctrine.
 const plateLayerHonesty = {
   PlateLayerId.original: Honesty.ORIGINAL,
   PlateLayerId.depth: Honesty.DEPTH,
   PlateLayerId.reconstruction: Honesty.RECONSTRUCTION,
+  PlateLayerId.imagined: Honesty.IMAGINED,
 };
+
+/// Layers drawn as a wipe over the original inside their mask.
+const maskedLayers = {PlateLayerId.reconstruction, PlateLayerId.imagined};
 
 class PlateLayer {
   PlateLayer(JsonReader r)
@@ -119,8 +125,16 @@ class PlateBeat {
       spiral = r.boolean('spiral'),
       gesture = r.optionalObject('gesture') == null
           ? null
-          : decode(r.object('gesture'), PlateGesture.new);
+          : decode(r.object('gesture'), PlateGesture.new),
+      layer = r.optionalString('layer') == null
+          ? null
+          : PlateLayerId.values.byName(r.string('layer'));
   final String id, detailId;
+
+  /// A masked layer this beat wipes in across its first 60% (P12: the
+  /// Deesis's lost lower half, Zoe's emperor's re-set face), carrying that
+  /// layer's honesty for the beat.
+  final PlateLayerId? layer;
   final double start, duration;
   double get end => start + duration;
   final NormalRect window;
@@ -292,8 +306,8 @@ class PlateManifest {
     for (final l in layers) {
       require(l.honesty == plateLayerHonesty[l.id], 'incorrect layer honesty');
       require(
-        (l.id == PlateLayerId.reconstruction) == (l.mask != null),
-        'only reconstruction carries a damage mask, and it must',
+        maskedLayers.contains(l.id) == (l.mask != null),
+        'only reconstruction and imagined layers carry a mask, and they must',
       );
     }
     for (final p in [...imagePaths, ?r?.path, manifestPath]) {
@@ -328,6 +342,15 @@ class PlateManifest {
     for (final b in [reveal, ...beats]) {
       require(!b.flow || flowEffect != null, 'flow effect required');
       require(!b.spiral || spiralEffect != null, 'spiral effect required');
+      final l = b.layer;
+      require(
+        l == null || (maskedLayers.contains(l) && has(l)),
+        'a beat wipes in only a masked layer the plate has',
+      );
+      require(
+        l == null || (b.gesture == null && !b.flow && !b.spiral),
+        'a wipe beat moves no painted pixels',
+      );
     }
     require(
       details.map((d) => d.id).toSet().length == details.length,

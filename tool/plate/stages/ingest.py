@@ -62,7 +62,8 @@ def ingest(spec):
     if sha256(data) != spec.source['sha256']:
         raise SystemExit(f'{src}: hash differs from the pinned sha256')
     image = Image.open(io.BytesIO(data))
-    record = dict(source=str(spec.source.get('corpus') or spec.source['repo']),
+    record = dict(source=str(spec.source.get('corpus') or spec.source.get('cache')
+                             or spec.source['repo']),
                   sourceSha256=sha256(data), sourceSize=list(image.size),
                   sourceUrl=spec.source.get('url'))
     keep = 'repo' in spec.source

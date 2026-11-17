@@ -317,7 +317,7 @@ void main() {
         final before = state.widget.selected;
         expect(
           state.widget.places[before].place.id,
-          'chora',
+          registry.artwork(detailOfDay(registry, p04Date)!.artworkId).placeId,
           reason: 'starts on today’s place',
         );
         // Turn along the right-hand side of the ring: tangential, so it rotates.
@@ -410,7 +410,7 @@ void main() {
         300,
         scrollable: find.byType(Scrollable).first,
       );
-      expect(find.text('6 of 23 playable · 0 approved'), findsOneWidget);
+      expect(find.text('10 of 23 playable · 0 approved'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('mosaic-strip')));
       await tester.pumpAndSettle();
       expect(shell(tester).current, Destination.mosaic);
@@ -490,7 +490,7 @@ void main() {
         await tester.tap(destination('Milestones'));
         await tester.pumpAndSettle();
         expect(
-          find.text('48 Milestones · 6 playable · 0 approved · 42 planned'),
+          find.text('48 Milestones · 10 playable · 0 approved · 38 planned'),
           findsOneWidget,
         );
         final last = find.byKey(const ValueKey('milestone-XLVII'));
@@ -523,7 +523,7 @@ void main() {
         await openCityList(tester);
         expect(
           find.textContaining(
-            'places · positions checked on Wikidata · 1 reviewed',
+            'places · positions checked on Wikidata · 2 reviewed',
           ),
           findsOneWidget,
         );
@@ -545,7 +545,7 @@ void main() {
         await tester.tap(find.byKey(const ValueKey('guide-catalogue')));
         await tester.pumpAndSettle();
         expect(find.byType(ArtworksTab), findsOneWidget);
-        expect(find.text('103 artworks · Chora / Kariye'), findsOneWidget);
+        expect(find.text('103 artworks · Kariye Mosque (Chora)'), findsOneWidget);
         await tester.pageBack();
         await tester.pumpAndSettle();
         await tester.pageBack();

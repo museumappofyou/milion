@@ -1,0 +1,261 @@
+{
+  "note": "P12 photographs from Wikimedia Commons (PD, CC BY-SA). `commons` pins the bytes fetched (Commons serves fixed-width thumbnails) and the 2400 px master kept in the gitignored studio/cache/p12/commons/masters/; tool/content/fetch_commons.py rebuilds both and the app derivatives. Plates read their masters from the cache. `references` are masters kept for authoring only.",
+  "records": [
+    {
+      "id": "hs-exterior-photo",
+      "path": "assets/media/hagia-sophia/exterior.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Arild Vågen · CC BY-SA 3.0 · Wikimedia Commons",
+        "tr": "Arild Vågen · CC BY-SA 3.0 · Wikimedia Commons"
+      },
+      "source": "commons-exterior",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "exterior",
+        "file": "File:Hagia Sophia Mars 2013.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/3840px-Hagia_Sophia_Mars_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "b31ea13b5150aecc0cd90150982ba09673a1b3f19693e5d05c8fbad811244e3a",
+        "masterSha256": "e89545b89289776349939ca02d21683959dcfe1d34978c91851b6cb5404a922e",
+        "masterSize": [
+          2400,
+          1602
+        ]
+      }
+    },
+    {
+      "id": "hs-fossati-nave",
+      "path": "assets/media/hagia-sophia/fossati-nave.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Gaspare Fossati / Louis Haghe, 1852 (Library of Congress) · Public domain · Wikimedia Commons",
+        "tr": "Gaspare Fossati / Louis Haghe, 1852 (Library of Congress) · Kamu malı · Wikimedia Commons"
+      },
+      "source": "commons-fossati-nave",
+      "era": "ottoman",
+      "historicalPhoto": true,
+      "commons": {
+        "key": "fossati-nave",
+        "file": "File:Vue générale de la grande nef, en regardant l'orient LCCN2004666257.tif",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Vue_g%C3%A9n%C3%A9rale_de_la_grande_nef%2C_en_regardant_l%27orient_LCCN2004666257.tif/lossy-page1-1920px-Vue_g%C3%A9n%C3%A9rale_de_la_grande_nef%2C_en_regardant_l%27orient_LCCN2004666257.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "cf0a9995963025f79b8178c608b98ae5f73af12baa4ef2b1cf25742b11d5a392",
+        "masterSha256": "b1fda74d6eeb684427c6fd6d0d9921603564622c8619ae86ef0e923e0546df65",
+        "masterSize": [
+          1915,
+          2400
+        ]
+      }
+    },
+    {
+      "id": "hs-fossati-exterior",
+      "path": "assets/media/hagia-sophia/fossati-exterior.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Gaspare Fossati / Louis Haghe, 1852 (Library of Congress) · Public domain · Wikimedia Commons",
+        "tr": "Gaspare Fossati / Louis Haghe, 1852 (Library of Congress) · Kamu malı · Wikimedia Commons"
+      },
+      "source": "commons-fossati-exterior",
+      "era": "ottoman",
+      "historicalPhoto": true,
+      "commons": {
+        "key": "fossati-exterior",
+        "file": "File:Vue de la mosquée, prise de Bab-Houmayoun LCCN2004666271.tif",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Vue_de_la_mosqu%C3%A9e%2C_prise_de_Bab-Houmayoun_LCCN2004666271.tif/lossy-page1-3840px-Vue_de_la_mosqu%C3%A9e%2C_prise_de_Bab-Houmayoun_LCCN2004666271.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "718d872e6c4f1dd87e945ff51109ae54cd43fb7238a2ea3691dc78354a8b6f20",
+        "masterSha256": "89d03120d61712b8007cd6c2b55f917812a1ceb061f7b94c42d49935aba96d6a",
+        "masterSize": [
+          2400,
+          1912
+        ]
+      }
+    },
+    {
+      "id": "hs-dandolo-photo",
+      "path": "assets/media/hagia-sophia/dandolo.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Myrabella · CC BY-SA 3.0 · Wikimedia Commons",
+        "tr": "Myrabella · CC BY-SA 3.0 · Wikimedia Commons"
+      },
+      "source": "commons-dandolo",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "dandolo",
+        "file": "File:Enrico Dandolo gravestone.jpg",
+        "fetched": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Enrico_Dandolo_gravestone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "fetchedSha256": "cbe2da11954f7845ea28ef09a0ee6311bd1636722f2b52f56e5817944c455278",
+        "masterSha256": "3fab2f6f768de2eda548b7db1edbf968876fa952cbb4d6a24cd6fc3aa66b2024",
+        "masterSize": [
+          2400,
+          1442
+        ]
+      }
+    },
+    {
+      "id": "hs-deesis-photo",
+      "path": "assets/plates/deesis/original.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Myrabella · Public domain · Wikimedia Commons",
+        "tr": "Myrabella · Kamu malı · Wikimedia Commons"
+      },
+      "source": "commons-deesis",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "deesis",
+        "file": "File:Deesis mosaic Hagia Sophia.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Deesis_mosaic_Hagia_Sophia.jpg/3840px-Deesis_mosaic_Hagia_Sophia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "85b3025722a6f53b082342fcfd454b5672f7b119ac8e3f8959cf31647ff5f4f4",
+        "masterSha256": "d1e51e2a11aaf8a9708a6dbbe8384b72054bf801dd442418c43a20b3d35be5ff",
+        "masterSize": [
+          2400,
+          1396
+        ]
+      }
+    },
+    {
+      "id": "hs-zoe-photo",
+      "path": "assets/plates/zoe/original.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Myrabella · Public domain · Wikimedia Commons",
+        "tr": "Myrabella · Kamu malı · Wikimedia Commons"
+      },
+      "source": "commons-zoe",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "zoe",
+        "file": "File:Empress Zoe mosaic Hagia Sophia.jpg",
+        "fetched": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Empress_Zoe_mosaic_Hagia_Sophia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "fetchedSha256": "a284ff6389a712b035fae55a72a40229cc80eff1a99337e6b8c96e9dd12b41ae",
+        "masterSha256": "9994c76a5f79d003604cb1b3a0c01b683544a19dec2fa6b9b7d5ad2e1175eddf",
+        "masterSize": [
+          2400,
+          2000
+        ]
+      }
+    },
+    {
+      "id": "hs-halvdan-photo",
+      "path": "assets/plates/halvdan/original.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Hermann Junghans · CC BY-SA 3.0 de · Wikimedia Commons",
+        "tr": "Hermann Junghans · CC BY-SA 3.0 de · Wikimedia Commons"
+      },
+      "source": "commons-halvdan",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "halvdan",
+        "file": "File:Runen Hagia Sophia.JPG",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Runen_Hagia_Sophia.JPG/3840px-Runen_Hagia_Sophia.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "2f2b8ef860413053a5a283bb01b23b436e56226251fc89fb9f23ea46dd4e23b3",
+        "masterSha256": "ea4811251eee4730fa5435dc01eaef61d793c88501dba1886693eb34917f8920",
+        "masterSize": [
+          2400,
+          852
+        ]
+      }
+    },
+    {
+      "id": "hs-dome-photo",
+      "path": "assets/media/hagia-sophia/roundels.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Julien Maury · Public domain · Wikimedia Commons",
+        "tr": "Julien Maury · Kamu malı · Wikimedia Commons"
+      },
+      "source": "commons-roundels",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "roundels",
+        "file": "File:Hagia Sophia (48985978757).jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Hagia_Sophia_%2848985978757%29.jpg/3840px-Hagia_Sophia_%2848985978757%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "98a4e61eebe2b1c22b3486a33517ded1eef128cb18a46a45a083cdff17184632",
+        "masterSha256": "ee941fed09b786bb5c75b6fefcc5ef7024058a549f495c485a5ee825ba570b0a",
+        "masterSize": [
+          2400,
+          1351
+        ]
+      }
+    },
+    {
+      "id": "hs-nave-photo",
+      "path": "assets/media/hagia-sophia/loggia.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Rabe! · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Rabe! · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-loggia",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "loggia",
+        "file": "File:Hagia Sophia 2013-03-17s.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Hagia_Sophia_2013-03-17s.jpg/3840px-Hagia_Sophia_2013-03-17s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "1dd7716f9c9a33737f19fd0f9fc836dc0136f3abef223b8bccf887aa05082fb8",
+        "masterSha256": "08acef3edab0b2a9e46eb2e70bfa87290ff7437a6916287017036139456d7e40",
+        "masterSize": [
+          2400,
+          1646
+        ]
+      }
+    },
+    {
+      "id": "hs-lambs-photo",
+      "path": "assets/media/hagia-sophia/lambs.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-lambs",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "lambs",
+        "file": "File:Hagia Sophia Theodosian remains apostles relief in 2016 1272.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Hagia_Sophia_Theodosian_remains_apostles_relief_in_2016_1272.jpg/3840px-Hagia_Sophia_Theodosian_remains_apostles_relief_in_2016_1272.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "fa79b554dabf6c53b6466ddd7e38e77a004b526401544f39c6b54ceaec37958b",
+        "masterSha256": "d2335e8d598f763eb4ae000bb45073463d81b8c6d8f076a80139f69aee4b8cca",
+        "masterSize": [
+          2400,
+          1598
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "key": "omphalion",
+      "file": "File:Aya sofia, interno, aula, omphalos (piazza del trono imperiale bizantino) 02.jpg",
+      "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Aya_sofia%2C_interno%2C_aula%2C_omphalos_%28piazza_del_trono_imperiale_bizantino%29_02.jpg/3840px-Aya_sofia%2C_interno%2C_aula%2C_omphalos_%28piazza_del_trono_imperiale_bizantino%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fetchedSha256": "ad1057083266d85132706aed996e36cc144cc62b7472f74b0b8d1ff91575bfa8",
+      "masterSha256": "3db8298379aae2c9d07ab8ecb3c65daf08d3451a5eca7f4ea281501c81b51f9e",
+      "masterSize": [
+        2400,
+        1168
+      ],
+      "source": "commons-omphalion"
+    },
+    {
+      "key": "column",
+      "file": "File:Interior of Hagia Sophia 37.jpg",
+      "fetched": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Interior_of_Hagia_Sophia_37.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetchedSha256": "3ec524fa3839ce649ace3341333ed631b921a436baf98a9c0a6321b79fa473bf",
+      "masterSha256": "3ec524fa3839ce649ace3341333ed631b921a436baf98a9c0a6321b79fa473bf",
+      "masterSize": [
+        1728,
+        1152
+      ],
+      "source": "commons-column"
+    }
+  ]
+}

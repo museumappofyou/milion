@@ -2,8 +2,8 @@
 
 The P07 pipeline's own checks: I and II reproduce P06 through yaml alone,
 ingest strips metadata without touching pixels, the mesh validator catches
-flips and tears, pop-up inpainting stays inside its hole, and the spec is
-strict.
+flips and tears, pop-up inpainting stays inside its hole, the spec is
+strict, and (P12) a reconstruction recipe changes only its loss.
 """
 import io
 import json
@@ -17,6 +17,7 @@ from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from stages import ingest, mesh, popup, spec as specs  # noqa: E402
+import reconstruct  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 SHARED = ['kind', 'milestone', 'artwork', 'title', 'size', 'manifestPath', 'details', 'beats',
@@ -128,6 +129,50 @@ class Spec(unittest.TestCase):
                 (folder / 'plate.yaml').write_text(json.dumps(broken))
                 with self.assertRaises(SystemExit):
                     specs.load(folder / 'plate.yaml')
+
+    def test_a_beat_wipes_only_a_layer_the_plate_has(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder = Path(d) / 'x'
+            folder.mkdir()
+            base = dict(id='x', milestone='m', artwork='a', title=dict(en='T', tr='T'),
+                        description=dict(en='D', tr='D'), manualMinutes=0,
+                        source=dict(repo='a.jpg', sha256='0'), reveal=dict(detail='d'), sources=[])
+            (folder / 'plate.yaml').write_text(json.dumps(
+                dict(base, beats=[dict(detail='d', layer='imagined')])))
+            with self.assertRaises(SystemExit):
+                specs.load(folder / 'plate.yaml')
+            (folder / 'plate.yaml').write_text(json.dumps(dict(
+                base, layers=dict(imagined=dict(asset='i.jpg', mask='m.png')),
+                beats=[dict(detail='d', layer='imagined')])))
+            self.assertEqual(specs.load(folder / 'plate.yaml').beats[0]['layer'], 'imagined')
+
+
+class Reconstruct(unittest.TestCase):
+    """P12's WR recipe: gold re-laid only inside the measured loss."""
+
+    def test_gold_fills_the_plaster_and_nothing_else(self):
+        rng = np.random.default_rng(3)
+        h, w = 120, 160
+        img = np.full((h, w, 3), (200, 160, 60), np.int32) + rng.integers(-20, 20, (h, w, 3))
+        img = np.clip(img, 0, 255).astype(np.uint8)
+        img[70:110, 40:120] = (210, 210, 205)            # bare plaster
+        loss = reconstruct.loss_mask(img, dict(box=[0, 0, 1, 1], saturation=.16, value=.55,
+                                               min_area=100))
+        self.assertEqual(loss[90, 80], 1)
+        self.assertEqual(loss[20, 20], 0)
+        ground = reconstruct.ground_mask(img, dict(box=[0, 0, 1, 1], hue=[30, 62],
+                                                   saturation=.35, value=.45))
+        out = reconstruct.fill(img, loss, ground, 16, 1)
+        self.assertTrue(np.allclose(out[:50], img[:50], atol=1))   # far from the loss: untouched
+        self.assertGreater(out[90, 80, 0] - out[90, 80, 2], 60)    # the plaster is gold now
+        again = reconstruct.fill(img, loss, ground, 16, 1)
+        self.assertTrue(np.array_equal(out, again))                # deterministic for a seed
+
+    def test_a_chosen_slot_is_its_shapes(self):
+        img = np.zeros((100, 200, 3), np.uint8)
+        m = reconstruct.loss_mask(img, dict(shapes=[[.5, .5, .1, .2]]))
+        self.assertEqual(m[50, 100], 1)
+        self.assertEqual(m[50, 140], 0)
 
 
 if __name__ == '__main__':

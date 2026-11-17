@@ -1,0 +1,98 @@
+{
+  "plate": "deesis",
+  "spec": "studio/plates/deesis/plate.yaml",
+  "manualMinutes": 40,
+  "stages": {
+    "ingest": {
+      "source": "p12/commons/masters/deesis.jpg",
+      "sourceSha256": "d1e51e2a11aaf8a9708a6dbbe8384b72054bf801dd442418c43a20b3d35be5ff",
+      "sourceSize": [
+        2400,
+        1396
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Deesis_mosaic_Hagia_Sophia.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/deesis/original.jpg",
+      "masterSha256": "d1e51e2a11aaf8a9708a6dbbe8384b72054bf801dd442418c43a20b3d35be5ff",
+      "size": [
+        2400,
+        1396
+      ]
+    },
+    "segment": {
+      "christ": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0785,
+        "iou": 0.983
+      },
+      "virgin": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0291,
+        "iou": 0.973
+      },
+      "john": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0695,
+        "iou": 0.985
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.3 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 2.72,
+      "gold": "heuristic",
+      "goldCoverage": 0.0866,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 59468,
+      "triangles": 118388,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 112,
+        "verticesEased": 21163,
+        "maxHeightChange": 0.5589
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 67008000,
+    "textureBudget": 150000000,
+    "meshVertices": 59468,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/deesis/manifest.json",
+    "maps": {
+      "surface": "assets/plates/deesis/surface.webp",
+      "gold": "assets/plates/deesis/gold.webp"
+    },
+    "details": 6,
+    "beats": 6,
+    "storySeconds": 34,
+    "revealMoment": 6,
+    "lookUp": null
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 21.6
+}

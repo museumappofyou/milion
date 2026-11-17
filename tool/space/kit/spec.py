@@ -46,7 +46,7 @@ SMOOTH_PIECES = {'-domes', '-cap', '-vaults', '-exedrae', '-arches', '-windows',
                  '-gallery'}
 COLUMN_KINDS = {'courtyard', 'portico', 'octagon', 'arcade'}   # their '' piece is columns
 SMOOTH = 60.0
-MATERIALS = {'marble', 'brick', 'lead', 'stone'}
+MATERIALS = {'marble', 'brick', 'lead', 'stone', 'light'}
 
 
 def load(path):
@@ -124,7 +124,8 @@ def build(spec):
                 names.add(name)
                 copies = [place(mirror_x(solid) if m else solid, x, y, z, t)
                           for x, y, z, t, m in where]
-                extras = {'material': p.get('material', 'stone')}
+                # A dome's panes of daylight are light whatever the dome is.
+                extras = {'material': 'light' if suffix == '-light' else p.get('material', 'stone')}
                 crease = p.get('crease')
                 if crease is None and (p['kind'] in SMOOTH_KINDS or suffix in SMOOTH_PIECES
                                        or (suffix == '' and p['kind'] in COLUMN_KINDS)):
@@ -162,8 +163,10 @@ def measure(m, parts):
     into its halves at that coordinate), diameter (twice the
     nearest — inner — or farthest — outer — horizontal distance from `centre`
     among vertices within `band` metres of the parts' lowest level), crown
-    (the lowest point on the axis: a dome's inside), count (solids whose
-    vertical extent lies within [zmin, zmax], and is `height` tall if given)."""
+    (the lowest point on the axis: a dome's inside), raise (one crown above
+    another: `parts` over `below`; P12's second dome over the first), count
+    (solids whose vertical extent lies within [zmin, zmax], and is `height`
+    tall if given)."""
     names = [n for n, _, _ in parts]
     by = {n: s for n, s, _ in parts}
 
@@ -202,11 +205,16 @@ def measure(m, parts):
         near = V[np.abs(V[:, 2] - low) <= m.get('band', .05)]
         r = np.hypot(near[:, 0] - cx, near[:, 1] - cy)
         return float(2 * (r.min() if m.get('side', 'inner') == 'inner' else r.max()))
-    if kind == 'crown':      # the inside of a dome at its axis: the lowest pole
-        V = verts(m['parts'])
+    if kind in ('crown', 'raise'):   # the inside of a dome at its axis: the lowest pole
         cx, cy = m.get('centre', [0, 0])
-        pole = V[np.hypot(V[:, 0] - cx, V[:, 1] - cy) < m.get('radius', .05)]
-        return float(pole[:, 2].min()) - m.get('from', 0.0)
+
+        def crown(patterns):
+            V = verts(patterns)
+            pole = V[np.hypot(V[:, 0] - cx, V[:, 1] - cy) < m.get('radius', .05)]
+            return float(pole[:, 2].min())
+        if kind == 'raise':
+            return crown(m['parts']) - crown(m['below'])
+        return crown(m['parts']) - m.get('from', 0.0)
     if kind == 'count':
         n = 0
         for name in expand(m['parts'], names):

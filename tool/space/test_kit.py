@@ -95,6 +95,19 @@ class ElementTest(unittest.TestCase):
         self.assertEqual(kit.measure({'kind': 'count', 'parts': ['drum'], 'zmin': -2.55,
                                       'zmax': -.75}, parts), 8)
 
+    def test_dome_rise_sectors_and_light(self):
+        # P12: the flatter first dome, its two halves and the ring of light.
+        full = E.dome(radius=15.5, windows=40, light=True)
+        V, F = full['-light']
+        self.assertEqual(len(kit.components(V, F)), 40)
+        halves = [E.dome(radius=15.5, windows=40, light=True, sector=s) for s in ((0, 180), (180, 360))]
+        self.assertEqual(sum(len(kit.components(*h['-light'])) for h in halves), 40)
+        for h in halves:
+            V, _ = h['']
+            self.assertTrue(np.all(V[:, 1] >= -1e-6) or np.all(V[:, 1] <= 1e-6))
+        crown = lambda d: d[''][0][:, 2].max()
+        self.assertLess(crown(E.dome(radius=15.5, rise=10)), crown(E.dome(radius=15.5)) - 4)
+
     def test_pointed_arch_rise(self):
         V, _ = E.arch_ring(span=19, thickness=1.5, depth=5, kind='pointed', pointed=.146)['']
         inner_crown = min(V[np.abs(V[:, 0]) < 1e-3][:, 2])
@@ -155,7 +168,7 @@ class SpecTest(unittest.TestCase):
         self.assertAlmostEqual(short_side, 10, delta=.1)
 
     def test_every_spec_meets_its_dimensions_budget_and_axis(self):
-        self.assertEqual(len(SPECS), 4)  # P09's three and P11's Chora
+        self.assertEqual(len(SPECS), 5)  # P09's three, P11's Chora and P12's Hagia Sophia
         known = build_kit.registry_sources(build_kit.SOURCES)
         for path in SPECS:
             spec = kit.load(path)

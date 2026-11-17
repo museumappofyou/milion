@@ -63,18 +63,17 @@ class PlatePainter extends CustomPainter {
       ).paint(canvas, size);
       return;
     }
-    final reconstruction = manifest.layer(PlateLayerId.reconstruction);
-    if (controller.layer == PlateLayerId.reconstruction &&
-        reconstruction != null) {
+    final masked = manifest.layer(controller.visibleLayer);
+    if (masked != null && maskedLayers.contains(masked.id)) {
       _flat(canvas, original);
       _pass(
         canvas,
         3,
-        assets.images[reconstruction.asset]!,
-        reconstruction.mask!,
+        assets.images[masked.asset]!,
+        masked.mask!,
         effect: PlateEffect.wipe,
         amount: controller.restoration,
-        point: Offset(controller.wipe, .5),
+        point: Offset(controller.visibleWipe, .5),
       );
       return;
     }

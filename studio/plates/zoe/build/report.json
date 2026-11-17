@@ -1,0 +1,98 @@
+{
+  "plate": "zoe",
+  "spec": "studio/plates/zoe/plate.yaml",
+  "manualMinutes": 35,
+  "stages": {
+    "ingest": {
+      "source": "p12/commons/masters/zoe.jpg",
+      "sourceSha256": "9994c76a5f79d003604cb1b3a0c01b683544a19dec2fa6b9b7d5ad2e1175eddf",
+      "sourceSize": [
+        2400,
+        2000
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Empress_Zoe_mosaic_Hagia_Sophia.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/zoe/original.jpg",
+      "masterSha256": "59fa386838116e3d3a1359ea1e42ec62132cfb4f4ace834212c29222e228cf14",
+      "size": [
+        2400,
+        2000
+      ]
+    },
+    "segment": {
+      "emperor": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.1594,
+        "iou": 0.973
+      },
+      "christ": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.2064,
+        "iou": 0.98
+      },
+      "zoe": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0728,
+        "iou": 0.941
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.3 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 1.91,
+      "gold": "heuristic",
+      "goldCoverage": 0.2838,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 55190,
+      "triangles": 110140,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 92,
+        "verticesEased": 26363,
+        "maxHeightChange": 0.4236
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 96000000,
+    "textureBudget": 150000000,
+    "meshVertices": 55190,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/zoe/manifest.json",
+    "maps": {
+      "surface": "assets/plates/zoe/surface.webp",
+      "gold": "assets/plates/zoe/gold.webp"
+    },
+    "details": 6,
+    "beats": 6,
+    "storySeconds": 33,
+    "revealMoment": 5,
+    "lookUp": null
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 41.7
+}

@@ -142,6 +142,7 @@ Future<void> openCatalogue(BuildContext context, String placeId) {
         for (final a in registry.artworks)
           if (a.placeId == placeId) a,
       ],
+      place: registry.place(placeId)!.names,
       examinable: milestones.keys.toSet(),
       onExamine: (id) => openMilestone(context, milestones[id]!),
       onScan: app.placeRecognised(placeId)

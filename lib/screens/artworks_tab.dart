@@ -15,11 +15,15 @@ class ArtworksTab extends StatefulWidget {
   const ArtworksTab({
     super.key,
     required this.artworks,
+    required this.place,
     this.examinable = const {},
     this.onExamine,
     this.onScan,
   });
   final List<Artwork> artworks;
+
+  /// The place's name for the header (P12: the list was always "Chora").
+  final Localized place;
 
   /// Artwork ids with a playable plate; [onExamine] opens one by id.
   final Set<String> examinable;
@@ -118,7 +122,10 @@ class _ArtworksTabState extends State<ArtworksTab> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Text(
-              s.catalogueCount('${widget.artworks.length}'),
+              s.catalogueCount(
+                '${widget.artworks.length}',
+                widget.place.inLanguage(lang),
+              ),
               style: TextStyle(color: c.secondary),
             ),
           ),
@@ -197,15 +204,19 @@ class _ArtworksTabState extends State<ArtworksTab> {
                         contentPadding: const EdgeInsets.symmetric(
                           vertical: 12,
                         ),
-                        leading: SizedBox(
-                          width: 48,
-                          child: Text(
-                            a.id,
-                            style: TypeRole.measurement.copyWith(
-                              color: c.accent,
-                            ),
-                          ),
-                        ),
+                        // Chora's ids are its catalogue codes (F02, M49_1);
+                        // a place without codes shows none, not its slugs.
+                        leading: a.code != null
+                            ? SizedBox(
+                                width: 48,
+                                child: Text(
+                                  a.id,
+                                  style: TypeRole.measurement.copyWith(
+                                    color: c.accent,
+                                  ),
+                                ),
+                              )
+                            : null,
                         title: Text(a.title.inLanguage(lang)),
                         subtitle: Text(
                           '${a.room.inLanguage(lang)} · ${a.surface.inLanguage(lang)}',

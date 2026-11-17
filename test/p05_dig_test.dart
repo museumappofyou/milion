@@ -84,17 +84,15 @@ void main() {
       expect(registry.milestonesIn(chora.strata[0]), isEmpty);
     });
 
-    test('the Hagia Sophia draft page is two JSON layers only', () {
+    test('the Hagia Sophia page grew from P05 draft to P12 dig', () {
+      // P05 shipped two draft layers; P12 replaced them with eleven
+      // (test/p12_hagia_sophia_test.dart), keeping the 537 layer's id.
       final hagia = registry.place('hagia-sophia')!;
-      expect(hagia.strata.map((s) => s.id), [
-        'mosque-after-1453',
-        'justinian-church',
-      ]);
+      expect(hagia.strata, hasLength(11));
+      expect(hagia.strata.map((s) => s.id), contains('justinian-church'));
       for (final stratum in hagia.strata) {
         expect(stratum.paragraphs('en').length, inInclusiveRange(2, 4));
         expect(stratum.paragraphs('tr').length, inInclusiveRange(2, 4));
-        expect(stratum.artworkIds, isEmpty);
-        expect(stratum.mediaIds, isEmpty);
         expect(stratum.sourceIds, isNotEmpty);
       }
     });
@@ -120,6 +118,7 @@ void main() {
       // Every other place carries no visit card yet; nothing was invented.
       expect(registry.places.where((p) => p.visit != null).map((p) => p.id), [
         'chora',
+        'hagia-sophia',
       ]);
       // Accessibility is honestly absent for Chora and renders unverified.
       expect(visit.accessibility, isNull);
@@ -250,10 +249,10 @@ void main() {
     });
 
     // P07 audit: a short last layer never reaches the reading line, so the
-    // page end must select it; Hagia Sophia is the JSON-only proof page.
+    // page end must select it; Hagia Sophia's 360 church is the shortest.
     for (final (name, last) in [
       ('Kariye Mosque (Chora)', 'Year 330 · Byzantine'),
-      ('Hagia Sophia Mosque', 'Year 537 · Byzantine'),
+      ('Hagia Sophia Mosque', 'Year 360 · Byzantine'),
     ]) {
       testWidgets('$name: the page end selects the oldest layer', (
         tester,

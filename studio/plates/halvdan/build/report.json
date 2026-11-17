@@ -1,0 +1,86 @@
+{
+  "plate": "halvdan",
+  "spec": "studio/plates/halvdan/plate.yaml",
+  "manualMinutes": 20,
+  "stages": {
+    "ingest": {
+      "source": "p12/commons/masters/halvdan.jpg",
+      "sourceSha256": "ea4811251eee4730fa5435dc01eaef61d793c88501dba1886693eb34917f8920",
+      "sourceSize": [
+        2400,
+        852
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Runen_Hagia_Sophia.JPG",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/halvdan/original.jpg",
+      "masterSha256": "ea4811251eee4730fa5435dc01eaef61d793c88501dba1886693eb34917f8920",
+      "size": [
+        2400,
+        852
+      ]
+    },
+    "segment": {
+      "parapet": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.8064,
+        "iou": 0.862
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.45 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 4.64,
+      "gold": "heuristic",
+      "goldCoverage": 0.0,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 51540,
+      "triangles": 102138,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 56,
+        "verticesEased": 4013,
+        "maxHeightChange": 0.4532
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 24537600,
+    "textureBudget": 150000000,
+    "meshVertices": 51540,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/halvdan/manifest.json",
+    "maps": {
+      "surface": "assets/plates/halvdan/surface.webp",
+      "gold": "assets/plates/halvdan/gold.webp"
+    },
+    "details": 5,
+    "beats": 5,
+    "storySeconds": 28,
+    "revealMoment": 5,
+    "lookUp": null
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 21.6
+}

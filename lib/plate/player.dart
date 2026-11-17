@@ -270,7 +270,7 @@ class PlatePlayerState extends State<PlatePlayer>
     // Reduced motion keeps the hand-held light and wipe; only the automatic
     // parallax is off.
     final hand =
-        controller.layer == PlateLayerId.reconstruction ||
+        maskedLayers.contains(controller.layer) ||
         [
           PlateLight.raking,
           PlateLight.candle,
@@ -282,7 +282,7 @@ class PlatePlayerState extends State<PlatePlayer>
       ((p.dx - frame.left) / frame.width).clamp(0, 1),
       ((p.dy - frame.top) / frame.height).clamp(0, 1),
     );
-    if (controller.layer == PlateLayerId.reconstruction) {
+    if (maskedLayers.contains(controller.layer)) {
       controller.setWipe(uv.dx);
     } else if ([
       PlateLight.raking,

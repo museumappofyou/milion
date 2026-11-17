@@ -72,7 +72,12 @@ class SpacePalette {
 }
 
 /// Base colours of the materials named in a model's node extras.
+/// What `light` parts are drawn in, in every style: daylight through a ring
+/// of windows (P12), not a surface, so it is neither hatched nor lit.
+const lightColor = Color(0xFFF1C66B);
+
 Color materialColor(String material) => switch (material) {
+  'light' => lightColor,
   'marble' => const Color(0xFFDDD6C9),
   'brick' => const Color(0xFFB0705A),
   'lead' => const Color(0xFF8A9096),
@@ -120,6 +125,9 @@ Int32List cornerColors(SpaceStyle style, SpacePart part, SpaceBounds b) {
   const sun = [-.37, -.46, .81];
   final out = Int32List(part.triangleCount * 3);
   final base = materialColor(part.material);
+  if (part.material == 'light') {
+    return out..fillRange(0, out.length, lightColor.toARGB32());
+  }
   for (var t = 0; t < part.triangleCount; t++) {
     final nx = part.normals[t * 3],
         ny = part.normals[t * 3 + 1],

@@ -94,6 +94,7 @@ void main() {
         MaterialApp(
           home: ArtworksTab(
             artworks: [byId['F02']!, byId['F05']!],
+            place: registry.place('chora')!.names,
             examinable: const {'F02', 'F05'},
             onExamine: (id) => opened = id,
           ),

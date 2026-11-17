@@ -4,7 +4,8 @@
 The P07 plate production line: one photograph and one plate.yaml in, a
 validated PlatePlayer manifest out. Stages, each documented in its module:
 
-  (a) stages/ingest.py   sRGB master <= 4096 px, EXIF stripped, hashes
+  (a) stages/ingest.py   sRGB master <= 4096 px, EXIF stripped, hashes;
+                         then any WR/IMAGINED recipe (reconstruct.py)
   (b) stages/segment.py  SAM 2.1 prompts from the yaml; manual masks override
   (c) stages/depth.py    monocular depth + per-segment priors, normals, gold
   (d) stages/popup.py    optional pop-up split with inpainting
@@ -31,6 +32,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from stages import depth, export, ingest, mesh, popup, segment, spec as specs  # noqa: E402
+import reconstruct  # noqa: E402
 from stages.spec import ROOT  # noqa: E402
 
 
@@ -62,6 +64,11 @@ def build(path, with_preview=True):
         spec.out.mkdir(parents=True, exist_ok=True)
         (ROOT / rec['master']).write_bytes(master_bytes)
     master_sha = rec['masterSha256']
+    # P12: a masked layer made from the master by a recipe (tool/plate/reconstruct.py).
+    for key in ('reconstruction', 'imagined'):
+        recipe = spec.get('layers', {}).get(key, {}).get('recipe')
+        if recipe:
+            reconstruct.main(spec.local(recipe))
     masks, rec = segment.segment(spec, master, master_sha)
     report['stages']['segment'] = rec or 'no segments'
     height, normals, gold, rec = depth.run(spec, master, master_sha, masks)

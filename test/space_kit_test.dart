@@ -17,8 +17,15 @@ import 'p05_dig_test.dart' show loadRegistry;
 import 'space_engine_test.dart' show signedVolume;
 import 'space_player_test.dart' show fileBytes, space, openPanel;
 
-/// The kit buildings (`studio/space/<id>.yaml`): P09's three and P11's Chora.
-const kit = ['bodrum-camii', 'kucuk-ayasofya', 'sehzade-camii', 'kariye-camii'];
+/// The kit buildings (`studio/space/<id>.yaml`): P09's three, P11's Chora
+/// and P12's Hagia Sophia.
+const kit = [
+  'bodrum-camii',
+  'kucuk-ayasofya',
+  'sehzade-camii',
+  'kariye-camii',
+  'ayasofya',
+];
 
 Map<String, dynamic> manifestJson(String id) =>
     jsonDecode(File('assets/space/$id/study.json').readAsStringSync())
@@ -75,7 +82,9 @@ void main() {
         // Drawn in the building's own frame, its axis cited.
         final o = study.orientation!;
         expect(study.citations.map((c) => c.id), contains(o.sourceId));
-        expect(study.choisy.elevationDegrees, -50);
+        // A worm's-eye Choisy view; Hagia Sophia's is a little flatter (-45)
+        // so the ring of windows under its dome reads in the section.
+        expect(study.choisy.elevationDegrees, inInclusiveRange(-50, -45));
         expect(study.placeId, isNotNull);
       }
     },
@@ -113,6 +122,7 @@ void main() {
     expect(catalog.forPlace('little-hagia-sophia').single.id, 'kucuk-ayasofya');
     expect(catalog.forPlace('bodrum-mosque').single.id, 'bodrum-camii');
     expect(catalog.forPlace('chora').single.id, 'kariye-camii');
+    expect(catalog.forPlace('hagia-sophia').single.id, 'ayasofya');
     expect(catalog.study('how-a-dome-stands')!.placeId, isNull);
     // A study that names no registry place is refused.
     final orphan = await SpaceCatalog.load(

@@ -1,0 +1,34 @@
+# Milestone X, Halvdan's runes (P12): an RL and candle macro plate of the
+# graffito on the south gallery's parapet. Only the name can be read.
+id: halvdan
+milestone: milestone-x
+artwork: hs-halvdan-runes
+title: {en: Halvdan’s runes, tr: Halvdan’ın runları}
+description:
+  en: >-
+    Runes scratched into the marble parapet of Hagia Sophia’s south gallery,
+    probably by a Scandinavian in the emperor’s service, at the end of the
+    eleventh century or later. The line is 23 cm long; only the name is legible.
+  tr: >-
+    Ayasofya’nın güney galerisindeki mermer korkuluğa kazınmış runlar; büyük
+    olasılıkla imparatorun hizmetindeki bir İskandinav tarafından, 11.
+    yüzyılın sonunda ya da sonrasında. Satır 23 cm uzunluğunda; yalnızca ad
+    okunabiliyor.
+manualMinutes: 20  # agent authoring estimate (windows, beats); human time not yet measured
+source:
+  cache: p12/commons/masters/halvdan.jpg   # tool/content/fetch_commons.py
+  sha256: ea4811251eee4730fa5435dc01eaef61d793c88501dba1886693eb34917f8920
+  url: https://commons.wikimedia.org/wiki/File:Runen_Hagia_Sophia.JPG
+  credit: {en: Hermann Junghans / Wikimedia Commons (CC BY-SA 3.0 DE), tr: Hermann Junghans / Wikimedia Commons (CC BY-SA 3.0 DE)}
+segments:
+  - {id: parapet, box: [0.0, 0.0, 1.0, 0.92], points: [[0.5, 0.2]], prior: planar, weight: 0.2}
+depth: {model: depth-anything-v2-base, modelWeight: 0.45}
+gold: {heuristic: true}
+beats:
+  - {detail: detail-halvdan-size, duration: 5, light: raking}
+  - {detail: detail-halvdan-name, duration: 6, light: raking}
+  - {detail: detail-halvdan-worn, duration: 6, light: candle}
+  - {detail: detail-halvdan-date, duration: 5, light: raking}
+  - {detail: detail-halvdan-guard, duration: 6, light: candle}
+reveal: {detail: detail-halvdan-name, light: raking, moment: 5}
+sources: [svardstrom-1970, wp-runic-inscriptions-1300811819, commons-halvdan]

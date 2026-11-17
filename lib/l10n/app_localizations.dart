@@ -269,8 +269,8 @@ abstract class AppLocalizations {
   /// No description provided for @catalogueCount.
   ///
   /// In en, this message translates to:
-  /// **'{count} artworks · Chora / Kariye'**
-  String catalogueCount(String count);
+  /// **'{count} artworks · {place}'**
+  String catalogueCount(String count, String place);
 
   /// No description provided for @viewCollection.
   ///

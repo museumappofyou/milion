@@ -1,0 +1,141 @@
+{
+  "id": "ayasofya",
+  "parts": 50,
+  "triangles": 18568,
+  "vertices": 10112,
+  "bytes": 142624,
+  "axis": {
+    "axis": 124.6,
+    "footprintAxis": 124.64,
+    "offDegrees": 0.04,
+    "footprint": [
+      134.36,
+      132.51
+    ],
+    "source": "osm-way-109862851"
+  },
+  "dimensions": [
+    {
+      "id": "dome-diameter",
+      "measured": 30.999,
+      "cited": 31,
+      "tolerance": 0.05,
+      "error": -0.0
+    },
+    {
+      "id": "dome-crown",
+      "measured": 55.5,
+      "cited": 55.6,
+      "tolerance": 0.05,
+      "error": -0.0018
+    },
+    {
+      "id": "dome-windows",
+      "measured": 40.0,
+      "cited": 40,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "first-dome-crown",
+      "measured": 49.25,
+      "cited": 49.35,
+      "tolerance": 0.05,
+      "error": -0.002
+    },
+    {
+      "id": "dome-raise",
+      "measured": 6.25,
+      "cited": 6,
+      "tolerance": 0.05,
+      "error": 0.0417
+    },
+    {
+      "id": "dome-diameter-eyice",
+      "measured": 30.999,
+      "cited": 32,
+      "tolerance": 0.05,
+      "error": -0.0313
+    },
+    {
+      "id": "main-piers",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "great-arches",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "buttress-towers",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "minarets",
+      "measured": 4.0,
+      "cited": 4,
+      "tolerance": 0.05,
+      "error": 0.0
+    }
+  ],
+  "byPart": {
+    "wall-north": 560,
+    "wall-south": 560,
+    "wall-east": 152,
+    "wall-west": 532,
+    "narthex-west": 388,
+    "narthex-ends": 88,
+    "exonarthex-west": 196,
+    "exonarthex-ends": 40,
+    "piers-nw": 128,
+    "piers-ne": 128,
+    "piers-sw": 128,
+    "piers-se": 128,
+    "buttress-towers": 576,
+    "arcade-ground": 1584,
+    "arcade-ground-arches": 680,
+    "arcade-gallery": 144,
+    "arcade-gallery-arches": 680,
+    "tympana": 1216,
+    "arches": 656,
+    "pendentives": 576,
+    "semidomes": 544,
+    "semidomes-windows": 208,
+    "exedrae": 1328,
+    "exedrae-cap": 432,
+    "apse": 312,
+    "apse-cap": 108,
+    "roof-aisles": 232,
+    "roof-narthex": 116,
+    "roof-exonarthex": 76,
+    "dome-537-east": 336,
+    "dome-537-east-windows": 400,
+    "dome-537-west": 336,
+    "dome-537-west-windows": 400,
+    "debris": 128,
+    "dome-562": 960,
+    "dome-562-windows": 800,
+    "dome-562-light": 480,
+    "buttresses": 168,
+    "minarets-nw": 164,
+    "minarets-nw-serefe": 256,
+    "minarets-nw-cap": 96,
+    "minarets-sw": 164,
+    "minarets-sw-serefe": 256,
+    "minarets-sw-cap": 96,
+    "minarets-ne": 164,
+    "minarets-ne-serefe": 256,
+    "minarets-ne-cap": 96,
+    "minarets-se": 164,
+    "minarets-se-serefe": 256,
+    "minarets-se-cap": 96
+  }
+}

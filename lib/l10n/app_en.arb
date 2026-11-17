@@ -35,10 +35,13 @@
     }
   },
   "straightLine": "Straight-line distance · 1 Roman mile is about 1,480 m",
-  "catalogueCount": "{count} artworks · Chora / Kariye",
+  "catalogueCount": "{count} artworks · {place}",
   "@catalogueCount": {
     "placeholders": {
       "count": {
+        "type": "String"
+      },
+      "place": {
         "type": "String"
       }
     }

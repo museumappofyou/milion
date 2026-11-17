@@ -1,0 +1,45 @@
+# Milestone VII, the Deesis (P12): GL on the gold ground, SB through the three
+# faces, WR re-laying the lost lower half (reconstruct.yaml) as RECONSTRUCTION.
+id: deesis
+milestone: milestone-vii
+artwork: hs-deesis
+title: {en: The Deesis, tr: Deesis}
+description:
+  en: >-
+    Mosaic panel in the south gallery of Hagia Sophia, most often dated after
+    1261. Christ blesses between the Virgin and John the Baptist, who turn to
+    him and plead for mankind; most of the lower half is lost.
+  tr: >-
+    Ayasofya’nın güney galerisindeki mozaik pano; çoğunlukla 1261 sonrasına
+    tarihlenir. Meryem ile Vaftizci Yahya’nın arasında İsa takdis ediyor; ikisi
+    ona dönüp insanlık için yakarıyor. Alt yarının büyük bölümü kayıp.
+manualMinutes: 40  # agent authoring estimate (windows, recipe, beats); human time not yet measured
+source:
+  cache: p12/commons/masters/deesis.jpg   # tool/content/fetch_commons.py
+  sha256: d1e51e2a11aaf8a9708a6dbbe8384b72054bf801dd442418c43a20b3d35be5ff
+  url: https://commons.wikimedia.org/wiki/File:Deesis_mosaic_Hagia_Sophia.jpg
+  credit: {en: Myrabella / Wikimedia Commons (public domain), tr: Myrabella / Wikimedia Commons (kamu malı)}
+segments:
+  - {id: christ, box: [0.37, 0.1, 0.64, 0.68], points: [[0.5, 0.27], [0.5, 0.5]], prior: bulge, weight: 0.55}
+  - {id: virgin, box: [0.05, 0.15, 0.3, 0.75], points: [[0.18, 0.32], [0.12, 0.5]], prior: bulge, weight: 0.5}
+  - {id: john, box: [0.74, 0.18, 0.95, 0.78], points: [[0.81, 0.31], [0.83, 0.55]], prior: bulge, weight: 0.55}
+depth: {model: depth-anything-v2-base, modelWeight: 0.3}
+gold: {heuristic: true}
+layers:
+  reconstruction: {asset: assets/plates/deesis/reconstruction.jpg, mask: assets/plates/deesis/loss.png, recipe: reconstruct.yaml}
+beats:
+  - {detail: detail-deesis-tilted-gold, duration: 6, light: gilded}
+  - {detail: detail-deesis-christ-face, duration: 6, light: raking}
+  - {detail: detail-deesis-virgin, duration: 5, light: gilded}
+  - {detail: detail-deesis-john, duration: 5, light: raking}
+  - {detail: detail-deesis-blessing, duration: 5, light: gilded}
+  - detail: detail-deesis-lost-half
+    duration: 7
+    light: none
+    layer: reconstruction
+    caption:
+      en: "RECONSTRUCTION: the gold ground is re-laid from the surviving setting. How the lower figures and the throne looked is not known, so nothing is drawn."
+      tr: "REKONSTRÜKSİYON: altın zemin, korunan dizilimden örneklenerek yeniden döşendi. Alttaki figürlerin ve tahtın nasıl göründüğü bilinmiyor; bu yüzden hiçbir şey çizilmedi."
+    sources: [atchison-deesis, smarthistory-deesis]
+reveal: {detail: detail-deesis-tilted-gold, light: gilded, moment: 6}
+sources: [atchison-deesis, atchison-deesis-specs, smarthistory-deesis, commons-deesis]

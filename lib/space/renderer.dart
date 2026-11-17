@@ -74,6 +74,49 @@ class SpaceRenderer {
   late final _alphaOf = Int32List(model.parts.length);
   late final _cutOf = Uint8List(model.parts.length);
   late final _glowOf = Float32List(model.parts.length);
+  late final _dustOf = Float32List(model.parts.length);
+
+  /// `light` parts (P12): each triangle's place round the part's vertical
+  /// axis, 0–1 anticlockwise from +x, so a step's progress sweeps the ring.
+  late final List<Float32List?> _sweep = [
+    for (final part in model.parts)
+      part.material == 'light' ? _azimuths(part) : null,
+  ];
+
+  /// Dust seeds per part, made the first time it falls: a vertex of the part
+  /// jittered by up to a metre, and a 0–1 draw for how far each speck falls.
+  final _dustSeeds = <int, Float32List>{};
+  Float32List _pointBuffer = Float32List(0);
+
+  static Float32List _azimuths(SpacePart part) {
+    final out = Float32List(part.triangleCount);
+    final b = part.bounds, pos = part.positions, tris = part.triangles;
+    for (var t = 0; t < part.triangleCount; t++) {
+      var x = 0.0, y = 0.0;
+      for (var k = 0; k < 3; k++) {
+        x += pos[tris[t * 3 + k] * 3];
+        y += pos[tris[t * 3 + k] * 3 + 1];
+      }
+      final a = math.atan2(y / 3 - b.centerY, x / 3 - b.centerX);
+      out[t] = (a < 0 ? a + 2 * math.pi : a) / (2 * math.pi);
+    }
+    return out;
+  }
+
+  Float32List _seeds(int i) => _dustSeeds.putIfAbsent(i, () {
+    const n = 240;
+    final part = model.parts[i], pos = part.positions;
+    final random = math.Random(i * 7919 + 17);
+    final out = Float32List(n * 4);
+    for (var k = 0; k < n; k++) {
+      final v = random.nextInt(part.vertexCount);
+      out[k * 4] = pos[v * 3] + (random.nextDouble() * 2 - 1);
+      out[k * 4 + 1] = pos[v * 3 + 1] + (random.nextDouble() * 2 - 1);
+      out[k * 4 + 2] = pos[v * 3 + 2] + (random.nextDouble() * 2 - 1);
+      out[k * 4 + 3] = random.nextDouble();
+    }
+    return out;
+  });
 
   /// What a step just added by hand is tinted towards (P11 device pass).
   static final _gold = Pigment.gold.toARGB32();
@@ -295,8 +338,13 @@ class SpaceRenderer {
       _segFrom[i] = _segTo[i] = _segN;
       if (state.progress <= 0) continue;
       final part = model.parts[i];
-      _alphaOf[i] = (state.progress.clamp(0.0, 1.0) * 255).round();
+      final sweep = _sweep[i];
+      // A light sweeps on at full strength rather than fading in.
+      _alphaOf[i] = sweep != null
+          ? 255
+          : (state.progress.clamp(0.0, 1.0) * 255).round();
       _glowOf[i] = state.highlight.clamp(0.0, 1.0);
+      _dustOf[i] = state.dust.clamp(0.0, 1.0);
       _offset[i * 3] = state.dx;
       _offset[i * 3 + 1] = state.dy;
       _offset[i * 3 + 2] = state.dz;
@@ -344,7 +392,7 @@ class SpaceRenderer {
                   (side[b] > 0 ? 1 : 0) +
                   (side[c] > 0 ? 1 : 0)
             : 0;
-        if (removed == 3) {
+        if (removed == 3 || (sweep != null && sweep[t] > state.progress)) {
           facing[t] = 0;
           continue;
         }
@@ -364,13 +412,13 @@ class SpaceRenderer {
           _record(_tri, i, t, depth);
           faces++;
         }
-        if (removed > 0 && showCut) {
+        if (removed > 0 && showCut && sweep == null) {
           _segment(p, i, t);
           cuts++;
         }
       }
       _segTo[i] = _segN;
-      if (!palette.edges) continue;
+      if (!palette.edges || sweep != null) continue;
       final ev = part.edgeVertices, ef = part.edgeFaces, sharp = part.edgeSharp;
       for (var e = 0; e < sharp.length; e++) {
         final f = ef[e * 2], g = ef[e * 2 + 1];
@@ -394,6 +442,7 @@ class SpaceRenderer {
       final t1 = watch.elapsedMicroseconds;
       _draw(canvas, drawing ? _hatchShader(scene.style) : null);
       pocheCount = _sections(canvas, palette);
+      _dust(canvas, p, palette);
       _writeMicros = t1 - t0;
       _drawMicros = watch.elapsedMicroseconds - t1;
     }
@@ -412,6 +461,43 @@ class SpaceRenderer {
   }
 
   int _sortMicros = 0, _writeMicros = 0, _drawMicros = 0;
+
+  /// Specks of dust round each falling part, drifting down further than the
+  /// part itself and spreading a little as they settle (Milestone IX).
+  void _dust(Canvas canvas, SpaceProjector p, SpacePalette palette) {
+    for (var i = 0; i < model.parts.length; i++) {
+      final dust = _dustOf[i];
+      if (dust <= 0 || _alphaOf[i] == 0) continue;
+      final seeds = _seeds(i), n = seeds.length ~/ 4;
+      if (_pointBuffer.length < n * 3) _pointBuffer = Float32List(n * 3);
+      final out = Float32List(n * 2);
+      final b = model.parts[i].bounds;
+      final fall = -_offset[i * 3 + 2];
+      for (var k = 0; k < n; k++) {
+        final r = seeds[k * 4 + 3];
+        final x = seeds[k * 4], y = seeds[k * 4 + 1];
+        final spread = 1 + fall * .03 * r;
+        p.project(
+          b.centerX + (x - b.centerX) * spread + _offset[i * 3],
+          b.centerY + (y - b.centerY) * spread + _offset[i * 3 + 1],
+          seeds[k * 4 + 2] - fall * (.6 + 1.2 * r),
+          _pointBuffer,
+          k * 3,
+        );
+        out[k * 2] = _pointBuffer[k * 3];
+        out[k * 2 + 1] = _pointBuffer[k * 3 + 1];
+      }
+      final color = palette.edges ? palette.ink : palette.hatch;
+      canvas.drawRawPoints(
+        ui.PointMode.points,
+        out,
+        Paint()
+          ..color = color.withValues(alpha: .5 * dust)
+          ..strokeWidth = 2.2
+          ..strokeCap = StrokeCap.round,
+      );
+    }
+  }
 
   /// Stores where triangle [t] of part [i] crosses the section plane.
   void _segment(SpaceProjector p, int i, int t) {
@@ -598,7 +684,7 @@ class SpaceRenderer {
       final ca = _alpha(_tint(colors[t * 3], glow), alpha),
           cb = _alpha(_tint(colors[t * 3 + 1], glow), alpha),
           cc = _alpha(_tint(colors[t * 3 + 2], glow), alpha);
-      if (drawing) {
+      if (drawing && _sweep[i] == null) {
         final lit = nx * lx + ny * ly + nz * lz;
         final tone =
             (.32 + .68 * (lit > 0 ? lit : 0)) * (.6 + .4 * _aoMean[i][t]);

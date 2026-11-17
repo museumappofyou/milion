@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-zoe",
+  "milestone": "milestone-viii",
+  "artwork": "hs-zoe-panel",
+  "title": {
+    "en": "Zoe’s changing emperor",
+    "tr": "Zoe’nin değişen imparatoru"
+  },
+  "description": {
+    "en": "Mosaic panel at the east end of the south gallery, made for an earlier husband about 1028–1034 and altered, with Constantine IX Monomachos’s face and name, from 1042. Christ is enthroned between the emperor and Empress Zoe.",
+    "tr": "Güney galerisinin doğu ucundaki mozaik pano; 1028–1034 dolaylarında önceki bir koca için yapıldı ve 1042’den itibaren IX. Konstantinos Monomakhos’un yüzü ve adıyla değiştirildi. İsa, imparator ile İmparatoriçe Zoe arasında tahtta."
+  },
+  "size": [
+    2400,
+    2000
+  ],
+  "manifestPath": "assets/plates/zoe/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/zoe/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    },
+    {
+      "id": "imagined",
+      "asset": "assets/plates/zoe/imagined.jpg",
+      "honesty": "IMAGINED",
+      "mask": "assets/plates/zoe/slot.png"
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/zoe/surface.webp",
+    "gold": "assets/plates/zoe/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-zoe-reset-name",
+      "milestone": "milestone-viii",
+      "artwork": "hs-zoe-panel",
+      "title": {
+        "en": "A name in a patch",
+        "tr": "Yamadaki ad"
+      },
+      "sentence": {
+        "en": "The emperor’s name, Constantine, sits in a patch of reset cubes; of the original opening only ΕΝ, “in”, survives.",
+        "tr": "İmparatorun adı, Konstantinos, yeniden döşenmiş bir yamada duruyor; özgün başlangıçtan yalnızca ΕΝ, “içinde”, kalmış."
+      },
+      "window": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 0.24,
+        "bottom": 0.12
+      },
+      "anchorX": 0.11,
+      "anchorY": 0.03,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012",
+        "commons-zoe"
+      ]
+    },
+    {
+      "id": "detail-zoe-emperor-face",
+      "milestone": "milestone-viii",
+      "artwork": "hs-zoe-panel",
+      "title": {
+        "en": "A new face",
+        "tr": "Yeni bir yüz"
+      },
+      "sentence": {
+        "en": "The emperor’s face is set in larger cubes than his hands: the head was replaced, most likely when the husband changed.",
+        "tr": "İmparatorun yüzü ellerinden daha iri küplerle döşenmiş: baş değiştirilmiş, büyük olasılıkla koca değiştiğinde."
+      },
+      "window": {
+        "left": 0.1,
+        "top": 0.24,
+        "right": 0.26,
+        "bottom": 0.45
+      },
+      "anchorX": 0.175,
+      "anchorY": 0.35,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012",
+        "commons-zoe"
+      ]
+    },
+    {
+      "id": "detail-zoe-face",
+      "milestone": "milestone-viii",
+      "artwork": "hs-zoe-panel",
+      "title": {
+        "en": "Zoe reset too",
+        "tr": "Zoe de yenilenmiş"
+      },
+      "sentence": {
+        "en": "Zoe’s head was reset as well: all three faces in the panel are later replacements.",
+        "tr": "Zoe’nin başı da yeniden döşenmiş: panodaki üç yüzün üçü de sonradan yenilenmiş."
+      },
+      "window": {
+        "left": 0.8,
+        "top": 0.3,
+        "right": 0.95,
+        "bottom": 0.52
+      },
+      "anchorX": 0.875,
+      "anchorY": 0.41,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "whittemore-1942",
+        "commons-zoe"
+      ]
+    },
+    {
+      "id": "detail-zoe-purse",
+      "milestone": "milestone-viii",
+      "artwork": "hs-zoe-panel",
+      "title": {
+        "en": "Ten pounds of gold",
+        "tr": "On libre altın"
+      },
+      "sentence": {
+        "en": "The emperor holds a purse of gold for the church; in the Book of Ceremonies such a purse held ten pounds of gold.",
+        "tr": "İmparator kiliseye bir kese altın sunuyor; Törenler Kitabı’na göre böyle bir kesede on libre altın bulunurdu."
+      },
+      "window": {
+        "left": 0.12,
+        "top": 0.55,
+        "right": 0.28,
+        "bottom": 0.7
+      },
+      "anchorX": 0.2,
+      "anchorY": 0.62,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "pollick-2012",
+        "commons-zoe"
+      ]
+    },
+    {
+      "id": "detail-zoe-scroll",
+      "milestone": "milestone-viii",
+      "artwork": "hs-zoe-panel",
+      "title": {
+        "en": "The name again",
+        "tr": "Yine ad"
+      },
+      "sentence": {
+        "en": "Zoe’s scroll repeats the emperor’s name, and there too it was reset.",
+        "tr": "Zoe’nin tomarında imparatorun adı tekrarlanıyor; orada da yeniden döşenmiş."
+      },
+      "window": {
+        "left": 0.73,
+        "top": 0.6,
+        "right": 0.97,
+        "bottom": 0.72
+      },
+      "anchorX": 0.85,
+      "anchorY": 0.66,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "whittemore-1942",
+        "commons-zoe"
+      ]
+    },
+    {
+      "id": "detail-zoe-augusta",
+      "milestone": "milestone-viii",
+      "artwork": "hs-zoe-panel",
+      "title": {
+        "en": "The most pious Augusta",
+        "tr": "En dindar Augusta"
+      },
+      "sentence": {
+        "en": "Above her, “Zoe, the most pious Augusta”: she had three husbands, but only one name is on the wall.",
+        "tr": "Üstünde “En dindar Augusta Zoe” yazıyor: üç kocası oldu ama duvarda yalnızca birinin adı var."
+      },
+      "window": {
+        "left": 0.7,
+        "top": 0.01,
+        "right": 0.97,
+        "bottom": 0.18
+      },
+      "anchorX": 0.84,
+      "anchorY": 0.08,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012",
+        "commons-zoe"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "zoe-beat-1",
+      "start": 0,
+      "duration": 5,
+      "detail": "detail-zoe-augusta",
+      "window": {
+        "left": 0.7,
+        "top": 0.01,
+        "right": 0.97,
+        "bottom": 0.18
+      },
+      "caption": {
+        "en": "Above her, “Zoe, the most pious Augusta”: she had three husbands, but only one name is on the wall.",
+        "tr": "Üstünde “En dindar Augusta Zoe” yazıyor: üç kocası oldu ama duvarda yalnızca birinin adı var."
+      },
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012",
+        "commons-zoe"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "zoe-beat-2",
+      "start": 5,
+      "duration": 6,
+      "detail": "detail-zoe-reset-name",
+      "window": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 0.24,
+        "bottom": 0.12
+      },
+      "caption": {
+        "en": "The emperor’s name, Constantine, sits in a patch of reset cubes; of the original opening only ΕΝ, “in”, survives.",
+        "tr": "İmparatorun adı, Konstantinos, yeniden döşenmiş bir yamada duruyor; özgün başlangıçtan yalnızca ΕΝ, “içinde”, kalmış."
+      },
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012",
+        "commons-zoe"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "zoe-beat-3",
+      "start": 11,
+      "duration": 7,
+      "detail": "detail-zoe-emperor-face",
+      "window": {
+        "left": 0.1,
+        "top": 0.24,
+        "right": 0.26,
+        "bottom": 0.45
+      },
+      "caption": {
+        "en": "IMAGINED: the slot each husband’s portrait filled. No earlier face survives, so none is drawn; the head and the name were reset at least once.",
+        "tr": "HAYALÎ: her kocanın portresinin doldurduğu yer. Önceki yüzlerin hiçbiri günümüze ulaşmadı, bu yüzden hiçbiri çizilmedi; baş ve ad en az bir kez yeniden döşendi."
+      },
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null,
+      "layer": "imagined"
+    },
+    {
+      "id": "zoe-beat-4",
+      "start": 18,
+      "duration": 5,
+      "detail": "detail-zoe-face",
+      "window": {
+        "left": 0.8,
+        "top": 0.3,
+        "right": 0.95,
+        "bottom": 0.52
+      },
+      "caption": {
+        "en": "Zoe’s head was reset as well: all three faces in the panel are later replacements.",
+        "tr": "Zoe’nin başı da yeniden döşenmiş: panodaki üç yüzün üçü de sonradan yenilenmiş."
+      },
+      "sources": [
+        "whittemore-1942",
+        "commons-zoe"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "zoe-beat-5",
+      "start": 23,
+      "duration": 5,
+      "detail": "detail-zoe-purse",
+      "window": {
+        "left": 0.12,
+        "top": 0.55,
+        "right": 0.28,
+        "bottom": 0.7
+      },
+      "caption": {
+        "en": "The emperor holds a purse of gold for the church; in the Book of Ceremonies such a purse held ten pounds of gold.",
+        "tr": "İmparator kiliseye bir kese altın sunuyor; Törenler Kitabı’na göre böyle bir kesede on libre altın bulunurdu."
+      },
+      "sources": [
+        "pollick-2012",
+        "commons-zoe"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "zoe-beat-6",
+      "start": 28,
+      "duration": 5,
+      "detail": "detail-zoe-scroll",
+      "window": {
+        "left": 0.73,
+        "top": 0.6,
+        "right": 0.97,
+        "bottom": 0.72
+      },
+      "caption": {
+        "en": "Zoe’s scroll repeats the emperor’s name, and there too it was reset.",
+        "tr": "Zoe’nin tomarında imparatorun adı tekrarlanıyor; orada da yeniden döşenmiş."
+      },
+      "sources": [
+        "whittemore-1942",
+        "commons-zoe"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 5,
+  "storySeconds": 33,
+  "reveal": {
+    "id": "zoe-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-zoe-reset-name",
+    "window": {
+      "left": 0.0,
+      "top": 0.0,
+      "right": 0.24,
+      "bottom": 0.12
+    },
+    "caption": {
+      "en": "The emperor’s name, Constantine, sits in a patch of reset cubes; of the original opening only ΕΝ, “in”, survives.",
+      "tr": "İmparatorun adı, Konstantinos, yeniden döşenmiş bir yamada duruyor; özgün başlangıçtan yalnızca ΕΝ, “içinde”, kalmış."
+    },
+    "sources": [
+      "whittemore-1942",
+      "pollick-2012",
+      "commons-zoe"
+    ],
+    "light": "gilded",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Myrabella / Wikimedia Commons (public domain)",
+    "tr": "Myrabella / Wikimedia Commons (kamu malı)"
+  },
+  "sources": [
+    "whittemore-1942",
+    "pollick-2012",
+    "freeman-middle-byzantine",
+    "commons-zoe"
+  ],
+  "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Empress_Zoe_mosaic_Hagia_Sophia.jpg",
+  "citations": [
+    {
+      "id": "commons-zoe",
+      "title": {
+        "en": "File:Empress Zoe mosaic Hagia Sophia.jpg — Wikimedia Commons",
+        "tr": "File:Empress Zoe mosaic Hagia Sophia.jpg — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Empress_Zoe_mosaic_Hagia_Sophia.jpg",
+      "author": {
+        "en": "Myrabella",
+        "tr": "Myrabella"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "freeman-middle-byzantine",
+      "title": {
+        "en": "A work in progress: Middle Byzantine mosaics in Hagia Sophia (Smarthistory, republished by Brewminate)",
+        "tr": "Süren bir iş: Ayasofya’nın Orta Bizans mozaikleri (Smarthistory; Brewminate’te yeniden yayımlandı)"
+      },
+      "url": "https://brewminate.com/a-work-in-progress-middle-byzantine-mosaics-in-the-hagia-sophia/",
+      "author": {
+        "en": "Evan Freeman",
+        "tr": "Evan Freeman"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "pollick-2012",
+      "title": {
+        "en": "Sex, Lies, and Mosaics: The Zoe Panel as a Reflection of Change in Eleventh-Century Byzantium, ARTiculate 1 (2012)",
+        "tr": "Cinsiyet, yalanlar ve mozaikler: 11. yüzyıl Bizans’ındaki değişimin aynası olarak Zoe panosu, ARTiculate 1 (2012)"
+      },
+      "url": "https://journals.uvic.ca/index.php/articulate/article/view/10729/2905",
+      "author": {
+        "en": "Brian A. Pollick",
+        "tr": "Brian A. Pollick"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "whittemore-1942",
+      "title": {
+        "en": "The Mosaics of Haghia Sophia at Istanbul. Third Preliminary Report: Work Done in 1935–1938. The Imperial Portraits of the South Gallery (Oxford, 1942)",
+        "tr": "İstanbul’daki Ayasofya mozaikleri. Üçüncü ön rapor: 1935–1938 çalışmaları. Güney galerisinin imparatorluk portreleri (Oxford, 1942)"
+      },
+      "url": "https://archive.org/details/in.ernet.dli.2015.74839",
+      "author": {
+        "en": "Thomas Whittemore",
+        "tr": "Thomas Whittemore"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    }
+  ]
+}

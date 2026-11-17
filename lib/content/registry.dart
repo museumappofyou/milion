@@ -390,9 +390,21 @@ ValidationReport validateContent(Json data) {
       if (ins.greek.trim().isEmpty || ins.transliteration.trim().isEmpty) {
         error('${a.id}.inscriptions[$i] needs the Greek and a transliteration');
       }
-      if (RegExp('[A-Za-z]').hasMatch(ins.greek)) {
-        error('${a.id}.inscriptions[$i] has Latin letters in the Greek');
-      }
+      final letters = switch (ins.script) {
+        InscriptionScript.greek => RegExp('[A-Za-z]').hasMatch(ins.greek)
+            ? 'has Latin letters in the Greek'
+            : null,
+        InscriptionScript.runic => RegExp('[\u16A0-\u16FF]').hasMatch(ins.greek)
+            ? null
+            : 'has no runes',
+        InscriptionScript.arabic => RegExp('[\u0600-\u06FF]').hasMatch(ins.greek)
+            ? null
+            : 'has no Arabic letters',
+        InscriptionScript.latin => RegExp('[A-Za-z]').hasMatch(ins.greek)
+            ? null
+            : 'has no Latin letters',
+      };
+      if (letters != null) error('${a.id}.inscriptions[$i] $letters');
     }
     if (a.complete) report.completeArtworks++;
   }

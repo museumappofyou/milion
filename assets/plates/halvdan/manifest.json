@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-halvdan",
+  "milestone": "milestone-x",
+  "artwork": "hs-halvdan-runes",
+  "title": {
+    "en": "Halvdan’s runes",
+    "tr": "Halvdan’ın runları"
+  },
+  "description": {
+    "en": "Runes scratched into the marble parapet of Hagia Sophia’s south gallery, probably by a Scandinavian in the emperor’s service, at the end of the eleventh century or later. The line is 23 cm long; only the name is legible.",
+    "tr": "Ayasofya’nın güney galerisindeki mermer korkuluğa kazınmış runlar; büyük olasılıkla imparatorun hizmetindeki bir İskandinav tarafından, 11. yüzyılın sonunda ya da sonrasında. Satır 23 cm uzunluğunda; yalnızca ad okunabiliyor."
+  },
+  "size": [
+    2400,
+    852
+  ],
+  "manifestPath": "assets/plates/halvdan/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/halvdan/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/halvdan/surface.webp",
+    "gold": "assets/plates/halvdan/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-halvdan-name",
+      "milestone": "milestone-x",
+      "artwork": "hs-halvdan-runes",
+      "title": {
+        "en": "A name",
+        "tr": "Bir ad"
+      },
+      "sentence": {
+        "en": "The first six runes read alftan or hlftan, the Norse name Halfdan, with only the first rune in doubt.",
+        "tr": "İlk altı run alftan ya da hlftan okunuyor, yani İskandinav adı Halfdan; yalnızca ilk run kuşkulu."
+      },
+      "window": {
+        "left": 0.05,
+        "top": 0.45,
+        "right": 0.45,
+        "bottom": 0.85
+      },
+      "anchorX": 0.22,
+      "anchorY": 0.64,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "svardstrom-1970",
+        "wp-runic-inscriptions-1300811819",
+        "commons-halvdan"
+      ]
+    },
+    {
+      "id": "detail-halvdan-worn",
+      "milestone": "milestone-x",
+      "artwork": "hs-halvdan-runes",
+      "title": {
+        "en": "Worn away",
+        "tr": "Aşınmış"
+      },
+      "sentence": {
+        "en": "The rest of the line is worn past reading, so “Halvdan was here” is a modern guess, not what it says.",
+        "tr": "Satırın geri kalanı okunamayacak kadar aşınmış; “Halvdan buradaydı” yazanı değil, modern bir tahmindir."
+      },
+      "window": {
+        "left": 0.45,
+        "top": 0.25,
+        "right": 0.97,
+        "bottom": 0.9
+      },
+      "anchorX": 0.7,
+      "anchorY": 0.55,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "svardstrom-1970",
+        "wp-runic-inscriptions-1300811819",
+        "commons-halvdan"
+      ]
+    },
+    {
+      "id": "detail-halvdan-size",
+      "milestone": "milestone-x",
+      "artwork": "hs-halvdan-runes",
+      "title": {
+        "en": "Small enough to hide",
+        "tr": "Saklanacak kadar küçük"
+      },
+      "sentence": {
+        "en": "The whole line is 23 cm long and the runes 1.5 to 5 cm high: small enough to cut while leaning on the parapet.",
+        "tr": "Satırın tamamı 23 cm, runlar 1,5 ile 5 cm arası yükseklikte: korkuluğa yaslanırken kazınabilecek kadar küçük."
+      },
+      "window": {
+        "left": 0.03,
+        "top": 0.25,
+        "right": 0.97,
+        "bottom": 0.92
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "svardstrom-1970",
+        "commons-halvdan"
+      ]
+    },
+    {
+      "id": "detail-halvdan-date",
+      "milestone": "milestone-x",
+      "artwork": "hs-halvdan-runes",
+      "title": {
+        "en": "Not the ninth century",
+        "tr": "Dokuzuncu yüzyıl değil"
+      },
+      "sentence": {
+        "en": "From the rune forms, the publisher dated the carving to the end of the eleventh century or later.",
+        "tr": "Yazıtı yayımlayan araştırmacı, run biçimlerinden yola çıkarak onu on birinci yüzyılın sonuna ya da sonrasına tarihledi."
+      },
+      "window": {
+        "left": 0.15,
+        "top": 0.4,
+        "right": 0.6,
+        "bottom": 0.86
+      },
+      "anchorX": 0.35,
+      "anchorY": 0.62,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "svardstrom-1970",
+        "commons-halvdan"
+      ]
+    },
+    {
+      "id": "detail-halvdan-guard",
+      "milestone": "milestone-x",
+      "artwork": "hs-halvdan-runes",
+      "title": {
+        "en": "A guard on duty",
+        "tr": "Nöbetteki bir muhafız"
+      },
+      "sentence": {
+        "en": "The usual guess: a Norseman of the emperor’s Varangian Guard, carving his name during a long service.",
+        "tr": "Genel tahmin: imparatorun Varang Muhafızları’ndan bir İskandinav, uzun bir ayin sırasında adını kazımış."
+      },
+      "window": {
+        "left": 0.05,
+        "top": 0.3,
+        "right": 0.55,
+        "bottom": 0.9
+      },
+      "anchorX": 0.3,
+      "anchorY": 0.6,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "svardstrom-1970",
+        "larsson-1989",
+        "commons-halvdan"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "halvdan-beat-1",
+      "start": 0,
+      "duration": 5,
+      "detail": "detail-halvdan-size",
+      "window": {
+        "left": 0.03,
+        "top": 0.25,
+        "right": 0.97,
+        "bottom": 0.92
+      },
+      "caption": {
+        "en": "The whole line is 23 cm long and the runes 1.5 to 5 cm high: small enough to cut while leaning on the parapet.",
+        "tr": "Satırın tamamı 23 cm, runlar 1,5 ile 5 cm arası yükseklikte: korkuluğa yaslanırken kazınabilecek kadar küçük."
+      },
+      "sources": [
+        "svardstrom-1970",
+        "commons-halvdan"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "halvdan-beat-2",
+      "start": 5,
+      "duration": 6,
+      "detail": "detail-halvdan-name",
+      "window": {
+        "left": 0.05,
+        "top": 0.45,
+        "right": 0.45,
+        "bottom": 0.85
+      },
+      "caption": {
+        "en": "The first six runes read alftan or hlftan, the Norse name Halfdan, with only the first rune in doubt.",
+        "tr": "İlk altı run alftan ya da hlftan okunuyor, yani İskandinav adı Halfdan; yalnızca ilk run kuşkulu."
+      },
+      "sources": [
+        "svardstrom-1970",
+        "wp-runic-inscriptions-1300811819",
+        "commons-halvdan"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "halvdan-beat-3",
+      "start": 11,
+      "duration": 6,
+      "detail": "detail-halvdan-worn",
+      "window": {
+        "left": 0.45,
+        "top": 0.25,
+        "right": 0.97,
+        "bottom": 0.9
+      },
+      "caption": {
+        "en": "The rest of the line is worn past reading, so “Halvdan was here” is a modern guess, not what it says.",
+        "tr": "Satırın geri kalanı okunamayacak kadar aşınmış; “Halvdan buradaydı” yazanı değil, modern bir tahmindir."
+      },
+      "sources": [
+        "svardstrom-1970",
+        "wp-runic-inscriptions-1300811819",
+        "commons-halvdan"
+      ],
+      "light": "candle",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "halvdan-beat-4",
+      "start": 17,
+      "duration": 5,
+      "detail": "detail-halvdan-date",
+      "window": {
+        "left": 0.15,
+        "top": 0.4,
+        "right": 0.6,
+        "bottom": 0.86
+      },
+      "caption": {
+        "en": "From the rune forms, the publisher dated the carving to the end of the eleventh century or later.",
+        "tr": "Yazıtı yayımlayan araştırmacı, run biçimlerinden yola çıkarak onu on birinci yüzyılın sonuna ya da sonrasına tarihledi."
+      },
+      "sources": [
+        "svardstrom-1970",
+        "commons-halvdan"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "halvdan-beat-5",
+      "start": 22,
+      "duration": 6,
+      "detail": "detail-halvdan-guard",
+      "window": {
+        "left": 0.05,
+        "top": 0.3,
+        "right": 0.55,
+        "bottom": 0.9
+      },
+      "caption": {
+        "en": "The usual guess: a Norseman of the emperor’s Varangian Guard, carving his name during a long service.",
+        "tr": "Genel tahmin: imparatorun Varang Muhafızları’ndan bir İskandinav, uzun bir ayin sırasında adını kazımış."
+      },
+      "sources": [
+        "svardstrom-1970",
+        "larsson-1989",
+        "commons-halvdan"
+      ],
+      "light": "candle",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 5,
+  "storySeconds": 28,
+  "reveal": {
+    "id": "halvdan-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-halvdan-name",
+    "window": {
+      "left": 0.05,
+      "top": 0.45,
+      "right": 0.45,
+      "bottom": 0.85
+    },
+    "caption": {
+      "en": "The first six runes read alftan or hlftan, the Norse name Halfdan, with only the first rune in doubt.",
+      "tr": "İlk altı run alftan ya da hlftan okunuyor, yani İskandinav adı Halfdan; yalnızca ilk run kuşkulu."
+    },
+    "sources": [
+      "svardstrom-1970",
+      "wp-runic-inscriptions-1300811819",
+      "commons-halvdan"
+    ],
+    "light": "raking",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Hermann Junghans / Wikimedia Commons (CC BY-SA 3.0 DE)",
+    "tr": "Hermann Junghans / Wikimedia Commons (CC BY-SA 3.0 DE)"
+  },
+  "sources": [
+    "svardstrom-1970",
+    "wp-runic-inscriptions-1300811819",
+    "commons-halvdan"
+  ],
+  "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Runen_Hagia_Sophia.JPG",
+  "citations": [
+    {
+      "id": "commons-halvdan",
+      "title": {
+        "en": "File:Runen Hagia Sophia.JPG — Wikimedia Commons",
+        "tr": "File:Runen Hagia Sophia.JPG — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Runen_Hagia_Sophia.JPG",
+      "author": {
+        "en": "Hermann Junghans",
+        "tr": "Hermann Junghans"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": {
+        "en": "CC BY-SA 3.0 de",
+        "tr": "CC BY-SA 3.0 de"
+      }
+    },
+    {
+      "id": "larsson-1989",
+      "title": {
+        "en": "Nyfunna runor i Hagia Sofia (Newly found runes in Hagia Sophia), Fornvännen 84 (1989), pp. 12–14",
+        "tr": "Nyfunna runor i Hagia Sofia (Ayasofya’da yeni bulunan runlar), Fornvännen 84 (1989), s. 12–14"
+      },
+      "url": "https://arild-hauge.com/fornvannen.se/1989_012-Larsson, Mats G.. Nyfunna runor i Hagia Sofia.pdf",
+      "author": {
+        "en": "Mats G. Larsson",
+        "tr": "Mats G. Larsson"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "svardstrom-1970",
+      "title": {
+        "en": "Runorna i Hagia Sofia (The runes in Hagia Sophia), Fornvännen 65 (1970), pp. 247–249",
+        "tr": "Runorna i Hagia Sofia (Ayasofya’daki runlar), Fornvännen 65 (1970), s. 247–249"
+      },
+      "url": "https://pub.raa.se/dokumentation/b56b7503-631b-4cb3-9d54-f573bd72689a/original/1",
+      "author": {
+        "en": "Elisabeth Svärdström",
+        "tr": "Elisabeth Svärdström"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "wp-runic-inscriptions-1300811819",
+      "title": {
+        "en": "Runic inscriptions in Hagia Sophia — Wikipedia (revision 1300811819; after Knirk, Nytt om runer 14, 1999)",
+        "tr": "Ayasofya’daki run yazıtları — Vikipedi (İngilizce, sürüm 1300811819; Knirk, Nytt om runer 14, 1999’dan)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=Runic_inscriptions_in_Hagia_Sophia&oldid=1300811819",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Vikipedi katkıda bulunanları"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    }
+  ]
+}

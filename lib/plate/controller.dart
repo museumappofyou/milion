@@ -54,6 +54,26 @@ class PlateController extends ChangeNotifier {
                   visibleSpiral)));
   bool get canLookUp => manifest.lookUp != null;
 
+  /// The masked layer a story beat wipes in, else the chosen layer.
+  /// A story beat's masked layer once its wipe has begun; before that, and
+  /// while peeking, what the reader chose. The label follows this, so it
+  /// never names a layer that is not yet on screen.
+  PlateLayerId get visibleLayer {
+    final l = peekOriginal || visibleWipe == 0 ? null : sample?.beat.layer;
+    return l ?? layer;
+  }
+
+  /// How far a story beat's wipe has come (all of it when reduced), else
+  /// where the reader left the wipe.
+  double get visibleWipe {
+    final s = sample;
+    if (peekOriginal || s == null || s.beat.layer == null) return wipe;
+    if (reduced) return 1;
+    final b = s.beat;
+    final t = ((seconds - b.start) / (b.duration * .6)).clamp(0.0, 1.0);
+    return t * t * (3 - 2 * t);
+  }
+
   /// §3: moving painted pixels (a gesture, flowing fire, a rolling scroll) is
   /// invention, so the whole beat that carries it reads IMAGINED.
   Honesty get honesty => peekOriginal
@@ -63,7 +83,9 @@ class PlateController extends ChangeNotifier {
             visibleFlow ||
             visibleSpiral
       ? Honesty.IMAGINED
-      : layer == PlateLayerId.reconstruction
+      : visibleLayer == PlateLayerId.imagined
+      ? Honesty.IMAGINED
+      : visibleLayer == PlateLayerId.reconstruction
       ? Honesty.RECONSTRUCTION
       : storyActive || lookUp || layer == PlateLayerId.depth
       ? Honesty.DEPTH
@@ -88,7 +110,7 @@ class PlateController extends ChangeNotifier {
     playing = gesturePlaying = storyActive = false;
     gesturePose = 0;
     layer = value;
-    if (value == PlateLayerId.reconstruction) {
+    if (maskedLayers.contains(value)) {
       light = PlateLight.none;
       flow = spiral = false;
     }
@@ -196,8 +218,14 @@ class PlateController extends ChangeNotifier {
     final i = !storyActive || reveal
         ? (delta > 0 ? 0 : manifest.beats.length - 1)
         : (sample!.index + delta).clamp(0, manifest.beats.length - 1);
-    seek(manifest.beats[i].start);
+    seek(stillAt(manifest.beats[i]));
   }
+
+  /// Where a manual still of [beat] stands: its start, or for a beat that
+  /// wipes in a masked layer, the moment the wipe is complete, so the still
+  /// shows the layer its label names.
+  static double stillAt(PlateBeat beat) =>
+      beat.layer == null ? beat.start : beat.start + beat.duration * .6;
 
   void advance(double delta) {
     if (!needsTicker || !delta.isFinite || delta <= 0) return;

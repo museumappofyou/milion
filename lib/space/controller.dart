@@ -96,9 +96,11 @@ class SpaceTimeline {
     final previous = i > 0 ? beats[i - 1] : null;
     final SpaceMoment moment;
     if (previous != null && previous.epoch != b.epoch) {
+      // A collapse settles over most of its beat; other years cut briskly.
+      final share = study.epochs[b.epoch].collapse ? .7 : .3;
       final y = reduced
           ? 1.0
-          : ((t - b.start) / (b.duration * .3)).clamp(0.0, 1.0);
+          : ((t - b.start) / (b.duration * share)).clamp(0.0, 1.0);
       moment = SpaceMoment(
         b.epoch,
         assembly,
@@ -273,22 +275,31 @@ class SpaceController extends ChangeNotifier {
     final height = math.max(bounds.maxZ - bounds.minZ, 1.0);
     final drop = reduced ? 0.0 : height * .125;
     final lift = height * .75 / math.max(1, steps.length - 1);
+    final from = m.fromEpoch;
+    final falling =
+        from != null && m.blend < 1 && study.epochs[m.epoch].collapse;
     return [
       for (var i = 0; i < model.parts.length; i++)
         () {
           final j = _index[m.epoch][i];
           final to = j < 0 ? 0.0 : (m.assembly - j).clamp(0.0, 1.0);
           var p = to;
-          final from = m.fromEpoch;
+          var fell = 0.0, dust = 0.0;
           if (from != null && m.blend < 1) {
             final k = _index[from][i];
             final was = k < 0 ? 0.0 : (m.fromAssembly - k).clamp(0.0, 1.0);
             p = was + (to - was) * m.blend;
+            // Dust, not drama: what falls sinks a few metres as it fades,
+            // and its dust rises and settles once.
+            if (falling && was > 0 && to == 0 && !reduced) {
+              fell = height * .08 * _smooth(m.blend);
+              dust = math.sin(math.pi * m.blend);
+            }
           }
           if (p <= 0) return SpacePartState.hidden;
           final rank = j >= 0 ? j : _index[from ?? m.epoch][i];
           final part = model.parts[i];
-          var dz = explode * math.max(rank, 0) * lift;
+          var dz = explode * math.max(rank, 0) * lift - fell;
           if (j >= 0 && to < 1) dz += (1 - _smooth(to)) * drop;
           // Built by hand: what is dropping in glows, and the last step
           // added keeps the glow a moment after it lands.
@@ -305,6 +316,7 @@ class SpaceController extends ChangeNotifier {
             dy: explode * (part.bounds.centerY - bounds.centerY) * .35,
             dz: dz,
             highlight: glow,
+            dust: dust,
           );
         }(),
     ];
@@ -565,7 +577,10 @@ class SpaceController extends ChangeNotifier {
           ? _viewTo!
           : SpaceView.lerp(_viewFrom!, _viewTo!, _smooth(_viewT));
     }
-    if (_blend < 1) _blend = math.min(1, _blend + delta / .8);
+    if (_blend < 1) {
+      final settle = study.epochs[epoch].collapse ? 2.4 : .8;
+      _blend = math.min(1, _blend + delta / settle);
+    }
     if (assembly != _assemblyTarget) {
       final d = _assemblyTarget - assembly;
       final move = delta * 1.5;

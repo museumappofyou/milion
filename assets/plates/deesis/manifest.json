@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-deesis",
+  "milestone": "milestone-vii",
+  "artwork": "hs-deesis",
+  "title": {
+    "en": "The Deesis",
+    "tr": "Deesis"
+  },
+  "description": {
+    "en": "Mosaic panel in the south gallery of Hagia Sophia, most often dated after 1261. Christ blesses between the Virgin and John the Baptist, who turn to him and plead for mankind; most of the lower half is lost.",
+    "tr": "Ayasofya’nın güney galerisindeki mozaik pano; çoğunlukla 1261 sonrasına tarihlenir. Meryem ile Vaftizci Yahya’nın arasında İsa takdis ediyor; ikisi ona dönüp insanlık için yakarıyor. Alt yarının büyük bölümü kayıp."
+  },
+  "size": [
+    2400,
+    1396
+  ],
+  "manifestPath": "assets/plates/deesis/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/deesis/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    },
+    {
+      "id": "reconstruction",
+      "asset": "assets/plates/deesis/reconstruction.jpg",
+      "honesty": "RECONSTRUCTION",
+      "mask": "assets/plates/deesis/loss.png"
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/deesis/surface.webp",
+    "gold": "assets/plates/deesis/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-deesis-tilted-gold",
+      "milestone": "milestone-vii",
+      "artwork": "hs-deesis",
+      "title": {
+        "en": "Gold set at an angle",
+        "tr": "Eğik dizilmiş altın"
+      },
+      "sentence": {
+        "en": "In Christ’s halo the gold cubes are tilted about 30° from the wall, to throw light back at you.",
+        "tr": "İsa’nın halesindeki altın küpler duvardan yaklaşık 30° eğik dizilmiş; ışığı size geri atmak için."
+      },
+      "window": {
+        "left": 0.4,
+        "top": 0.08,
+        "right": 0.6,
+        "bottom": 0.36
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.13,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "atchison-deesis-specs",
+        "commons-deesis"
+      ]
+    },
+    {
+      "id": "detail-deesis-christ-face",
+      "milestone": "milestone-vii",
+      "artwork": "hs-deesis",
+      "title": {
+        "en": "Painted in stone",
+        "tr": "Taşla boyanmış"
+      },
+      "sentence": {
+        "en": "Christ’s face is built of cubes only a few millimetres across, shaded like a painting.",
+        "tr": "İsa’nın yüzü birkaç milimetrelik küplerle örülmüş ve bir resim gibi gölgelendirilmiş."
+      },
+      "window": {
+        "left": 0.43,
+        "top": 0.16,
+        "right": 0.57,
+        "bottom": 0.4
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.27,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "atchison-deesis-specs",
+        "smarthistory-deesis",
+        "commons-deesis"
+      ]
+    },
+    {
+      "id": "detail-deesis-virgin",
+      "milestone": "milestone-vii",
+      "artwork": "hs-deesis",
+      "title": {
+        "en": "The Virgin’s plea",
+        "tr": "Meryem’in yakarışı"
+      },
+      "sentence": {
+        "en": "Mary turns toward her son with her head bowed: she is pleading for mankind.",
+        "tr": "Meryem başını eğerek oğluna dönüyor: insanlık için yakarıyor."
+      },
+      "window": {
+        "left": 0.11,
+        "top": 0.18,
+        "right": 0.26,
+        "bottom": 0.45
+      },
+      "anchorX": 0.18,
+      "anchorY": 0.32,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "smarthistory-deesis",
+        "vapheiades-2021",
+        "commons-deesis"
+      ]
+    },
+    {
+      "id": "detail-deesis-john",
+      "milestone": "milestone-vii",
+      "artwork": "hs-deesis",
+      "title": {
+        "en": "The Forerunner",
+        "tr": "Öncü"
+      },
+      "sentence": {
+        "en": "John the Baptist, labelled “the Forerunner”, leans toward Christ with a furrowed brow and tangled hair.",
+        "tr": "“Öncü” diye adlandırılan Vaftizci Yahya, kırışık alnı ve karışık saçlarıyla İsa’ya doğru eğiliyor."
+      },
+      "window": {
+        "left": 0.73,
+        "top": 0.18,
+        "right": 0.9,
+        "bottom": 0.46
+      },
+      "anchorX": 0.81,
+      "anchorY": 0.31,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "smarthistory-deesis",
+        "atchison-deesis",
+        "commons-deesis"
+      ]
+    },
+    {
+      "id": "detail-deesis-blessing",
+      "milestone": "milestone-vii",
+      "artwork": "hs-deesis",
+      "title": {
+        "en": "A blessing and a book",
+        "tr": "Bir takdis ve bir kitap"
+      },
+      "sentence": {
+        "en": "Christ blesses with his right hand and holds a gold-bound Gospel book in his left.",
+        "tr": "İsa sağ eliyle takdis ediyor, sol elinde altın kaplı bir İncil tutuyor."
+      },
+      "window": {
+        "left": 0.38,
+        "top": 0.44,
+        "right": 0.64,
+        "bottom": 0.68
+      },
+      "anchorX": 0.47,
+      "anchorY": 0.55,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "smarthistory-deesis",
+        "commons-deesis"
+      ]
+    },
+    {
+      "id": "detail-deesis-lost-half",
+      "milestone": "milestone-vii",
+      "artwork": "hs-deesis",
+      "title": {
+        "en": "The lost half",
+        "tr": "Kayıp yarı"
+      },
+      "sentence": {
+        "en": "Most of the lower half is lost: below the figures, plaster stands where the robes and Christ’s throne were.",
+        "tr": "Alt yarının büyük bölümü kayıp: figürlerin altında, giysilerin ve İsa’nın tahtının yerinde sıva duruyor."
+      },
+      "window": {
+        "left": 0.2,
+        "top": 0.62,
+        "right": 0.8,
+        "bottom": 0.96
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.8,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "atchison-deesis",
+        "smarthistory-deesis",
+        "commons-deesis"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "deesis-beat-1",
+      "start": 0,
+      "duration": 6,
+      "detail": "detail-deesis-tilted-gold",
+      "window": {
+        "left": 0.4,
+        "top": 0.08,
+        "right": 0.6,
+        "bottom": 0.36
+      },
+      "caption": {
+        "en": "In Christ’s halo the gold cubes are tilted about 30° from the wall, to throw light back at you.",
+        "tr": "İsa’nın halesindeki altın küpler duvardan yaklaşık 30° eğik dizilmiş; ışığı size geri atmak için."
+      },
+      "sources": [
+        "atchison-deesis-specs",
+        "commons-deesis"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "deesis-beat-2",
+      "start": 6,
+      "duration": 6,
+      "detail": "detail-deesis-christ-face",
+      "window": {
+        "left": 0.43,
+        "top": 0.16,
+        "right": 0.57,
+        "bottom": 0.4
+      },
+      "caption": {
+        "en": "Christ’s face is built of cubes only a few millimetres across, shaded like a painting.",
+        "tr": "İsa’nın yüzü birkaç milimetrelik küplerle örülmüş ve bir resim gibi gölgelendirilmiş."
+      },
+      "sources": [
+        "atchison-deesis-specs",
+        "smarthistory-deesis",
+        "commons-deesis"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "deesis-beat-3",
+      "start": 12,
+      "duration": 5,
+      "detail": "detail-deesis-virgin",
+      "window": {
+        "left": 0.11,
+        "top": 0.18,
+        "right": 0.26,
+        "bottom": 0.45
+      },
+      "caption": {
+        "en": "Mary turns toward her son with her head bowed: she is pleading for mankind.",
+        "tr": "Meryem başını eğerek oğluna dönüyor: insanlık için yakarıyor."
+      },
+      "sources": [
+        "smarthistory-deesis",
+        "vapheiades-2021",
+        "commons-deesis"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "deesis-beat-4",
+      "start": 17,
+      "duration": 5,
+      "detail": "detail-deesis-john",
+      "window": {
+        "left": 0.73,
+        "top": 0.18,
+        "right": 0.9,
+        "bottom": 0.46
+      },
+      "caption": {
+        "en": "John the Baptist, labelled “the Forerunner”, leans toward Christ with a furrowed brow and tangled hair.",
+        "tr": "“Öncü” diye adlandırılan Vaftizci Yahya, kırışık alnı ve karışık saçlarıyla İsa’ya doğru eğiliyor."
+      },
+      "sources": [
+        "smarthistory-deesis",
+        "atchison-deesis",
+        "commons-deesis"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "deesis-beat-5",
+      "start": 22,
+      "duration": 5,
+      "detail": "detail-deesis-blessing",
+      "window": {
+        "left": 0.38,
+        "top": 0.44,
+        "right": 0.64,
+        "bottom": 0.68
+      },
+      "caption": {
+        "en": "Christ blesses with his right hand and holds a gold-bound Gospel book in his left.",
+        "tr": "İsa sağ eliyle takdis ediyor, sol elinde altın kaplı bir İncil tutuyor."
+      },
+      "sources": [
+        "smarthistory-deesis",
+        "commons-deesis"
+      ],
+      "light": "gilded",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "deesis-beat-6",
+      "start": 27,
+      "duration": 7,
+      "detail": "detail-deesis-lost-half",
+      "window": {
+        "left": 0.2,
+        "top": 0.62,
+        "right": 0.8,
+        "bottom": 0.96
+      },
+      "caption": {
+        "en": "RECONSTRUCTION: the gold ground is re-laid from the surviving setting. How the lower figures and the throne looked is not known, so nothing is drawn.",
+        "tr": "REKONSTRÜKSİYON: altın zemin, korunan dizilimden örneklenerek yeniden döşendi. Alttaki figürlerin ve tahtın nasıl göründüğü bilinmiyor; bu yüzden hiçbir şey çizilmedi."
+      },
+      "sources": [
+        "atchison-deesis",
+        "smarthistory-deesis"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null,
+      "layer": "reconstruction"
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 6,
+  "storySeconds": 34,
+  "reveal": {
+    "id": "deesis-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-deesis-tilted-gold",
+    "window": {
+      "left": 0.4,
+      "top": 0.08,
+      "right": 0.6,
+      "bottom": 0.36
+    },
+    "caption": {
+      "en": "In Christ’s halo the gold cubes are tilted about 30° from the wall, to throw light back at you.",
+      "tr": "İsa’nın halesindeki altın küpler duvardan yaklaşık 30° eğik dizilmiş; ışığı size geri atmak için."
+    },
+    "sources": [
+      "atchison-deesis-specs",
+      "commons-deesis"
+    ],
+    "light": "gilded",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Myrabella / Wikimedia Commons (public domain)",
+    "tr": "Myrabella / Wikimedia Commons (kamu malı)"
+  },
+  "sources": [
+    "atchison-deesis",
+    "atchison-deesis-specs",
+    "smarthistory-deesis",
+    "commons-deesis"
+  ],
+  "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Deesis_mosaic_Hagia_Sophia.jpg",
+  "citations": [
+    {
+      "id": "atchison-deesis",
+      "title": {
+        "en": "Mosaics of Hagia Sophia: History of the Deesis",
+        "tr": "Ayasofya mozaikleri: Deesis’in tarihi"
+      },
+      "url": "https://www.pallasweb.com/deesis/history.html",
+      "author": {
+        "en": "Bob Atchison (from the Byzantine Institute’s records)",
+        "tr": "Bob Atchison (Bizans Enstitüsü kayıtlarından)"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "atchison-deesis-specs",
+      "title": {
+        "en": "Christ Pantokrator (Deesis): technical specifications, after Whittemore’s Fourth Preliminary Report (1952) and A. A. Green’s notes",
+        "tr": "Pantokrator İsa (Deesis): teknik özellikler; Whittemore’un Dördüncü ön raporu (1952) ve A. A. Green’in notlarından"
+      },
+      "url": "https://www.pallasweb.com/deesis/christ-pantokrator-deesis-tech-specs.html",
+      "author": {
+        "en": "Bob Atchison",
+        "tr": "Bob Atchison"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "commons-deesis",
+      "title": {
+        "en": "File:Deesis mosaic Hagia Sophia.jpg — Wikimedia Commons",
+        "tr": "File:Deesis mosaic Hagia Sophia.jpg — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Deesis_mosaic_Hagia_Sophia.jpg",
+      "author": {
+        "en": "Myrabella",
+        "tr": "Myrabella"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": {
+        "en": "Public domain",
+        "tr": "Kamu malı"
+      }
+    },
+    {
+      "id": "smarthistory-deesis",
+      "title": {
+        "en": "Late Byzantine naturalism: Hagia Sophia’s Deesis mosaic (Smarthistory Guide to Byzantine Art)",
+        "tr": "Geç Bizans doğalcılığı: Ayasofya’nın Deesis mozaiği (Smarthistory Bizans Sanatı Rehberi)"
+      },
+      "url": "https://pressbooks.pub/smarthistoryguidetobyzantineart/chapter/late-byzantine-naturalism-hagia-sophias-deesis-mosaic",
+      "author": {
+        "en": "Smarthistory",
+        "tr": "Smarthistory"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    },
+    {
+      "id": "vapheiades-2021",
+      "title": {
+        "en": "Reassessing a Late Byzantine masterpiece: the Deesis mosaic in the Hagia Sophia of Constantinople, BMGS 45/2 (2021), pp. 166–183",
+        "tr": "Bir geç Bizans başyapıtını yeniden değerlendirmek: Konstantinopolis Ayasofyası’ndaki Deesis mozaiği, BMGS 45/2 (2021), s. 166–183"
+      },
+      "url": "https://www.cambridge.org/core/product/82B33AD63D40BA681E04508C62598FD7",
+      "author": {
+        "en": "Konstantinos M. Vapheiades",
+        "tr": "Konstantinos M. Vapheiades"
+      },
+      "accessedAt": "2026-11-16",
+      "licence": null
+    }
+  ]
+}

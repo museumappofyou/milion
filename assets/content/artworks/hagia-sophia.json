@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "kind": "artworks",
+  "records": [
+    {
+      "id": "hs-deesis",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "The Deesis",
+        "tr": "Deesis"
+      },
+      "room": {
+        "en": "South gallery",
+        "tr": "Güney galerisi"
+      },
+      "surface": {
+        "en": "flat wall panel",
+        "tr": "düz duvar panosu"
+      },
+      "position": {
+        "en": "In the south gallery, on a panel about 6 m wide.",
+        "tr": "Güney galerisinde, yaklaşık 6 m genişliğinde bir panoda."
+      },
+      "kind": "mosaic",
+      "summary": {
+        "en": "Christ between the Virgin and John the Baptist, who turn to him and plead for mankind. Only the upper half survives.",
+        "tr": "İnsanlık için yakaran Meryem ile Vaftizci Yahya arasında İsa. Panonun yalnızca üst yarısı korunmuş."
+      },
+      "cues": [
+        {
+          "en": "Christ",
+          "tr": "İsa"
+        },
+        {
+          "en": "the Virgin",
+          "tr": "Meryem"
+        },
+        {
+          "en": "John the Baptist",
+          "tr": "Vaftizci Yahya"
+        },
+        {
+          "en": "gold ground",
+          "tr": "altın zemin"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "In Christ’s halo the gold cubes are set at about 30° to the wall: move, and they flash.",
+          "tr": "İsa’nın halesindeki altın küpler duvara yaklaşık 30° eğik dizilmiş: kıpırdayın, parlarlar."
+        },
+        {
+          "en": "The faces are made of cubes only a few millimetres across, far smaller than those of the gold around them.",
+          "tr": "Yüzler birkaç milimetrelik küplerle yapılmış; çevrelerindeki altın küplerden çok daha küçükler."
+        },
+        {
+          "en": "Lower down the gold gives way to plaster: most of the lower half, with Christ’s throne, is lost.",
+          "tr": "Aşağıda altın yerini sıvaya bırakır: İsa’nın tahtıyla birlikte alt yarının büyük bölümü kayıptır."
+        }
+      ],
+      "story": {
+        "en": "Deesis is Greek for entreaty: the Virgin and John ask Christ for mercy on mankind. No Byzantine text mentions this panel and it names no donor. It is most often dated just after 1261, when Michael VIII Palaiologos took the city back from the Latins, as a thank-offering; Robin Cormack suggested that a small kneeling emperor was once in the lost lower part. Other scholars, Whittemore among them, put it earlier. The Byzantine Institute uncovered it from 1934 and published it in 1952.",
+        "tr": "Deesis Yunanca yakarış demektir: Meryem ile Yahya İsa’dan insanlığa merhamet diler. Hiçbir Bizans metni bu panodan söz etmez ve bir bağışçı adı da taşımaz. Çoğunlukla, VIII. Mikhail Palaiologos’un şehri Latinlerden geri aldığı 1261’in hemen sonrasına, bir şükran sunusu olarak tarihlenir; Robin Cormack kayıp alt bölümde diz çökmüş küçük bir imparator figürü olduğunu öne sürdü. Whittemore dahil başka araştırmacılar onu daha erkene koyar. Bizans Enstitüsü panoyu 1934’ten itibaren açtı ve 1952’de yayımladı."
+      },
+      "inscriptions": [
+        {
+          "greek": "ΜΡ ΘΥ",
+          "transliteration": "M(ēt)ēr Th(eo)u",
+          "translation": {
+            "en": "Mother of God",
+            "tr": "Tanrı’nın Annesi"
+          },
+          "basis": "photograph",
+          "sources": [
+            "commons-deesis"
+          ]
+        },
+        {
+          "greek": "ΙϹ ΧϹ",
+          "transliteration": "I(ēsou)s Ch(risto)s",
+          "translation": {
+            "en": "Jesus Christ",
+            "tr": "İsa Mesih"
+          },
+          "basis": "photograph",
+          "sources": [
+            "commons-deesis"
+          ]
+        },
+        {
+          "greek": "Ο ΑΓΙΟϹ ΙΩ Ο ΠΡΟΔΡΟΜ",
+          "transliteration": "Ho hagios Iō(annēs) ho Prodrom(os)",
+          "translation": {
+            "en": "Saint John the Forerunner",
+            "tr": "Öncü Aziz Yahya"
+          },
+          "basis": "photograph",
+          "sources": [
+            "commons-deesis"
+          ]
+        }
+      ],
+      "condition": {
+        "en": "Most of the lower half is lost and the losses are filled with plaster. Part of John the Baptist was destroyed in the twentieth century, when the panel was opened to look at cracks in the pier.",
+        "tr": "Alt yarının büyük bölümü kayıp; boşluklar sıvayla doldurulmuş. Vaftizci Yahya figürünün bir bölümü 20. yüzyılda, ayaktaki çatlakları incelemek için pano açıldığında yok oldu."
+      },
+      "folder": "hagia-sophia/deesis",
+      "sources": [
+        "vapheiades-2021",
+        "atchison-deesis",
+        "atchison-deesis-specs",
+        "smarthistory-deesis",
+        "doaks-byzantine-institute",
+        "commons-deesis"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-zoe-panel",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "Empress Zoe and Constantine IX before Christ",
+        "tr": "İmparatoriçe Zoe ve IX. Konstantinos İsa’nın huzurunda"
+      },
+      "room": {
+        "en": "South gallery, east end",
+        "tr": "Güney galerisi, doğu ucu"
+      },
+      "surface": {
+        "en": "flat wall panel",
+        "tr": "düz duvar panosu"
+      },
+      "position": {
+        "en": "At the east end of the south gallery; the panel is about 2.4 m wide and as high.",
+        "tr": "Güney galerisinin doğu ucunda; pano yaklaşık 2,4 m genişliğinde ve aynı yükseklikte."
+      },
+      "kind": "mosaic",
+      "summary": {
+        "en": "Christ sits enthroned with the Gospels. On his right an emperor offers a purse of gold, on his left Empress Zoe holds a scroll: gifts to the Great Church.",
+        "tr": "İsa elinde İncil’le tahtta oturuyor. Sağında bir imparator bir kese altın sunuyor, solunda İmparatoriçe Zoe bir tomar tutuyor: Büyük Kilise’ye bağışlar."
+      },
+      "cues": [
+        {
+          "en": "purse",
+          "tr": "kese"
+        },
+        {
+          "en": "scroll",
+          "tr": "tomar"
+        },
+        {
+          "en": "Gospel book",
+          "tr": "İncil"
+        },
+        {
+          "en": "names",
+          "tr": "adlar"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "The emperor’s name above his head sits in a reset patch: the space was made for a different name.",
+          "tr": "İmparatorun başının üstündeki adı yeniden döşenmiş bir yamada duruyor: yer başka bir ad için açılmıştı."
+        },
+        {
+          "en": "The cubes of the three faces are larger than those of the hands and robes, a sign that the heads were reset.",
+          "tr": "Üç yüzün küpleri ellerdekinden ve giysilerdekinden iri: başların yeniden döşendiğinin bir işareti."
+        },
+        {
+          "en": "The purse is an apokombion; in the tenth-century Book of Ceremonies it held ten pounds of gold.",
+          "tr": "Kese bir apokombiondur; 10. yüzyılın Törenler Kitabı’nda içinde on libre altın bulunur."
+        }
+      ],
+      "story": {
+        "en": "Zoe married three emperors: Romanos III (1028–1034), Michael IV (1034–1041) and Constantine IX Monomachos (from 1042). Her adopted son Michael V exiled her in April 1042 and was soon overthrown. Thomas Whittemore, who uncovered the panel in 1935, thought it was made for Romanos — his name fits the gap — and altered after Michael V had it defaced; others argue the first emperor was Michael IV. All three heads, and the emperor’s name, were reset. Why, and when, is still debated.",
+        "tr": "Zoe üç imparatorla evlendi: III. Romanos (1028–1034), IV. Mikhail (1034–1041) ve IX. Konstantinos Monomakhos (1042’den itibaren). Evlatlığı V. Mikhail onu Nisan 1042’de sürgüne gönderdi ve kısa süre sonra devrildi. Panoyu 1935’te açan Thomas Whittemore onun Romanos için yapıldığını — adı boşluğa uyar — ve V. Mikhail’in tahribinden sonra değiştirildiğini düşündü; başkaları ilk imparatorun IV. Mikhail olduğunu savunur. Üç baş ve imparatorun adı yeniden döşendi. Neden ve ne zaman, hâlâ tartışılıyor."
+      },
+      "inscriptions": [
+        {
+          "greek": "ΚΩΝϹΤΑΝΤΙΝΟϹ ΕΝ ΧΩ ΤΩ ΘΩ ΑΥΤΟΚΡΑΤΩΡ ΠΙϹΤΟϹ ΒΑϹΙΛΕΥϹ ΡΩΜΑΙΩΝ Ο ΜΟΝΟΜΑΧ",
+          "transliteration": "Kōnstantinos en Ch(rist)ō tō Th(e)ō autokratōr pistos basileus Rhōmaiōn ho Monomach(os)",
+          "translation": {
+            "en": "Constantine, in Christ the God autocrat, faithful emperor of the Romans, Monomachos",
+            "tr": "Mesih Tanrı’da otokrator, Romalıların sadık imparatoru Konstantinos Monomakhos"
+          },
+          "basis": "source",
+          "sources": [
+            "whittemore-1942"
+          ]
+        },
+        {
+          "greek": "ΖΩΗ Η ΕΥϹΕΒΕϹΤΑΤΗ ΑΥΓΟΥϹΤΑ",
+          "transliteration": "Zōē hē eusebestatē Augousta",
+          "translation": {
+            "en": "Zoe, the most pious Augusta",
+            "tr": "En dindar Augusta Zoe"
+          },
+          "basis": "photograph",
+          "sources": [
+            "commons-zoe"
+          ]
+        },
+        {
+          "greek": "ΙϹ ΧϹ",
+          "transliteration": "I(ēsou)s Ch(risto)s",
+          "translation": {
+            "en": "Jesus Christ",
+            "tr": "İsa Mesih"
+          },
+          "basis": "source",
+          "sources": [
+            "whittemore-1942"
+          ]
+        }
+      ],
+      "condition": {
+        "en": "All three heads and the emperor’s name were reset in Byzantine times. A strip about 35 cm high along the bottom is lost.",
+        "tr": "Üç baş ve imparatorun adı Bizans döneminde yeniden döşendi. Alttaki yaklaşık 35 cm yüksekliğindeki şerit kayıp."
+      },
+      "folder": "hagia-sophia/zoe-panel",
+      "sources": [
+        "whittemore-1942",
+        "pollick-2012",
+        "freeman-middle-byzantine",
+        "commons-zoe"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-halvdan-runes",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "Halvdan’s runes",
+        "tr": "Halvdan’ın runları"
+      },
+      "room": {
+        "en": "South gallery",
+        "tr": "Güney galerisi"
+      },
+      "surface": {
+        "en": "marble parapet",
+        "tr": "mermer korkuluk"
+      },
+      "position": {
+        "en": "Scratched into the top of the marble parapet in the middle arcade of the south gallery, along its inner edge.",
+        "tr": "Güney galerisinin orta kemer açıklığında, mermer korkuluğun üst yüzüne, iç kenarı boyunca kazınmış."
+      },
+      "kind": "inscription",
+      "summary": {
+        "en": "A line of worn runes scratched on the gallery parapet. The first runes spell a Norse name, Halvdan; the rest can no longer be read.",
+        "tr": "Galeri korkuluğuna kazınmış, aşınmış bir sıra run. İlk runlar İskandinav bir adı, Halvdan’ı yazıyor; gerisi artık okunamıyor."
+      },
+      "cues": [
+        {
+          "en": "runes",
+          "tr": "runlar"
+        },
+        {
+          "en": "parapet",
+          "tr": "korkuluk"
+        },
+        {
+          "en": "Varangian Guard",
+          "tr": "Varang Muhafızları"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "The runes are small, 1.5 to 5 cm high, in a line 23 cm long.",
+          "tr": "Runlar küçük: 1,5 ile 5 cm arası yükseklikte, 23 cm uzunluğunda bir sıra."
+        },
+        {
+          "en": "The name is at the start of the line; after it the scratches are too worn to read.",
+          "tr": "Ad satırın başında; sonrasındaki çizikler okunamayacak kadar aşınmış."
+        },
+        {
+          "en": "The parapet is 1.20 m high and 29 cm wide; the runes run along its inner edge.",
+          "tr": "Korkuluk 1,20 m yüksekliğinde ve 29 cm genişliğinde; runlar iç kenarı boyunca uzanır."
+        }
+      ],
+      "story": {
+        "en": "Alfred Westholm found the runes in 1964; Elisabeth Svärdström examined them in 1968 and published them in 1970. She read alftan or hlftan — the name Halfdan, with only the first rune in doubt; the remaining signs are too worn, perhaps not even real runes. “Halvdan was here” is a modern guess at a formula such as “NN carved these runes”. From the rune forms she dated it to the end of the eleventh century or later. Norsemen served the emperor in the Varangian Guard, and one of them on duty in the gallery is the usual explanation. A second runic name, read Ári or Árni, was found in 1975 in a niche of the gallery balustrade.",
+        "tr": "Runları 1964’te Alfred Westholm buldu; Elisabeth Svärdström 1968’de inceleyip 1970’te yayımladı. Svärdström alftan ya da hlftan okudu — Halfdan adı, yalnızca ilk run kuşkulu; geri kalan işaretler çok aşınmış, belki gerçek run bile değil. “Halvdan buradaydı” ise “NN bu runları kazıdı” gibi bir kalıba dayanan modern bir tahmindir. Run biçimlerinden yola çıkarak onu 11. yüzyılın sonuna ya da sonrasına tarihledi. İskandinavlar imparatora Varang Muhafızları’nda hizmet ediyordu; galeride nöbet tutan birinin kazıdığı genel açıklamadır. 1975’te galeri korkuluğundaki bir nişte Ári ya da Árni diye okunan ikinci bir run adı bulundu."
+      },
+      "inscriptions": [
+        {
+          "greek": "ᛆᛚᚠᛐᛆᚿ",
+          "transliteration": "alftan or hlftan (the first rune is uncertain; the rest of the line is illegible)",
+          "translation": {
+            "en": "Halfdan, a Norse name (“the half Dane”)",
+            "tr": "Halfdan, İskandinav bir ad (“yarı Danimarkalı”)"
+          },
+          "basis": "source",
+          "sources": [
+            "svardstrom-1970"
+          ],
+          "script": "runic"
+        }
+      ],
+      "condition": {
+        "en": "Very worn: only the first runes can still be read.",
+        "tr": "Çok aşınmış: yalnızca ilk runlar hâlâ okunabiliyor."
+      },
+      "folder": "hagia-sophia/halvdan-runes",
+      "sources": [
+        "svardstrom-1970",
+        "larsson-1989",
+        "wp-runic-inscriptions-1300811819",
+        "commons-halvdan"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-dandolo-marker",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "Enrico Dandolo’s marker",
+        "tr": "Enrico Dandolo’nun mezar işareti"
+      },
+      "room": {
+        "en": "South gallery",
+        "tr": "Güney galerisi"
+      },
+      "surface": {
+        "en": "floor slab",
+        "tr": "döşeme levhası"
+      },
+      "position": {
+        "en": "Set in the floor of the south gallery, near where the doge was probably buried.",
+        "tr": "Güney galerisinin döşemesinde, dukanın büyük olasılıkla gömüldüğü yerin yakınında."
+      },
+      "kind": "inscription",
+      "summary": {
+        "en": "A marble slab inscribed HENRICUS DANDOLO: a nineteenth-century marker, not the doge’s medieval tomb.",
+        "tr": "HENRICUS DANDOLO yazılı bir mermer levha: dukanın Orta Çağ mezarı değil, 19. yüzyıldan bir işaret."
+      },
+      "cues": [
+        {
+          "en": "floor slab",
+          "tr": "döşeme levhası"
+        },
+        {
+          "en": "Latin name",
+          "tr": "Latince ad"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "Two words, HENRICUS DANDOLO: the Latin form of the doge’s name.",
+          "tr": "İki kelime, HENRICUS DANDOLO: dukanın adının Latince biçimi."
+        },
+        {
+          "en": "The letters are Latin capitals, not Greek — the script of Venice, not of Byzantium.",
+          "tr": "Harfler Yunanca değil, Latin büyük harfleri — Bizans’ın değil, Venedik’in yazısı."
+        },
+        {
+          "en": "It is flush with the gallery floor, among the old marble slabs.",
+          "tr": "Galeri döşemesiyle aynı hizada, eski mermer levhaların arasında."
+        }
+      ],
+      "story": {
+        "en": "Enrico Dandolo, doge of Venice and one of the leaders of the Fourth Crusade, died in Constantinople in 1205 and was buried in Hagia Sophia, probably in the east part of the gallery. His tomb was destroyed after the Ottoman conquest. In the nineteenth century the Italian restoration team set this slab near the probable spot; many visitors take it for the medieval tombstone.",
+        "tr": "Venedik dukası ve Dördüncü Haçlı Seferi’nin önderlerinden Enrico Dandolo 1205’te Konstantinopolis’te öldü ve Ayasofya’ya, büyük olasılıkla galerinin doğu bölümüne gömüldü. Mezarı Osmanlı fethinden sonra yok edildi. 19. yüzyılda İtalyan restorasyon ekibi bu levhayı olası yerin yakınına koydu; birçok ziyaretçi onu Orta Çağ mezar taşı sanır."
+      },
+      "inscriptions": [
+        {
+          "greek": "HENRICUS DANDOLO",
+          "transliteration": "Henricus Dandolo",
+          "translation": {
+            "en": "Enrico Dandolo (his name in Latin)",
+            "tr": "Enrico Dandolo (adının Latincesi)"
+          },
+          "basis": "photograph",
+          "sources": [
+            "harvard-dandolo-marker",
+            "commons-dandolo"
+          ],
+          "script": "latin"
+        }
+      ],
+      "condition": {
+        "en": "A plain slab of the nineteenth century; the original tomb is lost.",
+        "tr": "19. yüzyıldan sade bir levha; asıl mezar kayıp."
+      },
+      "folder": "hagia-sophia/dandolo-marker",
+      "sources": [
+        "harvard-dandolo-marker",
+        "commons-dandolo"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-lamb-frieze",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "The lamb frieze",
+        "tr": "Kuzu frizi"
+      },
+      "room": {
+        "en": "West forecourt, excavation trench",
+        "tr": "Batı avlusu, kazı çukuru"
+      },
+      "surface": {
+        "en": "carved marble frieze",
+        "tr": "oymalı mermer friz"
+      },
+      "position": {
+        "en": "In A. M. Schneider’s excavation trench in front of the west front; two more lambs lie by the trees near the café.",
+        "tr": "Batı cephesinin önündeki, A. M. Schneider’in açtığı kazı çukurunda; iki kuzu daha kafeteryanın yanındaki ağaçların dibinde."
+      },
+      "kind": "relief",
+      "summary": {
+        "en": "Lambs carved in a frieze on the entrance of the church of 415: twelve in all, for the twelve apostles.",
+        "tr": "415 kilisesinin girişindeki frizde oyulmuş kuzular: on iki havari için toplam on iki kuzu."
+      },
+      "cues": [
+        {
+          "en": "lambs",
+          "tr": "kuzular"
+        },
+        {
+          "en": "palm tree",
+          "tr": "palmiye"
+        },
+        {
+          "en": "excavation trench",
+          "tr": "kazı çukuru"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "The lambs walk in file toward a palm tree carved at the end of the block.",
+          "tr": "Kuzular bloğun ucunda oyulmuş bir palmiyeye doğru sıra hâlinde yürüyor."
+        },
+        {
+          "en": "Above them runs a row of round beads, below them a band of leaves.",
+          "tr": "Üstlerinde bir sıra yuvarlak boncuk, altlarında bir yaprak şeridi uzanır."
+        },
+        {
+          "en": "Count them: ten lie in the trench; the last two are by the trees near the café.",
+          "tr": "Sayın: onu çukurda; son ikisi kafeteryanın yanındaki ağaçların dibinde."
+        }
+      ],
+      "story": {
+        "en": "The second church on the site was inaugurated on 10 October 415 and burned in the Nika revolt of 532. In 1935 A. M. Schneider of the German Archaeological Institute dug in front of the west front and found richly carved marble from its monumental entrance, which he published in 1941. The twelve lambs stand for the twelve apostles, gathered around Christ as the Good Shepherd. Whether the entrance led straight into the church or into a forecourt is still discussed.",
+        "tr": "Alandaki ikinci kilise 10 Ekim 415’te açıldı ve 532’deki Nika ayaklanmasında yandı. 1935’te Alman Arkeoloji Enstitüsü’nden A. M. Schneider batı cephesinin önünde kazı yaptı ve anıtsal girişine ait zengin oymalı mermer parçalar buldu; bunları 1941’de yayımladı. On iki kuzu, İyi Çoban İsa’nın çevresinde toplanan on iki havariyi simgeler. Girişin doğrudan kiliseye mi yoksa bir avluya mı açıldığı hâlâ tartışılıyor."
+      },
+      "inscriptions": [],
+      "condition": {
+        "en": "Broken blocks lying in the open air, weathered but with the carving still crisp.",
+        "tr": "Açık havada duran kırık bloklar; aşınmışlar ama oymalar hâlâ keskin."
+      },
+      "folder": "hagia-sophia/lamb-frieze",
+      "sources": [
+        "istanbultarihi-ayasofya",
+        "eyice-schneider",
+        "sahin-2024",
+        "commons-lambs"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-omphalion",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "The Omphalion",
+        "tr": "Omphalion"
+      },
+      "room": {
+        "en": "Nave, under the dome",
+        "tr": "Harim, kubbenin altı"
+      },
+      "surface": {
+        "en": "marble floor (opus sectile)",
+        "tr": "mermer döşeme (opus sectile)"
+      },
+      "position": {
+        "en": "Set in the floor of the nave, in the south-east quarter of the area under the dome.",
+        "tr": "Harimin döşemesinde, kubbe altındaki alanın güneydoğu çeyreğinde."
+      },
+      "kind": "other",
+      "summary": {
+        "en": "A square of coloured marble discs, about 5.65 m a side, traditionally called the place where emperors were crowned.",
+        "tr": "Kenarı yaklaşık 5,65 m olan, renkli mermer dairelerden bir kare; geleneğe göre imparatorların taç giydiği yer."
+      },
+      "cues": [
+        {
+          "en": "marble discs",
+          "tr": "mermer daireler"
+        },
+        {
+          "en": "coronation square",
+          "tr": "taç giyme karesi"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "One great grey disc in the middle, four large ones at the corners and smaller ones between: about thirty circles in all.",
+          "tr": "Ortada büyük gri bir daire, köşelerde dört büyük daire ve aralarında daha küçükleri: toplam otuz kadar daire."
+        },
+        {
+          "en": "Each circle is ringed in white marble, set in a ground of red and veined stone.",
+          "tr": "Her daire beyaz mermerle çevrili, kırmızı ve damarlı taştan bir zemine oturtulmuş."
+        },
+        {
+          "en": "It is off-centre: in the south-east quarter under the dome, not at its middle.",
+          "tr": "Ortada değil: kubbenin tam altında değil, güneydoğu çeyreğinde."
+        }
+      ],
+      "story": {
+        "en": "The coronation story rests mainly on a Russian pilgrim, Antony of Novgorod, who around 1200 described a red stone with a golden throne on which the emperors were crowned; scholars have questioned the link. The date is disputed too: some place the square in Justinian’s sixth century, others later, perhaps under Basil I (867–886), and some small circles were added in a later redecoration.",
+        "tr": "Taç giyme hikâyesi büyük ölçüde, 1200 dolaylarında imparatorların üzerinde taç giydiği, üstünde altın bir taht bulunan kırmızı bir taştan söz eden Rus hacı Novgorodlu Antoni’ye dayanır; araştırmacılar bu bağlantıyı sorgulamıştır. Tarihi de tartışmalı: bazıları kareyi Justinianus’un 6. yüzyılına, bazıları daha sonraya, belki I. Basileios dönemine (867–886) koyar; bazı küçük daireler sonraki bir yenilemede eklenmiştir."
+      },
+      "inscriptions": [],
+      "condition": {
+        "en": "Some small circles may belong to a later redecoration, and the floor was disturbed again after later collapses. A 2022 photograph shows the square uncovered and roped off within the carpeted prayer floor.",
+        "tr": "Bazı küçük daireler sonraki bir yenilemeye ait olabilir; döşeme sonraki çöküşlerden sonra yeniden bozuldu. 2022 tarihli bir fotoğraf, karenin halı kaplı ibadet alanında açıkta ve iple çevrili olduğunu gösteriyor."
+      },
+      "folder": "hagia-sophia/omphalion",
+      "sources": [
+        "wp-omphalion-1353625579",
+        "commons-omphalion"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-weeping-column",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "The weeping column",
+        "tr": "Terleyen sütun"
+      },
+      "room": {
+        "en": "Nave, north-west",
+        "tr": "Harim, kuzeybatı"
+      },
+      "surface": {
+        "en": "column sheathed in bronze plates",
+        "tr": "bronz levhalarla kaplı sütun"
+      },
+      "position": {
+        "en": "In the north-west part of the building, on the ground floor.",
+        "tr": "Yapının kuzeybatı bölümünde, zemin katta."
+      },
+      "kind": "object",
+      "summary": {
+        "en": "A column sheathed in bronze plates, with a hole in the plating where visitors put a thumb; legends say the stone inside is always damp.",
+        "tr": "Bronz levhalarla kaplı, levhadaki bir delikte ziyaretçilerin başparmağını soktuğu bir sütun; efsanelere göre içindeki taş hep nemlidir."
+      },
+      "cues": [
+        {
+          "en": "bronze plates",
+          "tr": "bronz levhalar"
+        },
+        {
+          "en": "thumb hole",
+          "tr": "başparmak deliği"
+        },
+        {
+          "en": "legend",
+          "tr": "efsane"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "The lower shaft is wrapped in dark bronze plates; above them the bare marble shows.",
+          "tr": "Gövdenin alt kısmı koyu bronz levhalarla sarılı; üstünde çıplak mermer görünüyor."
+        },
+        {
+          "en": "Around the hole the plating is rubbed bright by visitors’ hands.",
+          "tr": "Deliğin çevresinde levha, ziyaretçilerin elleriyle parlamış."
+        },
+        {
+          "en": "The legends differ: St Gregory the Wonderworker, the Virgin’s tears, or, in an Ottoman story, Hızır turning the building toward Mecca.",
+          "tr": "Efsaneler farklı: Mucizeci Aziz Gregorios, Meryem’in gözyaşları ya da bir Osmanlı anlatısında yapıyı Kâbe’ye çeviren Hızır."
+        }
+      ],
+      "story": {
+        "en": "Everything about this column beyond its bronze sheath and its hole is legend. Medieval Russian pilgrims describe a column of St Gregory the Wonderworker that healed; later stories say the damp comes from the Virgin’s tears, and an Ottoman tale tells of Hızır turning the mosque toward Mecca. Visitors still put a thumb in the hole and make a wish.",
+        "tr": "Bronz kaplaması ve deliği dışında bu sütunla ilgili her şey efsanedir. Orta Çağ’ın Rus hacıları şifa veren bir Mucizeci Aziz Gregorios sütunundan söz eder; sonraki anlatılar nemin Meryem’in gözyaşlarından geldiğini söyler, bir Osmanlı hikâyesi de Hızır’ın camiyi Kâbe’ye çevirdiğini anlatır. Ziyaretçiler hâlâ başparmaklarını deliğe sokup dilek tutar."
+      },
+      "inscriptions": [],
+      "condition": {
+        "en": "Sheathed in bronze; the plating around the hole is worn bright. On today’s visitor route the ground floor is seen only from the galleries.",
+        "tr": "Bronzla kaplı; deliğin çevresindeki levha parlamış. Bugünkü ziyaretçi güzergâhında zemin kat yalnızca galerilerden görülür."
+      },
+      "folder": "hagia-sophia/weeping-column",
+      "sources": [
+        "dailysabah-wishing-column-2019",
+        "commons-column"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-empress-loggia",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "The Loggia of the Empress",
+        "tr": "İmparatoriçe locası"
+      },
+      "room": {
+        "en": "West gallery",
+        "tr": "Batı galerisi"
+      },
+      "surface": {
+        "en": "gallery bay with a marble floor",
+        "tr": "mermer döşemeli galeri bölmesi"
+      },
+      "position": {
+        "en": "At the centre of the west gallery, above the main entrance, facing the apse.",
+        "tr": "Batı galerisinin ortasında, ana girişin üstünde, apsise bakan yerde."
+      },
+      "kind": "other",
+      "summary": {
+        "en": "The central bay of the west gallery, traditionally the empress’s place. A round slab of green marble in the floor is said to mark where her throne stood.",
+        "tr": "Batı galerisinin orta bölmesi; geleneğe göre imparatoriçenin yeri. Döşemedeki yuvarlak yeşil mermer levhanın tahtının yerini gösterdiği söylenir."
+      },
+      "cues": [
+        {
+          "en": "green marble disc",
+          "tr": "yeşil mermer daire"
+        },
+        {
+          "en": "view to the apse",
+          "tr": "apsise bakış"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "The round slab of green verd antique in the floor in front of the central bay.",
+          "tr": "Orta bölmenin önündeki döşemede yeşil verd antique mermerden yuvarlak levha."
+        },
+        {
+          "en": "The view runs the whole length of the nave, under the dome, to the apse.",
+          "tr": "Bakış, kubbenin altından geçerek harimin tüm uzunluğunca apsise uzanır."
+        },
+        {
+          "en": "The columns of the central bay are green marble, like the disc.",
+          "tr": "Orta bölmenin sütunları da daire gibi yeşil mermerdir."
+        }
+      ],
+      "story": {
+        "en": "The west gallery faces the apse across the whole church, and its central bay is traditionally called the loggia of the empress. The green disc in its floor is said to mark her throne. Bob Atchison, who studied the gallery floor, notes that its panels were jumbled and reset, that the disc was cut down to fit, and that it may first have been porphyry; no source he gives ties it to a throne.",
+        "tr": "Batı galerisi bütün kilisenin karşısından apsise bakar ve orta bölmesine geleneksel olarak imparatoriçe locası denir. Döşemedeki yeşil dairenin onun tahtının yerini gösterdiği söylenir. Galeri döşemesini inceleyen Bob Atchison panoların karıştırılıp yeniden döşendiğini, dairenin sığması için kesildiğini ve ilk başta porfir olmuş olabileceğini belirtir; verdiği kaynakların hiçbiri onu bir tahtla ilişkilendirmez."
+      },
+      "inscriptions": [],
+      "condition": {
+        "en": "The floor around the disc has been reset; the disc itself was cut down to fit.",
+        "tr": "Dairenin çevresindeki döşeme yeniden döşenmiş; dairenin kendisi de sığması için kesilmiş."
+      },
+      "folder": "hagia-sophia/empress-loggia",
+      "sources": [
+        "atchison-west-gallery",
+        "commons-loggia"
+      ],
+      "media": []
+    },
+    {
+      "id": "hs-roundels",
+      "place": "hagia-sophia",
+      "title": {
+        "en": "The eight roundels",
+        "tr": "Sekiz levha"
+      },
+      "room": {
+        "en": "Nave",
+        "tr": "Harim"
+      },
+      "surface": {
+        "en": "great discs hung high in the nave",
+        "tr": "harimde yükseğe asılmış büyük levhalar"
+      },
+      "position": {
+        "en": "Hung high around the nave; the names of God and the Prophet flank the apse.",
+        "tr": "Harimin çevresinde yükseğe asılmış; Allah ve Hz. Muhammed adları apsisin iki yanında."
+      },
+      "kind": "inscription",
+      "summary": {
+        "en": "Eight giant calligraphic discs, about 7.5 m across, written by Kazasker Mustafa İzzet Efendi during the repair of 1847–1849.",
+        "tr": "Kazasker Mustafa İzzet Efendi’nin 1847–1849 onarımı sırasında yazdığı, yaklaşık 7,5 m çapında sekiz dev hat levhası."
+      },
+      "cues": [
+        {
+          "en": "calligraphy",
+          "tr": "hat"
+        },
+        {
+          "en": "names",
+          "tr": "adlar"
+        },
+        {
+          "en": "gold letters",
+          "tr": "altın harfler"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "The names of God and the Prophet Muhammad hang either side of the apse.",
+          "tr": "Allah ve Hz. Muhammed adları apsisin iki yanında asılı."
+        },
+        {
+          "en": "The four caliphs — Abu Bakr, Umar, Uthman and Ali — and the Prophet’s grandsons Hasan and Husayn complete the eight.",
+          "tr": "Dört halife — Ebubekir, Ömer, Osman ve Ali — ile Peygamber’in torunları Hasan ve Hüseyin sekizi tamamlar."
+        },
+        {
+          "en": "Each disc is about 7.5 m across; the gilded alif of “Allah” alone is said to be 5.6 m tall.",
+          "tr": "Her levha yaklaşık 7,5 m çapında; “Allah” yazısındaki yaldızlı elifin tek başına 5,6 m boyunda olduğu söylenir."
+        }
+      ],
+      "story": {
+        "en": "Kazasker Mustafa İzzet Efendi wrote the roundels in large thuluth during the Fossati repair; they are among the largest calligraphic panels in the Islamic world, and one columnist says they were assembled inside the building from linden wood. When the building became a museum they were taken down but would not fit through the doors, so they stayed inside, leaning against the walls, until they were hung again on 28 January 1949.",
+        "tr": "Kazasker Mustafa İzzet Efendi levhaları Fossati onarımı sırasında celî sülüsle yazdı; bunlar İslam dünyasının en büyük hat levhaları arasındadır ve bir yazara göre yapının içinde ıhlamur ağacından birleştirildiler. Yapı müze olduğunda indirildiler ama kapılardan çıkmadıkları için içeride, duvarlara dayalı kaldılar; 28 Ocak 1949’da yeniden asıldılar."
+      },
+      "inscriptions": [
+        {
+          "greek": "الله",
+          "transliteration": "Allāh",
+          "translation": {
+            "en": "God",
+            "tr": "Allah"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "محمد",
+          "transliteration": "Muḥammad",
+          "translation": {
+            "en": "Muhammad",
+            "tr": "Hz. Muhammed"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "أبو بكر",
+          "transliteration": "Abū Bakr",
+          "translation": {
+            "en": "Abu Bakr",
+            "tr": "Hz. Ebubekir"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "عمر",
+          "transliteration": "ʿUmar",
+          "translation": {
+            "en": "Umar",
+            "tr": "Hz. Ömer"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "عثمان",
+          "transliteration": "ʿUthmān",
+          "translation": {
+            "en": "Uthman",
+            "tr": "Hz. Osman"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "علي",
+          "transliteration": "ʿAlī",
+          "translation": {
+            "en": "Ali",
+            "tr": "Hz. Ali"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "حسن",
+          "transliteration": "Ḥasan",
+          "translation": {
+            "en": "Hasan",
+            "tr": "Hz. Hasan"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        },
+        {
+          "greek": "حسين",
+          "transliteration": "Ḥusayn",
+          "translation": {
+            "en": "Husayn",
+            "tr": "Hz. Hüseyin"
+          },
+          "basis": "source",
+          "sources": [
+            "istanbultarihi-ayasofya",
+            "tdv-ayasofya"
+          ],
+          "script": "arabic"
+        }
+      ],
+      "condition": {
+        "en": "Repaired and rehung in 1949; in place since.",
+        "tr": "1949’da onarılıp yeniden asıldı; o zamandan beri yerinde."
+      },
+      "folder": "hagia-sophia/roundels",
+      "sources": [
+        "tdv-ayasofya",
+        "istanbultarihi-ayasofya",
+        "yeniasir-roundels-2020",
+        "celebi-roundels-2021",
+        "commons-roundels"
+      ],
+      "media": []
+    }
+  ]
+}

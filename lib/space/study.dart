@@ -6,9 +6,14 @@ import 'model.dart';
 class SpaceEpoch {
   SpaceEpoch(JsonReader r)
     : year = r.integer('year'),
-      label = Localized.fromJson(r.object('label'));
+      label = Localized.fromJson(r.object('label')),
+      collapse = r.optionalBoolean('collapse');
   final int year;
   final Localized label;
+
+  /// Parts that leave on the way into this epoch fell (P12, Milestone IX:
+  /// the dome of 558): they sink and shed dust instead of fading, slowly.
+  final bool collapse;
 }
 
 /// One labelled step of the assembly timeline.

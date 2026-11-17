@@ -99,8 +99,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Straight-line distance · 1 Roman mile is about 1,480 m';
 
   @override
-  String catalogueCount(String count) {
-    return '$count artworks · Chora / Kariye';
+  String catalogueCount(String count, String place) {
+    return '$count artworks · $place';
   }
 
   @override

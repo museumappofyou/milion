@@ -457,6 +457,10 @@ class Place {
 
 enum InscriptionBasis { source, photograph }
 
+/// The script an inscription is written in (P12 adds Hagia Sophia's runes,
+/// roundels and Dandolo's Latin marker); its text stays in the `greek` key.
+enum InscriptionScript { greek, latin, runic, arabic }
+
 /// A Greek inscription on an artwork: as written, transliterated and
 /// translated. [basis] says whether a publication gives it or it was read
 /// from a credited photograph.
@@ -466,9 +470,15 @@ class Inscription {
       transliteration = r.string('transliteration'),
       translation = Localized.fromJson(r.object('translation')),
       basis = r.enumeration('basis', InscriptionBasis.values),
+      script = r.optionalString('script') == null
+          ? InscriptionScript.greek
+          : r.enumeration('script', InscriptionScript.values),
       sourceIds = r.strings('sources');
   factory Inscription.fromJson(Json j) => decode(j, Inscription.new);
+
+  /// The inscription as written, in [script] (the key predates P12).
   final String greek;
+  final InscriptionScript script;
   final String transliteration;
   final Localized translation;
   final InscriptionBasis basis;
@@ -524,6 +534,11 @@ class Artwork {
 
   /// Complete in the §4 sense: every text in EN and TR, three look-fors, a
   /// story, condition notes and sources (inscriptions only where present).
+  /// The catalogue code readers see (Chora's F02, M49_1), or null for a
+  /// place whose records have slugs (P12: hs-deesis is not a code).
+  String? get code => _catalogueCode.hasMatch(id) ? id : null;
+  static final _catalogueCode = RegExp(r'^[A-Z]+\d');
+
   bool get complete {
     bool both(Localized? l) =>
         l != null &&

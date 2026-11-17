@@ -59,7 +59,14 @@ class _ArtworkSheetState extends State<ArtworkSheet> {
     if (!mounted) return;
     setState(() => _saved = true);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(context.l10n.noteSaved(widget.artwork.id))),
+      SnackBar(
+        content: Text(
+          context.l10n.noteSaved(
+            widget.artwork.code ??
+                widget.artwork.title.inLanguage(context.language),
+          ),
+        ),
+      ),
     );
   }
 
@@ -74,8 +81,10 @@ class _ArtworkSheetState extends State<ArtworkSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(a.id, style: TypeRole.measurement),
-          const SizedBox(height: 8),
+          if (a.code case final code?) ...[
+            Text(code, style: TypeRole.measurement),
+            const SizedBox(height: 8),
+          ],
           Text(a.title.inLanguage(lang), style: theme.textTheme.headlineMedium),
           const SizedBox(height: 12),
           Text('${a.room.inLanguage(lang)} · ${a.surface.inLanguage(lang)}'),
@@ -153,12 +162,26 @@ class _ArtworkSheetState extends State<ArtworkSheet> {
                     children: [
                       Text(
                         ins.greek,
-                        locale: const Locale('el'),
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontFamily: TypeRole.displayFamily,
-                          fontFamilyFallback: TypeRole.displayFallback,
-                          letterSpacing: 1.2,
-                        ),
+                        locale: Locale(switch (ins.script) {
+                          InscriptionScript.greek => 'el',
+                          InscriptionScript.latin => 'la',
+                          InscriptionScript.runic => 'non',
+                          InscriptionScript.arabic => 'ar',
+                        }),
+                        textDirection: ins.script == InscriptionScript.arabic
+                            ? TextDirection.rtl
+                            : null,
+                        // Runes and Arabic fall back to the system's Noto
+                        // fonts; the display face has neither.
+                        style:
+                            ins.script == InscriptionScript.greek ||
+                                ins.script == InscriptionScript.latin
+                            ? theme.textTheme.titleMedium?.copyWith(
+                                fontFamily: TypeRole.displayFamily,
+                                fontFamilyFallback: TypeRole.displayFallback,
+                                letterSpacing: 1.2,
+                              )
+                            : theme.textTheme.titleMedium,
                       ),
                       Text(
                         ins.transliteration,

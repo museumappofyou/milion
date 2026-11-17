@@ -150,7 +150,9 @@
       "places": [
         "hagia-sophia"
       ],
-      "artworks": [],
+      "artworks": [
+        "hs-deesis"
+      ],
       "techniques": [
         "GL",
         "WR",
@@ -161,11 +163,15 @@
         "DEPTH",
         "RECONSTRUCTION"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/plates/deesis/manifest.json",
       "packId": "hagia-sophia",
       "sources": [
-        "wd-q12506"
+        "wd-q12506",
+        "vapheiades-2021",
+        "atchison-deesis",
+        "atchison-deesis-specs",
+        "smarthistory-deesis"
       ],
       "flagship": true
     },
@@ -179,7 +185,9 @@
       "places": [
         "hagia-sophia"
       ],
-      "artworks": [],
+      "artworks": [
+        "hs-zoe-panel"
+      ],
       "techniques": [
         "SB",
         "WR"
@@ -187,13 +195,16 @@
       "honesty": [
         "ORIGINAL",
         "DEPTH",
-        "RECONSTRUCTION"
+        "IMAGINED"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/plates/zoe/manifest.json",
       "packId": "hagia-sophia",
       "sources": [
-        "wd-q12506"
+        "wd-q12506",
+        "whittemore-1942",
+        "pollick-2012",
+        "freeman-middle-byzantine"
       ]
     },
     {
@@ -215,11 +226,15 @@
         "ORIGINAL",
         "RECONSTRUCTION"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/space/ayasofya/study.json",
       "packId": "hagia-sophia",
       "sources": [
-        "wd-q12506"
+        "wd-q12506",
+        "theophanes-1997",
+        "agathias-mango-1972",
+        "procopius-buildings-1",
+        "choisy-1883"
       ],
       "flagship": true
     },
@@ -233,7 +248,9 @@
       "places": [
         "hagia-sophia"
       ],
-      "artworks": [],
+      "artworks": [
+        "hs-halvdan-runes"
+      ],
       "techniques": [
         "RL"
       ],
@@ -241,11 +258,14 @@
         "ORIGINAL",
         "DEPTH"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/plates/halvdan/manifest.json",
       "packId": "hagia-sophia",
       "sources": [
-        "wd-q12506"
+        "wd-q12506",
+        "svardstrom-1970",
+        "larsson-1989",
+        "wp-runic-inscriptions-1300811819"
       ]
     },
     {

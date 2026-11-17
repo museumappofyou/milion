@@ -1,0 +1,14 @@
+# Milestone VIII's IMAGINED layer: the emperor's head and name emptied back to
+# gold ground, the slot outlined, because every later husband's face and name
+# was set into the same place (Whittemore 1942, pp. 9, 14, 18-20). No earlier
+# face is invented: none survives. Run after the pipeline's ingest:
+#   python3.11 tool/plate/reconstruct.py studio/plates/zoe/imagined.yaml
+out: {image: assets/plates/zoe/imagined.jpg, mask: assets/plates/zoe/slot.png}
+loss:
+  shapes:
+    - [0.178, 0.33, 0.052, 0.088]   # the emperor's head, crown to beard
+    - [0.109, 0.032, 0.104, 0.032]  # his name, KΩNΣTANTINOΣ, on the first line
+ground: {box: [0.0, 0.0, 1.0, 0.6], hue: [30, 62], saturation: 0.45, value: 0.5, patch: 32, seed: 11}
+lines:
+  - {points: [[0.126, 0.33], [0.13, 0.285], [0.15, 0.255], [0.178, 0.243], [0.206, 0.255], [0.226, 0.285], [0.23, 0.33], [0.226, 0.375], [0.21, 0.405], [0.178, 0.418], [0.146, 0.405], [0.13, 0.375], [0.126, 0.33]], width: 3, colour: [70, 40, 30], dash: [10, 8]}
+  - {points: [[0.006, 0.002], [0.214, 0.002], [0.214, 0.064], [0.006, 0.064], [0.006, 0.002]], width: 3, colour: [70, 40, 30], dash: [10, 8]}

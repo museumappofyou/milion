@@ -1,0 +1,48 @@
+# Milestone VIII, Zoe's changing emperor (P12): SB through the reset head and
+# name, and an IMAGINED layer (imagined.yaml) that empties the slot every
+# husband's portrait filled. No earlier face is invented: none survives.
+id: zoe
+milestone: milestone-viii
+artwork: hs-zoe-panel
+title: {en: Zoe’s changing emperor, tr: Zoe’nin değişen imparatoru}
+description:
+  en: >-
+    Mosaic panel at the east end of the south gallery, made for an earlier
+    husband about 1028–1034 and altered, with Constantine IX Monomachos’s
+    face and name, from 1042. Christ is enthroned between the emperor and
+    Empress Zoe.
+  tr: >-
+    Güney galerisinin doğu ucundaki mozaik pano; 1028–1034 dolaylarında
+    önceki bir koca için yapıldı ve 1042’den itibaren IX. Konstantinos
+    Monomakhos’un yüzü ve adıyla değiştirildi. İsa, imparator ile İmparatoriçe
+    Zoe arasında tahtta.
+manualMinutes: 35  # agent authoring estimate (windows, recipe, beats); human time not yet measured
+source:
+  cache: p12/commons/masters/zoe.jpg   # tool/content/fetch_commons.py
+  sha256: 9994c76a5f79d003604cb1b3a0c01b683544a19dec2fa6b9b7d5ad2e1175eddf
+  url: https://commons.wikimedia.org/wiki/File:Empress_Zoe_mosaic_Hagia_Sophia.jpg
+  credit: {en: Myrabella / Wikimedia Commons (public domain), tr: Myrabella / Wikimedia Commons (kamu malı)}
+segments:
+  - {id: emperor, box: [0.02, 0.22, 0.32, 0.95], points: [[0.175, 0.35], [0.17, 0.62]], prior: bulge, weight: 0.5}
+  - {id: christ, box: [0.33, 0.07, 0.72, 0.98], points: [[0.51, 0.18], [0.5, 0.55]], prior: bulge, weight: 0.55}
+  - {id: zoe, box: [0.75, 0.27, 0.99, 0.82], points: [[0.875, 0.41], [0.87, 0.6]], prior: bulge, weight: 0.5}
+depth: {model: depth-anything-v2-base, modelWeight: 0.3}
+gold: {heuristic: true}
+layers:
+  imagined: {asset: assets/plates/zoe/imagined.jpg, mask: assets/plates/zoe/slot.png, recipe: imagined.yaml}
+beats:
+  - {detail: detail-zoe-augusta, duration: 5, light: gilded}
+  - {detail: detail-zoe-reset-name, duration: 6, light: raking}
+  - detail: detail-zoe-emperor-face
+    duration: 7
+    light: none
+    layer: imagined
+    caption:
+      en: "IMAGINED: the slot each husband’s portrait filled. No earlier face survives, so none is drawn; the head and the name were reset at least once."
+      tr: "HAYALÎ: her kocanın portresinin doldurduğu yer. Önceki yüzlerin hiçbiri günümüze ulaşmadı, bu yüzden hiçbiri çizilmedi; baş ve ad en az bir kez yeniden döşendi."
+    sources: [whittemore-1942, pollick-2012]
+  - {detail: detail-zoe-face, duration: 5, light: gilded}
+  - {detail: detail-zoe-purse, duration: 5, light: gilded}
+  - {detail: detail-zoe-scroll, duration: 5, light: raking}
+reveal: {detail: detail-zoe-reset-name, light: gilded, moment: 5}
+sources: [whittemore-1942, pollick-2012, freeman-middle-byzantine, commons-zoe]

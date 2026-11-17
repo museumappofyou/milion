@@ -91,7 +91,7 @@ def wall_with_openings(r0, r1, z0, z1, openings, sill, head, share=.5, phase=0.0
 
 def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs=0,
          rib=(.6, .45), gores=0, gore_depth=.1, alternate=True, drum=None, n=None, rows=None,
-         step=2.0):
+         rise=None, light=False, sector=None, step=2.0):
     """A hemispherical dome of inner `radius` springing at z = 0.
 
     windows: openings in a band `band` high at the base, between piers that
@@ -102,10 +102,23 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
     ones; with alternate false every gore is a concave cell, an umbrella).
     drum: {height, thickness, windows, sill, head, share, buttresses:
     {depth, width}} a cylinder from −height to 0 under the dome, triangular
-    buttresses standing between its windows."""
+    buttresses standing between its windows.
+    rise: the inner crown's height above the springing when the dome is
+    flatter than a hemisphere (P12: Hagia Sophia's first dome, 537); the
+    whole dome, windows and ribs included, is squashed to it.
+    light: a thin pane of daylight in each window ('-light', material
+    light), for a ring of windows that lights up in turn.
+    sector: [from, to] degrees (anticlockwise from +x): only that part of
+    the dome, its windows and ribs (P12: the half of the first dome that
+    fell in 558, and the half that stood until it was rebuilt)."""
     out = {}
     r0, r1 = radius, radius + thickness
     n = n or segments(r1, step, 24, 8)
+    span = (0.0, TAU) if sector is None else (math.radians(sector[0]), math.radians(sector[1]))
+
+    def inside(a):
+        a = (a - span[0]) % TAU
+        return sector is None or a < span[1] - span[0]
     fn = None
     if gores:
         n = gores * max(4, int(math.ceil(n / gores)))
@@ -118,7 +131,8 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
             return 1 + gore_depth * bulge * math.cos(f)
     nf = rows or max(4, int(math.ceil(HALF * r1 / step)))
     fb = math.asin(min(.9, (band or radius * .25) / radius)) if windows else 0.0
-    out[''] = shell((0, 0, 0), r0, r1, (0, TAU), (fb, HALF), n,
+    out[''] = shell((0, 0, 0), r0, r1, span, (fb, HALF),
+                    max(2, round(n * (span[1] - span[0]) / TAU)),
                     rows or max(3, int(math.ceil(nf * (HALF - fb) / HALF))), 'dome', fn)
     if windows:
         module = TAU / windows
@@ -127,14 +141,14 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
         k = max(1 if n < 24 or windows > 16 else 2, int(math.ceil(2 * hw * r1 / step)))
         out['-windows'] = union(*[
             shell((0, 0, 0), r0, r1, (c - hw, c + hw), (0, fb), k, rows, 'window pier', fn)
-            for c in (phase + module * (i + .5) for i in range(windows))])
+            for c in (phase + module * (i + .5) for i in range(windows)) if inside(c)])
     if ribs:
         width, depth = rib
         hw = width / 2 / r0
         out['-ribs'] = union(*[
             shell((0, 0, 0), r0 - depth, r0 + .01, (c - hw, c + hw), (fb, math.radians(80)), 1,
                   max(3, nf - 1), 'rib', fn)
-            for c in (phase + TAU / ribs * (i + .5) for i in range(ribs))])
+            for c in (phase + TAU / ribs * (i + .5) for i in range(ribs)) if inside(c)])
     if drum:
         h = drum['height']
         t = drum.get('thickness', thickness)
@@ -155,6 +169,22 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
                        (base * c + width / 2 * -sn, base * sn + width / 2 * c)]
                 spurs.append(prism(tri, -h, 0, step, 'drum buttress'))
         out['-drum'] = union(wall, *spurs)
+    if windows and light:
+        module = TAU / windows
+        hw = module * share / 2 * .82
+        mid, depth = r0 + thickness * .5, max(.08, thickness * .12)
+        out['-light'] = union(*[
+            shell((0, 0, 0), mid - depth / 2, mid + depth / 2, (c - hw, c + hw), (fb * .08, fb * .9),
+                  1, 1, 'pane', fn)
+            for c in (phase + module * i for i in range(windows)) if inside(c)])
+    if rise is not None:
+        k = rise / radius
+        squashed = {}
+        for key, (V, F) in out.items():
+            W = np.array(V, dtype=np.float64)
+            W[:, 2] *= k
+            squashed[key] = finish(W, F, 'dome' + key)
+        out = squashed
     return out
 
 
@@ -875,7 +905,45 @@ def pier_solid(size, height, step):
     return block(-size / 2, size / 2, -size / 2, size / 2, 0, height, step, 'pier')
 
 
+def _xz_prism(poly, thickness, step, name):
+    """A polygon drawn in the x–z plane (as [x, z] points), `thickness` deep
+    along y and centred on y = 0."""
+    V, F = prism(poly, -thickness / 2, thickness / 2, step, name)
+    return finish(np.asarray(V)[:, [0, 2, 1]], F, name)
+
+
+def tympanum(radius, base, thickness=1.0, windows=(), step=2.0):
+    """The wall that fills a great arch (P12: Hagia Sophia's north and south
+    sides): along x from −radius to radius, centred on y = 0, a rectangle
+    `base` high under a half-disc of `radius`, with rectangular windows
+    [{x (centre), width, sill, head}] (heights from z = 0). Built as vertical
+    strips between the windows' edges, each solid below and above them."""
+    def top(x):
+        return base + math.sqrt(max(0.0, radius * radius - x * x))
+
+    cuts = sorted({-radius, radius, *[w['x'] + d * w['width'] / 2 for w in windows for d in (-1, 1)]})
+    pieces = []
+    for a, b in zip(cuts, cuts[1:]):
+        if b - a < 1e-6:
+            continue
+        hole = next((w for w in windows if w['x'] - w['width'] / 2 <= a + 1e-6
+                     and b <= w['x'] + w['width'] / 2 + 1e-6), None)
+        k = max(1, int(math.ceil((b - a) / step)))
+        xs = [a + (b - a) * i / k for i in range(k + 1)]
+        curve = [[x, top(x)] for x in reversed(xs)]
+        if hole is None:
+            pieces.append(_xz_prism([[a, 0.0], [b, 0.0], *curve], thickness, step, 'tympanum'))
+        else:
+            if hole['sill'] > 1e-6:
+                pieces.append(_xz_prism([[a, 0.0], [b, 0.0], [b, hole['sill']], [a, hole['sill']]],
+                                        thickness, step, 'tympanum'))
+            pieces.append(_xz_prism([[a, hole['head']], [b, hole['head']], *curve], thickness, step,
+                                    'tympanum'))
+    return {'': union(*pieces)}
+
+
 KINDS = {
+    'tympanum': tympanum,
     'dome': dome, 'semidome': semidome, 'exedra': exedra, 'pendentives': pendentives,
     'squinch': squinch, 'arch': arch_ring, 'arched-panel': arched_panel, 'column': column,
     'pier': pier, 'buttress': buttress, 'minaret': minaret, 'portico': portico,

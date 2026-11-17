@@ -6,7 +6,9 @@ import 'style.dart';
 
 /// How one part stands in this frame: [progress] 0 is absent, 1 in place
 /// and opaque; the offset is its assembly drop and exploded displacement;
-/// [highlight] (0–1) tints it gold, for a step just added by hand.
+/// [highlight] (0–1) tints it gold, for a step just added by hand; [dust]
+/// (0–1) is the dust a falling part sheds (a collapse epoch). A `light`
+/// part reads [progress] as a sweep round its ring instead of a fade.
 class SpacePartState {
   const SpacePartState({
     this.progress = 1,
@@ -14,9 +16,10 @@ class SpacePartState {
     this.dy = 0,
     this.dz = 0,
     this.highlight = 0,
+    this.dust = 0,
   });
   static const hidden = SpacePartState(progress: 0);
-  final double progress, dx, dy, dz, highlight;
+  final double progress, dx, dy, dz, highlight, dust;
 }
 
 /// An axis-aligned section plane at [offset] metres along [axis] (0 x,

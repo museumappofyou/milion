@@ -21,43 +21,40 @@ void main() {
     plates = await PlateCatalog.load(registry, (p) => File(p).readAsString());
   });
 
-  test(
-    'register: 48 numerals 0–XLVII in order, nine flagships, I–V playable',
-    () {
-      final register = registry.register;
-      expect(register.map((m) => m.numeral), [
-        for (var n = 0; n < 48; n++) romanNumeral(n),
-      ]);
-      expect(register.where((m) => m.flagship).map((m) => m.numeral).toSet(), {
-        '0',
-        'I',
-        'VII',
-        'IX',
-        'XVI',
-        'XVIII',
-        'XXIII',
-        'XXXIII',
-        'XXXVI',
-      });
-      expect(
-        register
-            .where((m) => plates.forMilestone(m) != null)
-            .map((m) => m.numeral),
-        ['I', 'II', 'III', 'IV', 'V'],
-      );
-      for (final m in register) {
-        expect(m.honesty, contains(Honesty.ORIGINAL), reason: m.numeral);
-        expect(m.title.tr, isNotEmpty, reason: m.numeral);
-        if (m.status == MilestoneStatus.planned) {
-          expect(m.manifestPath, isNull, reason: m.numeral);
-        }
+  test('register: 48 numerals 0–XLVII in order, nine flagships, plates I–V, VII, VIII, X', () {
+    final register = registry.register;
+    expect(register.map((m) => m.numeral), [
+      for (var n = 0; n < 48; n++) romanNumeral(n),
+    ]);
+    expect(register.where((m) => m.flagship).map((m) => m.numeral).toSet(), {
+      '0',
+      'I',
+      'VII',
+      'IX',
+      'XVI',
+      'XVIII',
+      'XXIII',
+      'XXXIII',
+      'XXXVI',
+    });
+    expect(
+      register
+          .where((m) => plates.forMilestone(m) != null)
+          .map((m) => m.numeral),
+      ['I', 'II', 'III', 'IV', 'V', 'VII', 'VIII', 'X'],
+    );
+    for (final m in register) {
+      expect(m.honesty, contains(Honesty.ORIGINAL), reason: m.numeral);
+      expect(m.title.tr, isNotEmpty, reason: m.numeral);
+      if (m.status == MilestoneStatus.planned) {
+        expect(m.manifestPath, isNull, reason: m.numeral);
       }
-      expect(romanValue('XLVII'), 47);
-      expect(romanValue('0'), 0);
-    },
-  );
+    }
+    expect(romanValue('XLVII'), 47);
+    expect(romanValue('0'), 0);
+  });
 
-  test('detail pool: ≥ 14 curated Chora details, EN+TR, on playable Milestones', () {
+  test('detail pool: ≥ 14 curated Chora and Hagia Sophia details, EN+TR, on playable Milestones', () {
     final pool = registry.details;
     expect(pool.length, greaterThanOrEqualTo(14));
     expect(pool.map((d) => d.id).toSet().length, pool.length);
@@ -68,7 +65,10 @@ void main() {
         isNotNull,
         reason: '${d.id} must open a playable Milestone',
       );
-      expect(registry.artwork(d.artworkId).placeId, 'chora');
+      expect(
+        registry.artwork(d.artworkId).placeId,
+        isIn(['chora', 'hagia-sophia']),
+      );
       expect(d.sentence.tr, isNotEmpty);
       expect(d.title.tr, isNotEmpty);
       expect(d.honesty, Honesty.ORIGINAL);

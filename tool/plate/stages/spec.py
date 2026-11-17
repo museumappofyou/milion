@@ -4,18 +4,19 @@ Input: `studio/plates/<id>/plate.yaml` (schema below). Output: a `Spec` with
 resolved absolute paths. Unknown keys are errors, like the Dart manifest.
 
     id, milestone, artwork, title{en,tr}, description{en,tr}, manualMinutes
-    source: {corpus: <path under $MILION_CAPTURES> | repo: <repo path>,
+    source: {corpus: <path under $MILION_CAPTURES> | repo: <repo path> |
+             cache: <path under studio/cache, fetched by a recorded script>,
              sha256, url|null, credit{en,tr}}
     segments: [{id, box[l,t,r,b], points[[x,y]], prior, weight, mask?}]
     depth: {model, modelWeight, provided?, measure?[models]}
     gold: {heuristic, hand?, provided?}
-    layers: {depth?, reconstruction?{asset, mask}}
+    layers: {depth?, reconstruction?{asset, mask, recipe?}, imagined?{asset, mask, recipe?}}
     flow?: {mask, period, distance}     spiral?: {mask, center: auto|[x,y]}
     rig?: {path, maxVertices}
     lookUp?: {center, rimCenter, rimRadii, rimElevation, rimNote}
     popup?: [{id, segment, lift}]       mesh: {maxVertices}
     beats: [{detail, duration, light, window?, caption?, sources?, flow?,
-             spiral?, gesture?}]
+             spiral?, gesture?, layer? (reconstruction|imagined: wiped in)}]
     reveal: {detail, light, flow?, spiral?, window?, caption?, sources?, moment}
     sources: [ids]
 """
@@ -66,7 +67,11 @@ class Spec:
     @property
     def source_path(self):
         s = self.source
-        return corpus_root() / 'chora-scenes' / s['corpus'] if 'corpus' in s else ROOT / s['repo']
+        if 'corpus' in s:
+            return corpus_root() / 'chora-scenes' / s['corpus']
+        if 'cache' in s:   # P12: a fetched photograph (tool/content/fetch_commons.py)
+            return ROOT / 'studio/cache' / s['cache']
+        return ROOT / s['repo']
 
     def asset(self, name):
         return f'assets/plates/{self.id}/{name}'
@@ -99,4 +104,6 @@ def load(path):
     for b in data['beats'] + [data['reveal']]:
         if b.get('light', 'none') not in LIGHTS:
             fail(path, f'{b["detail"]}: light must be one of {sorted(LIGHTS)}')
+        if b.get('layer') and b['layer'] not in data.get('layers', {}):
+            fail(path, f'{b["detail"]}: the plate has no {b["layer"]} layer')
     return Spec(path, data)

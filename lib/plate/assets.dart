@@ -92,10 +92,13 @@ class PlateAssets {
     if (textureBytes > 150000000) {
       throw const FormatException('Plate texture budget exceeds 150 MB');
     }
-    final reconstruction = manifest.layer(PlateLayerId.reconstruction)?.asset;
+    final masked = {
+      for (final l in manifest.layers)
+        if (maskedLayers.contains(l.id)) l.asset,
+    };
     for (final entry in images.entries) {
       final i = entry.value;
-      if (entry.key == reconstruction) {
+      if (masked.contains(entry.key)) {
         if ((i.width / i.height - manifest.width / manifest.height).abs() >
             .002) {
           throw const FormatException(

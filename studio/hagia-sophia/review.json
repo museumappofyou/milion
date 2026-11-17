@@ -1,0 +1,66 @@
+{
+  "note": "Hagia Sophia's promotion to reviewed (P12). OpenStreetMap tags no node as the visitors' entrance (Overpass, 2026-11-16); the entrance point is the ticket office, node 12102726893, opposite the Fountain of Ahmed III, where the visitor route starts, as the ministry's January 2024 statement describes it. The worshippers' door (node 1256638316, Sultanahmet side) is for prayer. Checked remotely on 2026-11-16; hours have no official timetable, so they are stated without fixed times. A site visit stays open.",
+  "review": "reviewed",
+  "entrance": {
+    "lat": 41.0081077,
+    "lng": 28.9807891
+  },
+  "status": {
+    "value": "open",
+    "checkedAt": "2026-11-16"
+  },
+  "currentFunction": {
+    "en": "A mosque since 2020. Since January 2024 foreign visitors pay for a separate route through the galleries and see the prayer hall from above; worshippers enter free from Sultanahmet Square.",
+    "tr": "2020’den beri cami. Ocak 2024’ten beri yabancı ziyaretçiler ücretli, ayrı bir güzergâhla galerileri geziyor ve harimi yukarıdan görüyor; ibadet edenler Sultanahmet Meydanı tarafından ücretsiz giriyor."
+  },
+  "visit": {
+    "checkedAt": "2026-11-16",
+    "hours": {
+      "en": "No official timetable is published. The visitor route usually opens at 09:00 and closes in the evening, earlier in winter. On Fridays it closes to tourists from about 30 minutes before the noon prayer until about 90 minutes after it, and it can pause briefly at other prayer times; check the day’s prayer times before you go.",
+      "tr": "Resmî bir ziyaret çizelgesi yayımlanmıyor. Ziyaretçi güzergâhı genellikle 09.00’da açılıyor ve akşam, kışın daha erken kapanıyor. Cuma günleri öğle namazından yaklaşık 30 dakika önce turistlere kapanıyor ve namazdan yaklaşık 90 dakika sonra yeniden açılıyor; diğer vakitlerde de kısa aralar olabilir. Gitmeden önce o günün namaz vakitlerine bakın."
+    },
+    "hoursCheckedAt": "2026-11-16",
+    "entry": {
+      "en": "Foreign visitors pay €25, the price set in January 2024 and still quoted in October 2026; current guides say museum passes are not accepted. Tickets are sold opposite the Fountain of Ahmed III, by the gate of Topkapı Palace. The route goes in by a ramp under the minaret on the south front, up to the galleries, and out by a ramp on the north-east. Worshippers enter free by the west doors on Sultanahmet Square.",
+      "tr": "Yabancı ziyaretçiler 25 avro öder; bu ücret Ocak 2024’te belirlendi ve Ekim 2026’da hâlâ aynı aktarılıyor. Güncel rehberlere göre müze kartları geçmiyor. Biletler Topkapı Sarayı kapısının yanında, III. Ahmed Çeşmesi’nin karşısında satılıyor. Güzergâh güney cephedeki minarenin altındaki rampadan girip galerilere çıkıyor ve kuzeydoğudaki bir rampadan çıkıyor. İbadet edenler Sultanahmet Meydanı’ndaki batı kapılarından ücretsiz girer."
+    },
+    "etiquette": {
+      "en": "A working mosque: cover shoulders and knees, and women cover their hair; scarves are offered at the entrance. On the gallery route shoes stay on; they come off only on the carpeted prayer floor, which sightseers see from above.",
+      "tr": "Etkin bir cami: omuzlar ve dizler örtülür, kadınlar başlarını örter; girişte örtü veriliyor. Galeri güzergâhında ayakkabılar çıkarılmaz; yalnızca halı kaplı ibadet alanında çıkarılır, gezenler orayı yukarıdan görür."
+    },
+    "accessibility": null,
+    "transit": [
+      {
+        "kind": "tram",
+        "stop": {
+          "en": "T1 Sultanahmet",
+          "tr": "T1 Sultanahmet"
+        },
+        "minutes": 7
+      },
+      {
+        "kind": "tram",
+        "stop": {
+          "en": "T1 Gülhane",
+          "tr": "T1 Gülhane"
+        },
+        "minutes": 8
+      }
+    ],
+    "sources": [
+      "dailysabah-visitors-2024",
+      "hdn-visitors-2024",
+      "istanbul-com-hagia-sophia",
+      "diyanet-prayer-times-istanbul",
+      "osm-node-12102726893"
+    ]
+  },
+  "tags": [
+    "entrance-remote"
+  ],
+  "sources": [
+    "osm-node-12102726893",
+    "tdv-ayasofya",
+    "istanbultarihi-ayasofya"
+  ]
+}
