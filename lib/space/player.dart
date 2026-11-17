@@ -290,10 +290,12 @@ class SpaceViewport extends StatelessWidget {
   final SpacePlayerState player;
 
   // Playback ticks the controller every frame. The painter follows it on its
-  // own (`repaint`), so only the section handle is rebuilt per frame; the
-  // Semantics, labels and live caption rebuild when what they say changes.
-  // Rebuilding them per frame sent TalkBack an update every frame
-  // (2026-11-09, as with the plates' tilt).
+  // own (`repaint`); the section handle, the Semantics, labels and live
+  // caption rebuild only when what they show changes. Rebuilding them per
+  // frame sent TalkBack an update every frame (2026-11-09, as with the
+  // plates' tilt), and any rebuild under the LayoutBuilder lays it out
+  // again, which repainted the whole page on every reveal frame (P12: IX on
+  // the A52s).
   @override
   Widget build(BuildContext context) {
     final c = player.controller!, s = context.l10n, lang = context.language;
@@ -335,9 +337,16 @@ class SpaceViewport extends StatelessWidget {
             // The handle is for exploring; a playing reveal or story is
             // the shot people share, so it stays clean.
             Positioned.fill(
-              child: ListenableBuilder(
+              child: SnapshotBuilder(
                 listenable: c,
-                builder: (context, _) => c.section && !c.playing
+                snapshot: () => c.section && !c.playing
+                    ? (
+                        c.visibleView,
+                        c.sectionAxis,
+                        c.sectionPlane?.offset ?? c.sectionOffset,
+                      )
+                    : null,
+                builder: (context) => c.section && !c.playing
                     ? Stack(
                         children: sectionHandle(
                           context,

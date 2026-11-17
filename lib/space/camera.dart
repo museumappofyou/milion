@@ -137,7 +137,11 @@ class SpaceLimits {
 
 /// World → screen for one frame. Depth grows away from the camera.
 class SpaceProjector {
-  SpaceProjector(this.view, this.size, SpaceBounds bounds) {
+  SpaceProjector(this.view, this.size, SpaceBounds bounds)
+    : axonometric = view.projection == SpaceProjection.axonometric,
+      targetX = view.targetX,
+      targetY = view.targetY,
+      targetZ = view.targetZ {
     final ce = math.cos(view.elevation), se = math.sin(view.elevation);
     final ca = math.cos(view.azimuth), sa = math.sin(view.azimuth);
     // Forward points from the camera to the target.
@@ -168,10 +172,13 @@ class SpaceProjector {
   final SpaceView view;
   final Size size;
   static const fov = 40 * _degree, near = .5;
-  late final double rx, ry, rz, ux, uy, uz, fx, fy, fz, cx, cy;
-  late final double scale;
+  // Plain fields, not `late final`: the renderer reads them for every
+  // vertex, and a late field checks its initialisation on each read.
+  double rx = 0, ry = 0, rz = 0, ux = 0, uy = 0, uz = 0, fx = 0, fy = 0;
+  double fz = 0, cx = 0, cy = 0, scale = 0;
   double ex = 0, ey = 0, ez = 0, focal = 0;
-  bool get axonometric => view.projection == SpaceProjection.axonometric;
+  final bool axonometric;
+  final double targetX, targetY, targetZ;
 
   /// Screen pixels per metre at the target.
   double get pixelsPerMetre => scale;
@@ -181,7 +188,7 @@ class SpaceProjector {
   @pragma('vm:prefer-inline')
   void project(double x, double y, double z, Float32List out, int o) {
     if (axonometric) {
-      final dx = x - view.targetX, dy = y - view.targetY, dz = z - view.targetZ;
+      final dx = x - targetX, dy = y - targetY, dz = z - targetZ;
       out[o] = cx + scale * (dx * rx + dy * ry + dz * rz);
       out[o + 1] = cy - scale * (dx * ux + dy * uy + dz * uz);
       out[o + 2] = dx * fx + dy * fy + dz * fz;

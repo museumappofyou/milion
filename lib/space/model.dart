@@ -56,6 +56,14 @@ class SpacePart {
     this.ao, {
     this.crease = creaseDegrees,
   }) : assert(positions.length % 3 == 0 && triangles.length % 3 == 0) {
+    // The renderer reads these without bounds checks (P12), so a part whose
+    // triangles name a vertex it does not have is refused here.
+    final count = positions.length ~/ 3;
+    if (triangles.length % 3 != 0 ||
+        ao.length != count ||
+        triangles.any((i) => i >= count)) {
+      throw FormatException('$id: bad triangle indices or AO');
+    }
     _derive();
   }
   final String id, material;

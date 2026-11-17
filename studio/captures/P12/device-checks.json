@@ -22,19 +22,22 @@
   "X": "reveal 59.8 fps, story 59.6 fps; the candle beat lights the runes (device/x-story.png); graphics 143 MB"
  },
  "milestoneIX": {
-  "fps": "untouched reveal 40.0-44.3 fps and story 40.5 fps, under the 50 fps target; 60 fps under touch; VI alongside at 56.1-56.6 fps (frame-pacing.json)",
+  "fps": "untouched reveal 59.5-60.0 fps with Power saving off and 50.5-51.3 fps with it on after the 2026-11-17 fixes; the P12 pass read 40.0-44.3 (story 40.5), probably in Power saving; the P12 commit reads 59.1-59.5 with it off; 60 fps under touch (frame-pacing.json)",
   "drawing": "opens from above on the 537 church (device/ix-open.png); moving the time slider to 558 sinks the east half of the dome in a cloud of dust that settles (device/ix-558-falling.png, device/ix-558-settled.png); graphics 126 MB"
  },
  "found": [
   "FIXED: a manual still of a wipe beat landed on the beat's first frame: VIII showed Constantine's face under an IMAGINED label. Stills of wipe beats now stand where the wipe is complete, and the label names a masked layer only once its wipe has begun (lib/plate/controller.dart; test/p12_hagia_sophia_test.dart).",
   "FIXED: Hagia Sophia's artworks list said \"9 artworks · Chora / Kariye\" and showed record ids (hs-deesis) as codes, also in the sheet's eyebrow and the note confirmation. The header names the place and only catalogue codes such as Chora's are shown (Artwork.code).",
   "FIXED before the device pass: the Turkish captions of the two masked layers said \"YENİDEN KURGU\" and \"HAYALİ\" under chips reading \"Rekonstrüksiyon\" and \"Hayalî\"; they now use the chips' words.",
-  "OPEN: IX misses the 50 fps budget untouched (40-44 fps); see milestoneIX."
+  "OPEN: IX misses the 50 fps budget untouched (40-44 fps); see milestoneIX.",
+  "FIXED: every 3D study repainted its whole page (app bar, controls, caption) on every playing frame: the section handle's builder rebuilt each tick under the viewport's LayoutBuilder, which laid the page out again. Found with a CPU profile of IX on the phone (7.5% of the UI thread); the handle now rebuilds only when what it draws changes (lib/space/player.dart; test/space_player_test.dart).",
+  "FOUND: the phone was in Power saving, which caps the big cores at 1.77 GHz and kept the main thread on the little cores at the end of IX's reveal; not changed by the bench (the owner switched it off for the comparison runs)."
  ],
  "privacy": "one screen recording caught the notification shade pulled down by hand; it was deleted from the phone and the computer unviewed beyond a contact sheet, also deleted.",
  "notChecked": [
   "Turkish UI on the phone (the phone's language was not changed; Turkish is covered by widget tests)",
   "TalkBack by ear (O01)",
   "tilt feel of the Deesis gold in the hand (O01)"
- ]
+ ],
+ "appData": "At 17:51 `flutter run --profile` refused to install over the release build (version downgrade), then uninstalled and reinstalled Milion, which cleared its data on the phone (notes, opened Milestones, settings). Later builds were installed with `adb install -r`."
 }

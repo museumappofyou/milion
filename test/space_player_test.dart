@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/design/components.dart';
 import 'package:milion/l10n/strings.dart';
@@ -151,6 +151,32 @@ void main() {
     expect(updates, lessThanOrEqualTo(captions + 2));
     await tester.pumpWidget(const SizedBox.shrink());
     semantics.dispose();
+  });
+
+  // P12, IX on the A52s: the section handle's builder rebuilt on every tick
+  // under the viewport's LayoutBuilder, which laid the page out again and
+  // repainted all of it (app bar, buttons, caption) on every reveal frame.
+  testWidgets('a playing reveal repaints only the drawing', (tester) async {
+    await openStudy(tester);
+    // Let the page's own transitions finish first.
+    await tester.pump(const Duration(seconds: 1));
+    await tester.pump(const Duration(seconds: 1));
+    space(tester).controller!.playReveal();
+    await tester.pump(const Duration(milliseconds: 16));
+    await tester.pump(const Duration(milliseconds: 16));
+    final painted = <Type>[];
+    debugProfilePaintsEnabled = true;
+    debugOnProfilePaint = (object) => painted.add(object.runtimeType);
+    try {
+      for (var i = 0; i < 6; i++) {
+        await tester.pump(const Duration(milliseconds: 16));
+      }
+    } finally {
+      debugProfilePaintsEnabled = false;
+      debugOnProfilePaint = null;
+    }
+    expect(painted, List.filled(6, RenderCustomPaint));
+    await tester.pumpWidget(const SizedBox.shrink());
   });
 
   testWidgets(

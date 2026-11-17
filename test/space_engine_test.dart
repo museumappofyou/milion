@@ -525,6 +525,75 @@ void main() {
       c.dispose();
     });
 
+    // The renderer reads parts without bounds checks (P12), so a part is
+    // checked when it is made.
+    test('a part naming a vertex it does not have is refused', () {
+      final corners = Float32List.fromList([0, 0, 0, 1, 0, 0, 0, 1, 0]);
+      expect(
+        () => SpacePart(
+          'p',
+          'stone',
+          corners,
+          Uint32List.fromList([0, 1, 3]),
+          Float32List(3),
+        ),
+        throwsFormatException,
+      );
+      expect(
+        () => SpacePart(
+          'p',
+          'stone',
+          corners,
+          Uint32List.fromList([0, 1, 2]),
+          Float32List(2),
+        ),
+        throwsFormatException,
+      );
+      expect(
+        SpacePart(
+          'p',
+          'stone',
+          corners,
+          Uint32List.fromList([0, 1, 2]),
+          Float32List(3),
+        ).triangleCount,
+        1,
+      );
+    });
+
+    // Corners are drawn through 16-bit indices; a frame with more corners
+    // than those reach copies them out in depth order instead (P12).
+    testWidgets('indexed and copied-out corners draw the same pixels', (
+      tester,
+    ) async {
+      await tester.runAsync(() async {
+        final c = SpaceController(study, model)..setSection(true);
+        final r = SpaceRenderer(model);
+        Future<List<int>> pixels() async {
+          final image = await renderSpaceStill(
+            r,
+            c.scene(),
+            const Size(195, 422),
+          );
+          final bytes = await image.toByteData();
+          image.dispose();
+          return bytes!.buffer.asUint8List();
+        }
+
+        final indexed = await pixels();
+        expect(r.stats.cuts, greaterThan(0), reason: 'clipped faces drawn');
+        final limit = SpaceRenderer.indexLimit;
+        SpaceRenderer.indexLimit = 0;
+        try {
+          expect(await pixels(), indexed);
+        } finally {
+          SpaceRenderer.indexLimit = limit;
+        }
+        r.dispose();
+        c.dispose();
+      });
+    });
+
     test('the 50k-triangle spike model stays within the drawing budget', () {
       final bench = loadModel('studio/spikes/p08/bench-50k.glb');
       expect(bench.triangleCount, inInclusiveRange(49000, 51000));
