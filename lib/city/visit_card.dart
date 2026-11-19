@@ -53,40 +53,45 @@ class VisitCard extends StatelessWidget {
           label: s.digAccessibility,
           value: visit.accessibility?.inLanguage(lang) ?? s.digNotChecked,
         ),
-        _Field(
-          label: s.digGettingThere,
-          value: null,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              for (final transit in visit.transit)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          const PlanIcon(PlanSymbol.route, size: 16),
-                          const SizedBox(width: 8),
-                          Expanded(child: Text(transit.stop.inLanguage(lang))),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 24, top: 2),
-                        child: Text(
-                          s.digWalkMinutes('${transit.minutes}'),
-                          style: TypeRole.measurement.copyWith(
-                            color: MeasureColors.of(context).secondary,
+        // A heading over no stops reads as missing data; places whose
+        // entrance text already names the nearest stop list none (P13).
+        if (visit.transit.isNotEmpty)
+          _Field(
+            label: s.digGettingThere,
+            value: null,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (final transit in visit.transit)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const PlanIcon(PlanSymbol.route, size: 16),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(transit.stop.inLanguage(lang)),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 24, top: 2),
+                          child: Text(
+                            s.digWalkMinutes('${transit.minutes}'),
+                            style: TypeRole.measurement.copyWith(
+                              color: MeasureColors.of(context).secondary,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
-        ),
         if (visit.checkedAt != null)
           Padding(
             padding: const EdgeInsets.only(top: 4),

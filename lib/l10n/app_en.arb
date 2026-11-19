@@ -527,11 +527,11 @@
     }
   },
   "historicalNames": "Historical names",
-  "artworksHere": "{count} artworks",
+  "artworksHere": "{count, plural, =1{1 artwork} other{{count} artworks}}",
   "@artworksHere": {
     "placeholders": {
       "count": {
-        "type": "String"
+        "type": "int"
       }
     }
   },

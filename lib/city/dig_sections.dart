@@ -155,14 +155,18 @@ class _ArtworkRow extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 48,
-              child: Text(
-                artwork.id,
-                style: TypeRole.measurement.copyWith(color: c.accent),
+            // Only a catalogue code readers know (Chora's F02); an internal
+            // slug such as hs-deesis is not shown.
+            if (artwork.code case final code?) ...[
+              SizedBox(
+                width: 48,
+                child: Text(
+                  code,
+                  style: TypeRole.measurement.copyWith(color: c.accent),
+                ),
               ),
-            ),
-            const SizedBox(width: 16),
+              const SizedBox(width: 16),
+            ],
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

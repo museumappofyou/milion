@@ -434,7 +434,7 @@ class PresentHeader extends StatelessWidget {
                   const SizedBox(width: 16),
                   Expanded(
                     child: Text(
-                      s.artworksHere('$artworks'),
+                      s.artworksHere(artworks),
                       style: theme.textTheme.titleMedium,
                     ),
                   ),

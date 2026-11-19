@@ -1001,8 +1001,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get historicalNames => 'Historical names';
 
   @override
-  String artworksHere(String count) {
-    return '$count artworks';
+  String artworksHere(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count artworks',
+      one: '1 artwork',
+    );
+    return '$_temp0';
   }
 
   @override

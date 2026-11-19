@@ -1906,8 +1906,8 @@ abstract class AppLocalizations {
   /// No description provided for @artworksHere.
   ///
   /// In en, this message translates to:
-  /// **'{count} artworks'**
-  String artworksHere(String count);
+  /// **'{count, plural, =1{1 artwork} other{{count} artworks}}'**
+  String artworksHere(int count);
 
   /// No description provided for @milestonesHere.
   ///

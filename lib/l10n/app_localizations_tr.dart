@@ -1001,7 +1001,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get historicalNames => 'Tarihî adlar';
 
   @override
-  String artworksHere(String count) {
+  String artworksHere(int count) {
     return '$count eser';
   }
 

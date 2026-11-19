@@ -2,13 +2,21 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart' as img;
+import 'package:milion/city/dig_sections.dart';
+import 'package:milion/city/visit_card.dart';
 import 'package:milion/content/models.dart';
 import 'package:milion/content/registry.dart';
+import 'package:milion/design/theme.dart';
 import 'package:milion/first_run/milion_intro.dart';
+import 'package:milion/l10n/app_localizations_en.dart';
+import 'package:milion/l10n/app_localizations_tr.dart';
+import 'package:milion/l10n/strings.dart';
 import 'package:milion/plate/controller.dart';
 import 'package:milion/plate/manifest.dart';
+import 'package:milion/shell/app_scope.dart';
 import 'package:milion/space/study.dart';
 
 import 'p04_content_test.dart' show loadRegistry;
@@ -215,6 +223,75 @@ void main() {
         expect(registry.place('boukoleon')!.visit!.hours, isNull);
       },
     );
+
+    testWidgets('a visit card lists Getting there only over cited stops', (
+      tester,
+    ) async {
+      Future<void> card(String id) => tester.pumpWidget(
+        MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: const Locale('en'),
+          theme: DesignTheme.marble,
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: VisitCard(place: registry.place(id)!, registry: registry),
+            ),
+          ),
+        ),
+      );
+      // The Hippodrome's entrance text names its tram stop; it lists none.
+      expect(registry.place('hippodrome')!.visit!.transit, isEmpty);
+      await card('hippodrome');
+      expect(find.text('GETTING THERE'), findsNothing);
+      expect(find.text('Visit'), findsOneWidget);
+      await card('column-of-constantine');
+      expect(find.text('GETTING THERE'), findsOneWidget);
+      expect(find.text('T1 Çemberlitaş'), findsOneWidget);
+    });
+
+    testWidgets('a layer lists its artwork by title, without its record id', (
+      tester,
+    ) async {
+      // A52s 2026-11-19: the museum's 1935 layer showed
+      // "ic-palace-floor-mosaic" in Chora's catalogue-code column, and the
+      // page said "1 artworks".
+      final stratum = registry
+          .place('great-palace-mosaic-museum')!
+          .strata
+          .firstWhere((s) => s.artworkIds.isNotEmpty);
+      await tester.pumpWidget(
+        MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: const Locale('en'),
+          theme: DesignTheme.marble,
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: AppScope(
+                registry: registry,
+                error: null,
+                retry: () {},
+                clock: DateTime.now,
+                recognised: const {},
+                child: DigStratumView(
+                  registry: registry,
+                  stratum: stratum,
+                  opened: (_) => false,
+                  onOpenArtwork: (_) {},
+                  onOpenMilestone: (_) {},
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      expect(find.text('The palace peristyle floor'), findsOneWidget);
+      expect(find.text('ic-palace-floor-mosaic'), findsNothing);
+      expect(AppLocalizationsEn().artworksHere(1), '1 artwork');
+      expect(AppLocalizationsEn().artworksHere(103), '103 artworks');
+      expect(AppLocalizationsTr().artworksHere(1), '1 eser');
+    });
 
     test('the Hippodrome and the Milion read with their studies', () {
       final hippodrome = registry.place('hippodrome')!.strata;
