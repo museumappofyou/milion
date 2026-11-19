@@ -11,6 +11,8 @@ import '../screens/scan_screen.dart';
 import '../services/progress_service.dart';
 import '../space/player.dart';
 import '../space/study.dart';
+import '../section/section_player.dart';
+import '../walk/walk_player.dart';
 import 'app_scope.dart';
 
 Future<T?> _push<T>(BuildContext context, Widget page) =>
@@ -23,6 +25,21 @@ Future<void> openMilestone(
 }) async {
   final app = AppScope.of(context);
   final scene = app.plates.forMilestone(milestone);
+  // An immersive Milestone (WK) plays its walk (P14: XVI, the cistern).
+  final walk = app.walks.forMilestone(milestone);
+  if (scene == null && walk != null) {
+    ProgressScope.of(context).open(milestone.id);
+    return _push<void>(context, WalkPlayer(key: ValueKey(walk.id), walk: walk));
+  }
+  // A drawn section (PU, SB) plays its section (P14: XVII, Yenikapı).
+  final section = app.sections.forMilestone(milestone);
+  if (scene == null && section != null) {
+    ProgressScope.of(context).open(milestone.id);
+    return _push<void>(
+      context,
+      SectionPlayer(key: ValueKey(section.id), section: section),
+    );
+  }
   if (scene == null) {
     // A 3D Milestone (CA) plays its kit study (P11: VI, Chora through time).
     final study = studyForMilestone(app, milestone);

@@ -11,16 +11,18 @@
      "en": "Basilica Cistern",
      "tr": "Yerebatan Sarnıcı"
     },
-    "from": 532,
+    "from": 528,
     "to": null,
     "certainty": "surviving",
     "sources": [
      "wp-basilica-cistern-1365846547",
+     "crow-bardill-bayliss-2008",
+     "istsu-bc-construction",
      "wikidata-historic-2026-11-10"
     ],
     "note": {
-     "en": "Built under Justinian I in the 6th century; shown from 532.",
-     "tr": "VI. yüzyılda I. Justinianus döneminde yapıldı; 532’den itibaren gösterilir."
+     "en": "Begun under Justinian I around 528 and finished by about 541; shown from 528 (P14: the year 532 often given is not in the sources).",
+     "tr": "I. Justinianus döneminde 528 dolaylarında başlandı, 541 dolaylarında bitti; 528’den itibaren gösterilir (P14: sık verilen 532 yılı kaynaklarda yok)."
     }
    },
    "geometry": {
@@ -49,8 +51,8 @@
      "wikidata-historic-2026-11-10"
     ],
     "note": {
-     "en": "Built under a palace in the 5th century; shown from 450.",
-     "tr": "V. yüzyılda bir sarayın altına yapıldı; 450’den itibaren gösterilir."
+     "en": "Built under a palace; its brick stamps point to the mid-5th or 6th century. Shown from 450.",
+     "tr": "Bir sarayın altına yapıldı; tuğla damgaları V. yüzyılın ortasını ya da VI. yüzyılı gösterir. 450’den itibaren gösterilir."
     }
    },
    "geometry": {
@@ -71,16 +73,17 @@
      "en": "Theodosius Cistern",
      "tr": "Şerefiye Sarnıcı"
     },
-    "from": 443,
+    "from": 425,
     "to": null,
     "certainty": "surviving",
     "sources": [
      "wp-theodosius-cistern-1365081953",
+     "istsu-theodosian-cistern",
      "wikidata-historic-2026-11-10"
     ],
     "note": {
-     "en": "Built 428–443.",
-     "tr": "428–443 yılları arasında yapıldı."
+     "en": "Built in the first half of the 5th century, probably under Theodosius II; shown from 425 (P14: the dates 428–443 often given have no early source).",
+     "tr": "V. yüzyılın ilk yarısında, büyük olasılıkla II. Theodosius döneminde yapıldı; 425’ten itibaren gösterilir (P14: sık verilen 428–443 tarihlerinin erken bir kaynağı yok)."
     }
    },
    "geometry": {
@@ -88,6 +91,126 @@
     "coordinates": [
      28.9726,
      41.00725
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-aetius",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Cistern of Aetius",
+     "tr": "Aetius Sarnıcı"
+    },
+    "from": 421,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "crow-bardill-bayliss-2008",
+     "istsu-aetius"
+    ],
+    "note": {
+     "en": "An open reservoir, about 244 by 85 m, built in 420–421 by Aetius, prefect of the city; a football stadium since 1962.",
+     "tr": "Yaklaşık 244’e 85 m’lik açık bir hazne; 420–421’de şehrin valisi Aetius yaptırdı. 1962’den beri futbol stadı."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9392,
+     41.0278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-aspar",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Cistern of Aspar",
+     "tr": "Aspar Sarnıcı"
+    },
+    "from": 459,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "crow-bardill-bayliss-2008",
+     "istsu-aspar"
+    ],
+    "note": {
+     "en": "An open reservoir, about 152 m square, begun in 459 by the general Aspar; a park since about 2012.",
+     "tr": "Yaklaşık 152 m karelik açık bir hazne; 459’da general Aspar başlattı. 2012 dolaylarından beri park."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.94986,
+     41.02595
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-mocius",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Cistern of Mocius",
+     "tr": "Mokios Sarnıcı"
+    },
+    "from": 491,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "crow-bardill-bayliss-2008",
+     "istsu-mocius"
+    ],
+    "note": {
+     "en": "The largest open reservoir, about 170 by 147 m, probably built under Anastasius I (491–518); shown from 491. Now a park.",
+     "tr": "En büyük açık hazne, yaklaşık 170’e 147 m; büyük olasılıkla I. Anastasios döneminde (491–518) yapıldı, 491’den itibaren gösterilir. Bugün park."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.9347,
+     41.0103
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "below-nakilbent",
+    "layer": "below",
+    "kind": "cistern",
+    "names": {
+     "en": "Nakilbent Cistern",
+     "tr": "Nakilbent Sarnıcı"
+    },
+    "from": 450,
+    "to": null,
+    "certainty": "surviving",
+    "sources": [
+     "byzleg-nakilbent",
+     "istsu-nakilbent"
+    ],
+    "note": {
+     "en": "A small early Byzantine cistern, probably 5th or 6th century, south of the Hippodrome, under a shop; shown from 450.",
+     "tr": "Hipodrom’un güneyinde, bir dükkânın altında, büyük olasılıkla V. ya da VI. yüzyıldan küçük bir erken Bizans sarnıcı; 450’den itibaren gösterilir."
+    }
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.975153,
+     41.0041466
     ]
    }
   },
@@ -279,11 +402,12 @@
     "sources": [
      "wp-yenikapi-1357055213",
      "wp-harbour-of-eleutherios-1354353475",
+     "kiziltan-2014",
      "wikidata-historic-2026-11-10"
     ],
     "note": {
-     "en": "Found in 2004 while building the Marmaray and metro station: the silted Harbour of Theodosius and its shipwrecks. Outline schematic, around the transfer centre.",
-     "tr": "2004’te Marmaray ve metro istasyonu yapılırken bulundu: dolmuş Theodosius Limanı ve batıkları. Sınır şematiktir, aktarma merkezinin çevresinde."
+     "en": "Dug from 2004 to 2014 ahead of the Marmaray and metro station: the silted Theodosian Harbour, its 37 shipwrecks and a Neolithic village below. Outline schematic, around the transfer centre.",
+     "tr": "2004–2014’te Marmaray ve metro istasyonundan önce kazıldı: dolmuş Theodosius Limanı, 37 batığı ve altında bir Neolitik köy. Sınır şematiktir, aktarma merkezinin çevresinde."
     }
    },
    "geometry": {

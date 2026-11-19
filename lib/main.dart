@@ -20,6 +20,8 @@ import 'shell/app_scope.dart';
 import 'shell/app_shell.dart';
 import 'plate/catalog.dart';
 import 'space/catalog.dart';
+import 'section/section.dart';
+import 'walk/walk_catalog.dart';
 import 'today/detail_crop.dart';
 
 void registerFontLicences() {
@@ -63,6 +65,8 @@ class _MilionAppState extends State<MilionApp> {
   ContentRegistry? _registry;
   PlateCatalog _plates = const PlateCatalog.empty();
   SpaceCatalog _spaces = const SpaceCatalog.empty();
+  WalkCatalog _walks = const WalkCatalog.empty();
+  SectionCatalog _sections = const SectionCatalog.empty();
   Object? _error;
   Set<String> _recognised = const {};
   bool _ready = false;
@@ -127,6 +131,22 @@ class _MilionAppState extends State<MilionApp> {
       for (final error in spaces.errors) {
         debugPrint('Study skipped: $error');
       }
+      final walks = await WalkCatalog.load(
+        registry,
+        _repository.loadText,
+        strict: false,
+      );
+      for (final error in walks.errors) {
+        debugPrint('Walk skipped: $error');
+      }
+      final sections = await SectionCatalog.load(
+        registry,
+        _repository.loadText,
+        strict: false,
+      );
+      for (final error in sections.errors) {
+        debugPrint('Section skipped: $error');
+      }
       final ids = await classes;
       final known = {for (final a in registry.artworks) a.id};
       if (!mounted) return;
@@ -134,6 +154,8 @@ class _MilionAppState extends State<MilionApp> {
         _registry = registry;
         _plates = plates;
         _spaces = spaces;
+        _walks = walks;
+        _sections = sections;
         _recognised = {...ids.where(known.contains)};
         _error = null;
       });
@@ -166,6 +188,8 @@ class _MilionAppState extends State<MilionApp> {
         registry: _registry,
         plates: _plates,
         spaces: _spaces,
+        walks: _walks,
+        sections: _sections,
         error: _error,
         retry: () {
           setState(() => _error = null);

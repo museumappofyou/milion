@@ -42,6 +42,13 @@ dependencies:
   url_launcher: ^6.3.3
   sensors_plus: ^7.1.1
   geolocator: ^14.1.2
+  # P14: the immersive backend (the cistern walk). Pinned exactly: the package
+  # is pre-1.0 with breaking minor releases; 0.24.3 is the version measured on
+  # the A52s in P08 (studio/captures/P08/device-bench.json).
+  flutter_scene: 0.24.3
+  flutter_gpu:
+    sdk: flutter
+  vector_math: any
 
 # Patched local copy until upstream stops applying the Kotlin Gradle Plugin
 # (see third_party/flutter_onnxruntime/pubspec.yaml).
@@ -92,6 +99,10 @@ flutter:
     - assets/plates/halvdan/
     - assets/plates/obelisk-base/
     - assets/plates/palace-animals/
+    - assets/walk/
+    - assets/section/
+    - assets/section/yenikapi/
+    - assets/walk/basilica-cistern/
     - assets/space/
     - assets/space/how-a-dome-stands/
     - assets/space/bodrum-camii/
@@ -104,6 +115,7 @@ flutter:
     - assets/space/serpent-column/
     - assets/media/hagia-sophia/
     - assets/media/imperial-core/
+    - assets/media/underground/
     - assets/anastasis/
     - assets/anastasis/relief_v5/
     - assets/last_judgment/

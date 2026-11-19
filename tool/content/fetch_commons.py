@@ -1,7 +1,8 @@
 """Usage: python3.11 tool/content/fetch_commons.py [--derive-only] [--pin]
 
 The chapters' photographs from Wikimedia Commons, as pinned in each
-chapter's media.json (P12 studio/hagia-sophia/, P13 studio/imperial-core/).
+chapter's media.json (P12 studio/hagia-sophia/, P13 studio/imperial-core/,
+P14 studio/underground/).
 For each record and reference:
 
 1. The master: studio/cache/p12/commons/masters/<key>.jpg (gitignored, like
@@ -11,8 +12,9 @@ For each record and reference:
    quality 92, no chroma subsampling). The master's hash is then compared
    with `masterSha256`. A different Pillow can encode different bytes; the
    tool then stops and says which plate.yaml sha256 to re-pin.
-2. The app derivative: a record whose path is under assets/media/ gets a
-   1280 px (long edge), quality 82 JPEG without metadata. Records that point
+2. The app derivative: a record whose path is under assets/media/ (or, P14,
+   assets/walk/) gets a 1280 px (long edge, or the record's `edge`), quality
+   82 JPEG without metadata, cut first to the record's `crop` if it has one. Records that point
    at a plate's original.jpg are written by the plate pipeline instead.
 
 3. A composite (P13): masters stacked top to bottom at a common width, then
@@ -37,6 +39,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CHAPTERS = [
     (ROOT / 'studio/hagia-sophia/media.json', ROOT / 'studio/cache/p12/commons/masters'),
     (ROOT / 'studio/imperial-core/media.json', ROOT / 'studio/cache/p13/commons/masters'),
+    (ROOT / 'studio/underground/media.json', ROOT / 'studio/cache/p14/commons/masters'),
 ]
 UA = 'milion-dev-tool/0.1 (content build script)'
 APP_EDGE = 1280
@@ -69,7 +72,9 @@ def fetch_master(pin, masters, pin_new=False):
     data = urllib.request.urlopen(request, timeout=120).read()
     if pin['fetchedSha256'] is None and pin_new:
         pin['fetchedSha256'] = sha256(data)
-    if sha256(data) != pin['fetchedSha256']:
+    # P14: three pins lost their served hash to a 429 (`fetchedNote`); for
+    # those only the master's hash, checked by chapter(), guards the bytes.
+    if pin['fetchedSha256'] is not None and sha256(data) != pin['fetchedSha256']:
         raise SystemExit(f'{pin["key"]}: Commons served different bytes than pinned')
     image = Image.open(io.BytesIO(data)).convert('RGB')
     if pin['masterSize'] is None and pin_new:
@@ -108,7 +113,14 @@ def derive(record, master):
     target = ROOT / record['path']
     target.parent.mkdir(parents=True, exist_ok=True)
     image = Image.open(master).convert('RGB')
-    image.thumbnail((APP_EDGE, APP_EDGE), Image.Resampling.LANCZOS)
+    if 'crop' in record:
+        # P14: [left, top, right, bottom] as fractions of the master (a
+        # carved face for the walk's texture; bystanders left out).
+        l, t, r, b = record['crop']
+        w, h = image.size
+        image = image.crop((round(l * w), round(t * h), round(r * w), round(b * h)))
+    longest = record.get('edge', APP_EDGE)
+    image.thumbnail((longest, longest), Image.Resampling.LANCZOS)
     buf = io.BytesIO()
     image.save(buf, 'JPEG', quality=82, optimize=True, progressive=False)
     target.write_bytes(buf.getvalue())
@@ -144,7 +156,7 @@ def chapter(media, masters, derive_only=False, pin_new=False):
         raise SystemExit(f'masters differ from the pins: {stale}; re-pin {media.name} and the plates')
     total = 0
     for record in doc['records']:
-        if record['path'].startswith('assets/media/'):
+        if record['path'].startswith(('assets/media/', 'assets/walk/')):
             total += derive(record, masters / f'{record["commons"]["key"]}.jpg')
     print(f'{media.parent.name}: {len(pins)} masters checked; app derivatives {total / 1e6:.2f} MB')
 

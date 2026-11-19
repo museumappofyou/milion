@@ -1,0 +1,496 @@
+{
+ "ambient": [
+  {
+   "id": "drips",
+   "note": {
+    "en": "Sound to come: dripping water, not recorded yet.",
+    "tr": "Ses gelecek: damlayan su, henüz kaydedilmedi."
+   },
+   "status": "placeholder"
+  },
+  {
+   "id": "echo",
+   "note": {
+    "en": "Sound to come: the hall's echo, not measured yet.",
+    "tr": "Ses gelecek: salonun yankısı, henüz ölçülmedi."
+   },
+   "status": "placeholder"
+  }
+ ],
+ "callouts": [
+  {
+   "anchor": [
+    95.172,
+    5.0,
+    34.785
+   ],
+   "id": "columns",
+   "label": {
+    "en": "336 columns, 12 rows of 28",
+    "tr": "336 sütun, 28'erli 12 sıra"
+   },
+   "note": {
+    "en": "Each about 9 m tall, about 4.8 m apart.",
+    "tr": "Her biri yaklaşık 9 m, aralar yaklaşık 4,8 m."
+   },
+   "sources": [
+    "istsu-basilica-cistern",
+    "wp-basilica-cistern-1365846547"
+   ]
+  },
+  {
+   "anchor": [
+    90.414,
+    8.65,
+    29.815
+   ],
+   "id": "corinthian",
+   "label": {
+    "en": "A carved Corinthian capital",
+    "tr": "Oymalı bir Korint başlığı"
+   },
+   "note": {
+    "en": "About 98 of the capitals are carved, some only half-finished.",
+    "tr": "Başlıkların yaklaşık 98'i oymalıdır, bazıları yarım kalmıştır."
+   },
+   "sources": [
+    "onlu-2010-itu",
+    "crow-bardill-bayliss-2008"
+   ]
+  },
+  {
+   "anchor": [
+    90.414,
+    8.65,
+    34.785
+   ],
+   "id": "plain-capital",
+   "label": {
+    "en": "A plain capital, never carved",
+    "tr": "Hiç oyulmamış düz bir başlık"
+   },
+   "note": {
+    "en": "Often called Doric; it is an unfinished blank.",
+    "tr": "Çoğu kez Dor denir; aslında bitirilmemiş bir bloktur."
+   },
+   "sources": [
+    "onlu-2010-itu",
+    "byzleg-basilica-cistern"
+   ]
+  },
+  {
+   "anchor": [
+    88.034,
+    11.2,
+    32.3
+   ],
+   "id": "vaults",
+   "label": {
+    "en": "Brick cross vaults",
+    "tr": "Tuğla çapraz tonozlar"
+   },
+   "note": {
+    "en": "Laid in Khorasan mortar of lime and brick dust.",
+    "tr": "Kireç ve tuğla tozundan Horasan harcıyla örülü."
+   },
+   "sources": [
+    "istsu-basilica-cistern",
+    "wp-basilica-cistern-1365846547"
+   ]
+  },
+  {
+   "anchor": [
+    42.828,
+    4.0,
+    29.815
+   ],
+   "id": "hens-eye",
+   "label": {
+    "en": "The hen's-eye column",
+    "tr": "Tavus gözlü sütun"
+   },
+   "note": {
+    "en": "Knots and lopped branches, carved in the 4th century.",
+    "tr": "IV. yüzyılda oyulmuş budaklar ve kesik dallar."
+   },
+   "sources": [
+    "byzleg-basilica-cistern",
+    "istsu-basilica-cistern"
+   ]
+  },
+  {
+   "anchor": [
+    4.759,
+    1.15,
+    4.969
+   ],
+   "id": "medusa-sideways",
+   "label": {
+    "en": "Medusa, on her side",
+    "tr": "Yan yatmış Medusa"
+   },
+   "note": {
+    "en": "Reused Roman carving, set under a column.",
+    "tr": "Bir sütunun altına konmuş, yeniden kullanılmış Roma oyması."
+   },
+   "sources": [
+    "byzleg-basilica-cistern",
+    "onlu-2010-itu"
+   ]
+  },
+  {
+   "anchor": [
+    9.517,
+    1.15,
+    4.969
+   ],
+   "id": "medusa-inverted",
+   "label": {
+    "en": "Medusa, upside down",
+    "tr": "Baş aşağı Medusa"
+   },
+   "note": {
+    "en": "Why she was set on her head is not known.",
+    "tr": "Neden baş aşağı konduğu bilinmiyor."
+   },
+   "sources": [
+    "byzleg-basilica-cistern",
+    "istsu-basilica-cistern"
+   ]
+  }
+ ],
+ "capitals": "PPPPPPPPCCCCPPPPPCPPPPPCCPCCPPPPCCPCCCCPPPCPPPPCPPCPCCPPPPCPCCPPPCPPCCPCCPPPPPPCPPCPPPPPPPPPPCCPCCPPPPPPPPPCPPPCPPPCPCPPPCCPPPCPPPCPCPPCCCPPCPPPPPCPCCPCCPPPCPPPPPPPPPPPPCPCPCPCPCCPPPCPPPPPPPCPCPCPPCPCPPPPPPCPCPPCPPCCCPPCPCPCPCPCPPCCPPPPPPPPPPPCPPPPPCPPPPPCPPCPCCPCPPCPPPPPPPPPPCPPPPPPPPPPPPPPPPPCPPPCPPPPPCPPPCPPPPPPCPPPPCPCPPPCPCPPCPPC",
+ "description": {
+  "en": "Walk the deck through Justinian's cistern: 336 columns in 12 rows of 28, each about 9 m tall and about 4.8 m apart, under brick cross vaults, over the water they kept. A reconstruction from cited dimensions; the columns' girth, the vaults' rise, the water's level and the order of the capitals are set in proportion.",
+  "tr": "Iustinianus'un sarnıcında platform boyunca yürüyün: 28'erli 12 sıra hâlinde 336 sütun, her biri yaklaşık 9 m yüksekliğinde ve birbirinden yaklaşık 4,8 m uzakta; tuğla çapraz tonozların altında, tuttukları suyun üstünde. Kaynaklı ölçülerden bir rekonstrüksiyon; sütunların kalınlığı, tonozların yüksekliği, suyun seviyesi ve başlıkların sırası oranla verildi."
+ },
+ "estimated": [
+  "baseHeight",
+  "deckHeight",
+  "deckWidth",
+  "impostHeight",
+  "shaftRadius",
+  "vaultRise",
+  "waterLevel"
+ ],
+ "fish": {
+  "count": 10,
+  "note": {
+   "en": "In the 1540s Gyllius saw people above fishing through wells. These fish and their swimming are imagined; whether fish live in the cistern today was not checked.",
+   "tr": "1540'larda Gyllius yukarıdaki evlerden kuyulara olta sallayanları gördü. Bu balıklar ve yüzüşleri hayal ürünüdür; bugün sarnıçta balık olup olmadığı denetlenmedi."
+  }
+ },
+ "grid": {
+  "across": 12,
+  "along": 28,
+  "columnHeight": 9.0,
+  "deckHeight": 1.2,
+  "eyeHeight": 1.6,
+  "length": 138,
+  "pitch": [
+   4.7586,
+   4.9692
+  ],
+  "springing": 9.32,
+  "vaultRise": 2.38,
+  "waterLevel": 0.6,
+  "width": 64.6
+ },
+ "honesty": "RECONSTRUCTION",
+ "id": "basilica-cistern",
+ "kind": "walk",
+ "lighting": {
+  "fog": {
+   "colour": [
+    0.012,
+    0.009,
+    0.008
+   ],
+   "density": 0.045,
+   "far": 46
+  },
+  "water": {
+   "alpha": 0.42,
+   "colour": [
+    0.02,
+    0.035,
+    0.03
+   ],
+   "mirrorDim": [
+    0.55,
+    0.55,
+    0.6
+   ]
+  }
+ },
+ "milestoneId": "milestone-xvi",
+ "model": "assets/walk/basilica-cistern/model.glb",
+ "modelSha256": "12e23d75f00296d25af572e5cb46d175921e29fe77ba8f2fc4ba08c29798546a",
+ "photos": {
+  "medusa-inverted": "assets/walk/basilica-cistern/face-medusa-inverted.jpg",
+  "medusa-sideways": "assets/walk/basilica-cistern/face-medusa-sideways.jpg"
+ },
+ "placeId": "basilica-cistern",
+ "prototypes": {
+  "bay": 128,
+  "column-C": 244,
+  "column-P": 212,
+  "column-S": 212,
+  "column-W": 244,
+  "deck": 1432,
+  "fish": 62,
+  "medusa-inverted": 8,
+  "medusa-inverted-face": 2,
+  "medusa-sideways": 8,
+  "medusa-sideways-face": 2,
+  "pilaster": 6,
+  "wall-long": 32,
+  "wall-short": 32,
+  "water": 2
+ },
+ "reveal": {
+  "caption": {
+   "en": "Medusa, upside down, at the foot of a column in Justinian's cistern.",
+   "tr": "Medusa, baş aşağı, Iustinianus'un sarnıcında bir sütunun dibinde."
+  },
+  "seconds": 10,
+  "stop": "medusa-inverted"
+ },
+ "route": [
+  [
+   131.338,
+   61.618
+  ],
+  [
+   131.338,
+   32.3
+  ],
+  [
+   45.207,
+   32.3
+  ],
+  [
+   45.207,
+   7.454
+  ],
+  [
+   4.759,
+   7.454
+  ]
+ ],
+ "schemaVersion": 1,
+ "sources": [
+  "istsu-basilica-cistern",
+  "crow-bardill-bayliss-2008",
+  "byzleg-basilica-cistern",
+  "onlu-2010-itu",
+  "wp-basilica-cistern-1365846547"
+ ],
+ "specials": [
+  {
+   "column": [
+    1,
+    1
+   ],
+   "id": "medusa-sideways",
+   "prototype": "medusa-sideways"
+  },
+  {
+   "column": [
+    2,
+    1
+   ],
+   "id": "medusa-inverted",
+   "prototype": "medusa-inverted"
+  },
+  {
+   "column": [
+    9,
+    6
+   ],
+   "id": "weeping-column",
+   "prototype": "column-W"
+  }
+ ],
+ "start": "aisle",
+ "stills": [
+  "stair",
+  "aisle",
+  "hens-eye",
+  "medusa-sideways",
+  "medusa-inverted"
+ ],
+ "stops": [
+  {
+   "callouts": [
+    "columns"
+   ],
+   "caption": {
+    "en": "Justinian made the court of the Stoa Basilica into this cistern, begun around 528 and finished by about 542. Its name comes from the basilica that stood above it.",
+    "tr": "Iustinianus, Stoa Basilika'nın avlusunu bu sarnıca çevirdi; yapım 528 dolaylarında başladı ve 542 dolaylarında bitti. Adını üstünde duran bazilikadan alır."
+   },
+   "eye": [
+    123.724,
+    6.6,
+    61.618
+   ],
+   "id": "stair",
+   "label": {
+    "en": "Down from the street",
+    "tr": "Sokaktan aşağı"
+   },
+   "look": [
+    85.655,
+    2.4,
+    34.785
+   ],
+   "seconds": 7,
+   "sources": [
+    "istsu-bc-construction",
+    "crow-bardill-bayliss-2008",
+    "byzleg-basilica-cistern"
+   ]
+  },
+  {
+   "callouts": [
+    "corinthian",
+    "plain-capital",
+    "vaults"
+   ],
+   "caption": {
+    "en": "336 columns stand in 12 rows of 28, each about 9 m tall and about 4.8 m apart. About 98 capitals are carved Corinthian; most of the rest are plain, unfinished blocks.",
+    "tr": "336 sütun 28'erli 12 sıra hâlinde durur; her biri yaklaşık 9 m yüksekliğinde ve birbirinden yaklaşık 4,8 m uzakta. Yaklaşık 98 başlık oymalı Korint başlığıdır; geri kalanların çoğu yontulmamış düz bloklardır."
+   },
+   "eye": [
+    114.207,
+    2.8,
+    32.3
+   ],
+   "id": "aisle",
+   "label": {
+    "en": "The aisle",
+    "tr": "Koridor"
+   },
+   "look": [
+    66.621,
+    5.2,
+    32.3
+   ],
+   "seconds": 7,
+   "sources": [
+    "istsu-basilica-cistern",
+    "onlu-2010-itu",
+    "crow-bardill-bayliss-2008"
+   ]
+  },
+  {
+   "callouts": [
+    "hens-eye"
+   ],
+   "caption": {
+    "en": "One column is carved all over with oval knots and lopped branches, like the columns of the arch in the Forum of Theodosius, late in the 4th century. Guides call it the weeping column; that story is modern.",
+    "tr": "Sütunlardan biri baştan aşağı oval budaklar ve kesik dallarla oyulmuştur; IV. yüzyılın sonlarında Theodosius Forumu'ndaki kemerin sütunları gibi. Rehberler ona ağlayan sütun der; bu hikâye yenidir."
+   },
+   "eye": [
+    50.441,
+    2.8,
+    32.3
+   ],
+   "id": "hens-eye",
+   "label": {
+    "en": "The hen's-eye column",
+    "tr": "Tavus gözlü sütun"
+   },
+   "look": [
+    42.828,
+    3.4,
+    29.815
+   ],
+   "photo": "ug-weeping-column-photo",
+   "seconds": 7,
+   "sources": [
+    "byzleg-basilica-cistern",
+    "istsu-basilica-cistern",
+    "wp-basilica-cistern-1365846547",
+    "commons-weeping-column"
+   ]
+  },
+  {
+   "callouts": [
+    "medusa-sideways"
+   ],
+   "caption": {
+    "en": "Two Medusa heads serve as column bases in the north-west corner. This one lies on her side.",
+    "tr": "Kuzeybatı köşesinde iki Medusa başı sütun kaidesi olarak kullanılır. Bu, yan yatmış olanı."
+   },
+   "eye": [
+    4.759,
+    2.6,
+    8.05
+   ],
+   "id": "medusa-sideways",
+   "label": {
+    "en": "Medusa, on her side",
+    "tr": "Yan yatmış Medusa"
+   },
+   "look": [
+    4.759,
+    1.1,
+    4.969
+   ],
+   "photo": "ug-medusa-sideways-photo",
+   "seconds": 7,
+   "sources": [
+    "byzleg-basilica-cistern",
+    "dailysabah-bc-2022",
+    "onlu-2010-itu",
+    "commons-medusa-sideways"
+   ]
+  },
+  {
+   "callouts": [
+    "medusa-inverted"
+   ],
+   "caption": {
+    "en": "The other stands on her head. Both are reused Roman carvings; why they were set this way is not known.",
+    "tr": "Öteki başının üstünde durur. İkisi de yeniden kullanılmış Roma oymalarıdır; neden böyle konduklarını bilmiyoruz."
+   },
+   "eye": [
+    9.517,
+    2.6,
+    8.05
+   ],
+   "id": "medusa-inverted",
+   "label": {
+    "en": "Medusa, upside down",
+    "tr": "Baş aşağı Medusa"
+   },
+   "look": [
+    9.517,
+    1.1,
+    4.969
+   ],
+   "photo": "ug-medusa-inverted-photo",
+   "seconds": 7,
+   "sources": [
+    "byzleg-basilica-cistern",
+    "istsu-basilica-cistern",
+    "milliyet-sadic-2022",
+    "commons-medusa-inverted"
+   ]
+  }
+ ],
+ "talkback": {
+  "en": "A walk inside the Basilica Cistern, drawn in 3D: rows of marble columns lit from their feet, brick vaults overhead, still water reflecting them. Five stops: the stair, the aisle, the hen's-eye column, the Medusa on her side and the Medusa upside down. Use next and previous to move between them.",
+  "tr": "Yerebatan Sarnıcı'nın içinde, 3B çizilmiş bir yürüyüş: dipten aydınlatılmış mermer sütun sıraları, üstte tuğla tonozlar, onları yansıtan durgun su. Beş durak: merdiven, koridor, tavus gözlü sütun, yan yatmış Medusa ve baş aşağı Medusa. Duraklar arasında sonraki ve önceki ile geçin."
+ },
+ "textures": {
+  "ripple": "assets/walk/basilica-cistern/ripple.png",
+  "weeping": "assets/walk/basilica-cistern/weeping.png"
+ },
+ "title": {
+  "en": "The Basilica Cistern",
+  "tr": "Yerebatan Sarnıcı"
+ },
+ "turns": "110000200102132222000231320212203022120200323100232012123230000011113103000222100313313111102310321221230303103113223313332320031201312023123112213313110012210130333201221102311220002122323210122103200232020020132122132020022232310022113010113211101021010022233012323300100320020101130332003232320213113223332213201011323320223323003221"
+}

@@ -1,0 +1,51 @@
+{
+ "note": "P14: Milestones XVI and XVII. Both take their path, status and honesty here: XVI's walk (tool/walk/build_walk.py) and XVII's drawn section (tool/section/build_section.py).",
+ "records": [
+  {
+   "id": "milestone-xvi",
+   "places": [
+    "basilica-cistern"
+   ],
+   "sources": [
+    "wd-q216511",
+    "istsu-basilica-cistern",
+    "crow-bardill-bayliss-2008",
+    "byzleg-basilica-cistern",
+    "onlu-2010-itu",
+    "commons-medusa-inverted",
+    "commons-medusa-sideways",
+    "commons-weeping-column"
+   ],
+   "manifestPath": "assets/walk/basilica-cistern/walk.json",
+   "honesty": [
+    "ORIGINAL",
+    "RECONSTRUCTION",
+    "IMAGINED"
+   ],
+   "status": "prototype"
+  },
+  {
+   "id": "milestone-xvii",
+   "places": [
+    "yenikapi"
+   ],
+   "sources": [
+    "wd-q3288771",
+    "kiziltan-2014",
+    "pulak-ingram-jones-2015",
+    "kocabas-2015",
+    "commons-yenikapi-footprints"
+   ],
+   "techniques": [
+    "PU",
+    "SB"
+   ],
+   "manifestPath": "assets/section/yenikapi/section.json",
+   "honesty": [
+    "ORIGINAL",
+    "RECONSTRUCTION"
+   ],
+   "status": "prototype"
+  }
+ ]
+}

@@ -985,5 +985,49 @@
   "guideHuntAnswer": "Show the answer",
   "guideSurfaceDome": "Domes",
   "guideSurfaceVault": "Vaults",
-  "guideSurfaceWall": "Walls, arches and niches"
+  "guideSurfaceWall": "Walls, arches and niches",
+  "walkLook": "Look",
+  "walkLoading": "Preparing the walk",
+  "walkUnavailable": "The walk’s model could not be loaded.",
+  "walkHint": "Drag up or down to walk the deck, sideways to turn. Double-tap for the next stop.",
+  "walkFish": "Fish in the water",
+  "walkCallouts": "Leader lines",
+  "walkLookSensor": "Turn with the phone",
+  "walkStill": "Stop {number} of {total}",
+  "@walkStill": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "walkStops": "Stops",
+  "walkPlan": "Plan of the hall, your position marked",
+  "sectionShips": "Ships",
+  "sectionHint": "Drag up or down to dig; tap a ship for its type.",
+  "shipGalley": "Galley, a long oared ship",
+  "shipRound": "Round-hulled merchant ship",
+  "shipTypeUnknown": "Type not itemised in the sources read here",
+  "shipTeamIna": "Studied by the Institute of Nautical Archaeology (Texas A&M)",
+  "shipTeamIu": "Studied by Istanbul University",
+  "shipCargo": "Found with its cargo",
+  "shipSize": "About {length} × {breadth} m",
+  "shipPlaced": "Ships are placed in the drawing for legibility, not where each was found.",
+  "@shipSize": {
+    "placeholders": {
+      "length": {
+        "type": "String"
+      },
+      "breadth": {
+        "type": "String"
+      }
+    }
+  },
+  "seePhotograph": "See the photograph",
+  "@seePhotograph": {
+    "description": "P14: opens the credited photograph (ORIGINAL) of a walk stop or a section find."
+  }
 }

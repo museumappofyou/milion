@@ -436,13 +436,21 @@
       ],
       "honesty": [
         "ORIGINAL",
-        "RECONSTRUCTION"
+        "RECONSTRUCTION",
+        "IMAGINED"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/walk/basilica-cistern/walk.json",
       "packId": "underground",
       "sources": [
-        "wd-q216511"
+        "wd-q216511",
+        "istsu-basilica-cistern",
+        "crow-bardill-bayliss-2008",
+        "byzleg-basilica-cistern",
+        "onlu-2010-itu",
+        "commons-medusa-inverted",
+        "commons-medusa-sideways",
+        "commons-weeping-column"
       ],
       "flagship": true
     },
@@ -463,14 +471,17 @@
       ],
       "honesty": [
         "ORIGINAL",
-        "DEPTH",
         "RECONSTRUCTION"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/section/yenikapi/section.json",
       "packId": "underground",
       "sources": [
-        "wd-q3288771"
+        "wd-q3288771",
+        "kiziltan-2014",
+        "pulak-ingram-jones-2015",
+        "kocabas-2015",
+        "commons-yenikapi-footprints"
       ]
     },
     {

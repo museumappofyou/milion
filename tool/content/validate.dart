@@ -4,8 +4,10 @@ import 'dart:io';
 import 'package:milion/content/registry.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/plate/catalog.dart';
+import 'package:milion/section/section.dart';
 import 'package:milion/space/catalog.dart';
 import 'package:milion/space/model.dart';
+import 'package:milion/walk/walk_catalog.dart';
 
 Future<void> main(List<String> args) async {
   try {
@@ -84,6 +86,28 @@ Future<void> main(List<String> args) async {
         }
       }
       stdout.writeln('Studies: ${spaces.studies.length} typed manifests');
+      // P14: walks (model, textures, photographs) and drawn sections.
+      final walks = await WalkCatalog.load(
+        registry,
+        (p) => File(p).readAsString(),
+      );
+      for (final w in walks.walks) {
+        for (final path in [
+          w.model,
+          ...w.textures.values,
+          ...w.photos.values,
+        ]) {
+          if (!File(path).existsSync()) {
+            report.errors.add('Missing walk asset: $path');
+          }
+        }
+      }
+      stdout.writeln('Walks: ${walks.walks.length} typed manifests');
+      final sections = await SectionCatalog.load(
+        registry,
+        (p) => File(p).readAsString(),
+      );
+      stdout.writeln('Sections: ${sections.sections.length} typed manifests');
     }
     for (final error in report.errors) {
       stderr.writeln('ERROR: $error');

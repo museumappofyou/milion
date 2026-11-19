@@ -3168,6 +3168,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Walls, arches and niches'**
   String get guideSurfaceWall;
+
+  /// No description provided for @walkLook.
+  ///
+  /// In en, this message translates to:
+  /// **'Look'**
+  String get walkLook;
+
+  /// No description provided for @walkLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing the walk'**
+  String get walkLoading;
+
+  /// No description provided for @walkUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The walk’s model could not be loaded.'**
+  String get walkUnavailable;
+
+  /// No description provided for @walkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag up or down to walk the deck, sideways to turn. Double-tap for the next stop.'**
+  String get walkHint;
+
+  /// No description provided for @walkFish.
+  ///
+  /// In en, this message translates to:
+  /// **'Fish in the water'**
+  String get walkFish;
+
+  /// No description provided for @walkCallouts.
+  ///
+  /// In en, this message translates to:
+  /// **'Leader lines'**
+  String get walkCallouts;
+
+  /// No description provided for @walkLookSensor.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn with the phone'**
+  String get walkLookSensor;
+
+  /// No description provided for @walkStill.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop {number} of {total}'**
+  String walkStill(String number, String total);
+
+  /// No description provided for @walkStops.
+  ///
+  /// In en, this message translates to:
+  /// **'Stops'**
+  String get walkStops;
+
+  /// No description provided for @walkPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan of the hall, your position marked'**
+  String get walkPlan;
+
+  /// No description provided for @sectionShips.
+  ///
+  /// In en, this message translates to:
+  /// **'Ships'**
+  String get sectionShips;
+
+  /// No description provided for @sectionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag up or down to dig; tap a ship for its type.'**
+  String get sectionHint;
+
+  /// No description provided for @shipGalley.
+  ///
+  /// In en, this message translates to:
+  /// **'Galley, a long oared ship'**
+  String get shipGalley;
+
+  /// No description provided for @shipRound.
+  ///
+  /// In en, this message translates to:
+  /// **'Round-hulled merchant ship'**
+  String get shipRound;
+
+  /// No description provided for @shipTypeUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Type not itemised in the sources read here'**
+  String get shipTypeUnknown;
+
+  /// No description provided for @shipTeamIna.
+  ///
+  /// In en, this message translates to:
+  /// **'Studied by the Institute of Nautical Archaeology (Texas A&M)'**
+  String get shipTeamIna;
+
+  /// No description provided for @shipTeamIu.
+  ///
+  /// In en, this message translates to:
+  /// **'Studied by Istanbul University'**
+  String get shipTeamIu;
+
+  /// No description provided for @shipCargo.
+  ///
+  /// In en, this message translates to:
+  /// **'Found with its cargo'**
+  String get shipCargo;
+
+  /// No description provided for @shipSize.
+  ///
+  /// In en, this message translates to:
+  /// **'About {length} × {breadth} m'**
+  String shipSize(String length, String breadth);
+
+  /// No description provided for @shipPlaced.
+  ///
+  /// In en, this message translates to:
+  /// **'Ships are placed in the drawing for legibility, not where each was found.'**
+  String get shipPlaced;
+
+  /// P14: opens the credited photograph (ORIGINAL) of a walk stop or a section find.
+  ///
+  /// In en, this message translates to:
+  /// **'See the photograph'**
+  String get seePhotograph;
 }
 
 class _AppLocalizationsDelegate

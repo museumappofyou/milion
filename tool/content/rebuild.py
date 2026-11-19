@@ -1,4 +1,4 @@
-"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P13 authored content.
+"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P14 authored content.
 
 Run the seed, register, daily-detail and dig builders in dependency order, then
 P12's Hagia Sophia chapter (its strata, artworks, details, review and the
@@ -41,6 +41,10 @@ def main():
     # and the kit (the Milion, Hippodrome and Serpent Column studies cite it).
     subprocess.run([sys.executable, str(ROOT / 'tool/content/build_imperial_core.py')],
                    cwd=ROOT, check=True)
+    # P14: Underground Constantinople (the places, XVI's walk, XVII's section).
+    for name in ['tool/content/build_underground.py', 'tool/walk/build_walk.py',
+                 'tool/section/build_section.py']:
+        subprocess.run([sys.executable, str(ROOT / name)], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/plate/build.py'), '--all', '--no-preview'],
                    cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/space/how_a_dome_stands.py')],

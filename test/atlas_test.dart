@@ -350,6 +350,13 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const ValueKey('atlas-layers')));
       await tester.pumpAndSettle();
+      // P14 adds the open reservoirs and Nakilbent: the list is longer.
+      expect(find.text('Cistern of Aetius'), findsOneWidget);
+      await tester.scrollUntilVisible(
+        find.text('Basilica Cistern'),
+        300,
+        scrollable: find.byType(Scrollable).last,
+      );
       expect(find.text('Basilica Cistern'), findsOneWidget);
       expect(find.text('Theodosian Walls'), findsNothing);
     });

@@ -193,15 +193,24 @@ void main() {
       registry.places.every((p) => RegExp(r'^Q\d+$').hasMatch(p.qid)),
       isTrue,
     );
-    // P11 reviewed Chora, P12 Hagia Sophia and P13 the imperial core, all
-    // nearer the Milion than Chora; the Milion itself is mile zero.
+    // P11 reviewed Chora, P12 Hagia Sophia, P13 the imperial core and P14
+    // the underground, all nearer the Milion than Chora; the Milion itself
+    // is mile zero.
     expect(registry.placesByDistance().map((p) => p.id), [
       'milion',
+      'basilica-cistern',
       'hagia-sophia',
       'hippodrome',
+      'binbirdirek',
       'great-palace-mosaic-museum',
+      'theodosius-cistern',
+      'nakilbent',
       'column-of-constantine',
       'boukoleon',
+      'yenikapi',
+      'aspar-cistern',
+      'mocius-cistern',
+      'aetius-cistern',
       'chora',
     ]);
     expect(registry.placesByDistance(includeDrafts: true).first.id, 'milion');

@@ -1718,4 +1718,74 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get guideSurfaceWall => 'Walls, arches and niches';
+
+  @override
+  String get walkLook => 'Look';
+
+  @override
+  String get walkLoading => 'Preparing the walk';
+
+  @override
+  String get walkUnavailable => 'The walk’s model could not be loaded.';
+
+  @override
+  String get walkHint =>
+      'Drag up or down to walk the deck, sideways to turn. Double-tap for the next stop.';
+
+  @override
+  String get walkFish => 'Fish in the water';
+
+  @override
+  String get walkCallouts => 'Leader lines';
+
+  @override
+  String get walkLookSensor => 'Turn with the phone';
+
+  @override
+  String walkStill(String number, String total) {
+    return 'Stop $number of $total';
+  }
+
+  @override
+  String get walkStops => 'Stops';
+
+  @override
+  String get walkPlan => 'Plan of the hall, your position marked';
+
+  @override
+  String get sectionShips => 'Ships';
+
+  @override
+  String get sectionHint => 'Drag up or down to dig; tap a ship for its type.';
+
+  @override
+  String get shipGalley => 'Galley, a long oared ship';
+
+  @override
+  String get shipRound => 'Round-hulled merchant ship';
+
+  @override
+  String get shipTypeUnknown => 'Type not itemised in the sources read here';
+
+  @override
+  String get shipTeamIna =>
+      'Studied by the Institute of Nautical Archaeology (Texas A&M)';
+
+  @override
+  String get shipTeamIu => 'Studied by Istanbul University';
+
+  @override
+  String get shipCargo => 'Found with its cargo';
+
+  @override
+  String shipSize(String length, String breadth) {
+    return 'About $length × $breadth m';
+  }
+
+  @override
+  String get shipPlaced =>
+      'Ships are placed in the drawing for legibility, not where each was found.';
+
+  @override
+  String get seePhotograph => 'See the photograph';
 }

@@ -56,7 +56,7 @@ class Spec(unittest.TestCase):
                 self.assertIn(f['certainty'], build_historic.HAND_OK, f['id'])
 
     def test_every_feature_is_dated_sourced_and_bilingual(self):
-        source_ids = {s['id'] for s in historic_spec.SOURCES}
+        source_ids = build_historic.known_source_ids()
         for f in historic_spec.FEATURES:
             self.assertTrue(set(f['sources']) <= source_ids, f['id'])
             self.assertTrue(f['names']['en'] and f['names']['tr'], f['id'])

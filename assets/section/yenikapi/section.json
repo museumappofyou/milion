@@ -1,0 +1,689 @@
+{
+ "beats": [
+  {
+   "caption": {
+    "en": "The Istanbul Archaeological Museums began a rescue dig here in 2004, ahead of the Marmaray tunnel and the metro: some 58,000 m², dug until 2014. The station opened in 2013.",
+    "tr": "İstanbul Arkeoloji Müzeleri 2004'te, Marmaray tüneli ve metrodan önce burada bir kurtarma kazısı başlattı: yaklaşık 58.000 m², 2014'e dek kazıldı. İstasyon 2013'te açıldı."
+   },
+   "depth": 1.2,
+   "id": "dig",
+   "label": {
+    "en": "A station, 2004",
+    "tr": "Bir istasyon, 2004"
+   },
+   "lift": [],
+   "seconds": 6,
+   "sources": [
+    "kiziltan-2014",
+    "hdn-yenikapi-2013",
+    "dailysabah-yenikapi-2014"
+   ]
+  },
+  {
+   "caption": {
+    "en": "Under Mustafa III the silted harbour was filled with rubble from building the Laleli Mosque, in the 1760s, and sold; it stayed market gardens into the 20th century.",
+    "tr": "III. Mustafa döneminde dolmuş liman, 1760'larda Laleli Camii'nin yapımından çıkan molozla dolduruldu ve satıldı; XX. yüzyıla dek bostan olarak kaldı."
+   },
+   "depth": -0.2,
+   "id": "fill",
+   "label": {
+    "en": "Ottoman fill",
+    "tr": "Osmanlı dolgusu"
+   },
+   "lift": [],
+   "seconds": 5,
+   "sources": [
+    "kiziltan-2014"
+   ]
+  },
+  {
+   "caption": {
+    "en": "Under Theodosius I, late in the 4th century, a mole closed the bay at the mouth of the Lykos. The stream's silt filled it from the west; by the late 12th century it was nearly full.",
+    "tr": "I. Theodosius döneminde, IV. yüzyılın sonlarında, Lykos'un ağzındaki koy bir mendirekle kapatıldı. Derenin getirdiği balçık limanı batıdan doldurdu; XII. yüzyılın sonunda neredeyse dolmuştu."
+   },
+   "depth": -2.4,
+   "id": "harbour",
+   "label": {
+    "en": "The Theodosian Harbour",
+    "tr": "Theodosius Limanı"
+   },
+   "lift": [
+    "wood-rope"
+   ],
+   "seconds": 6,
+   "sources": [
+    "kiziltan-2014",
+    "pulak-ingram-jones-2015"
+   ]
+  },
+  {
+   "caption": {
+    "en": "37 wrecks of the 5th to early 11th centuries, the largest group of medieval ships ever dug up. Six are galleys, the first of their age found. Many sank in storms; a large group went down around AD 1000.",
+    "tr": "V. yüzyıldan XI. yüzyıl başına 37 batık: bugüne dek kazılmış en büyük Orta Çağ gemi topluluğu. Altısı kadırga; çağlarının bulunan ilk kadırgaları. Çoğu fırtınada battı; büyük bir grup MS 1000 dolaylarında birlikte battı."
+   },
+   "depth": -4.2,
+   "id": "ships",
+   "label": {
+    "en": "37 ships",
+    "tr": "37 gemi"
+   },
+   "lift": [
+    "ships"
+   ],
+   "seconds": 7,
+   "sources": [
+    "pulak-ingram-jones-2015",
+    "kiziltan-2014"
+   ]
+  },
+  {
+   "caption": {
+    "en": "Below the harbour floor, a village of the Fikirtepe culture, begun about 6500 BC, when the Marmara was still a lake. Its cremation urns are the earliest known in Anatolia.",
+    "tr": "Liman tabanının altında, Marmara henüz bir gölken, MÖ 6500 dolaylarında kurulmuş bir Fikirtepe kültürü köyü. Yakma gömü küpleri Anadolu'da bilinen en eskileridir."
+   },
+   "depth": -7.0,
+   "id": "neolithic",
+   "label": {
+    "en": "A Neolithic village",
+    "tr": "Neolitik bir köy"
+   },
+   "lift": [
+    "grave-family",
+    "urns",
+    "grave-timbers"
+   ],
+   "seconds": 6,
+   "sources": [
+    "kiziltan-2014",
+    "yilmaz-2011-tubaar"
+   ]
+  },
+  {
+   "caption": {
+    "en": "On an old stream bed, 2,080 footprints were pressed into wet clay and sealed by sand, about 8,000 years ago. Most were made by people wearing shoes.",
+    "tr": "Eski bir dere yatağında, yaklaşık 8.000 yıl önce ıslak kile basılmış ve kumla örtülmüş 2.080 ayak izi bulundu. Çoğu ayakkabılı insanların izleri."
+   },
+   "depth": -8.3,
+   "id": "footprints",
+   "label": {
+    "en": "Footprints, −8.15 m",
+    "tr": "Ayak izleri, −8,15 m"
+   },
+   "lift": [
+    "footprints",
+    "huts",
+    "trees"
+   ],
+   "seconds": 6,
+   "sources": [
+    "kiziltan-2014",
+    "hdn-yenikapi-2013"
+   ]
+  }
+ ],
+ "bottom": -9.6,
+ "description": {
+  "en": "A drawn section through the Yenikapı excavation: under the station, the Ottoman fill, the Theodosian Harbour with its 37 shipwrecks, and below them a Neolithic village and its footprints. Depths to scale; across, not to scale, and the ships are placed for legibility, not as found.",
+  "tr": "Yenikapı kazısından çizilmiş bir kesit: istasyonun altında Osmanlı dolgusu, 37 batığıyla Theodosius Limanı ve onların altında bir Neolitik köy ve ayak izleri. Derinlikler ölçekli; yatayda ölçek yok, gemiler bulundukları yere değil, okunacak biçimde yerleştirildi."
+ },
+ "finds": [
+  {
+   "depth": -1.1,
+   "id": "wood-rope",
+   "kind": "wood",
+   "label": {
+    "en": "Worked wood and rope at −1 m",
+    "tr": "−1 m'de işlenmiş ahşap ve halat"
+   },
+   "sources": [
+    "kiziltan-2014"
+   ],
+   "x": 0.18
+  },
+  {
+   "depth": -6.6,
+   "id": "grave-family",
+   "kind": "grave",
+   "label": {
+    "en": "A family grave, −6.51 m",
+    "tr": "Bir aile mezarı, −6,51 m"
+   },
+   "sources": [
+    "kiziltan-2014"
+   ],
+   "x": 0.3
+  },
+  {
+   "depth": -7.6,
+   "id": "grave-timbers",
+   "kind": "grave",
+   "label": {
+    "en": "A burial on timbers, −7.60 m",
+    "tr": "Ahşap üstünde bir gömü, −7,60 m"
+   },
+   "sources": [
+    "kiziltan-2014"
+   ],
+   "x": 0.62
+  },
+  {
+   "depth": -7.1,
+   "id": "urns",
+   "kind": "urn",
+   "label": {
+    "en": "Cremation urns",
+    "tr": "Yakma gömü küpleri"
+   },
+   "sources": [
+    "kiziltan-2014",
+    "yilmaz-2011-tubaar"
+   ],
+   "x": 0.46
+  },
+  {
+   "depth": -8.15,
+   "id": "footprints",
+   "kind": "footprints",
+   "label": {
+    "en": "2,080 footprints, −8.15 m",
+    "tr": "2.080 ayak izi, −8,15 m"
+   },
+   "length": 0.5,
+   "photo": "ug-yenikapi-footprints-photo",
+   "sources": [
+    "kiziltan-2014",
+    "hdn-yenikapi-2013",
+    "commons-yenikapi-footprints"
+   ],
+   "x": 0.5
+  },
+  {
+   "depth": -8.6,
+   "id": "huts",
+   "kind": "hut",
+   "label": {
+    "en": "Wattle huts, −8.4 to −8.75 m",
+    "tr": "Çit örgülü kulübeler, −8,4 ile −8,75 m arası"
+   },
+   "sources": [
+    "kiziltan-2014"
+   ],
+   "x": 0.16
+  },
+  {
+   "depth": -8.8,
+   "id": "trees",
+   "kind": "trees",
+   "label": {
+    "en": "Tree stumps, −8.5 to −8.9 m",
+    "tr": "Ağaç kütükleri, −8,5 ile −8,9 m arası"
+   },
+   "sources": [
+    "kiziltan-2014"
+   ],
+   "x": 0.84
+  }
+ ],
+ "honesty": "RECONSTRUCTION",
+ "id": "yenikapi",
+ "kind": "section",
+ "milestoneId": "milestone-xvii",
+ "placeId": "yenikapi",
+ "reveal": {
+  "caption": {
+   "en": "Digging for a metro station in 2004 found a Byzantine harbour and 37 ships.",
+   "tr": "2004'te bir metro istasyonu için yapılan kazı, bir Bizans limanı ve 37 gemi buldu."
+  },
+  "from": 1.6,
+  "seconds": 10,
+  "to": -3.4
+ },
+ "schemaVersion": 1,
+ "shipSources": [
+  "pulak-ingram-jones-2015",
+  "kocabas-2015",
+  "kiziltan-2014",
+  "akkemik-kocabas-galleys"
+ ],
+ "ships": [
+  {
+   "breadth": 3.5,
+   "cargo": true,
+   "date": {
+    "en": "10th century",
+    "tr": "X. yüzyıl"
+   },
+   "depth": -2.788,
+   "glyph": 0.072,
+   "length": 10,
+   "team": "ina",
+   "type": "round",
+   "x": 0.4864,
+   "yk": 1
+  },
+  {
+   "breadth": 4,
+   "date": {
+    "en": "9th or 10th century (?)",
+    "tr": "IX. ya da X. yüzyıl (?)"
+   },
+   "depth": -4.273,
+   "glyph": 0.17,
+   "length": 30,
+   "team": "ina",
+   "type": "galley",
+   "x": 0.848,
+   "yk": 2
+  },
+  {
+   "cargo": true,
+   "depth": -5.158,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.8975,
+   "yk": 3
+  },
+  {
+   "breadth": 4,
+   "date": {
+    "en": "early 10th century",
+    "tr": "X. yüzyılın başı"
+   },
+   "depth": -3.461,
+   "glyph": 0.17,
+   "length": 30,
+   "team": "ina",
+   "type": "galley",
+   "x": 0.306,
+   "yk": 4
+  },
+  {
+   "breadth": 5,
+   "date": {
+    "en": "10th century",
+    "tr": "X. yüzyıl"
+   },
+   "depth": -2.62,
+   "glyph": 0.0909,
+   "length": 14.5,
+   "team": "ina",
+   "type": "round",
+   "x": 0.6269,
+   "yk": 5
+  },
+  {
+   "depth": -1.989,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.6314,
+   "yk": 6
+  },
+  {
+   "depth": -1.925,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.8943,
+   "yk": 7
+  },
+  {
+   "depth": -5.888,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.6213,
+   "yk": 8
+  },
+  {
+   "depth": -2.695,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.1045,
+   "yk": 9
+  },
+  {
+   "depth": -1.845,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.1057,
+   "yk": 10
+  },
+  {
+   "breadth": 3.8,
+   "date": {
+    "en": "early 7th century",
+    "tr": "VII. yüzyılın başı"
+   },
+   "depth": -5.725,
+   "glyph": 0.077,
+   "length": 11.2,
+   "team": "ina",
+   "type": "round",
+   "x": 0.4823,
+   "yk": 11
+  },
+  {
+   "cargo": true,
+   "depth": -5.813,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.1078,
+   "yk": 12
+  },
+  {
+   "depth": -4.29,
+   "glyph": 0.17,
+   "team": "iu",
+   "type": "galley",
+   "x": 0.152,
+   "yk": 13
+  },
+  {
+   "breadth": 3.4,
+   "date": {
+    "en": "early 9th century",
+    "tr": "IX. yüzyılın başı"
+   },
+   "depth": -5.138,
+   "glyph": 0.0917,
+   "length": 14.7,
+   "team": "ina",
+   "type": "round",
+   "x": 0.6365,
+   "yk": 14
+  },
+  {
+   "depth": -3.479,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.888,
+   "yk": 15
+  },
+  {
+   "depth": -3.503,
+   "glyph": 0.17,
+   "team": "iu",
+   "type": "galley",
+   "x": 0.55,
+   "yk": 16
+  },
+  {
+   "depth": -4.273,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.55,
+   "yk": 17
+  },
+  {
+   "depth": -4.374,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.674,
+   "yk": 18
+  },
+  {
+   "depth": -5.072,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.3756,
+   "yk": 19
+  },
+  {
+   "depth": -1.879,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.2371,
+   "yk": 20
+  },
+  {
+   "depth": -5.043,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.5007,
+   "yk": 21
+  },
+  {
+   "depth": -5.789,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.8923,
+   "yk": 22
+  },
+  {
+   "breadth": 5,
+   "date": {
+    "en": "late 8th–early 9th century",
+    "tr": "VIII. yüzyıl sonu–IX. yüzyıl başı"
+   },
+   "depth": -5.086,
+   "glyph": 0.093,
+   "length": 15,
+   "team": "ina",
+   "type": "round",
+   "x": 0.114,
+   "yk": 23
+  },
+  {
+   "breadth": 2.5,
+   "date": {
+    "en": "10th century",
+    "tr": "X. yüzyıl"
+   },
+   "depth": -2.642,
+   "glyph": 0.0636,
+   "length": 8,
+   "team": "ina",
+   "type": "round",
+   "x": 0.2304,
+   "yk": 24
+  },
+  {
+   "depth": -5.796,
+   "glyph": 0.17,
+   "team": "iu",
+   "type": "galley",
+   "x": 0.2933,
+   "yk": 25
+  },
+  {
+   "depth": -1.979,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.5,
+   "yk": 26
+  },
+  {
+   "depth": -1.898,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.7629,
+   "yk": 27
+  },
+  {
+   "depth": -2.786,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.3563,
+   "yk": 28
+  },
+  {
+   "depth": -2.734,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.8955,
+   "yk": 29
+  },
+  {
+   "depth": -5.185,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.7724,
+   "yk": 30
+  },
+  {
+   "depth": -5.84,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.7568,
+   "yk": 31
+  },
+  {
+   "depth": -5.077,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.2506,
+   "yk": 32
+  },
+  {
+   "depth": -2.658,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.7664,
+   "yk": 33
+  },
+  {
+   "depth": -1.899,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.3686,
+   "yk": 34
+  },
+  {
+   "cargo": true,
+   "depth": -3.552,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.744,
+   "yk": 35
+  },
+  {
+   "depth": -4.39,
+   "glyph": 0.17,
+   "team": "iu",
+   "type": "galley",
+   "x": 0.376,
+   "yk": 36
+  },
+  {
+   "depth": -3.539,
+   "glyph": 0.07,
+   "team": "iu",
+   "x": 0.112,
+   "yk": 37
+  }
+ ],
+ "shipsPlaced": true,
+ "sources": [
+  "kiziltan-2014",
+  "pulak-ingram-jones-2015",
+  "kocabas-2015",
+  "wp-yenikapi-1357055213"
+ ],
+ "stills": [
+  "dig",
+  "fill",
+  "harbour",
+  "ships",
+  "neolithic",
+  "footprints"
+ ],
+ "strata": [
+  {
+   "from": 2.5,
+   "hatch": "none",
+   "id": "station",
+   "label": {
+    "en": "Yenikapı station",
+    "tr": "Yenikapı istasyonu"
+   },
+   "sources": [
+    "kiziltan-2014",
+    "dailysabah-yenikapi-2014"
+   ],
+   "to": 0.6,
+   "years": {
+    "en": "2004–today",
+    "tr": "2004–bugün"
+   }
+  },
+  {
+   "from": 0.6,
+   "hatch": "rubble",
+   "id": "fill",
+   "label": {
+    "en": "Ottoman fill and gardens",
+    "tr": "Osmanlı dolgusu ve bostanlar"
+   },
+   "sources": [
+    "kiziltan-2014"
+   ],
+   "to": -1.0,
+   "years": {
+    "en": "1760s–20th century",
+    "tr": "1760'lar–XX. yüzyıl"
+   }
+  },
+  {
+   "from": -1.0,
+   "hatch": "sand",
+   "id": "harbour",
+   "label": {
+    "en": "The Theodosian Harbour",
+    "tr": "Theodosius Limanı"
+   },
+   "sources": [
+    "kiziltan-2014",
+    "pulak-ingram-jones-2015"
+   ],
+   "to": -6.4,
+   "years": {
+    "en": "late 4th–12th century",
+    "tr": "IV. yüzyıl sonu–XII. yüzyıl"
+   }
+  },
+  {
+   "from": -6.4,
+   "hatch": "stones",
+   "id": "floor",
+   "label": {
+    "en": "Harbour floor and sea sand",
+    "tr": "Liman tabanı ve deniz kumu"
+   },
+   "sources": [
+    "kiziltan-2014",
+    "hdn-yenikapi-2013"
+   ],
+   "to": -6.7,
+   "years": {
+    "en": "the harbour floor",
+    "tr": "liman tabanı"
+   }
+  },
+  {
+   "from": -6.7,
+   "hatch": "clay",
+   "id": "neolithic",
+   "label": {
+    "en": "Neolithic village",
+    "tr": "Neolitik köy"
+   },
+   "sources": [
+    "kiziltan-2014",
+    "yilmaz-2011-tubaar"
+   ],
+   "to": -9.6,
+   "years": {
+    "en": "about 6500–4800 BC",
+    "tr": "yaklaşık MÖ 6500–4800"
+   }
+  }
+ ],
+ "talkback": {
+  "en": "A vertical section, read from the top down. At the top, Yenikapı station. Under it Ottoman fill, then the sand and silt of the Theodosian Harbour from about 1 m below sea level, with 37 ship hulls; the harbour floor at about 6.4 m below sea level; under that the clay of a Neolithic village, with graves, huts and, at 8.15 m, footprints. The ships are listed in the Ships panel with their type where it is known.",
+  "tr": "Yukarıdan aşağı okunan dikey bir kesit. En üstte Yenikapı istasyonu. Altında Osmanlı dolgusu, sonra deniz seviyesinin yaklaşık 1 m altından başlayan Theodosius Limanı'nın kumu ve balçığı, 37 gemi teknesiyle; deniz seviyesinin yaklaşık 6,4 m altında liman tabanı; onun altında mezarları, kulübeleri ve 8,15 m'de ayak izleriyle bir Neolitik köyün kili. Gemiler, türü biliniyorsa türüyle, Gemiler panelinde listelenir."
+ },
+ "title": {
+  "en": "The harbour under the metro",
+  "tr": "Metronun altındaki liman"
+ },
+ "top": 2.5,
+ "topEstimated": true
+}

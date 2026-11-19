@@ -374,22 +374,70 @@ FEATURES = [
 
     # --- below -------------------------------------------------------------
     dict(id='below-basilica-cistern', layer='below', kind='cistern',
-         names=loc('Basilica Cistern', 'Yerebatan Sarnıcı'), start=532, end=None,
-         certainty='surviving', sources=['wp-basilica-cistern-1365846547', WD],
-         note=loc('Built under Justinian I in the 6th century; shown from 532.',
-                  'VI. yüzyılda I. Justinianus döneminde yapıldı; 532’den itibaren gösterilir.'),
+         names=loc('Basilica Cistern', 'Yerebatan Sarnıcı'), start=528, end=None,
+         certainty='surviving',
+         sources=['wp-basilica-cistern-1365846547', 'crow-bardill-bayliss-2008',
+                  'istsu-bc-construction', WD],
+         note=loc('Begun under Justinian I around 528 and finished by about 541; shown from '
+                  '528 (P14: the year 532 often given is not in the sources).',
+                  'I. Justinianus döneminde 528 dolaylarında başlandı, 541 dolaylarında '
+                  'bitti; 528’den itibaren gösterilir (P14: sık verilen 532 yılı '
+                  'kaynaklarda yok).'),
          point=('place', 'basilica-cistern')),
     dict(id='below-philoxenos', layer='below', kind='cistern',
          names=loc('Cistern of Philoxenos', 'Binbirdirek Sarnıcı'), start=450, end=None,
          certainty='surviving', sources=['wp-cistern-of-philoxenos-1365179166', WD],
-         note=loc('Built under a palace in the 5th century; shown from 450.',
-                  'V. yüzyılda bir sarayın altına yapıldı; 450’den itibaren gösterilir.'),
+         note=loc('Built under a palace; its brick stamps point to the mid-5th or 6th '
+                  'century. Shown from 450.',
+                  'Bir sarayın altına yapıldı; tuğla damgaları V. yüzyılın ortasını ya da '
+                  'VI. yüzyılı gösterir. 450’den itibaren gösterilir.'),
          point=('place', 'binbirdirek')),
     dict(id='below-theodosius-cistern', layer='below', kind='cistern',
-         names=loc('Theodosius Cistern', 'Şerefiye Sarnıcı'), start=443, end=None,
-         certainty='surviving', sources=['wp-theodosius-cistern-1365081953', WD],
-         note=loc('Built 428–443.', '428–443 yılları arasında yapıldı.'),
+         names=loc('Theodosius Cistern', 'Şerefiye Sarnıcı'), start=425, end=None,
+         certainty='surviving',
+         sources=['wp-theodosius-cistern-1365081953', 'istsu-theodosian-cistern', WD],
+         note=loc('Built in the first half of the 5th century, probably under Theodosius '
+                  'II; shown from 425 (P14: the dates 428–443 often given have no early '
+                  'source).',
+                  'V. yüzyılın ilk yarısında, büyük olasılıkla II. Theodosius döneminde '
+                  'yapıldı; 425’ten itibaren gösterilir (P14: sık verilen 428–443 '
+                  'tarihlerinin erken bir kaynağı yok).'),
          point=('place', 'theodosius-cistern')),
+    # P14: the open reservoirs and the Nakilbent cistern, at their places.
+    dict(id='below-aetius', layer='below', kind='cistern',
+         names=loc('Cistern of Aetius', 'Aetius Sarnıcı'), start=421, end=None,
+         certainty='surviving', sources=['crow-bardill-bayliss-2008', 'istsu-aetius'],
+         note=loc('An open reservoir, about 244 by 85 m, built in 420–421 by Aetius, '
+                  'prefect of the city; a football stadium since 1962.',
+                  'Yaklaşık 244’e 85 m’lik açık bir hazne; 420–421’de şehrin valisi '
+                  'Aetius yaptırdı. 1962’den beri futbol stadı.'),
+         point=('place', 'aetius-cistern')),
+    dict(id='below-aspar', layer='below', kind='cistern',
+         names=loc('Cistern of Aspar', 'Aspar Sarnıcı'), start=459, end=None,
+         certainty='surviving', sources=['crow-bardill-bayliss-2008', 'istsu-aspar'],
+         note=loc('An open reservoir, about 152 m square, begun in 459 by the general '
+                  'Aspar; a park since about 2012.',
+                  'Yaklaşık 152 m karelik açık bir hazne; 459’da general Aspar başlattı. '
+                  '2012 dolaylarından beri park.'),
+         point=('place', 'aspar-cistern')),
+    dict(id='below-mocius', layer='below', kind='cistern',
+         names=loc('Cistern of Mocius', 'Mokios Sarnıcı'), start=491, end=None,
+         certainty='surviving', sources=['crow-bardill-bayliss-2008', 'istsu-mocius'],
+         note=loc('The largest open reservoir, about 170 by 147 m, probably built under '
+                  'Anastasius I (491–518); shown from 491. Now a park.',
+                  'En büyük açık hazne, yaklaşık 170’e 147 m; büyük olasılıkla I. '
+                  'Anastasios döneminde (491–518) yapıldı, 491’den itibaren gösterilir. '
+                  'Bugün park.'),
+         point=('place', 'mocius-cistern')),
+    dict(id='below-nakilbent', layer='below', kind='cistern',
+         names=loc('Nakilbent Cistern', 'Nakilbent Sarnıcı'), start=450, end=None,
+         certainty='surviving', sources=['byzleg-nakilbent', 'istsu-nakilbent'],
+         note=loc('A small early Byzantine cistern, probably 5th or 6th century, south of '
+                  'the Hippodrome, under a shop; shown from 450.',
+                  'Hipodrom’un güneyinde, bir dükkânın altında, büyük olasılıkla V. ya da '
+                  'VI. yüzyıldan küçük bir erken Bizans sarnıcı; 450’den itibaren '
+                  'gösterilir.'),
+         point=('place', 'nakilbent')),
     dict(id='below-great-palace', layer='below', kind='substructure',
          names=loc('Great Palace terraces', 'Büyük Saray terasları'), start=330, end=None,
          certainty='approximate', sources=['wp-great-palace-1369328015', WD],
@@ -419,12 +467,14 @@ FEATURES = [
     dict(id='below-yenikapi', layer='below', kind='excavation',
          names=loc('Yenikapı excavation', 'Yenikapı kazısı'), start=2004, end=None,
          certainty='approximate',
-         sources=['wp-yenikapi-1357055213', 'wp-harbour-of-eleutherios-1354353475', WD],
-         note=loc('Found in 2004 while building the Marmaray and metro station: the silted '
-                  'Harbour of Theodosius and its shipwrecks. Outline schematic, around the '
-                  'transfer centre.',
-                  '2004’te Marmaray ve metro istasyonu yapılırken bulundu: dolmuş Theodosius '
-                  'Limanı ve batıkları. Sınır şematiktir, aktarma merkezinin çevresinde.'),
+         sources=['wp-yenikapi-1357055213', 'wp-harbour-of-eleutherios-1354353475',
+                  'kiziltan-2014', WD],
+         note=loc('Dug from 2004 to 2014 ahead of the Marmaray and metro station: the '
+                  'silted Theodosian Harbour, its 37 shipwrecks and a Neolithic village '
+                  'below. Outline schematic, around the transfer centre.',
+                  '2004–2014’te Marmaray ve metro istasyonundan önce kazıldı: dolmuş '
+                  'Theodosius Limanı, 37 batığı ve altında bir Neolitik köy. Sınır '
+                  'şematiktir, aktarma merkezinin çevresinde.'),
          polygon=[('at', 41.0068, 28.9488), ('at', 41.0066, 28.9545), ('at', 41.0046, 28.9548),
                   ('at', 41.0044, 28.9486)]),
 ]

@@ -1,0 +1,100 @@
+{
+ "device": "Samsung Galaxy A52s (SM-A528B), Android, release arm64 APK",
+ "date": "2026-11-19",
+ "powerSaving": "on (settings global low_power = 1; read, not changed)",
+ "renderer": "Impeller, OpenGL ES (logcat)",
+ "method": "studio/cache/device-p14/sf.py: SurfaceFlinger present times of the Flutter surface; a frame is presented only when the picture changes",
+ "runs": [
+  {
+   "label": "p14-xvi-idle",
+   "frames": 480,
+   "spanS": 7.98,
+   "fps": 60.0,
+   "intervalMedianMs": 16.67,
+   "intervalP90Ms": 16.71,
+   "intervalMaxMs": 16.96,
+   "over20ms": 0,
+   "over34ms": 0,
+   "jank20to100ms": 0,
+   "note": "XVI open on the aisle, untouched (build 3: before the mirror fix; the mirror changes no cost)"
+  },
+  {
+   "label": "p14-xvi-reveal",
+   "frames": 591,
+   "spanS": 9.98,
+   "fps": 59.1,
+   "intervalMedianMs": 16.67,
+   "intervalP90Ms": 16.72,
+   "intervalMaxMs": 66.76,
+   "over20ms": 6,
+   "over34ms": 2,
+   "jank20to100ms": 6,
+   "note": "XVI “Play reveal”, 10 s"
+  },
+  {
+   "label": "p14-xvi-walk",
+   "frames": 599,
+   "spanS": 9.99,
+   "fps": 59.9,
+   "intervalMedianMs": 16.67,
+   "intervalP90Ms": 16.71,
+   "intervalMaxMs": 33.35,
+   "over20ms": 1,
+   "over34ms": 0,
+   "jank20to100ms": 1,
+   "note": "XVI walked by 12 thumb swipes over 10 s"
+  },
+  {
+   "label": "p14-xvii-reveal",
+   "frames": 323,
+   "spanS": 9.08,
+   "fps": 35.5,
+   "intervalMedianMs": 16.7,
+   "intervalP90Ms": 50.0,
+   "intervalMaxMs": 66.67,
+   "over20ms": 136,
+   "over34ms": 81,
+   "jank20to100ms": 136,
+   "note": "XVII “Play reveal” before the fix: ground redrawn every frame"
+  },
+  {
+   "label": "p14-xvii-scroll",
+   "frames": 167,
+   "spanS": 5.97,
+   "fps": 27.8,
+   "intervalMedianMs": 16.69,
+   "intervalP90Ms": 50.03,
+   "intervalMaxMs": 966.46,
+   "over20ms": 73,
+   "over34ms": 45,
+   "jank20to100ms": 69,
+   "note": "XVII scrolled by swipes before the fix (gaps between swipes count as long frames)"
+  },
+  {
+   "label": "p14-xvii-reveal-cached",
+   "frames": 593,
+   "spanS": 9.88,
+   "fps": 59.9,
+   "intervalMedianMs": 16.66,
+   "intervalP90Ms": 16.7,
+   "intervalMaxMs": 33.45,
+   "over20ms": 1,
+   "over34ms": 0,
+   "jank20to100ms": 1,
+   "note": "XVII “Play reveal” with the ground drawn once into an image"
+  },
+  {
+   "label": "p14-xvii-scroll-cached",
+   "frames": 239,
+   "spanS": 4.73,
+   "fps": 50.3,
+   "intervalMedianMs": 16.66,
+   "intervalP90Ms": 16.7,
+   "intervalMaxMs": 133.35,
+   "over20ms": 7,
+   "over34ms": 7,
+   "jank20to100ms": 0,
+   "note": "XVII scrolled by 8 swipes with the cache (the >100 ms intervals are the pauses between swipes)"
+  }
+ ]
+}

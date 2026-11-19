@@ -1,0 +1,169 @@
+{
+  "note": "P14 photographs from Wikimedia Commons, pinned like P12/P13: `fetched` is what Commons served, `masterSize` the 2,400 px master kept in the gitignored studio/cache/p14/commons/masters/. Downloading was approved by the owner on 2026-11-19 (four photographs, about 15 MB).",
+  "records": [
+    {
+      "id": "ug-medusa-inverted-photo",
+      "path": "assets/media/underground/medusa-inverted.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Carlos Reusser Monsalvez · CC0 · Wikimedia Commons",
+        "tr": "Carlos Reusser Monsalvez · CC0 · Wikimedia Commons"
+      },
+      "source": "commons-medusa-inverted",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "medusa-inverted",
+        "file": "File:Cabeza de Medusa en Cisterna Basílica, Estambul (25944784907).jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Cabeza_de_Medusa_en_Cisterna_Bas%C3%ADlica%2C_Estambul_%2825944784907%29.jpg/3840px-Cabeza_de_Medusa_en_Cisterna_Bas%C3%ADlica%2C_Estambul_%2825944784907%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": null,
+        "masterSha256": "459251b6229618e81f7c94b1fada1c7cf27ad8acdf5290d02bfacc14830b651b",
+        "masterSize": [
+          2400,
+          1555
+        ],
+        "fetchedNote": "the served bytes were not hashed: the first pin run stopped on a 429 after writing this master, and it was not downloaded again"
+      },
+      "crop": [
+        0.23,
+        0.0,
+        0.77,
+        1.0
+      ]
+    },
+    {
+      "id": "ug-medusa-sideways-photo",
+      "path": "assets/media/underground/medusa-sideways.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Carole Raddato · CC BY-SA 2.0 · Wikimedia Commons",
+        "tr": "Carole Raddato · CC BY-SA 2.0 · Wikimedia Commons"
+      },
+      "source": "commons-medusa-sideways",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "medusa-sideways",
+        "file": "File:A sideways Medusa head used as column base in the Basilica Cistern of Constantinople, reused from an earlier Roman structure, 6th century AD, Istanbul.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/A_sideways_Medusa_head_used_as_column_base_in_the_Basilica_Cistern_of_Constantinople%2C_reused_from_an_earlier_Roman_structure%2C_6th_century_AD%2C_Istanbul.jpg/3840px-A_sideways_Medusa_head_used_as_column_base_in_the_Basilica_Cistern_of_Constantinople%2C_reused_from_an_earlier_Roman_structure%2C_6th_century_AD%2C_Istanbul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": null,
+        "masterSha256": "b2d55b831c01e13e6dea18d07ccbe1d4197cd2034c98f59f920099437e3d9eb2",
+        "masterSize": [
+          2400,
+          1664
+        ],
+        "fetchedNote": "the served bytes were not hashed: the first pin run stopped on a 429 after writing this master, and it was not downloaded again"
+      }
+    },
+    {
+      "id": "ug-weeping-column-photo",
+      "path": "assets/media/underground/weeping-column.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Mattpopovich · CC0 · Wikimedia Commons",
+        "tr": "Mattpopovich · CC0 · Wikimedia Commons"
+      },
+      "source": "commons-weeping-column",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "weeping-column",
+        "file": "File:Peacock-eyed column in the Basilica Cistern in Istanbul, Turkey, January 20, 2014.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Peacock-eyed_column_in_the_Basilica_Cistern_in_Istanbul%2C_Turkey%2C_January_20%2C_2014.jpg/3840px-Peacock-eyed_column_in_the_Basilica_Cistern_in_Istanbul%2C_Turkey%2C_January_20%2C_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": null,
+        "masterSha256": "1267675e178579afb160c8d56e55d946143edeb939f6357a31a262d0f62f72a6",
+        "masterSize": [
+          2400,
+          1800
+        ],
+        "fetchedNote": "the served bytes were not hashed: the first pin run stopped on a 429 after writing this master, and it was not downloaded again"
+      }
+    },
+    {
+      "id": "ug-yenikapi-footprints-photo",
+      "path": "assets/media/underground/yenikapi-footprints.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Ail Subway · CC BY 3.0 · Wikimedia Commons",
+        "tr": "Ail Subway · CC BY 3.0 · Wikimedia Commons"
+      },
+      "source": "commons-yenikapi-footprints",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "yenikapi-footprints",
+        "file": "File:Ayak izleri.JPG",
+        "fetched": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Ayak_izleri.JPG/1280px-Ayak_izleri.JPG",
+        "fetchedSha256": "1f06827bc5604ca1d278d8fc4c377a4def26eaaf428c0125700026e40a0c9f58",
+        "masterSha256": "81d451961e86cacedd63b88a2da8d84541d6ccf20139e74f37fa62cf66690a79",
+        "masterSize": [
+          1280,
+          960
+        ],
+        "fetchedNote": "the original (1296 px) was refused with 429; the 1280 px thumbnail was served"
+      }
+    },
+    {
+      "kind": "image",
+      "credit": {
+        "en": "Carlos Reusser Monsalvez · CC0 · Wikimedia Commons",
+        "tr": "Carlos Reusser Monsalvez · CC0 · Wikimedia Commons"
+      },
+      "source": "commons-medusa-inverted",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "medusa-inverted",
+        "file": "File:Cabeza de Medusa en Cisterna Basílica, Estambul (25944784907).jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Cabeza_de_Medusa_en_Cisterna_Bas%C3%ADlica%2C_Estambul_%2825944784907%29.jpg/3840px-Cabeza_de_Medusa_en_Cisterna_Bas%C3%ADlica%2C_Estambul_%2825944784907%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": null,
+        "masterSha256": "459251b6229618e81f7c94b1fada1c7cf27ad8acdf5290d02bfacc14830b651b",
+        "masterSize": [
+          2400,
+          1555
+        ],
+        "fetchedNote": "the served bytes were not hashed: the first pin run stopped on a 429 after writing this master, and it was not downloaded again"
+      },
+      "id": "ug-medusa-inverted-face",
+      "path": "assets/walk/basilica-cistern/face-medusa-inverted.jpg",
+      "crop": [
+        0.286,
+        0.309,
+        0.714,
+        0.971
+      ],
+      "edge": 512
+    },
+    {
+      "kind": "image",
+      "credit": {
+        "en": "Carole Raddato · CC BY-SA 2.0 · Wikimedia Commons",
+        "tr": "Carole Raddato · CC BY-SA 2.0 · Wikimedia Commons"
+      },
+      "source": "commons-medusa-sideways",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "medusa-sideways",
+        "file": "File:A sideways Medusa head used as column base in the Basilica Cistern of Constantinople, reused from an earlier Roman structure, 6th century AD, Istanbul.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/A_sideways_Medusa_head_used_as_column_base_in_the_Basilica_Cistern_of_Constantinople%2C_reused_from_an_earlier_Roman_structure%2C_6th_century_AD%2C_Istanbul.jpg/3840px-A_sideways_Medusa_head_used_as_column_base_in_the_Basilica_Cistern_of_Constantinople%2C_reused_from_an_earlier_Roman_structure%2C_6th_century_AD%2C_Istanbul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": null,
+        "masterSha256": "b2d55b831c01e13e6dea18d07ccbe1d4197cd2034c98f59f920099437e3d9eb2",
+        "masterSize": [
+          2400,
+          1664
+        ],
+        "fetchedNote": "the served bytes were not hashed: the first pin run stopped on a 429 after writing this master, and it was not downloaded again"
+      },
+      "id": "ug-medusa-sideways-face",
+      "path": "assets/walk/basilica-cistern/face-medusa-sideways.jpg",
+      "crop": [
+        0.15,
+        0.0,
+        0.843,
+        1.0
+      ],
+      "edge": 512
+    }
+  ]
+}

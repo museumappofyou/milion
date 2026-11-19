@@ -127,6 +127,15 @@ void main() {
           'column-of-constantine',
           'great-palace-mosaic-museum',
           'boukoleon',
+          // P14's eight.
+          'basilica-cistern',
+          'theodosius-cistern',
+          'binbirdirek',
+          'aetius-cistern',
+          'aspar-cistern',
+          'mocius-cistern',
+          'nakilbent',
+          'yenikapi',
         },
       );
       // Accessibility is honestly absent for Chora and renders unverified.

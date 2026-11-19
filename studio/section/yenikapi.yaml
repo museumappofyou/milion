@@ -1,0 +1,233 @@
+# P14 section spec: the harbour under the metro, Milestone XVII (PU, SB).
+# Built by `python3.11 tool/section/build_section.py` into
+# assets/section/yenikapi/section.json.
+# A drawn section through the Yenikapı rescue excavation (2004–2014), from
+# today's station down to the Neolithic footprints. Depths are metres
+# relative to today's sea level (kot), as Kızıltan (2014) gives them; the
+# street's height above the sea and the horizontal axis are not measured
+# here: the drawing runs west to east across the harbour, not to scale, and
+# the ships stand where the drawing has room, not where they were found.
+schemaVersion: 1
+id: yenikapi
+place: yenikapi
+milestone: milestone-xvii
+honesty: RECONSTRUCTION
+top: {value: 2.5, estimated: true, note: "the street above the sea, set in proportion"}
+bottom: -9.6
+title: {en: "The harbour under the metro", tr: "Metronun altındaki liman"}
+description:
+  en: >-
+    A drawn section through the Yenikapı excavation: under the station, the
+    Ottoman fill, the Theodosian Harbour with its 37 shipwrecks, and below
+    them a Neolithic village and its footprints. Depths to scale; across,
+    not to scale, and the ships are placed for legibility, not as found.
+  tr: >-
+    Yenikapı kazısından çizilmiş bir kesit: istasyonun altında Osmanlı
+    dolgusu, 37 batığıyla Theodosius Limanı ve onların altında bir Neolitik
+    köy ve ayak izleri. Derinlikler ölçekli; yatayda ölçek yok, gemiler
+    bulundukları yere değil, okunacak biçimde yerleştirildi.
+talkback:
+  en: >-
+    A vertical section, read from the top down. At the top, Yenikapı station.
+    Under it Ottoman fill, then the sand and silt of the Theodosian Harbour
+    from about 1 m below sea level, with 37 ship hulls; the harbour floor at
+    about 6.4 m below sea level; under that the clay of a Neolithic village,
+    with graves, huts and, at 8.15 m, footprints. The ships are listed in the
+    Ships panel with their type where it is known.
+  tr: >-
+    Yukarıdan aşağı okunan dikey bir kesit. En üstte Yenikapı istasyonu.
+    Altında Osmanlı dolgusu, sonra deniz seviyesinin yaklaşık 1 m altından
+    başlayan Theodosius Limanı'nın kumu ve balçığı, 37 gemi teknesiyle;
+    deniz seviyesinin yaklaşık 6,4 m altında liman tabanı; onun altında
+    mezarları, kulübeleri ve 8,15 m'de ayak izleriyle bir Neolitik köyün
+    kili. Gemiler, türü biliniyorsa türüyle, Gemiler panelinde listelenir.
+sources: [kiziltan-2014, pulak-ingram-jones-2015, kocabas-2015, wp-yenikapi-1357055213]
+strata:
+  - id: station
+    from: 2.5
+    to: 0.6
+    hatch: none
+    years: {en: "2004–today", tr: "2004–bugün"}
+    label: {en: "Yenikapı station", tr: "Yenikapı istasyonu"}
+    sources: [kiziltan-2014, dailysabah-yenikapi-2014]
+  - id: fill
+    from: 0.6
+    to: -1.0
+    hatch: rubble
+    years: {en: "1760s–20th century", tr: "1760'lar–XX. yüzyıl"}
+    label: {en: "Ottoman fill and gardens", tr: "Osmanlı dolgusu ve bostanlar"}
+    sources: [kiziltan-2014]
+  - id: harbour
+    from: -1.0
+    to: -6.4
+    hatch: sand
+    years: {en: "late 4th–12th century", tr: "IV. yüzyıl sonu–XII. yüzyıl"}
+    label: {en: "The Theodosian Harbour", tr: "Theodosius Limanı"}
+    sources: [kiziltan-2014, pulak-ingram-jones-2015]
+  - id: floor
+    from: -6.4
+    to: -6.7
+    hatch: stones
+    years: {en: "the harbour floor", tr: "liman tabanı"}
+    label: {en: "Harbour floor and sea sand", tr: "Liman tabanı ve deniz kumu"}
+    sources: [kiziltan-2014, hdn-yenikapi-2013]
+  - id: neolithic
+    from: -6.7
+    to: -9.6
+    hatch: clay
+    years: {en: "about 6500–4800 BC", tr: "yaklaşık MÖ 6500–4800"}
+    label: {en: "Neolithic village", tr: "Neolitik köy"}
+    sources: [kiziltan-2014, yilmaz-2011-tubaar]
+finds:
+  - {id: wood-rope, kind: wood, depth: -1.1, x: 0.18, label: {en: "Worked wood and rope at −1 m", tr: "−1 m'de işlenmiş ahşap ve halat"}, sources: [kiziltan-2014]}
+  - {id: grave-family, kind: grave, depth: -6.6, x: 0.30, label: {en: "A family grave, −6.51 m", tr: "Bir aile mezarı, −6,51 m"}, sources: [kiziltan-2014]}
+  - {id: grave-timbers, kind: grave, depth: -7.6, x: 0.62, label: {en: "A burial on timbers, −7.60 m", tr: "Ahşap üstünde bir gömü, −7,60 m"}, sources: [kiziltan-2014]}
+  - {id: urns, kind: urn, depth: -7.1, x: 0.46, label: {en: "Cremation urns", tr: "Yakma gömü küpleri"}, sources: [kiziltan-2014, yilmaz-2011-tubaar]}
+  - {id: footprints, kind: footprints, depth: -8.15, x: 0.5, length: 0.5, label: {en: "2,080 footprints, −8.15 m", tr: "2.080 ayak izi, −8,15 m"}, photo: ug-yenikapi-footprints-photo, sources: [kiziltan-2014, hdn-yenikapi-2013, commons-yenikapi-footprints]}
+  - {id: huts, kind: hut, depth: -8.6, x: 0.16, label: {en: "Wattle huts, −8.4 to −8.75 m", tr: "Çit örgülü kulübeler, −8,4 ile −8,75 m arası"}, sources: [kiziltan-2014]}
+  - {id: trees, kind: trees, depth: -8.8, x: 0.84, label: {en: "Tree stumps, −8.5 to −8.9 m", tr: "Ağaç kütükleri, −8,5 ile −8,9 m arası"}, sources: [kiziltan-2014]}
+# The 37 wrecks. Type, date and size as the sources read here give them:
+# INA's eight (Pulak, Ingram & Jones 2015, Table 1) and Istanbul
+# University's galleys (Akkemik and Kocabaş, from a search summary); the
+# university's other wrecks are not itemised in what was read (Kocabaş 2015
+# counts 23 merchant ships and 4 galleys among its 27; Kızıltan 2014 says
+# the university documented 29). Cargo: Kızıltan (2014), p. 17.
+ships:
+  - {yk: 1, type: round, date: {en: "10th century", tr: "X. yüzyıl"}, length: 10, breadth: 3.5, team: ina, cargo: true}
+  - {yk: 2, type: galley, date: {en: "9th or 10th century (?)", tr: "IX. ya da X. yüzyıl (?)"}, length: 30, breadth: 4, team: ina}
+  - {yk: 3, team: iu, cargo: true}
+  - {yk: 4, type: galley, date: {en: "early 10th century", tr: "X. yüzyılın başı"}, length: 30, breadth: 4, team: ina}
+  - {yk: 5, type: round, date: {en: "10th century", tr: "X. yüzyıl"}, length: 14.5, breadth: 5, team: ina}
+  - {yk: 6, team: iu}
+  - {yk: 7, team: iu}
+  - {yk: 8, team: iu}
+  - {yk: 9, team: iu}
+  - {yk: 10, team: iu}
+  - {yk: 11, type: round, date: {en: "early 7th century", tr: "VII. yüzyılın başı"}, length: 11.2, breadth: 3.8, team: ina}
+  - {yk: 12, team: iu, cargo: true}
+  - {yk: 13, type: galley, team: iu}
+  - {yk: 14, type: round, date: {en: "early 9th century", tr: "IX. yüzyılın başı"}, length: 14.7, breadth: 3.4, team: ina}
+  - {yk: 15, team: iu}
+  - {yk: 16, type: galley, team: iu}
+  - {yk: 17, team: iu}
+  - {yk: 18, team: iu}
+  - {yk: 19, team: iu}
+  - {yk: 20, team: iu}
+  - {yk: 21, team: iu}
+  - {yk: 22, team: iu}
+  - {yk: 23, type: round, date: {en: "late 8th–early 9th century", tr: "VIII. yüzyıl sonu–IX. yüzyıl başı"}, length: 15, breadth: 5, team: ina}
+  - {yk: 24, type: round, date: {en: "10th century", tr: "X. yüzyıl"}, length: 8, breadth: 2.5, team: ina}
+  - {yk: 25, type: galley, team: iu}
+  - {yk: 26, team: iu}
+  - {yk: 27, team: iu}
+  - {yk: 28, team: iu}
+  - {yk: 29, team: iu}
+  - {yk: 30, team: iu}
+  - {yk: 31, team: iu}
+  - {yk: 32, team: iu}
+  - {yk: 33, team: iu}
+  - {yk: 34, team: iu}
+  - {yk: 35, team: iu, cargo: true}
+  - {yk: 36, type: galley, team: iu}
+  - {yk: 37, team: iu}
+shipSources: [pulak-ingram-jones-2015, kocabas-2015, kiziltan-2014, akkemik-kocabas-galleys]
+reveal:
+  seconds: 10
+  from: 1.6
+  to: -3.4
+  caption:
+    en: "Digging for a metro station in 2004 found a Byzantine harbour and 37 ships."
+    tr: "2004'te bir metro istasyonu için yapılan kazı, bir Bizans limanı ve 37 gemi buldu."
+beats:
+  - id: dig
+    depth: 1.2
+    seconds: 6
+    label: {en: "A station, 2004", tr: "Bir istasyon, 2004"}
+    caption:
+      en: >-
+        The Istanbul Archaeological Museums began a rescue dig here in 2004,
+        ahead of the Marmaray tunnel and the metro: some 58,000 m², dug until
+        2014. The station opened in 2013.
+      tr: >-
+        İstanbul Arkeoloji Müzeleri 2004'te, Marmaray tüneli ve metrodan önce
+        burada bir kurtarma kazısı başlattı: yaklaşık 58.000 m², 2014'e dek
+        kazıldı. İstasyon 2013'te açıldı.
+    lift: []
+    sources: [kiziltan-2014, hdn-yenikapi-2013, dailysabah-yenikapi-2014]
+  - id: fill
+    depth: -0.2
+    seconds: 5
+    label: {en: "Ottoman fill", tr: "Osmanlı dolgusu"}
+    caption:
+      en: >-
+        Under Mustafa III the silted harbour was filled with rubble from
+        building the Laleli Mosque, in the 1760s, and sold; it stayed market
+        gardens into the 20th century.
+      tr: >-
+        III. Mustafa döneminde dolmuş liman, 1760'larda Laleli Camii'nin
+        yapımından çıkan molozla dolduruldu ve satıldı; XX. yüzyıla dek
+        bostan olarak kaldı.
+    lift: []
+    sources: [kiziltan-2014]
+  - id: harbour
+    depth: -2.4
+    seconds: 6
+    label: {en: "The Theodosian Harbour", tr: "Theodosius Limanı"}
+    caption:
+      en: >-
+        Under Theodosius I, late in the 4th century, a mole closed the bay at
+        the mouth of the Lykos. The stream's silt filled it from the west; by
+        the late 12th century it was nearly full.
+      tr: >-
+        I. Theodosius döneminde, IV. yüzyılın sonlarında, Lykos'un
+        ağzındaki koy bir mendirekle kapatıldı. Derenin getirdiği balçık
+        limanı batıdan doldurdu; XII. yüzyılın sonunda neredeyse dolmuştu.
+    lift: [wood-rope]
+    sources: [kiziltan-2014, pulak-ingram-jones-2015]
+  - id: ships
+    depth: -4.2
+    seconds: 7
+    label: {en: "37 ships", tr: "37 gemi"}
+    caption:
+      en: >-
+        37 wrecks of the 5th to early 11th centuries, the largest group of
+        medieval ships ever dug up. Six are galleys, the first of their age
+        found. Many sank in storms; a large group went down around AD 1000.
+      tr: >-
+        V. yüzyıldan XI. yüzyıl başına 37 batık: bugüne dek kazılmış en büyük
+        Orta Çağ gemi topluluğu. Altısı kadırga; çağlarının bulunan ilk
+        kadırgaları. Çoğu fırtınada battı; büyük bir grup MS 1000
+        dolaylarında birlikte battı.
+    lift: [ships]
+    sources: [pulak-ingram-jones-2015, kiziltan-2014]
+  - id: neolithic
+    depth: -7.0
+    seconds: 6
+    label: {en: "A Neolithic village", tr: "Neolitik bir köy"}
+    caption:
+      en: >-
+        Below the harbour floor, a village of the Fikirtepe culture, begun
+        about 6500 BC, when the Marmara was still a lake. Its cremation urns
+        are the earliest known in Anatolia.
+      tr: >-
+        Liman tabanının altında, Marmara henüz bir gölken, MÖ 6500
+        dolaylarında kurulmuş bir Fikirtepe kültürü köyü. Yakma gömü
+        küpleri Anadolu'da bilinen en eskileridir.
+    lift: [grave-family, urns, grave-timbers]
+    sources: [kiziltan-2014, yilmaz-2011-tubaar]
+  - id: footprints
+    depth: -8.3
+    seconds: 6
+    label: {en: "Footprints, −8.15 m", tr: "Ayak izleri, −8,15 m"}
+    caption:
+      en: >-
+        On an old stream bed, 2,080 footprints were pressed into wet clay and
+        sealed by sand, about 8,000 years ago. Most were made by people
+        wearing shoes.
+      tr: >-
+        Eski bir dere yatağında, yaklaşık 8.000 yıl önce ıslak kile basılmış
+        ve kumla örtülmüş 2.080 ayak izi bulundu. Çoğu ayakkabılı insanların
+        izleri.
+    lift: [footprints, huts, trees]
+    sources: [kiziltan-2014, hdn-yenikapi-2013]
+stills: [dig, fill, harbour, ships, neolithic, footprints]

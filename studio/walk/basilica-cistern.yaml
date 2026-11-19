@@ -1,0 +1,266 @@
+# P14 walk spec: the Basilica Cistern, Milestone XVI (WK). Built by
+# `python3.11 tool/walk/build_walk.py` into assets/walk/basilica-cistern/
+# (model.glb with the prototypes, walk.json with the grid, the route, the
+# stops, the callouts and the reveal).
+# Frame: metres, y up (glTF), x along the cistern's length from the Medusa
+# end wall (x = 0) to the entrance end, z across it from the wall nearest
+# the Medusa heads (z = 0). The floor is at y = 0.
+# Cited: the hall (138 × 64.4–65 m), 336 columns in 12 rows of 28, about
+# 9 m tall and about 4.8 m apart. Set in proportion (no accessible source
+# gives them; each is flagged `estimated`): the shaft's diameter, the impost,
+# the vault's rise, today's water level and deck height, the carved bases'
+# size and the capitals' mix and order.
+schemaVersion: 1
+id: basilica-cistern
+place: basilica-cistern
+milestone: milestone-xvi
+honesty: RECONSTRUCTION
+grid:
+  length: {value: 138, source: bc-dimensions}
+  width: {value: 64.6, source: bc-dimensions}
+  along: {value: 28, source: bc-columns-count}
+  across: {value: 12, source: bc-columns-count}
+  columnHeight: {value: 9.0, source: bc-column-height-spacing}
+  # the pitch follows from the hall and the count: 138/29 = 4.76 m and
+  # 64.6/13 = 4.97 m, "about 4.8 m" (bc-column-height-spacing)
+  impostHeight: {value: 0.32, estimated: true}
+  vaultRise: {value: 2.38, estimated: true, note: half the shorter pitch, a semicircular arch}
+  shaftRadius: {value: [0.36, 0.31], estimated: true}
+  sides: 12
+  waterLevel: {value: 0.6, estimated: true, note: "about 1 m deep today (bc-walls-steps-depth, uncertain); the floor is drawn at 0"}
+  deckHeight: {value: 1.2, estimated: true}
+  deckWidth: {value: 2.2, estimated: true}
+  eyeHeight: 1.6
+  baseHeight: {value: 1.0, estimated: true, note: the carved bases under the two Medusa columns}
+# Capitals: about 98 carved Corinthian capitals (finished or half-finished)
+# and the rest plain, unfinished blocks (bc-capitals, which corrects the
+# popular "Ionic, Corinthian and Doric"); their order here is illustrative,
+# from a fixed seed.
+capitals:
+  mix: {C: 98, P: 238}
+  source: bc-capitals
+  seed: 336
+  estimated: order
+specials:
+  # [along, across] are 1-based column indices from the x = 0 and z = 0 walls.
+  - {id: medusa-sideways, column: [1, 1], prototype: medusa-sideways}
+  - {id: medusa-inverted, column: [2, 1], prototype: medusa-inverted}
+  - {id: weeping-column, column: [9, 6], prototype: column-W}
+# The visitors' deck: a polyline in bay units ([along, across] from the
+# corner x = 0, z = 0; one unit is one pitch).
+route:
+  - [27.6, 12.4]
+  - [27.6, 6.5]
+  - [9.5, 6.5]
+  - [9.5, 1.5]
+  - [1.0, 1.5]
+# The stair down from the entrance building (52 steps by one count,
+# bc-walls-steps-depth, uncertain): drawn as one flight along the wall.
+stair: {from: [27.6, 12.4], direction: -1, steps: 20, rise: 0.19, run: 0.3, width: 2.2}
+lighting:
+  # Linear RGB. Today's installation lights each column from its foot.
+  ambient: [0.035, 0.03, 0.028]
+  uplight: [1.25, 0.62, 0.26]
+  uplightHeight: 0.6
+  uplightOffset: 0.45
+  reach: 2.6
+  fog: {colour: [0.012, 0.009, 0.008], density: 0.045, far: 46}
+  water: {colour: [0.02, 0.035, 0.03], alpha: 0.42, mirrorDim: [0.55, 0.55, 0.6]}
+materials:
+  marble: [0.78, 0.74, 0.68]
+  capital: [0.86, 0.82, 0.75]
+  granite: [0.55, 0.5, 0.48]
+  brick: [0.42, 0.24, 0.17]
+  arch: [0.55, 0.33, 0.24]
+  plaster: [0.46, 0.38, 0.32]
+  deck: [0.16, 0.14, 0.13]
+  rail: [0.1, 0.1, 0.1]
+  strip: [1.4, 0.9, 0.5]
+  stone: [0.6, 0.56, 0.5]
+
+# What the app says. Stops and callouts are in bay units [along, across,
+# height in metres]; the builder turns them into metres. A callout may
+# instead name `nearest: C` (or P) with a `hint`: the nearest column with that
+# capital to the hint, its capital's height.
+text:
+  title: {en: "The Basilica Cistern", tr: "Yerebatan Sarnıcı"}
+  description:
+    en: >-
+      Walk the deck through Justinian's cistern: 336 columns in 12 rows of 28,
+      each about 9 m tall and about 4.8 m apart, under brick cross vaults,
+      over the water they kept. A reconstruction from cited dimensions; the
+      columns' girth, the vaults' rise, the water's level and the order of
+      the capitals are set in proportion.
+    tr: >-
+      Iustinianus'un sarnıcında platform boyunca yürüyün: 28'erli 12 sıra
+      hâlinde 336 sütun, her biri yaklaşık 9 m yüksekliğinde ve birbirinden
+      yaklaşık 4,8 m uzakta; tuğla çapraz tonozların altında, tuttukları
+      suyun üstünde. Kaynaklı ölçülerden bir rekonstrüksiyon; sütunların
+      kalınlığı, tonozların yüksekliği, suyun seviyesi ve başlıkların sırası
+      oranla verildi.
+  talkback:
+    en: >-
+      A walk inside the Basilica Cistern, drawn in 3D: rows of marble
+      columns lit from their feet, brick vaults overhead, still water
+      reflecting them. Five stops: the stair, the aisle, the hen's-eye
+      column, the Medusa on her side and the Medusa upside down. Use next
+      and previous to move between them.
+    tr: >-
+      Yerebatan Sarnıcı'nın içinde, 3B çizilmiş bir yürüyüş: dipten
+      aydınlatılmış mermer sütun sıraları, üstte tuğla tonozlar, onları
+      yansıtan durgun su. Beş durak: merdiven, koridor, tavus gözlü sütun,
+      yan yatmış Medusa ve baş aşağı Medusa. Duraklar arasında sonraki ve
+      önceki ile geçin.
+  sources: [istsu-basilica-cistern, crow-bardill-bayliss-2008, byzleg-basilica-cistern, onlu-2010-itu, wp-basilica-cistern-1365846547]
+  reveal:
+    seconds: 10
+    stop: medusa-inverted
+    caption:
+      en: "Medusa, upside down, at the foot of a column in Justinian's cistern."
+      tr: "Medusa, baş aşağı, Iustinianus'un sarnıcında bir sütunun dibinde."
+  stops:
+    - id: stair
+      eye: [26.0, 12.4, 6.6]
+      look: [18, 7, 2.4]
+      seconds: 7
+      label: {en: "Down from the street", tr: "Sokaktan aşağı"}
+      caption:
+        en: >-
+          Justinian made the court of the Stoa Basilica into this cistern,
+          begun around 528 and finished by about 542. Its name comes from the
+          basilica that stood above it.
+        tr: >-
+          Iustinianus, Stoa Basilika'nın avlusunu bu sarnıca çevirdi; yapım
+          528 dolaylarında başladı ve 542 dolaylarında bitti. Adını üstünde
+          duran bazilikadan alır.
+      callouts: [columns]
+      sources: [istsu-bc-construction, crow-bardill-bayliss-2008, byzleg-basilica-cistern]
+    - id: aisle
+      eye: [24.0, 6.5, 2.8]
+      look: [14.0, 6.5, 5.2]
+      seconds: 7
+      label: {en: "The aisle", tr: "Koridor"}
+      caption:
+        en: >-
+          336 columns stand in 12 rows of 28, each about 9 m tall and about
+          4.8 m apart. About 98 capitals are carved Corinthian; most of the
+          rest are plain, unfinished blocks.
+        tr: >-
+          336 sütun 28'erli 12 sıra hâlinde durur; her biri yaklaşık 9 m
+          yüksekliğinde ve birbirinden yaklaşık 4,8 m uzakta. Yaklaşık 98
+          başlık oymalı Korint başlığıdır; geri kalanların çoğu yontulmamış
+          düz bloklardır.
+      callouts: [corinthian, plain-capital, vaults]
+      sources: [istsu-basilica-cistern, onlu-2010-itu, crow-bardill-bayliss-2008]
+    - id: hens-eye
+      photo: ug-weeping-column-photo
+      eye: [10.6, 6.5, 2.8]
+      look: [9.0, 6.0, 3.4]
+      seconds: 7
+      label: {en: "The hen's-eye column", tr: "Tavus gözlü sütun"}
+      caption:
+        en: >-
+          One column is carved all over with oval knots and lopped branches,
+          like the columns of the arch in the Forum of Theodosius, late in the
+          4th century. Guides call it the weeping column; that story is
+          modern.
+        tr: >-
+          Sütunlardan biri baştan aşağı oval budaklar ve kesik dallarla
+          oyulmuştur; IV. yüzyılın sonlarında Theodosius Forumu'ndaki kemerin
+          sütunları gibi. Rehberler ona ağlayan sütun der; bu hikâye
+          yenidir.
+      callouts: [hens-eye]
+      sources: [byzleg-basilica-cistern, istsu-basilica-cistern, wp-basilica-cistern-1365846547, commons-weeping-column]
+    - id: medusa-sideways
+      photo: ug-medusa-sideways-photo
+      eye: [1.0, 1.62, 2.6]
+      look: [1.0, 1.0, 1.1]
+      seconds: 7
+      label: {en: "Medusa, on her side", tr: "Yan yatmış Medusa"}
+      caption:
+        en: >-
+          Two Medusa heads serve as column bases in the north-west corner.
+          This one lies on her side.
+        tr: >-
+          Kuzeybatı köşesinde iki Medusa başı sütun kaidesi olarak kullanılır.
+          Bu, yan yatmış olanı.
+      callouts: [medusa-sideways]
+      sources: [byzleg-basilica-cistern, dailysabah-bc-2022, onlu-2010-itu, commons-medusa-sideways]
+    - id: medusa-inverted
+      photo: ug-medusa-inverted-photo
+      eye: [2.0, 1.62, 2.6]
+      look: [2.0, 1.0, 1.1]
+      seconds: 7
+      label: {en: "Medusa, upside down", tr: "Baş aşağı Medusa"}
+      caption:
+        en: >-
+          The other stands on her head. Both are reused Roman carvings; why
+          they were set this way is not known.
+        tr: >-
+          Öteki başının üstünde durur. İkisi de yeniden kullanılmış Roma
+          oymalarıdır; neden böyle konduklarını bilmiyoruz.
+      callouts: [medusa-inverted]
+      sources: [byzleg-basilica-cistern, istsu-basilica-cistern, milliyet-sadic-2022, commons-medusa-inverted]
+  stills: [stair, aisle, hens-eye, medusa-sideways, medusa-inverted]
+  start: aisle
+  # The carved faces on the two heads' blocks: crops of the stops'
+  # photographs (studio/underground/media.json, ug-*-face).
+  photos:
+    medusa-inverted: assets/walk/basilica-cistern/face-medusa-inverted.jpg
+    medusa-sideways: assets/walk/basilica-cistern/face-medusa-sideways.jpg
+  callouts:
+    - id: columns
+      anchor: [20.0, 7.0, 5.0]
+      label: {en: "336 columns, 12 rows of 28", tr: "336 sütun, 28'erli 12 sıra"}
+      note: {en: "Each about 9 m tall, about 4.8 m apart.", tr: "Her biri yaklaşık 9 m, aralar yaklaşık 4,8 m."}
+      sources: [istsu-basilica-cistern, wp-basilica-cistern-1365846547]
+    - id: corinthian
+      nearest: C
+      hint: [19.0, 6.0]
+      label: {en: "A carved Corinthian capital", tr: "Oymalı bir Korint başlığı"}
+      note: {en: "About 98 of the capitals are carved, some only half-finished.", tr: "Başlıkların yaklaşık 98'i oymalıdır, bazıları yarım kalmıştır."}
+      sources: [onlu-2010-itu, crow-bardill-bayliss-2008]
+    - id: plain-capital
+      nearest: P
+      hint: [19.0, 7.0]
+      label: {en: "A plain capital, never carved", tr: "Hiç oyulmamış düz bir başlık"}
+      note: {en: "Often called Doric; it is an unfinished blank.", tr: "Çoğu kez Dor denir; aslında bitirilmemiş bir bloktur."}
+      sources: [onlu-2010-itu, byzleg-basilica-cistern]
+    - id: vaults
+      anchor: [18.5, 6.5, 11.2]
+      label: {en: "Brick cross vaults", tr: "Tuğla çapraz tonozlar"}
+      note: {en: "Laid in Khorasan mortar of lime and brick dust.", tr: "Kireç ve tuğla tozundan Horasan harcıyla örülü."}
+      sources: [istsu-basilica-cistern, wp-basilica-cistern-1365846547]
+    - id: hens-eye
+      anchor: [9.0, 6.0, 4.0]
+      label: {en: "The hen's-eye column", tr: "Tavus gözlü sütun"}
+      note: {en: "Knots and lopped branches, carved in the 4th century.", tr: "IV. yüzyılda oyulmuş budaklar ve kesik dallar."}
+      sources: [byzleg-basilica-cistern, istsu-basilica-cistern]
+    - id: medusa-sideways
+      anchor: [1.0, 1.0, 1.15]
+      label: {en: "Medusa, on her side", tr: "Yan yatmış Medusa"}
+      note: {en: "Reused Roman carving, set under a column.", tr: "Bir sütunun altına konmuş, yeniden kullanılmış Roma oyması."}
+      sources: [byzleg-basilica-cistern, onlu-2010-itu]
+    - id: medusa-inverted
+      anchor: [2.0, 1.0, 1.15]
+      label: {en: "Medusa, upside down", tr: "Baş aşağı Medusa"}
+      note: {en: "Why she was set on her head is not known.", tr: "Neden baş aşağı konduğu bilinmiyor."}
+      sources: [byzleg-basilica-cistern, istsu-basilica-cistern]
+  ambient:
+    - id: drips
+      status: placeholder
+      note: {en: "Sound to come: dripping water, not recorded yet.", tr: "Ses gelecek: damlayan su, henüz kaydedilmedi."}
+    - id: echo
+      status: placeholder
+      note: {en: "Sound to come: the hall's echo, not measured yet.", tr: "Ses gelecek: salonun yankısı, henüz ölçülmedi."}
+  fish:
+    count: 10
+    note:
+      en: >-
+        In the 1540s Gyllius saw people above fishing through wells. These
+        fish and their swimming are imagined; whether fish live in the
+        cistern today was not checked.
+      tr: >-
+        1540'larda Gyllius yukarıdaki evlerden kuyulara olta sallayanları
+        gördü. Bu balıklar ve yüzüşleri hayal ürünüdür; bugün sarnıçta balık
+        olup olmadığı denetlenmedi.

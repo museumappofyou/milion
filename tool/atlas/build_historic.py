@@ -147,12 +147,22 @@ def resolve(feature, wd, labels, towers, osm, places):
     return {'type': 'Polygon', 'coordinates': [ring + [ring[0]]]}
 
 
+def known_source_ids():
+    """The atlas's own sources and, since P14, a chapter's
+    (assets/content/sources/, built before the atlas by tool/content/rebuild.py)."""
+    ids = {s['id'] for s in spec.SOURCES}
+    for path in sorted((ROOT / 'assets/content/sources').glob('*.json')):
+        if path.name != 'atlas.json':
+            ids |= {r['id'] for r in json.loads(path.read_text(encoding='utf-8'))['records']}
+    return ids
+
+
 def build():
     wd, labels, towers = load_wikidata()
     osm, osm_base = load_osm()
     places = {r['id']: (r['coordinates']['lat'], r['coordinates']['lng'])
               for r in json.loads(PLACES.read_text(encoding='utf-8'))['records']}
-    source_ids = {s['id'] for s in spec.SOURCES}
+    source_ids = known_source_ids()
     by_layer = {l: [] for l in LAYERS}
     seen = set()
     for f in spec.FEATURES:

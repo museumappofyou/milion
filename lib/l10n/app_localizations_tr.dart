@@ -1715,4 +1715,76 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get guideSurfaceWall => 'Duvarlar, kemerler ve nişler';
+
+  @override
+  String get walkLook => 'Bak';
+
+  @override
+  String get walkLoading => 'Yürüyüş hazırlanıyor';
+
+  @override
+  String get walkUnavailable => 'Yürüyüşün modeli yüklenemedi.';
+
+  @override
+  String get walkHint =>
+      'Platformda yürümek için yukarı ya da aşağı, dönmek için yana sürükleyin. Sonraki durak için iki kez dokunun.';
+
+  @override
+  String get walkFish => 'Sudaki balıklar';
+
+  @override
+  String get walkCallouts => 'Açıklama çizgileri';
+
+  @override
+  String get walkLookSensor => 'Telefonla dön';
+
+  @override
+  String walkStill(String number, String total) {
+    return 'Durak $number/$total';
+  }
+
+  @override
+  String get walkStops => 'Duraklar';
+
+  @override
+  String get walkPlan => 'Salonun planı, bulunduğunuz yer işaretli';
+
+  @override
+  String get sectionShips => 'Gemiler';
+
+  @override
+  String get sectionHint =>
+      'Kazmak için yukarı ya da aşağı sürükleyin; türü için bir gemiye dokunun.';
+
+  @override
+  String get shipGalley => 'Kadırga, uzun kürekli gemi';
+
+  @override
+  String get shipRound => 'Yuvarlak gövdeli ticaret gemisi';
+
+  @override
+  String get shipTypeUnknown =>
+      'Türü burada okunan kaynaklarda ayrıca verilmiyor';
+
+  @override
+  String get shipTeamIna =>
+      'Sualtı Arkeolojisi Enstitüsü (INA, Texas A&M) inceledi';
+
+  @override
+  String get shipTeamIu => 'İstanbul Üniversitesi inceledi';
+
+  @override
+  String get shipCargo => 'Yüküyle bulundu';
+
+  @override
+  String shipSize(String length, String breadth) {
+    return 'Yaklaşık $length × $breadth m';
+  }
+
+  @override
+  String get shipPlaced =>
+      'Gemiler çizimde okunsun diye yerleştirildi; her birinin bulunduğu yer değil.';
+
+  @override
+  String get seePhotograph => 'Fotoğrafı gör';
 }
