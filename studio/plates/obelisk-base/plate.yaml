@@ -1,0 +1,44 @@
+# Milestone XIII, the Obelisk base (P13): an RL and candle plate of the base
+# Theodosius I gave the obelisk he raised in 390. The master stacks three
+# photographs by Francesco Bini (tool/content/fetch_commons.py, composite
+# 'obelisk-base'): the south face's upper block, the emperor and his family
+# in the box; the south face's plinth, the races; the north face's plinth,
+# the obelisk hauled up. Janin's south and north are the south-west and
+# north-east faces (the Hippodrome runs NE–SW).
+id: obelisk-base
+milestone: milestone-xiii
+artwork: ic-obelisk-base
+title: {en: The Obelisk base, tr: Dikilitaş’ın kaidesi}
+description:
+  en: >-
+    The marble base of the obelisk Theodosius I raised in the Hippodrome in
+    390: the emperor and his court in the imperial box on the upper block,
+    the chariot races and the obelisk hauled upright on the plinth below.
+    Three photographs, two faces.
+  tr: >-
+    I. Theodosius’un 390’da Hipodrom’a diktirdiği dikilitaşın mermer kaidesi:
+    üst blokta imparator locasındaki imparator ve sarayı, alttaki altlıkta
+    araba yarışları ve dikilitaşın ayağa kaldırılışı. Üç fotoğraf, iki yüz.
+manualMinutes: 30  # agent authoring estimate (composite, windows, beats); human time not yet measured
+source:
+  cache: p13/commons/masters/obelisk-base.jpg   # tool/content/fetch_commons.py (composite)
+  sha256: 461165d0057be7d76e12c1d77daa8259a7af933990f40fe423c341b3912c05c6
+  url: https://commons.wikimedia.org/wiki/File:Dado_di_teodosio,_390_ca.,_lato_sud,_teodosio_con_la_famiglia_imperiale,_03.jpg
+  credit:
+    en: Francesco Bini / Wikimedia Commons (CC BY-SA 4.0), three photographs stacked
+    tr: Francesco Bini / Wikimedia Commons (CC BY-SA 4.0), üç fotoğraf alt alta
+segments:
+  - {id: box, box: [0.0, 0.0, 1.0, 0.335], points: [[0.5, 0.15]], prior: planar, weight: 0.2}
+  - {id: race, box: [0.0, 0.39, 1.0, 0.6], points: [[0.45, 0.53]], prior: planar, weight: 0.2}
+  - {id: raising, box: [0.0, 0.665, 1.0, 1.0], points: [[0.5, 0.88]], prior: planar, weight: 0.2}
+depth: {model: depth-anything-v2-base, modelWeight: 0.45}
+gold: {heuristic: true}
+beats:
+  - {detail: detail-obelisk-box, duration: 6, light: raking}
+  - {detail: detail-obelisk-court, duration: 5, light: candle}
+  - {detail: detail-obelisk-spina, duration: 6, light: raking}
+  - {detail: detail-obelisk-race, duration: 6, light: raking}
+  - {detail: detail-obelisk-capstans, duration: 6, light: candle}
+reveal: {detail: detail-obelisk-box, light: raking, moment: 5}
+sources: [byzleg-theodosius-obelisk, janin-1950, heurist-cil-iii-737, seuso-obelisk-theodosius,
+          commons-obelisk-emperor, commons-obelisk-south, commons-obelisk-north]

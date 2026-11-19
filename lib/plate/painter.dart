@@ -9,7 +9,7 @@ import 'controller.dart';
 import 'manifest.dart';
 
 /// Shader `uEffect` values; see shaders/plate.frag.
-enum PlateEffect { plate, flow, spiral, wipe }
+enum PlateEffect { plate, flow, spiral, wipe, sway }
 
 /// Separate cached shader instances keep masked passes composable. Repaints
 /// follow the controller; a camera-only change reuses the painted layer.
@@ -99,7 +99,7 @@ class PlatePainter extends CustomPainter {
         1,
         base,
         flow.mask,
-        effect: PlateEffect.flow,
+        effect: flow.sway ? PlateEffect.sway : PlateEffect.flow,
         light: light,
         time: t,
         flow: Offset(flow.period, flow.distance),

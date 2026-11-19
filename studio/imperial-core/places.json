@@ -1,0 +1,660 @@
+{
+  "note": "P13: the five places reviewed (strata newest first, each sourced; the review and visit card, checked remotely on 2026-11-19). Written by studio/cache/p13/write_places.py from the research pass in studio/cache/p13/.",
+  "records": [
+    {
+      "id": "hippodrome",
+      "strata": [
+        {
+          "id": "hippodrome-square",
+          "fromYear": 1901,
+          "toYear": null,
+          "era": "modern",
+          "title": {
+            "en": "Sultanahmet Square, 1901–",
+            "tr": "Sultanahmet Meydanı, 1901–"
+          },
+          "body": {
+            "en": "The racecourse is a public square now, officially Sultanahmet Square. Three monuments of its central barrier still stand in a line: the Egyptian obelisk, the bronze Serpent Column and the Walled Obelisk, each in a railed pit, because the ground has risen several metres since Byzantine times.\n\nThe German Fountain, Wilhelm II’s gift of 1900–1901, stands about where the starting gates were. At the south-west end, the curved wall of the sphendone can still be seen from Nakilbent Sokağı.",
+            "tr": "Yarış alanı bugün resmî adıyla Sultanahmet Meydanı olan bir kent meydanı. Orta setin üç anıtı hâlâ bir sıra hâlinde duruyor: Mısır dikilitaşı, tunç Yılanlı Sütun ve Örme Dikilitaş. Zemin Bizans döneminden bu yana birkaç metre yükseldiği için her biri parmaklıklı bir çukurda.\n\nII. Wilhelm’in 1900–1901’deki armağanı Alman Çeşmesi, aşağı yukarı başlangıç kapılarının yerinde duruyor. Güneybatı uçta sphendonenin kavisli duvarı hâlâ Nakilbent Sokağı’ndan görülebiliyor."
+          },
+          "media": [
+            "ic-hippodrome-photo",
+            "ic-hippodrome-1900"
+          ],
+          "sources": [
+            "wp-hippodrome-of-constantinople-1364835690",
+            "byzleg-hippodrome",
+            "tdv-alman-cesmesi",
+            "tan-hippodrome-underground",
+            "encrom-sphendone"
+          ],
+          "anchorYear": 2026
+        },
+        {
+          "id": "hippodrome-at-meydani",
+          "fromYear": 1453,
+          "toYear": 1900,
+          "era": "ottoman",
+          "title": {
+            "en": "At Meydanı, 1453–1900",
+            "tr": "Atmeydanı, 1453–1900"
+          },
+          "body": {
+            "en": "Under the Ottomans the racecourse was At Meydanı, the Horse Square, and its stands were taken apart for stone. İbrahim Paşa, Süleyman’s grand vizier, had seats pulled down for his palace on the west side, which stands on the stands’ vaults; in 1606 a traveller found three rows of seats left.\n\nThe square kept its spectacles. The festival Murad III gave in 1582 for the circumcision of his son Mehmed lasted 52 days, or 55 by another account; the Surname-i Hümayun pictures it in 427 miniatures by Nakkaş Osman.\n\nFrom 1609 Sedefkâr Mehmed Ağa built the Sultan Ahmed Mosque on the east side, laid out with the square’s monuments in mind. Spoil from the work is said to have raised the ground by several metres.",
+            "tr": "Osmanlı döneminde yarış alanı Atmeydanı oldu; tribünleri taş için söküldü. Kanuni Süleyman’ın sadrazamı İbrahim Paşa, tribünlerin tonozları üstünde duran batı yandaki sarayı için oturma sıralarını yıktırdı; 1606’da bir seyyah geriye üç sıra kaldığını gördü.\n\nMeydan gösterilerini sürdürdü. III. Murad’ın 1582’de oğlu Mehmed’in sünneti için düzenlediği şenlik 52, başka bir kayda göre 55 gün sürdü; Surname-i Hümayun onu Nakkaş Osman’ın 427 minyatürüyle resmeder.\n\n1609’dan itibaren Sedefkâr Mehmed Ağa, meydanın anıtlarını gözeterek doğu yanda Sultan Ahmed Camii’ni yaptı. İnşaattan çıkan molozun zemini birkaç metre yükselttiği söylenir."
+          },
+          "media": [],
+          "sources": [
+            "tdv-atmeydani",
+            "tdv-ibrahim-pasa-sarayi",
+            "janin-1950",
+            "tan-hippodrome-underground",
+            "tdv-surname",
+            "tdv-sultan-ahmed-camii",
+            "encrom-sphendone",
+            "byzleg-hippodrome"
+          ],
+          "anchorYear": 1582
+        },
+        {
+          "id": "hippodrome-sack",
+          "fromYear": 1204,
+          "toYear": 1453,
+          "era": "byzantine",
+          "title": {
+            "en": "The sack, 1204",
+            "tr": "Yağma, 1204"
+          },
+          "body": {
+            "en": "In 1204 the crusaders melted down the Hippodrome’s bronzes. Four gilded horses, probably the ones that had stood high above the track, went to Venice and San Marco.\n\nThe Walled Obelisk lost its bronze plates in the same sack. Under the Latin emperors the arena saw jousts rather than chariot races.",
+            "tr": "1204’te Haçlılar Hipodrom’un tunç heykellerini erittiler. Büyük olasılıkla pistin yükseğinde duran dört yaldızlı at Venedik’e, San Marco’ya gitti.\n\nÖrme Dikilitaş tunç levhalarını aynı yağmada yitirdi. Latin imparatorlar döneminde arenada araba yarışları yerine mızrak turnuvaları yapıldı."
+          },
+          "media": [],
+          "sources": [
+            "byzleg-hippodrome",
+            "bit-elam-halk-eglenceleri",
+            "wp-hippodrome-of-constantinople-1364835690",
+            "istanbul-gov-2007-monuments",
+            "janin-1950"
+          ]
+        },
+        {
+          "id": "hippodrome-racecourse",
+          "fromYear": 203,
+          "toYear": 1204,
+          "era": "byzantine",
+          "title": {
+            "en": "The racecourse, 203–1204",
+            "tr": "Yarış alanı, 203–1204"
+          },
+          "body": {
+            "en": "Septimius Severus began a circus here around 203 and built only half its stands; Constantine finished it, with the curved south end on vaults, for the city’s dedication on 11 May 330. Estimates of its size run from about 430 to 480 m long and about 120 m wide.\n\nChariots started from twelve gates at the north end and raced round a central barrier, the euripus, set with monuments: the Serpent Column from Delphi, the obelisk Theodosius I raised in 390, the Walled Obelisk. The emperor watched from the kathisma on the east side, reached straight from the Great Palace.\n\nThe Hippodrome was where the city faced its rulers, and the crowd could turn: the Nika riot of January 532 ended here with more than 30,000 dead, by Procopius’s count.",
+            "tr": "Septimius Severus burada 203 dolaylarında bir hipodroma başladı ve tribünlerin yalnızca yarısını yaptı; Konstantin onu, kavisli güney ucu tonozlara oturtarak, 11 Mayıs 330’daki kuruluş töreni için tamamladı. Boyutu için verilen tahminler 430 ile 480 m uzunluk ve yaklaşık 120 m genişlik arasında.\n\nArabalar kuzey uçtaki on iki kapıdan çıkıp anıtlarla donatılmış bir orta setin, euripusun çevresinde yarışırdı: Delfoi’den Yılanlı Sütun, I. Theodosius’un 390’da diktirdiği dikilitaş, Örme Dikilitaş. İmparator yarışları doğu yandaki, doğrudan Büyük Saray’dan geçilen kathismadan izlerdi.\n\nHipodrom, şehrin yöneticileriyle yüz yüze geldiği yerdi ve kalabalık ayaklanabilirdi: Ocak 532’deki Nika ayaklanması burada, Prokopios’un sayımına göre 30.000’den fazla ölüyle bitti."
+          },
+          "media": [
+            "ic-sphendone-photo"
+          ],
+          "sources": [
+            "janin-1950",
+            "tdv-atmeydani",
+            "byzleg-hippodrome",
+            "tan-hippodrome-underground",
+            "bit-cetinkaya-bizans-mimarisi",
+            "wp-hippodrome-of-constantinople-1364835690",
+            "procopius-wars-1-24",
+            "encrom-sphendone"
+          ],
+          "anchorYear": 330,
+          "studies": [
+            "hippodrome"
+          ]
+        }
+      ],
+      "review": {
+        "note": "Hippodrome (Sultanahmet Square) promoted to reviewed (P13), checked remotely on 2026-11-19: a public square with no gate, so the entrance point is the place’s own point. No source gives walking minutes from the tram, so the stop is named in the entry text. A site visit stays open.",
+        "review": "reviewed",
+        "entrance": {
+          "lat": 41.006388888888885,
+          "lng": 28.975555555555555
+        },
+        "status": {
+          "value": "open",
+          "checkedAt": "2026-11-19"
+        },
+        "currentFunction": {
+          "en": "A public square, officially Sultanahmet Square. The three monuments of the central barrier stand in railed pits.",
+          "tr": "Resmî adıyla Sultanahmet Meydanı olan bir kent meydanı. Orta setin üç anıtı parmaklıklı çukurlarda duruyor."
+        },
+        "hook": {
+          "en": "Constantinople’s racecourse still gives Sultanahmet Square its shape.",
+          "tr": "Konstantinopolis’in yarış alanı Sultanahmet Meydanı’na hâlâ biçimini veriyor."
+        },
+        "visit": {
+          "checkedAt": "2026-11-19",
+          "hours": null,
+          "hoursCheckedAt": null,
+          "entry": {
+            "en": "An open public square with no gate or ticket. The obelisks and the Serpent Column stand in railed pits along its middle; the sphendone’s vaults are seen from Nakilbent Sokağı on the south-west side. Nearest tram stop: T1 Sultanahmet.",
+            "tr": "Kapısı ya da bileti olmayan, açık bir kent meydanı. Dikilitaşlar ve Yılanlı Sütun ortası boyunca parmaklıklı çukurlarda duruyor; sphendonenin tonozları güneybatıda Nakilbent Sokağı’ndan görülüyor. En yakın tramvay durağı: T1 Sultanahmet."
+          },
+          "etiquette": null,
+          "accessibility": null,
+          "transit": [],
+          "sources": [
+            "wp-hippodrome-of-constantinople-1364835690",
+            "tan-hippodrome-underground",
+            "metro-istanbul-t1"
+          ]
+        },
+        "tags": [
+          "entrance-remote"
+        ],
+        "sources": [
+          "wp-hippodrome-of-constantinople-1364835690",
+          "tan-hippodrome-underground",
+          "byzleg-hippodrome",
+          "tdv-atmeydani",
+          "janin-1950",
+          "osm-hippodrome-2026-11-19"
+        ]
+      }
+    },
+    {
+      "id": "milion",
+      "strata": [
+        {
+          "id": "milion-fragment",
+          "fromYear": 1967,
+          "toYear": null,
+          "era": "modern",
+          "title": {
+            "en": "A fragment on Divanyolu, 1967–",
+            "tr": "Divanyolu’nda bir parça, 1967–"
+          },
+          "body": {
+            "en": "In 1967 and 1968, after houses on Divanyolu were pulled down, excavators found the Milion’s foundations and a marble fragment, now set up as a pillar near the Basilica Cistern. Fıratlı and Ergil published the sounding in 1969.\n\nSince 2019 the city’s heritage directorate has dug around it under the Istanbul Archaeology Museums, finding Byzantine walls, an Ottoman neighbourhood, a late Ottoman cistern and a bath beside the water tower. No report after 2022 was found, so how much of the site is open to see now is not confirmed.",
+            "tr": "1967 ve 1968’de Divanyolu’ndaki evler yıkıldıktan sonra kazıcılar Milion’un temellerini ve bugün Yerebatan Sarnıcı’nın yakınında bir dikme gibi duran mermer bir parçayı buldu. Fıratlı ile Ergil sondajı 1969’da yayımladı.\n\n2019’dan beri İBB Miras, İstanbul Arkeoloji Müzeleri gözetiminde çevresini kazıyor; Bizans duvarları, bir Osmanlı mahallesi, geç Osmanlı döneminden bir sarnıç ve su terazisinin yanında bir hamam bulundu. 2022’den sonrasına ait bir rapor bulunamadı; alanın bugün ne kadarının görülebildiği doğrulanmadı."
+          },
+          "media": [
+            "ic-milion-photo"
+          ],
+          "sources": [
+            "wp-milion-1374763433",
+            "byzleg-milion",
+            "firatli-ergil-1969",
+            "cnnturk-milyon-2022"
+          ],
+          "anchorYear": 2026
+        },
+        {
+          "id": "milion-water-tower",
+          "fromYear": 1453,
+          "toYear": 1967,
+          "era": "ottoman",
+          "title": {
+            "en": "Lost to a water tower",
+            "tr": "Su terazisine yer açılırken"
+          },
+          "body": {
+            "en": "The Milion seems to have stood, in some form, after 1453: it may be the arch near Hagia Sophia named in a deed of Mehmed II.\n\nIt was gone by the early 16th century, cleared when the water supply was enlarged and a water tower, a su terazisi, was built beside it. Houses later stood over the site until the 1960s.",
+            "tr": "Milion 1453’ten sonra da bir biçimde ayakta kalmış görünüyor: II. Mehmed’in bir vakfiyesinde Ayasofya’nın yakınında anılan kemer o olabilir.\n\n16. yüzyılın başında ortadan kalkmıştı; su yolları genişletilip yanına bir su terazisi yapılırken kaldırıldı. Alanın üstünde 1960’lara dek evler durdu."
+          },
+          "media": [],
+          "sources": [
+            "mango-1959-brazen-house",
+            "wp-milion-1374763433",
+            "byzantium1200-milion",
+            "byzleg-milion"
+          ],
+          "anchorYear": 1500
+        },
+        {
+          "id": "milion-mile-zero",
+          "fromYear": 330,
+          "toYear": 1453,
+          "era": "byzantine",
+          "title": {
+            "en": "Mile zero, 330–1453",
+            "tr": "Sıfır mil, 330–1453"
+          },
+          "body": {
+            "en": "The Milion stood at the head of the Mese, near the Augustaion and Hagia Sophia, probably from Constantine’s refounding of the city. Like the golden milestone in Rome’s Forum, it was where the great roads out of the city began: the Hebdomon took its name from the seventh mile west.\n\nTexts speak of its vault and its arches, and a domed arch on four piers is the likely form, though no source describes it outright and its size is not known. Statues of Constantine and Helena holding a cross stood on it, with the city’s Tyche; Justinian set up a public time-piece there in 535.\n\nIn the early 8th century Philippikos had the first five Church councils painted in its vault and Anastasios II added the sixth. Constantine V replaced them with scenes of the Hippodrome and a portrait of his favourite charioteer.",
+            "tr": "Milion, büyük olasılıkla Konstantin’in şehri yeniden kurmasından beri, Augustaion ile Ayasofya’nın yakınında, Mese’nin başında duruyordu. Roma Forumu’ndaki altın mil taşı gibi, şehirden çıkan büyük yollar burada başlardı: Hebdomon adını batıdaki yedinci milden aldı.\n\nMetinler tonozundan ve kemerlerinden söz eder; dört ayak üstünde kubbeli bir kemer en olası biçimdir, ama hiçbir kaynak bunu açıkça anlatmaz ve boyutu bilinmiyor. Üstünde Konstantin ile Helena’nın bir haçı tutan heykelleri, yanlarında şehrin Tykhe’si dururdu; Iustinianos 535’te buraya halka açık bir saat koydurdu.\n\n8. yüzyılın başında Philippikos tonozuna ilk beş kilise konsilini resmettirdi, II. Anastasios altıncıyı ekledi. V. Konstantin bunların yerine Hipodrom sahnelerini ve en sevdiği arabacının portresini yaptırdı."
+          },
+          "media": [],
+          "sources": [
+            "mango-1959-brazen-house",
+            "janin-1950",
+            "byzleg-milion",
+            "byzleg-hebdomon",
+            "suda-mu-1065",
+            "wp-milion-1374763433"
+          ],
+          "anchorYear": 330,
+          "studies": [
+            "milion"
+          ]
+        }
+      ],
+      "review": {
+        "note": "Milion promoted to reviewed (P13), checked remotely on 2026-11-19: a street monument seen from the pavement, so the entrance point is the place’s own point. The İBB excavation around it (from 2019) was last reported in July 2022; whether it is still fenced could not be checked. A site visit stays open.",
+        "review": "reviewed",
+        "entrance": {
+          "lat": 41.008043,
+          "lng": 28.978066
+        },
+        "status": {
+          "value": "open",
+          "checkedAt": "2026-11-19"
+        },
+        "currentFunction": {
+          "en": "A marble fragment set up as a pillar on Divanyolu, near the Basilica Cistern; the ground around it has been excavated since 2019.",
+          "tr": "Divanyolu’nda, Yerebatan Sarnıcı’nın yakınında dikme gibi duran mermer bir parça; çevresi 2019’dan beri kazılıyor."
+        },
+        "hook": {
+          "en": "Where the empire’s great roads began: one marble fragment on Divanyolu.",
+          "tr": "İmparatorluğun büyük yollarının başladığı yer: Divanyolu’nda tek bir mermer parça."
+        },
+        "visit": {
+          "checkedAt": "2026-11-19",
+          "hours": null,
+          "hoursCheckedAt": null,
+          "entry": {
+            "en": "Seen from the street, at the corner of Divanyolu opposite Hagia Sophia’s square, beside the Basilica Cistern. Nearest tram stop: T1 Sultanahmet.",
+            "tr": "Sokaktan görülür; Divanyolu’nda Ayasofya meydanının karşısındaki köşede, Yerebatan Sarnıcı’nın yanında. En yakın tramvay durağı: T1 Sultanahmet."
+          },
+          "etiquette": null,
+          "accessibility": null,
+          "transit": [],
+          "sources": [
+            "wp-milion-1374763433",
+            "cnnturk-milyon-2022",
+            "metro-istanbul-t1"
+          ]
+        },
+        "tags": [
+          "entrance-remote"
+        ],
+        "sources": [
+          "wp-milion-1374763433",
+          "byzleg-milion",
+          "mango-1959-brazen-house",
+          "cnnturk-milyon-2022"
+        ]
+      }
+    },
+    {
+      "id": "column-of-constantine",
+      "strata": [
+        {
+          "id": "column-hooped-stone",
+          "fromYear": 1779,
+          "toYear": null,
+          "era": "ottoman",
+          "title": {
+            "en": "Çemberlitaş, the hooped stone",
+            "tr": "Çemberlitaş"
+          },
+          "body": {
+            "en": "After a fire, probably that of 1779, the Ottomans wrapped the column’s foot in a masonry base. Its Turkish name, Çemberlitaş, the hooped stone, comes from its iron bands: the first were fitted in 418, and a pilgrim in the 1420s or 1430s counted fifteen.\n\nAbout 34.8 m stand above today’s street; the original platform, five steps about 11 m across, lies under it. The city restored the column in 1971–1975 and again in 2001–2009.",
+            "tr": "Bir yangından sonra, büyük olasılıkla 1779 yangınından sonra, Osmanlılar sütunun dibini bir örgü kaideyle sardı. Türkçe adı Çemberlitaş, demir çemberlerinden gelir: ilkleri 418’de takıldı; 1420’lerde ya da 1430’larda bir hacı on beş çember saydı.\n\nBugünkü sokak seviyesinin üstünde yaklaşık 34,8 m yükseliyor; beş basamaklı, yaklaşık 11 m genişliğindeki özgün platform onun altında kalıyor. Belediye sütunu 1971–1975’te ve 2001–2009’da onardı."
+          },
+          "media": [
+            "ic-column-photo"
+          ],
+          "sources": [
+            "janin-1950",
+            "byzleg-constantine-column",
+            "heurist-column-constantine",
+            "wp-column-of-constantine-1370253345"
+          ],
+          "anchorYear": 2026
+        },
+        {
+          "id": "column-cross",
+          "fromYear": 1106,
+          "toYear": 1779,
+          "era": "byzantine",
+          "title": {
+            "en": "A cross for the statue, 1106",
+            "tr": "Heykelin yerine haç, 1106"
+          },
+          "body": {
+            "en": "A violent wind threw the statue down around 1106. Manuel I Komnenos (1143–1180) rebuilt the top in courses of marble, and an inscription on them says that Manuel, the pious ruler, restored this work of God destroyed by time.\n\nA large cross took the statue’s place. The Ottomans removed it after 1453.",
+            "tr": "Şiddetli bir rüzgâr heykeli 1106 dolaylarında devirdi. I. Manuel Komnenos (1143–1180) tepeyi mermer sıralarla yeniden ördürdü; bu sıralardaki yazıt, dindar hükümdar Manuel’in zamanla yıkılan bu Tanrı işini yeniden yaptığını söyler.\n\nHeykelin yerini büyük bir haç aldı. Osmanlılar onu 1453’ten sonra kaldırdı."
+          },
+          "media": [],
+          "sources": [
+            "byzleg-constantine-column",
+            "heurist-column-constantine",
+            "bit-cetinkaya-bizans-mimarisi",
+            "wp-column-of-constantine-1370253345"
+          ]
+        },
+        {
+          "id": "column-forum",
+          "fromYear": 328,
+          "toYear": 1106,
+          "era": "byzantine",
+          "title": {
+            "en": "Constantine’s column, around 328",
+            "tr": "Konstantin’in sütunu, 328 dolayları"
+          },
+          "body": {
+            "en": "The column was raised around 328 for the city’s dedication in 330, in the middle of the round Forum of Constantine on the Mese. Its shaft is of porphyry drums, seven by most recent counts, though writers give from seven to eleven; each is about 2.9 m across.\n\nOn top stood a giant bronze statue of Constantine with a crown of rays, a spear and a globe, like the sun god on his coins.\n\nLater legend buried relics under it: the Palladium, the baskets of the loaves, the axe Noah built the ark with. None has been found.",
+            "tr": "Sütun, 330’daki kuruluş töreni için 328 dolaylarında, Mese üzerindeki yuvarlak Konstantin Forumu’nun ortasına dikildi. Gövdesi porfir tamburlardan oluşur; son sayımların çoğuna göre yedi, ama yazarlar yediden on bire kadar sayılar verir. Her biri yaklaşık 2,9 m çapında.\n\nTepesinde, sikkelerindeki güneş tanrısı gibi ışın taçlı, mızraklı ve küreli dev bir tunç Konstantin heykeli dururdu.\n\nSonraki efsaneler altına kutsal emanetler gömüldüğünü anlattı: Palladion, ekmeklerin sepetleri, Nuh’un gemiyi yaptığı balta. Hiçbiri bulunmadı."
+          },
+          "media": [],
+          "sources": [
+            "byzleg-constantine-column",
+            "heurist-column-constantine",
+            "wp-column-of-constantine-1370253345",
+            "bit-cetinkaya-bizans-mimarisi",
+            "janin-1950"
+          ],
+          "anchorYear": 330
+        }
+      ],
+      "review": {
+        "note": "Column of Constantine promoted to reviewed (P13), checked remotely on 2026-11-19: a monument on a small open square, so the entrance point is the place’s own point. Whether the foot of the Ottoman base is open or railed off was not found. A site visit stays open.",
+        "review": "reviewed",
+        "entrance": {
+          "lat": 41.008611,
+          "lng": 28.971111
+        },
+        "status": {
+          "value": "open",
+          "checkedAt": "2026-11-19"
+        },
+        "currentFunction": {
+          "en": "A Roman column on a small square on Divanyolu, beside the Çemberlitaş tram stop.",
+          "tr": "Divanyolu’nda, Çemberlitaş tramvay durağının yanındaki küçük bir meydanda Roma döneminden bir sütun."
+        },
+        "hook": {
+          "en": "Constantine’s porphyry column, hooped in iron since 418.",
+          "tr": "Konstantin’in porfir sütunu, 418’den beri demir çemberli."
+        },
+        "visit": {
+          "checkedAt": "2026-11-19",
+          "hours": null,
+          "hoursCheckedAt": null,
+          "entry": {
+            "en": "On the small square where Divanyolu meets Yeniçeriler Caddesi, right beside the T1 Çemberlitaş stop; seen from the street.",
+            "tr": "Divanyolu’nun Yeniçeriler Caddesi’yle birleştiği küçük meydanda, T1 Çemberlitaş durağının hemen yanında; sokaktan görülür."
+          },
+          "etiquette": null,
+          "accessibility": null,
+          "transit": [
+            {
+              "kind": "tram",
+              "stop": {
+                "en": "T1 Çemberlitaş",
+                "tr": "T1 Çemberlitaş"
+              },
+              "minutes": 1
+            }
+          ],
+          "sources": [
+            "wp-column-of-constantine-1370253345",
+            "metro-istanbul-t1",
+            "byzleg-constantine-column"
+          ]
+        },
+        "tags": [
+          "entrance-remote"
+        ],
+        "sources": [
+          "wp-column-of-constantine-1370253345",
+          "byzleg-constantine-column",
+          "heurist-column-constantine",
+          "janin-1950"
+        ]
+      }
+    },
+    {
+      "id": "great-palace-mosaic-museum",
+      "strata": [
+        {
+          "id": "mosaic-museum-closed",
+          "fromYear": 2023,
+          "toYear": null,
+          "era": "modern",
+          "title": {
+            "en": "Closed for restoration, 2023–",
+            "tr": "Restorasyon için kapalı, 2023–"
+          },
+          "body": {
+            "en": "The museum has been closed since July 2023 for a restoration and enhancement project. Its official page, last updated in May 2026, still says closed and gives no reopening date.\n\nBefore the closure it was open every day, reached through the Arasta Bazaar behind the Sultan Ahmed Mosque.",
+            "tr": "Müze Temmuz 2023’ten beri bir restorasyon ve iyileştirme projesi için kapalı. Mayıs 2026’da güncellenen resmî sayfası hâlâ kapalı diyor ve yeniden açılış tarihi vermiyor.\n\nKapanmadan önce her gün açıktı; Sultan Ahmed Camii’nin arkasındaki Arasta Çarşısı’ndan girilirdi."
+          },
+          "media": [],
+          "sources": [
+            "muze-gen-tr-mozaik",
+            "istanbulcom-mosaic-museum",
+            "wp-great-palace-mosaic-museum-1365805703"
+          ],
+          "anchorYear": 2026
+        },
+        {
+          "id": "mosaic-museum-found",
+          "fromYear": 1935,
+          "toYear": 2023,
+          "era": "modern",
+          "title": {
+            "en": "Found and lifted, 1935–1997",
+            "tr": "Bulunuşu ve kaldırılışı, 1935–1997"
+          },
+          "body": {
+            "en": "The University of St Andrews found the floor in 1935–1938 while digging a courtyard of the Great Palace; a second campaign, under David Talbot Rice, followed in the early 1950s. The museum came under the Istanbul Archaeology Museums in 1953 and the Hagia Sophia Museum in 1979.\n\nFrom 1983 to 1997 the Austrian Academy of Sciences lifted the mosaics, treated them in a workshop in Hagia Irene and laid them back where they were found. The museum opened in 1987.",
+            "tr": "Döşemeyi St Andrews Üniversitesi 1935–1938’de Büyük Saray’ın bir avlusunu kazarken buldu; 1950’lerin başında David Talbot Rice yönetiminde ikinci bir kazı yapıldı. Müze 1953’te İstanbul Arkeoloji Müzeleri’ne, 1979’da Ayasofya Müzesi’ne bağlandı.\n\n1983–1997 arasında Avusturya Bilimler Akademisi mozaikleri kaldırdı, Aya İrini’deki bir atölyede onardı ve bulundukları yere geri döşedi. Müze 1987’de açıldı."
+          },
+          "media": [
+            "ic-palace-floor-photo"
+          ],
+          "sources": [
+            "byzleg-mosaic-museum",
+            "muze-gen-tr-mozaik",
+            "wp-great-palace-mosaic-museum-1365805703",
+            "tan-great-palace-mosaic-museum"
+          ],
+          "anchorYear": 1987,
+          "artworks": [
+            "ic-palace-floor-mosaic"
+          ]
+        },
+        {
+          "id": "mosaic-museum-peristyle",
+          "fromYear": 527,
+          "toYear": 1453,
+          "era": "byzantine",
+          "title": {
+            "en": "The palace courtyard, 6th–7th century",
+            "tr": "Saray avlusu, 6.–7. yüzyıl"
+          },
+          "body": {
+            "en": "The floor was laid round a colonnaded courtyard of the Great Palace, about 55.5 by 66.5 m, with an apsed hall to the south-east. The palace spread from the Hippodrome down to the shore over about 16 hectares; less than a quarter has been excavated.\n\nAbout 1,900 m² of mosaic showed hunts, beasts and country life on a white ground: an eagle fighting a snake, a griffin eating a lizard, a boy feeding a donkey. Its date is argued over: the museum gives 450–550, while most scholars now put it no earlier than Justinian and some as late as Heraclius.",
+            "tr": "Döşeme, Büyük Saray’ın yaklaşık 55,5 × 66,5 m’lik sütunlu bir avlusunun çevresine döşendi; güneydoğusunda apsisli bir salon vardı. Saray, Hipodrom’dan kıyıya dek yaklaşık 16 hektara yayılıyordu; dörtte birinden azı kazıldı.\n\nYaklaşık 1.900 m²’lik mozaik beyaz bir zemin üstünde avları, hayvanları ve kır yaşamını gösteriyordu: bir yılanla dövüşen kartal, kertenkele yiyen bir grifon, bir eşeği besleyen çocuk. Tarihi tartışmalı: müze 450–550 diyor; bilim insanlarının çoğu ise onu Iustinianos’tan önceye koymuyor, bazıları Herakleios dönemine kadar indiriyor."
+          },
+          "media": [
+            "ic-griffin-photo"
+          ],
+          "sources": [
+            "byzleg-mosaic-museum",
+            "tan-great-palace-mosaic-museum",
+            "muze-gen-tr-mozaik",
+            "wp-great-palace-of-constantinople-1369328015",
+            "istanbul-gov-2007-monuments"
+          ],
+          "anchorYear": 550
+        }
+      ],
+      "review": {
+        "note": "Great Palace Mosaic Museum promoted to reviewed (P13), checked remotely on 2026-11-19: closed for restoration since July 2023 (official page, May 2026; istanbul.com, October 2026). The entrance point is the museum building in OpenStreetMap (way 1153966162, as fetched for the Atlas); visitors went in through the Arasta Bazaar. Pre-closure hours and fee are given in the entry text only, marked as such; whether the Müzekart will apply on reopening is not stated.",
+        "review": "reviewed",
+        "entrance": {
+          "lat": 41.0042939,
+          "lng": 28.9774111
+        },
+        "status": {
+          "value": "closed",
+          "checkedAt": "2026-11-19"
+        },
+        "currentFunction": {
+          "en": "A museum over the Great Palace’s peristyle floor, closed for restoration since July 2023.",
+          "tr": "Büyük Saray’ın peristil döşemesi üstüne kurulmuş, Temmuz 2023’ten beri restorasyon için kapalı bir müze."
+        },
+        "hook": {
+          "en": "The emperors’ floor: eagles, griffins and hunters in 80 million cubes.",
+          "tr": "İmparatorların döşemesi: 80 milyon küpte kartallar, grifonlar ve avcılar."
+        },
+        "visit": {
+          "checkedAt": "2026-11-19",
+          "hours": null,
+          "hoursCheckedAt": null,
+          "entry": {
+            "en": "Closed for restoration since July 2023, with no reopening date announced. Before the closure: open every day, 09:00–19:00 in summer and 09:00–18:30 in winter, ticket 10 €, entered through the Arasta Bazaar (Kabasakal Caddesi, Torun Sokak) behind the Sultan Ahmed Mosque. Nearest tram stop: T1 Sultanahmet.",
+            "tr": "Temmuz 2023’ten beri restorasyon için kapalı; yeniden açılış tarihi açıklanmadı. Kapanmadan önce: her gün açık, yazın 09.00–19.00, kışın 09.00–18.30, bilet 10 avro; Sultan Ahmed Camii’nin arkasındaki Arasta Çarşısı’ndan (Kabasakal Caddesi, Torun Sokak) girilirdi. En yakın tramvay durağı: T1 Sultanahmet."
+          },
+          "etiquette": null,
+          "accessibility": null,
+          "transit": [],
+          "sources": [
+            "muze-gen-tr-mozaik",
+            "istanbulcom-mosaic-museum",
+            "wp-great-palace-mosaic-museum-1365805703",
+            "metro-istanbul-t1",
+            "osm-way-1153966162"
+          ]
+        },
+        "tags": [
+          "entrance-remote"
+        ],
+        "sources": [
+          "muze-gen-tr-mozaik",
+          "istanbulcom-mosaic-museum",
+          "byzleg-mosaic-museum",
+          "tan-great-palace-mosaic-museum",
+          "osm-way-1153966162"
+        ]
+      }
+    },
+    {
+      "id": "boukoleon",
+      "strata": [
+        {
+          "id": "boukoleon-restoration",
+          "fromYear": 2018,
+          "toYear": null,
+          "era": "modern",
+          "title": {
+            "en": "Under restoration, 2018–",
+            "tr": "Restorasyonda, 2018–"
+          },
+          "body": {
+            "en": "In 2018 the city announced an open-air museum here with a timber walkway. Work began around 2020; debris up to ten metres deep was cleared, and about 227 finds came out, among them a fountain about 1,600 years old.\n\nA city page of March 2026 still said the work was expected to finish in 2025; no opening had been announced by November 2026. The site is fenced, and its sea façade is seen from Kennedy Caddesi, the coast road, just east of Küçük Ayasofya.",
+            "tr": "Belediye 2018’de burada ahşap bir yürüme yolu olan bir açık hava müzesi kurulacağını duyurdu. Çalışmalar 2020 dolaylarında başladı; on metreye varan moloz kaldırıldı ve aralarında yaklaşık 1.600 yıllık bir çeşmenin de bulunduğu 227 kadar buluntu çıktı.\n\nBelediyenin Mart 2026 tarihli bir sayfası çalışmaların 2025’te bitmesinin beklendiğini söylüyordu; Kasım 2026’ya dek bir açılış duyurulmadı. Alan çevrili; deniz cephesi Küçük Ayasofya’nın hemen doğusunda, sahil yolu Kennedy Caddesi’nden görülüyor."
+          },
+          "media": [
+            "ic-boukoleon-photo"
+          ],
+          "sources": [
+            "wp-boukoleon-palace-1376164444",
+            "mee-boukoleon-2022",
+            "visit-istanbul-boukoleon",
+            "kulturenvanteri-bukoleon",
+            "nomads-boukoleon-2026"
+          ],
+          "anchorYear": 2026
+        },
+        {
+          "id": "boukoleon-railway",
+          "fromYear": 1873,
+          "toYear": 2018,
+          "era": "ottoman",
+          "title": {
+            "en": "Cut by the railway, 1873",
+            "tr": "Demiryolu kesiyor, 1873"
+          },
+          "body": {
+            "en": "In 1873 much of what was left was destroyed for the railway line to Sirkeci, which runs right below the palace.\n\nThree marble-framed doorways of a balcony that faced the sea still show in the wall.",
+            "tr": "1873’te geriye kalanın büyük bölümü, sarayın hemen altından geçen Sirkeci demiryolu için yıkıldı.\n\nDenize bakan bir balkonun mermer çerçeveli üç kapısı hâlâ duvarda görülüyor."
+          },
+          "media": [],
+          "sources": [
+            "wp-boukoleon-palace-1376164444",
+            "mee-boukoleon-2022"
+          ]
+        },
+        {
+          "id": "boukoleon-palace",
+          "fromYear": 408,
+          "toYear": 1453,
+          "era": "byzantine",
+          "title": {
+            "en": "The palace by the sea, 5th century",
+            "tr": "Denizin kıyısındaki saray, 5. yüzyıl"
+          },
+          "body": {
+            "en": "The Boukoleon was the Great Palace’s palace on the Sea of Marmara, with its own harbour; Byzantine writers said Theodosius II built it. Its name came, they said, from a marble group on the quay of a lion bringing down a bull. A lion from the harbour entrance is in the Istanbul Archaeology Museums.\n\nIn the 9th century Theophilos added a large façade on the sea walls. In the late 960s Nikephoros II Phokas, fearing riots, shut himself in behind a high, strong wall.\n\nIn 1204 Boniface of Montferrat rode along the shore to the Boukoleon, and it surrendered to him. The Latin emperors lived there until 1261.",
+            "tr": "Bukoleon, Büyük Saray’ın kendi limanı olan Marmara kıyısındaki sarayıydı; Bizans yazarlarına göre onu II. Theodosius yaptırdı. Adının, yine onlara göre, rıhtımdaki bir boğayı yere seren aslan heykelinden geldiği söylenir. Liman girişinden bir aslan İstanbul Arkeoloji Müzeleri’nde.\n\n9. yüzyılda Theophilos deniz surlarının üstüne büyük bir cephe ekledi. 960’ların sonunda II. Nikephoros Phokas, ayaklanmalardan korkarak yüksek ve sağlam bir surun ardına kapandı.\n\n1204’te Montferratlı Bonifacius kıyı boyunca Bukoleon’a geldi ve saray ona teslim oldu. Latin imparatorlar 1261’e dek orada oturdu."
+          },
+          "media": [],
+          "sources": [
+            "wp-boukoleon-palace-1376164444",
+            "janin-1950",
+            "kulturenvanteri-bukoleon",
+            "visit-istanbul-boukoleon"
+          ],
+          "anchorYear": 450
+        }
+      ],
+      "review": {
+        "note": "Boukoleon promoted to reviewed (P13), checked remotely on 2026-11-19: under restoration and fenced; no opening confirmed (Visit Istanbul, March 2026; Kültür Envanteri, March 2026; a 2026 travel guide). The point given is the palace’s sea walls in OpenStreetMap (way 1482368832, as fetched for the Atlas), seen from Kennedy Caddesi; there is no public entrance.",
+        "review": "reviewed",
+        "entrance": {
+          "lat": 41.0024389,
+          "lng": 28.9765693
+        },
+        "status": {
+          "value": "restoration",
+          "checkedAt": "2026-11-19"
+        },
+        "currentFunction": {
+          "en": "A ruin under restoration, fenced; its sea façade is seen from Kennedy Caddesi.",
+          "tr": "Restorasyondaki, çevrili bir kalıntı; deniz cephesi Kennedy Caddesi’nden görülüyor."
+        },
+        "hook": {
+          "en": "The emperors’ palace on the sea, with the coast road at its feet.",
+          "tr": "İmparatorların deniz kıyısındaki sarayı; sahil yolu hemen dibinde."
+        },
+        "visit": {
+          "checkedAt": "2026-11-19",
+          "hours": null,
+          "hoursCheckedAt": null,
+          "entry": {
+            "en": "No public entrance confirmed in November 2026. The fenced site and its sea façade are seen from Kennedy Caddesi, the coast road at Çatladıkapı, just east of Küçük Ayasofya; a travel guide puts it about ten minutes’ walk downhill from Sultanahmet Square.",
+            "tr": "Kasım 2026 itibarıyla doğrulanmış bir giriş yok. Çevrili alan ve deniz cephesi, Küçük Ayasofya’nın hemen doğusunda, Çatladıkapı’da sahil yolu Kennedy Caddesi’nden görülüyor; bir gezi rehberine göre Sultanahmet Meydanı’ndan yokuş aşağı yaklaşık on dakikalık yürüyüş."
+          },
+          "etiquette": null,
+          "accessibility": null,
+          "transit": [],
+          "sources": [
+            "visit-istanbul-boukoleon",
+            "kulturenvanteri-bukoleon",
+            "nomads-boukoleon-2026",
+            "osm-way-1482368832"
+          ]
+        },
+        "tags": [
+          "entrance-remote"
+        ],
+        "sources": [
+          "wp-boukoleon-palace-1376164444",
+          "visit-istanbul-boukoleon",
+          "kulturenvanteri-bukoleon",
+          "osm-way-1482368832"
+        ]
+      }
+    }
+  ]
+}

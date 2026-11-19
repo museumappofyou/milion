@@ -21,7 +21,7 @@ void main() {
     plates = await PlateCatalog.load(registry, (p) => File(p).readAsString());
   });
 
-  test('register: 48 numerals 0–XLVII in order, nine flagships, plates I–V, VII, VIII, X', () {
+  test('register: 48 numerals 0–XLVII in order, nine flagships, plates I–V, VII, VIII, X, XIII, XV', () {
     final register = registry.register;
     expect(register.map((m) => m.numeral), [
       for (var n = 0; n < 48; n++) romanNumeral(n),
@@ -41,7 +41,7 @@ void main() {
       register
           .where((m) => plates.forMilestone(m) != null)
           .map((m) => m.numeral),
-      ['I', 'II', 'III', 'IV', 'V', 'VII', 'VIII', 'X'],
+      ['I', 'II', 'III', 'IV', 'V', 'VII', 'VIII', 'X', 'XIII', 'XV'],
     );
     for (final m in register) {
       expect(m.honesty, contains(Honesty.ORIGINAL), reason: m.numeral);
@@ -54,7 +54,7 @@ void main() {
     expect(romanValue('0'), 0);
   });
 
-  test('detail pool: ≥ 14 curated Chora and Hagia Sophia details, EN+TR, on playable Milestones', () {
+  test('detail pool: ≥ 14 curated details (Chora, Hagia Sophia, the imperial core), EN+TR, on playable Milestones', () {
     final pool = registry.details;
     expect(pool.length, greaterThanOrEqualTo(14));
     expect(pool.map((d) => d.id).toSet().length, pool.length);
@@ -67,7 +67,12 @@ void main() {
       );
       expect(
         registry.artwork(d.artworkId).placeId,
-        isIn(['chora', 'hagia-sophia']),
+        isIn([
+          'chora',
+          'hagia-sophia',
+          'obelisk-of-theodosius',
+          'great-palace-mosaic-museum',
+        ]),
       );
       expect(d.sentence.tr, isNotEmpty);
       expect(d.title.tr, isNotEmpty);

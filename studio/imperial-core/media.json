@@ -1,0 +1,313 @@
+{
+  "note": "P13 photographs from Wikimedia Commons, pinned like P12 (studio/hagia-sophia/media.json): `fetched` is the thumbnail Commons served, `masterSize` the 2,400 px master kept in the gitignored studio/cache/p13/commons/masters/. `composites` stack masters into one plate master. Downloading was approved by the owner on 2026-11-19 (13 photographs, about 40 MB, then one more: the emperor on the south face).",
+  "records": [
+    {
+      "id": "ic-palace-floor-photo",
+      "path": "assets/plates/palace-animals/original.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-palace-floor",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "palace-floor",
+        "file": "File:Mosaici da un peristilio del gran palazzo di costantinopoli, VI secolo ca., pavimento centro-ovest 02,1.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli%2C_VI_secolo_ca.%2C_pavimento_centro-ovest_02%2C1.jpg/3840px-Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli%2C_VI_secolo_ca.%2C_pavimento_centro-ovest_02%2C1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "41b9cda428c4f1b807f73d8b3f0139a1e67afed4a3d0c9c87dad28ac178a78f0",
+        "masterSha256": "f571930a01e9a1591b6c3ee0d50b0748e2704777b9166cbd87e7f90b14900acc",
+        "masterSize": [
+          2400,
+          1561
+        ]
+      }
+    },
+    {
+      "id": "ic-hippodrome-photo",
+      "path": "assets/media/imperial-core/hippodrome.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Yair Haklai · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Yair Haklai · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-hippodrome",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "hippodrome",
+        "file": "File:Hippodrome of Constantinople.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Hippodrome_of_Constantinople.jpg/3840px-Hippodrome_of_Constantinople.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "20f7090f74b757da0a891efc5ae7c95ca54660fcebf7e2884a31618bd9ff543b",
+        "masterSha256": "8a62de8b548f19a5700a3c4f48d20561806038ff9aae5e4d5966a9dd0df5e182",
+        "masterSize": [
+          2400,
+          1138
+        ]
+      }
+    },
+    {
+      "id": "ic-sphendone-photo",
+      "path": "assets/media/imperial-core/sphendone.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Ray Swi-hymn · CC BY-SA 2.0 · Wikimedia Commons",
+        "tr": "Ray Swi-hymn · CC BY-SA 2.0 · Wikimedia Commons"
+      },
+      "source": "commons-sphendone",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "sphendone",
+        "file": "File:20180114 Istanbulwalk 7713 (40146599951).jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/20180114_Istanbulwalk_7713_%2840146599951%29.jpg/3840px-20180114_Istanbulwalk_7713_%2840146599951%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "2b3613f14e2cfc8a9e9bd5dcde7106983c0fabc1fdb4aed9781305f4fbdaf612",
+        "masterSha256": "77015d98586189c3e98c4aac4889ec2079f106a44a65ae6972c7d7455f8d89e2",
+        "masterSize": [
+          2400,
+          1601
+        ]
+      }
+    },
+    {
+      "id": "ic-milion-photo",
+      "path": "assets/media/imperial-core/milion.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Derzsi Elekes Andor · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Derzsi Elekes Andor · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-milion",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "milion",
+        "file": "File:Milion Stone - Isztanbul, 2014.10.23.JPG",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Milion_Stone_-_Isztanbul%2C_2014.10.23.JPG/1920px-Milion_Stone_-_Isztanbul%2C_2014.10.23.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "fa87e53125c175d208704c0b1c362ed7e8e9035328776d456561e8f8bbb14397",
+        "masterSha256": "b7f565a919d01120c7d8836bddaa4ba92015d92746c1ca2477357366c887df28",
+        "masterSize": [
+          1800,
+          2400
+        ]
+      }
+    },
+    {
+      "id": "ic-column-photo",
+      "path": "assets/media/imperial-core/column-of-constantine.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Sandstein · CC BY 3.0 · Wikimedia Commons",
+        "tr": "Sandstein · CC BY 3.0 · Wikimedia Commons"
+      },
+      "source": "commons-column-of-constantine",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "column-of-constantine",
+        "file": "File:Column of Constantine, July 2010.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Column_of_Constantine%2C_July_2010.jpg/1920px-Column_of_Constantine%2C_July_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "c54d98926518f33671cc44e9e98fb892e9bfc203949a959400ca4e31d49c8e47",
+        "masterSha256": "cf7bbc8e520d78a3948b589da37c8e85e8c5ed8be3e0d6786654ed3563806e9a",
+        "masterSize": [
+          1600,
+          2400
+        ]
+      }
+    },
+    {
+      "id": "ic-serpent-photo",
+      "path": "assets/media/imperial-core/serpent-column.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-serpent-column",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "serpent-column",
+        "file": "File:Colonna serpentina, già tripode in bronzo dal santuario di apollo a delfi, 478 ac. 01.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Colonna_serpentina%2C_gi%C3%A0_tripode_in_bronzo_dal_santuario_di_apollo_a_delfi%2C_478_ac._01.jpg/1920px-Colonna_serpentina%2C_gi%C3%A0_tripode_in_bronzo_dal_santuario_di_apollo_a_delfi%2C_478_ac._01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "f54eed6ac3e146d78caef695ee3936dfb03dc2043aaa8ac4f937067ca84a3156",
+        "masterSha256": "0c81fa100a09319d5c5add4e5e960cd820491e6fdc0e3957d57a04edfd5fd569",
+        "masterSize": [
+          1104,
+          2400
+        ]
+      }
+    },
+    {
+      "id": "ic-serpent-head-photo",
+      "path": "assets/media/imperial-core/serpent-head.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-serpent-head",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "serpent-head",
+        "file": "File:Testa di serpente frammentaria, in bronzo, 479 ac, dalla colonna serpentina dell'ippodromo di costantinopoli 02.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Testa_di_serpente_frammentaria%2C_in_bronzo%2C_479_ac%2C_dalla_colonna_serpentina_dell%27ippodromo_di_costantinopoli_02.jpg/3840px-Testa_di_serpente_frammentaria%2C_in_bronzo%2C_479_ac%2C_dalla_colonna_serpentina_dell%27ippodromo_di_costantinopoli_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "040f2501818f46bbaa27aad3167cf9265e5be1e063051f8ca288e649f87c315f",
+        "masterSha256": "1fd8a4759e0ab9e10485345ae1cb1c54db1e25383aeafe40d892c7b84120a739",
+        "masterSize": [
+          2400,
+          1676
+        ]
+      }
+    },
+    {
+      "id": "ic-boukoleon-photo",
+      "path": "assets/media/imperial-core/boukoleon.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Laima Gūtmane · CC BY-SA 3.0 · Wikimedia Commons",
+        "tr": "Laima Gūtmane · CC BY-SA 3.0 · Wikimedia Commons"
+      },
+      "source": "commons-boukoleon",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "boukoleon",
+        "file": "File:Byzantine Bukoleon imperial palace, 5th century - panoramio.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Byzantine_Bukoleon_imperial_palace%2C_5th_century_-_panoramio.jpg/3840px-Byzantine_Bukoleon_imperial_palace%2C_5th_century_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "b3707abf25c14a836063b241afb03ab21453d6faa5fbcdebab9d564903a68d74",
+        "masterSha256": "597acc76ba9b99187040c82ba2f5b20c3778fa10b1ac71d3810c830e6b1601d3",
+        "masterSize": [
+          2400,
+          1604
+        ]
+      }
+    },
+    {
+      "id": "ic-walled-obelisk-photo",
+      "path": "assets/media/imperial-core/walled-obelisk.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-walled-obelisk",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "walled-obelisk",
+        "file": "File:Obelisco de Constantino, Estambul, Turquía, 2024-09-28, DD 131.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Obelisco_de_Constantino%2C_Estambul%2C_Turqu%C3%ADa%2C_2024-09-28%2C_DD_131.jpg/1920px-Obelisco_de_Constantino%2C_Estambul%2C_Turqu%C3%ADa%2C_2024-09-28%2C_DD_131.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "66ea565f5bd024e36381e1cd6e11bc0e054ac0fa116a3c129d8c3f603b6c51f0",
+        "masterSha256": "7261d62d49e410baee21e2b2091be93407fb0057acd769ab4420874bd67a7dae",
+        "masterSize": [
+          1600,
+          2400
+        ]
+      }
+    },
+    {
+      "id": "ic-hippodrome-1900",
+      "path": "assets/media/imperial-core/hippodrome-1900.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Agence Rol (photographic agency), c. 1900–1930 · Public domain · Wikimedia Commons",
+        "tr": "Agence Rol (photographic agency), c. 1900–1930 · Kamu malı · Wikimedia Commons"
+      },
+      "source": "commons-hippodrome-1900",
+      "era": "modern",
+      "historicalPhoto": true,
+      "commons": {
+        "key": "hippodrome-1900",
+        "file": "File:Constantinople (i.e. Istanbul), place de l'Hippodrome (Rol) - btv1b531492782.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Constantinople_%28i.e._Istanbul%29%2C_place_de_l%27Hippodrome_%28Rol%29_-_btv1b531492782.jpg/3840px-Constantinople_%28i.e._Istanbul%29%2C_place_de_l%27Hippodrome_%28Rol%29_-_btv1b531492782.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "8c646087c8c6f167210ad063d89484e93a177fcd495ed7d510a40b0deffd78ee",
+        "masterSha256": "38b1dd277c2f5d475362134afb3ba63cbdb99457160e508f24ea4f6cc96ea5b6",
+        "masterSize": [
+          2400,
+          1760
+        ]
+      }
+    },
+    {
+      "id": "ic-griffin-photo",
+      "path": "assets/media/imperial-core/griffin.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Francesco Bini · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-griffin",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "griffin",
+        "file": "File:Mosaici da un peristilio del gran palazzo di costantinopoli, VI secolo ca., pavimento centro-ovest 03 grifone.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli%2C_VI_secolo_ca.%2C_pavimento_centro-ovest_03_grifone.jpg/3840px-Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli%2C_VI_secolo_ca.%2C_pavimento_centro-ovest_03_grifone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "fetchedSha256": "ce751eec150eaf3f46bc57edb1bea4149c9989cbad97218665623b5106e9147e",
+        "masterSha256": "a1608961fba2dbcb8dedc94760463f362c0e4a0add75c5ed108fa2645ccc1ee2",
+        "masterSize": [
+          2400,
+          1600
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "key": "obelisk-emperor",
+      "file": "File:Dado di teodosio, 390 ca., lato sud, teodosio con la famiglia imperiale, 03.jpg",
+      "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Dado_di_teodosio%2C_390_ca.%2C_lato_sud%2C_teodosio_con_la_famiglia_imperiale%2C_03.jpg/3840px-Dado_di_teodosio%2C_390_ca.%2C_lato_sud%2C_teodosio_con_la_famiglia_imperiale%2C_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fetchedSha256": "3dd92955510937327c7170fda15a1c38b8f69fdf854fad54a07f7752be3dd26c",
+      "masterSha256": "dd2ed0a46b3c76db69245ab90f0c84e335d15d48ba576138ae0cd66a6ada816f",
+      "masterSize": [
+        2400,
+        1632
+      ],
+      "source": "commons-obelisk-emperor"
+    },
+    {
+      "key": "obelisk-south",
+      "file": "File:Dado di teodosio, 390 ca., lato sud, veduta dell'ippodromo durante i giochi, 02.jpg",
+      "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Dado_di_teodosio%2C_390_ca.%2C_lato_sud%2C_veduta_dell%27ippodromo_durante_i_giochi%2C_02.jpg/3840px-Dado_di_teodosio%2C_390_ca.%2C_lato_sud%2C_veduta_dell%27ippodromo_durante_i_giochi%2C_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fetchedSha256": "8b5c9892cf019a63e221dd22b775283e706d550d4986b2be6276fbbfbd35fedb",
+      "masterSha256": "1838f11b63ad3c5ed59c32740f71731c9c6a47f99fff6e7b885a75236f35d47a",
+      "masterSize": [
+        2400,
+        1629
+      ],
+      "source": "commons-obelisk-south"
+    },
+    {
+      "key": "obelisk-north",
+      "file": "File:Dado di teodosio, 390 ca., lato nord, trasporto dell'obelisco a costantinopoli, 02.jpg",
+      "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Dado_di_teodosio%2C_390_ca.%2C_lato_nord%2C_trasporto_dell%27obelisco_a_costantinopoli%2C_02.jpg/3840px-Dado_di_teodosio%2C_390_ca.%2C_lato_nord%2C_trasporto_dell%27obelisco_a_costantinopoli%2C_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "fetchedSha256": "2077d6a0c3820098bc3bf01a6827a70d83d89a1080211ec273bbd71e33818a32",
+      "masterSha256": "05218ee9d89f80ef3910d499998e5f031439e426aadef7ef72f02e2220dab3ac",
+      "masterSize": [
+        2400,
+        1600
+      ],
+      "source": "commons-obelisk-north"
+    }
+  ],
+  "composites": [
+    {
+      "key": "obelisk-base",
+      "of": [
+        "obelisk-emperor",
+        "obelisk-south",
+        "obelisk-north"
+      ],
+      "gutter": 0,
+      "masterSha256": "461165d0057be7d76e12c1d77daa8259a7af933990f40fe423c341b3912c05c6",
+      "masterSize": [
+        1185,
+        2400
+      ],
+      "note": "the base of the Obelisk of Theodosius: its south face, the emperor and his family in the imperial box (upper base) over the chariot race (lower base), then the north face lower base with the obelisk raised"
+    }
+  ]
+}

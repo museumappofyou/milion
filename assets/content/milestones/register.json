@@ -21,11 +21,16 @@
         "ORIGINAL",
         "RECONSTRUCTION"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/space/milion/study.json",
       "packId": "milion",
       "sources": [
-        "wd-q1187329"
+        "wd-q1187329",
+        "mango-1959-brazen-house",
+        "wp-milion-1374763433",
+        "byzleg-milion",
+        "byzantium1200-milion",
+        "csel39-geyer-1898"
       ],
       "flagship": true
     },
@@ -311,11 +316,15 @@
         "ORIGINAL",
         "RECONSTRUCTION"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/space/hippodrome/study.json",
       "packId": "hippodrome",
       "sources": [
-        "wd-q387548"
+        "wd-q387548",
+        "tdv-atmeydani",
+        "byzleg-hippodrome",
+        "tan-hippodrome-underground",
+        "janin-1950"
       ]
     },
     {
@@ -328,7 +337,9 @@
       "places": [
         "obelisk-of-theodosius"
       ],
-      "artworks": [],
+      "artworks": [
+        "ic-obelisk-base"
+      ],
       "techniques": [
         "RL"
       ],
@@ -336,11 +347,14 @@
         "ORIGINAL",
         "DEPTH"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/plates/obelisk-base/manifest.json",
       "packId": "hippodrome",
       "sources": [
-        "wd-q763854"
+        "wd-q763854",
+        "byzleg-theodosius-obelisk",
+        "heurist-cil-iii-737",
+        "janin-1950"
       ]
     },
     {
@@ -363,12 +377,16 @@
         "ORIGINAL",
         "RECONSTRUCTION"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/space/serpent-column/study.json",
       "packId": "hippodrome",
       "sources": [
         "wd-q588892",
-        "wd-q636978"
+        "wd-q636978",
+        "bmcr-2017-01-43",
+        "byzleg-serpent-column",
+        "encrom-serpentine",
+        "perseus-hdt-9-81-1"
       ]
     },
     {
@@ -381,7 +399,9 @@
       "places": [
         "great-palace-mosaic-museum"
       ],
-      "artworks": [],
+      "artworks": [
+        "ic-palace-floor-mosaic"
+      ],
       "techniques": [
         "MM",
         "DP"
@@ -391,11 +411,13 @@
         "DEPTH",
         "IMAGINED"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/plates/palace-animals/manifest.json",
       "packId": "hippodrome",
       "sources": [
-        "wd-q2719230"
+        "wd-q2719230",
+        "tan-great-palace-mosaic-museum",
+        "byzleg-mosaic-museum"
       ]
     },
     {

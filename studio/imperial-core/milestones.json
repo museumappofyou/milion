@@ -1,0 +1,18 @@
+{
+  "note": "P13: Milestones 0 and XII–XV. The kit studies (0, XII, XIV) take their path, status and honesty here; the plates (XIII, XV) own theirs (tool/plate/build.py).",
+  "records": [
+    {"id": "milestone-0", "places": ["milion"],
+     "sources": ["wd-q1187329", "mango-1959-brazen-house", "wp-milion-1374763433", "byzleg-milion", "byzantium1200-milion", "csel39-geyer-1898"],
+     "manifestPath": "assets/space/milion/study.json", "honesty": ["ORIGINAL", "RECONSTRUCTION"], "status": "prototype"},
+    {"id": "milestone-xii", "places": ["hippodrome"],
+     "sources": ["wd-q387548", "tdv-atmeydani", "byzleg-hippodrome", "tan-hippodrome-underground", "janin-1950"],
+     "manifestPath": "assets/space/hippodrome/study.json", "honesty": ["ORIGINAL", "RECONSTRUCTION"], "status": "prototype"},
+    {"id": "milestone-xiii", "artworks": ["ic-obelisk-base"],
+     "sources": ["wd-q763854", "byzleg-theodosius-obelisk", "heurist-cil-iii-737", "janin-1950"]},
+    {"id": "milestone-xiv", "places": ["serpent-column", "archaeology-museums"],
+     "sources": ["wd-q588892", "wd-q636978", "bmcr-2017-01-43", "byzleg-serpent-column", "encrom-serpentine", "perseus-hdt-9-81-1"],
+     "manifestPath": "assets/space/serpent-column/study.json", "honesty": ["ORIGINAL", "RECONSTRUCTION"], "status": "prototype"},
+    {"id": "milestone-xv", "artworks": ["ic-palace-floor-mosaic"],
+     "sources": ["wd-q2719230", "tan-great-palace-mosaic-museum", "byzleg-mosaic-museum"]}
+  ]
+}

@@ -129,7 +129,9 @@ def manifest(spec, master_path, maps, lookup):
              size=maps['size'], manifestPath=spec.asset('manifest.json'), layers=layers,
              maps=dict(surface=maps['surface'], gold=maps['gold']),
              flow=None if not flow else dict(mask=flow['mask'], period=flow['period'],
-                                              distance=flow['distance']),
+                                              distance=flow['distance'],
+                                              **({'motion': flow['motion']} if flow.get('motion')
+                                                 else {})),
              spiral=spiral, rig=spec.get('rig'), lookUp=lookup,
              details=list(details.values()), beats=beats, revealSeconds=10,
              revealMoment=r['moment'], storySeconds=cursor, reveal=reveal,

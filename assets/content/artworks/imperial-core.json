@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "kind": "artworks",
+  "records": [
+    {
+      "id": "ic-obelisk-base",
+      "place": "obelisk-of-theodosius",
+      "title": {
+        "en": "The base of Theodosius’s obelisk",
+        "tr": "Theodosius Dikilitaşı’nın kaidesi"
+      },
+      "room": {
+        "en": "Sultanahmet Square, on the line of the Hippodrome’s central barrier",
+        "tr": "Sultanahmet Meydanı, Hipodrom’un orta setinin hattında"
+      },
+      "surface": {
+        "en": "marble base on a marble plinth",
+        "tr": "mermer altlık üstünde mermer kaide"
+      },
+      "position": {
+        "en": "Under the obelisk, in its railed pit below the square. The upper block is carved on all four faces; the plinth below it carries the Latin verse on the south-east face, the Greek on the north-west, and reliefs on the other two.",
+        "tr": "Dikilitaşın altında, meydanın altında kalan parmaklıklı çukurunda. Üst blok dört yüzünde de kabartmalı; altındaki altlığın güneydoğu yüzünde Latince, kuzeybatı yüzünde Yunanca dize, öbür iki yüzünde kabartmalar var."
+      },
+      "kind": "relief",
+      "summary": {
+        "en": "The marble base Theodosius I gave the obelisk he raised in 390. The emperor and his court watch the games from the imperial box; below, the races are run and the obelisk is hauled upright.",
+        "tr": "I. Theodosius’un 390’da diktirdiği dikilitaşa yaptırdığı mermer kaide. İmparator ve sarayı oyunları imparator locasından izliyor; altta yarışlar koşuluyor ve dikilitaş ayağa kaldırılıyor."
+      },
+      "cues": [
+        {
+          "en": "obelisk",
+          "tr": "dikilitaş"
+        },
+        {
+          "en": "kathisma",
+          "tr": "kathisma"
+        },
+        {
+          "en": "chariot race",
+          "tr": "araba yarışı"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "On the upper block the emperor’s family sits in the box behind a lattice railing, the court in rows on either side.",
+          "tr": "Üst blokta imparatorun ailesi kafes korkuluğun ardındaki locada oturuyor, saray halkı iki yanda sıra sıra duruyor."
+        },
+        {
+          "en": "On the plinth’s south-west face the races are carved: chariots below, the barrier’s two obelisks above.",
+          "tr": "Altlığın güneybatı yüzüne yarışlar oyulmuş: altta arabalar, üstte setin iki dikilitaşı."
+        },
+        {
+          "en": "In the Greek verse, on the north-west face, Proclus’s name was cut out and later cut again.",
+          "tr": "Kuzeybatı yüzdeki Yunanca dizede Proklos’un adı kazınıp silinmiş, sonra yeniden kazınmış."
+        }
+      ],
+      "story": {
+        "en": "The obelisk was made for Thutmose III and stood at Karnak, one of a pair before the Seventh Pylon. Constantius II had it brought down the Nile to Alexandria, where it was still lying on the shore in the early 360s. Theodosius I had it shipped to Constantinople and raised on the Hippodrome’s central barrier in 390, under the city prefect Proclus. About 19 to 20 m of the shaft stands; its lower part was lost, when and how is not known.\n\nThe base was carved for the raising. On every face of the upper block the emperor appears with his court in the imperial box; on one he holds the victor’s wreath over dancers and two water organs, on another barbarians kneel with gifts. The plinth shows the obelisk hauled up with capstans and the races it was set up to watch over. Four bronze cubes carry the shaft.\n\nThe two verses disagree. The Greek says the column stood in 32 days; the Latin, as usually read, says thirty. Proclus fell in 392 or 393 and was executed; his name was chiselled out of the Greek and cut again after he was rehabilitated.",
+        "tr": "Dikilitaş III. Thutmose için yapılmıştı ve Karnak’ta, Yedinci Pilon’un önündeki bir çiftin biri olarak duruyordu. II. Constantius onu Nil’den Aleksandria’ya indirtti; 360’ların başında hâlâ orada, kıyıda yatıyordu. I. Theodosius dikilitaşı Konstantinopolis’e getirtip 390’da, şehir valisi Proklos döneminde Hipodrom’un orta setine diktirdi. Gövdenin yaklaşık 19–20 m’si ayakta; alt kısmı kayıp, ne zaman ve nasıl kaybolduğu bilinmiyor.\n\nKaide bu dikiliş için oyuldu. Üst bloğun her yüzünde imparator, sarayıyla birlikte imparator locasında görünüyor; bir yüzde dansçılar ve iki su orgunun üstünde galibin çelengini tutuyor, bir başka yüzde barbarlar armağanlarla diz çöküyor. Altlık, dikilitaşın bocurgatlarla kaldırılışını ve onun gözetsin diye dikildiği yarışları gösteriyor. Gövdeyi dört tunç küp taşıyor.\n\nİki dize birbirini tutmuyor. Yunanca dize sütunun 32 günde dikildiğini söylüyor; Latince ise genel okunuşuyla otuz gün diyor. Proklos 392 ya da 393’te gözden düştü ve idam edildi; adı Yunanca dizeden kazındı, itibarı iade edildikten sonra yeniden yazıldı."
+      },
+      "inscriptions": [
+        {
+          "greek": "DIFFICILIS QVONDAM DOMINIS PARERE SERENIS / IVSSVS ET EXTINCTIS PALMAM PORTARE TYRANNIS / OMNIA THEODOSIO CEDVNT SVBOLIQVE PERENNI / TER DENIS SIC VICTVS EGO DOMITVSQVE DIEBVS / IVDICE SVB PROCLO SVPERAS ELATVS AD AVRAS",
+          "script": "latin",
+          "transliteration": "difficilis quondam dominis parere serenis / iussus et extinctis palmam portare tyrannis / omnia Theodosio cedunt subolique perenni / ter denis sic victus ego domitusque diebus / iudice sub Proclo superas elatus ad auras",
+          "translation": {
+            "en": "Once hard to bring to obey the serene lords, and bidden to carry the palm of victory over tyrants put down: all things yield to Theodosius and his lasting line. So overcome and tamed in three times ten days, I was raised to the upper air under the judge Proclus.",
+            "tr": "Bir zamanlar yüce efendilere boyun eğmeye zor yanaşan, yok edilen zorbalara karşı kazanılan zaferin palmiyesini taşımakla buyrulan ben: her şey Theodosius’a ve onun süregiden soyuna boyun eğer. Böylece üç kez on günde yenilip dize gelerek, yargıç Proklos’un döneminde yücelere kaldırıldım."
+          },
+          "basis": "source",
+          "sources": [
+            "heurist-cil-iii-737",
+            "wp-obelisk-of-theodosius-1378030985"
+          ]
+        },
+        {
+          "greek": "κίονα τετράπλευρον ἀεὶ χθονὶ κείμενον ἄχθος / μοῦνος ἀναστῆσαι Θευδόσιος βασιλεύς / τολμήσας Πρόκλος ἐπεκέκλετο· καὶ τόσος ἔστη / κίων ἠελίοις ἐν τριάκοντα δύω",
+          "script": "greek",
+          "transliteration": "kíona tetrápleuron aeì chthonì keímenon áchthos / moûnos anastêsai Theudósios basileús / tolmḗsas Próklos epekékleto; kaì tósos éstē / kíōn ēelíois en triákonta dúō",
+          "translation": {
+            "en": "This four-sided column, a burden lying forever on the ground, the emperor Theodosius alone dared to raise. He called on Proclus, and so great a column stood up in thirty-two days.",
+            "tr": "Hep yerde yatan bir yük olan bu dört yüzlü sütunu yalnızca İmparator Theodosius dikmeye cesaret etti. Proklos’u çağırdı ve bu büyüklükteki sütun otuz iki günde ayağa kalktı."
+          },
+          "basis": "source",
+          "sources": [
+            "heurist-cil-iii-737",
+            "wp-obelisk-of-theodosius-1378030985"
+          ]
+        }
+      ],
+      "condition": {
+        "en": "Worn, and many faces are lost; missing pieces at the plinth’s lower corners were replaced. The base stands in a pit below the square, which has risen several metres since.",
+        "tr": "Aşınmış; birçok figürün yüzü kayıp. Altlığın alt köşelerindeki eksik parçalar yenileriyle değiştirildi. Kaide, o zamandan bu yana birkaç metre yükselmiş meydanın altındaki bir çukurda duruyor."
+      },
+      "folder": "hippodrome/obelisk-base",
+      "media": [],
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "heurist-cil-iii-737",
+        "seuso-obelisk-theodosius",
+        "wp-obelisk-of-theodosius-1378030985",
+        "janin-1950",
+        "romanletters-julian-48",
+        "commons-obelisk-emperor",
+        "commons-obelisk-south",
+        "commons-obelisk-north"
+      ]
+    },
+    {
+      "id": "ic-palace-floor-mosaic",
+      "place": "great-palace-mosaic-museum",
+      "title": {
+        "en": "The palace peristyle floor",
+        "tr": "Saray peristilinin döşemesi"
+      },
+      "room": {
+        "en": "Great Palace Mosaic Museum, beneath the Arasta Bazaar (closed for restoration)",
+        "tr": "Büyük Saray Mozaikleri Müzesi, Arasta Çarşısı’nın altında (restorasyon için kapalı)"
+      },
+      "surface": {
+        "en": "floor mosaic",
+        "tr": "taban mozaiği"
+      },
+      "position": {
+        "en": "The floor of the walks round a colonnaded courtyard of the Great Palace, shown where it was found, in a museum built over it.",
+        "tr": "Büyük Saray’ın sütunlu bir avlusunu çevreleyen yürüme yollarının döşemesi; bulunduğu yerde, üstüne kurulan bir müzede sergileniyor."
+      },
+      "kind": "mosaic",
+      "summary": {
+        "en": "A floor of hunts, fights between beasts and country life, laid round a courtyard of the emperors’ palace in the 6th or early 7th century. About 150 human and animal figures survive.",
+        "tr": "6. yüzyılda ya da 7. yüzyılın başında imparatorların sarayındaki bir avlunun çevresine döşenmiş; avları, hayvan dövüşlerini ve kır yaşamını gösteren bir zemin. Yaklaşık 150 insan ve hayvan figürü günümüze ulaştı."
+      },
+      "cues": [
+        {
+          "en": "eagle and snake",
+          "tr": "kartal ve yılan"
+        },
+        {
+          "en": "griffin",
+          "tr": "grifon"
+        },
+        {
+          "en": "hunt",
+          "tr": "av"
+        }
+      ],
+      "lookFor": [
+        {
+          "en": "An eagle fighting a snake that winds round its body.",
+          "tr": "Gövdesine dolanan bir yılanla dövüşen bir kartal."
+        },
+        {
+          "en": "Griffins: one rears up, another eats a lizard.",
+          "tr": "Grifonlar: biri şahlanıyor, bir başkası kertenkele yiyor."
+        },
+        {
+          "en": "The white ground, laid in a fan pattern of tiny cubes around every figure.",
+          "tr": "Her figürün çevresinde minik küplerle yelpaze deseninde döşenmiş beyaz zemin."
+        }
+      ],
+      "story": {
+        "en": "The University of St Andrews found the floor in 1935–38 while digging a peristyle of the Great Palace behind the Sultan Ahmed Mosque; a second campaign, under David Talbot Rice, followed in the early 1950s. From 1983 to 1997 the Austrian Academy of Sciences lifted the mosaics, treated them and relaid them in place. The museum opened in 1987.\n\nThe floor once covered about 1,900 m²; a few hundred square metres survive. It is made of cubes about 5 mm across, some 40,000 to the square metre and about 80 million in all, and shows its figures on a white ground: hunters against tigers and lions, a boy feeding a donkey, children riding a camel, a herdsman milking goats, an elephant fighting a lion.\n\nIts date is argued over. The museum gives 450–550; most scholars now put it no earlier than Justinian, some as late as Heraclius in the early 7th century.",
+        "tr": "Döşemeyi St Andrews Üniversitesi 1935–38’de, Sultan Ahmed Camii’nin arkasında Büyük Saray’ın bir peristilini kazarken buldu; 1950’lerin başında David Talbot Rice yönetiminde ikinci bir kazı yapıldı. 1983–1997 arasında Avusturya Bilimler Akademisi mozaikleri kaldırıp onardı ve yerlerine geri döşedi. Müze 1987’de açıldı.\n\nDöşeme bir zamanlar yaklaşık 1.900 m²’yi kaplıyordu; birkaç yüz metrekaresi günümüze ulaştı. Yaklaşık 5 mm’lik küplerden, metrekarede 40.000 kadar ve toplamda 80 milyon kadar küpten yapılmış; figürleri beyaz bir zemin üstünde gösteriyor: kaplanlara ve aslanlara karşı avcılar, bir eşeği besleyen bir çocuk, deveye binen çocuklar, keçi sağan bir çoban, bir aslanla dövüşen bir fil.\n\nTarihi tartışmalı. Müze 450–550 yıllarını veriyor; bilim insanlarının çoğu bugün onu Iustinianos’tan önceye koymuyor, bazıları 7. yüzyılın başına, Herakleios dönemine kadar indiriyor."
+      },
+      "condition": {
+        "en": "Large parts are lost, the gaps left plain. The museum has been closed for restoration since July 2023, with no reopening date announced.",
+        "tr": "Büyük bölümleri kayıp; boşluklar düz bırakılmış. Müze Temmuz 2023’ten beri restorasyon için kapalı; yeniden açılış tarihi açıklanmadı."
+      },
+      "folder": "great-palace/peristyle-mosaic",
+      "media": [
+        "ic-griffin-photo"
+      ],
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "byzleg-mosaic-museum",
+        "muze-gen-tr-mozaik",
+        "wp-great-palace-mosaic-museum-1365805703",
+        "goturkiye-mosaic-museum",
+        "commons-palace-floor",
+        "commons-griffin"
+      ]
+    }
+  ]
+}

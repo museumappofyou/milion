@@ -820,7 +820,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get firstRunSentence =>
-      'Mile zero: the Milion on Divanyolu, the stone from which the empire measured its roads, with rings in Roman miles reaching Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.';
+      'Mile zero: the Milion on Divanyolu, where the empire’s great roads began, drawn as the domed arch it probably was; roads run out to the Hebdomon, Nicomedia, Serdica and Jerusalem, and rings in Roman miles reach Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.';
 
   @override
   String get firstRunStone => 'Divanyolu, beside the Basilica Cistern';
@@ -1229,6 +1229,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get platePaintMotion => 'River of fire';
+
+  @override
+  String get plateAnimalMotion => 'Animals in motion';
 
   @override
   String get plateScrollMotion => 'Scroll of heaven';

@@ -11,7 +11,8 @@ resolved absolute paths. Unknown keys are errors, like the Dart manifest.
     depth: {model, modelWeight, provided?, measure?[models]}
     gold: {heuristic, hand?, provided?}
     layers: {depth?, reconstruction?{asset, mask, recipe?}, imagined?{asset, mask, recipe?}}
-    flow?: {mask, period, distance}     spiral?: {mask, center: auto|[x,y]}
+    flow?: {mask, period, distance, motion? (scroll|sway), from?[{segment,
+            direction[dx,dy]}], feather?}   spiral?: {mask, center: auto|[x,y]}
     rig?: {path, maxVertices}
     lookUp?: {center, rimCenter, rimRadii, rimElevation, rimNote}
     popup?: [{id, segment, lift}]       mesh: {maxVertices}
@@ -32,6 +33,7 @@ KEYS = {'id', 'milestone', 'artwork', 'title', 'description', 'manualMinutes',
         'lookUp', 'popup', 'mesh', 'beats', 'reveal', 'sources'}
 PRIORS = {'none', 'planar', 'bulge'}
 LIGHTS = {'none', 'gilded', 'raking', 'candle'}
+MOTIONS = {'scroll', 'sway'}   # P13: sway moves pixels back and forth (the animals)
 
 
 def corpus_root():
@@ -101,6 +103,17 @@ def load(path):
     for s in data.get('segments', []):
         if s.get('prior', 'none') not in PRIORS:
             fail(path, f'segment {s["id"]}: prior must be one of {sorted(PRIORS)}')
+    flow = data.get('flow')
+    if flow:
+        unknown = set(flow) - {'mask', 'period', 'distance', 'motion', 'from', 'feather'}
+        if unknown:
+            fail(path, f'flow: unknown keys {sorted(unknown)}')
+        if flow.get('motion', 'scroll') not in MOTIONS:
+            fail(path, f'flow motion must be one of {sorted(MOTIONS)}')
+        names = {s['id'] for s in data.get('segments', [])}
+        for f in flow.get('from', []):
+            if f['segment'] not in names:
+                fail(path, f'flow.from: no segment {f["segment"]}')
     for b in data['beats'] + [data['reveal']]:
         if b.get('light', 'none') not in LIGHTS:
             fail(path, f'{b["detail"]}: light must be one of {sorted(LIGHTS)}')

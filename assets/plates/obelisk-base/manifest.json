@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-obelisk-base",
+  "milestone": "milestone-xiii",
+  "artwork": "ic-obelisk-base",
+  "title": {
+    "en": "The Obelisk base",
+    "tr": "Dikilitaş’ın kaidesi"
+  },
+  "description": {
+    "en": "The marble base of the obelisk Theodosius I raised in the Hippodrome in 390: the emperor and his court in the imperial box on the upper block, the chariot races and the obelisk hauled upright on the plinth below. Three photographs, two faces.",
+    "tr": "I. Theodosius’un 390’da Hipodrom’a diktirdiği dikilitaşın mermer kaidesi: üst blokta imparator locasındaki imparator ve sarayı, alttaki altlıkta araba yarışları ve dikilitaşın ayağa kaldırılışı. Üç fotoğraf, iki yüz."
+  },
+  "size": [
+    1185,
+    2400
+  ],
+  "manifestPath": "assets/plates/obelisk-base/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/obelisk-base/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/obelisk-base/surface.webp",
+    "gold": "assets/plates/obelisk-base/gold.webp"
+  },
+  "flow": null,
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-obelisk-box",
+      "milestone": "milestone-xiii",
+      "artwork": "ic-obelisk-base",
+      "title": {
+        "en": "The emperor’s box",
+        "tr": "İmparator locası"
+      },
+      "sentence": {
+        "en": "Theodosius and his family sit in the imperial box under an arch, behind a lattice railing.",
+        "tr": "Theodosius ve ailesi bir kemerin altında, kafes korkuluğun ardındaki imparator locasında oturuyor."
+      },
+      "window": {
+        "left": 0.22,
+        "top": 0.03,
+        "right": 0.84,
+        "bottom": 0.21
+      },
+      "anchorX": 0.53,
+      "anchorY": 0.12,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "janin-1950",
+        "commons-obelisk-emperor"
+      ]
+    },
+    {
+      "id": "detail-obelisk-court",
+      "milestone": "milestone-xiii",
+      "artwork": "ic-obelisk-base",
+      "title": {
+        "en": "The court in rows",
+        "tr": "Sıra sıra saray halkı"
+      },
+      "sentence": {
+        "en": "On either side of the box the court stands in rows, one head above another.",
+        "tr": "Locanın iki yanında saray halkı sıra sıra, baş başın üstünde duruyor."
+      },
+      "window": {
+        "left": 0.0,
+        "top": 0.07,
+        "right": 0.26,
+        "bottom": 0.3
+      },
+      "anchorX": 0.12,
+      "anchorY": 0.16,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "commons-obelisk-emperor"
+      ]
+    },
+    {
+      "id": "detail-obelisk-spina",
+      "milestone": "milestone-xiii",
+      "artwork": "ic-obelisk-base",
+      "title": {
+        "en": "The barrier carved",
+        "tr": "Oyulmuş orta set"
+      },
+      "sentence": {
+        "en": "The plinth’s upper band carves the Hippodrome’s central barrier: two obelisks, this one and the Walled Obelisk, among its monuments.",
+        "tr": "Altlığın üst kuşağı Hipodrom’un orta setini gösteriyor: anıtlarının arasında iki dikilitaş, bu dikilitaş ve Örme Dikilitaş."
+      },
+      "window": {
+        "left": 0.03,
+        "top": 0.385,
+        "right": 0.65,
+        "bottom": 0.49
+      },
+      "anchorX": 0.43,
+      "anchorY": 0.44,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "commons-obelisk-south"
+      ]
+    },
+    {
+      "id": "detail-obelisk-race",
+      "milestone": "milestone-xiii",
+      "artwork": "ic-obelisk-base",
+      "title": {
+        "en": "The race",
+        "tr": "Yarış"
+      },
+      "sentence": {
+        "en": "Below, four-horse chariots race: the Hippodrome carved on a monument that stood in it.",
+        "tr": "Altta dört atlı arabalar yarışıyor: Hipodrom, içinde duran bir anıtın üstüne oyulmuş."
+      },
+      "window": {
+        "left": 0.08,
+        "top": 0.48,
+        "right": 0.78,
+        "bottom": 0.59
+      },
+      "anchorX": 0.48,
+      "anchorY": 0.53,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "seuso-obelisk-theodosius",
+        "byzleg-theodosius-obelisk",
+        "commons-obelisk-south"
+      ]
+    },
+    {
+      "id": "detail-obelisk-capstans",
+      "milestone": "milestone-xiii",
+      "artwork": "ic-obelisk-base",
+      "title": {
+        "en": "Hauling it up",
+        "tr": "Dikilişi"
+      },
+      "sentence": {
+        "en": "On the opposite face men lean on capstans to haul the obelisk upright; the Greek verse on the base says it took 32 days.",
+        "tr": "Karşı yüzde adamlar dikilitaşı dikmek için bocurgatlara yükleniyor; kaidedeki Yunanca dizeye göre 32 gün sürdü."
+      },
+      "window": {
+        "left": 0.02,
+        "top": 0.82,
+        "right": 0.45,
+        "bottom": 0.97
+      },
+      "anchorX": 0.2,
+      "anchorY": 0.88,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "heurist-cil-iii-737",
+        "commons-obelisk-north"
+      ]
+    },
+    {
+      "id": "detail-obelisk-blocks",
+      "milestone": "milestone-xiii",
+      "artwork": "ic-obelisk-base",
+      "title": {
+        "en": "Granite between",
+        "tr": "Aradaki granit"
+      },
+      "sentence": {
+        "en": "Blocks of granite sit between the plinth and the carved block, one of them dark red here; above, four bronze cubes carry the shaft.",
+        "tr": "Altlıkla kabartmalı blok arasında granit bloklar duruyor, burada biri koyu kırmızı görünüyor; yukarıda gövdeyi dört tunç küp taşıyor."
+      },
+      "window": {
+        "left": 0.12,
+        "top": 0.33,
+        "right": 0.44,
+        "bottom": 0.435
+      },
+      "anchorX": 0.25,
+      "anchorY": 0.37,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "wp-obelisk-of-theodosius-1378030985",
+        "commons-obelisk-south"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "obelisk-base-beat-1",
+      "start": 0,
+      "duration": 6,
+      "detail": "detail-obelisk-box",
+      "window": {
+        "left": 0.22,
+        "top": 0.03,
+        "right": 0.84,
+        "bottom": 0.21
+      },
+      "caption": {
+        "en": "Theodosius and his family sit in the imperial box under an arch, behind a lattice railing.",
+        "tr": "Theodosius ve ailesi bir kemerin altında, kafes korkuluğun ardındaki imparator locasında oturuyor."
+      },
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "janin-1950",
+        "commons-obelisk-emperor"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "obelisk-base-beat-2",
+      "start": 6,
+      "duration": 5,
+      "detail": "detail-obelisk-court",
+      "window": {
+        "left": 0.0,
+        "top": 0.07,
+        "right": 0.26,
+        "bottom": 0.3
+      },
+      "caption": {
+        "en": "On either side of the box the court stands in rows, one head above another.",
+        "tr": "Locanın iki yanında saray halkı sıra sıra, baş başın üstünde duruyor."
+      },
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "commons-obelisk-emperor"
+      ],
+      "light": "candle",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "obelisk-base-beat-3",
+      "start": 11,
+      "duration": 6,
+      "detail": "detail-obelisk-spina",
+      "window": {
+        "left": 0.03,
+        "top": 0.385,
+        "right": 0.65,
+        "bottom": 0.49
+      },
+      "caption": {
+        "en": "The plinth’s upper band carves the Hippodrome’s central barrier: two obelisks, this one and the Walled Obelisk, among its monuments.",
+        "tr": "Altlığın üst kuşağı Hipodrom’un orta setini gösteriyor: anıtlarının arasında iki dikilitaş, bu dikilitaş ve Örme Dikilitaş."
+      },
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "commons-obelisk-south"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "obelisk-base-beat-4",
+      "start": 17,
+      "duration": 6,
+      "detail": "detail-obelisk-race",
+      "window": {
+        "left": 0.08,
+        "top": 0.48,
+        "right": 0.78,
+        "bottom": 0.59
+      },
+      "caption": {
+        "en": "Below, four-horse chariots race: the Hippodrome carved on a monument that stood in it.",
+        "tr": "Altta dört atlı arabalar yarışıyor: Hipodrom, içinde duran bir anıtın üstüne oyulmuş."
+      },
+      "sources": [
+        "seuso-obelisk-theodosius",
+        "byzleg-theodosius-obelisk",
+        "commons-obelisk-south"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "obelisk-base-beat-5",
+      "start": 23,
+      "duration": 6,
+      "detail": "detail-obelisk-capstans",
+      "window": {
+        "left": 0.02,
+        "top": 0.82,
+        "right": 0.45,
+        "bottom": 0.97
+      },
+      "caption": {
+        "en": "On the opposite face men lean on capstans to haul the obelisk upright; the Greek verse on the base says it took 32 days.",
+        "tr": "Karşı yüzde adamlar dikilitaşı dikmek için bocurgatlara yükleniyor; kaidedeki Yunanca dizeye göre 32 gün sürdü."
+      },
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "heurist-cil-iii-737",
+        "commons-obelisk-north"
+      ],
+      "light": "candle",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 5,
+  "storySeconds": 29,
+  "reveal": {
+    "id": "obelisk-base-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-obelisk-box",
+    "window": {
+      "left": 0.22,
+      "top": 0.03,
+      "right": 0.84,
+      "bottom": 0.21
+    },
+    "caption": {
+      "en": "Theodosius and his family sit in the imperial box under an arch, behind a lattice railing.",
+      "tr": "Theodosius ve ailesi bir kemerin altında, kafes korkuluğun ardındaki imparator locasında oturuyor."
+    },
+    "sources": [
+      "byzleg-theodosius-obelisk",
+      "janin-1950",
+      "commons-obelisk-emperor"
+    ],
+    "light": "raking",
+    "flow": false,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Francesco Bini / Wikimedia Commons (CC BY-SA 4.0), three photographs stacked",
+    "tr": "Francesco Bini / Wikimedia Commons (CC BY-SA 4.0), üç fotoğraf alt alta"
+  },
+  "sources": [
+    "byzleg-theodosius-obelisk",
+    "janin-1950",
+    "heurist-cil-iii-737",
+    "seuso-obelisk-theodosius",
+    "commons-obelisk-emperor",
+    "commons-obelisk-south",
+    "commons-obelisk-north"
+  ],
+  "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Dado_di_teodosio,_390_ca.,_lato_sud,_teodosio_con_la_famiglia_imperiale,_03.jpg",
+  "citations": [
+    {
+      "id": "byzleg-theodosius-obelisk",
+      "title": {
+        "en": "Obelisk of Theodosius",
+        "tr": "Theodosius Dikilitaşı"
+      },
+      "url": "https://www.thebyzantinelegacy.com/theodosius-obelisk",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "commons-obelisk-emperor",
+      "title": {
+        "en": "File:Dado di teodosio, 390 ca., lato sud, teodosio con la famiglia imperiale, 03.jpg — Wikimedia Commons",
+        "tr": "File:Dado di teodosio, 390 ca., lato sud, teodosio con la famiglia imperiale, 03.jpg — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Dado_di_teodosio,_390_ca.,_lato_sud,_teodosio_con_la_famiglia_imperiale,_03.jpg",
+      "author": {
+        "en": "Francesco Bini",
+        "tr": "Francesco Bini"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "commons-obelisk-north",
+      "title": {
+        "en": "File:Dado di teodosio, 390 ca., lato nord, trasporto dell'obelisco a costantinopoli, 02.jpg — Wikimedia Commons",
+        "tr": "File:Dado di teodosio, 390 ca., lato nord, trasporto dell'obelisco a costantinopoli, 02.jpg — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Dado_di_teodosio,_390_ca.,_lato_nord,_trasporto_dell%27obelisco_a_costantinopoli,_02.jpg",
+      "author": {
+        "en": "Francesco Bini",
+        "tr": "Francesco Bini"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "commons-obelisk-south",
+      "title": {
+        "en": "File:Dado di teodosio, 390 ca., lato sud, veduta dell'ippodromo durante i giochi, 02.jpg — Wikimedia Commons",
+        "tr": "File:Dado di teodosio, 390 ca., lato sud, veduta dell'ippodromo durante i giochi, 02.jpg — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Dado_di_teodosio,_390_ca.,_lato_sud,_veduta_dell%27ippodromo_durante_i_giochi,_02.jpg",
+      "author": {
+        "en": "Francesco Bini",
+        "tr": "Francesco Bini"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "heurist-cil-iii-737",
+      "title": {
+        "en": "Dedication of the Obelisk of Theodosius, Hippodrome of Constantinople (CIL III, 737)",
+        "tr": "Theodosius Dikilitaşı'nın ithaf yazıtı, Konstantinopolis Hipodromu (CIL III, 737)"
+      },
+      "url": "https://heurist.huma-num.fr/heurist/judaism_and_rome/view/303",
+      "author": {
+        "en": "Judaism and Rome project (CNRS / Huma-Num)",
+        "tr": "Judaism and Rome projesi (CNRS / Huma-Num)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "janin-1950",
+      "title": {
+        "en": "Constantinople byzantine: développement urbain et répertoire topographique (1st ed.), pp. 104–105 on the Milion",
+        "tr": "Constantinople byzantine: développement urbain et répertoire topographique (1. baskı), Milion için s. 104–105"
+      },
+      "url": "https://archive.org/details/janin-constantinople-byzantine.-developpement-urbain-et-repertoire-topographique",
+      "author": {
+        "en": "Raymond Janin, Paris: Institut Français d'Études Byzantines, 1950",
+        "tr": "Raymond Janin, Paris: Institut Français d'Études Byzantines, 1950"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "seuso-obelisk-theodosius",
+      "title": {
+        "en": "Obelisk of Theodosius (Seuso Treasure chronology)",
+        "tr": "Theodosius Dikilitaşı (Seuso Hazinesi kronolojisi)"
+      },
+      "url": "https://seuso.mnm.hu/en/the-seuso-treasuer/chronology/obelisk-of-theodosius",
+      "author": {
+        "en": "Hungarian National Museum",
+        "tr": "Macar Ulusal Müzesi"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "wp-obelisk-of-theodosius-1378030985",
+      "title": {
+        "en": "Obelisk of Theodosius — Wikipedia (revision 1378030985)",
+        "tr": "Obelisk of Theodosius — Wikipedia (1378030985 numaralı sürüm)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=Obelisk_of_Theodosius&oldid=1378030985",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Wikipedia katkıcıları"
+      },
+      "accessedAt": "2026-11-10",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    }
+  ]
+}

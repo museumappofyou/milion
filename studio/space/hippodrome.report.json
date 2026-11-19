@@ -1,0 +1,95 @@
+{
+  "id": "hippodrome",
+  "parts": 43,
+  "triangles": 12156,
+  "vertices": 6322,
+  "bytes": 102140,
+  "axis": {
+    "axis": 38.97,
+    "lineBearing": 38.97,
+    "offDegrees": 0.0,
+    "source": "osm-hippodrome-2026-11-19"
+  },
+  "dimensions": [
+    {
+      "id": "length",
+      "measured": 429.0,
+      "cited": 429,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "width",
+      "measured": 118.0,
+      "cited": 119,
+      "tolerance": 0.05,
+      "error": -0.0084
+    },
+    {
+      "id": "spina-width",
+      "measured": 2.0,
+      "cited": 2.0,
+      "tolerance": 0.05,
+      "error": 0.0
+    },
+    {
+      "id": "obelisk-shaft",
+      "measured": 19.6,
+      "cited": 19.6,
+      "tolerance": 0.05,
+      "error": -0.0
+    },
+    {
+      "id": "walled-obelisk",
+      "measured": 32.0,
+      "cited": 32,
+      "tolerance": 0.05,
+      "error": 0.0
+    }
+  ],
+  "byPart": {
+    "stands-west": 2104,
+    "stands-east-south": 1288,
+    "stands-east-north": 744,
+    "stands-sphendone": 1796,
+    "back-walls-west": 368,
+    "back-walls-east": 224,
+    "back-walls-north": 128,
+    "sphendone": 808,
+    "carceres": 892,
+    "quadriga-pedestal": 12,
+    "quadriga": 48,
+    "kathisma": 64,
+    "spina-south": 60,
+    "spina-middle-south": 60,
+    "spina-middle-north": 60,
+    "spina-north": 60,
+    "metae-bases": 24,
+    "metae": 192,
+    "serpent": 32,
+    "serpent-today": 32,
+    "obelisk-plinth": 12,
+    "obelisk-base": 12,
+    "obelisk-cubes": 48,
+    "obelisk-shaft": 40,
+    "walled-steps": 12,
+    "walled-step-2": 12,
+    "walled-step-3": 12,
+    "walled-base": 12,
+    "walled-obelisk": 56,
+    "palace-ranges-west": 208,
+    "palace-ranges-east": 208,
+    "palace-cross-north": 64,
+    "palace-cross-middle": 64,
+    "pits": 224,
+    "pit-serpent": 80,
+    "mosque-hall": 240,
+    "mosque-drum": 288,
+    "mosque-dome": 384,
+    "mosque-court-sides": 88,
+    "mosque-court-ends": 104,
+    "minarets": 768,
+    "fountain": 32,
+    "fountain-dome": 192
+  }
+}

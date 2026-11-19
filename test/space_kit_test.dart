@@ -117,7 +117,14 @@ void main() {
     expect(catalog.studies.map((s) => s.id).toSet(), {
       'how-a-dome-stands',
       ...kit,
+      // P13's three (test/p13_imperial_core_test.dart).
+      'milion',
+      'hippodrome',
+      'serpent-column',
     });
+    expect(catalog.forPlace('hippodrome').single.id, 'hippodrome');
+    expect(catalog.forPlace('milion').single.id, 'milion');
+    expect(catalog.forPlace('serpent-column').single.id, 'serpent-column');
     expect(catalog.forPlace('sehzade').single.id, 'sehzade-camii');
     expect(catalog.forPlace('little-hagia-sophia').single.id, 'kucuk-ayasofya');
     expect(catalog.forPlace('bodrum-mosque').single.id, 'bodrum-camii');

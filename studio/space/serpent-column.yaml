@@ -1,0 +1,213 @@
+# P13 kit spec: the Serpent Column, Milestone XIV, as a turntable object. The
+# bronze column of three twisted snakes that carried the gold tripod the
+# Greek cities dedicated at Delphi after Plataea (479 BC); in the Hippodrome
+# from Constantine's time; its heads broken off in 1700; one upper jaw in the
+# Istanbul Archaeology Museums. Frame: metres, z up, the column's foot at
+# z = 0 on its axis. It is drawn as an object, not placed on the map.
+# Cited and checked: about 5.35 m survives (Stephenson 2016, as Bassett's
+# review gives it). From the sources but not measured: about thirty coils,
+# the inscribed ones the 3rd to the 13th; this drawing has 29 bands to the
+# break. Set in proportion, so no caption states them: the coils' width
+# (about 0.57 m across), the heads and necks (from the drawings of 1574 and
+# 1582, which show three heads spreading outward), the height the whole stood
+# to (perhaps 8 m with the tripod; an estimate), the Delphi base and the
+# Hippodrome's plinth. The tripod's form is not known: a gold bowl on the
+# heads and three legs to the base, a sign rather than evidence.
+schemaVersion: 1
+id: serpent-column
+place: serpent-column
+title: {en: "The Serpent Column", tr: "Yılanlı Sütun"}
+description:
+  en: >-
+    The Serpent Column as a drawing that turns: three bronze snakes twisted
+    together, which carried the gold tripod the Greek cities set up at Delphi
+    after Plataea in 479 BC; brought to the Hippodrome under Constantine; its
+    heads broken off in 1700. A reconstruction of what is lost, drawn in
+    proportion: the heads after drawings of 1574 and 1582, the tripod as a
+    sign.
+  tr: >-
+    Dönen bir çizim olarak Yılanlı Sütun: MÖ 479'da Plataia'dan sonra Yunan
+    şehirlerinin Delfoi'ye diktiği altın üçayağı taşıyan, birbirine sarılmış
+    üç tunç yılan; Konstantin döneminde Hipodrom'a getirildi; başları
+    1700'de kırıldı. Kayıp kısımlar oranlarla çizilmiş bir
+    rekonstrüksiyondur: başlar 1574 ve 1582 tarihli çizimlere göre, üçayak
+    bir işaret olarak.
+eras: [ancient, byzantine, ottoman, modern]
+honesty: RECONSTRUCTION
+step: 1.0
+epochs:
+  - {year: -479, label: {en: "Delphi, after Plataea, 479 BC", tr: "Delfoi, Plataia'dan sonra, MÖ 479"}}
+  - {year: 330, label: {en: "The Hippodrome, by 330", tr: "Hipodrom, 330'a dek"}}
+  - {year: 2026, label: {en: "Today", tr: "Bugün"}}
+parts:
+  - id: delphi-base
+    kind: round-base
+    note: a round stepped base at Delphi, in proportion (three steps)
+    at: [{at: [0, 0], z: -0.9}]
+    params: {radii: [1.7, 1.4, 1.15], rise: 0.3, n: 32}
+  - id: coils
+    kind: serpent
+    material: bronze
+    note: three snakes to the necks; 29 bands to 5.35 m, about 30 in all
+    params: {height: 8.0, coil_top: 6.0, turns: 10.9, helix: 0.2, body: 0.08, body_top: 0.066,
+             necks: 0.8, head_radius: 0.52, head_length: 0.42, sides: 8, per_turn: 14}
+  - id: tripod-bowl
+    kind: bowl
+    material: gold
+    note: the gold bowl on the heads; its form is not known
+    at: [{at: [0, 0], z: 6.95}]
+    params: {radius: 0.95, depth: 0.5, thickness: 0.04, n: 28}
+  - id: tripod-legs
+    kind: obelisk
+    material: gold
+    note: three legs from the bowl's rim to the base, as a sign
+    at: [{at: [1.08, 0], z: -0.0}, {at: [-0.54, 0.935], z: -0.0}, {at: [-0.54, -0.935], z: -0.0}]
+    params: {base: 0.07, top: 0.05, height: 7.25, sides: 6}
+  - id: hippodrome-plinth
+    kind: pier
+    note: a plinth on the spina; its form is not known
+    at: [{at: [0, 0], z: -0.6}]
+    params: {width: 1.6, depth: 1.6, height: 0.6}
+  - id: column-today
+    kind: serpent
+    material: bronze
+    note: the bodies as they survive, broken off at about 5.35 m
+    params: {height: 8.0, coil_top: 6.0, turns: 10.9, helix: 0.2, body: 0.08, body_top: 0.066,
+             cut: 5.35, sides: 8, per_turn: 14}
+  - id: pit
+    kind: wall
+    note: the pit it stands in today, the square above it about 2 m higher; in proportion
+    at: [[-2.0, -2.0], [2.0, -2.0, 90], [2.0, 2.0, 180], [-2.0, 2.0, 270]]
+    params: {length: 4.0, height: 2.0, thickness: 0.3}
+  - id: jaw-plinth
+    kind: pier
+    note: a museum plinth across the street (here beside the column)
+    at: [{at: [3.4, 0.0]}]
+    params: {width: 0.6, depth: 0.6, height: 1.1}
+  - id: jaw
+    kind: serpent-head
+    material: bronze
+    note: the upper jaw in the Istanbul Archaeology Museums
+    at: [{at: [3.25, 0.0], z: 1.1}]
+    params: {body: 0.08, length: 0.42}
+steps:
+  - id: delphi
+    parts: [delphi-base]
+    seconds: 3.2
+    epochs: [-479]
+    sources: [perseus-hdt-9-81-1, delphi-culture-tripod-plataea]
+    label: {en: "Delphi, 479 BC", tr: "Delfoi, MÖ 479"}
+    caption:
+      en: >-
+        After Plataea the Greeks set aside a tenth of the spoils for Apollo:
+        Herodotus saw the tripod "which rests upon the bronze three-headed
+        serpent, nearest to the altar".
+      tr: >-
+        Plataia'dan sonra Yunanlar ganimetin onda birini Apollon'a ayırdı:
+        Herodotos "sunağın en yakınında, üç başlı tunç yılanın üstünde duran"
+        üçayağı gördü.
+  - id: coils
+    parts: [coils]
+    seconds: 3.6
+    epochs: [-479, 330]
+    sources: [perseus-thuc-1-132, perseus-hdt-9-81-1, byzleg-serpent-column]
+    label: {en: "Three snakes", tr: "Üç yılan"}
+    caption:
+      en: >-
+        The Spartan general Pausanias first cut his own name on it; Sparta
+        had it erased and the cities inscribed instead: 31 names on the
+        coils, under "Those who fought the war".
+      tr: >-
+        Spartalı komutan Pausanias önce kendi adını kazıttı; Sparta bunu
+        sildirip yerine şehirleri yazdırdı: halkalarda "Savaşı yapanlar"
+        başlığı altında 31 ad.
+  - id: heads
+    parts: [coils-heads]
+    seconds: 3.4
+    epochs: [-479, 330]
+    sources: [byzleg-serpent-column, encrom-serpentine]
+    label: {en: "Three heads", tr: "Üç baş"}
+    caption:
+      en: >-
+        Drawings of 1574 and the festival book of 1582 still show the three
+        heads spreading outward. They are drawn here in proportion.
+      tr: >-
+        1574 tarihli çizimler ve 1582 şenlik kitabı üç başı hâlâ dışa doğru
+        açılmış gösterir. Burada oranlarla çizildiler.
+  - id: tripod
+    parts: [tripod-bowl, tripod-legs]
+    seconds: 3.4
+    epochs: [-479]
+    sources: [perseus-paus-10-13-9, bmcr-2017-01-43]
+    label: {en: "The gold tripod", tr: "Altın üçayak"}
+    caption:
+      en: >-
+        The gold went in the 350s BC, when the Phocians plundered Delphi:
+        "the Phocian leaders did not leave the gold as they did the bronze".
+        Its form is not known; it is drawn as a sign.
+      tr: >-
+        Altın, MÖ 350'lerde Fokisliler Delfoi'yi yağmaladığında gitti:
+        "Fokis önderleri tuncu bıraktılar ama altını bırakmadılar."
+        Biçimi bilinmiyor; bir işaret olarak çizildi.
+  - id: hippodrome
+    parts: [hippodrome-plinth]
+    seconds: 3.4
+    epochs: [330]
+    sources: [bmcr-2017-01-43, byzleg-serpent-column]
+    label: {en: "To the Hippodrome", tr: "Hipodrom'a"}
+    caption:
+      en: >-
+        Constantine set the bronze snakes on the Hippodrome's central
+        barrier. Water pipes found under it suggest it was later a fountain.
+      tr: >-
+        Konstantin tunç yılanları Hipodrom'un orta setine yerleştirdi.
+        Altında bulunan su boruları, sonradan çeşme olarak kullanıldığını
+        düşündürür.
+  - id: broken
+    parts: [column-today, pit]
+    seconds: 4.0
+    epochs: [2026]
+    sources: [encrom-serpentine, bmcr-2017-01-43]
+    label: {en: "20 October 1700", tr: "20 Ekim 1700"}
+    caption:
+      en: >-
+        An Ottoman chronicler says all three heads fell together on the
+        night of 20 October 1700 with no one near; travellers blamed a Polish
+        ambassador's men. About 5.35 m survives, in a pit below the square.
+      tr: >-
+        Bir Osmanlı tarihçisine göre üç baş, 20 Ekim 1700 gecesi yanında kimse
+        yokken birlikte düştü; seyyahlar bir Leh elçisinin adamlarını
+        suçladı. Yaklaşık 5,35 m'si meydanın altındaki bir çukurda duruyor.
+  - id: jaw
+    parts: [jaw-plinth, jaw]
+    seconds: 3.6
+    epochs: [2026]
+    sources: [encrom-serpentine, byzleg-serpent-column]
+    label: {en: "One upper jaw", tr: "Bir üst çene"}
+    caption:
+      en: >-
+        One upper jaw, found in 1848 during restoration work at Hagia Sophia,
+        is in the Istanbul Archaeology Museums, a few minutes' walk away.
+      tr: >-
+        1848'de Ayasofya'daki onarım sırasında bulunan bir üst çene, birkaç
+        dakika yürüme mesafesindeki İstanbul Arkeoloji Müzeleri'nde.
+reveal:
+  through: tripod
+  seconds: 10.0
+  turnDegrees: 360
+  caption:
+    en: "From Delphi, 479 BC: three bronze snakes under a gold tripod, turning."
+    tr: "Delfoi'den, MÖ 479: altın bir üçayağın altında dönen üç tunç yılan."
+choisy:
+  sectionHeight: 2.5
+  elevation: -30
+  azimuth: 225
+dimensions:
+  - id: surviving-height
+    value: 5.35
+    measure: {kind: top, parts: [column-today]}
+    source: bmcr-2017-01-43
+    quote: "about 5.35 m tall and broken off at the top (Stephenson 2016, summarised by Bassett)"
+    tolerance: 0.02
+shared: [perseus-hdt-9-81-1, delphi-culture-tripod-plataea, perseus-thuc-1-132, byzleg-serpent-column,
+         encrom-serpentine, perseus-paus-10-13-9, bmcr-2017-01-43]

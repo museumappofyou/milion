@@ -7,7 +7,11 @@ A spec is YAML (schema 1):
   orientation          axis: azimuth (degrees from true north, clockwise) of
                        the model's +y, the building's main axis toward its
                        sanctuary; source and footprint ([lat, lon], …) of a
-                       cited outline the axis is checked against
+                       cited outline the axis is checked against, or (P13)
+                       `line`, a cited street's points, whose bearing from
+                       first to last it is checked against. Optional for a
+                       movable object (P13's Serpent Column is drawn as
+                       itself, not on the map)
   grid                 named plan lines in metres, {x: {A: -6, …}, y: {1: …}}
   step                 the longest face edge (default 2 m)
   parts                [{id, kind, params, at, z, turn, material, names, merge}]
@@ -46,7 +50,7 @@ SMOOTH_PIECES = {'-domes', '-cap', '-vaults', '-exedrae', '-arches', '-windows',
                  '-gallery'}
 COLUMN_KINDS = {'courtyard', 'portico', 'octagon', 'arcade'}   # their '' piece is columns
 SMOOTH = 60.0
-MATERIALS = {'marble', 'brick', 'lead', 'stone', 'light'}
+MATERIALS = {'marble', 'brick', 'lead', 'stone', 'light', 'bronze', 'gold'}
 
 
 def load(path):
@@ -239,6 +243,16 @@ def check_dimensions(spec, parts):
         ok = abs(got - d['value']) <= tol * abs(d['value']) + 1e-9
         out.append((d['id'], got, d['value'], tol, ok))
     return out
+
+
+def line_bearing(line):
+    """Azimuth (degrees from north, clockwise, in [0, 360)) from the first
+    [lat, lon] point of a street to its last."""
+    (la0, lo0), (la1, lo1) = line[0], line[-1]
+    lat0 = math.radians((la0 + la1) / 2)
+    dx = (lo1 - lo0) * (111412.84 * math.cos(lat0) - 93.5 * math.cos(3 * lat0))
+    dy = (la1 - la0) * (111132.92 - 559.82 * math.cos(2 * lat0) + 1.175 * math.cos(4 * lat0))
+    return math.degrees(math.atan2(dx, dy)) % 360
 
 
 def footprint_axis(footprint):

@@ -6,7 +6,8 @@ validated PlatePlayer manifest out. Stages, each documented in its module:
 
   (a) stages/ingest.py   sRGB master <= 4096 px, EXIF stripped, hashes;
                          then any WR/IMAGINED recipe (reconstruct.py)
-  (b) stages/segment.py  SAM 2.1 prompts from the yaml; manual masks override
+  (b) stages/segment.py  SAM 2.1 prompts from the yaml; manual masks override;
+                         stages/flowmask.py composes a flow mask from them
   (c) stages/depth.py    monocular depth + per-segment priors, normals, gold
   (d) stages/popup.py    optional pop-up split with inpainting
   (e) stages/mesh.py     adaptive mesh <= 60k vertices, flip/tear validated
@@ -31,7 +32,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from stages import depth, export, ingest, mesh, popup, segment, spec as specs  # noqa: E402
+from stages import depth, export, flowmask, ingest, mesh, popup, segment, spec as specs  # noqa: E402
 import reconstruct  # noqa: E402
 from stages.spec import ROOT  # noqa: E402
 
@@ -71,6 +72,9 @@ def build(path, with_preview=True):
             reconstruct.main(spec.local(recipe))
     masks, rec = segment.segment(spec, master, master_sha)
     report['stages']['segment'] = rec or 'no segments'
+    rec = flowmask.compose(spec, masks, master.shape)
+    if rec:
+        report['stages']['flowMask'] = rec
     height, normals, gold, rec = depth.run(spec, master, master_sha, masks)
     report['stages']['depth'] = rec
     background, layers, rec = popup.split(master, masks, spec.get('popup', []))

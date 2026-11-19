@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 2,
+  "kind": "plate",
+  "id": "plate-palace-animals",
+  "milestone": "milestone-xv",
+  "artwork": "ic-palace-floor-mosaic",
+  "title": {
+    "en": "Great Palace animals",
+    "tr": "Büyük Saray’ın hayvanları"
+  },
+  "description": {
+    "en": "A stretch of the floor mosaic laid round a courtyard of the Great Palace in the 6th or early 7th century: an eagle fighting a snake, a griffin, a hunter, goats and grazing gazelles or antelopes on a white ground.",
+    "tr": "6. yüzyılda ya da 7. yüzyılın başında Büyük Saray’ın bir avlusunun çevresine döşenmiş taban mozaiğinden bir bölüm: bir yılanla dövüşen kartal, bir grifon, bir avcı, keçiler ve beyaz zemin üstünde otlayan ceylanlar ya da antiloplar."
+  },
+  "size": [
+    2400,
+    1561
+  ],
+  "manifestPath": "assets/plates/palace-animals/manifest.json",
+  "layers": [
+    {
+      "id": "original",
+      "asset": "assets/plates/palace-animals/original.jpg",
+      "honesty": "ORIGINAL",
+      "mask": null
+    }
+  ],
+  "maps": {
+    "surface": "assets/plates/palace-animals/surface.webp",
+    "gold": "assets/plates/palace-animals/gold.webp"
+  },
+  "flow": {
+    "mask": "assets/plates/palace-animals/animals.png",
+    "period": 3.2,
+    "distance": 0.004,
+    "motion": "sway"
+  },
+  "spiral": null,
+  "rig": null,
+  "lookUp": null,
+  "details": [
+    {
+      "id": "detail-palace-eagle",
+      "milestone": "milestone-xv",
+      "artwork": "ic-palace-floor-mosaic",
+      "title": {
+        "en": "Eagle and snake",
+        "tr": "Kartal ve yılan"
+      },
+      "sentence": {
+        "en": "An eagle fights a snake: the snake winds round its body, and the eagle has the snake’s neck in its beak.",
+        "tr": "Bir kartal bir yılanla dövüşüyor: yılan gövdesine dolanmış, kartal ise yılanın boynunu gagasında tutuyor."
+      },
+      "window": {
+        "left": 0.53,
+        "top": 0.19,
+        "right": 0.78,
+        "bottom": 0.5
+      },
+      "anchorX": 0.7,
+      "anchorY": 0.4,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "byzleg-mosaic-museum",
+        "commons-palace-floor"
+      ]
+    },
+    {
+      "id": "detail-palace-hunter",
+      "milestone": "milestone-xv",
+      "artwork": "ic-palace-floor-mosaic",
+      "title": {
+        "en": "A hunter on foot",
+        "tr": "Yaya bir avcı"
+      },
+      "sentence": {
+        "en": "A hunter braces with a spear and an oval shield; elsewhere on the floor hunters like him face tigers, lions and boars.",
+        "tr": "Bir avcı mızrağı ve oval kalkanıyla siper alıyor; döşemenin başka yerlerinde onun gibi avcılar kaplanlara, aslanlara ve yaban domuzlarına karşı duruyor."
+      },
+      "window": {
+        "left": 0.41,
+        "top": 0.44,
+        "right": 0.61,
+        "bottom": 0.82
+      },
+      "anchorX": 0.52,
+      "anchorY": 0.55,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ]
+    },
+    {
+      "id": "detail-palace-grazers",
+      "milestone": "milestone-xv",
+      "artwork": "ic-palace-floor-mosaic",
+      "title": {
+        "en": "Grazing",
+        "tr": "Otlayanlar"
+      },
+      "sentence": {
+        "en": "Horned grazers, gazelles or antelopes, walk and feed among the plants, one with its head down to the grass.",
+        "tr": "Boynuzlu otçullar, ceylan ya da antiloplar, bitkilerin arasında yürüyüp otluyor; biri başını çimene eğmiş."
+      },
+      "window": {
+        "left": 0.7,
+        "top": 0.55,
+        "right": 0.98,
+        "bottom": 0.84
+      },
+      "anchorX": 0.8,
+      "anchorY": 0.66,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ]
+    },
+    {
+      "id": "detail-palace-goats",
+      "milestone": "milestone-xv",
+      "artwork": "ic-palace-floor-mosaic",
+      "title": {
+        "en": "Goats",
+        "tr": "Keçiler"
+      },
+      "sentence": {
+        "en": "Long-horned goats stand on a slope; elsewhere on the floor a herdsman milks goats while a boy holds a large jar.",
+        "tr": "Bir yamaçta uzun boynuzlu keçiler duruyor; döşemenin başka bir yerinde bir çoban keçi sağıyor, bir çocuk da büyük bir testi tutuyor."
+      },
+      "window": {
+        "left": 0.82,
+        "top": 0.18,
+        "right": 1.0,
+        "bottom": 0.45
+      },
+      "anchorX": 0.9,
+      "anchorY": 0.3,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-mosaic-museum",
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ]
+    },
+    {
+      "id": "detail-palace-griffin",
+      "milestone": "milestone-xv",
+      "artwork": "ic-palace-floor-mosaic",
+      "title": {
+        "en": "A griffin",
+        "tr": "Bir grifon"
+      },
+      "sentence": {
+        "en": "A griffin rears up, an eagle’s head and wings on a lion’s body; another on this floor eats a lizard.",
+        "tr": "Bir grifon şahlanıyor, aslan gövdesinde kartal başı ve kanatlarıyla; bu döşemedeki bir başka grifon bir kertenkele yiyor."
+      },
+      "window": {
+        "left": 0.33,
+        "top": 0.07,
+        "right": 0.47,
+        "bottom": 0.38
+      },
+      "anchorX": 0.4,
+      "anchorY": 0.18,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "byzleg-mosaic-museum",
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ]
+    },
+    {
+      "id": "detail-palace-tesserae",
+      "milestone": "milestone-xv",
+      "artwork": "ic-palace-floor-mosaic",
+      "title": {
+        "en": "Forty thousand to the metre",
+        "tr": "Metrekarede kırk bin"
+      },
+      "sentence": {
+        "en": "The white ground is laid in a fan pattern of cubes about 5 mm across, some 40,000 to the square metre.",
+        "tr": "Beyaz zemin, yaklaşık 5 mm’lik küplerle yelpaze deseninde döşenmiş; metrekareye 40.000 kadar küp düşüyor."
+      },
+      "window": {
+        "left": 0.44,
+        "top": 0.25,
+        "right": 0.56,
+        "bottom": 0.4
+      },
+      "anchorX": 0.5,
+      "anchorY": 0.32,
+      "honesty": "ORIGINAL",
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "byzleg-mosaic-museum"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "palace-animals-beat-1",
+      "start": 0,
+      "duration": 6,
+      "detail": "detail-palace-eagle",
+      "window": {
+        "left": 0.53,
+        "top": 0.19,
+        "right": 0.78,
+        "bottom": 0.5
+      },
+      "caption": {
+        "en": "IMAGINED: the mosaic does not move. The loop only suggests the fight an eagle and a snake were set in for good.",
+        "tr": "HAYALÎ: mozaik kıpırdamaz. Bu döngü, bir kartalla bir yılanın sonsuza dek kaldığı dövüşü yalnızca sezdirir."
+      },
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ],
+      "light": "none",
+      "flow": true,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "palace-animals-beat-2",
+      "start": 6,
+      "duration": 5,
+      "detail": "detail-palace-hunter",
+      "window": {
+        "left": 0.41,
+        "top": 0.44,
+        "right": 0.61,
+        "bottom": 0.82
+      },
+      "caption": {
+        "en": "A hunter braces with a spear and an oval shield; elsewhere on the floor hunters like him face tigers, lions and boars.",
+        "tr": "Bir avcı mızrağı ve oval kalkanıyla siper alıyor; döşemenin başka yerlerinde onun gibi avcılar kaplanlara, aslanlara ve yaban domuzlarına karşı duruyor."
+      },
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "palace-animals-beat-3",
+      "start": 11,
+      "duration": 5,
+      "detail": "detail-palace-grazers",
+      "window": {
+        "left": 0.7,
+        "top": 0.55,
+        "right": 0.98,
+        "bottom": 0.84
+      },
+      "caption": {
+        "en": "IMAGINED: a short loop of grazing. On the floor the animals stand still.",
+        "tr": "HAYALÎ: kısa bir otlama döngüsü. Döşemede hayvanlar kıpırtısız durur."
+      },
+      "sources": [
+        "commons-palace-floor"
+      ],
+      "light": "none",
+      "flow": true,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "palace-animals-beat-4",
+      "start": 16,
+      "duration": 5,
+      "detail": "detail-palace-goats",
+      "window": {
+        "left": 0.82,
+        "top": 0.18,
+        "right": 1.0,
+        "bottom": 0.45
+      },
+      "caption": {
+        "en": "Long-horned goats stand on a slope; elsewhere on the floor a herdsman milks goats while a boy holds a large jar.",
+        "tr": "Bir yamaçta uzun boynuzlu keçiler duruyor; döşemenin başka bir yerinde bir çoban keçi sağıyor, bir çocuk da büyük bir testi tutuyor."
+      },
+      "sources": [
+        "byzleg-mosaic-museum",
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "palace-animals-beat-5",
+      "start": 21,
+      "duration": 5,
+      "detail": "detail-palace-griffin",
+      "window": {
+        "left": 0.33,
+        "top": 0.07,
+        "right": 0.47,
+        "bottom": 0.38
+      },
+      "caption": {
+        "en": "A griffin rears up, an eagle’s head and wings on a lion’s body; another on this floor eats a lizard.",
+        "tr": "Bir grifon şahlanıyor, aslan gövdesinde kartal başı ve kanatlarıyla; bu döşemedeki bir başka grifon bir kertenkele yiyor."
+      },
+      "sources": [
+        "byzleg-mosaic-museum",
+        "tan-great-palace-mosaic-museum",
+        "commons-palace-floor"
+      ],
+      "light": "none",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    },
+    {
+      "id": "palace-animals-beat-6",
+      "start": 26,
+      "duration": 5,
+      "detail": "detail-palace-tesserae",
+      "window": {
+        "left": 0.44,
+        "top": 0.25,
+        "right": 0.56,
+        "bottom": 0.4
+      },
+      "caption": {
+        "en": "The white ground is laid in a fan pattern of cubes about 5 mm across, some 40,000 to the square metre.",
+        "tr": "Beyaz zemin, yaklaşık 5 mm’lik küplerle yelpaze deseninde döşenmiş; metrekareye 40.000 kadar küp düşüyor."
+      },
+      "sources": [
+        "tan-great-palace-mosaic-museum",
+        "byzleg-mosaic-museum"
+      ],
+      "light": "raking",
+      "flow": false,
+      "spiral": false,
+      "gesture": null
+    }
+  ],
+  "revealSeconds": 10,
+  "revealMoment": 5,
+  "storySeconds": 31,
+  "reveal": {
+    "id": "palace-animals-reveal",
+    "start": 0,
+    "duration": 10,
+    "detail": "detail-palace-eagle",
+    "window": {
+      "left": 0.53,
+      "top": 0.19,
+      "right": 0.78,
+      "bottom": 0.5
+    },
+    "caption": {
+      "en": "An eagle fights a snake: the snake winds round its body, and the eagle has the snake’s neck in its beak.",
+      "tr": "Bir kartal bir yılanla dövüşüyor: yılan gövdesine dolanmış, kartal ise yılanın boynunu gagasında tutuyor."
+    },
+    "sources": [
+      "tan-great-palace-mosaic-museum",
+      "byzleg-mosaic-museum",
+      "commons-palace-floor"
+    ],
+    "light": "none",
+    "flow": true,
+    "spiral": false,
+    "gesture": null
+  },
+  "credit": {
+    "en": "Francesco Bini / Wikimedia Commons (CC BY-SA 4.0)",
+    "tr": "Francesco Bini / Wikimedia Commons (CC BY-SA 4.0)"
+  },
+  "sources": [
+    "tan-great-palace-mosaic-museum",
+    "byzleg-mosaic-museum",
+    "commons-palace-floor"
+  ],
+  "originalSourceUrl": "https://commons.wikimedia.org/wiki/File:Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli,_VI_secolo_ca.,_pavimento_centro-ovest_02,1.jpg",
+  "citations": [
+    {
+      "id": "byzleg-mosaic-museum",
+      "title": {
+        "en": "Great Palace Mosaic Museum",
+        "tr": "Büyük Saray Mozaikleri Müzesi"
+      },
+      "url": "https://www.thebyzantinelegacy.com/mosaic-museum",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "commons-palace-floor",
+      "title": {
+        "en": "File:Mosaici da un peristilio del gran palazzo di costantinopoli, VI secolo ca., pavimento centro-ovest 02,1.jpg — Wikimedia Commons",
+        "tr": "File:Mosaici da un peristilio del gran palazzo di costantinopoli, VI secolo ca., pavimento centro-ovest 02,1.jpg — Wikimedia Commons"
+      },
+      "url": "https://commons.wikimedia.org/wiki/File:Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli,_VI_secolo_ca.,_pavimento_centro-ovest_02,1.jpg",
+      "author": {
+        "en": "Francesco Bini",
+        "tr": "Francesco Bini"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": {
+        "en": "CC BY-SA 4.0",
+        "tr": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "tan-great-palace-mosaic-museum",
+      "title": {
+        "en": "Great Palace of Constantinople Mosaic Museum",
+        "tr": "Büyük Saray Mozaikleri Müzesi"
+      },
+      "url": "https://turkisharchaeonews.net/node/1002",
+      "author": {
+        "en": "Turkish Archaeological News",
+        "tr": "Turkish Archaeological News"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    }
+  ]
+}

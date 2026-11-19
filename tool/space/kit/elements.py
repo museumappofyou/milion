@@ -982,3 +982,182 @@ def arcade(length, bays, spring, support=None, thickness=.8, depth=1.0, kind='ro
 
 
 KINDS['arcade'] = arcade
+
+
+# P13: the imperial core — obelisks, the Serpent Column, the Hippodrome's
+# stands and the Milion's surviving fragment.
+
+def obelisk(base, top, height, pyramidion=None, sides=4, step=2.0):
+    """A tapering shaft on z = 0: a `sides`-gon `base` across (flat to flat
+    for a square) narrowing to `top` at `height`, then a pyramidion
+    `pyramidion` high to a point (none: a flat top). Centred on the origin;
+    with eight or more sides it reads as a cone (the Hippodrome's metae)."""
+    phase = math.pi / sides
+    k = 1 / math.cos(math.pi / sides)          # flat-to-flat → circumradius
+
+    def ring_at(width):
+        return regular(sides, width / 2 * k, phase)
+
+    n = max(1, int(math.ceil(height / step - 1e-9)))
+    rings = [(ring_at(base + (top - base) * i / n), height * i / n) for i in range(n + 1)]
+    if pyramidion:
+        rings.append((np.repeat(np.zeros((1, 2)), sides, 0), height + pyramidion))
+    return {'': loft(rings, step, 'obelisk')}
+
+
+def _frames(path):
+    """Unit tangents and a parallel-transported normal along a 3D polyline."""
+    P = np.asarray(path, dtype=np.float64)
+    T = np.gradient(P, axis=0)
+    T /= np.linalg.norm(T, axis=1)[:, None]
+    up = np.array([0.0, 0.0, 1.0]) if abs(T[0][2]) < .9 else np.array([1.0, 0.0, 0.0])
+    N = [np.cross(np.cross(T[0], up), T[0])]
+    N[0] /= np.linalg.norm(N[0])
+    for i in range(1, len(P)):
+        n = N[-1] - np.dot(N[-1], T[i]) * T[i]
+        N.append(n / np.linalg.norm(n))
+    N = np.asarray(N)
+    return T, N, np.cross(T, N)
+
+
+def tube(path, radii, sides=8, flat=1.0, name='tube', tip=False):
+    """A closed tube along a 3D polyline, one ring of `sides` points per path
+    point at that point's radius (`flat` squashes it across the normal: a
+    snake's head is wider than it is deep). The start is capped flat; the end
+    is capped flat or, with `tip`, closed to a point."""
+    P = np.asarray(path, dtype=np.float64)
+    T, N, B = _frames(P)
+    a = TAU * np.arange(sides) / sides
+    V = []
+    for p, n, b, r in zip(P, N, B, radii):
+        V += [tuple(p + r * (math.cos(t) * b + math.sin(t) * n * flat)) for t in a]
+    F = []
+    rows = len(P)
+    for i in range(rows - 1):
+        for j in range(sides):
+            k = (j + 1) % sides
+            q, w, e, s = i * sides + j, i * sides + k, (i + 1) * sides + k, (i + 1) * sides + j
+            F += [(q, w, e), (q, e, s)]
+    start = len(V)
+    V.append(tuple(P[0]))
+    F += [(start, (j + 1) % sides, j) for j in range(sides)]
+    end = len(V)
+    V.append(tuple(P[-1] + (T[-1] * radii[-1] if tip else 0)))
+    o = (rows - 1) * sides
+    F += [(end, o + j, o + (j + 1) % sides) for j in range(sides)]
+    return finish(np.asarray(V), np.asarray(F), name)
+
+
+def serpent(height, coil_top, turns, helix, body, body_top=None, cut=None, necks=0.9,
+            head_radius=0.55, head_length=0.4, sides=8, per_turn=16, step=2.0):
+    """The Serpent Column: three bronze snakes twisted about one axis, each
+    `turns` times round a helix of radius `helix` from z = 0 to `coil_top`,
+    their bodies `body` thick at the foot narrowing to `body_top`. Above the
+    coils each neck rises `necks` and bends out to `head_radius` from the
+    axis, ending in a head `head_length` long pointing outward ('-heads').
+    With `cut`, only the coils below that height (the column today, broken
+    off). `per_turn` path points per turn and `sides` per ring set the
+    detail (the Hippodrome draws a coarse one, XIV a fine one). `height` is
+    the whole column's, heads included, as cited. Pieces: '' the three
+    bodies, '-heads' the necks and heads."""
+    body_top = body if body_top is None else body_top
+    top = coil_top if cut is None else min(cut, coil_top)
+    rise = coil_top / turns
+    bodies, heads = [], []
+    for k in range(3):
+        phase = TAU * k / 3
+        n = max(8, int(math.ceil(turns * top / coil_top * per_turn)))
+        zs = np.linspace(0, top, n + 1)
+        angles = phase + TAU * zs / rise
+        path = np.stack([helix * np.cos(angles), helix * np.sin(angles), zs], 1)
+        radii = body + (body_top - body) * zs / coil_top
+        bodies.append(tube(path, radii, sides, name='serpent'))
+        if cut is not None:
+            continue
+        # The neck: from the coil's end, up and out along a quadratic curve
+        # to the head's root, arriving level and pointing outward.
+        a_end = angles[-1]
+        p0 = path[-1]
+        out = np.array([math.cos(a_end), math.sin(a_end), 0.0])
+        p2 = out * head_radius + [0, 0, coil_top + necks]
+        p1 = np.array([p0[0], p0[1], p2[2]])
+        ts = np.linspace(0, 1, 10)[1:]
+        neck = [(1 - t) ** 2 * p0 + 2 * (1 - t) * t * p1 + t * t * p2 for t in ts]
+        neck_r = [body_top] * len(neck)
+        # The head: a wedge, wider than deep, that swells then narrows to the snout.
+        hs = [0.15, 0.35, 0.6, 0.85, 1.0]
+        swell = [1.25, 1.45, 1.35, .95, .45]
+        head = [p2 + out * head_length * h for h in hs]
+        gap = out * 0.01
+        heads.append(tube([p + gap * 0 for p in neck], neck_r, sides, name='neck'))
+        heads.append(tube([p2 + gap] + head, [body_top] + [body_top * s for s in swell], sides,
+                          flat=.7, name='head', tip=True))
+    out = {'': union(*bodies)}
+    if heads:
+        out['-heads'] = union(*heads)
+    return out
+
+
+def bowl(radius, depth, thickness=.03, foot=0.0, n=24, step=2.0):
+    """A shallow bowl (a lebes) open at the top, rim at z = depth + foot."""
+    r, d, t = radius, depth, thickness
+    profile = [(0.0, foot), (r * .35, foot), (r * .8, foot + d * .35), (r, foot + d),
+               (r - t, foot + d), (r * .8 - t, foot + d * .35 + t), (r * .35, foot + t),
+               (0.0, foot + t)]
+    return {'': revolve(profile, n, step, name='bowl')}
+
+
+def stands(rows, rise, going, inner, a0=0.0, a1=180.0, wall=0.0, n=None, step=2.0):
+    """Curved stands (the Hippodrome's sphendone): `rows` of seats `rise`
+    high and `going` deep, the lowest `inner` metres from the centre, swept
+    from a0 to a1 degrees (anticlockwise from +x), with a back wall `wall`
+    thick rising one row above the top."""
+    profile = [(inner, 0.0)]
+    for i in range(rows):
+        profile += [(inner + i * going, (i + 1) * rise), (inner + (i + 1) * going, (i + 1) * rise)]
+    outer = inner + rows * going + wall
+    profile += [(outer, (rows + (1 if wall else 0)) * rise), (outer, 0.0)]
+    if wall:
+        profile.insert(-2, (inner + rows * going, (rows + 1) * rise))
+    ring_n = n or segments(outer, step, 16, 8)
+    V, F = revolve(profile, ring_n, step, arc=(math.radians(a0), math.radians(a1)), name='stands')
+    return {'': (V, F)}
+
+
+def fragment(width, depth, heights, step=2.0):
+    """A broken pier fragment: a block `width` × `depth` whose top slopes
+    between the corner heights (sw, se, ne, nw), as it broke."""
+    return terrain(width, depth, heights, 0.0, step)
+
+
+KINDS.update({'obelisk': obelisk, 'serpent': serpent, 'bowl': bowl, 'stands': stands,
+              'fragment': fragment})
+
+
+def serpent_head(body=.08, length=.4, sides=8, step=2.0):
+    """One of the Serpent Column's heads alone (P13: the upper jaw in the
+    Istanbul Archaeology Museums), pointing along +x from a short neck stub,
+    its underside at z = 0."""
+    swell = [1.25, 1.45, 1.35, .95, .45]
+    hs = [0.0, 0.15, 0.35, 0.6, 0.85, 1.0]
+    z = body * 1.45 * .7
+    path = [(-.12, 0.0, z)] + [(length * h, 0.0, z) for h in hs[1:]]
+    return {'': tube(path, [body] + [body * s for s in swell], sides, flat=.7, name='head',
+                     tip=True)}
+
+
+KINDS['serpent-head'] = serpent_head
+
+
+def round_base(radii, rise, n=32, step=2.0):
+    """A round stepped base (Delphi's for the Serpent Column): steps of the
+    given radii, widest first, each `rise` high, its top at z = rise ×
+    len(radii)."""
+    profile = [(0.0, 0.0)]
+    for i, r in enumerate(radii):
+        profile += [(r, i * rise), (r, (i + 1) * rise)]
+    profile += [(0.0, len(radii) * rise)]
+    return {'': revolve(profile, n, step, name='base')}
+
+
+KINDS['round-base'] = round_base

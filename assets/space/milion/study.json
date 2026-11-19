@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "milion",
+  "title": {
+    "en": "The Milion",
+    "tr": "Milyon Taşı"
+  },
+  "description": {
+    "en": "The Milion as a drawing: the marble fragment that stands on Divanyolu today, and around it the domed arch of four piers that Byzantine writers describe at the head of the Mese, the street that led west out of the city. Its size is not known; it is drawn in proportion, a reconstruction from texts, not a survey.",
+    "tr": "Bir çizim olarak Milyon Taşı: bugün Divanyolu'nda duran mermer parça ve onun çevresinde, Bizans yazarlarının şehirden batıya çıkan Mese'nin başında anlattığı, dört ayaklı kubbeli kemer. Boyutları bilinmiyor; oranlarla çizildi. Rölöve değil, metinlerden bir rekonstrüksiyondur."
+  },
+  "model": "assets/space/milion/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "milion",
+  "orientation": {
+    "axis": 271.5,
+    "source": "osm-way-228463988"
+  },
+  "epochs": [
+    {
+      "year": 330,
+      "label": {
+        "en": "Constantine's city, after 330",
+        "tr": "Konstantin'in şehri, 330 sonrası"
+      }
+    },
+    {
+      "year": 2026,
+      "label": {
+        "en": "Divanyolu today",
+        "tr": "Bugün Divanyolu"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "fragment",
+      "parts": [
+        "fragment"
+      ],
+      "seconds": 3.4,
+      "epochs": [],
+      "sources": [
+        "wp-milion-1374763433",
+        "byzleg-milion",
+        "firatli-ergil-1969"
+      ],
+      "label": {
+        "en": "What survives",
+        "tr": "Geriye kalan"
+      },
+      "caption": {
+        "en": "In 1967 and 1968, after houses were pulled down on Divanyolu, excavators found the Milion's foundations and this marble fragment, now set up as a pillar.",
+        "tr": "1967 ve 1968'de Divanyolu'nda evler yıkıldıktan sonra kazıcılar Milyon Taşı'nın temellerini ve bugün bir dikme gibi duran bu mermer parçayı buldu."
+      }
+    },
+    {
+      "id": "piers",
+      "parts": [
+        "pier-fragment",
+        "pier-fragment-back",
+        "pier-fragment-top",
+        "piers"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        330
+      ],
+      "sources": [
+        "mango-1959-brazen-house",
+        "byzantium1200-milion",
+        "wp-milion-1374763433"
+      ],
+      "label": {
+        "en": "Four piers",
+        "tr": "Dört ayak"
+      },
+      "caption": {
+        "en": "Texts speak of its arches and its vault; four piers in a square is the likely form. Its size is not known, so it is drawn in proportion.",
+        "tr": "Metinler kemerlerinden ve tonozundan söz eder; kare planlı dört ayak en olası biçimdir. Boyutları bilinmediği için oranlarla çizildi."
+      }
+    },
+    {
+      "id": "arches",
+      "parts": [
+        "arches"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        330
+      ],
+      "sources": [
+        "suda-mu-1065",
+        "wp-milion-1374763433"
+      ],
+      "label": {
+        "en": "Four arches",
+        "tr": "Dört kemer"
+      },
+      "caption": {
+        "en": "Statues of Constantine and his mother Helena holding a cross stood on it, with the city's Tyche behind them, Byzantine writers record.",
+        "tr": "Bizans yazarlarına göre üstünde Konstantin ile annesi Helena'nın bir haçı birlikte tutan heykelleri, arkalarında da şehrin Tykhe'si dururdu."
+      }
+    },
+    {
+      "id": "vault",
+      "parts": [
+        "pendentives",
+        "vault"
+      ],
+      "seconds": 3.6,
+      "epochs": [
+        330
+      ],
+      "sources": [
+        "byzantium1200-milion",
+        "wp-milion-1374763433",
+        "byzleg-milion"
+      ],
+      "label": {
+        "en": "The vault",
+        "tr": "Tonoz"
+      },
+      "caption": {
+        "en": "A domical vault covered the square. In the 8th century it was painted with the Church councils; the iconoclast Constantine V had them replaced with scenes of the Hippodrome and his favourite charioteer.",
+        "tr": "Kareyi kubbemsi bir tonoz örtüyordu. 8. yüzyılda kilise konsilleriyle boyandı; ikonakırıcı V. Konstantin bunların yerine Hipodrom sahnelerini ve en sevdiği arabacıyı yaptırdı."
+      }
+    },
+    {
+      "id": "roads",
+      "parts": [
+        "mese",
+        "augustaion-road"
+      ],
+      "seconds": 4.2,
+      "epochs": [
+        330
+      ],
+      "sources": [
+        "byzleg-milion",
+        "byzleg-hebdomon",
+        "csel39-geyer-1898"
+      ],
+      "label": {
+        "en": "Mile zero",
+        "tr": "Sıfır mil"
+      },
+      "caption": {
+        "en": "Miles were counted from here: the Hebdomon, the suburb where emperors were proclaimed, took its name from the seventh mile west along the road to Thrace.",
+        "tr": "Mil buradan sayılırdı: imparatorların ilan edildiği Hebdomon banliyösü adını Trakya yolu üzerinde batıdaki yedinci milden aldı."
+      }
+    },
+    {
+      "id": "street",
+      "parts": [
+        "divanyolu",
+        "tram"
+      ],
+      "seconds": 4.4,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "wp-milion-1374763433",
+        "byzantium1200-milion",
+        "osm-way-228463988"
+      ],
+      "label": {
+        "en": "Divanyolu",
+        "tr": "Divanyolu"
+      },
+      "caption": {
+        "en": "Last mentioned in the 13th century, the Milion was gone by the early 16th, cleared for an Ottoman water tower. The Mese is Divanyolu now, and the T1 tram runs along it.",
+        "tr": "En son 13. yüzyılda anılan Milyon Taşı, 16. yüzyılın başında bir Osmanlı su terazisine yer açılırken ortadan kalkmıştı. Mese bugün Divanyolu; T1 tramvayı onun üzerinden geçer."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "vault",
+    "seconds": 8.0,
+    "turnDegrees": 24,
+    "caption": {
+      "en": "A fragment on Divanyolu, and around it the arch where the empire's miles began.",
+      "tr": "Divanyolu'nda bir parça ve çevresinde imparatorluğun millerinin başladığı kemer."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 5.5,
+    "elevation": -38,
+    "azimuth": 225
+  },
+  "sources": [],
+  "triangles": 1544,
+  "citations": [
+    {
+      "id": "byzantium1200-milion",
+      "title": {
+        "en": "Milion (Byzantium 1200 reconstruction)",
+        "tr": "Milion (Byzantium 1200 rekonstrüksiyonu)"
+      },
+      "url": "https://byzantium1200.com/milion.html",
+      "author": {
+        "en": "Byzantium 1200 project",
+        "tr": "Byzantium 1200 projesi"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-hebdomon",
+      "title": {
+        "en": "Hebdomon",
+        "tr": "Hebdomon"
+      },
+      "url": "https://www.thebyzantinelegacy.com/hebdomon",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-milion",
+      "title": {
+        "en": "Milion",
+        "tr": "Milion"
+      },
+      "url": "https://www.thebyzantinelegacy.com/milion",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "csel39-geyer-1898",
+      "title": {
+        "en": "Itinera Hierosolymitana saeculi IIII–VIII (CSEL 39): Itinerarium Burdigalense, Latin text with Wesseling page numbers",
+        "tr": "Itinera Hierosolymitana saeculi IIII–VIII (CSEL 39): Bordeaux Güzergâhı, Wesseling sayfa numaralı Latince metin"
+      },
+      "url": "https://archive.org/details/corpusscriptoru17wissgoog",
+      "author": {
+        "en": "Paul Geyer (ed.), Vienna/Prague/Leipzig: Tempsky, 1898",
+        "tr": "Paul Geyer (yay. haz.), Viyana/Prag/Leipzig: Tempsky, 1898"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "firatli-ergil-1969",
+      "title": {
+        "en": "The Milion Sounding (Divanyolu Milion sondajı), İstanbul Arkeoloji Müzeleri Yıllığı 15–16 (1969), pp. 199–212 — bibliographic record only, not read",
+        "tr": "Divanyolu Milion sondajı, İstanbul Arkeoloji Müzeleri Yıllığı 15–16 (1969), s. 199–212 — yalnızca künye, metin okunmadı"
+      },
+      "url": "https://zenon.dainst.org/Record/000496902",
+      "author": {
+        "en": "Nezih Fıratlı and Tülay Ergil",
+        "tr": "Nezih Fıratlı ve Tülay Ergil"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "mango-1959-brazen-house",
+      "title": {
+        "en": "The Brazen House: A Study of the Vestibule of the Imperial Palace of Constantinople (Arkæologisk-kunsthistoriske Meddelelser 4.4), pp. 47–48 on the Milion",
+        "tr": "The Brazen House: Konstantinopolis İmparatorluk Sarayı'nın Giriş Yapısı Üzerine Bir İnceleme (Arkæologisk-kunsthistoriske Meddelelser 4.4), Milion için s. 47–48"
+      },
+      "url": "https://archive.org/details/mango-the-brazen-house",
+      "author": {
+        "en": "Cyril Mango, Copenhagen: Royal Danish Academy, 1959",
+        "tr": "Cyril Mango, Kopenhag: Danimarka Kraliyet Bilimler Akademisi, 1959"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "osm-way-228463988",
+      "title": {
+        "en": "OpenStreetMap way 228463988, Divanyolu Caddesi (footway beside the Milion)",
+        "tr": "OpenStreetMap yolu 228463988, Divanyolu Caddesi (Milyon Taşı'nın yanındaki yaya yolu)"
+      },
+      "url": "https://www.openstreetmap.org/way/228463988",
+      "author": {
+        "en": "OpenStreetMap contributors (ODbL), as fetched for P04 on 2026-10-01 (studio/first_run/osm_street_b.json)",
+        "tr": "OpenStreetMap katkıcıları (ODbL), P04 için 2026-10-01'de alındığı biçimiyle (studio/first_run/osm_street_b.json)"
+      },
+      "accessedAt": "2026-10-01",
+      "licence": {
+        "en": "ODbL 1.0",
+        "tr": "ODbL 1.0"
+      }
+    },
+    {
+      "id": "suda-mu-1065",
+      "title": {
+        "en": "Suda, entry mu 1065 \"Milion\" (Suda On Line translation)",
+        "tr": "Suda sözlüğü, mu 1065 \"Milion\" maddesi (Suda On Line çevirisi)"
+      },
+      "url": "https://cs.uky.edu/~raphael/sol/sol-entries/mu/1065",
+      "author": {
+        "en": "Suda (10th c.); tr. Bret Mulligan, Suda On Line",
+        "tr": "Suda (10. yy); çev. Bret Mulligan, Suda On Line"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "wp-milion-1374763433",
+      "title": {
+        "en": "Milion (Wikipedia, English)",
+        "tr": "Milion (İngilizce Vikipedi)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=Milion&oldid=1374763433",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Vikipedi katkıcıları"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    }
+  ]
+}

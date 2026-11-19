@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../content/geography.dart';
 import '../design/motion.dart';
@@ -7,6 +8,7 @@ import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../shell/app_scope.dart';
 import 'first_run_painter.dart';
+import 'milion_intro.dart';
 
 /// The five places that light up, with label side (left) and placement (below).
 const firstRunPlaces = [
@@ -15,6 +17,17 @@ const firstRunPlaces = [
   ('suleymaniye', true, false),
   ('galata-tower', false, false),
   ('maidens-tower', true, true),
+];
+
+/// The roads' rays in [language]: the name in capitals, the itinerary's
+/// miles with their kilometres.
+List<RoadRay> firstRunRays(String language) => [
+  for (final r in firstRunRoads)
+    RoadRay(
+      TypeRole.capitals(r.name.inLanguage(language), language),
+      formatMilDistance(r.miles * romanMileKm, language: language),
+      r.bearing,
+    ),
 ];
 
 Future<void> replayFirstRun(NavigatorState navigator) => navigator.push(
@@ -29,10 +42,16 @@ Future<void> replayFirstRun(NavigatorState navigator) => navigator.push(
 
 enum FirstRunMode { animated, stills, spoken }
 
-/// Milestone 0 lite: once on first launch, replayable from About.
+/// Milestone 0: once on first launch, replayable from About and the
+/// register. P13 replaced P04's lite drawing of the stone with the kit study
+/// of the Milion and added the roads; the 12-second structure, the three
+/// reduced-motion stills and the one spoken sentence stay.
 class FirstRunScreen extends StatefulWidget {
-  const FirstRunScreen({super.key, required this.onDone});
+  const FirstRunScreen({super.key, required this.onDone, this.loadBytes});
   final VoidCallback onDone;
+
+  /// Where the Milion's study is read from (the asset bundle by default).
+  final Future<ByteData> Function(String)? loadBytes;
   static const length = Duration(seconds: 12);
   static const skippableAfter = 2.0;
 
@@ -52,11 +71,26 @@ class FirstRunScreenState extends State<FirstRunScreen>
   FirstRunMode mode = FirstRunMode.animated;
   int still = 0;
   bool _done = false;
+  MilionIntro? intro;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    // The drawing waits for nothing: until the study is read (well inside
+    // the first two seconds, which show only the tessera) the stone is its
+    // tessera alone.
+    MilionIntro.load(widget.loadBytes ?? rootBundle.load).then(
+      (loaded) {
+        if (mounted) {
+          setState(() => intro = loaded);
+        } else {
+          loaded.dispose();
+        }
+      },
+      onError: (Object error) =>
+          debugPrint('First run without the Milion study: $error'),
+    );
   }
 
   @override
@@ -88,6 +122,7 @@ class FirstRunScreenState extends State<FirstRunScreen>
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     clock.dispose();
+    intro?.dispose();
     super.dispose();
   }
 
@@ -124,6 +159,9 @@ class FirstRunScreenState extends State<FirstRunScreen>
       coordinates: s.milionCoordinates,
       places: places,
       scaler: MediaQuery.textScalerOf(context),
+      intro: intro,
+      honesty: TypeRole.capitals(s.reconstruction, lang),
+      roads: firstRunRays(lang),
       still: still,
     );
     final last = still == FirstRunScreen.stills.length - 1;

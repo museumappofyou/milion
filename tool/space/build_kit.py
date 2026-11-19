@@ -53,7 +53,14 @@ def registry_sources(exclude):
 
 
 def axis_check(spec):
-    o = spec['orientation']
+    o = spec.get('orientation')
+    if o is None:                         # an object, not a building on the map
+        return None
+    if 'line' in o:                       # P13: a street's bearing (the Mese at the Milion)
+        found = kit.line_bearing(o['line'])
+        off = abs((o['axis'] - found + 180) % 360 - 180)
+        return {'axis': o['axis'], 'lineBearing': round(found, 2), 'offDegrees': round(off, 2),
+                'source': o['source']}
     found, long_side, short_side = kit.footprint_axis(o['footprint'])
     axis = o['axis'] % 180
     off = min(abs(axis - found), 180 - abs(axis - found))
@@ -76,7 +83,7 @@ def build_one(spec, known):
     problems += [f'{i}: {got:.3f} against {want} (±{tol:.0%})' for i, got, want, tol, ok in dims
                  if not ok]
     axis = axis_check(spec)
-    if axis['offDegrees'] > AXIS_TOLERANCE:
+    if axis and axis['offDegrees'] > AXIS_TOLERANCE:
         problems.append(f"axis {axis['axis']}° is {axis['offDegrees']}° off the footprint")
     steps = []
     used = []
@@ -97,6 +104,8 @@ def build_one(spec, known):
         problems += [f"{s['id']}: unknown source {x}" for x in s['sources'] if x not in cited]
     problems += [f"{d['id']}: unknown source {d['source']}" for d in spec.get('dimensions', [])
                  if d['source'] not in cited]
+    if axis and axis['source'] not in cited:
+        problems.append(f"orientation: unknown source {axis['source']}")
     problems += [f'shared source {x} not in the registry' for x in spec.get('shared', [])
                  if x not in known]
     if problems:
@@ -115,8 +124,9 @@ def manifest(spec, steps, triangles, citations):
         'model': f"assets/space/{spec['id']}/model.glb",
         'honesty': spec.get('honesty', 'RECONSTRUCTION'),
         'place': spec['place'],
-        'orientation': {'axis': spec['orientation']['axis'],
-                        'source': spec['orientation']['source']},
+        **({'orientation': {'axis': spec['orientation']['axis'],
+                            'source': spec['orientation']['source']}}
+           if 'orientation' in spec else {}),
         'epochs': spec['epochs'],
         'steps': [{'id': s['id'], 'parts': s['parts'], 'seconds': s['seconds'],
                    'epochs': s.get('epochs', []), 'sources': s['sources'], 'label': s['label'],
@@ -152,7 +162,8 @@ def main():
         built, steps, dims, axis, triangles = build_one(spec, known)
         out = ROOT / 'assets/space' / spec['id']
         extras = {'milion': {'units': 'm', 'up': 'z', 'axis': 'y',
-                             'axisAzimuth': spec['orientation']['axis'],
+                             **({'axisAzimuth': spec['orientation']['axis']}
+                                if 'orientation' in spec else {}),
                              'note': 'P09 kit; a diagram on cited dimensions, not a survey'}}
         size = write_compressed(out / 'model.glb', built, extras)
         ids = {r['id'] for r in spec.get('sources', [])}
@@ -169,7 +180,7 @@ def main():
         })
         print(f"{out.relative_to(ROOT)}/model.glb: {len(built)} parts, {triangles} triangles, "
               f"{size} bytes; {len(dims)} dimensions within tolerance; axis "
-              f"{axis['offDegrees']}° off the footprint")
+              + (f"{axis['offDegrees']}° off the footprint" if axis else 'not placed (an object)'))
     dump(SOURCES, {'schemaVersion': 1, 'kind': 'sources',
                    'records': [records[k] for k in sorted(records)]})
     dump(INDEX, {'schemaVersion': 1, 'kind': 'spaces',

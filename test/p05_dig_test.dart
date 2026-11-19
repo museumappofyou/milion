@@ -115,11 +115,20 @@ void main() {
       for (final source in visit.sourceIds) {
         expect(registry.source(source), isNotNull);
       }
-      // Every other place carries no visit card yet; nothing was invented.
-      expect(registry.places.where((p) => p.visit != null).map((p) => p.id), [
-        'chora',
-        'hagia-sophia',
-      ]);
+      // Only reviewed places carry a visit card; nothing was invented.
+      expect(
+        registry.places.where((p) => p.visit != null).map((p) => p.id).toSet(),
+        {
+          'chora',
+          'hagia-sophia',
+          // P13's five.
+          'hippodrome',
+          'milion',
+          'column-of-constantine',
+          'great-palace-mosaic-museum',
+          'boukoleon',
+        },
+      );
       // Accessibility is honestly absent for Chora and renders unverified.
       expect(visit.accessibility, isNull);
     });

@@ -1,0 +1,70 @@
+# Milestone XV, Great Palace animals (P13): MM and DP on one photograph of the
+# peristyle floor's centre-west stretch (Francesco Bini). The animals sway in
+# short loops inside their masks (flow motion 'sway': the masks come from the
+# segments below, each with a direction; tool/plate/stages/flowmask.py). The
+# mosaic does not move, so every beat that moves reads IMAGINED.
+id: palace-animals
+milestone: milestone-xv
+artwork: ic-palace-floor-mosaic
+title: {en: Great Palace animals, tr: Büyük Saray’ın hayvanları}
+description:
+  en: >-
+    A stretch of the floor mosaic laid round a courtyard of the Great Palace
+    in the 6th or early 7th century: an eagle fighting a snake, a griffin, a
+    hunter, goats and grazing gazelles or antelopes on a white ground.
+  tr: >-
+    6. yüzyılda ya da 7. yüzyılın başında Büyük Saray’ın bir avlusunun
+    çevresine döşenmiş taban mozaiğinden bir bölüm: bir yılanla dövüşen
+    kartal, bir grifon, bir avcı, keçiler ve beyaz zemin üstünde otlayan
+    ceylanlar ya da antiloplar.
+manualMinutes: 35  # agent authoring estimate (segments, directions, beats); human time not yet measured
+source:
+  cache: p13/commons/masters/palace-floor.jpg   # tool/content/fetch_commons.py
+  sha256: f571930a01e9a1591b6c3ee0d50b0748e2704777b9166cbd87e7f90b14900acc
+  url: https://commons.wikimedia.org/wiki/File:Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli,_VI_secolo_ca.,_pavimento_centro-ovest_02,1.jpg
+  credit: {en: Francesco Bini / Wikimedia Commons (CC BY-SA 4.0), tr: Francesco Bini / Wikimedia Commons (CC BY-SA 4.0)}
+segments:
+  - {id: floor, box: [0.1, 0.0, 1.0, 0.84], points: [[0.3, 0.45], [0.85, 0.52]], prior: planar, weight: 0.15}
+  - {id: eagle, box: [0.53, 0.19, 0.78, 0.5], points: [[0.66, 0.3], [0.6, 0.38]], prior: bulge, weight: 0.4}
+  - {id: griffin, box: [0.34, 0.08, 0.46, 0.37], points: [[0.4, 0.22], [0.4, 0.3]], prior: bulge, weight: 0.4}
+  - {id: beast, box: [0.14, 0.2, 0.32, 0.37], points: [[0.26, 0.29]], prior: bulge, weight: 0.4}
+  - {id: hunter, box: [0.42, 0.44, 0.61, 0.82], points: [[0.53, 0.6], [0.52, 0.72]], prior: bulge, weight: 0.4}
+  - {id: grazers, box: [0.71, 0.56, 0.97, 0.83], points: [[0.75, 0.66], [0.84, 0.65]], prior: bulge, weight: 0.4}
+  - {id: goats, box: [0.84, 0.2, 1.0, 0.42], points: [[0.9, 0.33]], prior: bulge, weight: 0.4}
+depth: {model: depth-anything-v2-base, modelWeight: 0.3}
+gold: {heuristic: true}
+flow:
+  mask: assets/plates/palace-animals/animals.png
+  period: 3.2
+  distance: 0.004
+  motion: sway
+  from:   # segment → direction of the sway in plate space (x right, y down)
+    - {segment: eagle, direction: [0.0, -1.0]}
+    - {segment: griffin, direction: [-0.6, -0.8]}
+    - {segment: beast, direction: [1.0, 0.0]}
+    - {segment: grazers, direction: [0.3, 1.0]}
+    - {segment: goats, direction: [0.0, 1.0]}
+  feather: 0.006
+beats:
+  - detail: detail-palace-eagle
+    duration: 6
+    light: none
+    flow: true
+    caption:
+      en: "IMAGINED: the mosaic does not move. The loop only suggests the fight an eagle and a snake were set in for good."
+      tr: "HAYALÎ: mozaik kıpırdamaz. Bu döngü, bir kartalla bir yılanın sonsuza dek kaldığı dövüşü yalnızca sezdirir."
+    sources: [tan-great-palace-mosaic-museum, commons-palace-floor]
+  - {detail: detail-palace-hunter, duration: 5, light: none}
+  - detail: detail-palace-grazers
+    duration: 5
+    light: none
+    flow: true
+    caption:
+      en: "IMAGINED: a short loop of grazing. On the floor the animals stand still."
+      tr: "HAYALÎ: kısa bir otlama döngüsü. Döşemede hayvanlar kıpırtısız durur."
+    sources: [commons-palace-floor]
+  - {detail: detail-palace-goats, duration: 5, light: none}
+  - {detail: detail-palace-griffin, duration: 5, light: none}
+  - {detail: detail-palace-tesserae, duration: 5, light: raking}
+reveal: {detail: detail-palace-eagle, light: none, flow: true, moment: 5}
+sources: [tan-great-palace-mosaic-museum, byzleg-mosaic-museum, commons-palace-floor]

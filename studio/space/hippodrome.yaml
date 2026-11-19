@@ -1,0 +1,482 @@
+# P13 kit spec: the Hippodrome of Constantinople, Milestone XII, the
+# Hippodrome through time (TM). Frame: metres, z up, the Byzantine track at
+# z = 0, the Serpent Column (OSM node 415157636) on the origin, +y along the
+# spina toward the starting gates (north-north-east), +x to its right.
+# Placed from OpenStreetMap: the axis through the two obelisks (ways
+# 1120852417 and 1120852418), the sphendone's outer wall (way 321386212,
+# about 118 m across, its apex 228 m south of the column), and the outlines
+# of the İbrahim Paşa Palace and the Sultan Ahmed Mosque from the Atlas's
+# building data.
+# Cited and checked: about 429 m long and 119 m wide, the spina about 2 m
+# wide (Turkish Archaeological News); the Theodosian obelisk's shaft about
+# 19.6 m; the Walled Obelisk about 32 m. Not taken from any source and set in
+# proportion, so no caption states them: the stands (drawn as 15 steps, each
+# two rows, 15 m high), the kathisma, the carceres and its twelve gates, the
+# spina's height (3.5 m, within the 3–4 m given), the turning posts, the
+# obelisk's bases, the sphendone's vaults (25 arches, as Casson counted), the
+# depth of today's pits (sources say 2 to 5 m; drawn 2.5 m) and the later
+# buildings, drawn as masses. The quadriga is four blocks, a sign.
+schemaVersion: 1
+id: hippodrome
+place: hippodrome
+title: {en: "The Hippodrome through time", tr: "Zaman içinde Hipodrom"}
+description:
+  en: >-
+    The Hippodrome as a drawing through four moments: Constantine's
+    racecourse of 330, with its stands, starting gates, imperial box and
+    central barrier; the same before the sack of 1204, with Theodosius's
+    obelisk and the Walled Obelisk; At Meydanı in 1582, the stands gone and
+    İbrahim Paşa's palace on their vaults; and Sultanahmet Square today. A
+    diagram on cited dimensions and OpenStreetMap, not a survey.
+  tr: >-
+    Dört anda bir çizim olarak Hipodrom: Konstantin'in 330'daki tribünleri,
+    başlangıç kapıları, imparator locası ve orta setiyle at yarışı alanı;
+    1204 yağmasından önce, Theodosius'un dikilitaşı ve Örme Dikilitaş ile
+    aynı yer; tribünleri gitmiş, İbrahim Paşa Sarayı onların tonozları
+    üstünde yükselmiş 1582 Atmeydanı; ve bugünkü Sultanahmet Meydanı. Kaynaklı
+    ölçülere ve OpenStreetMap'e dayanan bir şemadır, rölöve değildir.
+eras: [byzantine, ottoman, modern]
+honesty: RECONSTRUCTION
+orientation:
+  axis: 38.97
+  source: osm-hippodrome-2026-11-19
+  line:   # [lat, lon], centroids of the Walled Obelisk's and the Theodosian obelisk's OSM outlines
+    - [41.0054052, 28.9748422]
+    - [41.0059276, 28.9754001]
+step: 12.0
+epochs:
+  - {year: 330, label: {en: "Constantine's Hippodrome, 330", tr: "Konstantin'in Hipodromu, 330"}}
+  - {year: 1200, label: {en: "Before the sack of 1204", tr: "1204 yağmasından önce"}}
+  - {year: 1582, label: {en: "At Meydanı, 1582", tr: "Atmeydanı, 1582"}}
+  - {year: 2026, label: {en: "Sultanahmet Square today", tr: "Bugün Sultanahmet Meydanı"}}
+parts:
+  # The stands: 15 steps, each two rows (1 m rise, 1.24 m deep), from the
+  # track's edge 39 m off the centre line to a back wall at 59 m; the east
+  # side broken by the kathisma.
+  - id: stands-west
+    kind: stairs
+    at: [{at: [-37.4, 10.5], turn: 90}]
+    params: {steps: 15, rise: 1.0, going: 1.24, width: 359}
+  - id: stands-east-south
+    kind: stairs
+    at: [{at: [40.6, -62.0], turn: -90}]
+    params: {steps: 15, rise: 1.0, going: 1.24, width: 214}
+  - id: stands-east-north
+    kind: stairs
+    at: [{at: [40.6, 132.5], turn: -90}]
+    params: {steps: 15, rise: 1.0, going: 1.24, width: 115}
+  - id: stands-sphendone
+    kind: stands
+    at: [{at: [1.6, -169.0]}]
+    params: {rows: 15, rise: 1.0, going: 1.24, inner: 39.0, a0: 180, a1: 360, wall: 1.4, n: 48}
+  - id: back-walls-west
+    kind: pier
+    note: the stands' back walls, one row higher than the top step
+    at: [{at: [-56.7, 10.5]}]
+    params: {width: 1.4, depth: 359, height: 16.0}
+  - id: back-walls-east
+    kind: pier
+    at: [{at: [59.9, -62.0]}]
+    params: {width: 1.4, depth: 214, height: 16.0}
+  - id: back-walls-north
+    kind: pier
+    at: [{at: [59.9, 132.5]}]
+    params: {width: 1.4, depth: 115, height: 16.0}
+  - id: sphendone
+    kind: ring-wall
+    note: the vaults under the curved south end, where the ground falls toward the sea
+    at: [{at: [1.6, -169.0], z: -10.0}]
+    params: {r0: 57.0, r1: 59.0, z0: 0.0, z1: 10.0, openings: 25, sill: 1.0, head: 7.0,
+             share: 0.55, arc: [3.14159265, 6.28318531], step: 8.0}
+  - id: carceres
+    kind: wall
+    note: the starting gates across the north end, twelve lanes
+    at: [[-57.4, 197.5]]
+    params:
+      length: 118
+      height: 12
+      thickness: 7
+      openings:
+        - {x: 23.8, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 30.2, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 36.6, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 43.0, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 49.4, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 55.8, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 62.2, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 68.6, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 75.0, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 81.4, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 87.8, width: 4.6, sill: 0, head: 7, arch: round}
+        - {x: 94.2, width: 4.6, sill: 0, head: 7, arch: round}
+  - id: quadriga-pedestal
+    kind: pier
+    at: [{at: [1.6, 197.5], z: 12.0}]
+    params: {width: 9.0, depth: 4.0, height: 2.0}
+  - id: quadriga
+    kind: pier
+    material: bronze
+    note: four horses as four blocks, a sign
+    at: [{at: [-1.0, 197.5], z: 14.0}, {at: [0.7, 197.5], z: 14.0},
+         {at: [2.4, 197.5], z: 14.0}, {at: [4.1, 197.5], z: 14.0}]
+    params: {width: 0.9, depth: 2.6, height: 1.9}
+  - id: kathisma
+    kind: pier
+    note: the imperial box on the east side, as most writers place it
+    at: [{at: [50.6, 60.0]}]
+    params: {width: 20.0, depth: 30.0, height: 18.0}
+  - id: spina
+    kind: pier
+    note: the central barrier, broken where the monuments stand on their own bases
+    at: [{at: [0.6, -81.0]}, {at: [0.6, -17.75]}, {at: [0.6, 17.75]}, {at: [0.6, 92.5]}]
+    params: {width: 2.0, depth: 78.0, height: 3.5}
+    names: [south, middle-south, middle-north, north]
+  - id: metae-bases
+    kind: pier
+    at: [{at: [0.6, -126.0]}, {at: [0.6, 146.0]}]
+    params: {width: 6.0, depth: 4.0, height: 1.2}
+  - id: metae
+    kind: obelisk
+    note: the turning posts, three cones at each end
+    at: [{at: [-1.4, -126.0], z: 1.2}, {at: [0.6, -126.0], z: 1.2}, {at: [2.6, -126.0], z: 1.2},
+         {at: [-1.4, 146.0], z: 1.2}, {at: [0.6, 146.0], z: 1.2}, {at: [2.6, 146.0], z: 1.2}]
+    params: {base: 1.3, top: 0.25, height: 5.0, sides: 8}
+  - id: serpent
+    kind: obelisk
+    material: bronze
+    note: the Serpent Column, drawn as a plain shaft at this scale (XIV draws it whole)
+    at: [[0, 0]]
+    params: {base: 0.57, top: 0.5, height: 6.0, sides: 8}
+  - id: serpent-today
+    kind: obelisk
+    material: bronze
+    at: [[0, 0]]
+    params: {base: 0.57, top: 0.52, height: 5.35, sides: 8}
+  - id: obelisk-plinth
+    kind: pier
+    note: the lower plinth, its two inscriptions and two reliefs
+    at: [{at: [0.62, 38.0]}]
+    params: {width: 4.6, depth: 4.6, height: 2.4}
+  - id: obelisk-base
+    kind: pier
+    material: marble
+    note: the marble block with the reliefs (XIII)
+    at: [{at: [0.62, 38.0], z: 2.4}]
+    params: {width: 3.6, depth: 3.6, height: 2.8}
+  - id: obelisk-cubes
+    kind: pier
+    material: bronze
+    at: [{at: [-0.28, 37.1], z: 5.2}, {at: [1.52, 37.1], z: 5.2}, {at: [-0.28, 38.9], z: 5.2},
+         {at: [1.52, 38.9], z: 5.2}]
+    params: {width: 0.5, depth: 0.5, height: 0.5}
+  - id: obelisk-shaft
+    kind: obelisk
+    note: Thutmose III's obelisk from Karnak; its lower part lost, when and how is not known
+    at: [{at: [0.62, 38.0], z: 5.7}]
+    params: {base: 2.2, top: 1.55, height: 18.4, pyramidion: 1.2, step: 5.0}
+  - id: walled-steps
+    kind: pier
+    note: the three-step pedestal
+    at: [{at: [0.62, -36.6]}]
+    params: {width: 6.4, depth: 6.4, height: 0.5}
+  - id: walled-step-2
+    kind: pier
+    at: [{at: [0.62, -36.6], z: 0.5}]
+    params: {width: 5.8, depth: 5.8, height: 0.5}
+  - id: walled-step-3
+    kind: pier
+    at: [{at: [0.62, -36.6], z: 1.0}]
+    params: {width: 5.2, depth: 5.2, height: 0.5}
+  - id: walled-base
+    kind: pier
+    material: marble
+    note: the inscribed base
+    at: [{at: [0.62, -36.6], z: 1.5}]
+    params: {width: 4.6, depth: 4.6, height: 2.0}
+  - id: walled-obelisk
+    kind: obelisk
+    material: brick
+    note: about 32 m of masonry; its date is not known
+    at: [{at: [0.62, -36.6], z: 3.5}]
+    params: {base: 3.8, top: 2.3, height: 26.5, pyramidion: 2.0, step: 5.0}
+  - id: palace-ranges
+    kind: pier
+    note: İbrahim Paşa's palace on the west stands' vaults, as ranges round its courts
+    at: [{at: [-98.5, 52.5]}, {at: [-53.0, 52.5]}]
+    params: {width: 17.0, depth: 133.0, height: 13.0}
+    names: [west, east]
+  - id: palace-cross
+    kind: pier
+    at: [{at: [-75.75, 110.5]}, {at: [-75.75, 30.0]}]
+    params: {width: 28.5, depth: 17.0, height: 13.0}
+    names: [north, middle]
+  - id: pits
+    kind: wall
+    note: the pits the two obelisks stand in today, drawn 2.5 m deep (sources say several metres)
+    at: [[-4.4, 33.0], [5.6, 33.0, 90], [5.6, 43.0, 180], [-4.4, 43.0, 270],
+         [-4.4, -41.6], [5.6, -41.6, 90], [5.6, -31.6, 180], [-4.4, -31.6, 270]]
+    params: {length: 10.0, height: 2.5, thickness: 0.4, step: 4.0}
+  - id: pit-serpent
+    kind: wall
+    at: [[-2.5, -2.5], [2.5, -2.5, 90], [2.5, 2.5, 180], [-2.5, 2.5, 270]]
+    params: {length: 5.0, height: 2.5, thickness: 0.4, step: 4.0}
+  - id: mosque-hall
+    kind: pier
+    note: the Sultan Ahmed Mosque's prayer hall as a mass
+    at: [{at: [145.0, 60.0]}]
+    params: {width: 64.0, depth: 72.0, height: 22.0}
+  - id: mosque-drum
+    kind: ring
+    at: [{at: [145.0, 60.0], z: 22.0}]
+    params: {r0: 11.7, r1: 12.9, z0: 0.0, z1: 8.0, step: 4.0}
+  - id: mosque-dome
+    kind: dome
+    material: lead
+    at: [{at: [145.0, 60.0], z: 30.0}]
+    params: {radius: 11.7, thickness: 0.9, n: 24, rows: 4, step: 4.0}
+  - id: mosque-court-sides
+    kind: wall
+    note: the courtyard's arcaded walls as masses
+    at: [[62.0, 26.0], [112.0, 94.0, 180]]
+    params: {length: 50.0, height: 9.0, thickness: 6.0}
+  - id: mosque-court-ends
+    kind: wall
+    at: [[112.0, 26.0, 90], [62.0, 94.0, 270]]
+    params: {length: 68.0, height: 9.0, thickness: 6.0}
+  - id: minarets
+    kind: obelisk
+    note: six minarets, as cones on shafts
+    at: [[114.0, 25.0], [176.0, 25.0], [114.0, 95.0], [176.0, 95.0], [62.0, 26.0], [62.0, 94.0]]
+    params: {base: 3.6, top: 3.0, height: 56.0, pyramidion: 8.0, sides: 8, step: 8.0}
+  - id: fountain
+    kind: obelisk
+    note: the German Fountain's octagon
+    at: [[1.2, 208.0]]
+    params: {base: 7.0, top: 7.0, height: 6.0, sides: 8}
+  - id: fountain-dome
+    kind: dome
+    material: lead
+    at: [{at: [1.2, 208.0], z: 6.0}]
+    params: {radius: 3.4, thickness: 0.4, n: 16, rows: 3, step: 2.0}
+steps:
+  - id: arena
+    parts: [stands-*, back-walls-*]
+    seconds: 3.0
+    epochs: [330, 1200]
+    sources: [tdv-atmeydani, byzleg-hippodrome, tan-hippodrome-underground]
+    label: {en: "The racecourse", tr: "Yarış alanı"}
+    caption:
+      en: >-
+        Begun under Septimius Severus around 203 and finished by Constantine
+        for the city's dedication on 11 May 330: about 430–480 m long and
+        120 m wide, by different estimates.
+      tr: >-
+        Septimius Severus döneminde 203 dolaylarında başlanan yapı, 11 Mayıs
+        330'daki kuruluş töreni için Konstantin'in elinde tamamlandı: farklı
+        tahminlere göre 430–480 m uzunluğunda, 120 m genişliğinde.
+  - id: sphendone
+    parts: [sphendone]
+    seconds: 2.8
+    epochs: []
+    sources: [encrom-sphendone, byzleg-hippodrome, tan-hippodrome-underground]
+    label: {en: "The sphendone", tr: "Sphendone"}
+    caption:
+      en: >-
+        The curved south end stood on vaults over ground that falls to the
+        sea. Later sealed as a cistern, its wall can still be seen from
+        Nakilbent Sokağı.
+      tr: >-
+        Kavisli güney ucu, denize doğru alçalan arazinin üstünde tonozlara
+        oturuyordu. Sonradan sarnıç olarak kapatılan duvarı hâlâ Nakilbent
+        Sokağı'ndan görülebilir.
+  - id: gates
+    parts: [carceres, quadriga-pedestal, quadriga]
+    seconds: 3.0
+    epochs: [330, 1200]
+    sources: [wp-hippodrome-of-constantinople-1364835690, tan-hippodrome-underground, byzleg-hippodrome,
+              janin-1950]
+    label: {en: "Gates and horses", tr: "Kapılar ve atlar"}
+    caption:
+      en: >-
+        The chariots started from twelve gates at the north end. High above
+        the track stood gilded bronze horses, probably the four Venice
+        carried off in 1204 to San Marco.
+      tr: >-
+        Arabalar kuzey uçtaki on iki kapıdan çıkardı. Pistin yükseğinde
+        yaldızlı tunç atlar dururdu; büyük olasılıkla Venedik'in 1204'te San
+        Marco'ya götürdüğü dört at.
+  - id: kathisma
+    parts: [kathisma]
+    seconds: 3.0
+    epochs: [330, 1200]
+    sources: [bit-cetinkaya-bizans-mimarisi, byzleg-hippodrome, procopius-wars-1-24]
+    label: {en: "The kathisma", tr: "Kathisma"}
+    caption:
+      en: >-
+        The emperor watched from the kathisma on the east side, which led
+        straight into the Great Palace. The Nika riot of January 532 ended in the Hippodrome:
+        Procopius counts more than 30,000 dead.
+      tr: >-
+        İmparator yarışları doğu yandaki, doğrudan Büyük Saray'a açılan
+        kathismadan izlerdi. Ocak 532'deki Nika ayaklanması Hipodrom'da bitti:
+        Prokopios'a göre 30.000'den fazla kişi öldü.
+  - id: spina
+    parts: [spina-*, metae-bases, metae]
+    seconds: 3.0
+    epochs: [330, 1200]
+    sources: [tan-hippodrome-underground, janin-1950, byzleg-hippodrome]
+    label: {en: "The central barrier", tr: "Orta set"}
+    caption:
+      en: >-
+        A barrier about 2 m wide, the euripus, ran down the middle between
+        the turning posts, with statues and monuments along it.
+      tr: >-
+        Ortadan, dönüş direkleri arasında yaklaşık 2 m genişliğinde bir set,
+        euripus, uzanırdı; üstü heykel ve anıtlarla doluydu.
+  - id: serpent
+    parts: [serpent]
+    seconds: 2.8
+    epochs: [330, 1200, 1582]
+    sources: [bmcr-2017-01-43, byzleg-serpent-column]
+    label: {en: "The Serpent Column", tr: "Yılanlı Sütun"}
+    caption:
+      en: >-
+        Constantine set the bronze Serpent Column from Delphi on the barrier,
+        its three heads still whole.
+      tr: >-
+        Konstantin Delfoi'den getirilen tunç Yılanlı Sütun'u, üç başı henüz
+        sağlamken, sedin üstüne koydu.
+  - id: obelisk
+    parts: [obelisk-plinth, obelisk-base, obelisk-cubes, obelisk-shaft]
+    seconds: 3.0
+    epochs: [1200, 1582, 2026]
+    sources: [byzleg-theodosius-obelisk, heurist-cil-iii-737, seuso-obelisk-theodosius]
+    label: {en: "Thutmose III's obelisk", tr: "III. Thutmose'un dikilitaşı"}
+    caption:
+      en: >-
+        In 390 the prefect Proclus raised an obelisk of Thutmose III from
+        Karnak on a carved base: in 32 days, says the Greek verse; in 30,
+        says the Latin as usually read.
+      tr: >-
+        390'da şehir valisi Proklos, Karnak'tan getirilen bir III. Thutmose
+        dikilitaşını kabartmalı bir kaide üstüne dikti: Yunanca dizeye göre
+        32, Latincenin genel okunuşuna göre 30 günde.
+  - id: walled
+    parts: [walled-step*, walled-base, walled-obelisk]
+    seconds: 3.0
+    epochs: [1200, 1582, 2026]
+    sources: [byzleg-masonry-obelisk, wp-walled-obelisk-1365398207, istanbul-gov-2007-monuments]
+    label: {en: "The Walled Obelisk", tr: "Örme Dikilitaş"}
+    caption:
+      en: >-
+        About 32 m of masonry, its date unknown. Restored by Constantine VII,
+        "now a brazen wonder here", says its base, like Rhodes's Colossus.
+        The bronze plates were stripped in 1204.
+      tr: >-
+        Yaklaşık 32 m'lik bir örgü, tarihi bilinmiyor. VII. Konstantin onu
+        onarttı; kaidesindeki yazıt onu Rodos Heykeli'ne benzetip "şimdi
+        burada tunçtan bir harika" der. Tunç levhalar 1204'te söküldü.
+  - id: palace
+    parts: [palace-*]
+    seconds: 3.2
+    epochs: [1582, 2026]
+    sources: [tdv-ibrahim-pasa-sarayi, tan-hippodrome-underground, tdv-atmeydani, tdv-surname,
+              janin-1950]
+    label: {en: "At Meydanı", tr: "Atmeydanı"}
+    caption:
+      en: >-
+        With most of the stands gone, the square was At Meydanı. İbrahim
+        Paşa's palace rose on the west stands' vaults. Murad III's festival for his son
+        Mehmed in 1582 lasted 52 days, or 55 by another account.
+      tr: >-
+        Tribünlerin çoğu gidince meydan Atmeydanı oldu. İbrahim Paşa Sarayı batı
+        tribünlerinin tonozları üstünde yükseldi. III. Murad'ın oğlu Mehmed
+        için 1582'de düzenlediği şenlik 52, başka bir kayda göre 55 gün
+        sürdü.
+  - id: today
+    parts: [serpent-today, pits, pit-serpent]
+    seconds: 3.0
+    epochs: [2026]
+    sources: [byzleg-hippodrome, encrom-sphendone, encrom-serpentine]
+    label: {en: "In their pits", tr: "Çukurlarında"}
+    caption:
+      en: >-
+        The ground has risen several metres, partly with spoil from building
+        the mosque, so the three monuments stand in pits; the Serpent
+        Column's heads broke off in 1700.
+      tr: >-
+        Zemin, kısmen caminin inşasından çıkan molozla birkaç metre
+        yükseldi; bu yüzden üç anıt çukurlarda duruyor. Yılanlı Sütun'un
+        başları 1700'de kırıldı.
+  - id: mosque
+    parts: [mosque-*, minarets]
+    seconds: 3.0
+    epochs: [2026]
+    sources: [tdv-sultan-ahmed-camii, bit-cetinkaya-bizans-mimarisi, janin-1950]
+    label: {en: "The Sultan Ahmed Mosque", tr: "Sultan Ahmed Camii"}
+    caption:
+      en: >-
+        Sedefkâr Mehmed Ağa's mosque for Ahmed I (1609–1617) rose on the east
+        side, where the kathisma is thought to have stood, laid out with the
+        square's monuments in mind.
+      tr: >-
+        Sedefkâr Mehmed Ağa'nın I. Ahmed için yaptığı cami (1609–1617),
+        meydanın anıtları gözetilerek doğu yanda, kathismanın durduğu
+        düşünülen yerde yükseldi.
+  - id: fountain
+    parts: [fountain, fountain-dome]
+    seconds: 2.8
+    epochs: [2026]
+    sources: [tdv-alman-cesmesi, byzleg-hippodrome]
+    label: {en: "The German Fountain", tr: "Alman Çeşmesi"}
+    caption:
+      en: >-
+        The German Fountain, Wilhelm II's gift of 1900–1901, stands about
+        where the starting gates were.
+      tr: >-
+        II. Wilhelm'in 1900–1901'deki armağanı Alman Çeşmesi, aşağı yukarı
+        başlangıç kapılarının yerinde duruyor.
+reveal:
+  through: serpent
+  seconds: 10.0
+  turnDegrees: 30
+  caption:
+    en: "Constantine's racecourse of 330, drawn where Sultanahmet Square is today."
+    tr: "Konstantin'in 330'daki yarış alanı, bugünkü Sultanahmet Meydanı'nın yerinde."
+choisy:
+  sectionHeight: 2.0
+  elevation: -30
+  azimuth: 225
+dimensions:
+  - id: length
+    value: 429
+    measure: {kind: extent, axis: y, parts: [stands-sphendone, carceres]}
+    source: tan-hippodrome-underground
+    quote: "about 429 m long and 119 m wide"
+  - id: width
+    value: 119
+    measure: {kind: extent, axis: x, parts: [sphendone]}
+    source: tan-hippodrome-underground
+    quote: "about 429 m long and 119 m wide"
+  - id: spina-width
+    value: 2.0
+    measure: {kind: extent, axis: x, parts: [spina-south]}
+    source: tan-hippodrome-underground
+    quote: "the spina about 2 m wide and 3–4 m high"
+  - id: obelisk-shaft
+    value: 19.6
+    measure: {kind: extent, axis: z, parts: [obelisk-shaft]}
+    source: seuso-obelisk-theodosius
+    quote: "The obelisk is 19.6 metres tall"
+  - id: walled-obelisk
+    value: 32
+    measure: {kind: top, parts: [walled-obelisk]}
+    source: byzleg-masonry-obelisk
+    quote: "about 32 m, the same as the Lateran obelisk"
+shared: [tdv-atmeydani, byzleg-hippodrome, tan-hippodrome-underground, encrom-sphendone,
+         wp-hippodrome-of-constantinople-1364835690, bit-cetinkaya-bizans-mimarisi,
+         procopius-wars-1-24, bmcr-2017-01-43, byzleg-theodosius-obelisk, heurist-cil-iii-737,
+         seuso-obelisk-theodosius, byzleg-masonry-obelisk, wp-walled-obelisk-1365398207,
+         tdv-ibrahim-pasa-sarayi, tdv-surname, encrom-serpentine, tdv-sultan-ahmed-camii,
+         tdv-alman-cesmesi, osm-hippodrome-2026-11-19, janin-1950, byzleg-serpent-column,
+         istanbul-gov-2007-monuments]

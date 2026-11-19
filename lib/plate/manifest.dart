@@ -52,14 +52,21 @@ List<double> _point(JsonReader r, String key) => r.list(key, (v) {
   return v.toDouble();
 });
 
-/// MM: flow-map UV scrolling inside a mask (R coverage, GB direction).
+/// MM: flow-map UV scrolling inside a mask (R coverage, GB direction), or
+/// (P13) a sway: the pixels move back and forth along the direction, scaled
+/// by the coverage, in a short loop (Great Palace animals).
 class PlateFlow {
   PlateFlow(JsonReader r)
     : mask = r.string('mask'),
       period = r.number('period'),
-      distance = r.number('distance');
+      distance = r.number('distance'),
+      motion = r.optionalString('motion') ?? 'scroll';
   final String mask;
   final double period, distance;
+
+  /// `scroll` (a river) or `sway` (a loop inside a figure).
+  final String motion;
+  bool get sway => motion == 'sway';
 }
 
 /// A UV twist inside a mask, pivoting on [center] (normalised plate space).
@@ -257,6 +264,10 @@ class PlateManifest {
     require(
       f == null || (f.period > 0 && f.distance > 0 && f.distance <= .1),
       'flow period/distance',
+    );
+    require(
+      f == null || const {'scroll', 'sway'}.contains(f.motion),
+      'flow motion',
     );
     require(
       spiralEffect == null || spiralEffect!.center.length == 2,

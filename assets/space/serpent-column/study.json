@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "serpent-column",
+  "title": {
+    "en": "The Serpent Column",
+    "tr": "Yılanlı Sütun"
+  },
+  "description": {
+    "en": "The Serpent Column as a drawing that turns: three bronze snakes twisted together, which carried the gold tripod the Greek cities set up at Delphi after Plataea in 479 BC; brought to the Hippodrome under Constantine; its heads broken off in 1700. A reconstruction of what is lost, drawn in proportion: the heads after drawings of 1574 and 1582, the tripod as a sign.",
+    "tr": "Dönen bir çizim olarak Yılanlı Sütun: MÖ 479'da Plataia'dan sonra Yunan şehirlerinin Delfoi'ye diktiği altın üçayağı taşıyan, birbirine sarılmış üç tunç yılan; Konstantin döneminde Hipodrom'a getirildi; başları 1700'de kırıldı. Kayıp kısımlar oranlarla çizilmiş bir rekonstrüksiyondur: başlar 1574 ve 1582 tarihli çizimlere göre, üçayak bir işaret olarak."
+  },
+  "model": "assets/space/serpent-column/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "serpent-column",
+  "epochs": [
+    {
+      "year": -479,
+      "label": {
+        "en": "Delphi, after Plataea, 479 BC",
+        "tr": "Delfoi, Plataia'dan sonra, MÖ 479"
+      }
+    },
+    {
+      "year": 330,
+      "label": {
+        "en": "The Hippodrome, by 330",
+        "tr": "Hipodrom, 330'a dek"
+      }
+    },
+    {
+      "year": 2026,
+      "label": {
+        "en": "Today",
+        "tr": "Bugün"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "delphi",
+      "parts": [
+        "delphi-base"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        -479
+      ],
+      "sources": [
+        "perseus-hdt-9-81-1",
+        "delphi-culture-tripod-plataea"
+      ],
+      "label": {
+        "en": "Delphi, 479 BC",
+        "tr": "Delfoi, MÖ 479"
+      },
+      "caption": {
+        "en": "After Plataea the Greeks set aside a tenth of the spoils for Apollo: Herodotus saw the tripod \"which rests upon the bronze three-headed serpent, nearest to the altar\".",
+        "tr": "Plataia'dan sonra Yunanlar ganimetin onda birini Apollon'a ayırdı: Herodotos \"sunağın en yakınında, üç başlı tunç yılanın üstünde duran\" üçayağı gördü."
+      }
+    },
+    {
+      "id": "coils",
+      "parts": [
+        "coils"
+      ],
+      "seconds": 3.6,
+      "epochs": [
+        -479,
+        330
+      ],
+      "sources": [
+        "perseus-thuc-1-132",
+        "perseus-hdt-9-81-1",
+        "byzleg-serpent-column"
+      ],
+      "label": {
+        "en": "Three snakes",
+        "tr": "Üç yılan"
+      },
+      "caption": {
+        "en": "The Spartan general Pausanias first cut his own name on it; Sparta had it erased and the cities inscribed instead: 31 names on the coils, under \"Those who fought the war\".",
+        "tr": "Spartalı komutan Pausanias önce kendi adını kazıttı; Sparta bunu sildirip yerine şehirleri yazdırdı: halkalarda \"Savaşı yapanlar\" başlığı altında 31 ad."
+      }
+    },
+    {
+      "id": "heads",
+      "parts": [
+        "coils-heads"
+      ],
+      "seconds": 3.4,
+      "epochs": [
+        -479,
+        330
+      ],
+      "sources": [
+        "byzleg-serpent-column",
+        "encrom-serpentine"
+      ],
+      "label": {
+        "en": "Three heads",
+        "tr": "Üç baş"
+      },
+      "caption": {
+        "en": "Drawings of 1574 and the festival book of 1582 still show the three heads spreading outward. They are drawn here in proportion.",
+        "tr": "1574 tarihli çizimler ve 1582 şenlik kitabı üç başı hâlâ dışa doğru açılmış gösterir. Burada oranlarla çizildiler."
+      }
+    },
+    {
+      "id": "tripod",
+      "parts": [
+        "tripod-bowl",
+        "tripod-legs"
+      ],
+      "seconds": 3.4,
+      "epochs": [
+        -479
+      ],
+      "sources": [
+        "perseus-paus-10-13-9",
+        "bmcr-2017-01-43"
+      ],
+      "label": {
+        "en": "The gold tripod",
+        "tr": "Altın üçayak"
+      },
+      "caption": {
+        "en": "The gold went in the 350s BC, when the Phocians plundered Delphi: \"the Phocian leaders did not leave the gold as they did the bronze\". Its form is not known; it is drawn as a sign.",
+        "tr": "Altın, MÖ 350'lerde Fokisliler Delfoi'yi yağmaladığında gitti: \"Fokis önderleri tuncu bıraktılar ama altını bırakmadılar.\" Biçimi bilinmiyor; bir işaret olarak çizildi."
+      }
+    },
+    {
+      "id": "hippodrome",
+      "parts": [
+        "hippodrome-plinth"
+      ],
+      "seconds": 3.4,
+      "epochs": [
+        330
+      ],
+      "sources": [
+        "bmcr-2017-01-43",
+        "byzleg-serpent-column"
+      ],
+      "label": {
+        "en": "To the Hippodrome",
+        "tr": "Hipodrom'a"
+      },
+      "caption": {
+        "en": "Constantine set the bronze snakes on the Hippodrome's central barrier. Water pipes found under it suggest it was later a fountain.",
+        "tr": "Konstantin tunç yılanları Hipodrom'un orta setine yerleştirdi. Altında bulunan su boruları, sonradan çeşme olarak kullanıldığını düşündürür."
+      }
+    },
+    {
+      "id": "broken",
+      "parts": [
+        "column-today",
+        "pit"
+      ],
+      "seconds": 4.0,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "encrom-serpentine",
+        "bmcr-2017-01-43"
+      ],
+      "label": {
+        "en": "20 October 1700",
+        "tr": "20 Ekim 1700"
+      },
+      "caption": {
+        "en": "An Ottoman chronicler says all three heads fell together on the night of 20 October 1700 with no one near; travellers blamed a Polish ambassador's men. About 5.35 m survives, in a pit below the square.",
+        "tr": "Bir Osmanlı tarihçisine göre üç baş, 20 Ekim 1700 gecesi yanında kimse yokken birlikte düştü; seyyahlar bir Leh elçisinin adamlarını suçladı. Yaklaşık 5,35 m'si meydanın altındaki bir çukurda duruyor."
+      }
+    },
+    {
+      "id": "jaw",
+      "parts": [
+        "jaw-plinth",
+        "jaw"
+      ],
+      "seconds": 3.6,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "encrom-serpentine",
+        "byzleg-serpent-column"
+      ],
+      "label": {
+        "en": "One upper jaw",
+        "tr": "Bir üst çene"
+      },
+      "caption": {
+        "en": "One upper jaw, found in 1848 during restoration work at Hagia Sophia, is in the Istanbul Archaeology Museums, a few minutes' walk away.",
+        "tr": "1848'de Ayasofya'daki onarım sırasında bulunan bir üst çene, birkaç dakika yürüme mesafesindeki İstanbul Arkeoloji Müzeleri'nde."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "tripod",
+    "seconds": 10.0,
+    "turnDegrees": 360,
+    "caption": {
+      "en": "From Delphi, 479 BC: three bronze snakes under a gold tripod, turning.",
+      "tr": "Delfoi'den, MÖ 479: altın bir üçayağın altında dönen üç tunç yılan."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 2.5,
+    "elevation": -30,
+    "azimuth": 225
+  },
+  "sources": [
+    "bmcr-2017-01-43"
+  ],
+  "triangles": 16280,
+  "citations": [
+    {
+      "id": "bmcr-2017-01-43",
+      "title": {
+        "en": "Review of Paul Stephenson, The Serpent Column: A Cultural Biography (Oxford 2016), BMCR 2017.01.43",
+        "tr": "Paul Stephenson, The Serpent Column: A Cultural Biography (Oxford 2016) kitabının eleştirisi, BMCR 2017.01.43"
+      },
+      "url": "https://bmcr.brynmawr.edu/2017/2017-01-43.html",
+      "author": {
+        "en": "Sarah Bassett (Bryn Mawr Classical Review)",
+        "tr": "Sarah Bassett (Bryn Mawr Classical Review)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-serpent-column",
+      "title": {
+        "en": "Serpent Column",
+        "tr": "Yılanlı Sütun"
+      },
+      "url": "https://www.thebyzantinelegacy.com/serpent-column",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "delphi-culture-tripod-plataea",
+      "title": {
+        "en": "The Tripod of Plataea (the Serpent Column)",
+        "tr": "Plataia Tripodu (Yılanlı Sütun)"
+      },
+      "url": "https://delphi.culture.gr/the-tripod-of-plataea/",
+      "author": {
+        "en": "Hellenic Ministry of Culture — Digital Delphi (Ephorate of Antiquities of Phocis)",
+        "tr": "Yunanistan Kültür Bakanlığı — Dijital Delfi (Fokis Eski Eserler Eforluğu)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "encrom-serpentine",
+      "title": {
+        "en": "The Serpentine Column (Encyclopaedia Romana)",
+        "tr": "Yılanlı Sütun (Encyclopaedia Romana)"
+      },
+      "url": "https://penelope.uchicago.edu/~grout/encyclopaedia_Romana/circusmaximus/serpentine.html",
+      "author": {
+        "en": "James Grout, Encyclopaedia Romana (University of Chicago)",
+        "tr": "James Grout, Encyclopaedia Romana (Chicago Üniversitesi)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "perseus-hdt-9-81-1",
+      "title": {
+        "en": "Herodotus, Histories 9.81.1 with translator's note (Perseus Digital Library)",
+        "tr": "Herodotos, Tarih 9.81.1 ve çevirmen notu (Perseus Dijital Kütüphanesi)"
+      },
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=9:chapter=81:section=1",
+      "author": {
+        "en": "Herodotus; tr. A. D. Godley (Loeb, 1920)",
+        "tr": "Herodotos; çev. A. D. Godley (Loeb, 1920)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "perseus-paus-10-13-9",
+      "title": {
+        "en": "Pausanias, Description of Greece 10.13.9 (Perseus Digital Library)",
+        "tr": "Pausanias, Yunanistan Rehberi 10.13.9 (Perseus Dijital Kütüphanesi)"
+      },
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=10:chapter=13:section=9",
+      "author": {
+        "en": "Pausanias; tr. W. H. S. Jones and H. A. Ormerod (Loeb)",
+        "tr": "Pausanias; çev. W. H. S. Jones ve H. A. Ormerod (Loeb)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "perseus-thuc-1-132",
+      "title": {
+        "en": "Thucydides 1.132 (Perseus Digital Library)",
+        "tr": "Thukydides 1.132 (Perseus Dijital Kütüphanesi)"
+      },
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Thuc.+1.132.2",
+      "author": {
+        "en": "Thucydides; tr. Thomas Hobbes (Bohn, 1843)",
+        "tr": "Thukydides; çev. Thomas Hobbes (Bohn, 1843)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    }
+  ]
+}

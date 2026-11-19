@@ -1,0 +1,702 @@
+{
+  "schemaVersion": 1,
+  "kind": "space",
+  "id": "hippodrome",
+  "title": {
+    "en": "The Hippodrome through time",
+    "tr": "Zaman içinde Hipodrom"
+  },
+  "description": {
+    "en": "The Hippodrome as a drawing through four moments: Constantine's racecourse of 330, with its stands, starting gates, imperial box and central barrier; the same before the sack of 1204, with Theodosius's obelisk and the Walled Obelisk; At Meydanı in 1582, the stands gone and İbrahim Paşa's palace on their vaults; and Sultanahmet Square today. A diagram on cited dimensions and OpenStreetMap, not a survey.",
+    "tr": "Dört anda bir çizim olarak Hipodrom: Konstantin'in 330'daki tribünleri, başlangıç kapıları, imparator locası ve orta setiyle at yarışı alanı; 1204 yağmasından önce, Theodosius'un dikilitaşı ve Örme Dikilitaş ile aynı yer; tribünleri gitmiş, İbrahim Paşa Sarayı onların tonozları üstünde yükselmiş 1582 Atmeydanı; ve bugünkü Sultanahmet Meydanı. Kaynaklı ölçülere ve OpenStreetMap'e dayanan bir şemadır, rölöve değildir."
+  },
+  "model": "assets/space/hippodrome/model.glb",
+  "honesty": "RECONSTRUCTION",
+  "place": "hippodrome",
+  "orientation": {
+    "axis": 38.97,
+    "source": "osm-hippodrome-2026-11-19"
+  },
+  "epochs": [
+    {
+      "year": 330,
+      "label": {
+        "en": "Constantine's Hippodrome, 330",
+        "tr": "Konstantin'in Hipodromu, 330"
+      }
+    },
+    {
+      "year": 1200,
+      "label": {
+        "en": "Before the sack of 1204",
+        "tr": "1204 yağmasından önce"
+      }
+    },
+    {
+      "year": 1582,
+      "label": {
+        "en": "At Meydanı, 1582",
+        "tr": "Atmeydanı, 1582"
+      }
+    },
+    {
+      "year": 2026,
+      "label": {
+        "en": "Sultanahmet Square today",
+        "tr": "Bugün Sultanahmet Meydanı"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "arena",
+      "parts": [
+        "stands-west",
+        "stands-east-south",
+        "stands-east-north",
+        "stands-sphendone",
+        "back-walls-west",
+        "back-walls-east",
+        "back-walls-north"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        330,
+        1200
+      ],
+      "sources": [
+        "tdv-atmeydani",
+        "byzleg-hippodrome",
+        "tan-hippodrome-underground"
+      ],
+      "label": {
+        "en": "The racecourse",
+        "tr": "Yarış alanı"
+      },
+      "caption": {
+        "en": "Begun under Septimius Severus around 203 and finished by Constantine for the city's dedication on 11 May 330: about 430–480 m long and 120 m wide, by different estimates.",
+        "tr": "Septimius Severus döneminde 203 dolaylarında başlanan yapı, 11 Mayıs 330'daki kuruluş töreni için Konstantin'in elinde tamamlandı: farklı tahminlere göre 430–480 m uzunluğunda, 120 m genişliğinde."
+      }
+    },
+    {
+      "id": "sphendone",
+      "parts": [
+        "sphendone"
+      ],
+      "seconds": 2.8,
+      "epochs": [],
+      "sources": [
+        "encrom-sphendone",
+        "byzleg-hippodrome",
+        "tan-hippodrome-underground"
+      ],
+      "label": {
+        "en": "The sphendone",
+        "tr": "Sphendone"
+      },
+      "caption": {
+        "en": "The curved south end stood on vaults over ground that falls to the sea. Later sealed as a cistern, its wall can still be seen from Nakilbent Sokağı.",
+        "tr": "Kavisli güney ucu, denize doğru alçalan arazinin üstünde tonozlara oturuyordu. Sonradan sarnıç olarak kapatılan duvarı hâlâ Nakilbent Sokağı'ndan görülebilir."
+      }
+    },
+    {
+      "id": "gates",
+      "parts": [
+        "carceres",
+        "quadriga-pedestal",
+        "quadriga"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        330,
+        1200
+      ],
+      "sources": [
+        "wp-hippodrome-of-constantinople-1364835690",
+        "tan-hippodrome-underground",
+        "byzleg-hippodrome",
+        "janin-1950"
+      ],
+      "label": {
+        "en": "Gates and horses",
+        "tr": "Kapılar ve atlar"
+      },
+      "caption": {
+        "en": "The chariots started from twelve gates at the north end. High above the track stood gilded bronze horses, probably the four Venice carried off in 1204 to San Marco.",
+        "tr": "Arabalar kuzey uçtaki on iki kapıdan çıkardı. Pistin yükseğinde yaldızlı tunç atlar dururdu; büyük olasılıkla Venedik'in 1204'te San Marco'ya götürdüğü dört at."
+      }
+    },
+    {
+      "id": "kathisma",
+      "parts": [
+        "kathisma"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        330,
+        1200
+      ],
+      "sources": [
+        "bit-cetinkaya-bizans-mimarisi",
+        "byzleg-hippodrome",
+        "procopius-wars-1-24"
+      ],
+      "label": {
+        "en": "The kathisma",
+        "tr": "Kathisma"
+      },
+      "caption": {
+        "en": "The emperor watched from the kathisma on the east side, which led straight into the Great Palace. The Nika riot of January 532 ended in the Hippodrome: Procopius counts more than 30,000 dead.",
+        "tr": "İmparator yarışları doğu yandaki, doğrudan Büyük Saray'a açılan kathismadan izlerdi. Ocak 532'deki Nika ayaklanması Hipodrom'da bitti: Prokopios'a göre 30.000'den fazla kişi öldü."
+      }
+    },
+    {
+      "id": "spina",
+      "parts": [
+        "spina-south",
+        "spina-middle-south",
+        "spina-middle-north",
+        "spina-north",
+        "metae-bases",
+        "metae"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        330,
+        1200
+      ],
+      "sources": [
+        "tan-hippodrome-underground",
+        "janin-1950",
+        "byzleg-hippodrome"
+      ],
+      "label": {
+        "en": "The central barrier",
+        "tr": "Orta set"
+      },
+      "caption": {
+        "en": "A barrier about 2 m wide, the euripus, ran down the middle between the turning posts, with statues and monuments along it.",
+        "tr": "Ortadan, dönüş direkleri arasında yaklaşık 2 m genişliğinde bir set, euripus, uzanırdı; üstü heykel ve anıtlarla doluydu."
+      }
+    },
+    {
+      "id": "serpent",
+      "parts": [
+        "serpent"
+      ],
+      "seconds": 2.8,
+      "epochs": [
+        330,
+        1200,
+        1582
+      ],
+      "sources": [
+        "bmcr-2017-01-43",
+        "byzleg-serpent-column"
+      ],
+      "label": {
+        "en": "The Serpent Column",
+        "tr": "Yılanlı Sütun"
+      },
+      "caption": {
+        "en": "Constantine set the bronze Serpent Column from Delphi on the barrier, its three heads still whole.",
+        "tr": "Konstantin Delfoi'den getirilen tunç Yılanlı Sütun'u, üç başı henüz sağlamken, sedin üstüne koydu."
+      }
+    },
+    {
+      "id": "obelisk",
+      "parts": [
+        "obelisk-plinth",
+        "obelisk-base",
+        "obelisk-cubes",
+        "obelisk-shaft"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        1200,
+        1582,
+        2026
+      ],
+      "sources": [
+        "byzleg-theodosius-obelisk",
+        "heurist-cil-iii-737",
+        "seuso-obelisk-theodosius"
+      ],
+      "label": {
+        "en": "Thutmose III's obelisk",
+        "tr": "III. Thutmose'un dikilitaşı"
+      },
+      "caption": {
+        "en": "In 390 the prefect Proclus raised an obelisk of Thutmose III from Karnak on a carved base: in 32 days, says the Greek verse; in 30, says the Latin as usually read.",
+        "tr": "390'da şehir valisi Proklos, Karnak'tan getirilen bir III. Thutmose dikilitaşını kabartmalı bir kaide üstüne dikti: Yunanca dizeye göre 32, Latincenin genel okunuşuna göre 30 günde."
+      }
+    },
+    {
+      "id": "walled",
+      "parts": [
+        "walled-steps",
+        "walled-step-2",
+        "walled-step-3",
+        "walled-base",
+        "walled-obelisk"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        1200,
+        1582,
+        2026
+      ],
+      "sources": [
+        "byzleg-masonry-obelisk",
+        "wp-walled-obelisk-1365398207",
+        "istanbul-gov-2007-monuments"
+      ],
+      "label": {
+        "en": "The Walled Obelisk",
+        "tr": "Örme Dikilitaş"
+      },
+      "caption": {
+        "en": "About 32 m of masonry, its date unknown. Restored by Constantine VII, \"now a brazen wonder here\", says its base, like Rhodes's Colossus. The bronze plates were stripped in 1204.",
+        "tr": "Yaklaşık 32 m'lik bir örgü, tarihi bilinmiyor. VII. Konstantin onu onarttı; kaidesindeki yazıt onu Rodos Heykeli'ne benzetip \"şimdi burada tunçtan bir harika\" der. Tunç levhalar 1204'te söküldü."
+      }
+    },
+    {
+      "id": "palace",
+      "parts": [
+        "palace-ranges-west",
+        "palace-ranges-east",
+        "palace-cross-north",
+        "palace-cross-middle"
+      ],
+      "seconds": 3.2,
+      "epochs": [
+        1582,
+        2026
+      ],
+      "sources": [
+        "tdv-ibrahim-pasa-sarayi",
+        "tan-hippodrome-underground",
+        "tdv-atmeydani",
+        "tdv-surname",
+        "janin-1950"
+      ],
+      "label": {
+        "en": "At Meydanı",
+        "tr": "Atmeydanı"
+      },
+      "caption": {
+        "en": "With most of the stands gone, the square was At Meydanı. İbrahim Paşa's palace rose on the west stands' vaults. Murad III's festival for his son Mehmed in 1582 lasted 52 days, or 55 by another account.",
+        "tr": "Tribünlerin çoğu gidince meydan Atmeydanı oldu. İbrahim Paşa Sarayı batı tribünlerinin tonozları üstünde yükseldi. III. Murad'ın oğlu Mehmed için 1582'de düzenlediği şenlik 52, başka bir kayda göre 55 gün sürdü."
+      }
+    },
+    {
+      "id": "today",
+      "parts": [
+        "serpent-today",
+        "pits",
+        "pit-serpent"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "byzleg-hippodrome",
+        "encrom-sphendone",
+        "encrom-serpentine"
+      ],
+      "label": {
+        "en": "In their pits",
+        "tr": "Çukurlarında"
+      },
+      "caption": {
+        "en": "The ground has risen several metres, partly with spoil from building the mosque, so the three monuments stand in pits; the Serpent Column's heads broke off in 1700.",
+        "tr": "Zemin, kısmen caminin inşasından çıkan molozla birkaç metre yükseldi; bu yüzden üç anıt çukurlarda duruyor. Yılanlı Sütun'un başları 1700'de kırıldı."
+      }
+    },
+    {
+      "id": "mosque",
+      "parts": [
+        "mosque-hall",
+        "mosque-drum",
+        "mosque-dome",
+        "mosque-court-sides",
+        "mosque-court-ends",
+        "minarets"
+      ],
+      "seconds": 3.0,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "tdv-sultan-ahmed-camii",
+        "bit-cetinkaya-bizans-mimarisi",
+        "janin-1950"
+      ],
+      "label": {
+        "en": "The Sultan Ahmed Mosque",
+        "tr": "Sultan Ahmed Camii"
+      },
+      "caption": {
+        "en": "Sedefkâr Mehmed Ağa's mosque for Ahmed I (1609–1617) rose on the east side, where the kathisma is thought to have stood, laid out with the square's monuments in mind.",
+        "tr": "Sedefkâr Mehmed Ağa'nın I. Ahmed için yaptığı cami (1609–1617), meydanın anıtları gözetilerek doğu yanda, kathismanın durduğu düşünülen yerde yükseldi."
+      }
+    },
+    {
+      "id": "fountain",
+      "parts": [
+        "fountain",
+        "fountain-dome"
+      ],
+      "seconds": 2.8,
+      "epochs": [
+        2026
+      ],
+      "sources": [
+        "tdv-alman-cesmesi",
+        "byzleg-hippodrome"
+      ],
+      "label": {
+        "en": "The German Fountain",
+        "tr": "Alman Çeşmesi"
+      },
+      "caption": {
+        "en": "The German Fountain, Wilhelm II's gift of 1900–1901, stands about where the starting gates were.",
+        "tr": "II. Wilhelm'in 1900–1901'deki armağanı Alman Çeşmesi, aşağı yukarı başlangıç kapılarının yerinde duruyor."
+      }
+    }
+  ],
+  "reveal": {
+    "through": "serpent",
+    "seconds": 10.0,
+    "turnDegrees": 30,
+    "caption": {
+      "en": "Constantine's racecourse of 330, drawn where Sultanahmet Square is today.",
+      "tr": "Konstantin'in 330'daki yarış alanı, bugünkü Sultanahmet Meydanı'nın yerinde."
+    }
+  },
+  "choisy": {
+    "sectionHeight": 2.0,
+    "elevation": -30,
+    "azimuth": 225
+  },
+  "sources": [
+    "byzleg-masonry-obelisk",
+    "seuso-obelisk-theodosius",
+    "tan-hippodrome-underground"
+  ],
+  "triangles": 12156,
+  "citations": [
+    {
+      "id": "bit-cetinkaya-bizans-mimarisi",
+      "title": {
+        "en": "Byzantine architecture of Istanbul (Great History of Istanbul from Antiquity to the 21st Century)",
+        "tr": "İstanbul'un Bizans Dönemi Mimarisi (Antik Çağ'dan XXI. Yüzyıla Büyük İstanbul Tarihi)"
+      },
+      "url": "https://istanbultarihi.ist/298-istanbulun-bizans-donemi-mimarisi",
+      "author": {
+        "en": "Haluk Çetinkaya (İSAM / İBB Kültür A.Ş., 2015)",
+        "tr": "Haluk Çetinkaya (İSAM / İBB Kültür A.Ş., 2015)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "bmcr-2017-01-43",
+      "title": {
+        "en": "Review of Paul Stephenson, The Serpent Column: A Cultural Biography (Oxford 2016), BMCR 2017.01.43",
+        "tr": "Paul Stephenson, The Serpent Column: A Cultural Biography (Oxford 2016) kitabının eleştirisi, BMCR 2017.01.43"
+      },
+      "url": "https://bmcr.brynmawr.edu/2017/2017-01-43.html",
+      "author": {
+        "en": "Sarah Bassett (Bryn Mawr Classical Review)",
+        "tr": "Sarah Bassett (Bryn Mawr Classical Review)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-hippodrome",
+      "title": {
+        "en": "Hippodrome of Constantinople",
+        "tr": "Konstantinopolis Hipodromu"
+      },
+      "url": "https://www.thebyzantinelegacy.com/hippodrome",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-masonry-obelisk",
+      "title": {
+        "en": "Masonry Obelisk",
+        "tr": "Örme Dikilitaş"
+      },
+      "url": "https://www.thebyzantinelegacy.com/masonry-obelisk",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-serpent-column",
+      "title": {
+        "en": "Serpent Column",
+        "tr": "Yılanlı Sütun"
+      },
+      "url": "https://www.thebyzantinelegacy.com/serpent-column",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "byzleg-theodosius-obelisk",
+      "title": {
+        "en": "Obelisk of Theodosius",
+        "tr": "Theodosius Dikilitaşı"
+      },
+      "url": "https://www.thebyzantinelegacy.com/theodosius-obelisk",
+      "author": {
+        "en": "David Hendrix, The Byzantine Legacy",
+        "tr": "David Hendrix, The Byzantine Legacy"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "encrom-serpentine",
+      "title": {
+        "en": "The Serpentine Column (Encyclopaedia Romana)",
+        "tr": "Yılanlı Sütun (Encyclopaedia Romana)"
+      },
+      "url": "https://penelope.uchicago.edu/~grout/encyclopaedia_Romana/circusmaximus/serpentine.html",
+      "author": {
+        "en": "James Grout, Encyclopaedia Romana (University of Chicago)",
+        "tr": "James Grout, Encyclopaedia Romana (Chicago Üniversitesi)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "encrom-sphendone",
+      "title": {
+        "en": "Sphendone (Encyclopaedia Romana)",
+        "tr": "Sphendone (Encyclopaedia Romana)"
+      },
+      "url": "https://penelope.uchicago.edu/~grout/encyclopaedia_Romana/circusmaximus/sphendone.html",
+      "author": {
+        "en": "James Grout, Encyclopaedia Romana (University of Chicago)",
+        "tr": "James Grout, Encyclopaedia Romana (Chicago Üniversitesi)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "heurist-cil-iii-737",
+      "title": {
+        "en": "Dedication of the Obelisk of Theodosius, Hippodrome of Constantinople (CIL III, 737)",
+        "tr": "Theodosius Dikilitaşı'nın ithaf yazıtı, Konstantinopolis Hipodromu (CIL III, 737)"
+      },
+      "url": "https://heurist.huma-num.fr/heurist/judaism_and_rome/view/303",
+      "author": {
+        "en": "Judaism and Rome project (CNRS / Huma-Num)",
+        "tr": "Judaism and Rome projesi (CNRS / Huma-Num)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "istanbul-gov-2007-monuments",
+      "title": {
+        "en": "Governorship of Istanbul, monument pages: Sultan Ahmet Square, Egyptian Obelisk, Walled Obelisk, Serpent Column, Mosaic Museum (archived 2007)",
+        "tr": "İstanbul Valiliği anıt sayfaları: Sultanahmet Meydanı, Dikilitaş, Örme Dikilitaş, Yılanlı Sütun, Mozaik Müzesi (2007 arşiv kopyası)"
+      },
+      "url": "https://web.archive.org/web/20070802063059/http://english.istanbul.gov.tr/Default.aspx?pid=303",
+      "author": {
+        "en": "Governorship of Istanbul (Web Archive copy)",
+        "tr": "İstanbul Valiliği (Web Archive kopyası)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "janin-1950",
+      "title": {
+        "en": "Constantinople byzantine: développement urbain et répertoire topographique (1st ed.), pp. 104–105 on the Milion",
+        "tr": "Constantinople byzantine: développement urbain et répertoire topographique (1. baskı), Milion için s. 104–105"
+      },
+      "url": "https://archive.org/details/janin-constantinople-byzantine.-developpement-urbain-et-repertoire-topographique",
+      "author": {
+        "en": "Raymond Janin, Paris: Institut Français d'Études Byzantines, 1950",
+        "tr": "Raymond Janin, Paris: Institut Français d'Études Byzantines, 1950"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "osm-hippodrome-2026-11-19",
+      "title": {
+        "en": "OpenStreetMap: the Hippodrome's monuments (ways 1120852417 and 1120852418, node 415157636), the sphendone wall (way 321386212) and Sultanahmet Meydanı (way 25512790)",
+        "tr": "OpenStreetMap: Hipodrom'un anıtları (1120852417 ve 1120852418 yolları, 415157636 düğümü), sphendone duvarı (321386212 yolu) ve Sultanahmet Meydanı (25512790 yolu)"
+      },
+      "url": "https://www.openstreetmap.org/way/1120852417",
+      "author": {
+        "en": "OpenStreetMap contributors (ODbL), Overpass base 2026-11-19T07:01:00Z",
+        "tr": "OpenStreetMap katkıcıları (ODbL), Overpass tabanı 2026-11-19T07:01:00Z"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": {
+        "en": "ODbL 1.0",
+        "tr": "ODbL 1.0"
+      }
+    },
+    {
+      "id": "procopius-wars-1-24",
+      "title": {
+        "en": "Procopius, History of the Wars I.24 (the Nika insurrection), Loeb 1914",
+        "tr": "Prokopios, Savaşlar Tarihi I.24 (Nika ayaklanması), Loeb 1914"
+      },
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/1F*.html",
+      "author": {
+        "en": "Procopius; tr. H. B. Dewing; LacusCurtius (Bill Thayer)",
+        "tr": "Prokopios; çev. H. B. Dewing; LacusCurtius (Bill Thayer)"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "seuso-obelisk-theodosius",
+      "title": {
+        "en": "Obelisk of Theodosius (Seuso Treasure chronology)",
+        "tr": "Theodosius Dikilitaşı (Seuso Hazinesi kronolojisi)"
+      },
+      "url": "https://seuso.mnm.hu/en/the-seuso-treasuer/chronology/obelisk-of-theodosius",
+      "author": {
+        "en": "Hungarian National Museum",
+        "tr": "Macar Ulusal Müzesi"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "tan-hippodrome-underground",
+      "title": {
+        "en": "The underground remains of the Hippodrome of Constantinople",
+        "tr": "Konstantinopolis Hipodromu'nun yeraltındaki kalıntıları"
+      },
+      "url": "https://turkisharchaeonews.net/object/underground-remains-hippodrome-constantinople",
+      "author": {
+        "en": "Turkish Archaeological News",
+        "tr": "Turkish Archaeological News"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "tdv-alman-cesmesi",
+      "title": {
+        "en": "Alman Çeşmesi — the German Fountain (TDV Encyclopaedia of Islam, vol. 2, pp. 506–507, 1989)",
+        "tr": "Alman Çeşmesi (TDV İslâm Ansiklopedisi, 2. cilt, s. 506–507, 1989)"
+      },
+      "url": "https://islamansiklopedisi.org.tr/alman-cesmesi",
+      "author": {
+        "en": "Semavi Eyice",
+        "tr": "Semavi Eyice"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "tdv-atmeydani",
+      "title": {
+        "en": "Atmeydanı (TDV Encyclopaedia of Islam, vol. 4, pp. 82–83, 1991)",
+        "tr": "Atmeydanı (TDV İslâm Ansiklopedisi, 4. cilt, s. 82–83, 1991)"
+      },
+      "url": "https://islamansiklopedisi.org.tr/atmeydani",
+      "author": {
+        "en": "Tanju Cantay",
+        "tr": "Tanju Cantay"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "tdv-ibrahim-pasa-sarayi",
+      "title": {
+        "en": "İbrâhim Paşa Sarayı (TDV Encyclopaedia of Islam, vol. 21, pp. 345–347, 2000)",
+        "tr": "İbrâhim Paşa Sarayı (TDV İslâm Ansiklopedisi, 21. cilt, s. 345–347, 2000)"
+      },
+      "url": "https://islamansiklopedisi.org.tr/ibrahim-pasa-sarayi",
+      "author": {
+        "en": "Semavi Eyice",
+        "tr": "Semavi Eyice"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "tdv-sultan-ahmed-camii",
+      "title": {
+        "en": "Sultan Ahmed Camii ve Külliyesi (TDV Encyclopaedia of Islam, vol. 37, pp. 497–503, 2009)",
+        "tr": "Sultan Ahmed Camii ve Külliyesi (TDV İslâm Ansiklopedisi, 37. cilt, s. 497–503, 2009)"
+      },
+      "url": "https://islamansiklopedisi.org.tr/sultan-ahmed-camii-ve-kulliyesi",
+      "author": {
+        "en": "Ahmet Vefa Çobanoğlu",
+        "tr": "Ahmet Vefa Çobanoğlu"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "tdv-surname",
+      "title": {
+        "en": "Surnâme (TDV Encyclopaedia of Islam, vol. 37, pp. 565–567, 2009)",
+        "tr": "Surnâme (TDV İslâm Ansiklopedisi, 37. cilt, s. 565–567, 2009)"
+      },
+      "url": "https://islamansiklopedisi.org.tr/surname",
+      "author": {
+        "en": "Hatice Aynur",
+        "tr": "Hatice Aynur"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "wp-hippodrome-of-constantinople-1364835690",
+      "title": {
+        "en": "Hippodrome of Constantinople (Wikipedia, English)",
+        "tr": "Konstantinopolis Hipodromu (İngilizce Vikipedi)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=Hippodrome_of_Constantinople&oldid=1364835690",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Vikipedi katkıcıları"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    },
+    {
+      "id": "wp-walled-obelisk-1365398207",
+      "title": {
+        "en": "Walled Obelisk (Wikipedia, English)",
+        "tr": "Örme Dikilitaş (İngilizce Vikipedi)"
+      },
+      "url": "https://en.wikipedia.org/w/index.php?title=Walled_Obelisk&oldid=1365398207",
+      "author": {
+        "en": "Wikipedia contributors",
+        "tr": "Vikipedi katkıcıları"
+      },
+      "accessedAt": "2026-11-19",
+      "licence": null
+    }
+  ]
+}

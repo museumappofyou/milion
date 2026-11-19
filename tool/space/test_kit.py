@@ -61,6 +61,20 @@ class ElementTest(unittest.TestCase):
         'octagon': lambda: E.octagon(ax=7.7, ay=8.15, skew=3),
         'transition': lambda: E.transition(outer_sides=8, outer_radius=9, inner_radius=8,
                                            height=1.5),
+        # P13: the imperial core.
+        'obelisk': lambda: E.obelisk(base=2.2, top=1.55, height=18.4, pyramidion=1.2, step=5),
+        'meta': lambda: E.obelisk(base=1.3, top=.25, height=5, sides=8),
+        'serpent': lambda: E.serpent(height=8, coil_top=6, turns=10.9, helix=.2, body=.08,
+                                     body_top=.066, necks=.8, head_radius=.52, head_length=.42,
+                                     per_turn=10, step=1),
+        'serpent-today': lambda: E.serpent(height=8, coil_top=6, turns=10.9, helix=.2, body=.08,
+                                           cut=5.35, per_turn=10, step=1),
+        'serpent-head': lambda: E.serpent_head(body=.08, length=.42),
+        'bowl': lambda: E.bowl(radius=.95, depth=.5, thickness=.04, n=20),
+        'stands': lambda: E.stands(rows=15, rise=1, going=1.24, inner=39, a0=180, a1=360,
+                                   wall=1.4, n=24, step=12),
+        'fragment': lambda: E.fragment(width=.9, depth=.7, heights=[3.9, 4.25, 3.7, 4.05]),
+        'round-base': lambda: E.round_base(radii=[1.7, 1.4, 1.15], rise=.3, n=24),
     }
 
     def test_every_piece_is_closed_outward_and_on_the_grid(self):
@@ -167,27 +181,40 @@ class SpecTest(unittest.TestCase):
         self.assertAlmostEqual(long_side, 40, delta=.1)
         self.assertAlmostEqual(short_side, 10, delta=.1)
 
+    # P13's studies cite what sources give: nothing measures the Milion, the
+    # Hippodrome has five figures and the Serpent Column one.
+    FEWER_DIMENSIONS = {'milion': 0, 'hippodrome': 5, 'serpent-column': 1}
+
     def test_every_spec_meets_its_dimensions_budget_and_axis(self):
-        self.assertEqual(len(SPECS), 5)  # P09's three, P11's Chora and P12's Hagia Sophia
+        # P09's three, P11's Chora, P12's Hagia Sophia and P13's three.
+        self.assertEqual(len(SPECS), 8)
         known = build_kit.registry_sources(build_kit.SOURCES)
         for path in SPECS:
             spec = kit.load(path)
             built, steps, dims, axis, triangles = build_kit.build_one(spec, known)
             self.assertLessEqual(triangles, build_kit.BUDGET, spec['id'])
-            self.assertGreaterEqual(len(dims), 10, spec['id'])
+            self.assertGreaterEqual(len(dims), self.FEWER_DIMENSIONS.get(spec['id'], 10),
+                                    spec['id'])
             self.assertTrue(all(ok for *_, ok in dims), spec['id'])
-            self.assertLessEqual(axis['offDegrees'], build_kit.AXIS_TOLERANCE, spec['id'])
+            oriented = 'orientation' in spec
+            # Only the Serpent Column, an object, stands off the map.
+            self.assertEqual(oriented, spec['id'] != 'serpent-column')
+            if oriented:
+                self.assertLessEqual(axis['offDegrees'], build_kit.AXIS_TOLERANCE, spec['id'])
             # The assets on disk are what the spec builds, byte for byte.
             with tempfile.TemporaryDirectory() as d:
                 write_compressed(Path(d, 'a.glb'), built, {'milion': {
                     'units': 'm', 'up': 'z', 'axis': 'y',
-                    'axisAzimuth': spec['orientation']['axis'],
+                    **({'axisAzimuth': spec['orientation']['axis']} if oriented else {}),
                     'note': 'P09 kit; a diagram on cited dimensions, not a survey'}})
                 shipped = ROOT / f"assets/space/{spec['id']}/model.glb"
                 self.assertEqual(Path(d, 'a.glb').read_bytes(), shipped.read_bytes(), spec['id'])
             manifest = json.loads((ROOT / f"assets/space/{spec['id']}/study.json").read_text())
             self.assertEqual(manifest['triangles'], triangles)
-            self.assertEqual(manifest['orientation']['axis'], spec['orientation']['axis'])
+            if oriented:
+                self.assertEqual(manifest['orientation']['axis'], spec['orientation']['axis'])
+            else:
+                self.assertNotIn('orientation', manifest)
 
     def test_shipped_models_decode_to_closed_solids(self):
         for path in SPECS:

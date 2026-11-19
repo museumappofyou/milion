@@ -1,0 +1,169 @@
+{
+  "plate": "palace-animals",
+  "spec": "studio/plates/palace-animals/plate.yaml",
+  "manualMinutes": 35,
+  "stages": {
+    "ingest": {
+      "source": "p13/commons/masters/palace-floor.jpg",
+      "sourceSha256": "f571930a01e9a1591b6c3ee0d50b0748e2704777b9166cbd87e7f90b14900acc",
+      "sourceSize": [
+        2400,
+        1561
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mosaici_da_un_peristilio_del_gran_palazzo_di_costantinopoli,_VI_secolo_ca.,_pavimento_centro-ovest_02,1.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/palace-animals/original.jpg",
+      "masterSha256": "f571930a01e9a1591b6c3ee0d50b0748e2704777b9166cbd87e7f90b14900acc",
+      "size": [
+        2400,
+        1561
+      ]
+    },
+    "segment": {
+      "floor": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.6201,
+        "iou": 0.987
+      },
+      "eagle": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0356,
+        "iou": 0.936
+      },
+      "griffin": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0122,
+        "iou": 0.903
+      },
+      "beast": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0096,
+        "iou": 0.962
+      },
+      "hunter": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0289,
+        "iou": 0.765
+      },
+      "grazers": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.0236,
+        "iou": 0.886
+      },
+      "goats": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.014,
+        "iou": 0.962
+      }
+    },
+    "flowMask": {
+      "path": "assets/plates/palace-animals/animals.png",
+      "feather": 14.4,
+      "segments": {
+        "eagle": {
+          "direction": [
+            0.0,
+            -1.0
+          ],
+          "coverage": 0.029
+        },
+        "griffin": {
+          "direction": [
+            -0.6,
+            -0.8
+          ],
+          "coverage": 0.0091
+        },
+        "beast": {
+          "direction": [
+            1.0,
+            0.0
+          ],
+          "coverage": 0.0064
+        },
+        "grazers": {
+          "direction": [
+            0.287,
+            0.958
+          ],
+          "coverage": 0.0163
+        },
+        "goats": {
+          "direction": [
+            0.0,
+            1.0
+          ],
+          "coverage": 0.0115
+        }
+      },
+      "coverage": 0.0723
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.3 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 1.58,
+      "gold": "heuristic",
+      "goldCoverage": 0.0,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 46687,
+      "triangles": 93078,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 66,
+        "verticesEased": 21915,
+        "maxHeightChange": 0.4662
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 59942400,
+    "textureBudget": 150000000,
+    "meshVertices": 46687,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/palace-animals/manifest.json",
+    "maps": {
+      "surface": "assets/plates/palace-animals/surface.webp",
+      "gold": "assets/plates/palace-animals/gold.webp"
+    },
+    "details": 6,
+    "beats": 6,
+    "storySeconds": 31,
+    "revealMoment": 5,
+    "lookUp": null
+  },
+  "preview": {
+    "path": "studio/plates/palace-animals/build/preview.mp4",
+    "frames": 144,
+    "seconds": 6.0
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 38.6
+}

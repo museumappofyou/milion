@@ -81,6 +81,9 @@ Color materialColor(String material) => switch (material) {
   'marble' => const Color(0xFFDDD6C9),
   'brick' => const Color(0xFFB0705A),
   'lead' => const Color(0xFF8A9096),
+  // P13: the Serpent Column's bronze and the lost gold of its tripod.
+  'bronze' => const Color(0xFF7D6B4C),
+  'gold' => Pigment.gold,
   _ => const Color(0xFFC9C0B2),
 };
 

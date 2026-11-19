@@ -1,0 +1,103 @@
+{
+  "plate": "obelisk-base",
+  "spec": "studio/plates/obelisk-base/plate.yaml",
+  "manualMinutes": 30,
+  "stages": {
+    "ingest": {
+      "source": "p13/commons/masters/obelisk-base.jpg",
+      "sourceSha256": "461165d0057be7d76e12c1d77daa8259a7af933990f40fe423c341b3912c05c6",
+      "sourceSize": [
+        1185,
+        2400
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dado_di_teodosio,_390_ca.,_lato_sud,_teodosio_con_la_famiglia_imperiale,_03.jpg",
+      "method": "metadata stripped; pixels bit-identical",
+      "master": "assets/plates/obelisk-base/original.jpg",
+      "masterSha256": "461165d0057be7d76e12c1d77daa8259a7af933990f40fe423c341b3912c05c6",
+      "size": [
+        1185,
+        2400
+      ]
+    },
+    "segment": {
+      "box": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.3244,
+        "iou": 0.963
+      },
+      "race": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.1661,
+        "iou": 0.886
+      },
+      "raising": {
+        "method": "sam2.1-hiera-small",
+        "revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+        "coverage": 0.3272,
+        "iou": 0.985
+      }
+    },
+    "depth": {
+      "method": "depth-anything-v2-base x 0.45 + priors",
+      "model": [
+        "depth-anything/Depth-Anything-V2-Base-hf",
+        "b1958afc87fb45a9e3746cb387596094de553ed8"
+      ],
+      "seconds": 3.0,
+      "gold": "heuristic",
+      "goldCoverage": 0.0,
+      "heightRange": [
+        0.0,
+        1.0
+      ]
+    },
+    "popup": "not used",
+    "mesh": {
+      "vertices": 36546,
+      "triangles": 72678,
+      "budget": 60000,
+      "flippedAtRest": 0,
+      "flippedAtMaxTilt": 0,
+      "nonManifoldEdges": 0,
+      "boundaryLoops": 1,
+      "euler": 1,
+      "uvArea": 1.0,
+      "unusedVertices": 0,
+      "valid": true,
+      "problems": [],
+      "relaxation": {
+        "iterations": 80,
+        "verticesEased": 6615,
+        "maxHeightChange": 0.6422
+      }
+    }
+  },
+  "budgets": {
+    "decodedTextureBytes": 34128000,
+    "textureBudget": 150000000,
+    "meshVertices": 36546,
+    "meshBudget": 60000
+  },
+  "outputs": {
+    "manifest": "assets/plates/obelisk-base/manifest.json",
+    "maps": {
+      "surface": "assets/plates/obelisk-base/surface.webp",
+      "gold": "assets/plates/obelisk-base/gold.webp"
+    },
+    "details": 6,
+    "beats": 5,
+    "storySeconds": 29,
+    "revealMoment": 5,
+    "lookUp": null
+  },
+  "preview": {
+    "path": "studio/plates/obelisk-base/build/preview.mp4",
+    "frames": 144,
+    "seconds": 6.0
+  },
+  "valid": true,
+  "problems": [],
+  "buildSeconds": 35.9
+}

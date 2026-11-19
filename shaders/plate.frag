@@ -11,6 +11,9 @@
 //           1 flow: two-phase flow-map UV scrolling inside the mask
 //           2 spiral: a UV twist inside the mask (never a body warp)
 //           3 wipe: reconstruction only where damage and the wipe intersect
+//           4 sway (P13): the pixels move back and forth along the mask's
+//             direction, scaled by its coverage, so the feathered outline
+//             stays put; the phase runs across the plate so figures differ
 //
 // uTexture : the layer being shown (original / depth / reconstruction)
 // uSurface : RGB = normal map (0..1), A = height (0..1)
@@ -30,7 +33,7 @@ uniform float uTime;     // 8
 uniform vec2 uTilt;      // 9-10  (normalized, -1..1)
 uniform vec2 uPoint;     // 11-12 (raking direction, candle position, wipe x)
 uniform float uAmount;   // 13    (light strength / wipe amount)
-uniform vec2 uFlow;      // 14-15 (flow: period s, distance; spiral: twist)
+uniform vec2 uFlow;      // 14-15 (flow, sway: period s, distance; spiral: twist)
 uniform vec2 uCenter;    // 16-17 (spiral pivot in uv space)
 uniform float uDepth;    // 18    (parallax depth scale)
 uniform sampler2D uTexture;
@@ -76,7 +79,7 @@ void main() {
   vec2 parallax = uTilt * (surface.a - 0.5) * uDepth;
   vec4 mask = texture(uMask, uv);
 
-  if (uEffect > 2.5) {
+  if (uEffect > 2.5 && uEffect < 3.5) {
     float wipe = 1.0 - smoothstep(uPoint.x - 0.006, uPoint.x + 0.006, uv.x);
     float alpha = clamp(mask.r * wipe * uAmount, 0.0, 1.0);
     fragColor = vec4(texture(uTexture, uv).rgb * alpha, alpha);
@@ -92,7 +95,12 @@ void main() {
 
   vec3 base;
   float alpha;
-  if (uEffect < 1.5) {
+  if (uEffect > 3.5) {
+    vec2 dir = (mask.gb * 2.0 - 1.0) * uFlow.y * mask.r;
+    float s = sin(TAU * uTime / uFlow.x + uv.x * 5.0);
+    base = texture(uTexture, uv + parallax - dir * s).rgb;
+    alpha = smoothstep(0.0, 0.35, mask.r);
+  } else if (uEffect < 1.5) {
     // Two samples half a period apart, crossfaded, so the flow never snaps.
     vec2 dir = (mask.gb * 2.0 - 1.0) * uFlow.y * mask.r;
     float p0 = fract(uTime / uFlow.x);

@@ -278,7 +278,9 @@ class PlateSheet extends StatelessWidget {
               if (p.flowEffect != null)
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: Text(s.platePaintMotion),
+                  title: Text(
+                    p.flowEffect!.sway ? s.plateAnimalMotion : s.platePaintMotion,
+                  ),
                   value: c.flow,
                   onChanged: c.reduced
                       ? null

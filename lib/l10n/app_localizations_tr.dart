@@ -820,7 +820,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get firstRunSentence =>
-      'Sıfırıncı mil: İmparatorluğun yollarını ölçtüğü taş, Divanyolu’ndaki Milion; Roma mili halkaları Süleymaniye’ye, Galata Kulesi’ne, Kız Kulesi’ne, Kariye’ye ve Yedikule’ye uzanıyor.';
+      'Sıfırıncı mil: Divanyolu’ndaki Milion, imparatorluğun büyük yollarının başladığı yer, büyük olasılıkla olduğu gibi kubbeli bir kemer olarak çizildi; yollar Hebdomon’a, Nikomedeia’ya, Serdika’ya ve Kudüs’e uzanıyor, Roma mili halkaları da Süleymaniye’ye, Galata Kulesi’ne, Kız Kulesi’ne, Kariye’ye ve Yedikule’ye ulaşıyor.';
 
   @override
   String get firstRunStone => 'Divanyolu, Yerebatan Sarnıcı’nın yanında';
@@ -1231,6 +1231,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get platePaintMotion => 'Ateş nehri';
+
+  @override
+  String get plateAnimalMotion => 'Hareketli hayvanlar';
 
   @override
   String get plateScrollMotion => 'Göğün tomar gibi açılması';

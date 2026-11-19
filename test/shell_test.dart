@@ -410,7 +410,7 @@ void main() {
         300,
         scrollable: find.byType(Scrollable).first,
       );
-      expect(find.text('10 of 23 playable · 0 approved'), findsOneWidget);
+      expect(find.text('15 of 23 playable · 0 approved'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('mosaic-strip')));
       await tester.pumpAndSettle();
       expect(shell(tester).current, Destination.mosaic);
@@ -490,7 +490,7 @@ void main() {
         await tester.tap(destination('Milestones'));
         await tester.pumpAndSettle();
         expect(
-          find.text('48 Milestones · 10 playable · 0 approved · 38 planned'),
+          find.text('48 Milestones · 15 playable · 0 approved · 33 planned'),
           findsOneWidget,
         );
         final last = find.byKey(const ValueKey('milestone-XLVII'));
@@ -523,7 +523,7 @@ void main() {
         await openCityList(tester);
         expect(
           find.textContaining(
-            'places · positions checked on Wikidata · 2 reviewed',
+            'places · positions checked on Wikidata · 7 reviewed',
           ),
           findsOneWidget,
         );

@@ -1,9 +1,12 @@
-"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P12 authored content.
+"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P13 authored content.
 
 Run the seed, register, daily-detail and dig builders in dependency order, then
 P12's Hagia Sophia chapter (its strata, artworks, details, review and the
 Milestone records the plates fill; its photographs' app copies are remade
-when the Commons masters are in studio/cache/p12/), then the P07 plate pipeline for every studio/plates/*/plate.yaml (without previews;
+when the Commons masters are in studio/cache/p12/), then P13's imperial core
+(the Hippodrome, the Great Palace, the Column of Constantine, the Milion and
+the Boukoleon: sources, strata, reviews, the two plates' artworks and details,
+Milestones 0 and XII–XV; masters in studio/cache/p13/), then the P07 plate pipeline for every studio/plates/*/plate.yaml (without previews;
 `tool/plate/build.py <yaml>` renders those). The plate step must follow the
 register, because each plate owns its Milestone's path, status and honesty.
 The P08 study "How a dome stands" follows (model, manifest and its sources),
@@ -29,10 +32,14 @@ def main():
                        cwd=ROOT, check=True)
     # P12: Hagia Sophia after the dig (which writes its draft strata) and before
     # the plates, which read its details and need its Milestones' artworks.
-    if (ROOT / 'studio/cache/p12/commons/masters/meta.json').exists():
+    if any((ROOT / f'studio/cache/{p}/commons/masters').exists() for p in ['p12', 'p13']):
         subprocess.run([sys.executable, str(ROOT / 'tool/content/fetch_commons.py'), '--derive-only'],
                        cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/content/build_hagia_sophia.py')],
+                   cwd=ROOT, check=True)
+    # P13: the imperial core, before the plates (XIII and XV read its details)
+    # and the kit (the Milion, Hippodrome and Serpent Column studies cite it).
+    subprocess.run([sys.executable, str(ROOT / 'tool/content/build_imperial_core.py')],
                    cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/plate/build.py'), '--all', '--no-preview'],
                    cwd=ROOT, check=True)

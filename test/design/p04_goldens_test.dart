@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:milion/content/geography.dart';
 import 'package:milion/content/repository.dart';
@@ -10,6 +11,7 @@ import 'package:milion/design/plan_icon.dart';
 import 'package:milion/design/theme.dart';
 import 'package:milion/first_run/first_run_painter.dart';
 import 'package:milion/first_run/first_run_screen.dart';
+import 'package:milion/first_run/milion_intro.dart';
 import 'package:milion/l10n/strings.dart';
 import 'package:milion/today/mile_zero_dial.dart';
 
@@ -102,7 +104,8 @@ void main() {
       );
     });
   }
-  // The reduced-motion equivalent of Milestone 0 lite: three stills.
+  // The reduced-motion equivalent of Milestone 0: three stills. P13 drew
+  // the Milion's kit study and the roads into them.
   for (final (i, t) in FirstRunScreen.stills.indexed) {
     testWidgets('first-run still ${i + 1} golden', (tester) async {
       tester.view.physicalSize = const Size(390, 844);
@@ -112,6 +115,12 @@ void main() {
       final registry = (await tester.runAsync(
         () => ContentRepository((p) => File(p).readAsString()).load(),
       ))!;
+      final intro = (await tester.runAsync(
+        () => MilionIntro.load(
+          (p) async => ByteData.sublistView(File(p).readAsBytesSync()),
+        ),
+      ))!;
+      addTearDown(intro.dispose);
       final places = [
         for (final (id, left, below) in firstRunPlaces)
           LitPlace(
@@ -136,6 +145,9 @@ void main() {
               places: places,
               scaler: TextScaler.noScaling,
               still: true,
+              intro: intro,
+              honesty: 'RECONSTRUCTION',
+              roads: firstRunRays('en'),
             ),
           ),
         ),

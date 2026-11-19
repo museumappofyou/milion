@@ -170,7 +170,7 @@ void main() {
     },
   );
 
-  test('112 artworks (Chora and Hagia Sophia) load without any model asset or ONNX session', () async {
+  test('114 artworks (Chora, Hagia Sophia and the imperial core) load without any model asset or ONNX session', () async {
     final requested = <String>[];
     final repository = ContentRepository((path) {
       requested.add(path);
@@ -179,7 +179,7 @@ void main() {
     });
     final registry = await repository.load();
     expect(identical(await repository.load(), registry), isTrue);
-    expect(registry.artworks.length, 112);
+    expect(registry.artworks.length, 114);
     expect(registry.artworks.where((a) => a.placeId == 'chora').length, 103);
     expect(
       registry.artworks.where((a) => a.placeId == 'hagia-sophia').length,
@@ -193,9 +193,15 @@ void main() {
       registry.places.every((p) => RegExp(r'^Q\d+$').hasMatch(p.qid)),
       isTrue,
     );
-    // P11 reviewed Chora, P12 Hagia Sophia, which stands nearer the Milion.
+    // P11 reviewed Chora, P12 Hagia Sophia and P13 the imperial core, all
+    // nearer the Milion than Chora; the Milion itself is mile zero.
     expect(registry.placesByDistance().map((p) => p.id), [
+      'milion',
       'hagia-sophia',
+      'hippodrome',
+      'great-palace-mosaic-museum',
+      'column-of-constantine',
+      'boukoleon',
       'chora',
     ]);
     expect(registry.placesByDistance(includeDrafts: true).first.id, 'milion');
@@ -238,7 +244,7 @@ void main() {
     final reordered = PredictionMap(classes.reversed.toList(), registry);
     expect(reordered.artworkIdAt(0), classes.last);
     expect(map.artworkIdAt(0), classes.first);
-    expect(registry.artworks.length, 112);
+    expect(registry.artworks.length, 114);
     expect(() => PredictionMap(['missing'], registry), throwsFormatException);
     expect(
       () => PredictionMap(['F02', 'F02'], registry),
@@ -311,7 +317,7 @@ void main() {
         return File(p).readAsString();
       });
       await expectLater(repository.load(), throwsFormatException);
-      expect((await repository.load()).artworks.length, 112);
+      expect((await repository.load()).artworks.length, 114);
     },
   );
 }

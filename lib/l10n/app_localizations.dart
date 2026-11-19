@@ -1613,7 +1613,7 @@ abstract class AppLocalizations {
   /// No description provided for @firstRunSentence.
   ///
   /// In en, this message translates to:
-  /// **'Mile zero: the Milion on Divanyolu, the stone from which the empire measured its roads, with rings in Roman miles reaching Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.'**
+  /// **'Mile zero: the Milion on Divanyolu, where the empire’s great roads began, drawn as the domed arch it probably was; roads run out to the Hebdomon, Nicomedia, Serdica and Jerusalem, and rings in Roman miles reach Süleymaniye, Galata Tower, Maiden’s Tower, Chora and Yedikule.'**
   String get firstRunSentence;
 
   /// No description provided for @firstRunStone.
@@ -2310,6 +2310,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'River of fire'**
   String get platePaintMotion;
+
+  /// No description provided for @plateAnimalMotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Animals in motion'**
+  String get plateAnimalMotion;
 
   /// No description provided for @plateScrollMotion.
   ///

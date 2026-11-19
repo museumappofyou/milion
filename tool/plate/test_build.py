@@ -3,7 +3,8 @@
 The P07 pipeline's own checks: I and II reproduce P06 through yaml alone,
 ingest strips metadata without touching pixels, the mesh validator catches
 flips and tears, pop-up inpainting stays inside its hole, the spec is
-strict, and (P12) a reconstruction recipe changes only its loss.
+strict, (P12) a reconstruction recipe changes only its loss, and (P13) a
+sway mask covers only its segments, each with its own unit direction.
 """
 import io
 import json
@@ -16,7 +17,7 @@ import numpy as np
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from stages import ingest, mesh, popup, spec as specs  # noqa: E402
+from stages import flowmask, ingest, mesh, popup, spec as specs  # noqa: E402
 import reconstruct  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -173,6 +174,47 @@ class Reconstruct(unittest.TestCase):
         m = reconstruct.loss_mask(img, dict(shapes=[[.5, .5, .1, .2]]))
         self.assertEqual(m[50, 100], 1)
         self.assertEqual(m[50, 140], 0)
+
+
+class SwayMask(unittest.TestCase):
+    def test_a_sway_mask_is_its_segments_feathered_inward(self):
+        h, w = 120, 200
+        a = np.zeros((h, w), np.float32)
+        a[20:80, 20:80] = 1
+        b = np.zeros((h, w), np.float32)
+        b[30:90, 120:180] = 1
+        with tempfile.TemporaryDirectory() as d:
+            rel = Path(d).relative_to(ROOT) if Path(d).is_relative_to(ROOT) else None
+            out = Path(d) / 'm.png'
+
+            class Spec:
+                id = 'x'
+
+                def get(self, key, default=None):
+                    return dict(mask=str(out), feather=.02, motion='sway', from_=None,
+                                **{'from': [dict(segment='a', direction=[0, -2]),
+                                            dict(segment='b', direction=[3, 4])]})
+            flowmask.ROOT = Path('/')
+            try:
+                rec = flowmask.compose(Spec(), dict(a=a, b=b), (h, w, 3))
+            finally:
+                flowmask.ROOT = ROOT
+            self.assertIsNotNone(rel or rec)
+            m = np.asarray(Image.open(out).convert('RGB')).astype(np.float32) / 255
+        cov = m[..., 0]
+        # Nothing outside the segments; the middles fully covered; the edge
+        # feathered inside the outline, so it stays pinned.
+        self.assertEqual(cov[a + b == 0].max(), 0)
+        self.assertGreater(cov[50, 50], .99)
+        self.assertLess(cov[20, 50], .2)
+        self.assertLess(cov[20, 50], cov[22, 50])
+        self.assertGreater(cov[24, 50], .99)
+        # Each segment keeps its own direction, normalised.
+        self.assertAlmostEqual(m[50, 50, 1] * 2 - 1, 0, delta=.01)
+        self.assertAlmostEqual(m[50, 50, 2] * 2 - 1, -1, delta=.01)
+        self.assertAlmostEqual(m[60, 150, 1] * 2 - 1, .6, delta=.01)
+        self.assertAlmostEqual(m[60, 150, 2] * 2 - 1, .8, delta=.01)
+        self.assertEqual(rec['segments']['b']['direction'], [.6, .8])
 
 
 if __name__ == '__main__':
