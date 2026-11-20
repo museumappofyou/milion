@@ -132,7 +132,13 @@ def chapter(media, masters, derive_only=False, pin_new=False):
         print(f'{media.parent.name}: no masters in {masters.relative_to(ROOT)}; app copies kept')
         return
     doc = json.loads(media.read_text(encoding='utf-8'))
-    pins = [r['commons'] for r in doc['records']] + doc.get('references', [])
+    # A record shipped as Commons served it (`shippedSha256`, no master)
+    # is checked against its hash and not derived.
+    shipped = [r for r in doc['records'] if 'shippedSha256' in r['commons']]
+    for r in shipped:
+        if sha256((ROOT / r['path']).read_bytes()) != r['commons']['shippedSha256']:
+            raise SystemExit(f'{r["path"]}: differs from its shippedSha256')
+    pins = [r['commons'] for r in doc['records'] if r not in shipped] + doc.get('references', [])
     stale, pinned = [], False
     for pin in pins:
         path = masters / f'{pin["key"]}.jpg'
@@ -156,9 +162,10 @@ def chapter(media, masters, derive_only=False, pin_new=False):
         raise SystemExit(f'masters differ from the pins: {stale}; re-pin {media.name} and the plates')
     total = 0
     for record in doc['records']:
-        if record['path'].startswith(('assets/media/', 'assets/walk/')):
+        if record['path'].startswith(('assets/media/', 'assets/walk/')) and record not in shipped:
             total += derive(record, masters / f'{record["commons"]["key"]}.jpg')
-    print(f'{media.parent.name}: {len(pins)} masters checked; app derivatives {total / 1e6:.2f} MB')
+    print(f'{media.parent.name}: {len(pins)} masters and {len(shipped)} shipped copies checked; '
+          f'app derivatives {total / 1e6:.2f} MB')
 
 
 def main(derive_only=False, pin_new=False):

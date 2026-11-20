@@ -8,6 +8,7 @@ import 'package:flutter_scene/scene.dart' as fs;
 import '../content/models.dart';
 import '../design/components.dart';
 import '../design/plan_icon.dart';
+import '../design/player_bar.dart';
 import '../design/theme.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
@@ -21,10 +22,26 @@ import 'walk_scene.dart';
 
 enum WalkPanel { story, look, layers }
 
-/// An immersive walk (WK, P14): the hall drawn by flutter_scene, walked on
-/// its deck with a thumb (drag up to walk, sideways to turn) or turned with
-/// the phone after an opt-in; a 10-second reveal, a story through the stops,
-/// and stills for reduced motion. Leader lines name what is near.
+class WalkWaypointHit {
+  const WalkWaypointHit(this.waypoint, this.center, this.radius);
+  final WalkWaypoint waypoint;
+  final Offset center;
+  final double radius;
+}
+
+class WalkCalloutHit {
+  const WalkCalloutHit(this.callout, this.rect, this.anchor);
+  final WalkCallout callout;
+  final Rect rect;
+  final Offset anchor;
+}
+
+/// An immersive walk (WK, P14): the hall drawn by flutter_scene, full X/Y
+/// touch look (drag anywhere to look around, up into the vaults or down into
+/// the water), interactive 3D stepping circles on the walkway plus a floating
+/// circular movement pad, tappable architectural callout cards with real
+/// photographs, a 10-second reveal, a story through the stops, and stills for
+/// reduced motion.
 class WalkPlayer extends StatefulWidget {
   const WalkPlayer({
     super.key,
@@ -59,12 +76,16 @@ class WalkPlayerState extends State<WalkPlayer>
   double? _yawAtSensor;
   bool _active = true;
 
+  // Hit targets refreshed on every overlay paint for tapping deck circles & callouts.
+  final _waypointHits = <WalkWaypointHit>[];
+  final _calloutHits = <WalkCalloutHit>[];
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    // Without the GPU view (tests, old phones) a ticker runs the timeline;
-    // with it, the SceneView's own tick does.
+    // Without the GPU view (tests, old phones) a ticker runs timelines/glides;
+    // with it, SceneView's own tick drives controller.advance(dt).
     _ticker = createTicker((elapsed) {
       final dt = (elapsed - _last).inMicroseconds / 1e6;
       _last = elapsed;
@@ -123,8 +144,11 @@ class WalkPlayerState extends State<WalkPlayer>
     orientation.setEnabled(on);
   }
 
-  void controls(WalkPanel panel) =>
-      setState(() => _open = _open == panel ? null : panel);
+  void controls(WalkPanel panel) {
+    controller.selectCallout(null);
+    setState(() => _open = _open == panel ? null : panel);
+  }
+
   void closeControls() => setState(() => _open = null);
 
   @override
@@ -148,13 +172,122 @@ class WalkPlayerState extends State<WalkPlayer>
     super.dispose();
   }
 
+  /// Free X & Y axis look: drag sideways to turn 360°, drag up/down to look
+  /// up into the brick vaults and capitals or down into the reflecting water.
   void _drag(DragUpdateDetails d, Size size) {
     if (orientation.enabled) setLookSensor(false);
-    controller.walk(
-      forward: -d.delta.dy * .045,
-      turn: d.delta.dx * 1.1 / size.width,
+    controller.lookBy(
+      d.delta.dx * 1.45 / math.max(1.0, size.width),
+      -d.delta.dy * 1.45 / math.max(1.0, size.height),
     );
   }
+
+  void _tapUp(TapUpDetails details) {
+    final c = controller;
+    if (c.mode == WalkMode.stills) {
+      c.step(1);
+      return;
+    }
+    final pos = details.localPosition;
+    // 1. Check tappable architectural callout labels & anchor dots first.
+    for (final hit in _calloutHits) {
+      if (hit.rect.inflate(8).contains(pos) ||
+          (hit.anchor - pos).distance <= 24) {
+        if (_open != null) closeControls();
+        c.selectCallout(hit.callout);
+        return;
+      }
+    }
+    // 2. Check interactive 3D stepping circles on the walkway.
+    WalkWaypointHit? bestWp;
+    var bestDist = double.infinity;
+    for (final hit in _waypointHits) {
+      final d = (hit.center - pos).distance;
+      final threshold = math.max(28.0, hit.radius * 1.35);
+      if (d <= threshold && d < bestDist) {
+        bestDist = d;
+        bestWp = hit;
+      }
+    }
+    if (bestWp != null) {
+      if (_open != null) closeControls();
+      c.glideToWaypoint(bestWp.waypoint);
+      return;
+    }
+    // 3. Tapping open space dismisses an open callout card.
+    if (c.selectedCallout != null) {
+      c.selectCallout(null);
+    }
+  }
+
+  Future<void> showSources() => showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: DesignTheme.lamp.colorScheme.surface,
+    builder: (context) {
+      final s = context.l10n, lang = context.language;
+      final registry = AppScope.maybeOf(context)?.registry;
+      return Theme(
+        data: DesignTheme.lamp,
+        child: DefaultTextStyle(
+          style: DesignTheme.lamp.textTheme.bodyMedium!,
+          child: SafeArea(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(context).height * .75,
+              ),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const DimensionHandle(),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            s.sourcesTitle,
+                            style: DesignTheme.lamp.textTheme.titleLarge,
+                          ),
+                        ),
+                        IconButton(
+                          tooltip: s.plateClose,
+                          onPressed: () => Navigator.pop(context),
+                          icon: const Icon(Icons.close),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Text(widget.walk.talkback.inLanguage(lang)),
+                    const SizedBox(height: 16),
+                    for (final id in widget.walk.allSourceIds)
+                      if (registry?.source(id) case final source?)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 14),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                source.title.inLanguage(lang),
+                                style: DesignTheme.lamp.textTheme.titleSmall,
+                              ),
+                              SelectableText(
+                                source.url,
+                                style: DesignTheme.lamp.textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +298,20 @@ class WalkPlayerState extends State<WalkPlayer>
           final s = context.l10n, lang = context.language;
           final c = controller;
           return Scaffold(
-            appBar: AppBar(title: Text(widget.walk.title.inLanguage(lang))),
+            appBar: AppBar(
+              title: Text(
+                widget.walk.title.inLanguage(lang),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              actions: [
+                PlayerSourcesButton(
+                  key: const ValueKey('walk-appbar-sources'),
+                  tooltip: s.sourcesTitle,
+                  onPressed: showSources,
+                ),
+              ],
+            ),
             body: Column(
               children: [
                 Expanded(
@@ -175,8 +321,22 @@ class WalkPlayerState extends State<WalkPlayer>
                       return Stack(
                         children: [
                           Positioned.fill(child: _view(context, size)),
-                          // Leader lines and the small plan belong to the
-                          // 3D view; without it the plan is the view.
+                          // Interactive 3D stepping circles projected on the walkway.
+                          if (backend)
+                            Positioned.fill(
+                              child: IgnorePointer(
+                                child: RepaintBoundary(
+                                  child: CustomPaint(
+                                    painter: WalkWaypointPainter(
+                                      c,
+                                      MeasureColors.of(context).accent,
+                                      _waypointHits,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          // Tappable leader lines naming columns, vaults, ties & water.
                           if (backend)
                             Positioned.fill(
                               child: IgnorePointer(
@@ -187,6 +347,7 @@ class WalkPlayerState extends State<WalkPlayer>
                                       lang,
                                       Theme.of(context).textTheme.bodySmall!,
                                       MeasureColors.of(context).accent,
+                                      _calloutHits,
                                     ),
                                   ),
                                 ),
@@ -219,8 +380,36 @@ class WalkPlayerState extends State<WalkPlayer>
                             ),
                           _WalkLabels(
                             controller: c,
-                            captionHeight: size.height * .3,
+                            captionHeight: size.height * .34,
+                            sheetOpen: _open != null,
                           ),
+                          // Floating interactive circular walk pad (bottom-left).
+                          if (backend)
+                            SnapshotBuilder(
+                              listenable: c,
+                              snapshot: () => (
+                                c.mode,
+                                c.reduced,
+                                c.selectedCallout?.id,
+                                _open,
+                              ),
+                              builder: (context) {
+                                final showPad =
+                                    c.mode == WalkMode.explore &&
+                                    !c.reduced &&
+                                    c.selectedCallout == null &&
+                                    _open == null;
+                                if (!showPad) return const SizedBox.shrink();
+                                return Positioned(
+                                  left: 16,
+                                  bottom: 18,
+                                  child: _WalkMoveCircle(
+                                    controller: c,
+                                    accent: MeasureColors.of(context).accent,
+                                  ),
+                                );
+                              },
+                            ),
                         ],
                       );
                     },
@@ -237,40 +426,30 @@ class WalkPlayerState extends State<WalkPlayer>
                     ),
                     child: WalkSheet(player: this, panel: panel),
                   ),
-                SafeArea(
-                  top: false,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
+                PlayerDockBar(
+                  items: [
+                    PlayerDockItem(
+                      key: const ValueKey('walk-story'),
+                      symbol: PlanSymbol.story,
+                      label: s.plateStory,
+                      selected: _open == WalkPanel.story,
+                      onTap: () => controls(WalkPanel.story),
                     ),
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 12,
-                      runSpacing: 4,
-                      children: [
-                        for (final item in [
-                          (WalkPanel.story, PlanSymbol.story, s.plateStory),
-                          (WalkPanel.look, PlanSymbol.lookUp, s.walkLook),
-                          (WalkPanel.layers, PlanSymbol.layers, s.plateLayers),
-                        ])
-                          TextButton.icon(
-                            key: ValueKey('walk-${item.$1.name}'),
-                            style: _open == item.$1
-                                ? TextButton.styleFrom(
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .primary
-                                        .withValues(alpha: .12),
-                                  )
-                                : null,
-                            onPressed: () => controls(item.$1),
-                            icon: PlanIcon(item.$2),
-                            label: Text(item.$3),
-                          ),
-                      ],
+                    PlayerDockItem(
+                      key: const ValueKey('walk-look'),
+                      symbol: PlanSymbol.lookUp,
+                      label: s.walkLook,
+                      selected: _open == WalkPanel.look,
+                      onTap: () => controls(WalkPanel.look),
                     ),
-                  ),
+                    PlayerDockItem(
+                      key: const ValueKey('walk-layers'),
+                      symbol: PlanSymbol.layers,
+                      label: s.plateLayers,
+                      selected: _open == WalkPanel.layers,
+                      onTap: () => controls(WalkPanel.layers),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -280,15 +459,49 @@ class WalkPlayerState extends State<WalkPlayer>
     );
   }
 
+  static int _srgbChannel(double linear) {
+    final c = linear.clamp(0.0, 1.0);
+    final v = c <= 0.0031308
+        ? 12.92 * c
+        : 1.055 * math.pow(c, 1.0 / 2.4) - 0.055;
+    return (v.clamp(0.0, 1.0) * 255).round();
+  }
+
+  /// Resolves a linear fog color through the exact same Khronos PBR Neutral
+  /// tone mapper + sRGB OETF that flutter_scene's resolve pass applies, so the
+  /// viewport backdrop matches distant fogged geometry down to the exact byte.
+  static Color _resolveFogColor(List<double> fog) {
+    final x = math.min(fog[0], math.min(fog[1], fog[2]));
+    final offset = x < 0.08 ? x - 6.25 * x * x : 0.04;
+    var r = (fog[0] - offset).clamp(0.0, double.infinity);
+    var g = (fog[1] - offset).clamp(0.0, double.infinity);
+    var b = (fog[2] - offset).clamp(0.0, double.infinity);
+    const startCompression = 0.76;
+    const desaturation = 0.15;
+    final peak = math.max(r, math.max(g, b));
+    if (peak >= startCompression) {
+      const d = 1.0 - startCompression;
+      final newPeak = 1.0 - d * d / (peak + d - startCompression);
+      final scale = newPeak / peak;
+      r *= scale;
+      g *= scale;
+      b *= scale;
+      final sat = 1.0 - 1.0 / (desaturation * (peak - newPeak) + 1.0);
+      r += (newPeak - r) * sat;
+      g += (newPeak - g) * sat;
+      b += (newPeak - b) * sat;
+    }
+    return Color.fromARGB(
+      255,
+      _srgbChannel(r),
+      _srgbChannel(g),
+      _srgbChannel(b),
+    );
+  }
+
   Widget _view(BuildContext context, Size size) {
     final s = context.l10n, lang = context.language, c = controller;
-    final fog = widget.walk.fogColour;
-    final ground = Color.fromARGB(
-      255,
-      (math.pow(fog[0], 1 / 2.2) * 255).round(),
-      (math.pow(fog[1], 1 / 2.2) * 255).round(),
-      (math.pow(fog[2], 1 / 2.2) * 255).round(),
-    );
+    final ground = _resolveFogColor(widget.walk.fogColour);
     Widget view;
     if (error != null) {
       view = Center(
@@ -350,8 +563,8 @@ class WalkPlayerState extends State<WalkPlayer>
           behavior: HitTestBehavior.opaque,
           onPanStart: (_) => c.explore(),
           onPanUpdate: (d) => _drag(d, size),
+          onTapUp: _tapUp,
           onDoubleTap: () => c.step(1),
-          onTap: c.mode == WalkMode.stills ? () => c.step(1) : null,
           child: view,
         ),
       ),
@@ -359,12 +572,284 @@ class WalkPlayerState extends State<WalkPlayer>
   }
 }
 
-/// The honesty label, the stop and the caption, rebuilt only when one of
-/// them changes.
+/// Interactive circular thumb-pad in the lower-left viewport corner: drag the
+/// inner puck up/down to walk smoothly along the boardwalk and left/right to
+/// turn, or quick-tap top/bottom to step one bay ahead or back.
+class _WalkMoveCircle extends StatefulWidget {
+  const _WalkMoveCircle({required this.controller, required this.accent});
+  final WalkController controller;
+  final Color accent;
+
+  @override
+  State<_WalkMoveCircle> createState() => _WalkMoveCircleState();
+}
+
+class _WalkMoveCircleState extends State<_WalkMoveCircle> {
+  static const double _size = 86;
+  static const double _maxOffset = 25;
+  Offset _puck = Offset.zero;
+
+  void _update(Offset local) {
+    const center = Offset(_size / 2, _size / 2);
+    var delta = local - center;
+    if (delta.distance > _maxOffset) {
+      delta = Offset.fromDirection(delta.direction, _maxOffset);
+    }
+    setState(() => _puck = delta);
+    final nx = (delta.dx / _maxOffset).clamp(-1.0, 1.0);
+    final ny = (-delta.dy / _maxOffset).clamp(-1.0, 1.0);
+    widget.controller.setPadInput(ny, nx);
+  }
+
+  void _reset() {
+    if (_puck != Offset.zero) setState(() => _puck = Offset.zero);
+    widget.controller.setPadInput(0, 0);
+  }
+
+  void _tapUp(TapUpDetails d) {
+    final dy = d.localPosition.dy - _size / 2;
+    widget.controller.stepAlongFacing(dy <= 0 ? 1 : -1);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final active = _puck != Offset.zero;
+    return Semantics(
+      label: context.l10n.walkMoveLabel,
+      hint: context.l10n.walkMoveHint,
+      child: GestureDetector(
+        key: const ValueKey('walk-move-circle'),
+        behavior: HitTestBehavior.opaque,
+        onTapUp: _tapUp,
+        onPanStart: (d) => _update(d.localPosition),
+        onPanUpdate: (d) => _update(d.localPosition),
+        onPanEnd: (_) => _reset(),
+        onPanCancel: _reset,
+        child: SizedBox(
+          width: _size,
+          height: _size,
+          child: CustomPaint(
+            painter: _MoveCirclePainter(
+              puck: _puck,
+              accent: widget.accent,
+              active: active,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _MoveCirclePainter extends CustomPainter {
+  const _MoveCirclePainter({
+    required this.puck,
+    required this.accent,
+    required this.active,
+  });
+  final Offset puck;
+  final Color accent;
+  final bool active;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final r = size.width / 2 - 2;
+    // Translucent dark cistern-lamp glass disc.
+    canvas.drawCircle(center, r, Paint()..color = const Color(0xAA151314));
+    // Crisp outer ring & subtle inner track ring.
+    canvas.drawCircle(
+      center,
+      r,
+      Paint()
+        ..color = accent.withValues(alpha: active ? 0.92 : 0.58)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = active ? 2.0 : 1.4,
+    );
+    canvas.drawCircle(
+      center,
+      r * 0.52,
+      Paint()
+        ..color = accent.withValues(alpha: 0.22)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.0,
+    );
+    // Subtle directional chevrons (▲ forward, ▼ back, ◀ left, ▶ right).
+    final tickPaint = Paint()
+      ..color = accent.withValues(alpha: 0.72)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.4
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round;
+    void chevron(Offset tip, Offset dir) {
+      final perp = Offset(-dir.dy, dir.dx);
+      final p1 = tip - dir * 5 + perp * 4.5;
+      final p2 = tip - dir * 5 - perp * 4.5;
+      final path = Path()
+        ..moveTo(p1.dx, p1.dy)
+        ..lineTo(tip.dx, tip.dy)
+        ..lineTo(p2.dx, p2.dy);
+      canvas.drawPath(path, tickPaint);
+    }
+
+    chevron(center + Offset(0, -(r - 7)), const Offset(0, -1));
+    chevron(center + Offset(0, r - 7), const Offset(0, 1));
+    chevron(center + Offset(-(r - 7), 0), const Offset(-1, 0));
+    chevron(center + Offset(r - 7, 0), const Offset(1, 0));
+
+    // Movable tactile center puck.
+    final pCenter = center + puck;
+    canvas.drawCircle(
+      pCenter,
+      14,
+      Paint()..color = accent.withValues(alpha: active ? 0.34 : 0.20),
+    );
+    canvas.drawCircle(
+      pCenter,
+      11,
+      Paint()
+        ..color = accent.withValues(alpha: active ? 0.96 : 0.78)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.8,
+    );
+    canvas.drawCircle(pCenter, 3.5, Paint()..color = accent);
+  }
+
+  @override
+  bool shouldRepaint(_MoveCirclePainter old) =>
+      old.puck != puck || old.active != active || old.accent != accent;
+}
+
+/// Interactive 3D perspective stepping circles projected onto the visitors'
+/// walkway so visitors can tap directly on the floor to glide forward/back.
+class WalkWaypointPainter extends CustomPainter {
+  WalkWaypointPainter(this.controller, this.accent, this.hits)
+    : super(repaint: controller);
+  final WalkController controller;
+  final Color accent;
+  final List<WalkWaypointHit> hits;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    hits.clear();
+    if (controller.mode != WalkMode.explore || controller.reduced) return;
+    final cam = controller.camera;
+    final p = WalkProjector(cam, size.width, size.height);
+    final eye = cam.eye;
+    const circleRadius = 0.44;
+    const segments = 16;
+
+    for (final wp in controller.waypoints) {
+      final dx = wp.point.x - eye.x;
+      final dz = wp.point.z - eye.z;
+      final dist = math.sqrt(dx * dx + dz * dz);
+      if (dist < 2.2 || dist > 26.0) continue;
+      final center2d = p.project(wp.point);
+      if (center2d == null) continue;
+      final (cx, cy) = center2d;
+      if (cx < -20 ||
+          cx > size.width + 20 ||
+          cy < 80 ||
+          cy > size.height - 20) {
+        continue;
+      }
+
+      // Project a horizontal 3D circle onto the boardwalk plane for true foreshortening.
+      final path = Path();
+      var maxR = 0.0;
+      var valid = true;
+      for (var i = 0; i <= segments; i++) {
+        final a = 2 * math.pi * i / segments;
+        final pt = WalkPoint(
+          wp.point.x + math.cos(a) * circleRadius,
+          wp.point.y,
+          wp.point.z + math.sin(a) * circleRadius,
+        );
+        final proj = p.project(pt);
+        if (proj == null) {
+          valid = false;
+          break;
+        }
+        final off = Offset(proj.$1, proj.$2);
+        final d = (off - Offset(cx, cy)).distance;
+        if (d > maxR) maxR = d;
+        if (i == 0) {
+          path.moveTo(off.dx, off.dy);
+        } else {
+          path.lineTo(off.dx, off.dy);
+        }
+      }
+      if (!valid || maxR < 5.0 || maxR > size.width * 0.45) continue;
+      path.close();
+
+      final fade = (1.0 - (dist - 3.0) / 23.0).clamp(0.22, 0.92);
+      final isStop = wp.stop != null;
+      final fillAlpha = isStop ? 0.24 * fade : 0.14 * fade;
+      final strokeAlpha = isStop ? 0.92 * fade : 0.68 * fade;
+
+      canvas.drawPath(
+        path,
+        Paint()
+          ..color = accent.withValues(alpha: fillAlpha)
+          ..style = PaintingStyle.fill,
+      );
+      canvas.drawPath(
+        path,
+        Paint()
+          ..color = accent.withValues(alpha: strokeAlpha)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = isStop ? 2.1 : 1.5,
+      );
+      // Inner stepping dot (double ring on named stops).
+      if (isStop) {
+        final inner = Path();
+        for (var i = 0; i <= segments; i++) {
+          final a = 2 * math.pi * i / segments;
+          final proj = p.project(
+            WalkPoint(
+              wp.point.x + math.cos(a) * circleRadius * 0.48,
+              wp.point.y,
+              wp.point.z + math.sin(a) * circleRadius * 0.48,
+            ),
+          );
+          if (proj == null) break;
+          i == 0
+              ? inner.moveTo(proj.$1, proj.$2)
+              : inner.lineTo(proj.$1, proj.$2);
+        }
+        inner.close();
+        canvas.drawPath(
+          inner,
+          Paint()
+            ..color = accent.withValues(alpha: 0.75 * fade)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.2,
+        );
+      } else {
+        canvas.drawCircle(
+          Offset(cx, cy),
+          math.max(2.0, maxR * 0.13),
+          Paint()..color = accent.withValues(alpha: 0.72 * fade),
+        );
+      }
+      hits.add(WalkWaypointHit(wp, Offset(cx, cy), maxR));
+    }
+  }
+
+  @override
+  bool shouldRepaint(WalkWaypointPainter old) => old.controller != controller;
+}
+
+/// The honesty label, the stop caption, and the tappable architectural fact card.
 class _WalkLabels extends StatelessWidget {
-  const _WalkLabels({required this.controller, required this.captionHeight});
+  const _WalkLabels({
+    required this.controller,
+    required this.captionHeight,
+    required this.sheetOpen,
+  });
   final WalkController controller;
   final double captionHeight;
+  final bool sheetOpen;
 
   @override
   Widget build(BuildContext context) => SnapshotBuilder(
@@ -374,13 +859,16 @@ class _WalkLabels extends StatelessWidget {
       controller.caption,
       controller.currentStop?.id,
       controller.mode,
+      controller.selectedCallout?.id,
     ),
     builder: (context) {
       final c = controller, lang = context.language, s = context.l10n;
       final ground = Theme.of(context).scaffoldBackgroundColor
-          .withValues(alpha: .9);
+          .withValues(alpha: .92);
       final caption = c.caption?.inLanguage(lang);
       final stop = c.currentStop;
+      final selected = c.selectedCallout;
+      final registry = AppScope.maybeOf(context)?.registry;
       return Stack(
         children: [
           Positioned(
@@ -397,7 +885,114 @@ class _WalkLabels extends StatelessWidget {
               ),
             ),
           ),
-          if (caption != null)
+          if (selected != null && !sheetOpen)
+            Positioned(
+              bottom: 8,
+              left: 12,
+              right: 12,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: captionHeight),
+                child: DecoratedBox(
+                  key: const ValueKey('walk-callout-card'),
+                  decoration: BoxDecoration(
+                    color: ground,
+                    border: Border.all(
+                      color: MeasureColors.of(context).accent
+                          .withValues(alpha: .45),
+                      width: .8,
+                    ),
+                  ),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.fromLTRB(14, 10, 10, 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    selected.label.inLanguage(lang),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall,
+                                  ),
+                                  if (selected.metric case final metric?)
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 2),
+                                      child: Text(
+                                        metric.inLanguage(lang),
+                                        style: TypeRole.measurement.copyWith(
+                                          color: MeasureColors.of(context)
+                                              .accent,
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                              key: const ValueKey('walk-callout-close'),
+                              visualDensity: VisualDensity.compact,
+                              padding: EdgeInsets.zero,
+                              constraints: const BoxConstraints(
+                                minWidth: 32,
+                                minHeight: 32,
+                              ),
+                              onPressed: () => c.selectCallout(null),
+                              icon: const Icon(Icons.close, size: 18),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          selected.note.inLanguage(lang),
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                        if (selected.photo case final photo?)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6),
+                            child: OutlinedButton.icon(
+                              key: const ValueKey('walk-callout-photo'),
+                              onPressed: () => openOriginalPhoto(
+                                context,
+                                photo,
+                                title: selected.label,
+                              ),
+                              icon: const Icon(Icons.photo_outlined, size: 18),
+                              label: Text(s.seePhotograph),
+                            ),
+                          ),
+                        if (registry != null && selected.sourceIds.isNotEmpty)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6),
+                            child: Text(
+                              selected.sourceIds
+                                  .map(
+                                    (id) => registry
+                                        .source(id)
+                                        ?.title
+                                        .inLanguage(lang),
+                                  )
+                                  .whereType<String>()
+                                  .take(2)
+                                  .join(' · '),
+                              style: Theme.of(context).textTheme.bodySmall
+                                  ?.copyWith(
+                                    color: MeasureColors.of(context).secondary,
+                                  ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+          else if (caption != null)
             Positioned(
               bottom: 8,
               left: 12,
@@ -456,18 +1051,25 @@ class _WalkLabels extends StatelessWidget {
   );
 }
 
-/// Leader lines: each callout's point in the hall, a hairline to its label
-/// at the nearer margin (P03's plates with leader lines, in space).
+/// Leader lines: each callout's point in the hall, a hairline to its tappable
+/// info label at the nearer margin (P03's plates with leader lines, in space).
 class WalkCalloutPainter extends CustomPainter {
-  WalkCalloutPainter(this.controller, this.language, this.style, this.colour)
-    : super(repaint: controller);
+  WalkCalloutPainter(
+    this.controller,
+    this.language,
+    this.style,
+    this.colour,
+    this.hits,
+  ) : super(repaint: controller);
   final WalkController controller;
   final String language;
   final TextStyle style;
   final Color colour;
+  final List<WalkCalloutHit> hits;
 
   @override
   void paint(Canvas canvas, Size size) {
+    hits.clear();
     final callouts = controller.visibleCallouts();
     if (callouts.isEmpty) return;
     final p = WalkProjector(controller.camera, size.width, size.height);
@@ -475,13 +1077,17 @@ class WalkCalloutPainter extends CustomPainter {
       ..color = colour
       ..strokeWidth = 1
       ..style = PaintingStyle.stroke;
+    final dotFill = Paint()..color = colour;
     final usedLeft = <double>[], usedRight = <double>[];
+    final selectedId = controller.selectedCallout?.id;
+
     for (final c in callouts) {
       final at = p.project(c.anchor);
       if (at == null) continue;
       final (x, y) = at;
       if (x < 0 || x > size.width || y < 64 || y > size.height * .72) continue;
       final left = x < size.width / 2;
+      final isSelected = c.id == selectedId;
       final text = TextPainter(
         text: TextSpan(
           text: c.label.inLanguage(language),
@@ -494,23 +1100,52 @@ class WalkCalloutPainter extends CustomPainter {
       var ly = y - text.height / 2;
       final used = left ? usedLeft : usedRight;
       for (final u in used) {
-        if ((ly - u).abs() < text.height + 6) ly = u + text.height + 6;
+        if ((ly - u).abs() < text.height + 10) ly = u + text.height + 10;
       }
+      if (ly + text.height > size.height * 0.74) continue;
       used.add(ly);
-      final lx = left ? 12.0 : size.width - 12 - text.width;
-      final end = Offset(
-        left ? lx + text.width + 4 : lx - 4,
-        ly + text.height / 2,
-      );
+
+      const badgeSpace = 15.0;
+      final totalW = text.width + badgeSpace;
+      final lx = left ? 12.0 : size.width - 12 - totalW;
+      final end = Offset(left ? lx + totalW + 5 : lx - 5, ly + text.height / 2);
+      final anchor = Offset(x, y);
       canvas
-        ..drawCircle(Offset(x, y), 2.5, line)
-        ..drawLine(Offset(x, y), end, line);
-      final bg = Paint()..color = const Color(0xCC151314);
+        ..drawCircle(
+          anchor,
+          isSelected ? 4.5 : 3.0,
+          isSelected ? dotFill : line,
+        )
+        ..drawLine(anchor, end, line);
+
+      final rect = Rect.fromLTWH(lx - 5, ly - 3, totalW + 10, text.height + 6);
       canvas.drawRect(
-        Rect.fromLTWH(lx - 4, ly - 2, text.width + 8, text.height + 4),
-        bg,
+        rect,
+        Paint()
+          ..color = isSelected
+              ? const Color(0xEE221C18)
+              : const Color(0xD4151314),
       );
-      text.paint(canvas, Offset(lx, ly));
+      canvas.drawRect(
+        rect,
+        Paint()
+          ..color = colour.withValues(alpha: isSelected ? 0.95 : 0.35)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = isSelected ? 1.2 : 0.7,
+      );
+      // Small tappable info dot (`i`) signalling the badge opens details + photo.
+      final infoCenter = Offset(lx + 4.5, ly + text.height / 2);
+      canvas.drawCircle(
+        infoCenter,
+        4.5,
+        Paint()
+          ..color = colour.withValues(alpha: 0.75)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 0.9,
+      );
+      canvas.drawCircle(infoCenter, 1.3, dotFill);
+      text.paint(canvas, Offset(lx + badgeSpace - 1, ly));
+      hits.add(WalkCalloutHit(c, rect, anchor));
     }
   }
 
@@ -602,7 +1237,6 @@ class WalkSheet extends StatelessWidget {
     final s = context.l10n, lang = context.language;
     final c = player.controller, m = c.manifest;
     final theme = Theme.of(context);
-    final registry = AppScope.maybeOf(context)?.registry;
     final reduced = c.reduced;
     List<Widget> rows;
     switch (panel) {
@@ -613,6 +1247,15 @@ class WalkSheet extends StatelessWidget {
             spacing: 8,
             runSpacing: 8,
             children: [
+              FilledButton.icon(
+                key: const ValueKey('walk-play-story'),
+                onPressed: () {
+                  player.closeControls();
+                  c.playStory();
+                },
+                icon: const PlanIcon(PlanSymbol.story, size: 18),
+                label: Text(s.platePlay),
+              ),
               OutlinedButton.icon(
                 key: const ValueKey('walk-play-reveal'),
                 onPressed: () {
@@ -621,15 +1264,6 @@ class WalkSheet extends StatelessWidget {
                 },
                 icon: const PlanIcon(PlanSymbol.light, size: 18),
                 label: Text(s.plateStartReveal),
-              ),
-              OutlinedButton.icon(
-                key: const ValueKey('walk-play-story'),
-                onPressed: () {
-                  player.closeControls();
-                  c.playStory();
-                },
-                icon: const PlanIcon(PlanSymbol.story, size: 18),
-                label: Text(s.platePlay),
               ),
             ],
           ),
@@ -719,17 +1353,6 @@ class WalkSheet extends StatelessWidget {
                 ],
               ),
             ),
-          const SizedBox(height: 8),
-          Text(s.sourcesTitle, style: theme.textTheme.titleSmall),
-          for (final id in m.allSourceIds)
-            if (registry?.source(id) case final source?)
-              Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: Text(
-                  source.title.inLanguage(lang),
-                  style: theme.textTheme.bodySmall,
-                ),
-              ),
         ];
     }
     return ConstrainedBox(

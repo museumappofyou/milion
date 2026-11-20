@@ -81,6 +81,12 @@ class WalkCatalog {
             throw FormatException('$id: ${stop.id} names unknown media $photo');
           }
         }
+        for (final c in walk.callouts) {
+          if (c.photo case final photo?
+              when registry.mediaItem(photo) == null) {
+            throw FormatException('$id: ${c.id} names unknown media $photo');
+          }
+        }
         walks[id] = walk;
       } on Object catch (e) {
         if (strict) rethrow;

@@ -21,7 +21,7 @@
   {
    "anchor": [
     95.172,
-    5.0,
+    4.8,
     34.785
    ],
    "id": "columns",
@@ -29,18 +29,25 @@
     "en": "336 columns, 12 rows of 28",
     "tr": "336 sütun, 28'erli 12 sıra"
    },
-   "note": {
-    "en": "Each about 9 m tall, about 4.8 m apart.",
-    "tr": "Her biri yaklaşık 9 m, aralar yaklaşık 4,8 m."
+   "metric": {
+    "en": "336 columns · about 138 × 65 m",
+    "tr": "336 sütun · yaklaşık 138 × 65 m"
    },
+   "note": {
+    "en": "Each about 9 m tall and about 4.8 m apart, carrying the brick vaults under the court of the Stoa Basilica. Built under Justinian I, begun around 528 and finished by about 542.",
+    "tr": "Her biri yaklaşık 9 m yüksekliğinde, aralar yaklaşık 4,8 m; Stoa Basilika'nın avlusunun altındaki tuğla tonozları taşırlar. I. Iustinianus döneminde, 528 dolaylarında başlanıp 542 dolaylarında bitirildi."
+   },
+   "photo": "ug-cistern-colonnade-photo",
    "sources": [
     "istsu-basilica-cistern",
-    "wp-basilica-cistern-1365846547"
+    "istsu-bc-construction",
+    "crow-bardill-bayliss-2008",
+    "commons-cistern-colonnade"
    ]
   },
   {
    "anchor": [
-    90.414,
+    95.172,
     8.65,
     29.815
    ],
@@ -49,18 +56,24 @@
     "en": "A carved Corinthian capital",
     "tr": "Oymalı bir Korint başlığı"
    },
-   "note": {
-    "en": "About 98 of the capitals are carved, some only half-finished.",
-    "tr": "Başlıkların yaklaşık 98'i oymalıdır, bazıları yarım kalmıştır."
+   "metric": {
+    "en": "About 98 carved Corinthian capitals",
+    "tr": "Yaklaşık 98 oymalı Korint başlığı"
    },
+   "note": {
+    "en": "About 98 of the capitals are carved Corinthian, with acanthus leaves; some are only half-finished.",
+    "tr": "Başlıkların yaklaşık 98'i akantus yapraklı, oymalı Korint başlığıdır; bazıları yarım kalmıştır."
+   },
+   "photo": "ug-cistern-capitals-photo",
    "sources": [
     "onlu-2010-itu",
-    "crow-bardill-bayliss-2008"
+    "crow-bardill-bayliss-2008",
+    "commons-cistern-capitals"
    ]
   },
   {
    "anchor": [
-    90.414,
+    99.931,
     8.65,
     34.785
    ],
@@ -69,18 +82,24 @@
     "en": "A plain capital, never carved",
     "tr": "Hiç oyulmamış düz bir başlık"
    },
-   "note": {
-    "en": "Often called Doric; it is an unfinished blank.",
-    "tr": "Çoğu kez Dor denir; aslında bitirilmemiş bir bloktur."
+   "metric": {
+    "en": "About 238 plain, unfinished blocks",
+    "tr": "Yaklaşık 238 yontulmamış düz blok"
    },
+   "note": {
+    "en": "Most capitals are plain blocks that were never carved. Guides often call them Doric; they are unfinished blanks.",
+    "tr": "Başlıkların çoğu hiç oyulmamış düz bloklardır. Çoğu kez Dor denir; aslında bitirilmemiş bloklardır."
+   },
+   "photo": "ug-cistern-walkway-photo",
    "sources": [
     "onlu-2010-itu",
-    "byzleg-basilica-cistern"
+    "byzleg-basilica-cistern",
+    "commons-cistern-walkway"
    ]
   },
   {
    "anchor": [
-    88.034,
+    92.793,
     11.2,
     32.3
    ],
@@ -89,13 +108,145 @@
     "en": "Brick cross vaults",
     "tr": "Tuğla çapraz tonozlar"
    },
-   "note": {
-    "en": "Laid in Khorasan mortar of lime and brick dust.",
-    "tr": "Kireç ve tuğla tozundan Horasan harcıyla örülü."
+   "metric": {
+    "en": "Brick · Khorasan mortar",
+    "tr": "Tuğla · Horasan harcı"
    },
+   "note": {
+    "en": "Each bay is a domical cross vault, its bricks laid in concentric squares, in water-resistant Khorasan mortar of lime and brick dust.",
+    "tr": "Her açıklık, tuğlaları iç içe kareler hâlinde örülmüş kubbemsi bir çapraz tonozdur; kireç ve tuğla tozundan suya dayanıklı Horasan harcıyla."
+   },
+   "photo": "ug-cistern-capitals-photo",
    "sources": [
     "istsu-basilica-cistern",
-    "wp-basilica-cistern-1365846547"
+    "byzleg-basilica-cistern",
+    "commons-cistern-capitals"
+   ]
+  },
+  {
+   "anchor": [
+    99.931,
+    0.7,
+    29.815
+   ],
+   "id": "water-mirror",
+   "label": {
+    "en": "The water and where it came from",
+    "tr": "Su ve nereden geldiği"
+   },
+   "metric": {
+    "en": "About 80,000 m³ · Hadrian's aqueduct",
+    "tr": "Yaklaşık 80.000 m³ · Hadrianus su yolu"
+   },
+   "note": {
+    "en": "The water is kept shallow today and its level varies. The cistern held about 80,000 m³, brought from Hadrian's aqueduct (Malalas 18.17); the Belgrade Forest and Mağlova supply is Sinan's, from 1554–1564, a thousand years later.",
+    "tr": "Su bugün sığ tutuluyor ve seviyesi değişiyor. Sarnıç, Hadrianus su yolundan getirilen yaklaşık 80.000 m³ su alırdı (Malalas 18.17); Belgrad Ormanı ve Mağlova hattı bin yıl sonrasının, 1554–1564'te Sinan'ın işidir."
+   },
+   "photo": "ug-cistern-colonnade-photo",
+   "sources": [
+    "crow-bardill-bayliss-2008",
+    "istsu-basilica-cistern",
+    "commons-cistern-colonnade"
+   ]
+  },
+  {
+   "anchor": [
+    66.621,
+    3.6,
+    29.815
+   ],
+   "id": "rough-spolia",
+   "label": {
+    "en": "A rough, unpolished shaft",
+    "tr": "Cilasız, pürüzlü bir gövde"
+   },
+   "metric": {
+    "en": "Reused shaft · source building unknown",
+    "tr": "Devşirme gövde · geldiği yapı bilinmiyor"
+   },
+   "note": {
+    "en": "Not every shaft is polished; some are rough, as the 2024 photographs show. Many shafts and bases were reused, and which building each came from is not recorded.",
+    "tr": "Gövdelerin hepsi cilalı değildir; 2024 fotoğraflarında görüldüğü gibi bazıları pürüzlüdür. Gövde ve kaidelerin birçoğu devşirmedir ve her birinin hangi yapıdan geldiği kayıtlı değildir."
+   },
+   "photo": "ug-cistern-capitals-photo",
+   "sources": [
+    "onlu-2010-itu",
+    "commons-cistern-capitals"
+   ]
+  },
+  {
+   "anchor": [
+    76.138,
+    3.3,
+    34.785
+   ],
+   "id": "banded-spolia",
+   "label": {
+    "en": "A shaft with a dark ring",
+    "tr": "Koyu halkalı bir gövde"
+   },
+   "metric": {
+    "en": "A dark ring part-way up",
+    "tr": "Gövdenin ortasında koyu bir halka"
+   },
+   "note": {
+    "en": "In the 2022 photographs several shafts have a dark ring at the same height, a joint or a band; the sources found do not say which, or when it was made.",
+    "tr": "2022 fotoğraflarında birkaç gövdede aynı yükseklikte koyu bir halka görülür; bir ek yeri mi, bir kuşak mı, ne zaman yapıldığı bulunan kaynaklarda yazmıyor."
+   },
+   "photo": "ug-cistern-banded-photo",
+   "sources": [
+    "onlu-2010-itu",
+    "commons-cistern-banded"
+   ]
+  },
+  {
+   "anchor": [
+    73.759,
+    9.15,
+    32.3
+   ],
+   "id": "tie-rods",
+   "label": {
+    "en": "Ties at the column heads",
+    "tr": "Sütun başlarındaki gergiler"
+   },
+   "metric": {
+    "en": "Fitted 2017–2022",
+    "tr": "2017–2022'de takıldı"
+   },
+   "note": {
+    "en": "The 2017–2022 restoration strengthened the hall against earthquakes with new ties at the column heads; the photographs show thin metal rods ending in round plates.",
+    "tr": "2017–2022 restorasyonu salonu depreme karşı sütun başlarına takılan yeni gergilerle güçlendirdi; fotoğraflarda yuvarlak plakalarla biten ince metal çubuklar görülür."
+   },
+   "photo": "ug-cistern-walkway-photo",
+   "sources": [
+    "istsu-bc-2017",
+    "commons-cistern-walkway"
+   ]
+  },
+  {
+   "anchor": [
+    128.483,
+    1.3,
+    52.177
+   ],
+   "id": "walkway-2022",
+   "label": {
+    "en": "The 2022 steel walkway",
+    "tr": "2022'nin çelik yürüme yolu"
+   },
+   "metric": {
+    "en": "Steel deck, 2022",
+    "tr": "Çelik platform, 2022"
+   },
+   "note": {
+    "en": "The restoration took out the 1980s concrete walkway and laid this light steel grating. By the municipality's figures, about 1,440 m³ of concrete and 1,600 m³ of sediment came out.",
+    "tr": "Restorasyon 1980'lerin beton yürüme yolunu söküp yerine bu hafif çelik ızgarayı koydu. Belediyenin rakamlarıyla yaklaşık 1.440 m³ beton ve 1.600 m³ tortu çıkarıldı."
+   },
+   "photo": "ug-cistern-walkway-photo",
+   "sources": [
+    "istsu-bc-2017",
+    "commons-cistern-walkway"
    ]
   },
   {
@@ -109,13 +260,20 @@
     "en": "The hen's-eye column",
     "tr": "Tavus gözlü sütun"
    },
-   "note": {
-    "en": "Knots and lopped branches, carved in the 4th century.",
-    "tr": "IV. yüzyılda oyulmuş budaklar ve kesik dallar."
+   "metric": {
+    "en": "Late 4th century · Forum of Theodosius",
+    "tr": "IV. yüzyıl sonu · Theodosius Forumu"
    },
+   "note": {
+    "en": "Knots and lopped branches, read as a tree trunk or as Hercules' club, like the arch fragments of the Forum of Theodosius that lie at Beyazıt. The weeping-slaves story is modern.",
+    "tr": "Budaklar ve kesik dallar; bir ağaç gövdesi ya da Herakles'in sopası olarak okunur, Beyazıt'ta duran Theodosius Forumu kemer parçaları gibi. Ağlayan köleler hikâyesi yenidir."
+   },
+   "photo": "ug-cistern-weeping-full-photo",
    "sources": [
     "byzleg-basilica-cistern",
-    "istsu-basilica-cistern"
+    "istsu-basilica-cistern",
+    "commons-weeping-column",
+    "commons-cistern-weeping-full"
    ]
   },
   {
@@ -129,13 +287,19 @@
     "en": "Medusa, on her side",
     "tr": "Yan yatmış Medusa"
    },
-   "note": {
-    "en": "Reused Roman carving, set under a column.",
-    "tr": "Bir sütunun altına konmuş, yeniden kullanılmış Roma oyması."
+   "metric": {
+    "en": "Reused Roman carving · north-west corner",
+    "tr": "Devşirme Roma oyması · kuzeybatı köşesi"
    },
+   "note": {
+    "en": "A reused Roman block carved with Medusa's head, set on her side under a column. Turning it to fit the height is the usual explanation, a theory.",
+    "tr": "Medusa başı oyulmuş, yeniden kullanılmış bir Roma bloku; bir sütunun altına yan yatırılmış. Yüksekliğe uysun diye çevrildiği yaygın bir açıklamadır, bir varsayım."
+   },
+   "photo": "ug-medusa-sideways-photo",
    "sources": [
     "byzleg-basilica-cistern",
-    "onlu-2010-itu"
+    "onlu-2010-itu",
+    "commons-medusa-sideways"
    ]
   },
   {
@@ -149,20 +313,27 @@
     "en": "Medusa, upside down",
     "tr": "Baş aşağı Medusa"
    },
-   "note": {
-    "en": "Why she was set on her head is not known.",
-    "tr": "Neden baş aşağı konduğu bilinmiyor."
+   "metric": {
+    "en": "Seen by visitors since the 1985–87 cleaning",
+    "tr": "1985–87 temizliğinden beri görülüyor"
    },
+   "note": {
+    "en": "Set on her head under the next column. Why she was set this way is not known.",
+    "tr": "Yandaki sütunun altına baş aşağı konmuş. Neden baş aşağı konduğu bilinmiyor."
+   },
+   "photo": "ug-medusa-inverted-photo",
    "sources": [
     "byzleg-basilica-cistern",
-    "istsu-basilica-cistern"
+    "istsu-basilica-cistern",
+    "istsu-bc-1985",
+    "commons-medusa-inverted"
    ]
   }
  ],
- "capitals": "PPPPPPPPCCCCPPPPPCPPPPPCCPCCPPPPCCPCCCCPPPCPPPPCPPCPCCPPPPCPCCPPPCPPCCPCCPPPPPPCPPCPPPPPPPPPPCCPCCPPPPPPPPPCPPPCPPPCPCPPPCCPPPCPPPCPCPPCCCPPCPPPPPCPCCPCCPPPCPPPPPPPPPPPPCPCPCPCPCCPPPCPPPPPPPCPCPCPPCPCPPPPPPCPCPPCPPCCCPPCPCPCPCPCPPCCPPPPPPPPPPPCPPPPPCPPPPPCPPCPCCPCPPCPPPPPPPPPPCPPPPPPPPPPPPPPPPPCPPPCPPPPPCPPPCPPPPPPCPPPPCPCPPPCPCPPCPPC",
+ "capitals": "PCPPBCPCBBBBCPBPBBCBPBPBBCBBBBPPBBBBBBBBCCBBCPPBCBBBBBPBPCBBBBCCCBPCBBBBBPPCPPBBCPBPCCCCBCCBCBBCBBCCBCCCCPCBCCBBBBCBBBCBBBBCCPBPCCBBBPBBBBCCBPCPCPBPBBPBBPPPBCPPPPCPCCBCCBBBBBBBPBBPCCBCPCCBPCBCBCBCPBPBPPBPPPBCBPBBBPBBBPPBBBPBPBCBCBBBBCCCPBCBCCPBCBBCCBCBPPCBPPBCBBCBPBBPCPCPPBCCPBPCPCCPCPCCBPCPCBPBPCCBPPPPCBCBBBPPBBPCBCPCPBCBCPPBCBCPBBPB",
  "description": {
-  "en": "Walk the deck through Justinian's cistern: 336 columns in 12 rows of 28, each about 9 m tall and about 4.8 m apart, under brick cross vaults, over the water they kept. A reconstruction from cited dimensions; the columns' girth, the vaults' rise, the water's level and the order of the capitals are set in proportion.",
-  "tr": "Iustinianus'un sarnıcında platform boyunca yürüyün: 28'erli 12 sıra hâlinde 336 sütun, her biri yaklaşık 9 m yüksekliğinde ve birbirinden yaklaşık 4,8 m uzakta; tuğla çapraz tonozların altında, tuttukları suyun üstünde. Kaynaklı ölçülerden bir rekonstrüksiyon; sütunların kalınlığı, tonozların yüksekliği, suyun seviyesi ve başlıkların sırası oranla verildi."
+  "en": "Walk the 2022 steel deck through Justinian's cistern: 336 columns in 12 rows of 28, each about 9 m tall and about 4.8 m apart, under brick cross vaults, over shallow water. A reconstruction from cited dimensions and photographs; the columns' girth, the vaults' rise, the water's level and the mix and order of the capitals and shafts are set in proportion.",
+  "tr": "Iustinianus'un sarnıcında 2022'nin çelik platformu boyunca yürüyün: 28'erli 12 sıra hâlinde 336 sütun, her biri yaklaşık 9 m yüksekliğinde ve birbirinden yaklaşık 4,8 m uzakta; tuğla çapraz tonozların altında, sığ suyun üstünde. Kaynaklı ölçülerden ve fotoğraflardan bir rekonstrüksiyon; sütunların kalınlığı, tonozların yüksekliği, suyun seviyesi, başlık ve gövdelerin dağılımı ve sırası oranla verildi."
  },
  "estimated": [
   "baseHeight",
@@ -202,51 +373,63 @@
  "lighting": {
   "fog": {
    "colour": [
-    0.012,
-    0.009,
-    0.008
+    0.006,
+    0.005,
+    0.0045
    ],
-   "density": 0.045,
-   "far": 46
+   "density": 0.024,
+   "far": 155
   },
   "water": {
-   "alpha": 0.42,
+   "alpha": 0.38,
    "colour": [
-    0.02,
-    0.035,
-    0.03
+    0.08,
+    0.12,
+    0.11
    ],
    "mirrorDim": [
-    0.55,
-    0.55,
-    0.6
+    0.74,
+    0.68,
+    0.62
    ]
   }
  },
  "milestoneId": "milestone-xvi",
  "model": "assets/walk/basilica-cistern/model.glb",
- "modelSha256": "12e23d75f00296d25af572e5cb46d175921e29fe77ba8f2fc4ba08c29798546a",
+ "modelSha256": "73c6a72efcff0f7ec023af393d3cd8e6c29150bc7e662a5a3d36f9dfe728389a",
  "photos": {
   "medusa-inverted": "assets/walk/basilica-cistern/face-medusa-inverted.jpg",
   "medusa-sideways": "assets/walk/basilica-cistern/face-medusa-sideways.jpg"
  },
  "placeId": "basilica-cistern",
  "prototypes": {
-  "bay": 128,
-  "column-C": 244,
-  "column-P": 212,
-  "column-S": 212,
-  "column-W": 244,
-  "deck": 1432,
-  "fish": 62,
-  "medusa-inverted": 8,
+  "bay": 336,
+  "cap-B": 120,
+  "cap-C": 184,
+  "cap-P": 72,
+  "deck": 36,
+  "deck-rail": 1872,
+  "deck-strip": 66,
+  "fish": 56,
+  "medusa-inverted": 30,
   "medusa-inverted-face": 2,
-  "medusa-sideways": 8,
+  "medusa-sideways": 30,
   "medusa-sideways-face": 2,
   "pilaster": 6,
-  "wall-long": 32,
-  "wall-short": 32,
-  "water": 2
+  "shaft-D": 222,
+  "shaft-M": 262,
+  "shaft-R": 178,
+  "shaft-S": 192,
+  "shaft-T": 310,
+  "shaft-W": 178,
+  "stair": 212,
+  "tie-rods": 64,
+  "uplamp-body": 18,
+  "uplamp-glow": 10,
+  "wall-long": 30,
+  "wall-short": 30,
+  "water": 2,
+  "water-caustics": 2
  },
  "reveal": {
   "caption": {
@@ -279,12 +462,19 @@
   ]
  ],
  "schemaVersion": 1,
+ "shafts": "MMDRMMMMMMMMRTTDDMMMRRRRTTRRTMMMRRRRRMMTTDRTMRMMMMDTRRDMMMMTRDMRRMRMMMMMTRTRMMTRMMTMMMTTTRDMMRRTTRMMDMMMTDMMTMMMRTMMRMMMTMMMRRRDRMMTRRMMTRMMTRTMRRDMTTTMTMMDDMRMRRRTMMMMRRTMMRDMMMRMRMRTRMTRRRDDMDMRMMRMTTRMMMTMTDTTMTMRMRMMMMDTMTRTRMTMRRDRRRMDMDMTRRMMMMMMRRMDTMDTRMRMRMTRMMRMTMTMMMRMMDRTTTRDRRMMDDRMMMTMTMTMMMMTMMTMRTMMRRMTMMTMMMRMMDMRMMTM",
  "sources": [
   "istsu-basilica-cistern",
   "crow-bardill-bayliss-2008",
   "byzleg-basilica-cistern",
   "onlu-2010-itu",
-  "wp-basilica-cistern-1365846547"
+  "istsu-bc-2017",
+  "wp-basilica-cistern-1365846547",
+  "commons-cistern-colonnade",
+  "commons-cistern-capitals",
+  "commons-cistern-walkway",
+  "commons-cistern-weeping-full",
+  "commons-cistern-banded"
  ],
  "specials": [
   {
@@ -309,13 +499,14 @@
     6
    ],
    "id": "weeping-column",
-   "prototype": "column-W"
+   "prototype": "shaft-W"
   }
  ],
  "start": "aisle",
  "stills": [
   "stair",
   "aisle",
+  "spolia-bay",
   "hens-eye",
   "medusa-sideways",
   "medusa-inverted"
@@ -323,11 +514,12 @@
  "stops": [
   {
    "callouts": [
-    "columns"
+    "columns",
+    "walkway-2022"
    ],
    "caption": {
-    "en": "Justinian made the court of the Stoa Basilica into this cistern, begun around 528 and finished by about 542. Its name comes from the basilica that stood above it.",
-    "tr": "Iustinianus, Stoa Basilika'nın avlusunu bu sarnıca çevirdi; yapım 528 dolaylarında başladı ve 542 dolaylarında bitti. Adını üstünde duran bazilikadan alır."
+    "en": "Justinian made the court of the Stoa Basilica into this cistern of about 138 × 65 m, begun around 528 and finished by about 542. It held about 80,000 m³ of water, brought in from Hadrian's aqueduct.",
+    "tr": "Iustinianus, Stoa Basilika'nın avlusunu yaklaşık 138 × 65 m'lik bu sarnıca çevirdi; yapım 528 dolaylarında başladı, 542 dolaylarında bitti. Hadrianus su yolundan getirilen yaklaşık 80.000 m³ su alırdı."
    },
    "eye": [
     123.724,
@@ -341,21 +533,25 @@
    },
    "look": [
     85.655,
-    2.4,
+    2.8,
     34.785
    ],
+   "photo": "ug-cistern-walkway-photo",
    "seconds": 7,
    "sources": [
     "istsu-bc-construction",
     "crow-bardill-bayliss-2008",
-    "byzleg-basilica-cistern"
+    "byzleg-basilica-cistern",
+    "istsu-basilica-cistern",
+    "commons-cistern-walkway"
    ]
   },
   {
    "callouts": [
     "corinthian",
     "plain-capital",
-    "vaults"
+    "vaults",
+    "water-mirror"
    ],
    "caption": {
     "en": "336 columns stand in 12 rows of 28, each about 9 m tall and about 4.8 m apart. About 98 capitals are carved Corinthian; most of the rest are plain, unfinished blocks.",
@@ -368,19 +564,55 @@
    ],
    "id": "aisle",
    "label": {
-    "en": "The aisle",
-    "tr": "Koridor"
+    "en": "The central aisle",
+    "tr": "Orta koridor"
    },
    "look": [
     66.621,
-    5.2,
+    4.8,
     32.3
    ],
+   "photo": "ug-cistern-colonnade-photo",
    "seconds": 7,
    "sources": [
     "istsu-basilica-cistern",
     "onlu-2010-itu",
-    "crow-bardill-bayliss-2008"
+    "crow-bardill-bayliss-2008",
+    "commons-cistern-colonnade"
+   ]
+  },
+  {
+   "callouts": [
+    "rough-spolia",
+    "banded-spolia",
+    "tie-rods"
+   ],
+   "caption": {
+    "en": "The shafts do not match: many, with their bases, were reused from earlier buildings. At the column heads run the ties fitted in the 2017–2022 restoration against earthquakes.",
+    "tr": "Gövdeler birbirini tutmaz: birçoğu kaideleriyle birlikte eski yapılardan devşirilmiştir. Sütun başlarında, 2017–2022 restorasyonunda depreme karşı takılan gergiler uzanır."
+   },
+   "eye": [
+    78.517,
+    2.8,
+    32.3
+   ],
+   "id": "spolia-bay",
+   "label": {
+    "en": "Reused columns and new ties",
+    "tr": "Devşirme sütunlar, yeni gergiler"
+   },
+   "look": [
+    62.814,
+    5.2,
+    28.822
+   ],
+   "photo": "ug-cistern-capitals-photo",
+   "seconds": 7,
+   "sources": [
+    "onlu-2010-itu",
+    "istsu-bc-2017",
+    "commons-cistern-capitals",
+    "commons-cistern-banded"
    ]
   },
   {
@@ -388,8 +620,8 @@
     "hens-eye"
    ],
    "caption": {
-    "en": "One column is carved all over with oval knots and lopped branches, like the columns of the arch in the Forum of Theodosius, late in the 4th century. Guides call it the weeping column; that story is modern.",
-    "tr": "Sütunlardan biri baştan aşağı oval budaklar ve kesik dallarla oyulmuştur; IV. yüzyılın sonlarında Theodosius Forumu'ndaki kemerin sütunları gibi. Rehberler ona ağlayan sütun der; bu hikâye yenidir."
+    "en": "One column is carved all over with oval knots and lopped branches, like the columns of the arch in the Forum of Theodosius, late in the 4th century; it probably came from there. Guides call it the weeping column; that story is modern.",
+    "tr": "Sütunlardan biri baştan aşağı oval budaklar ve kesik dallarla oyulmuştur; IV. yüzyılın sonlarında Theodosius Forumu'ndaki kemerin sütunları gibi. Büyük olasılıkla oradan getirildi. Rehberler ona ağlayan sütun der; bu hikâye yenidir."
    },
    "eye": [
     50.441,
@@ -403,16 +635,17 @@
    },
    "look": [
     42.828,
-    3.4,
+    3.6,
     29.815
    ],
-   "photo": "ug-weeping-column-photo",
+   "photo": "ug-cistern-weeping-full-photo",
    "seconds": 7,
    "sources": [
     "byzleg-basilica-cistern",
     "istsu-basilica-cistern",
     "wp-basilica-cistern-1365846547",
-    "commons-weeping-column"
+    "commons-weeping-column",
+    "commons-cistern-weeping-full"
    ]
   },
   {
@@ -420,8 +653,8 @@
     "medusa-sideways"
    ],
    "caption": {
-    "en": "Two Medusa heads serve as column bases in the north-west corner. This one lies on her side.",
-    "tr": "Kuzeybatı köşesinde iki Medusa başı sütun kaidesi olarak kullanılır. Bu, yan yatmış olanı."
+    "en": "Two Medusa heads serve as column bases in the north-west corner. This one lies on her side. That the blocks were turned to fit the columns' height is the usual explanation, not a record.",
+    "tr": "Kuzeybatı köşesinde iki Medusa başı sütun kaidesi olarak kullanılır. Bu, yan yatmış olanı. Blokların sütun yüksekliğine uysun diye çevrildiği yaygın bir açıklamadır, kayıtlı bir bilgi değil."
    },
    "eye": [
     4.759,
@@ -452,8 +685,8 @@
     "medusa-inverted"
    ],
    "caption": {
-    "en": "The other stands on her head. Both are reused Roman carvings; why they were set this way is not known.",
-    "tr": "Öteki başının üstünde durur. İkisi de yeniden kullanılmış Roma oymalarıdır; neden böyle konduklarını bilmiyoruz."
+    "en": "The other stands on her head. Both are reused Roman carvings, seen by visitors since the 1985–87 cleaning took out some 50,000 tons of mud; why they were set this way is not known.",
+    "tr": "Öteki başının üstünde durur. İkisi de yeniden kullanılmış Roma oymalarıdır; 1985–87 temizliğinde 50.000 ton kadar çamur çıkarıldığından beri ziyaretçiler onları görüyor. Neden böyle konduklarını bilmiyoruz."
    },
    "eye": [
     9.517,
@@ -475,22 +708,34 @@
    "sources": [
     "byzleg-basilica-cistern",
     "istsu-basilica-cistern",
+    "istsu-bc-1985",
     "milliyet-sadic-2022",
     "commons-medusa-inverted"
    ]
   }
  ],
  "talkback": {
-  "en": "A walk inside the Basilica Cistern, drawn in 3D: rows of marble columns lit from their feet, brick vaults overhead, still water reflecting them. Five stops: the stair, the aisle, the hen's-eye column, the Medusa on her side and the Medusa upside down. Use next and previous to move between them.",
-  "tr": "Yerebatan Sarnıcı'nın içinde, 3B çizilmiş bir yürüyüş: dipten aydınlatılmış mermer sütun sıraları, üstte tuğla tonozlar, onları yansıtan durgun su. Beş durak: merdiven, koridor, tavus gözlü sütun, yan yatmış Medusa ve baş aşağı Medusa. Duraklar arasında sonraki ve önceki ile geçin."
+  "en": "A walk inside the Basilica Cistern, drawn in 3D: rows of marble columns lit from their feet, brick vaults and metal ties overhead, shallow water reflecting them. Six stops: the stair, the central aisle, the reused columns, the hen's-eye column, the Medusa on her side and the Medusa upside down. Use next and previous to move between them.",
+  "tr": "Yerebatan Sarnıcı'nın içinde, 3B çizilmiş bir yürüyüş: dipten aydınlatılmış mermer sütun sıraları, üstte tuğla tonozlar ve metal gergiler, onları yansıtan sığ su. Altı durak: merdiven, orta koridor, devşirme sütunlar, tavus gözlü sütun, yan yatmış Medusa ve baş aşağı Medusa. Duraklar arasında sonraki ve önceki ile geçin."
  },
  "textures": {
-  "ripple": "assets/walk/basilica-cistern/ripple.png",
-  "weeping": "assets/walk/basilica-cistern/weeping.png"
+  "brick": "assets/walk/basilica-cistern/brick.jpg",
+  "capCorinthian": "assets/walk/basilica-cistern/capital_corinthian.jpg",
+  "capPlain": "assets/walk/basilica-cistern/capital_plain.jpg",
+  "caustics": "assets/walk/basilica-cistern/water_caustics.png",
+  "deck": "assets/walk/basilica-cistern/deck.jpg",
+  "marbleBanded": "assets/walk/basilica-cistern/marble_banded.jpg",
+  "marbleRough": "assets/walk/basilica-cistern/marble_rough.jpg",
+  "marbleSmooth": "assets/walk/basilica-cistern/marble_smooth.jpg",
+  "marbleWarm": "assets/walk/basilica-cistern/marble_warm.jpg",
+  "medusaStone": "assets/walk/basilica-cistern/medusa_stone.jpg",
+  "plaster": "assets/walk/basilica-cistern/plaster.jpg",
+  "ripple": "assets/walk/basilica-cistern/water_surface.png",
+  "weeping": "assets/walk/basilica-cistern/weeping.jpg"
  },
  "title": {
   "en": "The Basilica Cistern",
   "tr": "Yerebatan Sarnıcı"
  },
- "turns": "110000200102132222000231320212203022120200323100232012123230000011113103000222100313313111102310321221230303103113223313332320031201312023123112213313110012210130333201221102311220002122323210122103200232020020132122132020022232310022113010113211101021010022233012323300100320020101130332003232320213113223332213201011323320223323003221"
+ "turns": "003033033213202023113322332221330120301012023321200120233213120020312102131201301222111330202323310130121010301112201330121322131003300031101223133112021033112321212213300221203330122202111103120023121020321323323332023331231321212120110112313110010010123232313003113121102102230322323012003130103030033212023023003220223212200310032203"
 }

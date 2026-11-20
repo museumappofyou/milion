@@ -1,5 +1,5 @@
 {
-  "note": "P14 photographs from Wikimedia Commons, pinned like P12/P13: `fetched` is what Commons served, `masterSize` the 2,400 px master kept in the gitignored studio/cache/p14/commons/masters/. Downloading was approved by the owner on 2026-11-19 (four photographs, about 15 MB).",
+  "note": "P14 photographs from Wikimedia Commons, pinned like P12/P13: `fetched` is what Commons served, `masterSize` the 2,400 px master kept in the gitignored studio/cache/p14/commons/masters/. Downloading was approved by the owner on 2026-11-19 (four photographs, about 15 MB). The five cistern photographs of 2026-11-20 (ug-cistern-*) are the Commons thumbnails as served, pinned by `shippedSha256`; they have no master.",
   "records": [
     {
       "id": "ug-medusa-inverted-photo",
@@ -164,6 +164,156 @@
         1.0
       ],
       "edge": 512
+    },
+    {
+      "id": "ug-cistern-colonnade-photo",
+      "path": "assets/media/underground/cistern-colonnade.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-cistern-colonnade",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "cistern-colonnade",
+        "file": "File:Cisterna Basílica, Estambul, Turquía, 2024-09-28, DD 52-54 HDR.jpg",
+        "originalSize": [
+          7304,
+          5643
+        ],
+        "fetched": null,
+        "fetchedSha256": null,
+        "masterSha256": null,
+        "masterSize": null,
+        "shippedSha256": "657a774c61c7bb68a4bab40b751c57387defdd30143e1a71d37c497ce8f0c43a",
+        "shippedSize": [
+          1200,
+          927
+        ],
+        "fetchedNote": "fetched as a Commons thumbnail (long edge 1,200 px) in the 2026-11-20 session; the served URL was not recorded and no master is kept. The app copy is that thumbnail, uncropped (its aspect matches the original); it is pinned by shippedSha256 and is the input of the walk textures (tool/walk/build_walk.py)."
+      }
+    },
+    {
+      "id": "ug-cistern-capitals-photo",
+      "path": "assets/media/underground/cistern-capitals.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-cistern-capitals",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "cistern-capitals",
+        "file": "File:Cisterna Basílica, Estambul, Turquía, 2024-09-28, DD 37-39 HDR.jpg",
+        "originalSize": [
+          4682,
+          8133
+        ],
+        "fetched": null,
+        "fetchedSha256": null,
+        "masterSha256": null,
+        "masterSize": null,
+        "shippedSha256": "aeb20f3daa728969407d00e5e67abb549e931875e7d374f925d3af0af75b653f",
+        "shippedSize": [
+          691,
+          1200
+        ],
+        "fetchedNote": "fetched as a Commons thumbnail (long edge 1,200 px) in the 2026-11-20 session; the served URL was not recorded and no master is kept. The app copy is that thumbnail, uncropped (its aspect matches the original); it is pinned by shippedSha256 and is the input of the walk textures (tool/walk/build_walk.py)."
+      }
+    },
+    {
+      "id": "ug-cistern-walkway-photo",
+      "path": "assets/media/underground/cistern-walkway.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-cistern-walkway",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "cistern-walkway",
+        "file": "File:Cisterna Basílica, Estambul, Turquía, 2024-09-28, DD 01-03 HDR.jpg",
+        "originalSize": [
+          6751,
+          5314
+        ],
+        "fetched": null,
+        "fetchedSha256": null,
+        "masterSha256": null,
+        "masterSize": null,
+        "shippedSha256": "d9bea52942ac7bbdd85a4d30a898f629445616b5a3ac051029ef2aa3440d27bb",
+        "shippedSize": [
+          1200,
+          945
+        ],
+        "fetchedNote": "fetched as a Commons thumbnail (long edge 1,200 px) in the 2026-11-20 session; the served URL was not recorded and no master is kept. The app copy is that thumbnail, uncropped (its aspect matches the original); it is pinned by shippedSha256 and is the input of the walk textures (tool/walk/build_walk.py)."
+      }
+    },
+    {
+      "id": "ug-cistern-weeping-full-photo",
+      "path": "assets/media/underground/cistern-weeping-full.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-cistern-weeping-full",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "cistern-weeping-full",
+        "file": "File:Cisterna Basílica, Estambul, Turquía, 2024-09-28, DD 46-48 HDR.jpg",
+        "originalSize": [
+          3219,
+          8172
+        ],
+        "fetched": null,
+        "fetchedSha256": null,
+        "masterSha256": null,
+        "masterSize": null,
+        "shippedSha256": "2308b352edd8801faf2b935c56723259e1be9abb512050070c8c221687b0d3db",
+        "shippedSize": [
+          473,
+          1200
+        ],
+        "fetchedNote": "fetched as a Commons thumbnail (long edge 1,200 px) in the 2026-11-20 session; the served URL was not recorded and no master is kept. The app copy is that thumbnail, uncropped (its aspect matches the original); it is pinned by shippedSha256 and is the input of the walk textures (tool/walk/build_walk.py)."
+      }
+    },
+    {
+      "id": "ug-cistern-banded-photo",
+      "path": "assets/media/underground/cistern-banded.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Kurmanbek · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Kurmanbek · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-cistern-banded",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "cistern-banded",
+        "file": "File:Basilica Cistern after restoration 2022 (7).jpg",
+        "originalSize": [
+          4032,
+          3024
+        ],
+        "fetched": null,
+        "fetchedSha256": null,
+        "masterSha256": null,
+        "masterSize": null,
+        "shippedSha256": "5cab5e2d4a7ecbc83c067132e31b8c95d5f0c28418816257a895e29a7e56c16e",
+        "shippedSize": [
+          1200,
+          900
+        ],
+        "fetchedNote": "fetched as a Commons thumbnail (long edge 1,200 px) in the 2026-11-20 session; the served URL was not recorded and no master is kept. The app copy is that thumbnail, uncropped (its aspect matches the original); it is pinned by shippedSha256 and is the input of the walk textures (tool/walk/build_walk.py)."
+      }
     }
   ]
 }

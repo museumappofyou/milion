@@ -22,11 +22,11 @@ bool walkBackendAvailable() {
   }
 }
 
-/// The walk as a flutter_scene scene (P14's immersive backend): the
-/// prototypes from the model, instanced on the hall's grid and again upside
-/// down under the water, with unlit materials whose light is baked into the
-/// vertex colours, distance fog, a translucent rippling water plane and, on
-/// request, fish.
+/// The walk as a flutter_scene scene (P14's immersive backend): real
+/// photo-textured spolia column shafts & bases, carved Corinthian and
+/// unfinished cushion capitals, concentric brick cross vaults, 2022 seismic
+/// tie-rods, glowing water-edge uplights, mirrored reflections under dual
+/// counter-drifting translucent water & caustic planes, and optional fish.
 class WalkScene {
   WalkScene._(this.manifest, this.scene);
   final WalkManifest manifest;
@@ -42,12 +42,13 @@ class WalkScene {
     localTransform: vm.Matrix4.diagonal3Values(1, 1, -1),
   );
 
-  // The hall, the carved heads and the weeping column, each with its
-  // reflection's own dimmed material, so the reveal can light them apart.
-  final hall = fs.UnlitMaterial(), hallMirror = fs.UnlitMaterial();
-  final heads = fs.UnlitMaterial(), headsMirror = fs.UnlitMaterial();
-  final water = fs.UnlitMaterial(), fishMaterial = fs.UnlitMaterial();
-  final faces = <fs.UnlitMaterial>[];
+  // Material pairs (real + mirrored) grouped by lighting channel so the reveal
+  // lights the carved heads first and then brings up the hall seamlessly.
+  final _hallMats = <(fs.UnlitMaterial, fs.UnlitMaterial, double)>[];
+  final _headMats = <(fs.UnlitMaterial, fs.UnlitMaterial, double)>[];
+  final water = fs.UnlitMaterial();
+  final waterCaustics = fs.UnlitMaterial();
+  final fishMaterial = fs.UnlitMaterial();
   final _fish = <fs.Node>[];
   final _fishPhase = <double>[];
   int instances = 0;
@@ -85,25 +86,71 @@ class WalkScene {
   Future<void> _build(fs.Node root) async {
     final g = manifest.grid;
     final dim = manifest.mirrorDim;
-    for (final m in [hall, heads, water, fishMaterial]) {
-      m.vertexColorWeight = 1;
+    water.vertexColorWeight = 0;
+    waterCaustics.vertexColorWeight = 0;
+    fishMaterial.vertexColorWeight = 1;
+
+    Future<(fs.UnlitMaterial, fs.UnlitMaterial)> pair({
+      String? textureKey,
+      String? textureAsset,
+      double vertexWeight = 1.0,
+      double gain = 1.0,
+      bool head = false,
+    }) async {
+      final asset =
+          textureAsset ??
+          (textureKey == null ? null : manifest.textures[textureKey]);
+      final tex = asset == null ? null : await fs.Texture2D.fromAsset(asset);
+      final real = fs.UnlitMaterial()
+        ..vertexColorWeight = vertexWeight
+        ..baseColorFactor = vm.Vector4(gain, gain, gain, 1);
+      final reflected = fs.UnlitMaterial()
+        ..vertexColorWeight = vertexWeight
+        ..baseColorFactor = vm.Vector4(
+          dim[0] * gain,
+          dim[1] * gain,
+          dim[2] * gain,
+          1,
+        );
+      if (tex != null) {
+        real.baseColorTexture = tex;
+        reflected.baseColorTexture = tex;
+      }
+      (head ? _headMats : _hallMats).add((real, reflected, gain));
+      return (real, reflected);
     }
-    hallMirror
-      ..vertexColorWeight = 1
-      ..baseColorFactor = vm.Vector4(dim[0], dim[1], dim[2], 1);
-    headsMirror
-      ..vertexColorWeight = 1
-      ..baseColorFactor = vm.Vector4(dim[0], dim[1], dim[2], 1);
-    final weeping = fs.UnlitMaterial()
-      ..vertexColorWeight = 1
-      ..baseColorTexture = await fs.Texture2D.fromAsset(
-        manifest.textures['weeping']!,
-      );
-    final weepingMirror = fs.UnlitMaterial()
-      ..vertexColorWeight = 1
-      ..baseColorTexture = weeping.baseColorTexture
-      ..baseColorFactor = vm.Vector4(dim[0], dim[1], dim[2], 1);
-    faces.addAll([weeping, weepingMirror]);
+
+    // Real photo-derived shaft materials (6 spolia styles) + capital materials.
+    final shaftMats = <String, (fs.UnlitMaterial, fs.UnlitMaterial)>{
+      'M': await pair(textureKey: 'marbleSmooth'),
+      'R': await pair(textureKey: 'marbleRough'),
+      'T': await pair(textureKey: 'marbleBanded'),
+      'D': await pair(textureKey: 'marbleWarm'),
+      'W': await pair(textureKey: 'weeping'),
+    };
+    final (headMarble, headMarbleMirror) = await pair(
+      textureKey: 'marbleSmooth',
+      head: true,
+    );
+    final (headCapPlain, headCapPlainMirror) = await pair(
+      textureKey: 'capPlain',
+      head: true,
+    );
+    final (medusaStone, medusaStoneMirror) = await pair(
+      textureKey: 'medusaStone',
+      head: true,
+    );
+    final (capCorinthian, capCorinthianMirror) = await pair(
+      textureKey: 'capCorinthian',
+    );
+    final (capPlain, capPlainMirror) = await pair(textureKey: 'capPlain');
+    final (brick, brickMirror) = await pair(textureKey: 'brick');
+    final (plaster, plasterMirror) = await pair(textureKey: 'plaster');
+    final (deckMat, deckMirror) = await pair(textureKey: 'deck');
+    final (railMat, railMirror) = await pair();
+    final (stairMat, stairMirror) = await pair(textureKey: 'medusaStone');
+    final (stripMat, stripMirror) = await pair(gain: 1.45);
+    final (lampGlowMat, lampGlowMirror) = await pair(gain: 1.55);
 
     // Prototype → instanced meshes, the hall's and its reflection's.
     final sets = <String, (fs.InstancedMesh, fs.InstancedMesh)>{};
@@ -132,10 +179,10 @@ class WalkScene {
     void place(
       String name,
       vm.Matrix4 at, {
-      fs.Material? real,
-      fs.Material? reflected,
+      required fs.Material real,
+      required fs.Material reflected,
     }) {
-      final (a, b) = set(name, real ?? hall, reflected ?? hallMirror);
+      final (a, b) = set(name, real, reflected);
       a.addInstance(at);
       b.addInstance(mirror * at);
       instances += 2;
@@ -148,37 +195,69 @@ class WalkScene {
     var k = 0;
     for (var a = 1; a <= g.along; a++) {
       for (var b = 1; b <= g.across; b++) {
-        final kind = manifest.capitals[k];
+        final capKind = manifest.capitals[k];
+        final shaftStyle = manifest.shaftAt(k);
         final turn = int.parse(manifest.turns[k]) * math.pi / 2;
         k++;
         final (x, z) = g.column(a, b);
         final special = manifest.specialAt(a, b);
         if (special == null) {
-          place('column-$kind', at(x, z, turn));
+          final (sReal, sMirror) = shaftMats[shaftStyle] ?? shaftMats['M']!;
+          place(
+            'shaft-$shaftStyle',
+            at(x, z, turn),
+            real: sReal,
+            reflected: sMirror,
+          );
+          final isCorinthian = capKind == 'C';
+          place(
+            'cap-$capKind',
+            at(x, z, turn),
+            real: isCorinthian ? capCorinthian : capPlain,
+            reflected: isCorinthian ? capCorinthianMirror : capPlainMirror,
+          );
+          // Warm water-edge spotlight pods beside alternating aisle columns
+          // create crisp golden light reflections dancing on the water mirror.
+          if ((a + b).isEven &&
+              manifest.prototypes.containsKey('uplamp-body')) {
+            place(
+              'uplamp-body',
+              at(x, z, turn),
+              real: railMat,
+              reflected: railMirror,
+            );
+            place(
+              'uplamp-glow',
+              at(x, z, turn),
+              real: lampGlowMat,
+              reflected: lampGlowMirror,
+            );
+          }
         } else if (special.carvedBase) {
           place(
             special.prototype,
             at(x, z),
-            real: heads,
-            reflected: headsMirror,
+            real: medusaStone,
+            reflected: medusaStoneMirror,
           );
           place(
-            'column-S',
+            'shaft-S',
             at(x, z, turn),
-            real: heads,
-            reflected: headsMirror,
+            real: headMarble,
+            reflected: headMarbleMirror,
+          );
+          place(
+            'cap-P',
+            at(x, z, turn),
+            real: headCapPlain,
+            reflected: headCapPlainMirror,
           );
           final photo = manifest.photos[special.prototype];
-          final weight = photo == null ? 1.0 : 0.0;
-          final face = fs.UnlitMaterial()..vertexColorWeight = weight;
-          if (photo != null) {
-            face.baseColorTexture = await fs.Texture2D.fromAsset(photo);
-          }
-          final faceMirror = fs.UnlitMaterial()
-            ..vertexColorWeight = weight
-            ..baseColorTexture = face.baseColorTexture
-            ..baseColorFactor = vm.Vector4(dim[0], dim[1], dim[2], 1);
-          faces.addAll([face, faceMirror]);
+          final (face, faceMirror) = await pair(
+            textureAsset: photo,
+            vertexWeight: photo == null ? 1.0 : 0.45,
+            head: true,
+          );
           final mesh = fs.InstancedMesh(
             geometry: _geometry(root, '${special.prototype}-face'),
             material: face,
@@ -194,37 +273,129 @@ class WalkScene {
             );
           }
         } else {
+          // Hen's-eye / Peacock-eyed column: real photo shaft + unfinished block capital.
+          final (wReal, wMirror) = shaftMats['W']!;
           place(
             special.prototype,
             at(x, z, turn),
-            real: weeping,
-            reflected: weepingMirror,
+            real: wReal,
+            reflected: wMirror,
           );
+          place(
+            'cap-P',
+            at(x, z, turn),
+            real: capPlain,
+            reflected: capPlainMirror,
+          );
+          if (manifest.prototypes.containsKey('uplamp-body')) {
+            place(
+              'uplamp-body',
+              at(x, z, 0),
+              real: railMat,
+              reflected: railMirror,
+            );
+            place(
+              'uplamp-glow',
+              at(x, z, 0),
+              real: lampGlowMat,
+              reflected: lampGlowMirror,
+            );
+          }
+        }
+      }
+    }
+    final hasTieRods = manifest.prototypes.containsKey('tie-rods');
+    for (var a = 0; a <= g.along; a++) {
+      for (var b = 0; b <= g.across; b++) {
+        final bx = (a + .5) * g.pitchX;
+        final bz = (b + .5) * g.pitchZ;
+        place('bay', at(bx, bz), real: brick, reflected: brickMirror);
+        if (hasTieRods && a >= 1 && b >= 1 && a < g.along && b < g.across) {
+          place('tie-rods', at(bx, bz), real: railMat, reflected: railMirror);
         }
       }
     }
     for (var a = 0; a <= g.along; a++) {
-      for (var b = 0; b <= g.across; b++) {
-        place('bay', at((a + .5) * g.pitchX, (b + .5) * g.pitchZ));
-      }
-    }
-    for (var a = 0; a <= g.along; a++) {
-      place('wall-long', at((a + .5) * g.pitchX, 0));
-      place('wall-long', at((a + .5) * g.pitchX, g.width, math.pi));
+      place(
+        'wall-long',
+        at((a + .5) * g.pitchX, 0),
+        real: plaster,
+        reflected: plasterMirror,
+      );
+      place(
+        'wall-long',
+        at((a + .5) * g.pitchX, g.width, math.pi),
+        real: plaster,
+        reflected: plasterMirror,
+      );
       if (a > 0) {
-        place('pilaster', at(a * g.pitchX, 0));
-        place('pilaster', at(a * g.pitchX, g.width, math.pi));
+        place(
+          'pilaster',
+          at(a * g.pitchX, 0),
+          real: plaster,
+          reflected: plasterMirror,
+        );
+        place(
+          'pilaster',
+          at(a * g.pitchX, g.width, math.pi),
+          real: plaster,
+          reflected: plasterMirror,
+        );
       }
     }
     for (var b = 0; b <= g.across; b++) {
-      place('wall-short', at(0, (b + .5) * g.pitchZ, -math.pi / 2));
-      place('wall-short', at(g.length, (b + .5) * g.pitchZ, math.pi / 2));
+      place(
+        'wall-short',
+        at(0, (b + .5) * g.pitchZ, -math.pi / 2),
+        real: plaster,
+        reflected: plasterMirror,
+      );
+      place(
+        'wall-short',
+        at(g.length, (b + .5) * g.pitchZ, math.pi / 2),
+        real: plaster,
+        reflected: plasterMirror,
+      );
       if (b > 0) {
-        place('pilaster', at(0, b * g.pitchZ, -math.pi / 2));
-        place('pilaster', at(g.length, b * g.pitchZ, math.pi / 2));
+        place(
+          'pilaster',
+          at(0, b * g.pitchZ, -math.pi / 2),
+          real: plaster,
+          reflected: plasterMirror,
+        );
+        place(
+          'pilaster',
+          at(g.length, b * g.pitchZ, math.pi / 2),
+          real: plaster,
+          reflected: plasterMirror,
+        );
       }
     }
-    place('deck', vm.Matrix4.identity());
+    place('deck', vm.Matrix4.identity(), real: deckMat, reflected: deckMirror);
+    if (manifest.prototypes.containsKey('deck-rail')) {
+      place(
+        'deck-rail',
+        vm.Matrix4.identity(),
+        real: railMat,
+        reflected: railMirror,
+      );
+    }
+    if (manifest.prototypes.containsKey('stair')) {
+      place(
+        'stair',
+        vm.Matrix4.identity(),
+        real: stairMat,
+        reflected: stairMirror,
+      );
+    }
+    if (manifest.prototypes.containsKey('deck-strip')) {
+      place(
+        'deck-strip',
+        vm.Matrix4.identity(),
+        real: stripMat,
+        reflected: stripMirror,
+      );
+    }
     for (final (a, b) in sets.values) {
       world.add(
         fs.Node(name: 'set')..addComponent(fs.InstancedMeshComponent(a)),
@@ -234,7 +405,8 @@ class WalkScene {
       );
     }
 
-    // The water: translucent, its ripple drifting.
+    // Dual-layer liquid water:
+    // 1) Primary translucent emerald-amber ripple plane (full coverage alpha)
     water
       ..alphaMode = fs.AlphaMode.blend
       ..baseColorTexture = await fs.Texture2D.fromAsset(
@@ -247,9 +419,29 @@ class WalkScene {
         manifest.waterColour[2],
         manifest.waterAlpha,
       );
-    final waterMesh = fs.Mesh(_geometry(root, 'water'), water);
-    world.add(fs.Node(name: 'water', mesh: waterMesh));
+    world.add(
+      fs.Node(name: 'water', mesh: fs.Mesh(_geometry(root, 'water'), water)),
+    );
     triangles += manifest.prototypes['water'] ?? 0;
+
+    // 2) Counter-drifting warm golden liquid caustics sheet slightly above water
+    if (manifest.prototypes.containsKey('water-caustics') &&
+        manifest.textures.containsKey('caustics')) {
+      waterCaustics
+        ..alphaMode = fs.AlphaMode.blend
+        ..baseColorTexture = await fs.Texture2D.fromAsset(
+          manifest.textures['caustics']!,
+        )
+        ..vertexColorWeight = 0
+        ..baseColorFactor = vm.Vector4(0.92, 0.68, 0.36, 0.28);
+      world.add(
+        fs.Node(
+          name: 'water-caustics',
+          mesh: fs.Mesh(_geometry(root, 'water-caustics'), waterCaustics),
+        ),
+      );
+      triangles += manifest.prototypes['water-caustics'] ?? 0;
+    }
 
     final fishGeometry = _geometry(root, 'fish');
     final rng = math.Random(manifest.fishCount);
@@ -264,49 +456,70 @@ class WalkScene {
     }
   }
 
-  /// Per frame: the reveal's lights, the water's drift and the fish.
+  /// Per frame: the reveal's lights, dual-layer water shimmer, and fish.
   void update(WalkController c, double elapsed) {
     final hallK = c.hallLight, headK = c.headLight;
     final dim = manifest.mirrorDim;
-    hall.baseColorFactor = vm.Vector4(hallK, hallK, hallK, 1);
-    hallMirror.baseColorFactor = vm.Vector4(
-      dim[0] * hallK,
-      dim[1] * hallK,
-      dim[2] * hallK,
-      1,
-    );
-    heads.baseColorFactor = vm.Vector4(headK, headK, headK, 1);
-    headsMirror.baseColorFactor = vm.Vector4(
-      dim[0] * headK,
-      dim[1] * headK,
-      dim[2] * headK,
-      1,
-    );
-    for (var i = 0; i < faces.length; i++) {
-      final k = i < 2 ? hallK : headK;
-      final m = i.isOdd ? dim[0] : 1.0;
-      faces[i].baseColorFactor = vm.Vector4(k * m, k * m, k * m, 1);
+    for (final (real, reflected, gain) in _hallMats) {
+      final v = hallK * gain;
+      real.baseColorFactor = vm.Vector4(v, v, v, 1);
+      reflected.baseColorFactor = vm.Vector4(
+        dim[0] * v,
+        dim[1] * v,
+        dim[2] * v,
+        1,
+      );
     }
-    final drift = c.reduced ? 0.0 : elapsed * .012;
-    water.baseColorTextureTransform.offset = vm.Vector2(drift, drift * .6);
+    for (final (real, reflected, gain) in _headMats) {
+      final v = headK * gain;
+      real.baseColorFactor = vm.Vector4(v, v, v, 1);
+      reflected.baseColorFactor = vm.Vector4(
+        dim[0] * v,
+        dim[1] * v,
+        dim[2] * v,
+        1,
+      );
+    }
+    // Dual counter-drifting ripples produce organic shimmering water waves.
+    final drift = c.reduced ? 0.0 : elapsed * .018;
+    water.baseColorTextureTransform.offset = vm.Vector2(drift, drift * .65);
     water.baseColorFactor = vm.Vector4(
-      manifest.waterColour[0],
-      manifest.waterColour[1],
-      manifest.waterColour[2],
-      manifest.waterAlpha * (hallK * .7 + .3),
+      manifest.waterColour[0] * (0.3 + 0.7 * hallK),
+      manifest.waterColour[1] * (0.3 + 0.7 * hallK),
+      manifest.waterColour[2] * (0.3 + 0.7 * hallK),
+      manifest.waterAlpha * (hallK * .65 + .35),
     );
+    final cDrift = c.reduced ? 0.0 : elapsed * .014;
+    waterCaustics.baseColorTextureTransform.offset = vm.Vector2(
+      -cDrift * .85,
+      cDrift * 1.15,
+    );
+    final pulse = c.reduced ? 0.16 : 0.16 + 0.04 * math.sin(elapsed * 1.35);
+    waterCaustics.baseColorFactor = vm.Vector4(
+      0.84 * hallK,
+      0.72 * hallK,
+      0.54 * hallK,
+      pulse * hallK,
+    );
+
     final g = manifest.grid, eye = c.camera.eye;
+    // Snap each fish orbit to the open centre of a vault bay near the eye so
+    // fish always swim in open water and never clip through columns or bases.
+    final baseBayX = (eye.x / g.pitchX).floor().clamp(0, g.along);
+    final baseBayZ = (eye.z / g.pitchZ).floor().clamp(0, g.across);
     for (var i = 0; i < _fish.length; i++) {
       final node = _fish[i];
       node.visible = c.fish;
       if (!c.fish) continue;
-      // Each fish circles a point near the eye, slowly, just under the
-      // surface.
       final p = _fishPhase[i];
-      final t = elapsed * (.18 + (i % 5) * .03) + p;
-      final cx = (eye.x + math.sin(p) * 6).clamp(1.0, g.length - 1);
-      final cz = (eye.z + math.cos(p * 1.7) * 4).clamp(1.0, g.width - 1);
-      final r = 1.6 + (i % 3) * .7;
+      final t = elapsed * (.20 + (i % 5) * .03) + p;
+      final ox = (i % 3) - 1;
+      final oz = ((i ~/ 3) % 3) - 1;
+      final bx = (baseBayX + ox).clamp(0, g.along);
+      final bz = (baseBayZ + oz).clamp(0, g.across);
+      final cx = (bx + 0.5) * g.pitchX;
+      final cz = (bz + 0.5) * g.pitchZ;
+      final r = 0.85 + (i % 3) * 0.22;
       final x = cx + math.cos(t) * r, z = cz + math.sin(t) * r;
       final heading = t + math.pi / 2;
       node.localTransform = vm.Matrix4.translationValues(
@@ -330,7 +543,7 @@ class WalkScene {
 }
 
 /// Projects walk points onto the screen with the same camera the scene
-/// draws with, for the callouts' leader lines.
+/// draws with, for the callouts' leader lines and interactive deck circles.
 class WalkProjector {
   WalkProjector(WalkCamera c, this.width, this.height) {
     final eye = vm.Vector3(c.eye.x, c.eye.y, c.eye.z);

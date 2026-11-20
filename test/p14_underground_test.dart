@@ -71,12 +71,45 @@ void main() {
       expect((g.along, g.across, g.columns), (28, 12, 336));
       expect(walk.capitals.length, 336);
       expect(walk.capitals.split('').where((c) => c == 'C').length, 98);
+      expect(walk.shafts.length, 336);
+      expect(walk.shafts.split('').toSet(), containsAll(['M', 'R', 'T', 'D']));
       expect(walk.specials.map((s) => s.id), [
         'medusa-sideways',
         'medusa-inverted',
         'weeping-column',
       ]);
     });
+
+    test(
+      'free X/Y look, interactive stepping circles, and tappable callouts',
+      () {
+        final c = WalkController(walk);
+        final p0 = c.pitch;
+        final y0 = c.yaw;
+        c.lookBy(0.35, 0.42);
+        expect(c.yaw, closeTo(y0 + 0.35, 1e-6));
+        expect(c.pitch, closeTo(p0 + 0.42, 1e-6));
+        expect(c.waypoints.length, greaterThan(10));
+        final startS = c.position;
+        final targetWp = c.waypoints.firstWhere(
+          (w) => (w.s - startS).abs() > 6,
+        );
+        c.glideToWaypoint(targetWp);
+        expect(c.gliding, isTrue);
+        for (var i = 0; i < 60; i++) {
+          c.advance(0.05);
+        }
+        expect(c.gliding, isFalse);
+        expect(c.position, closeTo(targetWp.s, 0.05));
+        // Informative callouts carry metrics and real pinned photographs.
+        final vaults = walk.callout('vaults');
+        expect(vaults.metric?.en, isNotEmpty);
+        expect(vaults.photo, isNotNull);
+        expect(registry.mediaItem(vaults.photo!), isNotNull);
+        c.selectCallout(vaults);
+        expect(c.selectedCallout?.id, 'vaults');
+      },
+    );
 
     test('the model is the one the manifest pins, the faces are photographs '
         'of the heads', () {
@@ -108,6 +141,34 @@ void main() {
       final end = c.camera;
       final head = walk.stop('medusa-inverted');
       expect(end.yaw, closeTo(WalkCamera(head.eye, head.look).yaw, 1e-6));
+      final stair = walk.stop('stair');
+      c.goTo(stair);
+      expect(c.camera.eye.y, closeTo(stair.eye.y, 1e-6));
+      c.walk(forward: 0.5);
+      expect(c.camera.eye.y, closeTo(walk.grid.eye, 1e-6));
+    });
+
+    test('story camera follows the walkway clear of all 336 columns', () {
+      final c = WalkController(walk)..playStory();
+      final g = walk.grid;
+      final total = walk.storySeconds;
+      const samples = 400;
+      for (var s = 0; s <= samples; s++) {
+        final eye = c.camera.eye;
+        for (var a = 1; a <= g.along; a++) {
+          for (var b = 1; b <= g.across; b++) {
+            final (cx, cz) = g.column(a, b);
+            final d =
+                ((eye.x - cx) * (eye.x - cx) + (eye.z - cz) * (eye.z - cz));
+            expect(
+              d,
+              greaterThanOrEqualTo(0.75 * 0.75),
+              reason: 'story camera clipped column ($a,$b) at step $s',
+            );
+          }
+        }
+        c.advance(total / samples);
+      }
     });
 
     test('reduced motion: stills, no fish; fish read IMAGINED', () {
@@ -219,6 +280,15 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('YK 4'), findsWidgets);
       expect(find.textContaining('Galley'), findsOneWidget);
+      // Close ship sheet, open Ships dock and verify Galley filter narrows to 6 ships.
+      await tester.tapAt(const Offset(20, 20));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('section-ships')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('ship-filter-galley')));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey('section-ship-4')), findsOneWidget);
+      expect(find.byKey(const ValueKey('section-ship-1')), findsNothing);
     });
   });
 

@@ -93,17 +93,24 @@ class WalkStop {
   final List<String> sourceIds;
 }
 
-/// A leader-line note on something in the hall.
+/// A leader-line note on something in the hall, optionally carrying a real
+/// reference photograph and concise architectural measurement badge.
 class WalkCallout {
   WalkCallout(JsonReader r)
     : id = r.string('id'),
       anchor = WalkPoint.fromJson(r.value('anchor')),
       label = Localized.fromJson(r.object('label')),
       note = Localized.fromJson(r.object('note')),
+      metric = r.optionalObject('metric') == null
+          ? null
+          : Localized.fromJson(r.optionalObject('metric')!),
+      photo = r.optionalString('photo'),
       sourceIds = r.strings('sources');
   final String id;
   final WalkPoint anchor;
   final Localized label, note;
+  final Localized? metric;
+  final String? photo;
   final List<String> sourceIds;
 }
 
@@ -130,6 +137,7 @@ class WalkManifest {
       photos = (r.optionalObject('photos') ?? const {}).cast<String, String>(),
       grid = decode(r.object('grid'), WalkGrid.new),
       capitals = r.string('capitals'),
+      shafts = r.optionalString('shafts') ?? '',
       turns = r.string('turns'),
       specials = r.list('specials', (v) => decode(v as Json, WalkSpecial.new)),
       route = r.list('route', (v) {
@@ -160,6 +168,9 @@ class WalkManifest {
       sourceIds = r.strings('sources') {
     if (capitals.length != grid.columns || turns.length != grid.columns) {
       throw FormatException('$id: one capital and one turn per column');
+    }
+    if (shafts.isNotEmpty && shafts.length != grid.columns) {
+      throw FormatException('$id: one shaft style per column');
     }
     if (route.length < 2) throw FormatException('$id: a route needs 2 points');
     for (final s in stills) {
@@ -197,9 +208,12 @@ class WalkManifest {
   final Map<String, String> textures, photos;
   final WalkGrid grid;
 
-  /// One letter per column (C Corinthian, I Ionic, D Doric) and one quarter
-  /// turn per column, column-major from the x = 0 wall.
-  final String capitals, turns;
+  /// One letter per column for capital (C Corinthian, B bossed cushion, P plain),
+  /// spolia shaft style (M smooth Attic, R rough-hewn, T iron-banded, D pedestal),
+  /// and quarter turn, column-major from the x = 0 wall.
+  final String capitals, shafts, turns;
+
+  String shaftAt(int index) => index < shafts.length ? shafts[index] : 'M';
   final List<WalkSpecial> specials;
 
   /// The visitors' deck, (x, z) in metres.
