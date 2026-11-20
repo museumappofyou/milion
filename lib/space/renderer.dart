@@ -28,8 +28,9 @@ export 'scene.dart';
 class SpaceRenderer {
   /// Records pack the part index into 8 bits.
   static const maxParts = 256;
-  SpaceRenderer(this.model)
+  SpaceRenderer(this.model, {this.nightLamps = const []})
     : assert(model.parts.length <= maxParts),
+      _edgeBias = (model.bounds.radius * 0.004).clamp(0.012, 0.25),
       _screen = [for (final p in model.parts) Float32List(p.vertexCount * 3)],
       _side = [for (final p in model.parts) Float32List(p.vertexCount)],
       _facing = [for (final p in model.parts) Uint8List(p.triangleCount)],
@@ -46,6 +47,8 @@ class SpaceRenderer {
       ],
       _edgeCandidates = [for (final p in model.parts) _candidates(p)];
   final SpaceModel model;
+  final List<(double, double, double)> nightLamps;
+  final double _edgeBias;
   final List<Float32List> _screen, _side, _key, _aoMean;
 
   /// Per part, the edges that can ever be drawn: sharp creases, and edges
@@ -79,7 +82,6 @@ class SpaceRenderer {
   SpaceStats stats = const SpaceStats();
 
   static const _period = 5.0, _tile = 16.0, _rows = 64;
-  static const _edgeBias = .25;
   final _images = <SpaceStyle, ui.Image>{};
   SpaceStyle? _colorsFor;
   List<Int32List> _colors = const [];
@@ -198,7 +200,8 @@ class SpaceRenderer {
     if (_colorsFor == style) return;
     _colorsFor = style;
     _colors = [
-      for (final part in model.parts) cornerColors(style, part, model.bounds),
+      for (final part in model.parts)
+        cornerColors(style, part, model.bounds, lamps: nightLamps),
     ];
   }
 
@@ -507,31 +510,41 @@ class SpaceRenderer {
     }
   }
 
-  /// Stores where triangle [t] of part [i] crosses the section plane. Only
-  /// the two crossing points are needed, computed exactly as [_clipTriangle]
-  /// computes them (P12: the full clip mixed colours and projected kept
-  /// corners for every cut triangle).
+  /// Stores where triangle [t] of part [i] crosses the section plane,
+  /// oriented from entry (`sv > 0 → sw <= 0`) to exit (`sv <= 0 → sw > 0`).
+  /// Because every solid has outward CCW winding, all outer section loops run
+  /// consistently in one direction while interior cavities run opposite, so
+  /// [PathFillType.nonZero] fills overlapping solids solidly while keeping
+  /// true rooms and window shafts open.
   @pragma('vm:unsafe:no-bounds-checks')
   void _segment(SpaceProjector p, int i, int t) {
     final part = model.parts[i], pos = part.positions, side = _side[i];
     final tris = part.triangles;
     final ox = _offset[i * 3], oy = _offset[i * 3 + 1], oz = _offset[i * 3 + 2];
-    var found = 0;
+    var hasIn = false, hasOut = false;
     for (var k = 0; k < 3; k++) {
       final v = tris[t * 3 + k], w = tris[t * 3 + (k + 1) % 3];
       final sv = side[v], sw = side[w];
       if ((sv <= 0) == (sw <= 0)) continue;
       final f = sv / (sv - sw);
+      final slot = sv > 0
+          ? 0
+          : 1; // 0: removed→kept (in), 1: kept→removed (out)
       p.project(
         pos[v * 3] + (pos[w * 3] - pos[v * 3]) * f + ox,
         pos[v * 3 + 1] + (pos[w * 3 + 1] - pos[v * 3 + 1]) * f + oy,
         pos[v * 3 + 2] + (pos[w * 3 + 2] - pos[v * 3 + 2]) * f + oz,
         _clipScreen,
-        found * 3,
+        slot * 3,
       );
-      if (++found == 2) break;
+      if (slot == 0) {
+        hasIn = true;
+      } else {
+        hasOut = true;
+      }
+      if (hasIn && hasOut) break;
     }
-    if (found < 2) return;
+    if (!hasIn || !hasOut) return;
     if (_segN * 4 + 4 > _seg.length) {
       _seg = Float32List(math.max(1024, _seg.length * 2))..setAll(0, _seg);
     }
@@ -544,9 +557,9 @@ class SpaceRenderer {
   }
 
   /// Fills each cut part's section, then outlines all of them; returns the
-  /// fan triangles filled. A fan from any point over closed outlines covers
-  /// a point once per outline crossing beyond it, so even-odd fills exactly
-  /// the section.
+  /// fan triangles filled. Every segment is oriented consistently from the
+  /// solid's outward winding, so [PathFillType.nonZero] fills overlapping
+  /// intra-part solids cleanly while leaving true hollow cavities open.
   int _sections(Canvas canvas, SpacePalette palette) {
     if (_segN == 0) return 0;
     final poche = palette.poche.toARGB32(), ink = palette.ink.toARGB32();
@@ -555,10 +568,6 @@ class SpaceRenderer {
     for (var i = 0; i < model.parts.length; i++) {
       final from = _segFrom[i], to = _segTo[i];
       if (to <= from || _alphaOf[i] == 0) continue;
-      // One contour through every fan triangle (o, a, b): even-odd counts
-      // edge crossings, so it fills exactly what the separate triangles did,
-      // in one engine call instead of four per segment (P12: IX cuts about a
-      // thousand segments a frame).
       final o = Offset(seg[from * 4], seg[from * 4 + 1]);
       final points = List<Offset>.filled((to - from) * 3, o);
       for (var k = from, j = 0; k < to; k++, j += 3) {
@@ -566,7 +575,7 @@ class SpaceRenderer {
         points[j + 2] = Offset(seg[k * 4 + 2], seg[k * 4 + 3]);
       }
       final path = Path()
-        ..fillType = PathFillType.evenOdd
+        ..fillType = PathFillType.nonZero
         ..addPolygon(points, true);
       filled += to - from;
       canvas.drawPath(path, Paint()..color = Color(_alpha(poche, _alphaOf[i])));
@@ -761,7 +770,7 @@ class SpaceRenderer {
           final level = (.78 - tone) / .58;
           if (level > .04) row = 1.5 + (level < 1 ? level : 1) * (_rows - 2);
         }
-        final steep = nz.abs() < .85;
+        final steep = nz.abs() < .97;
         if (!cut || (side[a] <= 0 && side[b] <= 0 && side[c] <= 0)) {
           final o = n * 2;
           out[o] = scr[a * 3];

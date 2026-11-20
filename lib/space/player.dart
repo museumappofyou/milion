@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 
 import '../design/components.dart';
 import '../design/plan_icon.dart';
+import '../design/player_bar.dart';
 import '../design/theme.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
@@ -46,6 +47,7 @@ class SpacePlayerState extends State<SpacePlayer>
   SpaceView? _gestureStart;
   int loadMicros = 0;
   bool _night = false;
+  bool _reduced = false;
   bool get ticking => _ticker.isActive;
 
   @override
@@ -70,22 +72,22 @@ class SpacePlayerState extends State<SpacePlayer>
     loadMicros = watch.elapsedMicroseconds;
     if (!mounted) return;
     final c = SpaceController(widget.study, model)
-      ..setReduced(MediaQuery.disableAnimationsOf(context))
+      ..setReduced(_reduced)
       ..addListener(_changed);
     setState(() {
       controller = c;
-      renderer = SpaceRenderer(model);
+      renderer = SpaceRenderer(model, nightLamps: widget.study.nightLamps);
     });
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduced = MediaQuery.disableAnimationsOf(context);
+    _reduced = MediaQuery.disableAnimationsOf(context);
     final c = controller;
-    if (c != null && c.reduced != reduced) {
+    if (c != null && c.reduced != _reduced) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) c.setReduced(reduced);
+        if (mounted) c.setReduced(_reduced);
       });
     }
   }
@@ -190,7 +192,20 @@ class SpacePlayerState extends State<SpacePlayer>
           final s = context.l10n;
           return Scaffold(
             appBar: AppBar(
-              title: Text(widget.study.title.inLanguage(context.language)),
+              title: Text(
+                widget.study.title.inLanguage(context.language),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              actions: [
+                PlayerSourcesButton(
+                  key: const ValueKey('space-appbar-sources'),
+                  tooltip: s.spaceSources,
+                  onPressed: controller == null
+                      ? null
+                      : () => controls(SpacePanel.sources),
+                ),
+              ],
             ),
             body: Column(
               children: [
@@ -230,51 +245,36 @@ class SpacePlayerState extends State<SpacePlayer>
                     ),
                     child: SpaceSheet(player: this, panel: panel),
                   ),
-                SafeArea(
-                  top: false,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
+                PlayerDockBar(
+                  items: [
+                    PlayerDockItem(
+                      key: const ValueKey('space-assemble'),
+                      symbol: PlanSymbol.assembly,
+                      label: s.spaceAssemble,
+                      selected: _open == SpacePanel.assemble,
+                      onTap: controller == null
+                          ? null
+                          : () => controls(SpacePanel.assemble),
                     ),
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 12,
-                      runSpacing: 4,
-                      children: [
-                        for (final item in [
-                          (
-                            SpacePanel.assemble,
-                            PlanSymbol.assembly,
-                            s.spaceAssemble,
-                          ),
-                          (
-                            SpacePanel.section,
-                            PlanSymbol.section,
-                            s.spaceSection,
-                          ),
-                          (SpacePanel.style, PlanSymbol.light, s.spaceStyle),
-                        ])
-                          // The open panel's button reads as pressed.
-                          TextButton.icon(
-                            key: ValueKey('space-${item.$1.name}'),
-                            style: _open == item.$1
-                                ? TextButton.styleFrom(
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .primary
-                                        .withValues(alpha: .12),
-                                  )
-                                : null,
-                            onPressed: controller == null
-                                ? null
-                                : () => controls(item.$1),
-                            icon: PlanIcon(item.$2),
-                            label: Text(item.$3),
-                          ),
-                      ],
+                    PlayerDockItem(
+                      key: const ValueKey('space-section'),
+                      symbol: PlanSymbol.section,
+                      label: s.spaceSection,
+                      selected: _open == SpacePanel.section,
+                      onTap: controller == null
+                          ? null
+                          : () => controls(SpacePanel.section),
                     ),
-                  ),
+                    PlayerDockItem(
+                      key: const ValueKey('space-style'),
+                      symbol: PlanSymbol.light,
+                      label: s.spaceStyle,
+                      selected: _open == SpacePanel.style,
+                      onTap: controller == null
+                          ? null
+                          : () => controls(SpacePanel.style),
+                    ),
+                  ],
                 ),
               ],
             ),

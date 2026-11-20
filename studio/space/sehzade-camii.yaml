@@ -37,6 +37,7 @@ orientation:
     - [41.0141296, 28.9571765]
     - [41.0142959, 28.9569647]
 step: 4.0
+nightLamps: [[0, 0, 9.5], [-8, 0, 7.5], [8, 0, 7.5], [0, 8, 7.5], [0, -8, 7.5]]
 epochs:
   - {year: 1548, label: {en: "Şehzade Mosque, 1548", tr: "Şehzade Camii, 1548"}}
   - {year: 1640, label: {en: "Murad IV's şadırvan, by 1640", tr: "IV. Murad'ın şadırvanı, 1640'a dek"}}
@@ -144,20 +145,20 @@ parts:
     params: {span: 19.0, thickness: 1.5, depth: 5.0, kind: pointed, pointed: 0.146, step: 2.0}
   - id: pendentives
     kind: pendentives
-    at: [{at: [0, 0], z: 17.3}]
-    params: {half: 9.5, top: 10.2, step: 2.0}
+    at: [{at: [0, 0], z: 16.0}]
+    params: {half: 9.5, top: 11.5, step: 2.0}
   - id: dome
     kind: dome
     material: lead
     at: [{at: [0, 0], z: 27.5}]
     params: {radius: 9.5, thickness: 1.0, windows: 24, band: 3.2, share: 0.5, phase: 0.1309,
-             step: 2.4}
+             step: 2.8}
   - id: semidomes
     kind: semidome
     material: lead
-    at: [{at: [0, 9.5], z: 17.3}, {at: [0, -9.5], z: 17.3, turn: 180},
-         {at: [9.5, 0], z: 17.3, turn: -90}, {at: [-9.5, 0], z: 17.3, turn: 90}]
-    params: {radius: 9.5, thickness: 1.0, windows: 5, band: 2.4, share: 0.5, n: 16, rows: 4}
+    at: [{at: [0, 10.4], z: 17.3}, {at: [0, -10.4], z: 17.3, turn: 180},
+         {at: [10.4, 0], z: 17.3, turn: -90}, {at: [-10.4, 0], z: 17.3, turn: 90}]
+    params: {radius: 8.6, thickness: 0.9, windows: 5, band: 2.4, share: 0.5, n: 16, rows: 4}
   - id: exedrae
     kind: exedra
     note: two exedrae skirt each half-dome, at its sides; three windows each
@@ -182,22 +183,22 @@ parts:
   - id: weight-towers
     kind: tower
     note: the piers carried up as cylindrical weight towers; size estimated
-    at: [{at: [11.4, 11.4], z: 17.3}, {at: [-11.4, 11.4], z: 17.3}, {at: [11.4, -11.4], z: 17.3},
-         {at: [-11.4, -11.4], z: 17.3}]
-    params: {size: 3.4, height: 12.5, kind: round, merlons: false, roof: 3.2}
+    at: [{at: [11.4, 11.4], z: 16.0}, {at: [-11.4, 11.4], z: 16.0}, {at: [11.4, -11.4], z: 16.0},
+         {at: [-11.4, -11.4], z: 16.0}]
+    params: {size: 3.4, height: 13.8, kind: round, merlons: false, roof: 3.2}
   - id: gallery-right
     kind: portico
     note: single-storey side galleries, five bays, about 3 m deep
     at: [[24, -21, 90]]
     params: {bays: 5, bay: 8.4, depth: 3.0, spring: 3.8, thickness: 0.6, back: false,
              vault: barrel, transverse: false, step: 6.0,
-             column: {diameter: 0.5, capital: lozenge, arch: pointed, n: 6}}
+             column: {diameter: 0.5, capital: lozenge, arch: segmental, rise: 1.2, n: 6}}
   - id: gallery-left
     kind: portico
     at: [[-24, 21, -90]]
     params: {bays: 5, bay: 8.4, depth: 3.0, spring: 3.8, thickness: 0.6, back: false,
              vault: barrel, transverse: false, step: 6.0,
-             column: {diameter: 0.5, capital: lozenge, arch: pointed, n: 6}}
+             column: {diameter: 0.5, capital: lozenge, arch: segmental, rise: 1.2, n: 6}}
   - id: court
     kind: courtyard
     note: the courtyard, as large as the hall; the şadırvan is Murad IV's
@@ -208,10 +209,10 @@ parts:
       spring: 5.6
       thickness: 0.7
       wall: 1.5
-      height: 9.0
+      height: 10.5
       open_side: n
-      column: {diameter: 0.75, capital: muqarnas, arch: pointed, n: 6}
-      dome_segments: 10
+      column: {diameter: 0.75, capital: muqarnas, arch: pointed, pointed: 0.146, n: 6}
+      dome_segments: 8
       dome_rows: 2
       sadirvan_spec: {radius: 3.0, sides: 8, roof: cone, roof_height: 2.6, column_height: 3.4}
       step: 5.0

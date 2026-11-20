@@ -122,107 +122,156 @@ orientation:
     - [41.0086011, 28.9808086]
     - [41.0086839, 28.9806421]
 step: 4.0
+nightLamps: [[0, 0, 18], [-12, 0, 14], [12, 0, 14], [0, 18, 14], [0, -18, 14], [-26, 0, 15], [26, 0, 15], [0, -36, 14]]
 epochs:
   - {year: 537, label: {en: "Justinian's church, 537", tr: "Justinianus'un kilisesi, 537"}}
   - {year: 558, collapse: true, label: {en: "The dome falls, 558", tr: "Kubbe çöküyor, 558"}}
   - {year: 562, label: {en: "The higher dome, 562", tr: "Daha yüksek kubbe, 562"}}
   - {year: 1573, label: {en: "Buttresses and minarets, by the 1570s", tr: "Payandalar ve minareler, 1570'lere dek"}}
 parts:
+  # Marble nave and narthex pavement slab.
+  - id: floor
+    kind: slab
+    material: marble
+    at: [[0, -7.5]]
+    z: -0.4
+    params: {width: 70.6, depth: 78.6, thickness: 0.4, step: 16.0}
   # Outer walls: the nave with its aisles and galleries, 63 m long inside
-  # the east and west walls, two storeys, 24 m.
+  # the east and west walls, two storeys, 24 m, butt-jointed cleanly.
   - id: wall-north
     kind: wall
-    at: [[-35, -31.5, 90]]
+    material: ochre
+    at: [[-35.0, -30.75, 90]]
     params:
-      length: 63
+      length: 61.5
       height: 24
       thickness: 1.5
-      step: 8.0
+      step: 5.5
       openings: &aisle-windows
-        - {x: 5.5, width: 2.6, sill: 3, head: 8, arch: round}
-        - {x: 23, width: 2.6, sill: 3, head: 8, arch: round}
-        - {x: 31.5, width: 2.6, sill: 3, head: 8, arch: round}
-        - {x: 40, width: 2.6, sill: 3, head: 8, arch: round}
-        - {x: 57.5, width: 2.6, sill: 3, head: 8, arch: round}
+        - {x: 4.75, width: 2.6, sill: 3.0, head: 8.5, arch: round}
+        - {x: 4.75, width: 2.6, sill: 14.5, head: 20.5, arch: round}
+        - {x: 22.25, width: 2.6, sill: 3.0, head: 8.5, arch: round}
+        - {x: 22.25, width: 2.6, sill: 14.5, head: 20.5, arch: round}
+        - {x: 30.75, width: 2.6, sill: 3.0, head: 8.5, arch: round}
+        - {x: 30.75, width: 2.6, sill: 14.5, head: 20.5, arch: round}
+        - {x: 39.25, width: 2.6, sill: 3.0, head: 8.5, arch: round}
+        - {x: 39.25, width: 2.6, sill: 14.5, head: 20.5, arch: round}
+        - {x: 56.75, width: 2.6, sill: 3.0, head: 8.5, arch: round}
+        - {x: 56.75, width: 2.6, sill: 14.5, head: 20.5, arch: round}
   - id: wall-south
     kind: wall
-    at: [[35, -31.5, 90]]
-    params: {length: 63, height: 24, thickness: 1.5, step: 8.0, openings: *aisle-windows}
+    material: ochre
+    at: [[35.0, -30.75, 90]]
+    params: {length: 61.5, height: 24, thickness: 1.5, step: 5.5, openings: *aisle-windows}
   - id: wall-east
     kind: wall
+    material: ochre
     note: the east wall either side of the apse
-    at: [[-35, 31.5], [10.5, 31.5]]
-    params: {length: 24.5, height: 24, thickness: 1.5, step: 8.0}
+    at: [[-35.75, 31.5], [8.5, 31.5]]
+    params: {length: 27.25, height: 24, thickness: 1.5, step: 6.5}
   - id: wall-west
     kind: wall
+    material: ochre
     note: the nave's west wall, with the five doors from the inner narthex
-    at: [[-35, -31.5]]
+    at: [[-35.75, -31.5]]
     params:
-      length: 70
+      length: 71.5
       height: 24
       thickness: 1.5
-      step: 8.0
+      step: 7.0
       openings:
-        - {x: 23, width: 3.0, sill: 0, head: 7, arch: round}
-        - {x: 29, width: 3.0, sill: 0, head: 7, arch: round}
-        - {x: 35, width: 4.4, sill: 0, head: 9, arch: round}
-        - {x: 41, width: 3.0, sill: 0, head: 7, arch: round}
-        - {x: 47, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 23.75, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 29.75, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 35.75, width: 4.4, sill: 0, head: 9, arch: round}
+        - {x: 41.75, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 47.75, width: 3.0, sill: 0, head: 7, arch: round}
   - id: narthex-west
     kind: wall
-    at: [[-35, -41]]
+    material: ochre
+    at: [[-35.75, -41.0]]
     params:
-      length: 70
+      length: 71.5
       height: 22
       thickness: 1.5
-      step: 8.0
+      step: 6.5
       openings:
-        - {x: 29, width: 3.0, sill: 0, head: 7, arch: round}
-        - {x: 35, width: 3.6, sill: 0, head: 8, arch: round}
-        - {x: 41, width: 3.0, sill: 0, head: 7, arch: round}
+        - {x: 18.75, width: 2.6, sill: 13.5, head: 19.0, arch: round}
+        - {x: 29.75, width: 3.0, sill: 0, head: 7.5, arch: round}
+        - {x: 29.75, width: 3.0, sill: 13.5, head: 19.0, arch: round}
+        - {x: 35.75, width: 3.6, sill: 0, head: 8.5, arch: round}
+        - {x: 35.75, width: 3.6, sill: 13.5, head: 19.0, arch: round}
+        - {x: 41.75, width: 3.0, sill: 0, head: 7.5, arch: round}
+        - {x: 41.75, width: 3.0, sill: 13.5, head: 19.0, arch: round}
+        - {x: 52.75, width: 2.6, sill: 13.5, head: 19.0, arch: round}
   - id: narthex-ends
     kind: wall
-    at: [[-35, -41, 90], [35, -41, 90]]
-    params: {length: 9.5, height: 22, thickness: 1.5, step: 8.0}
+    material: ochre
+    at: [[-35.0, -40.25, 90], [35.0, -40.25, 90]]
+    params: {length: 8.0, height: 22, thickness: 1.5, step: 6.5}
   - id: exonarthex-west
     kind: wall
-    at: [[-35, -47]]
+    material: ochre
+    at: [[-35.75, -47.0]]
     params:
-      length: 70
+      length: 71.5
       height: 10
       thickness: 1.2
-      step: 8.0
+      step: 6.5
       openings:
-        - {x: 35, width: 3.6, sill: 0, head: 6, arch: round}
+        - {x: 20.75, width: 2.6, sill: 0, head: 5.5, arch: round}
+        - {x: 28.25, width: 2.6, sill: 0, head: 5.5, arch: round}
+        - {x: 35.75, width: 3.6, sill: 0, head: 6.5, arch: round}
+        - {x: 43.25, width: 2.6, sill: 0, head: 5.5, arch: round}
+        - {x: 50.75, width: 2.6, sill: 0, head: 5.5, arch: round}
   - id: exonarthex-ends
     kind: wall
-    at: [[-35, -47, 90], [35, -47, 90]]
-    params: {length: 6, height: 10, thickness: 1.2, step: 8.0}
+    material: ochre
+    at: [[-35.15, -46.4, 90], [35.15, -46.4, 90]]
+    params: {length: 4.65, height: 10, thickness: 1.2, step: 6.5}
   - id: piers
     kind: pier
+    material: ochre
     note: four main piers, their inner faces on the dome's 31 m square
     at: [[-19, -18.5], [-19, 18.5], [19, -18.5], [19, 18.5]]
     names: [nw, ne, sw, se]
     params: {width: 7, depth: 6, height: 24.5}
   - id: buttress-towers
     kind: pier
+    material: ochre
     note: the four buttress towers north and south that take the great arches' thrust
-    at: [[-38.5, -18.5], [-38.5, 18.5], [38.5, -18.5], [38.5, 18.5]]
-    params: {width: 5.5, depth: 7.5, height: 30}
+    at: [[-38.61, -18.5], [-38.61, 18.5], [38.61, -18.5], [38.61, 18.5]]
+    params: {width: 5.5, depth: 7.5, height: 31.5, step: 5.5}
+  - id: buttress-bridges
+    kind: arch
+    material: ochre
+    note: transverse buttress arches linking the four main piers to the outer buttress towers
+    at: [{at: [-29.125, -18.5], z: 21.0}, {at: [-29.125, 18.5], z: 21.0},
+         {at: [29.125, -18.5], z: 21.0}, {at: [29.125, 18.5], z: 21.0}]
+    params: {span: 13.25, thickness: 1.6, depth: 5.5, step: 4.5}
   - id: arcade-ground
     kind: arcade
+    material: marble
     note: the colonnades between the piers, north and south, under the galleries
     at: [{at: [-17, -15.5], turn: 90}, {at: [17, -15.5], turn: 90}]
     params: {length: 31, bays: 5, spring: 7, thickness: 0.8, depth: 1.4, top: 13, step: 6.0,
-             piers_at_ends: false, support: {kind: column, diameter: 1.2, capital: impost, n: 6}}
+             piers_at_ends: false,
+             support: {kind: column, diameter: 1.2, capital: impost, n: 6, lite: true}}
+  - id: gallery-floors
+    kind: slab
+    material: marble
+    note: the north and south gallery floors over the aisles
+    at: [{at: [-26.0, 0], z: 12.6}, {at: [26.0, 0], z: 12.6}]
+    params: {width: 16.2, depth: 61.2, thickness: 0.4, step: 8.0}
   - id: arcade-gallery
     kind: arcade
+    material: marble
     at: [{at: [-17, -15.5], z: 13, turn: 90}, {at: [17, -15.5], z: 13, turn: 90}]
     note: the gallery's columns are drawn as plain piers, to stay within the budget
-    params: {length: 31, bays: 5, spring: 4.5, thickness: 0.6, depth: 1.2, top: 7, step: 6.0,
+    params: {length: 31, bays: 5, spring: 4.0, thickness: 0.6, depth: 1.2, top: 7, step: 6.0,
              piers_at_ends: false, support: {kind: pier, width: 0.8}}
   - id: tympana
     kind: tympanum
+    material: ochre
     note: the walls under the great arches north and south, two rows of windows
     at: [{at: [-17, 0], z: 20, turn: 90}, {at: [17, 0], z: 20, turn: 90}]
     params:
@@ -241,48 +290,73 @@ parts:
         - {x: 5, width: 2.4, sill: 12, head: 16}
   - id: arches
     kind: arch
-    note: the four great arches, 31 m wide
-    at: [{at: [0, -18.5], z: 24.5}, {at: [0, 18.5], z: 24.5},
-         {at: [-19, 0], z: 24.5, turn: 90}, {at: [19, 0], z: 24.5, turn: 90}]
-    params: {span: 31, thickness: 1.8, depth: 6, step: 2.5}
+    material: ochre
+    note: the four great arches, 31 m wide, inner faces flush with the 31 m pendentive square
+    at: [{at: [0, -17.0], z: 24.5}, {at: [0, 17.0], z: 24.5},
+         {at: [-17.0, 0], z: 24.5, turn: 90}, {at: [17.0, 0], z: 24.5, turn: 90}]
+    params: {span: 31, thickness: 1.8, depth: 3.0, step: 2.5}
   - id: pendentives
     kind: pendentives
+    material: ochre
     at: [{at: [0, 0], z: 24.5}]
     params: {half: 15.5, top: 15.5, step: 2.5}
   - id: semidomes
     kind: semidome
     material: lead
-    note: east and west half-domes, five windows each
-    at: [{at: [0, 15.5], z: 24.5}, {at: [0, -15.5], z: 24.5, turn: 180}]
-    params: {radius: 15.5, thickness: 1.0, windows: 5, band: 2.4, share: 0.5, n: 16, rows: 4}
+    materials: {'-windows': ochre}
+    note: east and west half-domes seated cleanly outside the great arches, five windows each
+    at: [{at: [0, 18.6], z: 24.5}, {at: [0, -18.6], z: 24.5, turn: 180}]
+    params: {radius: 15.5, thickness: 1.0, windows: 5, band: 2.4, share: 0.5, n: 16, rows: 4,
+             depth_scale: 0.806}
   - id: exedrae
     kind: exedra
+    material: ochre
+    materials: {'-cap': lead}
     note: two exedrae under each half-dome, on columns under a gallery wall
-    at: [{at: [13.42, 23.25], turn: -60}, {at: [-13.42, 23.25], turn: 60},
-         {at: [13.42, -23.25], turn: -120}, {at: [-13.42, -23.25], turn: 120}]
-    params: {radius: 7.75, height: 16, thickness: 1.0, columns: 2, beam: 4,
-             column: {diameter: 1.2, capital: impost, n: 6}, cap_thickness: 0.8, cap_segments: 8,
-             step: 6.0}
+    at: [{at: [13.2, 24.6], turn: -55}, {at: [-13.2, 24.6], turn: 55},
+         {at: [13.2, -24.6], turn: -125}, {at: [-13.2, -24.6], turn: 125}]
+    params: {radius: 6.4, height: 18.2, thickness: 1.0, columns: 2, beam: 5.0,
+             column: {diameter: 1.15, capital: impost, n: 6, lite: true},
+             cap_thickness: 0.8, cap_segments: 8, step: 6.0}
   - id: apse
     kind: exedra
-    at: [{at: [0, 31]}]
-    params: {radius: 7.75, height: 16, thickness: 1.5, windows: 3, sill: 6, head: 12, share: 0.4,
-             outer_sides: 6, cap_thickness: 0.8, cap_segments: 8, step: 5.0}
+    material: ochre
+    materials: {'-cap': lead}
+    at: [{at: [0, 31.5]}]
+    params: {radius: 7.75, height: 18.5, thickness: 1.5, windows: 3, sill: 5.5, head: 13.5,
+             share: 0.4, outer_sides: 6, cap_thickness: 0.8, cap_segments: 8, step: 5.0}
+  # Lead roofs cleanly fitted around the buttress bridges and narthex walls.
   - id: roof-aisles
     kind: slab
-    at: [{at: [-28.75, 0], z: 24}, {at: [28.75, 0], z: 24}]
-    params: {width: 13.5, depth: 64.5, thickness: 0.8, step: 8.0}
+    material: lead
+    at: [{at: [-26.9, 0], z: 24.05}, {at: [26.9, 0], z: 24.05}]
+    params: {width: 18.0, depth: 31.2, thickness: 0.7, step: 7.0}
+  - id: roof-aisles-ends
+    kind: slab
+    material: lead
+    at: [{at: [-26.2, -26.8], z: 24.05}, {at: [26.2, -26.8], z: 24.05},
+         {at: [-26.2, 26.8], z: 24.05}, {at: [26.2, 26.8], z: 24.05}]
+    params: {width: 19.4, depth: 10.9, thickness: 0.7, step: 7.0}
+  - id: roof-aisles-mid
+    kind: slab
+    material: lead
+    at: [{at: [-28.5, -18.5], z: 24.05}, {at: [-28.5, 18.5], z: 24.05},
+         {at: [28.5, -18.5], z: 24.05}, {at: [28.5, 18.5], z: 24.05}]
+    params: {width: 11.4, depth: 5.4, thickness: 0.7, step: 7.0}
   - id: roof-narthex
     kind: slab
-    at: [{at: [0, -36.25], z: 22}]
-    params: {width: 71.5, depth: 11, thickness: 0.8, step: 8.0}
+    material: lead
+    at: [{at: [0, -37.05], z: 22.05}]
+    params: {width: 71.8, depth: 9.5, thickness: 0.7, step: 7.0}
   - id: roof-exonarthex
     kind: slab
-    at: [{at: [0, -44], z: 10}]
-    params: {width: 71.2, depth: 6.2, thickness: 0.6, step: 8.0}
+    material: lead
+    at: [{at: [0, -44.75], z: 10.05}]
+    params: {width: 71.8, depth: 5.8, thickness: 0.6, step: 7.0}
   - id: dome-537
     kind: dome
     material: lead
+    materials: {'-windows': ochre}
     note: >-
       the first dome, its crown 20 Byzantine feet lower than today's; its
       profile is not known and is drawn as today's dome flattened. Its
@@ -291,45 +365,69 @@ parts:
     at: [{at: [0, 0], z: 40}]
     names: [east]
     params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5, rise: 9.25,
-             n: 40, rows: 4, sector: [0, 180]}
+             window_buttress: 0.95, n: 40, rows: 4, sector: [0, 180]}
   - id: dome-537
     kind: dome
     material: lead
+    materials: {'-windows': ochre}
     at: [{at: [0, 0], z: 40}]
     names: [west]
     params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5, rise: 9.25,
-             n: 40, rows: 4, sector: [180, 360]}
+             window_buttress: 0.95, n: 40, rows: 4, sector: [180, 360]}
   - id: debris
-    kind: dome
-    note: a heap where the dome fell on the altar, ciborium and ambo (its form is a sign, not evidence)
-    at: [{at: [0, 6], z: 0}]
-    params: {radius: 9, thickness: 1.2, rise: 1.6, n: 16, rows: 2}
+    kind: fragment
+    material: brick
+    note: fallen masonry heap where the dome struck the altar, ciborium and ambo (a sign, not evidence)
+    at: [{at: [0, 6.5], z: 0}, {at: [-3.4, 8.2], z: 0, turn: 28}, {at: [3.6, 5.0], z: 0, turn: -34}]
+    params: {width: 8.2, depth: 7.0, heights: [0.5, 2.8, 0.7, 1.9], step: 4.0}
   - id: dome-562
     kind: dome
     material: lead
-    note: the dome of 562, about 31 m across, its crown about 55.6 m up, forty windows at its base
+    materials: {'-windows': ochre}
+    note: the dome of 562, about 31 m across, its crown about 55.6 m up, forty windows ringed by forty radial buttresses
     at: [{at: [0, 0], z: 40}]
-    params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5, n: 40, rows: 6,
-             light: true}
+    params: {radius: 15.5, thickness: 1.0, windows: 40, band: 4.0, share: 0.5,
+             window_buttress: 1.05, n: 40, rows: 6, light: true}
   - id: buttresses
     kind: buttress
+    material: ochre
     note: >-
-      buttresses added between the 10th or 14th century and the 1570s;
+      stepped buttresses added between the 10th or 14th century and the 1570s;
       their places here are schematic
-    at: [[-35.75, 27, -90], [-35.75, 6, -90], [35.75, 27, 90], [35.75, 6, 90],
-         [-24, 32.25, 180], [24, 32.25, 180]]
-    params: {width: 4, depth: 7, height: 22, step: 8.0}
+    at: [[-35.86, 26.5, -90], [-35.86, 6, -90], [35.86, 26.5, 90], [35.86, 6, 90],
+         [-23, 32.36, 180], [23, 32.36, 180]]
+    params: {width: 4.0, depth: 6.8, height: 22.0, kind: stepped, steps: 2, step: 6.5}
   - id: minarets
     kind: minaret
-    note: the four minarets; heights and şerefe set in proportion, not measured
-    at: [{at: [-38.5, -45]}, {at: [38.5, -45]}, {at: [-38.5, 35]}, {at: [38.5, 35]}]
-    names: [nw, sw, ne, se]
-    params: {base: 4.4, base_height: 9.0, shaft_diameter: 3.0, shaft_top: 46, serefe: [34, 44],
-             serefe_depth: 0.9, corbel: 1.4, parapet: 1.0, petek: 2.6, cap: 7.0, finial: 1.5,
-             sides: 8, shoe: 2.2, tiers: 2, step: 6.0}
+    material: stone
+    materials: {'-cap': lead}
+    note: the two taller western twin minarets added under Murad III (heights set in proportion)
+    at: [{at: [-36.5, -42.5]}, {at: [36.5, -42.5]}]
+    names: [nw, sw]
+    params: {base: 4.6, base_height: 9.0, shaft_diameter: 3.0, shaft_top: 48.25, serefe: [36, 48],
+             serefe_depth: 0.9, corbel: 1.4, parapet: 1.0, petek: 3.4, cap: 9.0, finial: 2.0,
+             sides: 8, shoe: 2.4, tiers: 2, step: 6.0}
+  - id: minarets-ne
+    kind: minaret
+    material: stone
+    materials: {'-cap': lead}
+    note: the north-east minaret (Selim II / Bayezid II; height set in proportion)
+    at: [{at: [-36.5, 32.5]}]
+    params: {base: 4.2, base_height: 9.0, shaft_diameter: 2.8, shaft_top: 46.25, serefe: [46],
+             serefe_depth: 0.85, corbel: 1.4, parapet: 1.0, petek: 3.2, cap: 8.2, finial: 1.8,
+             sides: 8, shoe: 2.4, tiers: 2, step: 6.0}
+  - id: minarets-se
+    kind: minaret
+    material: brick
+    materials: {'-cap': lead}
+    note: the older red-brick south-east minaret (height set in proportion)
+    at: [{at: [36.5, 32.5]}]
+    params: {base: 4.0, base_height: 9.0, shaft_diameter: 2.7, shaft_top: 43.25, serefe: [43],
+             serefe_depth: 0.8, corbel: 1.3, parapet: 1.0, petek: 3.0, cap: 7.5, finial: 1.6,
+             sides: 8, shoe: 2.4, tiers: 2, step: 6.0}
 steps:
   - id: walls
-    parts: [wall-*, narthex-*, exonarthex-*]
+    parts: [floor, wall-*, narthex-*, exonarthex-*]
     seconds: 3.0
     epochs: []
     sources: [procopius-buildings-1, tdv-ayasofya]
@@ -344,7 +442,7 @@ steps:
         kiliseyi Trallesli Anthemios ile Miletoslu İsidoros'a yaptırdı;
         27 Aralık 537'de kutsandı.
   - id: piers
-    parts: [piers-*, buttress-towers]
+    parts: [piers-*, buttress-towers, buttress-bridges]
     seconds: 2.8
     epochs: []
     sources: [procopius-buildings-1]
@@ -357,7 +455,7 @@ steps:
         Kubbeyi kesme taştan dört ayak taşır; Prokopios derzlerine kurşun
         döküldüğünü yazar.
   - id: colonnades
-    parts: [arcade-*, tympana]
+    parts: [arcade-*, gallery-floors, tympana]
     seconds: 2.8
     epochs: []
     sources: [procopius-buildings-1]
@@ -502,7 +600,7 @@ reveal:
   caption:
     en: "537: a dome about 31 m across. In 558 it fell."
     tr: "537: yaklaşık 31 m çapında bir kubbe. 558'de çöktü."
-choisy: {sectionHeight: 10, elevation: -45, azimuth: 225}
+choisy: {sectionHeight: 10, elevation: -45, azimuth: 225, overviewZoom: 0.88}
 dimensions:
   - id: dome-diameter
     value: 31

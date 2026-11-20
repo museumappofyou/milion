@@ -39,18 +39,19 @@ from .shapes import mirror_x, place, union
 
 KEYS = {'schemaVersion', 'id', 'place', 'title', 'description', 'eras', 'honesty',
         'orientation', 'grid', 'step', 'parts', 'epochs', 'steps', 'reveal', 'choisy',
-        'dimensions', 'sources', 'shared', 'materials'}
-PART_KEYS = {'id', 'kind', 'params', 'at', 'z', 'turn', 'material', 'names', 'merge', 'note',
-             'crease'}
+        'dimensions', 'sources', 'shared', 'materials', 'nightLamps'}
+PART_KEYS = {'id', 'kind', 'params', 'at', 'z', 'turn', 'material', 'materials', 'names', 'merge',
+             'note', 'crease'}
 # Curved masonry is tessellated coarsely; its facets meet at more than the
 # SpacePlayer's 30° crease and would each draw a hairline. These pieces carry
 # a 60° crease instead (rims and real corners, at 90°, keep their lines).
-SMOOTH_KINDS = {'dome', 'semidome', 'pendentives', 'sail-vault', 'column', 'arch', 'squinch'}
+SMOOTH_KINDS = {'dome', 'semidome', 'pendentives', 'sail-vault', 'column', 'arch', 'squinch',
+                'strut', 'bowl', 'round-base'}
 SMOOTH_PIECES = {'-domes', '-cap', '-vaults', '-exedrae', '-arches', '-windows', '-ribs', '-roof',
                  '-gallery'}
 COLUMN_KINDS = {'courtyard', 'portico', 'octagon', 'arcade'}   # their '' piece is columns
 SMOOTH = 60.0
-MATERIALS = {'marble', 'brick', 'lead', 'stone', 'light', 'bronze', 'gold'}
+MATERIALS = {'marble', 'brick', 'lead', 'stone', 'ochre', 'light', 'bronze', 'gold'}
 
 
 def load(path):
@@ -68,6 +69,9 @@ def load(path):
             raise ValueError(f"{spec['id']}/{p['id']}: no generator {p['kind']}")
         if p.get('material', 'stone') not in MATERIALS:
             raise ValueError(f"{spec['id']}/{p['id']}: material {p['material']}")
+        for suf, mat in p.get('materials', {}).items():
+            if mat not in MATERIALS:
+                raise ValueError(f"{spec['id']}/{p['id']}{suf}: material {mat}")
     return spec
 
 
@@ -129,7 +133,9 @@ def build(spec):
                 copies = [place(mirror_x(solid) if m else solid, x, y, z, t)
                           for x, y, z, t, m in where]
                 # A dome's panes of daylight are light whatever the dome is.
-                extras = {'material': 'light' if suffix == '-light' else p.get('material', 'stone')}
+                part_mats = p.get('materials', {})
+                mat = 'light' if suffix == '-light' else part_mats.get(suffix, p.get('material', 'stone'))
+                extras = {'material': mat}
                 crease = p.get('crease')
                 if crease is None and (p['kind'] in SMOOTH_KINDS or suffix in SMOOTH_PIECES
                                        or (suffix == '' and p['kind'] in COLUMN_KINDS)):

@@ -117,13 +117,13 @@ def _hemisphere(count):
     return np.stack([r * np.cos(phi), r * np.sin(phi), np.sqrt(1 - r * r)], 1)
 
 
-def bake_ao(parts, occluders, voxel=.5, directions=32, reach=9.0):
+def bake_ao(parts, occluders, voxel=.5, directions=32, reach=9.0, offset=1.1):
     """AO per vertex of each part in `parts`, occluded by the solids in
     `occluders` (lists of (V, F)). Returns one float32 array per part, 1 = open.
     """
-    V = np.concatenate([o[0] for o in occluders])
-    lo = V.min(axis=0) - reach - voxel
-    hi = V.max(axis=0) + reach + voxel
+    V = np.concatenate([o[0] for o in occluders] + [p[0] for p in parts])
+    lo = V.min(axis=0) - reach - voxel * (offset + 1.0)
+    hi = V.max(axis=0) + reach + voxel * (offset + 1.0)
     shape = np.ceil((hi - lo) / voxel).astype(int) + 1
     grid = np.zeros(shape, dtype=bool)
     for ov, of in occluders:       # surface voxels from dense barycentric samples
@@ -137,6 +137,7 @@ def bake_ao(parts, occluders, voxel=.5, directions=32, reach=9.0):
             a, b = (i[keep] / s)[None, :, None], (j[keep] / s)[None, :, None]
             p = t[:, None, 0] * (1 - a - b) + t[:, None, 1] * a + t[:, None, 2] * b
             idx = np.floor((p.reshape(-1, 3) - lo) / voxel).astype(int)
+            idx = np.clip(idx, 0, shape - 1)
             grid[idx[:, 0], idx[:, 1], idx[:, 2]] = True
     base = _hemisphere(directions)
     marches = np.arange(1, int(reach / (voxel * .75)) + 1) * voxel * .75
@@ -146,7 +147,7 @@ def bake_ao(parts, occluders, voxel=.5, directions=32, reach=9.0):
         ao = np.empty(len(pv), dtype=np.float32)
         for start in range(0, len(pv), 1024):
             n = normals[start:start + 1024]
-            p = pv[start:start + 1024] + n * voxel * 1.5
+            p = pv[start:start + 1024] + n * voxel * offset
             helper = np.where(np.abs(n[:, 2:3]) < .9, [[0, 0, 1]], [[1, 0, 0]])
             t1 = np.cross(helper, n)
             t1 /= np.linalg.norm(t1, axis=1, keepdims=True)
@@ -156,6 +157,7 @@ def bake_ao(parts, occluders, voxel=.5, directions=32, reach=9.0):
             hit = np.full(d.shape[:2], np.inf)
             for m in marches:
                 q = np.floor((p[:, None] + d * m - lo) / voxel).astype(int)
+                q = np.clip(q, 0, shape - 1)
                 occupied = grid[q[..., 0], q[..., 1], q[..., 2]]
                 hit = np.where(occupied & np.isinf(hit), m, hit)
             weight = np.where(np.isinf(hit), 0, 1 - hit / (reach * 1.15))

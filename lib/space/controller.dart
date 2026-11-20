@@ -173,6 +173,7 @@ class SpaceController extends ChangeNotifier {
     SpaceView(
       azimuth: study.choisy.azimuthDegrees * math.pi / 180,
       elevation: overviewElevation,
+      zoom: study.choisy.overviewZoom,
       targetX: model.bounds.centerX,
       targetY: model.bounds.centerY,
       targetZ: model.bounds.centerZ,
@@ -240,7 +241,15 @@ class SpaceController extends ChangeNotifier {
       : null;
   SpaceView get visibleView {
     final turn = sample?.turn ?? 0;
-    return turn == 0 ? view : limits.clamp(view.orbit(turn, 0));
+    var v = turn == 0 ? view : view.orbit(turn, 0);
+    if (explode > 0) {
+      final h = math.max(model.bounds.maxZ - model.bounds.minZ, 1.0);
+      v = v.copyWith(
+        zoom: v.zoom / (1 + explode * .35),
+        targetZ: v.targetZ + explode * h * .18,
+      );
+    }
+    return (turn == 0 && explode == 0) ? v : limits.clamp(v);
   }
 
   /// The step whose caption is read: the story's beat, or the last step the
@@ -270,11 +279,13 @@ class SpaceController extends ChangeNotifier {
 
   List<SpacePartState> partStates() {
     final m = moment, bounds = model.bounds;
-    // Scaled to the building: P08's 56 m bay in eight steps drops parts
-    // from 7 m and lifts each step 6 m when exploded.
+    // Scaled to the building: vertical explode follows physical elevation tier
+    // (so ground-level courtyards, minarets and buttresses stay anchored on
+    // the ground and expand radially outward rather than launching above the
+    // dome), with a mild step-order tie-breaker for upper parts sharing a base.
     final height = math.max(bounds.maxZ - bounds.minZ, 1.0);
     final drop = reduced ? 0.0 : height * .125;
-    final lift = height * .75 / math.max(1, steps.length - 1);
+    final stepSpan = math.max(1, visibleSteps.length - 1);
     final from = m.fromEpoch;
     final falling =
         from != null && m.blend < 1 && study.epochs[m.epoch].collapse;
@@ -299,7 +310,13 @@ class SpaceController extends ChangeNotifier {
           if (p <= 0) return SpacePartState.hidden;
           final rank = j >= 0 ? j : _index[from ?? m.epoch][i];
           final part = model.parts[i];
-          var dz = explode * math.max(rank, 0) * lift - fell;
+          final baseFrac = ((part.bounds.minZ - bounds.minZ) / height).clamp(
+            0.0,
+            1.0,
+          );
+          final stepFrac = (math.max(rank, 0) / stepSpan).clamp(0.0, 1.0);
+          final tier = baseFrac <= 0.01 ? 0.0 : baseFrac * .85 + stepFrac * .15;
+          var dz = explode * tier * height * .65 - fell;
           if (j >= 0 && to < 1) dz += (1 - _smooth(to)) * drop;
           // Built by hand: what is dropping in glows, and the last step
           // added keeps the glow a moment after it lands.

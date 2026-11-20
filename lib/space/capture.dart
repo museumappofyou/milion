@@ -46,7 +46,7 @@ Stream<ui.Image> spaceFrames(
   SpaceStyle style = SpaceStyle.drawing,
 }) async* {
   final controller = SpaceController(study, model)..setStyle(style);
-  final renderer = SpaceRenderer(model);
+  final renderer = SpaceRenderer(model, nightLamps: study.nightLamps);
   try {
     if (reveal) controller.playReveal();
     final seconds = reveal ? study.reveal.seconds : study.storySeconds;

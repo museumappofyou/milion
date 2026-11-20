@@ -80,6 +80,7 @@ Color materialColor(String material) => switch (material) {
   'light' => lightColor,
   'marble' => const Color(0xFFDDD6C9),
   'brick' => const Color(0xFFB0705A),
+  'ochre' => const Color(0xFFD5B698),
   'lead' => const Color(0xFF8A9096),
   // P13: the Serpent Column's bronze and the lost gold of its tripod.
   'bronze' => const Color(0xFF7D6B4C),
@@ -121,9 +122,14 @@ Image hatchTexture(SpaceStyle style, double tile, int rows) {
 }
 
 /// Opaque ARGB per triangle corner for [style]: paper with a touch of
-/// occlusion (drawing), sun and sky on marble and brick (stone), or lamps
-/// and a little moonlight (night).
-Int32List cornerColors(SpaceStyle style, SpacePart part, SpaceBounds b) {
+/// occlusion (drawing), smooth crease-aware sun and sky on marble and brick
+/// (stone), or per-corner interior lamps and a little moonlight (night).
+Int32List cornerColors(
+  SpaceStyle style,
+  SpacePart part,
+  SpaceBounds b, {
+  List<(double, double, double)> lamps = const [],
+}) {
   final palette = SpacePalette.of(style);
   const sun = [-.37, -.46, .81];
   final out = Int32List(part.triangleCount * 3);
@@ -131,32 +137,27 @@ Int32List cornerColors(SpaceStyle style, SpacePart part, SpaceBounds b) {
   if (part.material == 'light') {
     return out..fillRange(0, out.length, lightColor.toARGB32());
   }
+  final cn = part.cornerNormals;
+  final span = math.max(b.maxX - b.minX, b.maxY - b.minY).clamp(4.0, 1e4);
+  final scale = span / nightLampSpan;
+  final falloff = 260.0 * scale * scale;
+  final floorZ = math.max(0.0, b.minZ);
+  final resolvedLamps = lamps.isNotEmpty
+      ? lamps
+      : [
+          for (final (lx, ly, lz) in nightLamps)
+            (
+              b.centerX + lx * scale,
+              b.centerY + ly * scale,
+              floorZ + lz * scale,
+            ),
+        ];
   for (var t = 0; t < part.triangleCount; t++) {
-    final nx = part.normals[t * 3],
-        ny = part.normals[t * 3 + 1],
-        nz = part.normals[t * 3 + 2];
-    var lamp = 0.0, moon = 0.0;
-    final k =
-        math.max(b.maxX - b.minX, b.maxY - b.minY).clamp(1.0, 1e4) /
-        nightLampSpan;
-    if (style == SpaceStyle.night) {
-      final i0 = part.triangles[t * 3] * 3;
-      final px = part.positions[i0],
-          py = part.positions[i0 + 1],
-          pz = part.positions[i0 + 2];
-      for (final (lx, ly, lz) in nightLamps) {
-        final dx = b.centerX + lx * k - px,
-            dy = b.centerY + ly * k - py,
-            dz = b.minZ + lz * k - pz;
-        final d = math.sqrt(dx * dx + dy * dy + dz * dz);
-        if (d < 1e-6) continue;
-        final lambert = math.max(0.0, (nx * dx + ny * dy + nz * dz) / d);
-        lamp += 1.4 * lambert / (1 + d * d / (260 * k * k));
-      }
-      moon = .05 + .2 * math.max(0.0, nx * .3 + ny * .45 + nz * .84);
-    }
     for (var k = 0; k < 3; k++) {
-      final ao = part.ao[part.triangles[t * 3 + k]];
+      final vi = part.triangles[t * 3 + k];
+      final ao = part.ao[vi];
+      final no = (t * 3 + k) * 3;
+      final nx = cn[no], ny = cn[no + 1], nz = cn[no + 2];
       double r, g, bl;
       switch (style) {
         case SpaceStyle.drawing:
@@ -174,6 +175,18 @@ Int32List cornerColors(SpaceStyle style, SpacePart part, SpaceBounds b) {
           g = base.g * light;
           bl = base.b * light;
         case SpaceStyle.night:
+          final px = part.positions[vi * 3],
+              py = part.positions[vi * 3 + 1],
+              pz = part.positions[vi * 3 + 2];
+          var lamp = 0.0;
+          for (final (lx, ly, lz) in resolvedLamps) {
+            final dx = lx - px, dy = ly - py, dz = lz - pz;
+            final d = math.sqrt(dx * dx + dy * dy + dz * dz);
+            if (d < 1e-6) continue;
+            final lambert = math.max(0.0, (nx * dx + ny * dy + nz * dz) / d);
+            lamp += 1.4 * lambert / (1 + d * d / falloff);
+          }
+          final moon = .05 + .2 * math.max(0.0, nx * .3 + ny * .45 + nz * .84);
           // A little cool moonlight outside, so the masses still read.
           final warm = lamp * math.pow(ao, 1.4), cool = moon * ao;
           r = base.r * (nightLampColor.r * warm + .55 * cool);

@@ -283,28 +283,25 @@ void main() {
     final study = loadStudy(), model = loadModel();
     int index(String id) => model.parts.indexWhere((p) => p.id == id);
 
-    test(
-      'opens assembled, whole and from above, with no cut and no caption; '
-      "Choisy's view brings the plan cut",
-      () {
-        final c = SpaceController(study, model);
-        expect(c.view, c.overviewView);
-        expect(c.view.elevation, greaterThan(0));
-        expect(c.sectionPlane, isNull);
-        expect(c.honesty, Honesty.RECONSTRUCTION);
-        expect(c.caption, isNull);
-        expect(c.needsTicker, isFalse, reason: 'nothing plays until asked');
-        final parts = c.partStates();
-        expect(parts[index('tympanum-n')].progress, 1);
-        expect(parts[index('semidome-n')].progress, 0);
-        expect(parts[index('semidome-e')].progress, 1);
-        expect(parts.every((p) => p.highlight == 0), isTrue);
-        c.choisy();
-        expect(c.sectionPlane, SpaceSection(2, 3));
-        c.setReduced(true); // settles the camera move
-        expect(c.view, c.choisyView);
-      },
-    );
+    test('opens assembled, whole and from above, with no cut and no caption; '
+        "Choisy's view brings the plan cut", () {
+      final c = SpaceController(study, model);
+      expect(c.view, c.overviewView);
+      expect(c.view.elevation, greaterThan(0));
+      expect(c.sectionPlane, isNull);
+      expect(c.honesty, Honesty.RECONSTRUCTION);
+      expect(c.caption, isNull);
+      expect(c.needsTicker, isFalse, reason: 'nothing plays until asked');
+      final parts = c.partStates();
+      expect(parts[index('tympanum-n')].progress, 1);
+      expect(parts[index('semidome-n')].progress, 0);
+      expect(parts[index('semidome-e')].progress, 1);
+      expect(parts.every((p) => p.highlight == 0), isTrue);
+      c.choisy();
+      expect(c.sectionPlane, SpaceSection(2, 3));
+      c.setReduced(true); // settles the camera move
+      expect(c.view, c.choisyView);
+    });
 
     test('the time scrubber swaps walls for semi-domes, animated or not', () {
       final c = SpaceController(study, model)..setEpoch(1);
@@ -644,6 +641,110 @@ void main() {
         expect(c.storyActive, isFalse, reason: 'capture never moves the view');
         r.dispose();
       });
+    });
+
+    test('non-zero poché fills overlapping solids inside one part cleanly', () async {
+      // Two overlapping axis-aligned closed boxes inside a single SpacePart:
+      // evenOdd would punch a white hole at their overlap; nonZero fills it.
+      List<double> boxVerts(
+        double x0,
+        double x1,
+        double y0,
+        double y1,
+        double z0,
+        double z1,
+      ) => [
+        x0,
+        y0,
+        z0,
+        x1,
+        y0,
+        z0,
+        x1,
+        y1,
+        z0,
+        x0,
+        y1,
+        z0,
+        x0,
+        y0,
+        z1,
+        x1,
+        y0,
+        z1,
+        x1,
+        y1,
+        z1,
+        x0,
+        y1,
+        z1,
+      ];
+      List<int> boxTris(int o) => [
+        o + 0, o + 2, o + 1, o + 0, o + 3, o + 2, // bottom (-z)
+        o + 4, o + 5, o + 6, o + 4, o + 6, o + 7, // top (+z)
+        o + 0, o + 1, o + 5, o + 0, o + 5, o + 4, // -y
+        o + 2, o + 3, o + 7, o + 2, o + 7, o + 6, // +y
+        o + 1, o + 2, o + 6, o + 1, o + 6, o + 5, // +x
+        o + 3, o + 0, o + 4, o + 3, o + 4, o + 7, // -x
+      ];
+      final part = SpacePart(
+        'overlap',
+        'stone',
+        Float32List.fromList([
+          ...boxVerts(-3, 1, -2, 2, 0, 4),
+          ...boxVerts(-1, 3, -2, 2, 0, 4),
+        ]),
+        Uint32List.fromList([...boxTris(0), ...boxTris(8)]),
+        Float32List.fromList(List.filled(16, 1.0)),
+      );
+      expect(part.closed, isTrue);
+      final m = SpaceModel([part]);
+      final r = SpaceRenderer(m);
+      final scene = SpaceScene(
+        view: SpaceView(
+          azimuth: 225 * _degree,
+          elevation: -70 * _degree,
+          zoom: 1.4,
+          targetX: 0,
+          targetY: 0,
+          targetZ: 2,
+        ),
+        style: SpaceStyle.drawing,
+        parts: const [SpacePartState(progress: 1)],
+        section: const SpaceSection(2, 2.0),
+      );
+      final img = await renderSpaceStill(r, scene, const Size(120, 120));
+      final rgba = (await img.toByteData(format: ui.ImageByteFormat.rawRgba))!
+          .buffer
+          .asUint8List();
+      // Centre pixel (60, 60) hits (0, 0, 2) — the exact overlap of both boxes.
+      final off = (60 * 120 + 60) * 4;
+      final poche = SpacePalette.drawing.poche;
+      expect(rgba[off], closeTo((poche.r * 255).round(), 6));
+      expect(rgba[off + 1], closeTo((poche.g * 255).round(), 6));
+      expect(rgba[off + 2], closeTo((poche.b * 255).round(), 6));
+      img.dispose();
+      r.dispose();
+    });
+
+    test('explode anchors ground-level late steps while lifting domes', () {
+      final sehzadeStudy = SpaceStudy.fromJson(
+        jsonDecode(
+          File('assets/space/sehzade-camii/study.json').readAsStringSync(),
+        ) as Map<String, dynamic>,
+      );
+      final sehzadeModel = loadModel('assets/space/sehzade-camii/model.glb');
+      final c = SpaceController(sehzadeStudy, sehzadeModel)
+        ..setEpoch(1)
+        ..setExplode(1);
+      final states = c.partStates();
+      int idx(String id) => sehzadeModel.parts.indexWhere((p) => p.id == id);
+      expect(states[idx('minarets')].dz, 0);
+      expect(states[idx('court-sadirvan')].dz, 0);
+      expect(
+        states[idx('dome')].dz,
+        greaterThan(states[idx('pendentives')].dz),
+      );
     });
   });
 

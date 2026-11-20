@@ -37,6 +37,7 @@ orientation:
     - [41.0079884, 28.9782733]
     - [41.0080363, 28.9758859]
 step: 1.5
+nightLamps: [[5.05, 5.15, 5.5], [0, 0, 3.0]]
 epochs:
   - {year: 330, label: {en: "Constantine's city, after 330", tr: "Konstantin'in şehri, 330 sonrası"}}
   - {year: 2026, label: {en: "Divanyolu today", tr: "Bugün Divanyolu"}}
@@ -66,12 +67,31 @@ parts:
     note: the other three piers
     at: [[9.05, 1.15], [1.05, 9.15], [9.05, 9.15]]
     params: {width: 3.0, depth: 3.0, height: 10.0}
+  - id: pier-bases
+    kind: pier
+    material: marble
+    note: moulded plinths beneath the reconstructed piers (the fragment pier's surviving face left clear)
+    at: [[9.05, 1.15], [1.05, 9.15], [9.05, 9.15]]
+    params: {width: 3.45, depth: 3.45, height: 0.75}
+  - id: impost-bands
+    kind: pier
+    material: marble
+    note: projecting impost mouldings at the arch springing
+    at: [{at: [1.05, 1.15], z: 6.6}, {at: [9.05, 1.15], z: 6.6},
+         {at: [1.05, 9.15], z: 6.6}, {at: [9.05, 9.15], z: 6.6}]
+    params: {width: 3.35, depth: 3.35, height: 0.4}
   - id: arches
     kind: arched-panel
     note: four arches, 5 m clear, springing at 7 m, their spandrels up to the attic
     at: [{at: [5.05, 1.15], z: 7}, {at: [5.05, 9.15], z: 7},
          {at: [1.05, 5.15], z: 7, turn: 90}, {at: [9.05, 5.15], z: 7, turn: 90}]
     params: {span: 5.0, top: 3.0, depth: 3.0}
+  - id: attic-cornice
+    kind: ring
+    material: marble
+    note: seamless square cornice frame crowning the four arches around the dome
+    at: [{at: [5.05, 5.15], z: 10.0}]
+    params: {r0: 4.10, r1: 8.20, z0: 0.0, z1: 0.42, sides: 4, phase: 0.785398, step: 2.0}
   - id: pendentives
     kind: pendentives
     at: [{at: [5.05, 5.15], z: 7}]
@@ -119,7 +139,7 @@ steps:
         Milyon Taşı'nın temellerini ve bugün bir dikme gibi duran bu mermer
         parçayı buldu.
   - id: piers
-    parts: [pier-fragment, pier-fragment-back, pier-fragment-top, piers]
+    parts: [pier-fragment, pier-fragment-back, pier-fragment-top, piers, pier-bases, impost-bands]
     seconds: 3.2
     epochs: [330]
     sources: [mango-1959-brazen-house, byzantium1200-milion, wp-milion-1374763433]
@@ -132,7 +152,7 @@ steps:
         Metinler kemerlerinden ve tonozundan söz eder; kare planlı dört ayak
         en olası biçimdir. Boyutları bilinmediği için oranlarla çizildi.
   - id: arches
-    parts: [arches]
+    parts: [arches, attic-cornice]
     seconds: 3.2
     epochs: [330]
     sources: [suda-mu-1065, wp-milion-1374763433]

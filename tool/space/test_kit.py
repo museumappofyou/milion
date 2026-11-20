@@ -44,6 +44,17 @@ class ElementTest(unittest.TestCase):
         'pier': lambda: E.pier(width=4, depth=4, height=10, kind='cruciform'),
         'buttress': lambda: E.buttress(width=1.6, depth=.8, height=9, kind='half-round'),
         'stepped': lambda: E.buttress(width=1.5, depth=2, height=8, kind='stepped'),
+        'flying': lambda: E.buttress(width=2.2, depth=4.4, height=7.4, kind='flying',
+                                     pier_depth=1.85, spring=3.6),
+        'belfry': lambda: E.tower(size=4.0, height=11.6, kind='square', merlons=False, roof=2.5,
+                                  openings={'sill': 7.2, 'head': 10.3, 'width': 1.65}),
+        'gable-roof': lambda: E.gable_roof(width=7.0, depth=3.0, eave=0.4, ridge=1.6),
+        'buttressed-dome': lambda: E.dome(radius=15.5, windows=40, band=4.0, window_buttress=1.05,
+                                          n=40, rows=4),
+        'elliptical-semidome': lambda: E.semidome(radius=15.5, windows=5, depth_scale=0.806),
+        'two-storey-wall': lambda: E.wall(length=20, height=24, thickness=1.5, openings=[
+            {'x': 10, 'width': 2.6, 'sill': 3, 'head': 8.5, 'arch': 'round'},
+            {'x': 10, 'width': 2.6, 'sill': 14.5, 'head': 20.5, 'arch': 'round'}]),
         'minaret': lambda: E.minaret(base=4.6, base_height=12, shaft_diameter=3.4,
                                      shaft_top=43.75, serefe=[35, 43.5], sides=12),
         'portico': lambda: E.portico(bays=5, bay=4.62, depth=5.2, spring=4.2),
@@ -75,6 +86,11 @@ class ElementTest(unittest.TestCase):
                                    wall=1.4, n=24, step=12),
         'fragment': lambda: E.fragment(width=.9, depth=.7, heights=[3.9, 4.25, 3.7, 4.05]),
         'round-base': lambda: E.round_base(radii=[1.7, 1.4, 1.15], rise=.3, n=24),
+        'ground-cutout': lambda: E.ground_cutout(
+            width=20, depth=20, thickness=.4,
+            cutouts=[{'x': 0, 'y': 0, 'width': 4, 'depth': 4},
+                     {'x': 5, 'y': -5, 'width': 3, 'depth': 3}]),
+        'strut': lambda: E.strut(p0=[1.1, 0, 0], p1=[0.9, 0, 7.2], radius=.04, radius_top=.03),
     }
 
     def test_every_piece_is_closed_outward_and_on_the_grid(self):
@@ -126,6 +142,39 @@ class ElementTest(unittest.TestCase):
         V, _ = E.arch_ring(span=19, thickness=1.5, depth=5, kind='pointed', pointed=.146)['']
         inner_crown = min(V[np.abs(V[:, 0]) < 1e-3][:, 2])
         self.assertAlmostEqual(inner_crown, 10.8, delta=.05)
+
+    def test_arched_panel_rejects_inversion_and_keeps_full_corners(self):
+        with self.assertRaises(ValueError):
+            E.arched_panel(span=6.0, top=2.5, depth=1.0, kind='round')
+        V, F = E.arched_panel(span=4.0, top=8.0, depth=1.0, margin=0.5, kind='round')['']
+        check_closed(V, F, 'tall panel')
+        # Outer corners must reach full height z = 8.0 at x = ±2.5 (no V-notch).
+        corners = V[(np.abs(np.abs(V[:, 0]) - 2.5) < 1e-2) & (V[:, 2] > 7.9)]
+        self.assertGreaterEqual(len(corners), 4)
+
+    def test_minaret_rejects_shaft_overshoot(self):
+        with self.assertRaises(ValueError):
+            E.minaret(base=4, base_height=8, shaft_diameter=3, shaft_top=40.0, serefe=[35.0])
+
+    def test_tympanum_builds_multi_row_stacked_windows(self):
+        V, F = E.tympanum(
+            radius=15.5, base=4.5, thickness=1.2,
+            windows=[{'x': 0, 'width': 2.4, 'sill': 5.5, 'head': 10.0},
+                     {'x': 0, 'width': 2.4, 'sill': 12.0, 'head': 16.0}])['']
+        check_closed(V, F, 'multi-row tympanum')
+        # Center column x∈[-1.2, 1.2] must have 3 stacked solids (below 5.5, 10..12, above 16).
+        center_solids = [sv[np.unique(sf)] for sv, sf in solids(V, F)
+                         if sv[np.unique(sf), 0].min() >= -1.25
+                         and sv[np.unique(sf), 0].max() <= 1.25]
+        self.assertEqual(len(center_solids), 3)
+
+    def test_serpent_neck_and_head_join_without_gaps(self):
+        pieces = E.serpent(height=8, coil_top=6, turns=10.9, helix=.145, body=.088,
+                           body_top=.072, necks=.8, head_radius=.52, head_length=.42)
+        vb, _ = pieces['']
+        vh, _ = pieces['-heads']
+        # Lowest point of necks meets the top of the coils directly (no air gap).
+        self.assertLessEqual(vh[:, 2].min(), vb[:, 2].max() + 0.01)
 
 
 class MeshoptTest(unittest.TestCase):

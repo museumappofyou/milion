@@ -50,6 +50,7 @@ orientation:
     - [41.0026845, 28.9719718]
     - [41.0027029, 28.9719828]
 step: 2.4
+nightLamps: [[0, 0, 5.5], [0, 6.5, 4.5], [0, -6.5, 4.5]]
 epochs:
   - {year: 536, label: {en: "Sts Sergius and Bacchus, 536", tr: "Sergios ve Bakhos Kilisesi, 536"}}
   - {year: 2026, label: {en: "Küçük Ayasofya Camii today", tr: "Bugün Küçük Ayasofya Camii"}}
@@ -178,14 +179,14 @@ parts:
   - id: casing
     kind: ring-wall
     material: brick
-    note: the sixteen-sided casing that rises 4 m above the springing
+    note: the sixteen-sided casing that rises 4 m above the springing, seated flush against the dome
     at: [{at: [0, 0], z: 13.0}]
-    params: {r0: 9.15, r1: 9.85, z0: 0, z1: 4.0, openings: 8, sill: 0.8, head: 3.0, share: 0.3,
+    params: {r0: 8.45, r1: 9.15, z0: 0, z1: 4.0, openings: 8, sill: 0.8, head: 3.0, share: 0.3,
              phase: 0.05236, sides: 16}
   - id: bema-vault
     kind: arch
     material: brick
-    at: [{at: [0, 11.45], z: 8.0}]
+    at: [{at: [0, 11.45], z: 8.0, turn: -6.0418}]
     params: {span: 5.6, thickness: 0.6, depth: 2.6}
   - id: apse
     kind: exedra
@@ -207,21 +208,26 @@ parts:
   - id: roof
     kind: slab
     material: lead
-    note: the ambulatory roofs at the top of the enclosure
-    at: [{at: [-10.8, 0.4], z: 11.6}, {at: [11.3, -0.575], z: 11.6}]
+    note: the ambulatory roofs seated clear of the enclosure wall tops
+    at: [{at: [-10.8, 0.4], z: 11.65}, {at: [11.3, -0.575], z: 11.65}]
     params: {width: 4.4, depth: 26.35, thickness: 0.3}
   - id: roof-w
     kind: slab
     material: lead
-    at: [{at: [0, -11.1], z: 11.6}]
+    at: [{at: [0, -11.1], z: 11.65}]
     params: {width: 17.2, depth: 4.1, thickness: 0.3}
+  - id: roof-narthex
+    kind: slab
+    material: lead
+    at: [{at: [0, -16.0], z: 11.65}]
+    params: {width: 23.2, depth: 5.6, thickness: 0.3}
   - id: portico
     kind: portico
     material: stone
     note: Hüseyin Ağa's portico of c. 1505, five domed bays on six columns
     at: [[-11.55, -24.45]]
     params: {bays: 5, bay: 4.62, depth: 5.2, spring: 4.2, thickness: 0.6, back: false,
-             column: {diameter: 0.5, capital: lozenge, arch: pointed, n: 8}}
+             column: {diameter: 0.5, capital: lozenge, arch: pointed, pointed: 0.146, n: 8}}
   - id: minaret
     kind: minaret
     material: stone

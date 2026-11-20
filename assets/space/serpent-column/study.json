@@ -13,6 +13,23 @@
   "model": "assets/space/serpent-column/model.glb",
   "honesty": "RECONSTRUCTION",
   "place": "serpent-column",
+  "nightLamps": [
+    [
+      0,
+      0,
+      3.8
+    ],
+    [
+      1.5,
+      -1.5,
+      6.5
+    ],
+    [
+      -1.5,
+      1.5,
+      2.0
+    ]
+  ],
   "epochs": [
     {
       "year": -479,
@@ -155,7 +172,8 @@
       "id": "broken",
       "parts": [
         "column-today",
-        "pit"
+        "pit",
+        "pit-ground"
       ],
       "seconds": 4.0,
       "epochs": [
@@ -215,7 +233,7 @@
   "sources": [
     "bmcr-2017-01-43"
   ],
-  "triangles": 16280,
+  "triangles": 16468,
   "citations": [
     {
       "id": "bmcr-2017-01-43",

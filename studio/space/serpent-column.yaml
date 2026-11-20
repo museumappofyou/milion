@@ -35,6 +35,7 @@ description:
 eras: [ancient, byzantine, ottoman, modern]
 honesty: RECONSTRUCTION
 step: 1.0
+nightLamps: [[0, 0, 3.8], [1.5, -1.5, 6.5], [-1.5, 1.5, 2.0]]
 epochs:
   - {year: -479, label: {en: "Delphi, after Plataea, 479 BC", tr: "Delfoi, Plataia'dan sonra, MÖ 479"}}
   - {year: 330, label: {en: "The Hippodrome, by 330", tr: "Hipodrom, 330'a dek"}}
@@ -48,21 +49,22 @@ parts:
   - id: coils
     kind: serpent
     material: bronze
-    note: three snakes to the necks; 29 bands to 5.35 m, about 30 in all
-    params: {height: 8.0, coil_top: 6.0, turns: 10.9, helix: 0.2, body: 0.08, body_top: 0.066,
+    note: three snakes braided tightly to the necks; 29 bands to 5.35 m, about 30 in all
+    params: {height: 8.0, coil_top: 6.0, turns: 10.9, helix: 0.145, body: 0.088, body_top: 0.072,
              necks: 0.8, head_radius: 0.52, head_length: 0.42, sides: 8, per_turn: 14}
   - id: tripod-bowl
     kind: bowl
     material: gold
-    note: the gold bowl on the heads; its form is not known
-    at: [{at: [0, 0], z: 6.95}]
+    note: the gold bowl seated directly on the three serpent heads; its form is not known
+    at: [{at: [0, 0], z: 6.82}]
     params: {radius: 0.95, depth: 0.5, thickness: 0.04, n: 28}
   - id: tripod-legs
-    kind: obelisk
+    kind: strut
     material: gold
-    note: three legs from the bowl's rim to the base, as a sign
-    at: [{at: [1.08, 0], z: -0.0}, {at: [-0.54, 0.935], z: -0.0}, {at: [-0.54, -0.935], z: -0.0}]
-    params: {base: 0.07, top: 0.05, height: 7.25, sides: 6}
+    note: three slanted gold legs running from the Delphi base cleanly into the bowl's rim
+    at: [{at: [0, 0], turn: 0}, {at: [0, 0], turn: 120}, {at: [0, 0], turn: 240}]
+    params: {p0: [1.08, 0.0, 0.0], p1: [0.92, 0.0, 7.28], radius: 0.042, radius_top: 0.032,
+             sides: 8, step: 1.5}
   - id: hippodrome-plinth
     kind: pier
     note: a plinth on the spina; its form is not known
@@ -72,23 +74,35 @@ parts:
     kind: serpent
     material: bronze
     note: the bodies as they survive, broken off at about 5.35 m
-    params: {height: 8.0, coil_top: 6.0, turns: 10.9, helix: 0.2, body: 0.08, body_top: 0.066,
+    params: {height: 8.0, coil_top: 6.0, turns: 10.9, helix: 0.145, body: 0.088, body_top: 0.072,
              cut: 5.35, sides: 8, per_turn: 14}
   - id: pit
     kind: wall
     note: the pit it stands in today, the square above it about 2 m higher; in proportion
     at: [[-2.0, -2.0], [2.0, -2.0, 90], [2.0, 2.0, 180], [-2.0, 2.0, 270]]
     params: {length: 4.0, height: 2.0, thickness: 0.3}
+  - id: pit-ground
+    kind: ground-cutout
+    material: stone
+    note: modern square pavement framing the sunken pit opening
+    at: [{at: [0, 0], z: 1.7}]
+    params:
+      width: 6.8
+      depth: 6.8
+      thickness: 0.3
+      step: 2.0
+      cutouts:
+        - {x: 0.0, y: 0.0, width: 4.3, depth: 4.3}
   - id: jaw-plinth
     kind: pier
     note: a museum plinth across the street (here beside the column)
-    at: [{at: [3.4, 0.0]}]
+    at: [{at: [4.2, 0.0]}]
     params: {width: 0.6, depth: 0.6, height: 1.1}
   - id: jaw
     kind: serpent-head
     material: bronze
     note: the upper jaw in the Istanbul Archaeology Museums
-    at: [{at: [3.25, 0.0], z: 1.1}]
+    at: [{at: [4.05, 0.0], z: 1.1}]
     params: {body: 0.08, length: 0.42}
 steps:
   - id: delphi
@@ -164,7 +178,7 @@ steps:
         Altında bulunan su boruları, sonradan çeşme olarak kullanıldığını
         düşündürür.
   - id: broken
-    parts: [column-today, pit]
+    parts: [column-today, pit, pit-ground]
     seconds: 4.0
     epochs: [2026]
     sources: [encrom-serpentine, bmcr-2017-01-43]

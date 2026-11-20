@@ -62,8 +62,9 @@ class SpaceChoisy {
   SpaceChoisy(JsonReader r)
     : sectionHeight = r.number('sectionHeight'),
       elevationDegrees = r.optionalNumber('elevation') ?? -35.26,
-      azimuthDegrees = r.optionalNumber('azimuth') ?? 225;
-  final double sectionHeight, elevationDegrees, azimuthDegrees;
+      azimuthDegrees = r.optionalNumber('azimuth') ?? 225,
+      overviewZoom = r.optionalNumber('overviewZoom') ?? 1.0;
+  final double sectionHeight, elevationDegrees, azimuthDegrees, overviewZoom;
 }
 
 /// Where the drawing sits on the earth: [axis] is the azimuth (degrees from
@@ -99,7 +100,19 @@ class SpaceStudy {
       orientation = switch (r.optionalObject('orientation')) {
         final Json o => decode(o, SpaceOrientation.new),
         null => null,
-      };
+      },
+      nightLamps = r.optionalList('nightLamps', (v) {
+        if (v is! List ||
+            v.length != 3 ||
+            v.any((x) => x is! num || !x.isFinite)) {
+          throw const FormatException('nightLamps entries must be [x, y, z]');
+        }
+        return (
+          (v[0] as num).toDouble(),
+          (v[1] as num).toDouble(),
+          (v[2] as num).toDouble(),
+        );
+      });
 
   factory SpaceStudy.fromJson(Json j) {
     final study = decode(j, SpaceStudy._);
@@ -126,6 +139,10 @@ class SpaceStudy {
   /// The registry place a kit study draws (P09 on); P08's study has none.
   final String? placeId;
   final SpaceOrientation? orientation;
+
+  /// Optional world-space interior lamp positions `(x, y, z)` in metres for
+  /// Night mode; when empty, [SpaceStyle.night] uses a scaled default ring.
+  final List<(double, double, double)> nightLamps;
   double get storySeconds => steps.fold(0, (t, s) => t + s.seconds);
   List<SpaceStep> stepsIn(int year) =>
       steps.where((s) => s.inEpoch(year)).toList();

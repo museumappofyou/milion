@@ -44,6 +44,7 @@ orientation:
     - [41.0054052, 28.9748422]
     - [41.0059276, 28.9754001]
 step: 12.0
+nightLamps: [[0, 0, 28], [0, 90, 28], [0, -90, 28], [145, 60, 28]]
 epochs:
   - {year: 330, label: {en: "Constantine's Hippodrome, 330", tr: "Konstantin'in Hipodromu, 330"}}
   - {year: 1200, label: {en: "Before the sack of 1204", tr: "1204 yağmasından önce"}}
@@ -55,16 +56,16 @@ parts:
   # side broken by the kathisma.
   - id: stands-west
     kind: stairs
-    at: [{at: [-37.4, 10.5], turn: 90}]
-    params: {steps: 15, rise: 1.0, going: 1.24, width: 359}
+    at: [{at: [-37.4, 12.5], turn: 90}]
+    params: {steps: 15, rise: 1.0, going: 1.24, width: 363}
   - id: stands-east-south
     kind: stairs
     at: [{at: [40.6, -62.0], turn: -90}]
     params: {steps: 15, rise: 1.0, going: 1.24, width: 214}
   - id: stands-east-north
     kind: stairs
-    at: [{at: [40.6, 132.5], turn: -90}]
-    params: {steps: 15, rise: 1.0, going: 1.24, width: 115}
+    at: [{at: [40.6, 134.5], turn: -90}]
+    params: {steps: 15, rise: 1.0, going: 1.24, width: 119}
   - id: stands-sphendone
     kind: stands
     at: [{at: [1.6, -169.0]}]
@@ -72,16 +73,16 @@ parts:
   - id: back-walls-west
     kind: pier
     note: the stands' back walls, one row higher than the top step
-    at: [{at: [-56.7, 10.5]}]
-    params: {width: 1.4, depth: 359, height: 16.0}
+    at: [{at: [-56.7, 12.5]}]
+    params: {width: 1.4, depth: 363, height: 16.0}
   - id: back-walls-east
     kind: pier
     at: [{at: [59.9, -62.0]}]
     params: {width: 1.4, depth: 214, height: 16.0}
   - id: back-walls-north
     kind: pier
-    at: [{at: [59.9, 132.5]}]
-    params: {width: 1.4, depth: 115, height: 16.0}
+    at: [{at: [59.9, 134.5]}]
+    params: {width: 1.4, depth: 119, height: 16.0}
   - id: sphendone
     kind: ring-wall
     note: the vaults under the curved south end, where the ground falls toward the sea
@@ -123,14 +124,37 @@ parts:
   - id: kathisma
     kind: pier
     note: the imperial box on the east side, as most writers place it
-    at: [{at: [50.6, 60.0]}]
-    params: {width: 20.0, depth: 30.0, height: 18.0}
-  - id: spina
+    at: [{at: [51.8, 60.0]}]
+    params: {width: 17.6, depth: 30.0, height: 18.0}
+  - id: kathisma-podium
     kind: pier
-    note: the central barrier, broken where the monuments stand on their own bases
-    at: [{at: [0.6, -81.0]}, {at: [0.6, -17.75]}, {at: [0.6, 17.75]}, {at: [0.6, 92.5]}]
-    params: {width: 2.0, depth: 78.0, height: 3.5}
-    names: [south, middle-south, middle-north, north]
+    note: the front podium under the imperial loggia arcade
+    at: [{at: [41.8, 60.0]}]
+    params: {width: 2.4, depth: 30.0, height: 6.0}
+  - id: kathisma-loggia
+    kind: arcade
+    material: marble
+    note: the imperial loggia colonnade overlooking the racecourse
+    at: [{at: [41.8, 46.0], z: 6.0, turn: 90}]
+    params: {length: 28.0, bays: 5, spring: 5.5, top: 10.0, thickness: 0.7, depth: 2.0,
+             step: 6.0, support: {kind: column, diameter: 0.65, capital: impost, n: 6}}
+  - id: spina-south
+    kind: pier
+    note: the central barrier, split cleanly between the monuments so none overlap or bury a base
+    at: [{at: [0.6, -82.0]}]
+    params: {width: 2.0, depth: 82.0, height: 3.5}
+  - id: spina-middle-south
+    kind: pier
+    at: [{at: [0.6, -17.5]}]
+    params: {width: 2.0, depth: 30.0, height: 3.5}
+  - id: spina-middle-north
+    kind: pier
+    at: [{at: [0.6, 18.5]}]
+    params: {width: 2.0, depth: 32.0, height: 3.5}
+  - id: spina-north
+    kind: pier
+    at: [{at: [0.6, 92.5]}]
+    params: {width: 2.0, depth: 100.0, height: 3.5}
   - id: metae-bases
     kind: pier
     at: [{at: [0.6, -126.0]}, {at: [0.6, 146.0]}]
@@ -220,6 +244,20 @@ parts:
     kind: wall
     at: [[-2.5, -2.5], [2.5, -2.5, 90], [2.5, 2.5, 180], [-2.5, 2.5, 270]]
     params: {length: 5.0, height: 2.5, thickness: 0.4, step: 4.0}
+  - id: square-ground
+    kind: ground-cutout
+    material: stone
+    note: the raised modern Sultanahmet pavement with sunken cutouts around all three monument pits
+    at: [{at: [0.0, 0.0], z: 2.1}]
+    params:
+      width: 72.0
+      depth: 136.0
+      thickness: 0.4
+      step: 24.0
+      cutouts:
+        - {x: 0.6, y: 38.0, width: 10.4, depth: 10.4}
+        - {x: 0.6, y: -36.6, width: 10.4, depth: 10.4}
+        - {x: 0.0, y: 0.0, width: 5.4, depth: 5.4}
   - id: mosque-hall
     kind: pier
     note: the Sultan Ahmed Mosque's prayer hall as a mass
@@ -234,6 +272,20 @@ parts:
     material: lead
     at: [{at: [145.0, 60.0], z: 30.0}]
     params: {radius: 11.7, thickness: 0.9, n: 24, rows: 4, step: 4.0}
+  - id: mosque-semidomes
+    kind: semidome
+    material: lead
+    note: four cascading half-domes flanking the central dome
+    at: [{at: [145.0, 72.5], z: 22.0}, {at: [145.0, 47.5], z: 22.0, turn: 180},
+         {at: [157.5, 60.0], z: 22.0, turn: -90}, {at: [132.5, 60.0], z: 22.0, turn: 90}]
+    params: {radius: 11.0, thickness: 0.8, n: 12, rows: 3, step: 6.0}
+  - id: mosque-corner-domes
+    kind: dome
+    material: lead
+    note: four small corner domes framing the prayer hall roof
+    at: [{at: [126.0, 40.0], z: 22.0}, {at: [164.0, 40.0], z: 22.0},
+         {at: [126.0, 80.0], z: 22.0}, {at: [164.0, 80.0], z: 22.0}]
+    params: {radius: 5.5, thickness: 0.6, n: 12, rows: 3, step: 6.0}
   - id: mosque-court-sides
     kind: wall
     note: the courtyard's arcaded walls as masses
@@ -306,7 +358,7 @@ steps:
         yaldızlı tunç atlar dururdu; büyük olasılıkla Venedik'in 1204'te San
         Marco'ya götürdüğü dört at.
   - id: kathisma
-    parts: [kathisma]
+    parts: [kathisma*]
     seconds: 3.0
     epochs: [330, 1200]
     sources: [bit-cetinkaya-bizans-mimarisi, byzleg-hippodrome, procopius-wars-1-24]
@@ -394,7 +446,7 @@ steps:
         için 1582'de düzenlediği şenlik 52, başka bir kayda göre 55 gün
         sürdü.
   - id: today
-    parts: [serpent-today, pits, pit-serpent]
+    parts: [serpent-today, pits, pit-serpent, square-ground]
     seconds: 3.0
     epochs: [2026]
     sources: [byzleg-hippodrome, encrom-sphendone, encrom-serpentine]

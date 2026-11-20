@@ -17,6 +17,48 @@
     "axis": 124.6,
     "source": "osm-way-109862851"
   },
+  "nightLamps": [
+    [
+      0,
+      0,
+      18
+    ],
+    [
+      -12,
+      0,
+      14
+    ],
+    [
+      12,
+      0,
+      14
+    ],
+    [
+      0,
+      18,
+      14
+    ],
+    [
+      0,
+      -18,
+      14
+    ],
+    [
+      -26,
+      0,
+      15
+    ],
+    [
+      26,
+      0,
+      15
+    ],
+    [
+      0,
+      -36,
+      14
+    ]
+  ],
   "epochs": [
     {
       "year": 537,
@@ -52,6 +94,7 @@
     {
       "id": "walls",
       "parts": [
+        "floor",
         "wall-north",
         "wall-south",
         "wall-east",
@@ -83,7 +126,8 @@
         "piers-ne",
         "piers-sw",
         "piers-se",
-        "buttress-towers"
+        "buttress-towers",
+        "buttress-bridges"
       ],
       "seconds": 2.8,
       "epochs": [],
@@ -106,6 +150,7 @@
         "arcade-ground-arches",
         "arcade-gallery",
         "arcade-gallery-arches",
+        "gallery-floors",
         "tympana"
       ],
       "seconds": 2.8,
@@ -171,6 +216,8 @@
         "apse",
         "apse-cap",
         "roof-aisles",
+        "roof-aisles-ends",
+        "roof-aisles-mid",
         "roof-narthex",
         "roof-exonarthex"
       ],
@@ -375,7 +422,8 @@
   "choisy": {
     "sectionHeight": 10,
     "elevation": -45,
-    "azimuth": 225
+    "azimuth": 225,
+    "overviewZoom": 0.88
   },
   "sources": [
     "byzantine-legacy-hagia-sophia",
@@ -383,7 +431,7 @@
     "tdv-ayasofya",
     "theophanes-1997"
   ],
-  "triangles": 18568,
+  "triangles": 19580,
   "citations": [
     {
       "id": "agathias-mango-1972",

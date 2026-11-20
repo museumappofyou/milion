@@ -1,28 +1,29 @@
 {
   "id": "serpent-column",
-  "parts": 10,
-  "triangles": 16280,
-  "vertices": 8188,
-  "bytes": 82704,
+  "parts": 11,
+  "triangles": 16468,
+  "vertices": 8290,
+  "bytes": 83688,
   "axis": null,
   "dimensions": [
     {
       "id": "surviving-height",
-      "measured": 5.409,
+      "measured": 5.412,
       "cited": 5.35,
       "tolerance": 0.02,
-      "error": 0.0111
+      "error": 0.0116
     }
   ],
   "byPart": {
     "delphi-base": 512,
     "coils": 7392,
-    "coils-heads": 720,
+    "coils-heads": 816,
     "tripod-bowl": 336,
-    "tripod-legs": 324,
+    "tripod-legs": 288,
     "hippodrome-plinth": 32,
     "column-today": 6624,
     "pit": 224,
+    "pit-ground": 128,
     "jaw-plinth": 20,
     "jaw": 96
   }

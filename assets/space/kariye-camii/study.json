@@ -17,6 +17,28 @@
     "axis": 104.5,
     "source": "osm-relation-7614527"
   },
+  "nightLamps": [
+    [
+      0,
+      0,
+      5.0
+    ],
+    [
+      11.6,
+      1.0,
+      4.5
+    ],
+    [
+      -4.0,
+      -8.5,
+      4.0
+    ],
+    [
+      -0.5,
+      -14.0,
+      3.8
+    ]
+  ],
   "epochs": [
     {
       "year": 1081,
@@ -166,7 +188,15 @@
       "parts": [
         "naos-arms",
         "naos-pendentives",
-        "naos-ring"
+        "naos-ring",
+        "naos-roof-nw",
+        "naos-roof-ne",
+        "naos-roof-sw",
+        "naos-roof-se",
+        "naos-roof-arm-n",
+        "naos-roof-arm-s",
+        "naos-roof-arm-w",
+        "naos-roof-arm-e"
       ],
       "seconds": 2.2,
       "epochs": [],
@@ -186,7 +216,9 @@
       "id": "dome-early",
       "parts": [
         "dome-early",
-        "dome-early-drum"
+        "dome-early-drum",
+        "prothesis-roof-early",
+        "diakonikon-roof-early"
       ],
       "seconds": 2.2,
       "epochs": [
@@ -283,8 +315,10 @@
       "parts": [
         "prothesis-dome",
         "prothesis-dome-drum",
+        "prothesis-roof",
         "diakonikon-dome",
-        "diakonikon-dome-drum"
+        "diakonikon-dome-drum",
+        "diakonikon-roof"
       ],
       "seconds": 2.2,
       "epochs": [
@@ -309,7 +343,8 @@
       "parts": [
         "annex-wall-n",
         "annex-floor",
-        "annex-vaults"
+        "annex-vaults",
+        "annex-roof"
       ],
       "seconds": 2.2,
       "epochs": [
@@ -341,7 +376,8 @@
         "inner-pendentives-s",
         "inner-dome-s",
         "inner-dome-s-drum",
-        "inner-vaults"
+        "inner-vaults",
+        "inner-roof"
       ],
       "seconds": 2.2,
       "epochs": [
@@ -367,7 +403,10 @@
         "outer-wall-w",
         "outer-wall-n",
         "outer-wall-s",
-        "outer-vaults"
+        "outer-pilasters",
+        "outer-vaults",
+        "outer-roof-w",
+        "outer-roof-s"
       ],
       "seconds": 2.2,
       "epochs": [
@@ -392,12 +431,16 @@
       "parts": [
         "parek-wall-n",
         "parek-wall-s",
+        "parek-pilasters",
         "parek-arcade",
         "parek-arcade-arches",
         "parek-pendentives",
+        "parek-ring",
         "parek-dome",
         "parek-dome-drum",
         "parek-vault",
+        "parek-roof-w",
+        "parek-roof-e",
         "parek-apse",
         "parek-apse-cap"
       ],
@@ -500,14 +543,15 @@
   "choisy": {
     "sectionHeight": 6.0,
     "elevation": -50,
-    "azimuth": 225
+    "azimuth": 225,
+    "overviewZoom": 0.96
   },
   "sources": [
     "ousterhout-2002",
     "van-millingen-1912",
     "wp-the-chora-1381788152"
   ],
-  "triangles": 16128,
+  "triangles": 19670,
   "citations": [
     {
       "id": "osm-relation-7614527",

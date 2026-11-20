@@ -110,8 +110,32 @@ def build_one(spec, known):
                  if x not in known]
     if problems:
         raise SystemExit(f"{spec['id']}:\n  " + '\n  '.join(problems))
-    solids = [s for _, s, _ in parts]
-    ao = bake_ao(solids, solids)
+    # Scale-adaptive AO voxel/reach + per-epoch occluder exclusion so
+    # never-coexisting epochs (e.g. Ayasofya's 537 vs 562 dome, Serpent Column's
+    # 479 BCE tripod vs 2026 pit, Hippodrome's Roman vs 2026 ground) never
+    # shadow each other, and light-emitting parts never cast AO shadows.
+    all_v = np.concatenate([s[0] for _, s, _ in parts])
+    span = float(np.linalg.norm(all_v.max(axis=0) - all_v.min(axis=0)))
+    voxel = round(max(0.06, min(0.5, span / 120.0)), 4)
+    reach = round(max(1.5, min(9.0, span / 6.0)), 4)
+    all_years = frozenset(e['year'] for e in spec['epochs']) or frozenset({0})
+    part_years = {n: set() for n in names}
+    for s in steps:
+        yrs = set(s.get('epochs') or all_years)
+        for n in s['parts']:
+            part_years[n] |= yrs
+    groups = {}
+    for i, (n, _, _) in enumerate(parts):
+        occs = tuple(j for j, (nj, _, ej) in enumerate(parts)
+                     if ej.get('material') != 'light' and (part_years[n] & part_years[nj]))
+        groups.setdefault(occs, []).append(i)
+    ao = [None] * len(parts)
+    for occs in sorted(groups):
+        idxs = groups[occs]
+        occ_solids = [parts[j][1] for j in occs] or [parts[idxs[0]][1]]
+        baked = bake_ao([parts[i][1] for i in idxs], occ_solids, voxel=voxel, reach=reach)
+        for i, a in zip(idxs, baked):
+            ao[i] = a
     built = [{'name': n, 'positions': s[0], 'faces': s[1], 'ao': a, 'extras': extras}
              for (n, s, extras), a in zip(parts, ao)]
     return built, steps, dims, axis, triangles
@@ -127,6 +151,7 @@ def manifest(spec, steps, triangles, citations):
         **({'orientation': {'axis': spec['orientation']['axis'],
                             'source': spec['orientation']['source']}}
            if 'orientation' in spec else {}),
+        **({'nightLamps': spec['nightLamps']} if 'nightLamps' in spec else {}),
         'epochs': spec['epochs'],
         'steps': [{'id': s['id'], 'parts': s['parts'], 'seconds': s['seconds'],
                    'epochs': s.get('epochs', []), 'sources': s['sources'], 'label': s['label'],

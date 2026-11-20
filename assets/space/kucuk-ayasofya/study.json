@@ -17,6 +17,23 @@
     "axis": 108.0,
     "source": "osm-way-303179753"
   },
+  "nightLamps": [
+    [
+      0,
+      0,
+      5.5
+    ],
+    [
+      0,
+      6.5,
+      4.5
+    ],
+    [
+      0,
+      -6.5,
+      4.5
+    ]
+  ],
   "epochs": [
     {
       "year": 536,
@@ -191,7 +208,8 @@
       "id": "roof",
       "parts": [
         "roof",
-        "roof-w"
+        "roof-w",
+        "roof-narthex"
       ],
       "seconds": 2.8,
       "epochs": [],
@@ -274,7 +292,7 @@
     "tdv-kucuk-ayasofya",
     "van-millingen-1912"
   ],
-  "triangles": 16484,
+  "triangles": 16616,
   "citations": [
     {
       "id": "byzantine-legacy-sergius",

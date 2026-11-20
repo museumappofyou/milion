@@ -29,7 +29,8 @@ import sys
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from glb import write_glb  # noqa: E402
+import meshopt  # noqa: E402
+from glb import POSITION_EXP, write_compressed, write_glb  # noqa: E402
 from solid import bake_ao, box, solid, surface, union  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -280,18 +281,37 @@ def semidome(k):
 
 def exedra(k):
     """What carries the east semi-dome: a half-ring beam on an arcade of
-    COLUMNS columns (Hagia Sophia's exedrae stand on columns, not walls)."""
+    COLUMNS cylindrical columns (Hagia Sophia's exedrae stand on columns, not walls)."""
     c = np.array([H + D, 0, 0])
     beam = annulus(H, H + WALL_T, Z0 - BEAM, Z0, max(8, int(24 * k)),
                    (-np.pi / 2, np.pi / 2), name='exedra beam')
     pieces = [(beam[0] + c, beam[1])]
-    half = COLUMN / 2
+    r = COLUMN / 2
+    sides = max(8, int(12 * k))
+    nv = max(2, int(round(2 * k)))
+    const = lambda n: (lambda p: np.broadcast_to(n, p.shape))  # noqa: E731
+    h_col = Z0 - BEAM
+
+    def shaft(u, v):
+        a = 2 * np.pi * u
+        return np.stack([r * np.cos(a), r * np.sin(a), h_col * v], -1)
+
+    def cap(z):
+        def fn(u, v):
+            a = 2 * np.pi * u
+            return np.stack([r * v * np.cos(a), r * v * np.sin(a), z + 0 * u], -1)
+        return fn
+
+    col = solid(
+        surface(shaft, sides, nv, lambda p: np.stack([p[..., 0], p[..., 1], 0 * p[..., 0]], -1)),
+        surface(cap(0.0), sides, 1, const((0, 0, -1))),
+        surface(cap(h_col), sides, 1, const((0, 0, 1))),
+        name='column')
     for i in range(COLUMNS):
         t = -np.pi / 2 + np.pi * (i + 1) / (COLUMNS + 1)
-        V, F = box(H + WALL_T / 2 - half, H + WALL_T / 2 + half, -half, half, 0, Z0 - BEAM,
-                   step=3 / k, name='column')
-        x, y = V[:, 0] * np.cos(t) - V[:, 1] * np.sin(t), V[:, 0] * np.sin(t) + V[:, 1] * np.cos(t)
-        pieces.append((np.stack([x, y, V[:, 2]], 1) + c, F))
+        rc = H + WALL_T / 2
+        offset = c + np.array([rc * math.cos(t), rc * math.sin(t), 0.0])
+        pieces.append((col[0] + offset, col[1]))
     return union(*pieces)
 
 
@@ -370,17 +390,23 @@ def occluders(name, everything):
     return [s for n, s, _ in everything if n not in banned]
 
 
+SMOOTH_PREFIXES = ('arch-', 'pendentive-', 'ring', 'windows', 'dome', 'semidome-', 'exedra-')
+
+
 def build(k=1.0):
     everything = parts(k)
     out = []
     for name, (V, F), material in everything:
         (ao,) = bake_ao([(V, F)], occluders(name, everything))
+        extras = {'material': material}
+        if name.startswith(SMOOTH_PREFIXES):
+            extras['crease'] = 60.0
         out.append({'name': name, 'positions': V, 'faces': F, 'ao': ao,
-                    'extras': {'material': material}})
+                    'extras': extras})
     return out
 
 
-# Tessellation for the app (20,144 triangles). Measured on the A52s, a lighter
+# Tessellation for the app (~20,336 triangles). Measured on the A52s, a lighter
 # .75 (13,616) ran slower, 32-38 fps against 54-57, because the CPU governor
 # settles at a lower clock under less work (studio/captures/P08/device-bench.json).
 APP_DENSITY = 1.0
@@ -396,12 +422,15 @@ def main():
     if args.bench:
         built = build(1.79)
         path = ROOT / 'studio/spikes/p08/bench-50k.glb'
+        size = write_glb(path, built, EXTRAS)
     else:
         built = build(APP_DENSITY)
+        for p in built:
+            p['positions'] = meshopt.quantise(p['positions'], POSITION_EXP)
         path = OUT / 'model.glb'
         import dome_study_text
         dome_study_text.write(ROOT, built)
-    size = write_glb(path, built, EXTRAS)
+        size = write_compressed(path, built, EXTRAS)
     triangles = sum(len(p['faces']) for p in built)
     vertices = sum(len(p['positions']) for p in built)
     print(f'{path.relative_to(ROOT)}: {len(built)} parts, {triangles} triangles, '

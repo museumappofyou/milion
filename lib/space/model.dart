@@ -75,6 +75,11 @@ class SpacePart {
   /// Baked ambient occlusion per vertex, 1 = open sky.
   final Float32List ao;
   late final Float32List normals;
+
+  /// Crease-aware smooth unit normals per triangle corner (3 floats per corner,
+  /// 9 per triangle): adjacent faces meeting within [crease] degrees average
+  /// smoothly while sharp architectural corners keep crisp face normals.
+  late final Float32List cornerNormals;
   late final SpaceBounds bounds;
 
   /// Two vertices and two faces per undirected edge (face −1: open edge).
@@ -156,6 +161,44 @@ class SpacePart {
                   sharp
           ? 1
           : 0;
+    }
+    // Build vertex → incident faces once, then average normals within [crease].
+    final incident = List<List<int>>.generate(vertices, (_) => <int>[]);
+    for (var t = 0; t < n; t++) {
+      incident[triangles[t * 3]].add(t);
+      incident[triangles[t * 3 + 1]].add(t);
+      incident[triangles[t * 3 + 2]].add(t);
+    }
+    cornerNormals = Float32List(n * 9);
+    for (var t = 0; t < n; t++) {
+      final fnx = normals[t * 3],
+          fny = normals[t * 3 + 1],
+          fnz = normals[t * 3 + 2];
+      for (var k = 0; k < 3; k++) {
+        final v = triangles[t * 3 + k];
+        var sx = 0.0, sy = 0.0, sz = 0.0;
+        for (final f in incident[v]) {
+          final gx = normals[f * 3],
+              gy = normals[f * 3 + 1],
+              gz = normals[f * 3 + 2];
+          if (fnx * gx + fny * gy + fnz * gz >= sharp) {
+            sx += gx;
+            sy += gy;
+            sz += gz;
+          }
+        }
+        final l = math.sqrt(sx * sx + sy * sy + sz * sz);
+        final o = (t * 3 + k) * 3;
+        if (l > 1e-6) {
+          cornerNormals[o] = sx / l;
+          cornerNormals[o + 1] = sy / l;
+          cornerNormals[o + 2] = sz / l;
+        } else {
+          cornerNormals[o] = fnx;
+          cornerNormals[o + 1] = fny;
+          cornerNormals[o + 2] = fnz;
+        }
+      }
     }
   }
 }

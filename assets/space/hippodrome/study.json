@@ -17,6 +17,28 @@
     "axis": 38.97,
     "source": "osm-hippodrome-2026-11-19"
   },
+  "nightLamps": [
+    [
+      0,
+      0,
+      28
+    ],
+    [
+      0,
+      90,
+      28
+    ],
+    [
+      0,
+      -90,
+      28
+    ],
+    [
+      145,
+      60,
+      28
+    ]
+  ],
   "epochs": [
     {
       "year": 330,
@@ -129,7 +151,10 @@
     {
       "id": "kathisma",
       "parts": [
-        "kathisma"
+        "kathisma",
+        "kathisma-podium",
+        "kathisma-loggia",
+        "kathisma-loggia-arches"
       ],
       "seconds": 3.0,
       "epochs": [
@@ -294,7 +319,8 @@
       "parts": [
         "serpent-today",
         "pits",
-        "pit-serpent"
+        "pit-serpent",
+        "square-ground"
       ],
       "seconds": 3.0,
       "epochs": [
@@ -320,6 +346,8 @@
         "mosque-hall",
         "mosque-drum",
         "mosque-dome",
+        "mosque-semidomes",
+        "mosque-corner-domes",
         "mosque-court-sides",
         "mosque-court-ends",
         "minarets"
@@ -385,7 +413,7 @@
     "seuso-obelisk-theodosius",
     "tan-hippodrome-underground"
   ],
-  "triangles": 12156,
+  "triangles": 14264,
   "citations": [
     {
       "id": "bit-cetinkaya-bizans-mimarisi",

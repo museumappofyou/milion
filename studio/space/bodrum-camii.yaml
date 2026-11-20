@@ -43,6 +43,7 @@ orientation:
     - [41.0084519, 28.9555994]
     - [41.0084816, 28.9556031]
 step: 1.6
+nightLamps: [[0, 0, 4.0], [0, -6.0, 3.0], [0, 0, -4.5]]
 epochs:
   - {year: 922, label: {en: "Myrelaion church, c. 920", tr: "Myrelaion Kilisesi, y. 920"}}
   - {year: 2026, label: {en: "Bodrum Camii today", tr: "Bugün Bodrum Camii"}}
@@ -86,23 +87,23 @@ parts:
     material: marble
     at: [[-2, -2], [2, -2], [-2, 2], [2, 2]]
     z: -7.5
-    params: {height: 4.2, diameter: 0.5, capital: impost, n: 8}
+    params: {height: 4.6, diameter: 0.5, capital: impost, n: 8}
   - id: lower-vaults
     kind: arch
     material: brick
     note: the three aisles' barrel vaults (the crossing ones are left out)
     at: [{at: [0, 1.325], z: -2.9}]
-    params: {span: 3.6, thickness: 0.4, depth: 10.65}
+    params: {span: 3.6, thickness: 0.4, depth: 10.6}
   - id: lower-aisle-vaults
     kind: arch
     material: brick
-    at: [{at: [-3.1, 1.325], z: -2.9}, {at: [3.1, 1.325], z: -2.9}]
-    params: {span: 1.8, thickness: 0.35, depth: 10.65}
+    at: [{at: [-3.05, 1.325], z: -2.9}, {at: [3.05, 1.325], z: -2.9}]
+    params: {span: 1.55, thickness: 0.30, depth: 10.6}
   - id: lower-narthex-vault
     kind: arch
     material: brick
     at: [{at: [0, -6.075], z: -2.9, turn: 90}]
-    params: {span: 2.65, thickness: 0.35, depth: 8.0}
+    params: {span: 2.65, thickness: 0.35, depth: 7.9}
   - {id: floor, kind: slab, material: marble, at: [[0, -0.45]], z: -0.3,
      params: {width: 9.5, depth: 15.7, thickness: 0.3}}
   # The church (upper level).
@@ -242,7 +243,7 @@ parts:
     kind: ring
     material: brick
     at: [{at: [0, 0], z: 8.4}]
-    params: {r0: 1.65, r1: 2.2, z0: 0, z1: 0.3, n: 16}
+    params: {r0: 1.65, r1: 2.75, z0: 0, z1: 0.3, n: 16}
   - id: dome
     kind: dome
     material: brick
@@ -262,7 +263,7 @@ parts:
     material: stone
     note: on the south-west corner of the substructure; its size is an estimate
     at: [{at: [5.15, -8.7], z: -7.5}]
-    params: {base: 2.4, base_height: 9.0, shaft_diameter: 1.7, shaft_top: 20.5, serefe: [17.0],
+    params: {base: 2.4, base_height: 9.0, shaft_diameter: 1.7, shaft_top: 17.25, serefe: [17.0],
              serefe_depth: 0.6, corbel: 0.9, parapet: 0.9, petek: 2.2, cap: 3.6, finial: 1.0,
              sides: 12, shoe: 1.0}
 steps:

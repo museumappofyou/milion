@@ -17,6 +17,18 @@
     "axis": 271.5,
     "source": "osm-way-228463988"
   },
+  "nightLamps": [
+    [
+      5.05,
+      5.15,
+      5.5
+    ],
+    [
+      0,
+      0,
+      3.0
+    ]
+  ],
   "epochs": [
     {
       "year": 330,
@@ -61,7 +73,9 @@
         "pier-fragment",
         "pier-fragment-back",
         "pier-fragment-top",
-        "piers"
+        "piers",
+        "pier-bases",
+        "impost-bands"
       ],
       "seconds": 3.2,
       "epochs": [
@@ -84,7 +98,8 @@
     {
       "id": "arches",
       "parts": [
-        "arches"
+        "arches",
+        "attic-cornice"
       ],
       "seconds": 3.2,
       "epochs": [
@@ -191,7 +206,7 @@
     "azimuth": 225
   },
   "sources": [],
-  "triangles": 1544,
+  "triangles": 2284,
   "citations": [
     {
       "id": "byzantium1200-milion",

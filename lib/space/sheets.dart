@@ -38,7 +38,7 @@ class SpaceSheet extends StatelessWidget {
       snapshot: () => (
         c.reduced,
         c.playing,
-        (c.moment.assembly.clamp(0, c.steps.length) * 4).round(),
+        (c.moment.assembly.clamp(0, c.visibleSteps.length) * 4).round(),
         c.assemblyTarget,
         c.explode,
         c.visibleEpoch,
@@ -123,8 +123,12 @@ class SpaceSheet extends StatelessWidget {
               maxHeight: MediaQuery.sizeOf(context).height * .78,
             ),
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(20),
-              child: body,
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [const DimensionHandle(), body],
+              ),
             ),
           ),
         );
@@ -202,64 +206,56 @@ class SpaceSheet extends StatelessWidget {
             s.spaceAssemblyValue('${v.floor()}', '$total'),
         onChanged: c.seekAssembly,
       ),
-      Text(s.spaceExplode),
+      Text(
+        TypeRole.capitals(s.spaceExplode, lang),
+        style: TypeRole.measurement.copyWith(
+          fontSize: 11,
+          color: MeasureColors.of(context).secondary,
+        ),
+      ),
       Slider(
         key: const ValueKey('space-explode'),
         value: c.explode,
         onChanged: c.setExplode,
         semanticFormatterCallback: (v) => '${(v * 100).round()}%',
       ),
-      // One epoch: nothing to scrub between.
+      // One epoch: nothing to switch between.
       if (c.study.epochs.length > 1) ...[
-        Text(s.spaceTime),
-        Slider(
-          key: const ValueKey('space-time'),
-          value: c.visibleEpoch.toDouble(),
-          max: (c.study.epochs.length - 1).toDouble(),
-          divisions: c.study.epochs.length - 1,
-          // The stops are named below; a value label would make TalkBack
-          // read the year twice.
-          semanticFormatterCallback: (v) =>
-              c.study.epochs[v.round()].label.inLanguage(lang),
-          onChanged: (v) => c.setEpoch(v.round()),
+        const SizedBox(height: 6),
+        Text(
+          TypeRole.capitals(s.spaceTime, lang),
+          style: TypeRole.measurement.copyWith(
+            fontSize: 11,
+            color: MeasureColors.of(context).secondary,
+          ),
         ),
-        // Stops of the scrubber, first and last at its ends; long labels
-        // wrap rather than overflow at 200% text.
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (final (i, e) in c.study.epochs.indexed)
-              Expanded(
-                child: Text(
-                  e.label.inLanguage(lang),
-                  textAlign: i == 0
-                      ? TextAlign.start
-                      : i == c.study.epochs.length - 1
-                      ? TextAlign.end
-                      : TextAlign.center,
-                  style: TypeRole.measurement,
-                ),
-              ),
-          ],
+        const SizedBox(height: 6),
+        _EpochSelector(controller: c),
+        const SizedBox(height: 6),
+        Text(
+          c.study.epochs[c.visibleEpoch].label.inLanguage(lang),
+          style: Theme.of(context).textTheme.bodySmall
+              ?.copyWith(color: MeasureColors.of(context).ink),
         ),
       ],
-      const SizedBox(height: 12),
+      const SizedBox(height: 14),
       if (c.reduced) Text(s.plateStillHint),
       Wrap(
         spacing: 8,
         runSpacing: 8,
         children: [
           if (!c.reduced)
+            FilledButton.icon(
+              key: const ValueKey('space-play'),
+              onPressed: c.playing ? c.pause : c.play,
+              icon: Icon(c.playing ? Icons.pause : Icons.play_arrow, size: 18),
+              label: Text(c.playing ? s.platePause : s.spacePlay),
+            ),
+          if (!c.reduced)
             OutlinedButton(
               key: const ValueKey('space-reveal'),
               onPressed: c.playReveal,
               child: Text(s.plateStartReveal),
-            ),
-          if (!c.reduced)
-            OutlinedButton(
-              key: const ValueKey('space-play'),
-              onPressed: c.playing ? c.pause : c.play,
-              child: Text(c.playing ? s.platePause : s.spacePlay),
             ),
           OutlinedButton(
             key: const ValueKey('space-previous'),
@@ -270,11 +266,6 @@ class SpaceSheet extends StatelessWidget {
             key: const ValueKey('space-next'),
             onPressed: () => c.step(1),
             child: Text(s.plateNext),
-          ),
-          TextButton(
-            key: const ValueKey('space-sources'),
-            onPressed: () => player.controls(SpacePanel.sources),
-            child: Text(s.spaceSources),
           ),
         ],
       ),
@@ -333,8 +324,18 @@ class SpaceSheet extends StatelessWidget {
   }
 
   List<Widget> _style(BuildContext context, SpaceController c) {
-    final s = context.l10n;
+    final s = context.l10n,
+        lang = context.language,
+        colors = MeasureColors.of(context);
     return [
+      Text(
+        TypeRole.capitals(s.spaceRendering, lang),
+        style: TypeRole.measurement.copyWith(
+          fontSize: 11,
+          color: colors.secondary,
+        ),
+      ),
+      const SizedBox(height: 6),
       Wrap(
         spacing: 8,
         runSpacing: 8,
@@ -346,13 +347,22 @@ class SpaceSheet extends StatelessWidget {
           ])
             ChoiceChip(
               key: ValueKey('space-style-${style.name}'),
+              showCheckmark: false,
               label: Text(label),
               selected: c.style == style,
               onSelected: (_) => c.setStyle(style),
             ),
         ],
       ),
-      const SizedBox(height: 12),
+      const SizedBox(height: 14),
+      Text(
+        TypeRole.capitals(s.spaceCamera, lang),
+        style: TypeRole.measurement.copyWith(
+          fontSize: 11,
+          color: colors.secondary,
+        ),
+      ),
+      const SizedBox(height: 6),
       Wrap(
         spacing: 8,
         runSpacing: 8,
@@ -369,7 +379,8 @@ class SpaceSheet extends StatelessWidget {
           ),
         ],
       ),
-      Text(s.spaceChoisyHint),
+      const SizedBox(height: 6),
+      Text(s.spaceChoisyHint, style: Theme.of(context).textTheme.bodySmall),
       SwitchListTile(
         key: const ValueKey('space-perspective'),
         contentPadding: EdgeInsets.zero,
@@ -383,7 +394,7 @@ class SpaceSheet extends StatelessWidget {
           ),
         ),
       ),
-      Text(s.spaceGestureHint),
+      Text(s.spaceGestureHint, style: Theme.of(context).textTheme.bodySmall),
     ];
   }
 
@@ -501,6 +512,80 @@ class _StepStripState extends State<_StepStrip> {
               ),
             ),
         ],
+      ),
+    );
+  }
+}
+
+/// Crisp equal-width architectural year bar replacing the 4-column truncated
+/// epoch slider: each year is cleanly selectable with full contrast and the
+/// active epoch's complete caption reads below without clipping.
+class _EpochSelector extends StatelessWidget {
+  const _EpochSelector({required this.controller});
+  final SpaceController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = MeasureColors.of(context);
+    final dark = Theme.of(context).brightness == Brightness.dark;
+    final activeBg = dark ? c.ink : c.accent;
+    final activeFg = c.ground;
+    final s = context.l10n;
+    final lang = context.language;
+    final epochs = controller.study.epochs;
+    final current = controller.visibleEpoch;
+    return Container(
+      key: const ValueKey('space-time'),
+      decoration: BoxDecoration(
+        borderRadius: Space.radius,
+        border: Border.all(color: c.line),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            for (final (i, e) in epochs.indexed)
+              Expanded(
+                child: Semantics(
+                  button: true,
+                  selected: i == current,
+                  label: e.label.inLanguage(lang),
+                  child: InkWell(
+                    key: ValueKey('space-epoch-${e.year}'),
+                    onTap: () => controller.setEpoch(i),
+                    child: Container(
+                      constraints: const BoxConstraints(minHeight: 46),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: i == current ? activeBg : c.ground,
+                        border: i == 0
+                            ? null
+                            : Border(left: BorderSide(color: c.line)),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 10,
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          e.year < 0
+                              ? s.atlasYearBc('${-e.year}')
+                              : '${e.year}',
+                          style: TypeRole.measurement.copyWith(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: i == current ? activeFg : c.ink,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

@@ -388,8 +388,9 @@ def shell(centre, r0, r1, theta, phi, nt, nf, name='shell', radius=None):
     cols = len(ts)
 
     def at(rho, t, f):
+        r = rho(t, f) if callable(rho) else rho
         s = 1.0 if radius is None else radius(t, f)
-        return c + rho * s * np.array([math.cos(f) * math.cos(t), math.cos(f) * math.sin(t), math.sin(f)])
+        return c + r * s * np.array([math.cos(f) * math.cos(t), math.cos(f) * math.sin(t), math.sin(f)])
 
     V, F = [], []
     for rho in (r1, r0):

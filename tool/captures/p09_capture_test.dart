@@ -263,7 +263,7 @@ void main() {
         'deviceFps': 'unverified: the A52s was not connected (O01)',
       }),
     );
-    expect(loadModel().triangleCount, 20144);
+    expect(loadModel().triangleCount, 20384);
   });
 
   testWidgets('P09 hook: three buildings assembling, ten seconds', (

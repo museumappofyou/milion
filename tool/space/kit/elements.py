@@ -14,7 +14,7 @@ import math
 import numpy as np
 
 from .shapes import (TAU, arch_curve, band, block, finish, loft, place, polygon_at,
-                     prism, rect, regular, revolve, shell, strip, union)
+                     prism, rect, regular, revolve, shell, strip, subdivide, union)
 
 HALF = math.pi / 2
 
@@ -46,8 +46,13 @@ def ring_sector(r0, r1, a0, a1, z0, z1, step=2.0, sides=0, phase=0.0, name='sect
 
 def ring(r0, r1, z0, z1, step=2.0, sides=0, phase=0.0, n=None, name='ring'):
     """A full round (or `sides`-gon) ring wall: a cornice, a drum, a rim."""
-    n = sides or n or segments(r1, step, 16, 8)
-    angles = phase + TAU * np.arange(n) / n
+    if sides:
+        side_len = 2 * r1 * math.sin(math.pi / sides)
+        sub = max(1, int(math.ceil(side_len / step)))
+        angles = phase + TAU * np.arange(sides * sub) / (sides * sub)
+    else:
+        n = n or segments(r1, step, 16, 8)
+        angles = phase + TAU * np.arange(n) / n
     return band(polygon_at(angles, sides, r1, phase), polygon_at(angles, sides, r0, phase),
                 z0, z1, step, name)
 
@@ -91,7 +96,7 @@ def wall_with_openings(r0, r1, z0, z1, openings, sill, head, share=.5, phase=0.0
 
 def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs=0,
          rib=(.6, .45), gores=0, gore_depth=.1, alternate=True, drum=None, n=None, rows=None,
-         rise=None, light=False, sector=None, step=2.0):
+         rise=None, light=False, sector=None, window_buttress=0.0, step=2.0):
     """A hemispherical dome of inner `radius` springing at z = 0.
 
     windows: openings in a band `band` high at the base, between piers that
@@ -139,8 +144,10 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
         hw = module * (1 - share) / 2
         rows = max(1, int(math.ceil(r1 * fb / step)))
         k = max(1 if n < 24 or windows > 16 else 2, int(math.ceil(2 * hw * r1 / step)))
+        r_outer = (lambda _t, f: r1 + window_buttress * (1.0 - 0.55 * (f / fb if fb > 0 else 0.0))) \
+            if window_buttress > 0 else r1
         out['-windows'] = union(*[
-            shell((0, 0, 0), r0, r1, (c - hw, c + hw), (0, fb), k, rows, 'window pier', fn)
+            shell((0, 0, 0), r0, r_outer, (c - hw, c + hw), (0, fb), k, rows, 'window pier', fn)
             for c in (phase + module * (i + .5) for i in range(windows)) if inside(c)])
     if ribs:
         width, depth = rib
@@ -160,12 +167,12 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
         if drum.get('buttresses'):
             depth, width = drum['buttresses']['depth'], drum['buttresses']['width']
             n_w = max(1, drum.get('windows', 8))
-            base = r0 + t - .02
+            base = r0 + t
             for i in range(n_w):
                 a = phase + TAU / n_w * (i + .5)
                 c, sn = math.cos(a), math.sin(a)
                 tri = [(base * c - width / 2 * -sn, base * sn - width / 2 * c),
-                       ((base + depth + .02) * c, (base + depth + .02) * sn),
+                       ((base + depth) * c, (base + depth) * sn),
                        (base * c + width / 2 * -sn, base * sn + width / 2 * c)]
                 spurs.append(prism(tri, -h, 0, step, 'drum buttress'))
         out['-drum'] = union(wall, *spurs)
@@ -189,7 +196,7 @@ def dome(radius, thickness=1.0, windows=0, band=None, share=.55, phase=0.0, ribs
 
 
 def semidome(radius, thickness=1.0, windows=0, band=None, share=.55, n=None, rows=None,
-             step=2.0):
+             depth_scale=1.0, step=2.0):
     """Half a dome of inner `radius` springing at z = 0, open toward −y, its
     back toward +y; `windows` in a base band, as for `dome`."""
     r0, r1 = radius, radius + thickness
@@ -209,6 +216,13 @@ def semidome(radius, thickness=1.0, windows=0, band=None, share=.55, n=None, row
             piers.append(shell((0, 0, 0), r0, r1, (a, b), (0, fb),
                                max(1, int(math.ceil((b - a) * r1 / step))), rows, 'window pier'))
         out['-windows'] = union(*piers)
+    if abs(depth_scale - 1.0) > 1e-6:
+        scaled = {}
+        for key, (V, F) in out.items():
+            W = np.array(V, dtype=np.float64)
+            W[:, 1] *= depth_scale
+            scaled[key] = finish(W, F, 'semi-dome' + key)
+        out = scaled
     return out
 
 
@@ -227,7 +241,8 @@ def exedra(radius, height, thickness=1.0, windows=0, sill=None, head=None, share
                               name='exedra beam')]
         for i in range(columns):
             t = math.pi * (i + 1) / (columns + 1)
-            col = column_solid(height - beam, d, c.get('capital', 'impost'), step, c.get('n', 8))
+            col = column_solid(height - beam, d, c.get('capital', 'impost'), step, c.get('n', 8),
+                               c.get('lite', False))
             pieces.append(place(col, (radius + thickness / 2) * math.cos(t),
                                 (radius + thickness / 2) * math.sin(t)))
         out[''] = union(*pieces)
@@ -326,22 +341,23 @@ def arch_ring(span, thickness, depth, kind='round', rise=None, pointed=1 / 3, n=
     return {'': strip(inner, outer, -depth / 2, depth / 2, 'arch')}
 
 
-def arched_panel(span, top, depth, margin=0.0, kind='round', rise=None, n=None, step=2.0):
+def arched_panel(span, top, depth, margin=0.0, kind='round', rise=None, pointed=1 / 3, n=None,
+                 step=2.0):
     """A wall panel with an arched opening: the arch and its spandrels from
-    the springing (z = 0) up to `top`, `margin` of wall on either side."""
+    the springing (z = 0) up to `top`, `margin` of wall on either side.
+    Uses exact rectangular outer corners so tall panels keep full spandrels
+    and refuses panels whose `top` does not clear the arch crown."""
     n = n or max(8, int(math.ceil(math.pi * span / 2 / step)) // 2 * 2)
-    inner = arch_curve(span, kind, rise, n)
+    inner = arch_curve(span, kind, rise, n, pointed=pointed)
+    apex = float(inner[:, 1].max())
+    if top <= apex + 1e-3:
+        raise ValueError(f'arched_panel: top {top:.3f} must exceed arch apex {apex:.3f}')
     x0, x1 = -span / 2 - margin, span / 2 + margin
-    outer = []
-    for p in inner:                         # each intrados point's ray from
-        a = math.atan2(p[1], p[0])           # the springing centre meets the
-        c, s = math.cos(a), math.sin(a)      # panel's outline
-        ts = [t for t in ((x0 / c) if c < -1e-9 else None, (x1 / c) if c > 1e-9 else None,
-                          (top / s) if s > 1e-9 else None) if t is not None and t > 0]
-        t = min(ts)
-        outer.append((t * c, t * s))
-    outer[0], outer[-1] = (x0, 0.0), (x1, 0.0)
-    return {'': strip(inner, np.asarray(outer), -depth / 2, depth / 2, 'arched panel')}
+    if margin > 1e-6:
+        poly = [(x0, 0.0), (x0, top), (x1, top), (x1, 0.0)] + [tuple(p) for p in inner[::-1]]
+    else:
+        poly = [(x0, top), (x1, top)] + [tuple(p) for p in inner[::-1]]
+    return {'': _xz_prism(poly, depth, step, 'arched panel')}
 
 
 def column_solid(height, diameter, capital='corinthian', step=2.0, n=12, lite=False):
@@ -439,16 +455,35 @@ def pier(width, depth, height, kind='rect', step=2.0):
     return {'': prism(cross, 0, height, step, 'pier')}
 
 
-def buttress(width, depth, height, kind='rect', steps=2, step=2.0):
+def buttress(width, depth, height, kind='rect', steps=2, pier_depth=None, spring=None, step=2.0):
     """A buttress against a wall at y = 0, projecting toward −y: rect,
-    stepped (narrowing in `steps` set-offs) or half-round (a half cylinder of
-    diameter `width`)."""
+    stepped (narrowing in `steps` set-offs), half-round (a half cylinder of
+    diameter `width`) or flying (an outer pier joined to the wall by an open
+    flying arch under a sloped coping)."""
     if kind == 'half-round':
         V, F = revolve([(0, 0), (width / 2, 0), (width / 2, height), (0, height)],
                        segments(width / 2, step, 16, 4), step, arc=(math.pi, TAU), name='buttress')
         return {'': (V, F)}
     if kind == 'rect':
         return {'': block(-width / 2, width / 2, -depth, 0, 0, height, step, 'buttress')}
+    if kind == 'flying':
+        pd = pier_depth if pier_depth is not None else depth * 0.42
+        span = depth - pd
+        if span <= 0.2:
+            raise ValueError('flying buttress: pier_depth must leave an open arch span')
+        sp = spring if spring is not None else height * 0.44
+        top_outer, top_inner = height * 0.88, height * 0.98
+        if top_outer <= sp + span / 2 + 0.15:
+            raise ValueError('flying buttress: not tall enough for semicircular flyer arch')
+        pier_solid_b = block(-width / 2, width / 2, -depth, -span, 0, height, step, 'buttress pier')
+        inner = arch_curve(span, 'round', n=10)
+        y_mid = -span / 2
+        poly = [(0.0, top_inner), (-span, top_outer)] + [
+            (y_mid + float(p[0]), sp + float(p[1])) for p in inner]
+        fw = width * 0.84
+        V, F = prism(poly, -fw / 2, fw / 2, step, 'flying arch')
+        flyer = finish(np.stack([V[:, 2], V[:, 0], V[:, 1]], 1), F, 'flying arch')
+        return {'': union(pier_solid_b, flyer)}
     profile = [(0, 0)]                   # (y, z) outline, stepping back up
     for k in range(steps):
         y = -depth * (1 - k / steps)
@@ -468,6 +503,11 @@ def minaret(base, base_height, shaft_diameter, shaft_top, serefe, serefe_depth=1
     transition (pabuç), a `sides`-gon shaft to `shaft_top`, a şerefe at each
     height in `serefe` (balcony floor levels) on muqarnas corbels, the
     narrower upper shaft (petek), a conical cap (külah) and a finial."""
+    top = max(serefe) + .25
+    if shaft_top is None:
+        shaft_top = top
+    elif shaft_top > top + 1e-6:
+        raise ValueError(f'minaret: shaft_top {shaft_top} exceeds upper şerefe floor {top}')
     r = shaft_diameter / 2 / math.cos(math.pi / sides)
     phase = math.pi / sides
     corners = regular(sides, r, phase)
@@ -488,7 +528,6 @@ def minaret(base, base_height, shaft_diameter, shaft_top, serefe, serefe_depth=1
         rings.append((regular(sides, outer, phase), z + .25))   # the balcony floor
         balconies.append(loft(rings, step, 'corbel'))
         balconies.append(ring(outer - .15, outer, z + .25, z + .25 + parapet, step, sides, phase))
-    top = max(serefe) + .25
     pr = r * .78
     head = [prism(regular(sides, pr, phase), top, top + petek, step, 'petek'),
             loft([(regular(sides, pr * 1.2, phase), top + petek),
@@ -524,16 +563,22 @@ def portico(bays, bay, depth, spring, column=None, thickness=.8, wall=1.2, heigh
     vault along the portico over each bay."""
     c = column or {}
     d = c.get('diameter', .7)
+    kind = c.get('arch', 'pointed')
+    pointed = c.get('pointed', 1 / 3)
+    rise = c.get('rise')
     xs = [bay * i for i in range(bays + 1)]
-    top = height or spring + depth / 2 + thickness
+    span = bay - d
+    arch_h = float(arch_curve(span, kind, rise, 6, pointed=pointed)[:, 1].max())
+    panel_top = max(arch_h + thickness * .6, span / 2 + thickness if kind == 'round' else arch_h + thickness * .6)
+    top = height or spring + max(depth / 2 + thickness, panel_top)
     cols = [place(column_solid(spring, d, c.get('capital', 'muqarnas'), step, c.get('n', 8), c.get('lite', True)), x, 0)
             for x in xs]
-    arches = [place(arched_panel(bay - d, (bay - d) / 2 + thickness, thickness,
-                                 d / 2, c.get('arch', 'pointed'), n=6, step=step)[''],
+    arches = [place(arched_panel(span, panel_top, thickness,
+                                 d / 2, kind, rise, pointed, n=6, step=step)[''],
                     x + bay / 2, 0, spring) for x in xs[:-1]]
     if transverse:
         arches += [place(arch_ring(depth - d / 2 - wall / 2, thickness, thickness,
-                                   c.get('arch', 'pointed'), n=6, step=step)[''],
+                                   kind, rise, pointed, n=6, step=step)[''],
                          x, depth / 2 - wall / 4, spring, HALF) for x in xs]
     out = {'': union(*cols), '-arches': union(*arches)}
     if back:
@@ -581,9 +626,16 @@ def courtyard(size, bays, spring, column=None, thickness=.8, wall=1.5, height=No
     ('n', 'e', 's' or 'w') has no outer wall (it meets the mosque)."""
     c = column or {}
     d = c.get('diameter', .7)
+    kind = c.get('arch', 'pointed')
+    pointed = c.get('pointed', 1 / 3)
+    rise = c.get('rise')
     cell = size / bays
     h = size / 2
-    top = height or spring + cell / 2 + thickness
+    inner = h - cell
+    span = 2 * inner / (bays - 2)
+    arch_h = float(arch_curve(span - d, kind, rise, 6, pointed=pointed)[:, 1].max())
+    panel_top = max(arch_h + thickness * .6, (span - d) / 2 + thickness if kind == 'round' else arch_h + thickness * .6)
+    top = height or spring + max(cell / 2 + thickness, panel_top)
     out = {}
     walls = []
     for side, (x0, x1, y0, y1) in {'s': (-h, h, -h, -h + wall), 'n': (-h, h, h - wall, h),
@@ -592,24 +644,21 @@ def courtyard(size, bays, spring, column=None, thickness=.8, wall=1.5, height=No
         if side != open_side:
             walls.append(block(x0, x1, y0, y1, 0, top, step, 'court wall'))
     out['-walls'] = union(*walls)
-    inner = h - cell
     grid = [-inner + 2 * inner * k / (bays - 2) for k in range(bays - 1)]
     points = sorted({(x, y) for x in grid for y in grid if abs(x) == inner or abs(y) == inner})
     out[''] = union(*[place(column_solid(spring, d, c.get('capital', 'muqarnas'), step, c.get('n', 8), c.get('lite', True)),
                             x, y) for x, y in points])
-    kind = c.get('arch', 'pointed')
-    span = 2 * inner / (bays - 2)
     arches = []
     for k in range(bays - 2):                       # along the inner square
         a = -inner + span * (k + .5)
         for x, y, turn in ((a, -inner, 0), (a, inner, 0), (-inner, a, HALF), (inner, a, HALF)):
-            arches.append(place(arched_panel(span - d, (span - d) / 2 + thickness, thickness, d / 2,
-                                             kind, n=6, step=step)[''], x, y, spring, turn))
+            arches.append(place(arched_panel(span - d, panel_top, thickness, d / 2,
+                                             kind, rise, pointed, n=6, step=step)[''], x, y, spring, turn))
     reach = cell - wall
     for x, y in points:                             # out to the walls
         for dx, dy in ((0, -1), (0, 1), (-1, 0), (1, 0)):
             if (dx and abs(x) == inner and np.sign(x) == dx) or (dy and abs(y) == inner and np.sign(y) == dy):
-                arches.append(place(arch_ring(reach - d / 2, thickness, thickness, kind, n=6, step=step)[''],
+                arches.append(place(arch_ring(reach - d / 2, thickness, thickness, kind, rise, pointed, n=6, step=step)[''],
                                     x + dx * (reach / 2 + d / 4), y + dy * (reach / 2 + d / 4), spring,
                                     HALF if dy else 0))
     out['-arches'] = union(*arches)
@@ -685,12 +734,39 @@ def curtain(length, height, thickness, merlons=None, step=2.0):
     return out
 
 
-def tower(size, height, kind='square', sides=8, merlons=True, roof=0.0, step=2.0):
+def tower(size, height, kind='square', sides=8, merlons=True, roof=0.0, openings=None, step=2.0):
     """A tower `size` across: square, polygonal (`sides`) or round, with
-    merlons or a conical roof `roof` high (`-roof`)."""
+    merlons or a conical/pyramidal roof `roof` high (`-roof`). Square towers
+    may specify `openings: {sill, head, width}` for an open arched belfry
+    chamber on all four sides."""
     if kind == 'square':
-        body = block(-size / 2, size / 2, -size / 2, size / 2, 0, height, step, 'tower')
         rim = rect(0, 0, size, size)
+        if openings:
+            sill = openings['sill']
+            head = openings['head']
+            w = openings['width']
+            cw = (size - w) / 2
+            spring = head - w / 2
+            if cw <= 0.15 or height <= head + 0.15 or spring <= sill + 0.1:
+                raise ValueError('tower openings do not fit tower dimensions')
+            h = size / 2
+            pieces = [block(-h, h, -h, h, 0, sill, step, 'tower base')]
+            for sx in (-1, 1):
+                for sy in (-1, 1):
+                    x0, x1 = (h - cw, h) if sx > 0 else (-h, -h + cw)
+                    y0, y1 = (h - cw, h) if sy > 0 else (-h, -h + cw)
+                    pieces.append(block(x0, x1, y0, y1, sill, height, step, 'belfry pier'))
+            panel = arched_panel(w, height - spring, cw, 0, 'round', n=8, step=step)['']
+            off = h - cw / 2
+            pieces += [
+                place(panel, 0, -off, spring, 0),
+                place(panel, 0, off, spring, 0),
+                place(panel, -off, 0, spring, HALF),
+                place(panel, off, 0, spring, HALF),
+            ]
+            body = union(*pieces)
+        else:
+            body = block(-size / 2, size / 2, -size / 2, size / 2, 0, height, step, 'tower')
     else:
         n = sides if kind == 'polygonal' else segments(size / 2, step, 12, 4)
         rim = regular(n, size / 2 / math.cos(math.pi / n), math.pi / n)
@@ -698,7 +774,13 @@ def tower(size, height, kind='square', sides=8, merlons=True, roof=0.0, step=2.0
     out = {'': body}
     if roof:
         R = np.asarray(rim) * 1.08
-        out['-roof'] = loft([(R, height), (np.zeros_like(R), height + roof)], step, 'roof')
+        if kind == 'square':
+            R = subdivide(R, step)
+            eave = min(0.18, roof * 0.1)
+            out['-roof'] = loft([(R, height), (R, height + eave),
+                                 (np.zeros_like(R), height + roof)], step, 'roof')
+        else:
+            out['-roof'] = loft([(R, height), (np.zeros_like(R), height + roof)], step, 'roof')
     if merlons:
         corners = np.asarray(rim)
         pts = []
@@ -717,10 +799,10 @@ def gate(span, spring, depth, tower_size, tower_height, wall_height=None, kind='
     between two towers (`-towers`)."""
     top = (wall_height or spring + span) - spring
     panel = place(arched_panel(span, top, depth, tower_size * .1, kind, step=step)[''], z=spring)
-    jambs = [block(sx * span / 2, sx * (span / 2 + tower_size * .1), -depth / 2, depth / 2, 0, spring,
-                   step, 'jamb') for sx in (-1,)] + \
-            [block(span / 2, span / 2 + tower_size * .1, -depth / 2, depth / 2, 0, spring, step, 'jamb')]
-    jambs[0] = block(-span / 2 - tower_size * .1, -span / 2, -depth / 2, depth / 2, 0, spring, step, 'jamb')
+    jambs = [
+        block(-span / 2 - tower_size * .1, -span / 2, -depth / 2, depth / 2, 0, spring, step, 'jamb'),
+        block(span / 2, span / 2 + tower_size * .1, -depth / 2, depth / 2, 0, spring, step, 'jamb'),
+    ]
     off = span / 2 + tower_size * .1 + tower_size / 2
     towers = [place(v, sx * off) for sx in (-1, 1) for k, v in
               tower(tower_size, tower_height, 'square', step=step).items()]
@@ -766,29 +848,50 @@ def terrain(width, depth, heights, bottom, step=2.0):
 def wall(length, height, thickness, openings=(), step=2.0):
     """A straight wall along +x from 0 to `length`, centred on y = 0, with
     openings [{x (centre), width, sill, head, arch: none|round|pointed}]:
-    piers between them, sills under, lintels or arched heads over."""
+    piers between them, sills under, lintels or arched heads over. Openings
+    sharing the same `(x, width)` stack vertically (multi-storey windows)."""
     t = thickness / 2
     if not openings:
         return {'': block(0, length, -t, t, 0, height, step, 'wall')}
+    groups = {}
+    for o in openings:
+        key = (round(float(o['x']), 4), round(float(o['width']), 4))
+        groups.setdefault(key, []).append(o)
     pieces, x = [], 0.0
-    for o in sorted(openings, key=lambda o: o['x']):
-        a, b = o['x'] - o['width'] / 2, o['x'] + o['width'] / 2
+    for (ox, ow), stack in sorted(groups.items(), key=lambda kv: kv[0][0]):
+        a, b = ox - ow / 2, ox + ow / 2
         if a - x > 1e-6:
             pieces.append(block(x, a, -t, t, 0, height, step, 'wall'))
-        if o.get('sill', 0) > 1e-6:
-            pieces.append(block(a, b, -t, t, 0, o['sill'], step, 'sill'))
-        kind = o.get('arch', 'none')
-        if kind == 'none':
-            if height - o['head'] > 1e-6:
-                pieces.append(block(a, b, -t, t, o['head'], height, step, 'lintel'))
-        else:
-            spring = o['head'] - o['width'] / 2 if kind == 'round' else o['head'] - o['width'] * .65
-            pieces.append(place(arched_panel(o['width'], height - spring, thickness, 0, kind,
-                                             step=step)[''], o['x'], 0, spring))
+        stack.sort(key=lambda o: o.get('sill', 0.0))
+        z = 0.0
+        for idx, o in enumerate(stack):
+            sill = o.get('sill', 0.0)
+            if sill - z > 1e-6:
+                pieces.append(block(a, b, -t, t, z, sill, step, 'sill'))
+            z_top = stack[idx + 1].get('sill', 0.0) if idx + 1 < len(stack) else height
+            kind = o.get('arch', 'none')
+            if kind == 'none':
+                if z_top - o['head'] > 1e-6:
+                    pieces.append(block(a, b, -t, t, o['head'], z_top, step, 'lintel'))
+            else:
+                arch_h = float(arch_curve(ow, kind, o.get('rise'), 8,
+                                          pointed=o.get('pointed', 1 / 3))[:, 1].max())
+                spring = o['head'] - arch_h
+                pieces.append(place(arched_panel(ow, z_top - spring, thickness, 0, kind,
+                                                 o.get('rise'), o.get('pointed', 1 / 3),
+                                                 step=step)[''], ox, 0, spring))
+            z = z_top
         x = b
     if length - x > 1e-6:
         pieces.append(block(x, length, -t, t, 0, height, step, 'wall'))
     return {'': union(*pieces)}
+
+
+def gable_roof(width, depth, eave=0.25, ridge=1.2, step=2.0):
+    """A pitched gable roof centred in XY on z = 0, ridge running along y."""
+    hw = width / 2
+    poly = [(-hw, 0.0), (hw, 0.0), (hw, eave), (0.0, ridge), (-hw, eave)]
+    return {'': _xz_prism(poly, depth, step, 'gable roof')}
 
 
 def slab(width, depth, thickness, step=2.0):
@@ -872,11 +975,15 @@ def octagon(ax, ay, skew=0.0, pier=2.4, column=None, gallery_column=None, ground
             out['-entablature'].append(place(beam, mm[0], mm[1], ground, facing + t))
             bays = columns_per_side + 1
             top = spring - gallery - gallery_height
+            bay_span = length / bays - gd
+            arch_kind = 'round' if top > bay_span / 2 + 0.12 else 'segmental'
+            arch_rise = None if arch_kind == 'round' else max(0.15, top - 0.15)
             for j in range(bays):
                 f = (j + .5) / bays
                 q = turn(a + (b - a) * f + np.array([math.cos(normal), math.sin(normal)]) * d / 2)
-                out['-gallery'].append(place(arched_panel(length / bays - gd, top, .7, gd / 2,
-                                                          'round', n=6, step=step)[''],
+                out['-gallery'].append(place(arched_panel(bay_span, top, .7, gd / 2,
+                                                          arch_kind, rise=arch_rise, n=6,
+                                                          step=step)[''],
                                              q[0], q[1], gallery + gallery_height, facing + t))
         else:                                                   # a diagonal: an exedra
             r = exedra_depth or span / 2
@@ -917,7 +1024,7 @@ def tympanum(radius, base, thickness=1.0, windows=(), step=2.0):
     sides): along x from −radius to radius, centred on y = 0, a rectangle
     `base` high under a half-disc of `radius`, with rectangular windows
     [{x (centre), width, sill, head}] (heights from z = 0). Built as vertical
-    strips between the windows' edges, each solid below and above them."""
+    strips between the windows' edges, supporting multiple stacked tiers."""
     def top(x):
         return base + math.sqrt(max(0.0, radius * radius - x * x))
 
@@ -926,19 +1033,25 @@ def tympanum(radius, base, thickness=1.0, windows=(), step=2.0):
     for a, b in zip(cuts, cuts[1:]):
         if b - a < 1e-6:
             continue
-        hole = next((w for w in windows if w['x'] - w['width'] / 2 <= a + 1e-6
-                     and b <= w['x'] + w['width'] / 2 + 1e-6), None)
+        holes = sorted(
+            [w for w in windows if w['x'] - w['width'] / 2 <= a + 1e-6
+             and b <= w['x'] + w['width'] / 2 + 1e-6],
+            key=lambda w: w['sill'])
         k = max(1, int(math.ceil((b - a) / step)))
         xs = [a + (b - a) * i / k for i in range(k + 1)]
         curve = [[x, top(x)] for x in reversed(xs)]
-        if hole is None:
+        if not holes:
             pieces.append(_xz_prism([[a, 0.0], [b, 0.0], *curve], thickness, step, 'tympanum'))
         else:
-            if hole['sill'] > 1e-6:
-                pieces.append(_xz_prism([[a, 0.0], [b, 0.0], [b, hole['sill']], [a, hole['sill']]],
-                                        thickness, step, 'tympanum'))
-            pieces.append(_xz_prism([[a, hole['head']], [b, hole['head']], *curve], thickness, step,
-                                    'tympanum'))
+            z = 0.0
+            for hole in holes:
+                if hole['sill'] - z > 1e-6:
+                    pieces.append(_xz_prism([[a, z], [b, z], [b, hole['sill']], [a, hole['sill']]],
+                                            thickness, step, 'tympanum'))
+                z = max(z, hole['head'])
+            min_top = min(pt[1] for pt in curve)
+            if min_top - z > 1e-6:
+                pieces.append(_xz_prism([[a, z], [b, z], *curve], thickness, step, 'tympanum'))
     return {'': union(*pieces)}
 
 
@@ -970,7 +1083,7 @@ def arcade(length, bays, spring, support=None, thickness=.8, depth=1.0, kind='ro
             supports.append(place(pier(width, depth, spring, step=step)[''], x))
         else:
             supports.append(place(column_solid(spring, width, s.get('capital', 'impost'), step,
-                                               s.get('n', 8)), x))
+                                               s.get('n', 8), s.get('lite', False)), x))
     span = length / bays - width
     if top is None:
         arches = [place(arch_ring(span, thickness, depth, kind, step=step)[''], x + length / bays / 2,
@@ -1074,23 +1187,28 @@ def serpent(height, coil_top, turns, helix, body, body_top=None, cut=None, necks
         bodies.append(tube(path, radii, sides, name='serpent'))
         if cut is not None:
             continue
-        # The neck: from the coil's end, up and out along a quadratic curve
-        # to the head's root, arriving level and pointing outward.
+        # The neck: from the coil's end, smoothly continuing the helix tangent
+        # up and out along a cubic curve to the head's root, arriving level
+        # and pointing outward with zero gap at either join.
         a_end = angles[-1]
         p0 = path[-1]
         out = np.array([math.cos(a_end), math.sin(a_end), 0.0])
+        t_coil = np.array([-helix * TAU / rise * math.sin(a_end),
+                           helix * TAU / rise * math.cos(a_end), 1.0])
+        t_coil /= np.linalg.norm(t_coil)
         p2 = out * head_radius + [0, 0, coil_top + necks]
-        p1 = np.array([p0[0], p0[1], p2[2]])
-        ts = np.linspace(0, 1, 10)[1:]
-        neck = [(1 - t) ** 2 * p0 + 2 * (1 - t) * t * p1 + t * t * p2 for t in ts]
+        c1 = p0 + t_coil * (necks * 0.45)
+        c2 = p2 - out * max(0.08, (head_radius - helix) * 0.6)
+        ts = np.linspace(0, 1, 11)
+        neck = [(1 - t) ** 3 * p0 + 3 * (1 - t) ** 2 * t * c1
+                + 3 * (1 - t) * t ** 2 * c2 + t ** 3 * p2 for t in ts]
         neck_r = [body_top] * len(neck)
         # The head: a wedge, wider than deep, that swells then narrows to the snout.
         hs = [0.15, 0.35, 0.6, 0.85, 1.0]
         swell = [1.25, 1.45, 1.35, .95, .45]
         head = [p2 + out * head_length * h for h in hs]
-        gap = out * 0.01
-        heads.append(tube([p + gap * 0 for p in neck], neck_r, sides, name='neck'))
-        heads.append(tube([p2 + gap] + head, [body_top] + [body_top * s for s in swell], sides,
+        heads.append(tube(neck, neck_r, sides, name='neck'))
+        heads.append(tube([p2] + head, [body_top] + [body_top * s for s in swell], sides,
                           flat=.7, name='head', tip=True))
     out = {'': union(*bodies)}
     if heads:
@@ -1161,3 +1279,58 @@ def round_base(radii, rise, n=32, step=2.0):
 
 
 KINDS['round-base'] = round_base
+
+
+def ground_cutout(width, depth, thickness=0.4, cutouts=(), step=2.0):
+    """A flat plaza slab `width` × `depth` × `thickness`, centred in XY on z = 0,
+    with rectangular pit cutouts [{x, y, width, depth}, ...]. Decomposed on the
+    cutout grid into disjoint closed boxes so every pit is an unmistakable sunken
+    hole with zero coplanar overlap."""
+    x0, x1 = -width / 2, width / 2
+    y0, y1 = -depth / 2, depth / 2
+    holes = []
+    xs, ys = {x0, x1}, {y0, y1}
+    for c in cutouts:
+        hx0 = max(x0, c['x'] - c['width'] / 2)
+        hx1 = min(x1, c['x'] + c['width'] / 2)
+        hy0 = max(y0, c['y'] - c['depth'] / 2)
+        hy1 = min(y1, c['y'] + c['depth'] / 2)
+        if hx1 > hx0 + 1e-6 and hy1 > hy0 + 1e-6:
+            holes.append((hx0, hx1, hy0, hy1))
+            xs.update([hx0, hx1])
+            ys.update([hy0, hy1])
+    xs, ys = sorted(xs), sorted(ys)
+    boxes = []
+    for iy in range(len(ys) - 1):
+        cy = (ys[iy] + ys[iy + 1]) / 2
+        run = None
+        for ix in range(len(xs) - 1):
+            cx = (xs[ix] + xs[ix + 1]) / 2
+            inside = any(hx0 < cx < hx1 and hy0 < cy < hy1 for hx0, hx1, hy0, hy1 in holes)
+            if not inside:
+                run = (xs[ix], xs[ix + 1]) if run is None else (run[0], xs[ix + 1])
+            elif run is not None:
+                boxes.append(block(run[0], run[1], ys[iy], ys[iy + 1], 0.0, thickness,
+                                   step, 'ground'))
+                run = None
+        if run is not None:
+            boxes.append(block(run[0], run[1], ys[iy], ys[iy + 1], 0.0, thickness,
+                               step, 'ground'))
+    return {'': union(*boxes)}
+
+
+def strut(p0, p1, radius=0.05, radius_top=None, sides=8, step=2.0):
+    """A closed slanted cylinder/frustum between two 3D points `p0` and `p1`."""
+    a = np.asarray(p0, dtype=np.float64)
+    b = np.asarray(p1, dtype=np.float64)
+    r1 = radius if radius_top is None else radius_top
+    length = float(np.linalg.norm(b - a))
+    if length < 1e-6:
+        raise ValueError('strut: endpoints coincide')
+    n = max(1, int(math.ceil(length / step - 1e-9)))
+    path = [a + (b - a) * (i / n) for i in range(n + 1)]
+    radii = [radius + (r1 - radius) * (i / n) for i in range(n + 1)]
+    return {'': tube(path, radii, sides, name='strut')}
+
+
+KINDS.update({'ground-cutout': ground_cutout, 'strut': strut, 'gable-roof': gable_roof})

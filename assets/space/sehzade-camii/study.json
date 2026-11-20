@@ -17,6 +17,33 @@
     "axis": 137.4,
     "source": "osm-relation-7656706"
   },
+  "nightLamps": [
+    [
+      0,
+      0,
+      9.5
+    ],
+    [
+      -8,
+      0,
+      7.5
+    ],
+    [
+      8,
+      0,
+      7.5
+    ],
+    [
+      0,
+      8,
+      7.5
+    ],
+    [
+      0,
+      -8,
+      7.5
+    ]
+  ],
   "epochs": [
     {
       "year": 1548,
@@ -310,7 +337,7 @@
     "kuran-1986",
     "osm-relation-7656706"
   ],
-  "triangles": 20492,
+  "triangles": 19584,
   "citations": [
     {
       "id": "archnet-sehzade",

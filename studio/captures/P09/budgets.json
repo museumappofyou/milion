@@ -2,87 +2,129 @@
   "measurement": "host (macOS, Flutter test, JIT) CPU frame build; not device fps. P08 is the yardstick: on the A52s it ran 54–57 fps in its default view and 60 fps under touch (P08/device-bench.json).",
   "budgetTriangles": 20500,
   "how-a-dome-stands (P08)": {
-    "triangles": 20144,
-    "vertices": 10238,
+    "triangles": 20384,
+    "vertices": 10358,
     "parts": 25,
-    "glbBytes": 300700,
-    "glbParseMs": 42.9,
+    "glbBytes": 115396,
+    "glbParseMs": 17.0,
     "orbitChoisyCut": {
       "frames": 120,
-      "medianMs": 1.61,
-      "p90Ms": 1.76,
-      "maxMs": 1.96,
-      "maxTrianglesDrawn": 17696
+      "medianMs": 1.0,
+      "p90Ms": 1.08,
+      "maxMs": 1.33,
+      "maxTrianglesDrawn": 17421
     },
     "orbitWhole": {
       "frames": 120,
-      "medianMs": 1.38,
-      "p90Ms": 1.56,
-      "maxMs": 1.85,
-      "maxTrianglesDrawn": 17568
+      "medianMs": 1.05,
+      "p90Ms": 1.13,
+      "maxMs": 1.41,
+      "maxTrianglesDrawn": 17421
     }
   },
   "bodrum-camii": {
-    "triangles": 13220,
-    "vertices": 6966,
+    "triangles": 13192,
+    "vertices": 6952,
     "parts": 38,
-    "glbBytes": 99276,
-    "glbParseMs": 19.2,
+    "glbBytes": 98448,
+    "glbParseMs": 11.1,
     "orbitChoisyCut": {
       "frames": 120,
-      "medianMs": 0.91,
-      "p90Ms": 1.04,
-      "maxMs": 1.4,
-      "maxTrianglesDrawn": 9598
+      "medianMs": 0.85,
+      "p90Ms": 0.93,
+      "maxMs": 1.56,
+      "maxTrianglesDrawn": 15993
     },
     "orbitWhole": {
       "frames": 120,
-      "medianMs": 1.07,
-      "p90Ms": 1.21,
-      "maxMs": 1.37,
-      "maxTrianglesDrawn": 16034
+      "medianMs": 0.82,
+      "p90Ms": 0.87,
+      "maxMs": 1.04,
+      "maxTrianglesDrawn": 15993
     }
   },
   "kucuk-ayasofya": {
-    "triangles": 16484,
-    "vertices": 8846,
-    "parts": 32,
-    "glbBytes": 111844,
-    "glbParseMs": 8.8,
+    "triangles": 16360,
+    "vertices": 8786,
+    "parts": 33,
+    "glbBytes": 111996,
+    "glbParseMs": 12.4,
     "orbitChoisyCut": {
       "frames": 120,
-      "medianMs": 1.3,
-      "p90Ms": 1.45,
-      "maxMs": 2.02,
-      "maxTrianglesDrawn": 15215
+      "medianMs": 1.07,
+      "p90Ms": 1.15,
+      "maxMs": 1.39,
+      "maxTrianglesDrawn": 21536
     },
     "orbitWhole": {
       "frames": 120,
-      "medianMs": 1.4,
-      "p90Ms": 1.63,
-      "maxMs": 1.88,
-      "maxTrianglesDrawn": 21722
+      "medianMs": 1.17,
+      "p90Ms": 1.24,
+      "maxMs": 1.46,
+      "maxTrianglesDrawn": 21536
     }
   },
   "sehzade-camii": {
-    "triangles": 20492,
-    "vertices": 11354,
+    "triangles": 19584,
+    "vertices": 10900,
     "parts": 41,
-    "glbBytes": 143284,
-    "glbParseMs": 10.6,
+    "glbBytes": 138508,
+    "glbParseMs": 15.4,
     "orbitChoisyCut": {
       "frames": 120,
-      "medianMs": 1.84,
-      "p90Ms": 2.03,
-      "maxMs": 2.38,
-      "maxTrianglesDrawn": 24057
+      "medianMs": 1.72,
+      "p90Ms": 1.83,
+      "maxMs": 2.06,
+      "maxTrianglesDrawn": 28673
     },
     "orbitWhole": {
       "frames": 120,
-      "medianMs": 1.84,
-      "p90Ms": 2.02,
-      "maxMs": 2.3,
-      "maxTrianglesDrawn": 29853
+      "medianMs": 1.6,
+      "p90Ms": 1.71,
+      "maxMs": 1.96,
+      "maxTrianglesDrawn": 28673
+    }
+  },
+  "kariye-camii": {
+    "triangles": 16302,
+    "vertices": 8539,
+    "parts": 66,
+    "glbBytes": 151448,
+    "glbParseMs": 13.0,
+    "orbitChoisyCut": {
+      "frames": 120,
+      "medianMs": 1.07,
+      "p90Ms": 1.2,
+      "maxMs": 1.56,
+      "maxTrianglesDrawn": 19966
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.1,
+      "p90Ms": 1.2,
+      "maxMs": 1.5,
+      "maxTrianglesDrawn": 19966
+    }
+  },
+  "ayasofya": {
+    "triangles": 18412,
+    "vertices": 10058,
+    "parts": 52,
+    "glbBytes": 143160,
+    "glbParseMs": 14.3,
+    "orbitChoisyCut": {
+      "frames": 120,
+      "medianMs": 1.22,
+      "p90Ms": 1.3,
+      "maxMs": 1.57,
+      "maxTrianglesDrawn": 24727
+    },
+    "orbitWhole": {
+      "frames": 120,
+      "medianMs": 1.27,
+      "p90Ms": 1.35,
+      "maxMs": 1.66,
+      "maxTrianglesDrawn": 24727
     }
   },
   "deviceFps": "unverified: the A52s was not connected (O01)"
