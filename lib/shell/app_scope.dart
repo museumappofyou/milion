@@ -6,10 +6,12 @@ import '../plate/catalog.dart';
 import '../space/catalog.dart';
 import '../space/study.dart';
 import '../section/section.dart';
+import '../siege/siege.dart';
+import '../walls/wall_strip.dart';
 import '../walk/walk_catalog.dart';
 
 /// What kind of interactive experience a playable Milestone launches.
-enum PlayableKind { plate, space, walk, section }
+enum PlayableKind { plate, space, walk, section, strip, map }
 
 /// Content, clock and recognition coverage loaded once at start.
 class AppScope extends InheritedWidget {
@@ -24,6 +26,8 @@ class AppScope extends InheritedWidget {
     this.spaces = const SpaceCatalog.empty(),
     this.walks = const WalkCatalog.empty(),
     this.sections = const SectionCatalog.empty(),
+    this.strips = const WallStripCatalog.empty(),
+    this.sieges = const SiegeCatalog.empty(),
     required super.child,
   });
   final ContentRegistry? registry;
@@ -35,6 +39,12 @@ class AppScope extends InheritedWidget {
 
   /// Drawn excavation sections (P14: XVII, the harbour under the metro).
   final SectionCatalog sections;
+
+  /// Walls drawn as one strip (P15: XVIII, the land walls).
+  final WallStripCatalog strips;
+
+  /// Map sequences over the Atlas (P15: XIX, 1453 in 53 days).
+  final SiegeCatalog sieges;
   final Object? error;
   final VoidCallback retry;
   final DateTime Function() clock;
@@ -60,11 +70,14 @@ class AppScope extends InheritedWidget {
     if (plates.forMilestone(m) != null) return PlayableKind.plate;
     if (walks.forMilestone(m) != null) return PlayableKind.walk;
     if (sections.forMilestone(m) != null) return PlayableKind.section;
+    if (strips.forMilestone(m) != null) return PlayableKind.strip;
+    if (sieges.forMilestone(m) != null) return PlayableKind.map;
     if (studyFor(m) != null) return PlayableKind.space;
     return null;
   }
 
-  /// A Milestone plays when it has a plate, a 3D study, a walk or a section.
+  /// A Milestone plays when it has a plate, a 3D study, a walk, a section, a
+  /// strip or a map sequence.
   bool playable(Milestone m) => playableKind(m) != null;
 
   /// Every bundled 3D study that is not already opened by a playable Milestone
@@ -154,6 +167,8 @@ class AppScope extends InheritedWidget {
       spaces != old.spaces ||
       walks != old.walks ||
       sections != old.sections ||
+      strips != old.strips ||
+      sieges != old.sieges ||
       error != old.error ||
       recognised != old.recognised ||
       clock != old.clock;

@@ -109,6 +109,16 @@ class PlayableTypeTag extends StatelessWidget {
         label: s.kindSection,
         color: dark ? const Color(0xFF8EC5B6) : Pigment.verdigris,
       ),
+      PlayableKind.strip => PlayableTypeTag(
+        symbol: PlanSymbol.gate,
+        label: s.kindWallStrip,
+        color: c.accent,
+      ),
+      PlayableKind.map => PlayableTypeTag(
+        symbol: PlanSymbol.route,
+        label: s.kindSiegeMap,
+        color: dark ? const Color(0xFF88BCE0) : Pigment.cobalt,
+      ),
     };
   }
 
@@ -340,6 +350,8 @@ class PlayableMilestoneCard extends StatelessWidget {
       PlayableKind.walk => PlanSymbol.cistern,
       PlayableKind.plate => PlanSymbol.layers,
       PlayableKind.section => PlanSymbol.section,
+      PlayableKind.strip => PlanSymbol.gate,
+      PlayableKind.map => PlanSymbol.route,
     };
     final largeText = MediaQuery.textScalerOf(context).scale(14) > 20;
     final thumbSize = largeText ? 60.0 : 82.0;

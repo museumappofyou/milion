@@ -501,14 +501,20 @@
       ],
       "honesty": [
         "ORIGINAL",
-        "DEPTH",
-        "RECONSTRUCTION"
+        "RECONSTRUCTION",
+        "IMAGINED"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/walls/land-walls/strip.json",
       "packId": "walls",
       "sources": [
-        "wd-q89917"
+        "van-millingen-1899",
+        "byzleg-theodosian-walls",
+        "wp-walls-of-constantinople-1383343183",
+        "wikidata-historic-2026-11-10",
+        "commons-golden-gate",
+        "commons-mevlanakapi",
+        "commons-topkapi"
       ],
       "flagship": true
     },
@@ -530,15 +536,19 @@
       ],
       "honesty": [
         "ORIGINAL",
-        "DEPTH",
-        "RECONSTRUCTION"
+        "RECONSTRUCTION",
+        "IMAGINED"
       ],
-      "status": "planned",
-      "manifestPath": null,
+      "status": "prototype",
+      "manifestPath": "assets/siege/1453/siege.json",
       "packId": "walls",
       "sources": [
-        "wd-q89917",
-        "wd-q179839"
+        "barbaro-1856",
+        "doukas-magoulias-1975",
+        "kritoboulos-muller-1870",
+        "apz-atsiz-1949",
+        "pears-1903",
+        "commons-tavernier-1455"
       ]
     },
     {

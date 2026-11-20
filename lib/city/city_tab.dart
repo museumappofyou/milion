@@ -91,12 +91,16 @@ class PlaceCapabilityTags extends StatelessWidget {
     final hasPlate = kinds.contains(PlayableKind.plate);
     final hasWalk = kinds.contains(PlayableKind.walk);
     final hasSection = kinds.contains(PlayableKind.section);
+    final hasStrip = kinds.contains(PlayableKind.strip);
+    final hasMap = kinds.contains(PlayableKind.map);
     final hasGuide = app.registry?.guideFor(place.id) != null;
     final strataCount = place.strata.length;
     if (!has3d &&
         !hasPlate &&
         !hasWalk &&
         !hasSection &&
+        !hasStrip &&
+        !hasMap &&
         !hasGuide &&
         strataCount == 0) {
       return const SizedBox.shrink();
@@ -140,6 +144,12 @@ class PlaceCapabilityTags extends StatelessWidget {
           tag(
             s.placeCapabilitySection,
             color: dark ? const Color(0xFF8EC5B6) : Pigment.verdigris,
+          ),
+        if (hasStrip) tag(s.placeCapabilityStrip, color: c.accent),
+        if (hasMap)
+          tag(
+            s.placeCapabilityMap,
+            color: dark ? const Color(0xFF88BCE0) : Pigment.cobalt,
           ),
         if (hasGuide)
           tag(

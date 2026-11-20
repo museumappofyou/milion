@@ -2,7 +2,7 @@
 
 The chapters' photographs from Wikimedia Commons, as pinned in each
 chapter's media.json (P12 studio/hagia-sophia/, P13 studio/imperial-core/,
-P14 studio/underground/).
+P14 studio/underground/, P15 studio/walls/).
 For each record and reference:
 
 1. The master: studio/cache/p12/commons/masters/<key>.jpg (gitignored, like
@@ -40,6 +40,7 @@ CHAPTERS = [
     (ROOT / 'studio/hagia-sophia/media.json', ROOT / 'studio/cache/p12/commons/masters'),
     (ROOT / 'studio/imperial-core/media.json', ROOT / 'studio/cache/p13/commons/masters'),
     (ROOT / 'studio/underground/media.json', ROOT / 'studio/cache/p14/commons/masters'),
+    (ROOT / 'studio/walls/media.json', ROOT / 'studio/cache/p15/commons/masters'),
 ]
 UA = 'milion-dev-tool/0.1 (content build script)'
 APP_EDGE = 1280

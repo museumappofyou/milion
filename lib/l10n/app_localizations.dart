@@ -3322,7 +3322,7 @@ abstract class AppLocalizations {
   /// No description provided for @filterWalksSections.
   ///
   /// In en, this message translates to:
-  /// **'Walk & Section'**
+  /// **'Walks, sections, maps'**
   String get filterWalksSections;
 
   /// No description provided for @filterAllRegister.
@@ -3558,6 +3558,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Drag inside the circle to walk; tap its top or bottom half to take a step.'**
   String get walkMoveHint;
+
+  /// No description provided for @wallsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag sideways to walk the wall, fling to cross it; tap a gate for its story, or the bar at the foot to jump.'**
+  String get wallsHint;
+
+  /// No description provided for @wallsGates.
+  ///
+  /// In en, this message translates to:
+  /// **'Gates'**
+  String get wallsGates;
+
+  /// No description provided for @wallsLocate.
+  ///
+  /// In en, this message translates to:
+  /// **'Find me'**
+  String get wallsLocate;
+
+  /// No description provided for @wallsHere.
+  ///
+  /// In en, this message translates to:
+  /// **'You are {km} km along the wall from the Sea of Marmara.'**
+  String wallsHere(String km);
+
+  /// No description provided for @wallsAway.
+  ///
+  /// In en, this message translates to:
+  /// **'You are {km} km from the wall; at the wall, the strip scrolls to where you stand.'**
+  String wallsAway(String km);
+
+  /// No description provided for @wallsHeightScale.
+  ///
+  /// In en, this message translates to:
+  /// **'Heights ×{n}; the section below is to scale'**
+  String wallsHeightScale(String n);
+
+  /// No description provided for @wallsLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'legend'**
+  String get wallsLegend;
+
+  /// No description provided for @wallsGatePublic.
+  ///
+  /// In en, this message translates to:
+  /// **'public gate'**
+  String get wallsGatePublic;
+
+  /// No description provided for @wallsGateMilitary.
+  ///
+  /// In en, this message translates to:
+  /// **'military gate'**
+  String get wallsGateMilitary;
+
+  /// No description provided for @wallsGatePalace.
+  ///
+  /// In en, this message translates to:
+  /// **'palace gate'**
+  String get wallsGatePalace;
+
+  /// No description provided for @wallsGatePostern.
+  ///
+  /// In en, this message translates to:
+  /// **'postern'**
+  String get wallsGatePostern;
+
+  /// No description provided for @siegeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to move the map, pinch to zoom; tap the day scale or drag along it to change the day.'**
+  String get siegeHint;
+
+  /// No description provided for @siegeLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Drawing the map of 1453'**
+  String get siegeLoading;
+
+  /// No description provided for @siegeAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Accounts'**
+  String get siegeAccounts;
+
+  /// No description provided for @siegeSeeOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'See the original'**
+  String get siegeSeeOriginal;
+
+  /// Days elapsed since 6 April 1453; 29 May is 53 days in.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{The siege begins} =1{1 day in} other{{count} days in}}'**
+  String siegeDaysIn(int count);
+
+  /// No description provided for @siegeDayScale.
+  ///
+  /// In en, this message translates to:
+  /// **'Day of the siege'**
+  String get siegeDayScale;
+
+  /// No description provided for @siegeNoAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing begins on this day. Pick a day marked on the scale, or play the story.'**
+  String get siegeNoAccounts;
+
+  /// No description provided for @sideByzantine.
+  ///
+  /// In en, this message translates to:
+  /// **'Byzantine'**
+  String get sideByzantine;
+
+  /// No description provided for @sideVenetian.
+  ///
+  /// In en, this message translates to:
+  /// **'Venetian'**
+  String get sideVenetian;
+
+  /// No description provided for @sideGenoese.
+  ///
+  /// In en, this message translates to:
+  /// **'Genoese and Latin'**
+  String get sideGenoese;
+
+  /// No description provided for @sideOttoman.
+  ///
+  /// In en, this message translates to:
+  /// **'Ottoman'**
+  String get sideOttoman;
+
+  /// No description provided for @sideOttomanGreek.
+  ///
+  /// In en, this message translates to:
+  /// **'Greek, in Ottoman service'**
+  String get sideOttomanGreek;
+
+  /// No description provided for @sideSlavonic.
+  ///
+  /// In en, this message translates to:
+  /// **'Slavonic'**
+  String get sideSlavonic;
+
+  /// No description provided for @sideModern.
+  ///
+  /// In en, this message translates to:
+  /// **'modern scholarship'**
+  String get sideModern;
+
+  /// No description provided for @kindWallStrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Wall Strip'**
+  String get kindWallStrip;
+
+  /// No description provided for @kindSiegeMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Map Sequence'**
+  String get kindSiegeMap;
+
+  /// No description provided for @placeCapabilityStrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Strip'**
+  String get placeCapabilityStrip;
+
+  /// No description provided for @placeCapabilityMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Map'**
+  String get placeCapabilityMap;
+
+  /// No description provided for @wallsSite.
+  ///
+  /// In en, this message translates to:
+  /// **'on the wall'**
+  String get wallsSite;
 }
 
 class _AppLocalizationsDelegate

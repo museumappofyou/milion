@@ -1,0 +1,97 @@
+{
+  "note": "P15: the ORIGINAL images of XVIII and XIX, downloads approved by the owner on 2026-11-20 (about 5 MB): Jean Le Tavernier’s 1455 miniature of the siege (public domain) and three photographs by Dosseman (CC BY-SA 4.0), each from Commons’ 1920 px copy.",
+  "records": [
+    {
+      "id": "walls-tavernier-1455",
+      "path": "assets/media/walls/tavernier-1455.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Jean Le Tavernier, 1455 · Bibliothèque nationale de France, MS fr. 9087 · public domain · Wikimedia Commons",
+        "tr": "Jean Le Tavernier, 1455 · Bibliothèque nationale de France, MS fr. 9087 · public domain · Wikimedia Commons"
+      },
+      "source": "commons-tavernier-1455",
+      "era": "medieval",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "tavernier-1455",
+        "file": "File:Siege of Constantinople BnF MS Fr 9087.jpg",
+        "fetched": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Siege_of_Constantinople_BnF_MS_Fr_9087.jpg",
+        "fetchedSha256": "c4ce4afe2f2e30d9912e289241ed61851ced931e47c8e93e89a3c4bf7bc24d64",
+        "masterSha256": "da94f2a9af65a84ef024a7656d8b66d4ab7e650b1d23e61c0dc468b55611c88b",
+        "masterSize": [
+          1297,
+          1851
+        ]
+      }
+    },
+    {
+      "id": "walls-mevlanakapi-photo",
+      "path": "assets/media/walls/mevlanakapi.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-mevlanakapi",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "mevlanakapi",
+        "file": "File:Outside walls at Mevlana Kapı 5457.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Outside_walls_at_Mevlana_Kap%C4%B1_5457.jpg/1920px-Outside_walls_at_Mevlana_Kap%C4%B1_5457.jpg",
+        "fetchedSha256": "edd25b6ea2ee0bef7ba936395de887597b7f3d36585adda7c39a0a7c2179272a",
+        "masterSha256": "c041268b1e71054343e4daff2ba922ebfd2aef4363d7076f14d9673309489aa6",
+        "masterSize": [
+          1920,
+          1280
+        ]
+      }
+    },
+    {
+      "id": "walls-golden-gate-photo",
+      "path": "assets/media/walls/golden-gate.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-golden-gate",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "golden-gate",
+        "file": "File:Istanbul Yedikule exterior Golden Gate side 3110.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Istanbul_Yedikule_exterior_Golden_Gate_side_3110.jpg/1920px-Istanbul_Yedikule_exterior_Golden_Gate_side_3110.jpg",
+        "fetchedSha256": "9cf1a1180dc993f1f4adf7075909bdee1d321b29336ef4003094098d3ba31077",
+        "masterSha256": "352a9664e2afe13b492f09fe505b3a53091110d6dad7af3a3bfa8dda940c5fa8",
+        "masterSize": [
+          1600,
+          2400
+        ]
+      }
+    },
+    {
+      "id": "walls-topkapi-photo",
+      "path": "assets/media/walls/topkapi.jpg",
+      "kind": "image",
+      "credit": {
+        "en": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons",
+        "tr": "Dosseman · CC BY-SA 4.0 · Wikimedia Commons"
+      },
+      "source": "commons-topkapi",
+      "era": "modern",
+      "historicalPhoto": false,
+      "commons": {
+        "key": "topkapi",
+        "file": "File:Istanbul Wall outside Topkapı gate 3067.jpg",
+        "fetched": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Istanbul_Wall_outside_Topkap%C4%B1_gate_3067.jpg/1920px-Istanbul_Wall_outside_Topkap%C4%B1_gate_3067.jpg",
+        "fetchedSha256": "06401a49a35526525d2c2f67b27cc4d3879bcbf58a0dec6685d5df171c28b64a",
+        "masterSha256": "ebaf34ea9c668f6adcb3c83f5487eaa6d3604c82ad8a582fc8cf09088f01f131",
+        "masterSize": [
+          1920,
+          1280
+        ]
+      }
+    }
+  ]
+}

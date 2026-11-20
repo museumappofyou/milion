@@ -1,0 +1,57 @@
+{
+ "note": "P15: XVIII (tool/walls/build_strip.py) and XIX (tool/siege/build_siege.py) take their path, status and honesty here.",
+ "records": [
+  {
+   "id": "milestone-xviii",
+   "places": [
+    "land-walls"
+   ],
+   "sources": [
+    "van-millingen-1899",
+    "byzleg-theodosian-walls",
+    "wp-walls-of-constantinople-1383343183",
+    "wikidata-historic-2026-11-10",
+    "commons-golden-gate",
+    "commons-mevlanakapi",
+    "commons-topkapi"
+   ],
+   "techniques": [
+    "PU",
+    "SB"
+   ],
+   "manifestPath": "assets/walls/land-walls/strip.json",
+   "honesty": [
+    "ORIGINAL",
+    "RECONSTRUCTION",
+    "IMAGINED"
+   ],
+   "status": "prototype"
+  },
+  {
+   "id": "milestone-xix",
+   "places": [
+    "land-walls",
+    "golden-horn"
+   ],
+   "sources": [
+    "barbaro-1856",
+    "doukas-magoulias-1975",
+    "kritoboulos-muller-1870",
+    "apz-atsiz-1949",
+    "pears-1903",
+    "commons-tavernier-1455"
+   ],
+   "techniques": [
+    "TM",
+    "SB"
+   ],
+   "manifestPath": "assets/siege/1453/siege.json",
+   "honesty": [
+    "ORIGINAL",
+    "RECONSTRUCTION",
+    "IMAGINED"
+   ],
+   "status": "prototype"
+  }
+ ]
+}

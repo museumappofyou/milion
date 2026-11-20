@@ -1809,7 +1809,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get filterReliefPlates => 'Levhalar';
 
   @override
-  String get filterWalksSections => 'Yürüyüş ve Kesit';
+  String get filterWalksSections => 'Yürüyüş, kesit, harita';
 
   @override
   String filterAllRegister(String count) {
@@ -1947,4 +1947,111 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get walkMoveHint =>
       'Yürümek için dairenin içinde sürükleyin; bir adım atmak için üst ya da alt yarısına dokunun.';
+
+  @override
+  String get wallsHint =>
+      'Surda yürümek için yana sürükleyin, baştan sona geçmek için fırlatın; hikâyesi için bir kapıya, atlamak için alttaki çubuğa dokunun.';
+
+  @override
+  String get wallsGates => 'Kapılar';
+
+  @override
+  String get wallsLocate => 'Beni bul';
+
+  @override
+  String wallsHere(String km) {
+    return 'Marmara’dan başlayarak surun $km km’sindesiniz.';
+  }
+
+  @override
+  String wallsAway(String km) {
+    return 'Sura $km km uzaktasınız; surun yanındayken şerit bulunduğunuz yere kayar.';
+  }
+
+  @override
+  String wallsHeightScale(String n) {
+    return 'Yükseklikler ×$n; alttaki kesit ölçeklidir';
+  }
+
+  @override
+  String get wallsLegend => 'efsane';
+
+  @override
+  String get wallsGatePublic => 'halka açık kapı';
+
+  @override
+  String get wallsGateMilitary => 'askerî kapı';
+
+  @override
+  String get wallsGatePalace => 'saray kapısı';
+
+  @override
+  String get wallsGatePostern => 'küçük kapı';
+
+  @override
+  String get siegeHint =>
+      'Haritayı kaydırmak için sürükleyin, yakınlaştırmak için iki parmakla açın; günü değiştirmek için gün ölçeğine dokunun ya da boyunca sürükleyin.';
+
+  @override
+  String get siegeLoading => '1453 haritası çiziliyor';
+
+  @override
+  String get siegeAccounts => 'Anlatılar';
+
+  @override
+  String get siegeSeeOriginal => 'Aslını gör';
+
+  @override
+  String siegeDaysIn(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gün geçti',
+      zero: 'Kuşatma başlıyor',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get siegeDayScale => 'Kuşatmanın günü';
+
+  @override
+  String get siegeNoAccounts =>
+      'Bu gün başlayan bir olay yok. Ölçekte işaretli bir gün seçin ya da hikâyeyi oynatın.';
+
+  @override
+  String get sideByzantine => 'Bizans';
+
+  @override
+  String get sideVenetian => 'Venedik';
+
+  @override
+  String get sideGenoese => 'Ceneviz ve Latin';
+
+  @override
+  String get sideOttoman => 'Osmanlı';
+
+  @override
+  String get sideOttomanGreek => 'Osmanlı hizmetinde bir Rum';
+
+  @override
+  String get sideSlavonic => 'Slav';
+
+  @override
+  String get sideModern => 'modern araştırma';
+
+  @override
+  String get kindWallStrip => 'Sur Şeridi';
+
+  @override
+  String get kindSiegeMap => 'Harita Dizisi';
+
+  @override
+  String get placeCapabilityStrip => 'Şerit';
+
+  @override
+  String get placeCapabilityMap => 'Harita';
+
+  @override
+  String get wallsSite => 'sur üzerinde';
 }

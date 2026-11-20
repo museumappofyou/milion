@@ -194,8 +194,9 @@ void main() {
       isTrue,
     );
     // P11 reviewed Chora, P12 Hagia Sophia, P13 the imperial core and P14
-    // the underground, all nearer the Milion than Chora; the Milion itself
-    // is mile zero.
+    // the underground, all nearer the Milion than Chora; P15 the land walls
+    // (measured to their Topkapı gate) and Yedikule, beyond it. The Milion
+    // itself is mile zero.
     expect(registry.placesByDistance().map((p) => p.id), [
       'milion',
       'basilica-cistern',
@@ -212,6 +213,8 @@ void main() {
       'mocius-cistern',
       'aetius-cistern',
       'chora',
+      'land-walls',
+      'yedikule',
     ]);
     expect(registry.placesByDistance(includeDrafts: true).first.id, 'milion');
     expect(District.values.length, 39);

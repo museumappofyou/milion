@@ -1810,7 +1810,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get filterReliefPlates => 'Plates';
 
   @override
-  String get filterWalksSections => 'Walk & Section';
+  String get filterWalksSections => 'Walks, sections, maps';
 
   @override
   String filterAllRegister(String count) {
@@ -1948,4 +1948,112 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get walkMoveHint =>
       'Drag inside the circle to walk; tap its top or bottom half to take a step.';
+
+  @override
+  String get wallsHint =>
+      'Drag sideways to walk the wall, fling to cross it; tap a gate for its story, or the bar at the foot to jump.';
+
+  @override
+  String get wallsGates => 'Gates';
+
+  @override
+  String get wallsLocate => 'Find me';
+
+  @override
+  String wallsHere(String km) {
+    return 'You are $km km along the wall from the Sea of Marmara.';
+  }
+
+  @override
+  String wallsAway(String km) {
+    return 'You are $km km from the wall; at the wall, the strip scrolls to where you stand.';
+  }
+
+  @override
+  String wallsHeightScale(String n) {
+    return 'Heights ×$n; the section below is to scale';
+  }
+
+  @override
+  String get wallsLegend => 'legend';
+
+  @override
+  String get wallsGatePublic => 'public gate';
+
+  @override
+  String get wallsGateMilitary => 'military gate';
+
+  @override
+  String get wallsGatePalace => 'palace gate';
+
+  @override
+  String get wallsGatePostern => 'postern';
+
+  @override
+  String get siegeHint =>
+      'Drag to move the map, pinch to zoom; tap the day scale or drag along it to change the day.';
+
+  @override
+  String get siegeLoading => 'Drawing the map of 1453';
+
+  @override
+  String get siegeAccounts => 'Accounts';
+
+  @override
+  String get siegeSeeOriginal => 'See the original';
+
+  @override
+  String siegeDaysIn(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days in',
+      one: '1 day in',
+      zero: 'The siege begins',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get siegeDayScale => 'Day of the siege';
+
+  @override
+  String get siegeNoAccounts =>
+      'Nothing begins on this day. Pick a day marked on the scale, or play the story.';
+
+  @override
+  String get sideByzantine => 'Byzantine';
+
+  @override
+  String get sideVenetian => 'Venetian';
+
+  @override
+  String get sideGenoese => 'Genoese and Latin';
+
+  @override
+  String get sideOttoman => 'Ottoman';
+
+  @override
+  String get sideOttomanGreek => 'Greek, in Ottoman service';
+
+  @override
+  String get sideSlavonic => 'Slavonic';
+
+  @override
+  String get sideModern => 'modern scholarship';
+
+  @override
+  String get kindWallStrip => 'Wall Strip';
+
+  @override
+  String get kindSiegeMap => 'Map Sequence';
+
+  @override
+  String get placeCapabilityStrip => 'Strip';
+
+  @override
+  String get placeCapabilityMap => 'Map';
+
+  @override
+  String get wallsSite => 'on the wall';
 }

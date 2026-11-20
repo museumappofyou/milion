@@ -6,6 +6,9 @@ import 'dart:ui';
 import '../content/geography.dart';
 import '../content/json_reader.dart';
 import '../content/models.dart';
+import 'certainty.dart';
+
+export 'certainty.dart';
 
 /// Metres east and north of the Milion, equirectangular about mile zero:
 /// the projection tool/atlas/build_atlas.py and lib/first_run use.
@@ -55,8 +58,6 @@ enum HistoricKind {
     orElse: () => throw FormatException('unknown historic kind $key'),
   );
 }
-
-enum Certainty { surviving, traced, approximate, conjectural }
 
 enum HistoricGeometry { point, line, polygon }
 

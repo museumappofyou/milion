@@ -1,0 +1,208 @@
+"""Usage: python3.11 tool/content/build_walls.py
+
+P15, The Walls and 1453: the Walls of Constantinople (land and sea, one
+record since P02), Yedikule, the Palace of the Porphyrogenitus (Tekfur
+Sarayı), the Anemas prisons, and Rumeli and Anadolu Hisarı as the prelude.
+Builds the chapter from the authored inputs in studio/walls/ (written by
+tool/content/walls_places.py), in P14's shapes:
+
+  sources.json     the sources P15 cites (the places, XVIII's strip, XIX's map)
+  places.json      per place: dated strata (newest first, each sourced) and
+                   the review (entrance, status, function, hook, visit card)
+  milestones.json  XVIII (the strip) and XIX (the map sequence) own their
+                   paths here
+  routes.json      the "Walk the walls" seed for P21, three sections
+
+into assets/content/ (sources/walls.json, places/istanbul.json,
+milestones/register.json, routes.json, index.json).
+
+Run after build_underground.py; the strip (tool/walls/build_strip.py) and
+the map (tool/siege/build_siege.py) run after the Atlas's historic layers.
+"""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+CONTENT = ROOT / 'assets/content'
+STUDIO = ROOT / 'studio/walls'
+CHAPTER = 'walls'
+PLACES = {'land-walls', 'yedikule', 'tekfur-palace', 'anemas-prisons', 'rumeli-hisari',
+          'anadolu-hisari'}
+# The Milestones whose manifest this chapter owns: XVIII's strip and XIX's
+# map sequence (P15 tools, not plates).
+STUDIES = {'milestone-xviii', 'milestone-xix'}
+
+
+def read(path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+def write(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
+def authored(name, default=None):
+    path = STUDIO / name
+    return read(path) if path.exists() else default
+
+
+def register(kind, rel):
+    index_path = CONTENT / 'index.json'
+    index = read(index_path)
+    files = index['files'][kind]
+    if rel not in files:
+        files.append(rel)
+        write(index_path, index)
+
+
+def document(kind, records):
+    return dict(schemaVersion=1, kind=kind, records=records)
+
+
+def sources():
+    records = authored('sources.json')['records']
+    ids = [r['id'] for r in records]
+    if len(ids) != len(set(ids)):
+        raise SystemExit('sources.json repeats an id')
+    rel = f'assets/content/sources/{CHAPTER}.json'
+    # A source another document already registers is cited, not repeated.
+    for other in read(CONTENT / 'index.json')['files']['sources']:
+        if other != rel and (ROOT / other).exists():
+            taken = {r['id'] for r in read(ROOT / other)['records']} & set(ids)
+            if taken:
+                raise SystemExit(f'{sorted(taken)} already in {other}; cite them instead')
+    write(ROOT / rel, document('sources', records))
+    register('sources', rel)
+    return set(ids)
+
+
+def media():
+    added = authored('media.json', {'records': []})['records']
+    path = CONTENT / 'media.json'
+    doc = read(path)
+    by_id = {m['id']: m for m in doc['records']}
+    for m in added:
+        by_id[m['id']] = {k: m[k] for k in ['id', 'path', 'kind', 'credit', 'source', 'era',
+                                            'historicalPhoto']}
+    doc['records'] = list(by_id.values())
+    write(path, doc)
+
+
+def artworks():
+    draft = authored('artworks.json')
+    if draft is None:
+        return
+    for r in draft['records']:
+        if r['place'] not in PLACES:
+            raise SystemExit(f'{r["id"]}: not a place of this chapter')
+    rel = f'assets/content/artworks/{CHAPTER}.json'
+    write(ROOT / rel, document('artworks', draft['records']))
+    register('artworks', rel)
+
+
+def interleave(records):
+    """Round-robin by artwork, so consecutive days change plate (P04's rule)."""
+    groups = {}
+    for r in records:
+        groups.setdefault(r['artwork'], []).append(r)
+    out = []
+    while any(groups.values()):
+        for queue in groups.values():
+            if queue:
+                out.append(queue.pop(0))
+    for a, b in zip(out, out[1:]):
+        if a['artwork'] == b['artwork']:
+            raise SystemExit(f'{b["id"]}: two details of one artwork in a row')
+    return out
+
+
+def details():
+    draft = authored('details.json')
+    if draft is None:
+        return
+    rel = f'assets/content/details/{CHAPTER}.json'
+    write(ROOT / rel, document('details', interleave(draft['records'])))
+    register('details', rel)
+
+
+def milestones():
+    draft = authored('milestones.json')
+    if draft is None:
+        return
+    path = CONTENT / 'milestones/register.json'
+    doc = read(path)
+    by_id = {r['id']: r for r in doc['records']}
+    for patch in draft['records']:
+        record = by_id.get(patch['id'])
+        if record is None:
+            raise SystemExit(f'{patch["id"]}: not in the register')
+        for key in ['artworks', 'places', 'sources', 'techniques']:
+            if key in patch:
+                record[key] = patch[key]
+        if 'manifestPath' in patch:
+            if patch['id'] not in STUDIES:
+                raise SystemExit(f'{patch["id"]}: a plate owns this path')
+            record['manifestPath'] = patch['manifestPath']
+            record['honesty'] = patch['honesty']
+            if record['status'] == 'planned':
+                record['status'] = patch['status']
+    write(path, doc)
+
+
+def places():
+    draft = authored('places.json')
+    if draft is None:
+        return
+    path = CONTENT / 'places/istanbul.json'
+    doc = read(path)
+    by_id = {r['id']: r for r in doc['records']}
+    for entry in draft['records']:
+        if entry['id'] not in PLACES:
+            raise SystemExit(f'{entry["id"]}: not a place of this chapter')
+        record = by_id[entry['id']]
+        if 'names' in entry:
+            record['names'] = entry['names']
+        if 'strata' in entry:
+            record['strata'] = entry['strata']
+        review = entry.get('review')
+        if review is not None:
+            for key in ['review', 'entrance', 'status', 'currentFunction', 'hook', 'visit']:
+                if key in review:
+                    record[key] = review[key]
+            # A remotely checked draft keeps its entrance-unverified tag; only
+            # a pinned entrance lifts it.
+            keep = [t for t in record['tags']
+                    if t != 'entrance-unverified' or review.get('entrance') is None]
+            record['tags'] = keep + [t for t in review.get('tags', []) if t not in keep]
+            record['sources'] = list(dict.fromkeys(record['sources'] + review.get('sources', [])))
+    write(path, doc)
+
+
+def routes():
+    """P21's seeds: merged into routes.json by id, kept in id order (as
+    build_chora.py does), whichever order the rebuild runs them in."""
+    draft = authored('routes.json')
+    if draft is None:
+        return
+    path = CONTENT / 'routes.json'
+    doc = read(path)
+    by_id = {r['id']: r for r in doc['records']}
+    for r in draft['records']:
+        by_id[r['id']] = r
+    doc['records'] = [by_id[k] for k in sorted(by_id)]
+    write(path, doc)
+
+
+def main():
+    sources()
+    media()
+    artworks()
+    details()
+    milestones()
+    places()
+    routes()
+
+
+if __name__ == '__main__':
+    main()

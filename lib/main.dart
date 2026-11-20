@@ -21,6 +21,8 @@ import 'shell/app_shell.dart';
 import 'plate/catalog.dart';
 import 'space/catalog.dart';
 import 'section/section.dart';
+import 'siege/siege.dart';
+import 'walls/wall_strip.dart';
 import 'walk/walk_catalog.dart';
 import 'today/detail_crop.dart';
 
@@ -67,6 +69,8 @@ class _MilionAppState extends State<MilionApp> {
   SpaceCatalog _spaces = const SpaceCatalog.empty();
   WalkCatalog _walks = const WalkCatalog.empty();
   SectionCatalog _sections = const SectionCatalog.empty();
+  WallStripCatalog _strips = const WallStripCatalog.empty();
+  SiegeCatalog _sieges = const SiegeCatalog.empty();
   Object? _error;
   Set<String> _recognised = const {};
   bool _ready = false;
@@ -147,6 +151,22 @@ class _MilionAppState extends State<MilionApp> {
       for (final error in sections.errors) {
         debugPrint('Section skipped: $error');
       }
+      final strips = await WallStripCatalog.load(
+        registry,
+        _repository.loadText,
+        strict: false,
+      );
+      for (final error in strips.errors) {
+        debugPrint('Strip skipped: $error');
+      }
+      final sieges = await SiegeCatalog.load(
+        registry,
+        _repository.loadText,
+        strict: false,
+      );
+      for (final error in sieges.errors) {
+        debugPrint('Map sequence skipped: $error');
+      }
       final ids = await classes;
       final known = {for (final a in registry.artworks) a.id};
       if (!mounted) return;
@@ -156,6 +176,8 @@ class _MilionAppState extends State<MilionApp> {
         _spaces = spaces;
         _walks = walks;
         _sections = sections;
+        _strips = strips;
+        _sieges = sieges;
         _recognised = {...ids.where(known.contains)};
         _error = null;
       });
@@ -190,6 +212,8 @@ class _MilionAppState extends State<MilionApp> {
         spaces: _spaces,
         walks: _walks,
         sections: _sections,
+        strips: _strips,
+        sieges: _sieges,
         error: _error,
         retry: () {
           setState(() => _error = null);

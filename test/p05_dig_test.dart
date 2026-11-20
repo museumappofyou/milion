@@ -136,6 +136,13 @@ void main() {
           'mocius-cistern',
           'nakilbent',
           'yenikapi',
+          // P15: the two reviewed walls places, and two drafts whose hours
+          // are sourced (the 2026-10-07 rule: a draft may show authored,
+          // cited layers and its visit card under "Not reviewed yet").
+          'land-walls',
+          'yedikule',
+          'tekfur-palace',
+          'rumeli-hisari',
         },
       );
       // Accessibility is honestly absent for Chora and renders unverified.
@@ -307,6 +314,8 @@ void main() {
         400,
         scrollable: find.byType(Scrollable).last,
       );
+      await tester.ensureVisible(suleymaniye);
+      await tester.pumpAndSettle();
       await tester.tap(suleymaniye);
       await ready(tester);
       expect(find.byType(DigGauge), findsNothing);

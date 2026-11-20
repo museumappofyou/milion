@@ -192,7 +192,9 @@ void main() {
         const AtlasFilter(openNow: true),
         DateTime.utc(2026, 11, 13, 9),
       );
-      expect(friday, isEmpty);
+      // Chora closes on Fridays; Tekfur (P15, Tuesday to Sunday) is the only
+      // other place with a checked week, and it closes on Mondays.
+      expect(friday.map((p) => p.id), ['tekfur-palace']);
     });
 
     test('filters combine, and survive encoding', () async {

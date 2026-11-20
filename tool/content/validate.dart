@@ -5,9 +5,11 @@ import 'package:milion/content/registry.dart';
 import 'package:milion/content/repository.dart';
 import 'package:milion/plate/catalog.dart';
 import 'package:milion/section/section.dart';
+import 'package:milion/siege/siege.dart';
 import 'package:milion/space/catalog.dart';
 import 'package:milion/space/model.dart';
 import 'package:milion/walk/walk_catalog.dart';
+import 'package:milion/walls/wall_strip.dart';
 
 Future<void> main(List<String> args) async {
   try {
@@ -108,6 +110,16 @@ Future<void> main(List<String> args) async {
         (p) => File(p).readAsString(),
       );
       stdout.writeln('Sections: ${sections.sections.length} typed manifests');
+      final strips = await WallStripCatalog.load(
+        registry,
+        (p) => File(p).readAsString(),
+      );
+      stdout.writeln('Strips: ${strips.strips.length} typed manifests');
+      final sieges = await SiegeCatalog.load(
+        registry,
+        (p) => File(p).readAsString(),
+      );
+      stdout.writeln('Map sequences: ${sieges.maps.length} typed manifests');
     }
     for (final error in report.errors) {
       stderr.writeln('ERROR: $error');

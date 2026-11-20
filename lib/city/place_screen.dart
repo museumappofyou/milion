@@ -622,6 +622,8 @@ class _InteractiveHereShelf extends StatelessWidget {
             PlayableKind.walk => PlanSymbol.cistern,
             PlayableKind.plate => PlanSymbol.layers,
             PlayableKind.section => PlanSymbol.section,
+            PlayableKind.strip => PlanSymbol.gate,
+            PlayableKind.map => PlanSymbol.route,
           };
           final opened = progress.isOpened(m.id);
           return _InteractiveEntry(

@@ -419,7 +419,7 @@ void main() {
         300,
         scrollable: find.byType(Scrollable).first,
       );
-      expect(find.text('17 of 23 playable · 0 approved'), findsOneWidget);
+      expect(find.text('19 of 23 playable · 0 approved'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('mosaic-strip')));
       await tester.pumpAndSettle();
       expect(shell(tester).current, Destination.mosaic);
@@ -501,15 +501,15 @@ void main() {
         // Review debt stays visible: the register counts approval, and each
         // playable card says Prototype until the owner approves it.
         expect(
-          find.text('48 Milestones · 17 playable · 0 approved · 31 planned'),
+          find.text('48 Milestones · 19 playable · 0 approved · 29 planned'),
           findsOneWidget,
         );
-        expect(find.text('0 of 17 playable Milestones opened'), findsOneWidget);
+        expect(find.text('0 of 19 playable Milestones opened'), findsOneWidget);
         expect(
           find.byKey(const ValueKey('milestones-filter-playable')),
           findsOneWidget,
         );
-        expect(find.text('Playable · 17'), findsOneWidget);
+        expect(find.text('Playable · 19'), findsOneWidget);
         expect(
           tester
               .widget<Text>(find.byKey(const ValueKey('playable-status-I')))
@@ -621,7 +621,9 @@ void main() {
         await openCityList(tester);
         expect(
           find.textContaining(
-            'places · positions checked on Wikidata · 15 reviewed',
+            // 17 reviewed; the land walls (P15) are a line with a
+            // representative point, drawn on the Atlas but not listed.
+            'places · positions checked on Wikidata · 16 reviewed',
           ),
           findsOneWidget,
         );

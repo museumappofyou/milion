@@ -1,4 +1,4 @@
-"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P14 authored content.
+"""Usage: python3.11 tool/content/rebuild.py — regenerate P02–P15 authored content.
 
 Run the seed, register, daily-detail and dig builders in dependency order, then
 P12's Hagia Sophia chapter (its strata, artworks, details, review and the
@@ -42,8 +42,9 @@ def main():
     subprocess.run([sys.executable, str(ROOT / 'tool/content/build_imperial_core.py')],
                    cwd=ROOT, check=True)
     # P14: Underground Constantinople (the places, XVI's walk, XVII's section).
+    # P15: the walls' places, sources and Milestone records (XVIII, XIX).
     for name in ['tool/content/build_underground.py', 'tool/walk/build_walk.py',
-                 'tool/section/build_section.py']:
+                 'tool/section/build_section.py', 'tool/content/build_walls.py']:
         subprocess.run([sys.executable, str(ROOT / name)], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'tool/plate/build.py'), '--all', '--no-preview'],
                    cwd=ROOT, check=True)
@@ -55,6 +56,9 @@ def main():
     subprocess.run([sys.executable, str(ROOT / 'tool/content/build_chora.py')], cwd=ROOT, check=True)
     for name in ['place_years.py', 'build_historic.py']:
         subprocess.run([sys.executable, str(ROOT / 'tool/atlas' / name)], cwd=ROOT, check=True)
+    # P15: XVIII's strip and XIX's map sequence read the historic layers.
+    for name in ['tool/walls/build_strip.py', 'tool/siege/build_siege.py']:
+        subprocess.run([sys.executable, str(ROOT / name)], cwd=ROOT, check=True)
     if (ROOT / 'studio/cache/atlas/raw/coastline.json').exists():
         subprocess.run([sys.executable, str(ROOT / 'tool/atlas/build_atlas.py')],
                        cwd=ROOT, check=True)

@@ -1,0 +1,592 @@
+# P15, Milestone XVIII: the land walls as one strip (PU, SB).
+# Built by tool/walls/build_strip.py into assets/walls/land-walls/strip.json.
+# Figures follow the research log (studio/cache/p15/research/claims.jsonl):
+# the moat is "up to about 7 m", not the popular 10 m; the Mesoteichion has
+# no fixed ends; the Kerkoporta is a legend's marker (O21).
+id: land-walls
+place: land-walls
+milestone: milestone-xviii
+honesty: RECONSTRUCTION
+title:
+  en: The Land Walls
+  tr: Kara Surları
+description:
+  en: >-
+    The land walls from the Sea of Marmara to the Golden Horn, drawn as one
+    strip: scroll along the wall, read the cross-section at the line, stop at
+    the gates. The walls are drawn as built, before the breaches and the
+    rebuilding. Heights in the elevation are drawn three times their scale
+    against the length; the cross-section is to scale. The great towers stand
+    where the Wikidata survey puts them; the outer wall’s smaller towers are
+    set midway between them, as the sources describe them, not surveyed one by
+    one.
+  tr: >-
+    Marmara’dan Haliç’e kara surları tek bir şerit olarak çizildi: sur boyunca
+    kaydırın, çizgideki kesiti okuyun, kapılarda durun. Surlar, gedikler ve
+    onarımlardan önceki, yapıldıkları hâliyle çizildi. Görünüşte yükseklikler
+    uzunluğa göre üç kat büyütüldü; kesit ölçeklidir. Büyük kuleler Wikidata
+    envanterinin koyduğu yerde durur; dış surun küçük kuleleri kaynakların
+    tarif ettiği gibi aralarına, ortaya yerleştirildi, tek tek ölçülmedi.
+talkback:
+  en: >-
+    The land walls as a strip, about 6.5 kilometres from the Sea of Marmara to the
+    Golden Horn. Swipe across the strip to move along the wall. The actions
+    menu has next gate, previous gate and play. Gates are listed under Gates.
+  tr: >-
+    Kara surları bir şerit olarak; Marmara’dan Haliç’e yaklaşık 6,5 kilometre. Sur
+    boyunca ilerlemek için şeridi kaydırın. Eylemler menüsünde sonraki kapı,
+    önceki kapı ve oynat var. Kapılar, Kapılar başlığında listelenir.
+sources: [van-millingen-1899, byzleg-theodosian-walls, wp-walls-of-constantinople-1383343183,
+          whc-istanbul, wd-q89917]
+heightScale: 3
+line:
+  features: [theodosian-land-walls, blachernae-walls]
+  gateTolerance: 60
+lineSources: [wikidata-historic-2026-11-10, osm-walls-2026-11-10, wp-walls-of-constantinople-1383343183]
+
+# Across the defences, outside in: metres from the field edge of the moat;
+# height in metres above the outer terrace (the moat below it).
+layers:
+  - id: moat
+    kind: moat
+    from: 0
+    to: 19
+    height: -7
+    label: {en: Moat, tr: Hendek}
+    note:
+      en: >-
+        About 19–20 m wide. Up to about 7 m deep where best kept, in front of
+        the Golden Gate; the first depth is not known and it varied with the
+        ground. Low dams divided it into steps. That it was flooded in 1453 is
+        doubtful: no siege account mentions water.
+      tr: >-
+        Yaklaşık 19–20 m genişliğinde. En iyi korunduğu yerde, Altınkapı’nın
+        önünde, 7 m kadar derin; ilk derinliği bilinmiyor ve araziye göre
+        değişiyordu. Alçak setler onu basamaklara bölüyordu. 1453’te su dolu
+        olduğu şüphelidir: hiçbir kuşatma anlatısı sudan söz etmez.
+    sources: [van-millingen-1899, byzleg-theodosian-walls]
+  - id: breastwork
+    kind: breastwork
+    from: 19
+    to: 20
+    height: 2
+    estimated: true
+    label: {en: Breastwork, tr: Göğüs duvarı}
+    note:
+      en: >-
+        A crenellated parapet about 1.5–2 m high on the moat’s inner side. Its
+        thickness is not given in the sources read; it is drawn 1 m.
+      tr: >-
+        Hendeğin iç yamacında, yaklaşık 1,5–2 m yüksekliğinde mazgallı bir
+        korkuluk. Kalınlığı okunan kaynaklarda verilmiyor; 1 m çizildi.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: parateichion
+    kind: terrace
+    from: 20
+    to: 38
+    height: 0
+    label: {en: Outer terrace, tr: Dış teras}
+    note:
+      en: The parateichion, about 18–20 m wide between the moat and the outer wall.
+      tr: Parateikhion; hendekle dış sur arasında, yaklaşık 18–20 m genişliğinde.
+    sources: [van-millingen-1899, byzleg-theodosian-walls]
+  - id: outer-wall
+    kind: outerWall
+    from: 38
+    to: 40
+    height: 9
+    label: {en: Outer wall, tr: Dış sur}
+    note:
+      en: >-
+        About 2 m thick, 8.5–9 m above the outer terrace but only about 3 m
+        above the peribolos behind it. Whether it was built in 447 or planned
+        with the inner wall is argued.
+      tr: >-
+        Yaklaşık 2 m kalınlığında; dış terastan 8,5–9 m yüksek, ama arkasındaki
+        peribolostan yalnızca 3 m kadar. 447’de mi yapıldığı, yoksa iç surla
+        birlikte mi tasarlandığı tartışmalıdır.
+    sources: [van-millingen-1899, byzleg-theodosian-walls, wp-walls-of-constantinople-1383343183]
+  - id: peribolos
+    kind: peribolos
+    from: 40
+    to: 56
+    height: 6
+    label: {en: Peribolos, tr: Peribolos}
+    note:
+      en: The inner terrace between the two walls, about 15–20 m wide.
+      tr: İki sur arasındaki iç teras; yaklaşık 15–20 m genişliğinde.
+    sources: [van-millingen-1899, byzleg-theodosian-walls]
+  - id: inner-wall
+    kind: innerWall
+    from: 56
+    to: 61
+    height: 15.3
+    label: {en: Inner wall, tr: İç sur}
+    note:
+      en: >-
+        The great wall: about 4.5–5 m thick, about 9 m above the peribolos and
+        about 12 m above the city, a rubble core faced with limestone and banded
+        with brick. Finished by 413 under Theodosius II by the prefect Anthemius.
+      tr: >-
+        Büyük sur: yaklaşık 4,5–5 m kalınlığında, peribolostan 9 m, şehir
+        tarafından 12 m kadar yüksek; moloz çekirdekli, kireçtaşı kaplı, tuğla
+        hatıllı. II. Theodosius döneminde vali Anthemius tarafından 413’e kadar
+        tamamlandı.
+    sources: [van-millingen-1899, byzleg-theodosian-walls, wp-walls-of-constantinople-1383343183]
+
+innerTowerHeight:
+  value: 22
+  estimated: true
+  note: >-
+    Above the outer terrace. Van Millingen gives the towers 57–60 ft (about
+    18 m) and the belt about 100 ft (30 m) from the moat bed to the tower tops;
+    with the city 3 m above the terrace these give 21–23 m.
+  sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+outerTowerHeight:
+  value: 10
+  note: Van Millingen gives 30–35 ft (9–10.7 m).
+  sources: [van-millingen-1899]
+outerTowers:
+  maxGap: 90
+  gateClearance: 25
+  note: >-
+    The outer towers alternate with the great towers, set midway between them
+    (van Millingen; Wikipedia). They are placed so, not surveyed; where the
+    inventory skips a tower, or a gate stands between two great towers, no
+    outer tower is drawn.
+  sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+
+segments:
+  - id: marmara-to-st-romanus
+    from: start
+    to: st-romanus
+    kind: triple
+    label: {en: Marmara to St Romanus, tr: Marmara’dan Topkapı’ya}
+    note:
+      en: Moat, outer wall and inner wall, the whole Theodosian system.
+      tr: Hendek, dış sur ve iç sur; Theodosius sisteminin tamamı.
+    sources: [van-millingen-1899, byzleg-theodosian-walls]
+  - id: lycus
+    from: st-romanus
+    to: charisius
+    kind: triple
+    label: {en: The Lycus valley, tr: Likos vadisi}
+    note:
+      en: >-
+        The wall dips into the valley of the Lycus stream, where the moat was
+        shallow and the defenders stood lower than the attackers: the weakest
+        stretch, attacked hardest in 626 and 1453. Some scholars think the moat
+        broke off here. This stretch is the Mesoteichion in van Millingen’s
+        reading; others draw its ends elsewhere.
+      tr: >-
+        Sur, Likos deresinin vadisine iner; burada hendek sığdı ve savunanlar
+        saldıranlardan alçakta kalıyordu: hattın en zayıf yeri, 626’da ve
+        1453’te en sert saldırılan kesim. Bazı araştırmacılar hendeğin burada
+        kesildiğini düşünür. Van Millingen’e göre burası Mesoteikhion’dur;
+        başkaları sınırlarını başka yerlere çizer.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: charisius-to-palace
+    from: charisius
+    to: junction
+    kind: double
+    label: {en: Charisius to the palace, tr: Edirnekapı’dan saraya}
+    note:
+      en: >-
+        The moat runs out a little north of Edirnekapı, where exactly is not
+        known, so it is drawn ending at the gate. Both walls go on to the
+        Palace of the Porphyrogenitus.
+      tr: >-
+        Hendek Edirnekapı’nın biraz kuzeyinde biter; tam yeri bilinmediği için
+        kapıda bitiyor çizildi. İki sur da Porphyrogennetos Sarayı’na kadar
+        sürer.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: blachernae
+    from: junction
+    to: end
+    kind: single
+    label: {en: Blachernae, tr: Blakherna}
+    note:
+      en: >-
+        One wall, without a moat, built in stages from Heraclius in the 7th
+        century to Manuel I Komnenos in the 12th, to take in the Blachernae
+        palace. Its towers are not in the survey and are not drawn.
+      tr: >-
+        Tek sur, hendeksiz; Blakherna Sarayı’nı içine almak için 7. yüzyılda
+        Herakleios’tan 12. yüzyılda I. Manuel Komnenos’a kadar evre evre
+        yapıldı. Kuleleri envanterde olmadığı için çizilmedi.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, byzleg-theodosian-walls]
+
+gates:
+  - id: first-military
+    towers: [1]
+    kind: military
+    names: {en: First Military Gate, tr: Birinci Askerî Kapı (Tabak Kapı)}
+    greek: null
+    caption:
+      en: >-
+        A small postern at the first tower, where the land wall meets the sea
+        wall, with a wreathed Chi-Rho above it.
+      tr: >-
+        Kara surunun deniz suruyla birleştiği ilk kulenin yanında, üstünde
+        çelenkli bir Khi-Rho bulunan küçük bir kapı.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: golden-gate
+    feature: golden-gate
+    opens: yedikule
+    photo: walls-golden-gate-photo
+    kind: public
+    names: {en: Golden Gate, tr: Altınkapı}
+    greek: Χρυσεία Πύλη
+    year: 388–391 or c. 413–425
+    caption:
+      en: >-
+        A triple marble arch between two marble towers, the emperors’ entrance
+        for triumphs. Its date is argued: a free-standing arch of Theodosius I
+        (388–391), or part of Theodosius II’s wall. The last triumph through it
+        was Michael VIII’s, on 15 August 1261. In 1458 Mehmed II built Yedikule
+        around it. A Greek legend says an angel turned Constantine XI to marble
+        and hid him in a cave near here, to wake again.
+      tr: >-
+        İki mermer kule arasında üç açıklıklı mermer bir kemer; imparatorların
+        zafer girişi. Tarihi tartışmalıdır: I. Theodosius’un bağımsız bir zafer
+        takı (388–391) mı, yoksa II. Theodosius’un surunun bir parçası mı. Son
+        zafer alayı 15 Ağustos 1261’de VIII. Mikhael’inkiydi. 1458’de II. Mehmed
+        Yedikule’yi onun çevresine yaptırdı. Bir Rum efsanesine göre bir melek
+        XI. Konstantinos’u mermere çevirip buraya yakın bir mağarada sakladı;
+        bir gün uyanacakmış.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, byzleg-theodosian-walls]
+  - id: xylokerkos
+    feature: gate-of-xylokerkos
+    kind: public
+    names: {en: Belgrade Gate, tr: Belgradkapı}
+    greek: Πύλη τοῦ Ξυλοκέρκου
+    positionNote:
+      en: >-
+        At the Wikidata point between towers 22 and 23, which carries van
+        Millingen’s name for it, the Second Military Gate.
+      tr: >-
+        22 ve 23. kuleler arasındaki Wikidata noktasında; bu nokta, van
+        Millingen’in verdiği adı, İkinci Askerî Kapı’yı taşır.
+    caption:
+      en: >-
+        Most scholars take it for the Xylokerkos, the gate to a wooden circus
+        outside the walls; van Millingen put the Xylokerkos elsewhere. Niketas
+        Choniates says Isaac II walled the Xylokerkos up in 1189, fearing a
+        prophecy that Frederick Barbarossa would ride in through it.
+      tr: >-
+        Araştırmacıların çoğu onu Ksylokerkos, yani surların dışındaki ahşap
+        hipodroma açılan kapı sayar; van Millingen Ksylokerkos’u başka yere
+        koymuştu. Niketas Khoniates’e göre II. İsaakios, Friedrich Barbarossa’nın
+        buradan gireceği kehanetinden korkup kapıyı 1189’da ördürdü.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, byzleg-theodosian-walls]
+  - id: second-military
+    towers: [30, 31]
+    kind: military
+    names: {en: Second Military Gate, tr: İkinci Askerî Kapı}
+    greek: Πύλη τοῦ Δευτέρου
+    caption:
+      en: Little of it is left, and the modern rebuilding may not be faithful.
+      tr: Pek az kalıntısı var; bugünkü yeniden yapım aslına uygun olmayabilir.
+    sources: [wp-walls-of-constantinople-1383343183]
+  - id: pege
+    feature: gate-of-the-spring
+    kind: public
+    names: {en: Gate of the Spring, tr: Silivrikapı}
+    greek: Πύλη τῆς Πηγῆς
+    caption:
+      en: >-
+        Named for the shrine of the Life-giving Spring at Balıklı outside. On
+        25 July 1261 Alexios Strategopoulos’s men got in here and took the city
+        back from the Latins. A tower carries a repair inscription of John VIII
+        Palaiologos from the late 1430s.
+      tr: >-
+        Adını dışarıdaki Balıklı Ayazması’ndan, Zoodokhos Pege’den alır. 25
+        Temmuz 1261’de Aleksios Strategopulos’un adamları buradan girip şehri
+        Latinlerden geri aldı. Kulelerinden birinde VIII. İoannes Palaiologos’un
+        1430’ların sonuna ait bir onarım yazıtı vardır.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, byzleg-theodosian-walls]
+  - id: third-military
+    towers: [39, 40]
+    kind: military
+    names: {en: Third Military Gate, tr: Üçüncü Askerî Kapı}
+    greek: Πύλη τοῦ Τρίτου
+    caption:
+      en: Just before the Sigma, the wall’s C-shaped bend. It has no Turkish name.
+      tr: Surun C biçimli kıvrımı Sigma’nın hemen önünde. Türkçe adı yoktur.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: rhegion
+    feature: gate-of-rhegium
+    photo: walls-mevlanakapi-photo
+    kind: public
+    names: {en: Gate of Rhegion, tr: Mevlanakapı}
+    greek: Πόρτα Ῥησίου
+    year: '447'
+    caption:
+      en: >-
+        The best kept of the gates. Greek and Latin inscriptions on it record
+        the rebuilding after the earthquake of 6 November 447: in sixty days,
+        says the Greek; in less than two months, says the Latin.
+      tr: >-
+        Kapıların en iyi korunanı. Üzerindeki Grekçe ve Latince yazıtlar, 6
+        Kasım 447 depreminden sonraki onarımı anar: Grekçesi altmış günde,
+        Latincesi iki aydan kısa sürede der.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, byzleg-theodosian-walls]
+  - id: fourth-military
+    towers: [59, 60]
+    kind: military
+    names: {en: Fourth Military Gate, tr: Dördüncü Askerî Kapı}
+    caption:
+      en: >-
+        Walled up. One recent study proposes that this, not Topkapı, was the
+        Gate of St Romanus of 1453; the evidence is uncertain.
+      tr: >-
+        Örülü. Yakın tarihli bir çalışma, 1453’teki Romanos Kapısı’nın Topkapı
+        değil bu kapı olduğunu öne sürer; kanıt kesin değildir.
+    sources: [wp-walls-of-constantinople-1383343183]
+  - id: st-romanus
+    feature: gate-of-st-romanus
+    photo: walls-topkapi-photo
+    kind: public
+    names: {en: Gate of St Romanus, tr: Topkapı}
+    greek: Πόρτα τοῦ Ἁγίου Ῥωμανοῦ
+    caption:
+      en: >-
+        Named for a nearby church. Topkapı, the Cannon Gate, is the Turkish
+        name, after Orban’s great gun, set up opposite it in 1453. Tradition
+        puts the death of Constantine XI here on 29 May.
+      tr: >-
+        Adını yakındaki bir kiliseden alır. Türkçe adı Topkapı, 1453’te
+        karşısına kurulan Orban’ın büyük topundan gelir. Geleneğe göre XI.
+        Konstantinos 29 Mayıs’ta burada öldü.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, doukas-magoulias-1975]
+  - id: pempton
+    towers: [77, 78]
+    kind: military
+    names: {en: Fifth Military Gate, tr: Sulukulekapı (Hücum Kapısı)}
+    greek: Πόρτα τοῦ Πέμπτου
+    caption:
+      en: >-
+        Just north of the Lycus. Its Turkish name, Hücum Kapısı, the Assault
+        Gate, keeps the tradition that the breakthrough of 29 May 1453 came
+        here. Several historians read the 1453 accounts’ St Romanus as this
+        gate; others keep it at Topkapı.
+      tr: >-
+        Likos’un hemen kuzeyinde. Türkçe adı Hücum Kapısı, 29 Mayıs 1453’teki
+        yarmanın burada olduğu geleneğini yaşatır. Bazı tarihçiler 1453
+        anlatılarındaki Romanos Kapısı’nı bu kapı olarak okur; başkaları onu
+        Topkapı’da tutar.
+    sources: [wp-walls-of-constantinople-1383343183, pears-1903]
+  - id: charisius
+    feature: gate-of-charisius
+    kind: public
+    names: {en: Gate of Charisius, tr: Edirnekapı}
+    greek: Πύλη τοῦ Χαρισίου
+    caption:
+      en: >-
+        On the highest point of the land walls, about 76 m above the sea. By
+        tradition Mehmed II rode into the city through it on 29 May 1453.
+      tr: >-
+        Kara surlarının en yüksek noktasında, denizden yaklaşık 76 m yukarıda.
+        Geleneğe göre II. Mehmed 29 Mayıs 1453’te şehre bu kapıdan girdi.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, doukas-magoulias-1975]
+  - id: kerkoporta
+    place: kerkoporta
+    kind: postern
+    legend: true
+    names: {en: Kerkoporta, tr: Kerkoporta}
+    positionNote:
+      en: >-
+        OpenStreetMap’s marker, near where Paspates found a walled-up postern
+        in 1864. Where Doukas’s Kerkoporta was is disputed; no matching gate
+        has been found in the inner wall.
+      tr: >-
+        OpenStreetMap’in işareti; Paspates’in 1864’te örülü bir küçük kapı
+        bulduğu yere yakın. Dukas’ın Kerkoporta’sının nerede olduğu
+        tartışmalıdır; iç surda buna uyan bir kapı bulunmadı.
+    caption:
+      en: >-
+        Only Doukas tells it: an old postern, opened for sorties, was left
+        unbarred on 29 May, and about fifty Ottoman soldiers got in and raised
+        a banner on the wall. The other witnesses do not mention it, and even
+        Doukas does not make it the reason the city fell.
+      tr: >-
+        Bunu yalnızca Dukas anlatır: çıkış hücumları için açılan eski bir küçük
+        kapı 29 Mayıs’ta sürgüsüz kalmış, elli kadar Osmanlı askeri içeri
+        girip sura sancak dikmiş. Öteki tanıklar bundan söz etmez; Dukas bile
+        şehrin düşüşünü buna bağlamaz.
+    sources: [doukas-magoulias-1975, van-millingen-1899, pears-1903, wp-walls-of-constantinople-1383343183]
+  - id: tekfur
+    place: tekfur-palace
+    opens: tekfur-palace
+    kind: palace
+    names: {en: Palace of the Porphyrogenitus, tr: Tekfur Sarayı}
+    caption:
+      en: >-
+        The Theodosian walls end here, at a palace built between the two
+        walls. North of it the line is a single wall.
+      tr: >-
+        Theodosius surları burada, iki sur arasına yapılmış bir sarayda biter.
+        Kuzeyinde hat tek surdur.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: kaligaria
+    feature: gate-of-kaligaria
+    kind: public
+    names: {en: Gate of Kaligaria, tr: Eğrikapı}
+    greek: Πύλη τῆς Καλιγαρίας
+    caption:
+      en: >-
+        Probably the Kaligaria of 1453, in the single, moatless wall of Manuel
+        Komnenos by the Blachernae palace. The Ottomans bombarded it and dug
+        mines under it in May 1453, in vain.
+      tr: >-
+        Büyük olasılıkla 1453’ün Kaligaria’sı; Blakherna Sarayı yanında, Manuel
+        Komnenos’un tek ve hendeksiz surunda. Osmanlılar Mayıs 1453’te onu
+        topa tuttu ve altına lağım kazdı; sonuç alamadı.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, barbaro-1856]
+  - id: anemas
+    place: anemas-prisons
+    opens: anemas-prisons
+    kind: site
+    names: {en: Anemas prisons, tr: Anemas Zindanları}
+    caption:
+      en: The towers and vaults under the Blachernae terrace, near the wall’s end at the Golden Horn.
+      tr: Haliç’e inen surun ucuna yakın, Blakherna terasının altındaki kuleler ve tonozlar.
+    sources: [wp-walls-of-constantinople-1383343183]
+
+reveal:
+  seconds: 14
+  caption:
+    en: From the Sea of Marmara to the Golden Horn in one pass, about 6.5 km of wall.
+    tr: Marmara’dan Haliç’e tek geçişte; yaklaşık 6,5 km sur.
+
+beats:
+  - id: marmara
+    at: start
+    seconds: 6
+    label: {en: The Marmara end, tr: Marmara ucu}
+    caption:
+      en: >-
+        The land walls closed the one side of the city without sea. The inner
+        wall was built under the boy emperor Theodosius II by the prefect
+        Anthemius and finished by 413.
+      tr: >-
+        Kara surları şehrin denize açılmayan tek yanını kapatıyordu. İç sur,
+        çocuk imparator II. Theodosius döneminde vali Anthemius tarafından
+        yapıldı ve 413’e kadar bitirildi.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: golden-gate
+    at: golden-gate
+    seconds: 6
+    label: {en: The Golden Gate, tr: Altınkapı}
+    caption:
+      en: >-
+        The ceremonial gate, for triumphs; the last went through in 1261. Its
+        date, 388–391 or with the wall, is argued.
+      tr: >-
+        Zafer alayları için tören kapısı; sonuncusu 1261’de geçti. Tarihi,
+        388–391 mi yoksa surla birlikte mi, tartışmalıdır.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: section
+    at: 1700
+    seconds: 8
+    label: {en: Five layers deep, tr: Beş kat derinlik}
+    caption:
+      en: >-
+        Moat, breastwork, outer terrace, outer wall, peribolos, inner wall: a
+        belt about 60 m deep, about 30 m from the moat’s bed to the tops of
+        the great towers.
+      tr: >-
+        Hendek, göğüs duvarı, dış teras, dış sur, peribolos, iç sur: yaklaşık
+        60 m derinliğinde bir kuşak; hendeğin dibinden büyük kulelerin
+        tepesine 30 m kadar.
+    sources: [van-millingen-1899, byzleg-theodosian-walls]
+  - id: rhegion
+    at: rhegion
+    seconds: 6
+    label: {en: Sixty days, tr: Altmış gün}
+    caption:
+      en: >-
+        On 6 November 447 an earthquake threw down 57 towers while Attila’s
+        Huns were in the Balkans. The walls were up again within about two
+        months; the inscriptions on this gate say so.
+      tr: >-
+        6 Kasım 447’de bir deprem, Attila’nın Hunları Balkanlar’dayken 57
+        kuleyi yıktı. Surlar iki ay kadar içinde yeniden ayağa kalktı; bu
+        kapıdaki yazıtlar bunu anlatır.
+    sources: [van-millingen-1899, byzleg-theodosian-walls]
+  - id: st-romanus
+    at: st-romanus
+    seconds: 6
+    label: {en: The great gun, tr: Büyük top}
+    caption:
+      en: >-
+        In April 1453 Orban’s great bronze gun was set up opposite this gate,
+        which the Turks now call Topkapı, the Cannon Gate.
+      tr: >-
+        Nisan 1453’te Orban’ın büyük tunç topu bu kapının karşısına kuruldu;
+        kapının bugünkü adı Topkapı buradan gelir.
+    sources: [doukas-magoulias-1975, van-millingen-1899]
+  - id: lycus
+    at: pempton
+    seconds: 7
+    label: {en: The Lycus valley, tr: Likos vadisi}
+    caption:
+      en: >-
+        Here the wall dips and the defenders stood below the attackers. On 29
+        May 1453 the breakthrough came somewhere in this stretch; which gate is
+        still argued.
+      tr: >-
+        Sur burada alçalır; savunanlar saldıranların altında kalıyordu. 29 Mayıs
+        1453’teki yarma bu kesimde bir yerde oldu; hangi kapıda olduğu hâlâ
+        tartışılır.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183, pears-1903]
+  - id: charisius
+    at: charisius
+    seconds: 6
+    label: {en: The highest gate, tr: En yüksek kapı}
+    caption:
+      en: >-
+        Edirnekapı, the walls’ highest point. By tradition Mehmed II rode in
+        here on 29 May 1453.
+      tr: >-
+        Edirnekapı, surların en yüksek noktası. Geleneğe göre II. Mehmed 29
+        Mayıs 1453’te buradan girdi.
+    sources: [van-millingen-1899, doukas-magoulias-1975]
+  - id: kerkoporta
+    at: kerkoporta
+    seconds: 7
+    label: {en: A legend’s gate, tr: Bir efsanenin kapısı}
+    caption:
+      en: >-
+        Doukas alone tells of a postern left open on 29 May. Where it was, and
+        whether it mattered, is disputed; the marker is a convention.
+      tr: >-
+        29 Mayıs’ta açık bırakılan küçük bir kapıyı yalnızca Dukas anlatır.
+        Nerede olduğu da, önemli olup olmadığı da tartışmalıdır; işaret bir
+        uzlaşımdır.
+    sources: [doukas-magoulias-1975, pears-1903, van-millingen-1899]
+  - id: blachernae
+    # Just past the junction, so the section under the line is the single
+    # wall the stop is about.
+    at: junction+100
+    seconds: 6
+    label: {en: One wall, tr: Tek sur}
+    caption:
+      en: >-
+        The double wall ends at the Palace of the Porphyrogenitus. Beyond it a
+        single wall without a moat, built up to the 12th century, guards
+        Blachernae.
+      tr: >-
+        Çift sur Porphyrogennetos Sarayı’nda biter. Ötesinde 12. yüzyıla kadar
+        yapılmış, hendeksiz tek bir sur Blakherna’yı korur.
+    sources: [van-millingen-1899, wp-walls-of-constantinople-1383343183]
+  - id: golden-horn
+    at: end
+    seconds: 5
+    label: {en: The Golden Horn, tr: Haliç}
+    caption:
+      en: The land walls end at the water, where the sea walls of the Golden Horn begin.
+      tr: Kara surları suda biter; Haliç’in deniz surları burada başlar.
+    sources: [van-millingen-1899]
+
+stills: [golden-gate, section, rhegion, lycus, kerkoporta, blachernae]

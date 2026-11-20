@@ -12,6 +12,8 @@ import '../services/progress_service.dart';
 import '../space/player.dart';
 import '../space/study.dart';
 import '../section/section_player.dart';
+import '../siege/siege_player.dart';
+import '../walls/wall_player.dart';
 import '../walk/walk_player.dart';
 import 'app_scope.dart';
 
@@ -39,6 +41,18 @@ Future<void> openMilestone(
       context,
       SectionPlayer(key: ValueKey(section.id), section: section),
     );
+  }
+  // The land walls as one strip (PU, SB; P15: XVIII).
+  final strip = app.strips.forMilestone(milestone);
+  if (scene == null && strip != null) {
+    ProgressScope.of(context).open(milestone.id);
+    return _push<void>(context, WallPlayer(key: ValueKey(strip.id), strip: strip));
+  }
+  // A map sequence (TM, SB; P15: XIX, 1453 in 53 days).
+  final siege = app.sieges.forMilestone(milestone);
+  if (scene == null && siege != null) {
+    ProgressScope.of(context).open(milestone.id);
+    return _push<void>(context, SiegePlayer(key: ValueKey(siege.id), siege: siege));
   }
   if (scene == null) {
     // A 3D Milestone (CA) plays its kit study (P11: VI, Chora through time).

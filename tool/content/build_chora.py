@@ -122,7 +122,13 @@ def main():
                     sources=item['sources']) for item in hunt['items']],
     )
     write(CONTENT / 'hunts.json', dict(schemaVersion=1, kind='hunts', records=[record]))
-    write(CONTENT / 'routes.json', dict(schemaVersion=1, kind='routes', records=[hunt['route']]))
+    # Merged by id and kept in id order: other chapters seed routes here too
+    # (P15's walls walk), whichever order the rebuild runs them in.
+    routes = CONTENT / 'routes.json'
+    kept = json.loads(routes.read_text(encoding='utf-8'))['records'] if routes.exists() else []
+    by_id = {r['id']: r for r in kept}
+    by_id[hunt['route']['id']] = hunt['route']
+    write(routes, dict(schemaVersion=1, kind='routes', records=[by_id[k] for k in sorted(by_id)]))
 
     building = STUDIO / 'building.json'
     if building.exists():

@@ -68,8 +68,12 @@ class _MilestonesTabState extends State<MilestonesTab> with RestorationMixin {
     ];
     final walkSectionMilestones = [
       for (final m in playableMilestones)
-        if (app.playableKind(m) == PlayableKind.walk ||
-            app.playableKind(m) == PlayableKind.section)
+        if (const {
+          PlayableKind.walk,
+          PlayableKind.section,
+          PlayableKind.strip,
+          PlayableKind.map,
+        }.contains(app.playableKind(m)))
           m,
     ];
     final chapters = chaptersOf(context);
