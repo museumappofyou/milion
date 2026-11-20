@@ -291,9 +291,7 @@ class FirstRunPainter extends CustomPainter {
     final zoom = math.pow(8, 1 - ease(span(t, 2.2, 4.6))).toDouble();
     final side = 7 * zoom * (.6 + .4 * appear);
     final glint = still ? 0.0 : math.sin(span(t, 1.6, 2.2) * math.pi) * .25;
-    final at = t < 5.3
-        ? Offset.lerp(c, foot, ease(span(t, 2.2, 2.8)))!
-        : zero;
+    final at = t < 5.3 ? Offset.lerp(c, foot, ease(span(t, 2.2, 2.8)))! : zero;
     _tessera(canvas, at, side, appear);
     if (glint > 0) {
       _tessera(canvas, at, side * (1 + glint), glint);

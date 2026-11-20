@@ -9,8 +9,124 @@ import 'atlas_controller.dart';
 import 'atlas_map.dart' show atlasEraCaption, atlasYearLabel;
 import 'historic.dart';
 
-/// The map's buttons: zoom, mile rings, "From me", Below, the layers
-/// sheet, north and back to the peninsula.
+/// Top-left labeled mode chips on the Atlas: Mile rings, Below (underground),
+/// and Historic layers. Replaces unlabeled geometric icon boxes so every
+/// map overlay reads clearly at a glance.
+class AtlasLayerChips extends StatelessWidget {
+  const AtlasLayerChips({
+    super.key,
+    required this.controller,
+    required this.onLayers,
+  });
+  final AtlasController controller;
+  final VoidCallback onLayers;
+
+  @override
+  Widget build(BuildContext context) {
+    final s = context.l10n;
+    final c = controller;
+    final colors = MeasureColors.of(context);
+    Widget chip({
+      required Key key,
+      required String label,
+      required String tooltip,
+      required PlanSymbol symbol,
+      required VoidCallback onTap,
+      bool selected = false,
+      bool toggle = true,
+    }) {
+      final bg = selected ? colors.ink : colors.ground.withValues(alpha: .94);
+      final fg = selected ? colors.ground : colors.ink;
+      return Padding(
+        padding: const EdgeInsets.only(right: 6),
+        child: Tooltip(
+          message: tooltip,
+          child: Semantics(
+            button: true,
+            // Mile rings and Below switch; Layers only opens a sheet.
+            toggled: toggle ? selected : null,
+            label: tooltip,
+            child: Material(
+              color: bg,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(color: selected ? colors.ink : colors.line),
+                borderRadius: const BorderRadius.all(Radius.circular(3)),
+              ),
+              child: InkWell(
+                key: key,
+                onTap: onTap,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 40),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 8,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        PlanIcon(symbol, size: 17, color: fg),
+                        const SizedBox(width: 6),
+                        Text(
+                          label,
+                          style: TextStyle(
+                            fontFamily: TypeRole.bodyFamily,
+                            fontSize: 12.5,
+                            fontWeight: selected
+                                ? FontWeight.w600
+                                : FontWeight.w500,
+                            color: fg,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          chip(
+            key: const ValueKey('atlas-rings'),
+            label: s.atlasRings,
+            tooltip:
+                '${s.atlasRings}. ${s.atlasRingsHint(c.me == null ? s.atlasMileZero : s.atlasYou)}',
+            symbol: PlanSymbol.dial,
+            selected: c.rings,
+            onTap: () => c.rings = !c.rings,
+          ),
+          chip(
+            key: const ValueKey('atlas-below'),
+            label: s.atlasBelow,
+            tooltip: '${s.atlasBelow}. ${s.atlasBelowHint}',
+            symbol: PlanSymbol.cistern,
+            selected: c.below,
+            onTap: () => c.below = !c.below,
+          ),
+          chip(
+            key: const ValueKey('atlas-layers'),
+            label: s.atlasLayersShort,
+            tooltip: s.atlasHistoricSources,
+            symbol: PlanSymbol.layers,
+            onTap: onLayers,
+            toggle: false,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Compact right-edge spatial instrument cluster: joined +/− zoom bar,
+/// locate ("From me"), recenter, and conditional North reset.
 class AtlasControls extends StatelessWidget {
   const AtlasControls({
     super.key,
@@ -21,66 +137,75 @@ class AtlasControls extends StatelessWidget {
     required this.onNorth,
     required this.onRecenter,
     required this.onFromMe,
-    required this.onLayers,
   });
   final AtlasController controller;
   final bool locating;
   final VoidCallback onZoomIn, onZoomOut, onNorth, onRecenter, onFromMe;
-  final VoidCallback onLayers;
 
   @override
   Widget build(BuildContext context) {
     final s = context.l10n;
     final c = controller;
     final colors = MeasureColors.of(context);
-    Widget button({
+    const radius = BorderRadius.all(Radius.circular(3));
+    Widget solo({
       required Key key,
       required String tooltip,
       required Widget icon,
       required VoidCallback? onPressed,
-      bool? selected,
+      bool selected = false,
     }) => Padding(
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.only(top: 8),
       child: Material(
-        color: selected == true ? colors.ink : colors.ground,
+        color: selected ? colors.ink : colors.ground.withValues(alpha: .94),
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: colors.line),
-          borderRadius: Space.radius,
+          side: BorderSide(color: selected ? colors.ink : colors.line),
+          borderRadius: radius,
         ),
         child: IconButton(
           key: key,
           tooltip: tooltip,
           isSelected: selected,
           onPressed: onPressed,
-          color: selected == true ? colors.ground : colors.ink,
+          color: selected ? colors.ground : colors.ink,
           icon: icon,
         ),
       ),
     );
     final rotated = c.view.rotation.abs() % (2 * math.pi) > .01;
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        button(
-          key: const ValueKey('atlas-zoom-in'),
-          tooltip: s.atlasZoomIn,
-          icon: const Icon(Icons.add),
-          onPressed: onZoomIn,
+        // Joined + / − zoom instrument block.
+        Material(
+          color: colors.ground.withValues(alpha: .94),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(color: colors.line),
+            borderRadius: radius,
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                key: const ValueKey('atlas-zoom-in'),
+                tooltip: s.atlasZoomIn,
+                onPressed: onZoomIn,
+                color: colors.ink,
+                icon: const Icon(Icons.add, size: 20),
+              ),
+              Container(width: 32, height: 1, color: colors.line),
+              IconButton(
+                key: const ValueKey('atlas-zoom-out'),
+                tooltip: s.atlasZoomOut,
+                onPressed: onZoomOut,
+                color: colors.ink,
+                icon: const Icon(Icons.remove, size: 20),
+              ),
+            ],
+          ),
         ),
-        button(
-          key: const ValueKey('atlas-zoom-out'),
-          tooltip: s.atlasZoomOut,
-          icon: const Icon(Icons.remove),
-          onPressed: onZoomOut,
-        ),
-        button(
-          key: const ValueKey('atlas-rings'),
-          tooltip:
-              '${s.atlasRings}. ${s.atlasRingsHint(c.me == null ? s.atlasMileZero : s.atlasYou)}',
-          icon: const PlanIcon(PlanSymbol.dial, size: 22),
-          selected: c.rings,
-          onPressed: () => c.rings = !c.rings,
-        ),
-        button(
+        solo(
           key: const ValueKey('atlas-from-me'),
           tooltip: c.me == null ? s.atlasFromMe : s.atlasFromMilion,
           icon: locating
@@ -88,39 +213,26 @@ class AtlasControls extends StatelessWidget {
                   dimension: 18,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
-              : const Icon(Icons.my_location),
+              : const Icon(Icons.my_location, size: 20),
           selected: c.me != null,
           onPressed: onFromMe,
         ),
-        button(
-          key: const ValueKey('atlas-below'),
-          tooltip: '${s.atlasBelow}. ${s.atlasBelowHint}',
-          icon: const PlanIcon(PlanSymbol.cistern, size: 22),
-          selected: c.below,
-          onPressed: () => c.below = !c.below,
+        solo(
+          key: const ValueKey('atlas-recenter'),
+          tooltip: s.atlasRecenter,
+          icon: const Icon(Icons.center_focus_strong_outlined, size: 20),
+          onPressed: onRecenter,
         ),
         if (rotated)
-          button(
+          solo(
             key: const ValueKey('atlas-north'),
             tooltip: s.atlasNorth,
             icon: Transform.rotate(
               angle: c.view.rotation,
-              child: const Icon(Icons.navigation_outlined),
+              child: const Icon(Icons.navigation_outlined, size: 20),
             ),
             onPressed: onNorth,
           ),
-        button(
-          key: const ValueKey('atlas-layers'),
-          tooltip: s.atlasHistoricSources,
-          icon: const PlanIcon(PlanSymbol.layers, size: 22),
-          onPressed: onLayers,
-        ),
-        button(
-          key: const ValueKey('atlas-recenter'),
-          tooltip: s.atlasRecenter,
-          icon: const Icon(Icons.center_focus_strong_outlined),
-          onPressed: onRecenter,
-        ),
       ],
     );
   }

@@ -402,7 +402,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get emptyTitle => 'Kayıtlı not yok';
 
   @override
-  String get emptyBody => 'Bir Kariye eseri açıp ilk notunuzu kaydedin.';
+  String get emptyBody => 'Bir eser açıp ilk notunuzu kaydedin.';
 
   @override
   String get errorTitle => 'Eser görseli açılamadı';
@@ -985,8 +985,14 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notesTitle => 'Notlarınız';
 
   @override
-  String notesCount(String count) {
-    return 'Kariye eserlerinde $count not';
+  String notesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kayıtlı not',
+      one: '1 kayıtlı not',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1727,7 +1733,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get walkHint =>
-      'Platformda yürümek için yukarı ya da aşağı, dönmek için yana sürükleyin. Sonraki durak için iki kez dokunun.';
+      'Çevrenize bakmak için her yöne sürükleyin: yukarıda tonozlar, aşağıda su. Yürümek için platformdaki dairelere dokunun ya da hareket dairesini sürükleyin; bir adım ilerlemek için çift dokunun. Not ve fotoğraf için bir etikete dokunun.';
 
   @override
   String get walkFish => 'Sudaki balıklar';
@@ -1787,4 +1793,158 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get seePhotograph => 'Fotoğrafı gör';
+
+  @override
+  String playableCountSummary(String playable, String opened) {
+    return '$playable açılabilir taştan $opened tanesi açıldı';
+  }
+
+  @override
+  String get filterPlayable => 'Açılabilir';
+
+  @override
+  String get filter3dModels => '3B Modeller';
+
+  @override
+  String get filterReliefPlates => 'Levhalar';
+
+  @override
+  String get filterWalksSections => 'Yürüyüş ve Kesit';
+
+  @override
+  String filterAllRegister(String count) {
+    return 'Tümü · $count';
+  }
+
+  @override
+  String get kind3dModel => '3B Model';
+
+  @override
+  String get kind3dWalk => '3B Yürüyüş';
+
+  @override
+  String get kindReliefPlate => 'Levha';
+
+  @override
+  String get kindSection => 'Kazı Kesiti';
+
+  @override
+  String get kindFloorPlan => 'Plan ve Rehber';
+
+  @override
+  String get kindCameraScan => 'Kamerayla Tanıma';
+
+  @override
+  String get standaloneStudiesTitle => '3B Mimari İncelemeler';
+
+  @override
+  String get standaloneStudiesSubtitle =>
+      'Bir taşa bağlı olmayan dört çizim: Şehzade Camii (1548), Sergios ve Bakhos Kilisesi (536), Myrelaion (920 dolayları) ve bir kubbe nasıl ayakta durur.';
+
+  @override
+  String get upcomingRegisterTitle => 'Kayıtta sırada bekleyenler';
+
+  @override
+  String upcomingChapterCount(String count) {
+    return '$count planlandı';
+  }
+
+  @override
+  String chapterReadyProgress(String playable, String total) {
+    return '$total taştan $playable tanesi hazır';
+  }
+
+  @override
+  String chapterUpcomingOnly(String total) {
+    return '$total planlandı';
+  }
+
+  @override
+  String get interactiveHere => 'Burada etkileşimli';
+
+  @override
+  String get spaceRendering => 'Görünüm';
+
+  @override
+  String get spaceCamera => 'Kamera';
+
+  @override
+  String get atlasLayersShort => 'Katmanlar';
+
+  @override
+  String get statusReady => 'Hazır';
+
+  @override
+  String get citySearchHint => 'Yer, ilçe veya tarihî ad ara';
+
+  @override
+  String get cityQuickInteractive => 'Etkileşimli';
+
+  @override
+  String get cityQuickReviewed => 'İncelenmiş';
+
+  @override
+  String get citySortFeatured => 'Öne çıkanlar';
+
+  @override
+  String get citySortDistance => 'Uzaklığa göre';
+
+  @override
+  String cityOtherPlaces(String count) {
+    return 'Diğer kayıtlı yerler · $count';
+  }
+
+  @override
+  String cityFeaturedPlaces(String count) {
+    return 'İncelenmiş ya da açılabilir · $count';
+  }
+
+  @override
+  String get placeCapability3d => '3B';
+
+  @override
+  String get placeCapabilityPlate => 'Levha';
+
+  @override
+  String get placeCapabilityWalk => '3B Yürüyüş';
+
+  @override
+  String get placeCapabilitySection => 'Kesit';
+
+  @override
+  String get placeCapabilityPlan => 'Plan';
+
+  @override
+  String placeStrataCount(String count) {
+    return '$count katman';
+  }
+
+  @override
+  String dialScopeFeatured(String count) {
+    return 'İncelenmiş ya da açılabilir · $count';
+  }
+
+  @override
+  String dialScopeAll(String count) {
+    return 'Tümü · $count';
+  }
+
+  @override
+  String get shipFilterAll => 'Tümü';
+
+  @override
+  String get shipFilterGalleys => 'Kadırgalar';
+
+  @override
+  String get shipFilterRound => 'Ticaret gemileri';
+
+  @override
+  String get shipFilterCargo => 'Yüklü';
+
+  @override
+  String get walkMoveLabel => 'Platform boyunca ilerle';
+
+  @override
+  String get walkMoveHint =>
+      'Yürümek için dairenin içinde sürükleyin; bir adım atmak için üst ya da alt yarısına dokunun.';
 }

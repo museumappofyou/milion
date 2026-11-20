@@ -84,11 +84,16 @@ class PlateSheet extends StatelessWidget {
                   maxHeight: MediaQuery.sizeOf(context).height * .78,
                 ),
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
-                    children: [header, const SizedBox(height: 12), body],
+                    children: [
+                      const DimensionHandle(),
+                      header,
+                      const SizedBox(height: 12),
+                      body,
+                    ],
                   ),
                 ),
               ),
@@ -105,14 +110,18 @@ class PlateSheet extends StatelessWidget {
                 runSpacing: 8,
                 children: [
                   if (!c.reduced)
+                    FilledButton.icon(
+                      onPressed: c.playing ? c.pause : c.play,
+                      icon: Icon(
+                        c.playing ? Icons.pause : Icons.play_arrow,
+                        size: 18,
+                      ),
+                      label: Text(c.playing ? s.platePause : s.platePlay),
+                    ),
+                  if (!c.reduced)
                     OutlinedButton(
                       onPressed: c.playReveal,
                       child: Text(s.plateStartReveal),
-                    ),
-                  if (!c.reduced)
-                    FilledButton(
-                      onPressed: c.playing ? c.pause : c.play,
-                      child: Text(c.playing ? s.platePause : s.platePlay),
                     ),
                   OutlinedButton(
                     onPressed: () => c.step(-1),
@@ -124,6 +133,7 @@ class PlateSheet extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 8),
               Text(c.reveal ? s.plateReveal : s.plateTimeline),
               Slider(
                 key: const ValueKey('plate-timeline'),
@@ -141,10 +151,6 @@ class PlateSheet extends StatelessWidget {
                 const HonestyLabel(Honesty.IMAGINED),
                 Text(s.plateMotionCaption),
               ],
-              TextButton(
-                onPressed: () => player.controls(PlatePanel.sources),
-                child: Text(s.plateSources),
-              ),
             ],
             if (panel == PlatePanel.light) ...[
               Wrap(
@@ -279,7 +285,9 @@ class PlateSheet extends StatelessWidget {
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(
-                    p.flowEffect!.sway ? s.plateAnimalMotion : s.platePaintMotion,
+                    p.flowEffect!.sway
+                        ? s.plateAnimalMotion
+                        : s.platePaintMotion,
                   ),
                   value: c.flow,
                   onChanged: c.reduced
@@ -295,10 +303,6 @@ class PlateSheet extends StatelessWidget {
                       ? null
                       : (v) => c.setPaintMotion(scroll: v),
                 ),
-              TextButton(
-                onPressed: () => player.controls(PlatePanel.sources),
-                child: Text(s.plateSources),
-              ),
               if (kDebugMode)
                 TextButton(
                   onPressed: () => player.controls(PlatePanel.debug),

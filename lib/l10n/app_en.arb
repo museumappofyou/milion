@@ -177,7 +177,7 @@
   "sheetTitle": "Artwork note",
   "openSheet": "Open dimension sheet",
   "emptyTitle": "No saved notes",
-  "emptyBody": "Open a Chora artwork and save your first note.",
+  "emptyBody": "Open any artwork and save your first note.",
   "errorTitle": "Artwork image unavailable",
   "errorBody": "The image file could not be read. Try loading it again.",
   "motionTitle": "Settle · dig · sweep",
@@ -506,11 +506,11 @@
   },
   "mosaicIntro": "One tessera per Milestone. Each one you open is set in gold.",
   "notesTitle": "Your notes",
-  "notesCount": "{count} notes on Chora artworks",
+  "notesCount": "{count, plural, =1{1 saved note} other{{count} saved notes}}",
   "@notesCount": {
     "placeholders": {
       "count": {
-        "type": "String"
+        "type": "int"
       }
     }
   },
@@ -989,7 +989,7 @@
   "walkLook": "Look",
   "walkLoading": "Preparing the walk",
   "walkUnavailable": "The walk’s model could not be loaded.",
-  "walkHint": "Drag up or down to walk the deck, sideways to turn. Double-tap for the next stop.",
+  "walkHint": "Drag in any direction to look around, up into the vaults or down into the water. Tap the walkway circles or drag the move circle to walk, double-tap to step forward, and tap a label for its note and photograph.",
   "walkFish": "Fish in the water",
   "walkCallouts": "Leader lines",
   "walkLookSensor": "Turn with the phone",
@@ -1029,5 +1029,125 @@
   "seePhotograph": "See the photograph",
   "@seePhotograph": {
     "description": "P14: opens the credited photograph (ORIGINAL) of a walk stop or a section find."
-  }
+  },
+  "playableCountSummary": "{opened} of {playable} playable Milestones opened",
+  "@playableCountSummary": {
+    "placeholders": {
+      "playable": {
+        "type": "String"
+      },
+      "opened": {
+        "type": "String"
+      }
+    }
+  },
+  "filterPlayable": "Playable",
+  "filter3dModels": "3D Models",
+  "filterReliefPlates": "Plates",
+  "filterWalksSections": "Walk & Section",
+  "filterAllRegister": "All · {count}",
+  "@filterAllRegister": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "kind3dModel": "3D Model",
+  "kind3dWalk": "3D Walk",
+  "kindReliefPlate": "Plate",
+  "kindSection": "Excavation Section",
+  "kindFloorPlan": "Floor Plan & Guide",
+  "kindCameraScan": "Camera Recognition",
+  "standaloneStudiesTitle": "3D Architectural Studies",
+  "standaloneStudiesSubtitle": "Four studies without a Milestone: the Şehzade Mosque (1548), Sts Sergius and Bacchus (536), the Myrelaion (c. 920) and how a dome stands.",
+  "upcomingRegisterTitle": "Upcoming in the register",
+  "upcomingChapterCount": "{count} planned",
+  "@upcomingChapterCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "chapterReadyProgress": "{playable} of {total} ready to open",
+  "@chapterReadyProgress": {
+    "placeholders": {
+      "playable": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "chapterUpcomingOnly": "{total} planned",
+  "@chapterUpcomingOnly": {
+    "placeholders": {
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "interactiveHere": "Interactive here",
+  "spaceRendering": "Rendering",
+  "spaceCamera": "Camera",
+  "atlasLayersShort": "Layers",
+  "statusReady": "Ready",
+  "citySearchHint": "Search places, districts, historic names",
+  "cityQuickInteractive": "Interactive",
+  "cityQuickReviewed": "Reviewed",
+  "citySortFeatured": "Featured",
+  "citySortDistance": "By distance",
+  "cityOtherPlaces": "Other plotted sites · {count}",
+  "@cityOtherPlaces": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "cityFeaturedPlaces": "Reviewed or playable · {count}",
+  "@cityFeaturedPlaces": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "placeCapability3d": "3D",
+  "placeCapabilityPlate": "Plate",
+  "placeCapabilityWalk": "3D Walk",
+  "placeCapabilitySection": "Section",
+  "placeCapabilityPlan": "Plan",
+  "placeStrataCount": "{count} layers",
+  "@placeStrataCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dialScopeFeatured": "Reviewed or playable · {count}",
+  "@dialScopeFeatured": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dialScopeAll": "All · {count}",
+  "@dialScopeAll": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "shipFilterAll": "All",
+  "shipFilterGalleys": "Galleys",
+  "shipFilterRound": "Merchant",
+  "shipFilterCargo": "With cargo",
+  "walkMoveLabel": "Move along the walkway",
+  "walkMoveHint": "Drag inside the circle to walk; tap its top or bottom half to take a step."
 }

@@ -13,6 +13,7 @@ import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../milestones/chapters.dart';
 import '../milestones/milestone_row.dart';
+import '../milestones/playable_card.dart';
 import '../mosaic/mosaic_strip.dart';
 import '../services/progress_service.dart';
 import '../shell/app_scope.dart';
@@ -33,6 +34,7 @@ class TodayScreen extends StatefulWidget {
 class _TodayScreenState extends State<TodayScreen> with RestorationMixin {
   final _place = RestorableStringN(null);
   final _list = RestorableBool(false);
+  final _dialAll = RestorableBool(false);
   ContentRegistry? _registry;
   List<DialPlace> _places = const [];
 
@@ -42,12 +44,14 @@ class _TodayScreenState extends State<TodayScreen> with RestorationMixin {
   void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
     registerForRestoration(_place, 'dial-place');
     registerForRestoration(_list, 'dial-list');
+    registerForRestoration(_dialAll, 'dial-all');
   }
 
   @override
   void dispose() {
     _place.dispose();
     _list.dispose();
+    _dialAll.dispose();
     super.dispose();
   }
 
@@ -71,19 +75,27 @@ class _TodayScreenState extends State<TodayScreen> with RestorationMixin {
       _registry = registry;
       _places = dialPlaces(registry.plottablePlaces);
     }
+    final interactiveIds = app.interactivePlaceIds;
+    final featuredPlaces = [
+      for (final p in _places)
+        if (p.reviewed || interactiveIds.contains(p.place.id)) p,
+    ];
+    final shownPlaces = _dialAll.value || featuredPlaces.isEmpty
+        ? _places
+        : featuredPlaces;
     final detail = detailOfDay(
       registry,
       app.clock(),
       playable: (d) =>
           app.plates.forMilestone(registry.milestone(d.milestoneId)!) != null,
     );
-    var selected = _places.indexWhere((p) => p.place.id == _place.value);
+    var selected = shownPlaces.indexWhere((p) => p.place.id == _place.value);
     if (selected < 0) {
       // Start the index on the place the detail of the day belongs to.
       final home = detail == null
           ? null
           : registry.artwork(detail.artworkId).placeId;
-      selected = math.max(0, _places.indexWhere((p) => p.place.id == home));
+      selected = math.max(0, shownPlaces.indexWhere((p) => p.place.id == home));
     }
     final top = MediaQuery.paddingOf(context).top;
     return AnnotatedRegion(
@@ -103,18 +115,22 @@ class _TodayScreenState extends State<TodayScreen> with RestorationMixin {
               SliverToBoxAdapter(
                 child: _DialHeader(
                   list: _list.value,
+                  showAll: _dialAll.value,
+                  featuredCount: featuredPlaces.length,
+                  allCount: _places.length,
                   onToggle: () => setState(() => _list.value = !_list.value),
+                  onScopeChanged: (all) => setState(() => _dialAll.value = all),
                 ),
               ),
               if (_list.value)
-                _PlaceList(places: _places)
+                _PlaceList(places: shownPlaces)
               else
                 SliverToBoxAdapter(
                   child: _DialSection(
-                    places: _places,
+                    places: shownPlaces,
                     selected: selected,
                     onSelected: (i) =>
-                        setState(() => _place.value = _places[i].place.id),
+                        setState(() => _place.value = shownPlaces[i].place.id),
                   ),
                 ),
               SliverToBoxAdapter(child: _MosaicSection(registry: registry)),
@@ -150,8 +166,8 @@ class _DetailPanel extends StatelessWidget {
     final artwork = registry.artwork(detail.artworkId);
     final place = registry.place(artwork.placeId)!;
     final screen = MediaQuery.sizeOf(context);
-    final height = (screen.width * 1.12)
-        .clamp(280.0, math.max(280.0, screen.height * .58))
+    final height = (screen.width * .96)
+        .clamp(240.0, math.max(240.0, screen.height * .46))
         .toDouble();
     final date = DateFormat.yMMMMd(lang).format(AppScope.of(context).clock());
     void open() => openMilestone(context, milestone, detail: detail);
@@ -234,7 +250,7 @@ class _DetailPanel extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(24, 28, 24, 32),
+            padding: const EdgeInsets.fromLTRB(24, 22, 24, 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -283,11 +299,10 @@ class _DetailPanel extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
-                TextButton.icon(
-                  style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                const SizedBox(height: 16),
+                FilledButton.icon(
                   onPressed: open,
-                  icon: const PlanIcon(PlanSymbol.layers),
+                  icon: const PlanIcon(PlanSymbol.layers, size: 18),
                   label: Text(s.openMilestoneDetail(milestone.numeral)),
                 ),
               ],
@@ -345,44 +360,85 @@ class _LeaderPainter extends CustomPainter {
 }
 
 class _DialHeader extends StatelessWidget {
-  const _DialHeader({required this.list, required this.onToggle});
+  const _DialHeader({
+    required this.list,
+    required this.showAll,
+    required this.featuredCount,
+    required this.allCount,
+    required this.onToggle,
+    required this.onScopeChanged,
+  });
   final bool list;
+  final bool showAll;
+  final int featuredCount;
+  final int allCount;
   final VoidCallback onToggle;
+  final ValueChanged<bool> onScopeChanged;
   @override
   Widget build(BuildContext context) {
     final s = context.l10n, c = MeasureColors.of(context);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 32, 24, 8),
-      child: Wrap(
-        spacing: 16,
-        runSpacing: 12,
-        alignment: WrapAlignment.spaceBetween,
-        crossAxisAlignment: WrapCrossAlignment.center,
+      padding: const EdgeInsets.fromLTRB(24, 28, 24, 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+          Wrap(
+            spacing: 16,
+            runSpacing: 12,
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Semantics(
-                header: true,
-                child: Text(
-                  TypeRole.capitals(s.mileZero, context.language),
-                  style: TypeRole.inscription(20, color: c.ink),
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Semantics(
+                    header: true,
+                    child: Text(
+                      TypeRole.capitals(s.mileZero, context.language),
+                      style: TypeRole.inscription(20, color: c.ink),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    s.milionCoordinates,
+                    style: TypeRole.measurement.copyWith(color: c.secondary),
+                  ),
+                ],
               ),
-              const SizedBox(height: 4),
-              Text(
-                s.milionCoordinates,
-                style: TypeRole.measurement.copyWith(color: c.secondary),
+              OutlinedButton.icon(
+                key: const ValueKey('dial-toggle'),
+                onPressed: onToggle,
+                icon: PlanIcon(list ? PlanSymbol.dial : PlanSymbol.story),
+                label: Text(list ? s.showDial : s.showList),
               ),
             ],
           ),
-          OutlinedButton.icon(
-            key: const ValueKey('dial-toggle'),
-            onPressed: onToggle,
-            icon: PlanIcon(list ? PlanSymbol.dial : PlanSymbol.story),
-            label: Text(list ? s.showDial : s.showList),
-          ),
+          if (featuredCount > 0 && featuredCount < allCount) ...[
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 6,
+              children: [
+                ChoiceChip(
+                  key: const ValueKey('dial-scope-featured'),
+                  showCheckmark: false,
+                  visualDensity: VisualDensity.compact,
+                  selected: !showAll,
+                  label: Text(s.dialScopeFeatured('$featuredCount')),
+                  onSelected: (_) => onScopeChanged(false),
+                ),
+                ChoiceChip(
+                  key: const ValueKey('dial-scope-all'),
+                  showCheckmark: false,
+                  visualDensity: VisualDensity.compact,
+                  selected: showAll,
+                  label: Text(s.dialScopeAll('$allCount')),
+                  onSelected: (_) => onScopeChanged(true),
+                ),
+              ],
+            ),
+          ],
         ],
       ),
     );
@@ -447,11 +503,24 @@ class _DialSection extends StatelessWidget {
               ),
             ],
           ),
-          TextButton(
-            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+          const SizedBox(height: 12),
+          OutlinedButton(
             onPressed: () => openPlace(context, p.place),
-            child: Text(s.openPlace(p.place.names.inLanguage(lang))),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Text(
+                    s.openPlace(p.place.names.inLanguage(lang)),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Icon(Icons.arrow_forward, size: 16),
+              ],
+            ),
           ),
+          const SizedBox(height: 8),
           Text(s.dialHint, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
@@ -542,16 +611,12 @@ class _ChapterSection extends StatelessWidget {
     final s = context.l10n, progress = ProgressScope.of(context);
     final chapter = chaptersOf(context).first;
     final pieces = registry.register.where(chapter.contains).toList();
-    // Playable pieces first, then the next planned slots in register order.
+    final app = AppScope.of(context);
+    // Playable pieces first (plates, 3D studies, walk, section), then planned.
     final next = [
-      ...pieces.where(
-        (m) =>
-            AppScope.of(context).plates.forMilestone(m) != null &&
-            !progress.isOpened(m.id),
-      ),
-      ...pieces.where(
-        (m) => AppScope.of(context).plates.forMilestone(m) == null,
-      ),
+      ...pieces.where((m) => app.playable(m) && !progress.isOpened(m.id)),
+      ...pieces.where((m) => app.playable(m) && progress.isOpened(m.id)),
+      ...pieces.where((m) => !app.playable(m)),
     ].take(4);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -565,12 +630,19 @@ class _ChapterSection extends StatelessWidget {
           ),
         ),
         for (final m in next)
-          MilestoneRow(
-            milestone: m,
-            registry: registry,
-            opened: progress.isOpened(m.id),
-            onTap: () => openMilestone(context, m),
-          ),
+          app.playable(m)
+              ? PlayableMilestoneCard(
+                  milestone: m,
+                  registry: registry,
+                  opened: progress.isOpened(m.id),
+                  onTap: () => openMilestone(context, m),
+                )
+              : MilestoneRow(
+                  milestone: m,
+                  registry: registry,
+                  opened: progress.isOpened(m.id),
+                  onTap: () => openMilestone(context, m),
+                ),
       ],
     );
   }

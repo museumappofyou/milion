@@ -17,6 +17,8 @@ class AtlasFilter {
     this.districts = const {},
     this.openNow = false,
     this.hasMilestone = false,
+    this.reviewedOnly = false,
+    this.interactiveOnly = false,
   });
   final Set<Wave> waves;
   final Set<Era> eras;
@@ -30,6 +32,12 @@ class AtlasFilter {
   /// Only places a register Milestone belongs to.
   final bool hasMilestone;
 
+  /// Only deeply authored places (`ReviewStatus.reviewed`).
+  final bool reviewedOnly;
+
+  /// Only places hosting a playable Milestone, 3D study, or floor-plan guide.
+  final bool interactiveOnly;
+
   static const none = AtlasFilter();
 
   int get activeCount =>
@@ -38,7 +46,9 @@ class AtlasFilter {
       (categories.isEmpty ? 0 : 1) +
       (districts.isEmpty ? 0 : 1) +
       (openNow ? 1 : 0) +
-      (hasMilestone ? 1 : 0);
+      (hasMilestone ? 1 : 0) +
+      (reviewedOnly ? 1 : 0) +
+      (interactiveOnly ? 1 : 0);
 
   bool get isEmpty => activeCount == 0;
 
@@ -49,6 +59,8 @@ class AtlasFilter {
     Set<District>? districts,
     bool? openNow,
     bool? hasMilestone,
+    bool? reviewedOnly,
+    bool? interactiveOnly,
   }) => AtlasFilter(
     waves: waves ?? this.waves,
     eras: eras ?? this.eras,
@@ -56,12 +68,15 @@ class AtlasFilter {
     districts: districts ?? this.districts,
     openNow: openNow ?? this.openNow,
     hasMilestone: hasMilestone ?? this.hasMilestone,
+    reviewedOnly: reviewedOnly ?? this.reviewedOnly,
+    interactiveOnly: interactiveOnly ?? this.interactiveOnly,
   );
 
   bool matches(
     Place p, {
     required DateTime now,
     required Set<String> milestonePlaces,
+    Set<String> interactivePlaces = const {},
   }) =>
       (waves.isEmpty || waves.contains(p.wave)) &&
       (eras.isEmpty || p.eras.any(eras.contains)) &&
@@ -69,7 +84,9 @@ class AtlasFilter {
       (districts.isEmpty ||
           (p.district != null && districts.contains(p.district))) &&
       (!openNow || isOpenAt(p.visit?.weekly ?? const [], now) == true) &&
-      (!hasMilestone || milestonePlaces.contains(p.id));
+      (!hasMilestone || milestonePlaces.contains(p.id)) &&
+      (!reviewedOnly || p.review == ReviewStatus.reviewed) &&
+      (!interactiveOnly || interactivePlaces.contains(p.id));
 
   /// For restoration: names only, so a renamed enum value drops silently.
   String encode() => jsonEncode({
@@ -79,6 +96,8 @@ class AtlasFilter {
     'districts': [for (final d in districts) d.name],
     'openNow': openNow,
     'hasMilestone': hasMilestone,
+    'reviewedOnly': reviewedOnly,
+    'interactiveOnly': interactiveOnly,
   });
 
   static AtlasFilter decode(String? text) {
@@ -96,6 +115,8 @@ class AtlasFilter {
         districts: names('districts', District.values),
         openNow: j['openNow'] == true,
         hasMilestone: j['hasMilestone'] == true,
+        reviewedOnly: j['reviewedOnly'] == true,
+        interactiveOnly: j['interactiveOnly'] == true,
       );
     } on Object {
       return none;
@@ -110,7 +131,9 @@ class AtlasFilter {
       setEquals(other.categories, categories) &&
       setEquals(other.districts, districts) &&
       other.openNow == openNow &&
-      other.hasMilestone == hasMilestone;
+      other.hasMilestone == hasMilestone &&
+      other.reviewedOnly == reviewedOnly &&
+      other.interactiveOnly == interactiveOnly;
 
   @override
   int get hashCode => Object.hash(
@@ -120,7 +143,45 @@ class AtlasFilter {
     Object.hashAllUnordered(districts),
     openNow,
     hasMilestone,
+    reviewedOnly,
+    interactiveOnly,
   );
+}
+
+/// Folds Turkish and Latin letters for search: İ/I/ı → i, ş → s, ğ → g,
+/// ü → u, ö → o, ç → c, â/î/û → a/i/u, so "sehzade" finds "Şehzade" and
+/// "istanbul" finds "İstanbul" (Dart lowercases İ to i plus a combining dot).
+String foldForSearch(String text) {
+  final b = StringBuffer();
+  for (final r in text.runes) {
+    final ch = String.fromCharCode(r);
+    b.write(switch (ch) {
+      'İ' || 'I' || 'ı' || 'î' || 'Î' => 'i',
+      'Ş' || 'ş' => 's',
+      'Ğ' || 'ğ' => 'g',
+      'Ü' || 'ü' || 'û' || 'Û' => 'u',
+      'Ö' || 'ö' => 'o',
+      'Ç' || 'ç' => 'c',
+      'Â' || 'â' => 'a',
+      '\u0307' => '',
+      _ => ch.toLowerCase(),
+    });
+  }
+  return b.toString();
+}
+
+/// Case- and diacritic-insensitive text match across English, Turkish,
+/// district, and historical names of [p].
+bool placeMatchesQuery(Place p, String query) {
+  final q = foldForSearch(query.trim());
+  if (q.isEmpty) return true;
+  bool has(String? text) => text != null && foldForSearch(text).contains(q);
+  if (has(p.names.en) || has(p.names.tr)) return true;
+  if (has(p.district?.spelling)) return true;
+  for (final h in p.historicalNames) {
+    if (has(h.name.en) || has(h.name.tr)) return true;
+  }
+  return false;
 }
 
 /// The places the City tab shows, map and list alike, nearest mile zero
@@ -129,12 +190,21 @@ class AtlasFilter {
 List<Place> atlasPlaces(
   ContentRegistry registry,
   AtlasFilter filter,
-  DateTime now,
-) {
+  DateTime now, {
+  Set<String> interactivePlaces = const {},
+  String query = '',
+}) {
   final milestonePlaces = {for (final m in registry.milestones) ...m.placeIds};
   return [
     for (final p in registry.plottablePlaces)
-      if (filter.matches(p, now: now, milestonePlaces: milestonePlaces)) p,
+      if (filter.matches(
+            p,
+            now: now,
+            milestonePlaces: milestonePlaces,
+            interactivePlaces: interactivePlaces,
+          ) &&
+          placeMatchesQuery(p, query))
+        p,
   ];
 }
 

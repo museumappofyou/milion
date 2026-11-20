@@ -404,7 +404,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get emptyTitle => 'No saved notes';
 
   @override
-  String get emptyBody => 'Open a Chora artwork and save your first note.';
+  String get emptyBody => 'Open any artwork and save your first note.';
 
   @override
   String get errorTitle => 'Artwork image unavailable';
@@ -985,8 +985,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notesTitle => 'Your notes';
 
   @override
-  String notesCount(String count) {
-    return '$count notes on Chora artworks';
+  String notesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saved notes',
+      one: '1 saved note',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1730,7 +1736,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get walkHint =>
-      'Drag up or down to walk the deck, sideways to turn. Double-tap for the next stop.';
+      'Drag in any direction to look around, up into the vaults or down into the water. Tap the walkway circles or drag the move circle to walk, double-tap to step forward, and tap a label for its note and photograph.';
 
   @override
   String get walkFish => 'Fish in the water';
@@ -1788,4 +1794,158 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seePhotograph => 'See the photograph';
+
+  @override
+  String playableCountSummary(String playable, String opened) {
+    return '$opened of $playable playable Milestones opened';
+  }
+
+  @override
+  String get filterPlayable => 'Playable';
+
+  @override
+  String get filter3dModels => '3D Models';
+
+  @override
+  String get filterReliefPlates => 'Plates';
+
+  @override
+  String get filterWalksSections => 'Walk & Section';
+
+  @override
+  String filterAllRegister(String count) {
+    return 'All · $count';
+  }
+
+  @override
+  String get kind3dModel => '3D Model';
+
+  @override
+  String get kind3dWalk => '3D Walk';
+
+  @override
+  String get kindReliefPlate => 'Plate';
+
+  @override
+  String get kindSection => 'Excavation Section';
+
+  @override
+  String get kindFloorPlan => 'Floor Plan & Guide';
+
+  @override
+  String get kindCameraScan => 'Camera Recognition';
+
+  @override
+  String get standaloneStudiesTitle => '3D Architectural Studies';
+
+  @override
+  String get standaloneStudiesSubtitle =>
+      'Four studies without a Milestone: the Şehzade Mosque (1548), Sts Sergius and Bacchus (536), the Myrelaion (c. 920) and how a dome stands.';
+
+  @override
+  String get upcomingRegisterTitle => 'Upcoming in the register';
+
+  @override
+  String upcomingChapterCount(String count) {
+    return '$count planned';
+  }
+
+  @override
+  String chapterReadyProgress(String playable, String total) {
+    return '$playable of $total ready to open';
+  }
+
+  @override
+  String chapterUpcomingOnly(String total) {
+    return '$total planned';
+  }
+
+  @override
+  String get interactiveHere => 'Interactive here';
+
+  @override
+  String get spaceRendering => 'Rendering';
+
+  @override
+  String get spaceCamera => 'Camera';
+
+  @override
+  String get atlasLayersShort => 'Layers';
+
+  @override
+  String get statusReady => 'Ready';
+
+  @override
+  String get citySearchHint => 'Search places, districts, historic names';
+
+  @override
+  String get cityQuickInteractive => 'Interactive';
+
+  @override
+  String get cityQuickReviewed => 'Reviewed';
+
+  @override
+  String get citySortFeatured => 'Featured';
+
+  @override
+  String get citySortDistance => 'By distance';
+
+  @override
+  String cityOtherPlaces(String count) {
+    return 'Other plotted sites · $count';
+  }
+
+  @override
+  String cityFeaturedPlaces(String count) {
+    return 'Reviewed or playable · $count';
+  }
+
+  @override
+  String get placeCapability3d => '3D';
+
+  @override
+  String get placeCapabilityPlate => 'Plate';
+
+  @override
+  String get placeCapabilityWalk => '3D Walk';
+
+  @override
+  String get placeCapabilitySection => 'Section';
+
+  @override
+  String get placeCapabilityPlan => 'Plan';
+
+  @override
+  String placeStrataCount(String count) {
+    return '$count layers';
+  }
+
+  @override
+  String dialScopeFeatured(String count) {
+    return 'Reviewed or playable · $count';
+  }
+
+  @override
+  String dialScopeAll(String count) {
+    return 'All · $count';
+  }
+
+  @override
+  String get shipFilterAll => 'All';
+
+  @override
+  String get shipFilterGalleys => 'Galleys';
+
+  @override
+  String get shipFilterRound => 'Merchant';
+
+  @override
+  String get shipFilterCargo => 'With cargo';
+
+  @override
+  String get walkMoveLabel => 'Move along the walkway';
+
+  @override
+  String get walkMoveHint =>
+      'Drag inside the circle to walk; tap its top or bottom half to take a step.';
 }

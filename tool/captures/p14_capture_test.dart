@@ -39,30 +39,33 @@ Future<void> shot(WidgetTester tester, GlobalKey key, String name) async {
   });
 }
 
-Widget host(ContentRegistry registry, Widget child, GlobalKey key,
-        {Locale locale = const Locale('en')}) =>
-    RepaintBoundary(
-      key: key,
-      child: AppScope(
-        registry: registry,
-        error: null,
-        retry: () {},
-        clock: DateTime.now,
-        recognised: const {},
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          locale: locale,
-          localizationsDelegates: const [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: AppLocalizations.supportedLocales,
-          home: child,
-        ),
-      ),
-    );
+Widget host(
+  ContentRegistry registry,
+  Widget child,
+  GlobalKey key, {
+  Locale locale = const Locale('en'),
+}) => RepaintBoundary(
+  key: key,
+  child: AppScope(
+    registry: registry,
+    error: null,
+    retry: () {},
+    clock: DateTime.now,
+    recognised: const {},
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      locale: locale,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: child,
+    ),
+  ),
+);
 
 void main() {
   late ContentRegistry registry;
@@ -133,9 +136,8 @@ void main() {
     addTearDown(tester.view.reset);
     final walk = WalkManifest.fromJson(
       jsonDecode(
-            File('assets/walk/basilica-cistern/walk.json').readAsStringSync(),
-          )
-          as Map<String, dynamic>,
+        File('assets/walk/basilica-cistern/walk.json').readAsStringSync(),
+      ) as Map<String, dynamic>,
     );
     final key = GlobalKey();
     await tester.pumpWidget(

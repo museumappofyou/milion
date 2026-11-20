@@ -395,9 +395,7 @@ void main() {
 /// marble on marble. The whole sheet must be lamp.
 void sheetThemeRegression() {
   testWidgets('plate controls dock under the photograph, lamp throughout '
-      'under a marble app', (
-    tester,
-  ) async {
+      'under a marble app', (tester) async {
     tester.view.physicalSize = const Size(390, 844);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
@@ -418,7 +416,10 @@ void sheetThemeRegression() {
     expect(find.byType(BottomSheet), findsNothing);
     final dock = tester.widget<Material>(
       find
-          .ancestor(of: find.byType(PlateSheet), matching: find.byType(Material))
+          .ancestor(
+            of: find.byType(PlateSheet),
+            matching: find.byType(Material),
+          )
           .first,
     );
     expect(dock.color, DesignTheme.lamp.colorScheme.surface);
@@ -436,13 +437,8 @@ void sheetThemeRegression() {
     await tester.tap(find.byKey(const ValueKey('plate-dock-close')));
     await tester.pumpAndSettle();
     expect(find.byType(PlateSheet), findsNothing);
-    // Sources is read, not played: it still opens as a sheet.
-    await tester.tap(find.byKey(const ValueKey('plate-layers')));
-    await tester.pumpAndSettle();
-    final sources = find.text('Sources and photograph');
-    await tester.ensureVisible(sources);
-    await tester.pumpAndSettle();
-    await tester.tap(sources);
+    // Sources is read, not played: it opens as a lamp sheet from the AppBar.
+    await tester.tap(find.byKey(const ValueKey('plate-appbar-sources')));
     await tester.pumpAndSettle();
     final sheet = tester.widget<BottomSheet>(find.byType(BottomSheet));
     expect(sheet.backgroundColor, DesignTheme.lamp.colorScheme.surface);

@@ -57,19 +57,53 @@ class HonestyLabel extends StatelessWidget {
   final Honesty honesty;
   @override
   Widget build(BuildContext context) {
-    final s = context.l10n;
-    final (label, description) = switch (honesty) {
-      Honesty.ORIGINAL => (s.original, s.originalDescription),
-      Honesty.DEPTH => (s.depth, s.depthDescription),
-      Honesty.RECONSTRUCTION => (s.reconstruction, s.reconstructionDescription),
-      Honesty.IMAGINED => (s.imagined, s.imaginedDescription),
+    final s = context.l10n, c = MeasureColors.of(context);
+    final (label, description, swatch) = switch (honesty) {
+      Honesty.ORIGINAL => (s.original, s.originalDescription, c.secondary),
+      Honesty.DEPTH => (s.depth, s.depthDescription, Pigment.turquoise),
+      Honesty.RECONSTRUCTION => (
+        s.reconstruction,
+        s.reconstructionDescription,
+        c.accent,
+      ),
+      Honesty.IMAGINED => (s.imagined, s.imaginedDescription, Pigment.bole),
     };
     return Tooltip(
       message: description,
       child: Semantics(
         label: '$label. $description',
         child: ExcludeSemantics(
-          child: TesseraChip(TypeRole.capitals(label, context.language)),
+          // Quiet borderless editorial stamp: visually distinct from tappable
+          // bordered buttons while keeping >= 4.5:1 ink-on-poche contrast.
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: c.poche,
+              borderRadius: Space.radius,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(width: 5, height: 5, color: swatch),
+                  const SizedBox(width: 5),
+                  Flexible(
+                    child: Text(
+                      TypeRole.capitals(label, context.language),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TypeRole.measurement.copyWith(
+                        fontSize: 10.5,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: .6,
+                        color: c.ink,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

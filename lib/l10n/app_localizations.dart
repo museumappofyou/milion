@@ -833,7 +833,7 @@ abstract class AppLocalizations {
   /// No description provided for @emptyBody.
   ///
   /// In en, this message translates to:
-  /// **'Open a Chora artwork and save your first note.'**
+  /// **'Open any artwork and save your first note.'**
   String get emptyBody;
 
   /// No description provided for @errorTitle.
@@ -1882,8 +1882,8 @@ abstract class AppLocalizations {
   /// No description provided for @notesCount.
   ///
   /// In en, this message translates to:
-  /// **'{count} notes on Chora artworks'**
-  String notesCount(String count);
+  /// **'{count, plural, =1{1 saved note} other{{count} saved notes}}'**
+  String notesCount(int count);
 
   /// No description provided for @cityTitle.
   ///
@@ -3190,7 +3190,7 @@ abstract class AppLocalizations {
   /// No description provided for @walkHint.
   ///
   /// In en, this message translates to:
-  /// **'Drag up or down to walk the deck, sideways to turn. Double-tap for the next stop.'**
+  /// **'Drag in any direction to look around, up into the vaults or down into the water. Tap the walkway circles or drag the move circle to walk, double-tap to step forward, and tap a label for its note and photograph.'**
   String get walkHint;
 
   /// No description provided for @walkFish.
@@ -3294,6 +3294,270 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See the photograph'**
   String get seePhotograph;
+
+  /// No description provided for @playableCountSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{opened} of {playable} playable Milestones opened'**
+  String playableCountSummary(String playable, String opened);
+
+  /// No description provided for @filterPlayable.
+  ///
+  /// In en, this message translates to:
+  /// **'Playable'**
+  String get filterPlayable;
+
+  /// No description provided for @filter3dModels.
+  ///
+  /// In en, this message translates to:
+  /// **'3D Models'**
+  String get filter3dModels;
+
+  /// No description provided for @filterReliefPlates.
+  ///
+  /// In en, this message translates to:
+  /// **'Plates'**
+  String get filterReliefPlates;
+
+  /// No description provided for @filterWalksSections.
+  ///
+  /// In en, this message translates to:
+  /// **'Walk & Section'**
+  String get filterWalksSections;
+
+  /// No description provided for @filterAllRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'All · {count}'**
+  String filterAllRegister(String count);
+
+  /// No description provided for @kind3dModel.
+  ///
+  /// In en, this message translates to:
+  /// **'3D Model'**
+  String get kind3dModel;
+
+  /// No description provided for @kind3dWalk.
+  ///
+  /// In en, this message translates to:
+  /// **'3D Walk'**
+  String get kind3dWalk;
+
+  /// No description provided for @kindReliefPlate.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate'**
+  String get kindReliefPlate;
+
+  /// No description provided for @kindSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Excavation Section'**
+  String get kindSection;
+
+  /// No description provided for @kindFloorPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Floor Plan & Guide'**
+  String get kindFloorPlan;
+
+  /// No description provided for @kindCameraScan.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera Recognition'**
+  String get kindCameraScan;
+
+  /// No description provided for @standaloneStudiesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'3D Architectural Studies'**
+  String get standaloneStudiesTitle;
+
+  /// No description provided for @standaloneStudiesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Four studies without a Milestone: the Şehzade Mosque (1548), Sts Sergius and Bacchus (536), the Myrelaion (c. 920) and how a dome stands.'**
+  String get standaloneStudiesSubtitle;
+
+  /// No description provided for @upcomingRegisterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming in the register'**
+  String get upcomingRegisterTitle;
+
+  /// No description provided for @upcomingChapterCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} planned'**
+  String upcomingChapterCount(String count);
+
+  /// No description provided for @chapterReadyProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{playable} of {total} ready to open'**
+  String chapterReadyProgress(String playable, String total);
+
+  /// No description provided for @chapterUpcomingOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} planned'**
+  String chapterUpcomingOnly(String total);
+
+  /// No description provided for @interactiveHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive here'**
+  String get interactiveHere;
+
+  /// No description provided for @spaceRendering.
+  ///
+  /// In en, this message translates to:
+  /// **'Rendering'**
+  String get spaceRendering;
+
+  /// No description provided for @spaceCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera'**
+  String get spaceCamera;
+
+  /// No description provided for @atlasLayersShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Layers'**
+  String get atlasLayersShort;
+
+  /// No description provided for @statusReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready'**
+  String get statusReady;
+
+  /// No description provided for @citySearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search places, districts, historic names'**
+  String get citySearchHint;
+
+  /// No description provided for @cityQuickInteractive.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive'**
+  String get cityQuickInteractive;
+
+  /// No description provided for @cityQuickReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed'**
+  String get cityQuickReviewed;
+
+  /// No description provided for @citySortFeatured.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured'**
+  String get citySortFeatured;
+
+  /// No description provided for @citySortDistance.
+  ///
+  /// In en, this message translates to:
+  /// **'By distance'**
+  String get citySortDistance;
+
+  /// No description provided for @cityOtherPlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Other plotted sites · {count}'**
+  String cityOtherPlaces(String count);
+
+  /// No description provided for @cityFeaturedPlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed or playable · {count}'**
+  String cityFeaturedPlaces(String count);
+
+  /// No description provided for @placeCapability3d.
+  ///
+  /// In en, this message translates to:
+  /// **'3D'**
+  String get placeCapability3d;
+
+  /// No description provided for @placeCapabilityPlate.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate'**
+  String get placeCapabilityPlate;
+
+  /// No description provided for @placeCapabilityWalk.
+  ///
+  /// In en, this message translates to:
+  /// **'3D Walk'**
+  String get placeCapabilityWalk;
+
+  /// No description provided for @placeCapabilitySection.
+  ///
+  /// In en, this message translates to:
+  /// **'Section'**
+  String get placeCapabilitySection;
+
+  /// No description provided for @placeCapabilityPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan'**
+  String get placeCapabilityPlan;
+
+  /// No description provided for @placeStrataCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} layers'**
+  String placeStrataCount(String count);
+
+  /// No description provided for @dialScopeFeatured.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed or playable · {count}'**
+  String dialScopeFeatured(String count);
+
+  /// No description provided for @dialScopeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All · {count}'**
+  String dialScopeAll(String count);
+
+  /// No description provided for @shipFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get shipFilterAll;
+
+  /// No description provided for @shipFilterGalleys.
+  ///
+  /// In en, this message translates to:
+  /// **'Galleys'**
+  String get shipFilterGalleys;
+
+  /// No description provided for @shipFilterRound.
+  ///
+  /// In en, this message translates to:
+  /// **'Merchant'**
+  String get shipFilterRound;
+
+  /// No description provided for @shipFilterCargo.
+  ///
+  /// In en, this message translates to:
+  /// **'With cargo'**
+  String get shipFilterCargo;
+
+  /// No description provided for @walkMoveLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Move along the walkway'**
+  String get walkMoveLabel;
+
+  /// No description provided for @walkMoveHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag inside the circle to walk; tap its top or bottom half to take a step.'**
+  String get walkMoveHint;
 }
 
 class _AppLocalizationsDelegate

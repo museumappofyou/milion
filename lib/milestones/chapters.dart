@@ -70,6 +70,9 @@ class ChapterBand extends StatelessWidget {
     final approved = pieces
         .where((m) => m.status == MilestoneStatus.approved)
         .length;
+    final subtitle = playable > 0
+        ? s.chapterProgress('$playable', '${pieces.length}', '$approved')
+        : s.chapterUpcomingOnly('${pieces.length}');
     return Container(
       color: chapter.ground,
       padding: const EdgeInsets.fromLTRB(24, 20, 24, 20),
@@ -101,14 +104,7 @@ class ChapterBand extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  s.chapterProgress(
-                    '$playable',
-                    '${pieces.length}',
-                    '$approved',
-                  ),
-                  style: const TextStyle(color: Pigment.marble),
-                ),
+                Text(subtitle, style: const TextStyle(color: Pigment.marble)),
               ],
             ),
           ),

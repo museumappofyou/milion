@@ -19,12 +19,7 @@ void main() {
   test('P06 maps are bundled at the size of the source photographs', () async {
     for (final (plate, width, height, maps) in [
       ('anastasis', 2048, 1091, ['surface', 'gold', 'damaged']),
-      (
-        'judgment',
-        1600,
-        1067,
-        ['surface', 'gold', 'river', 'scroll'],
-      ),
+      ('judgment', 1600, 1067, ['surface', 'gold', 'river', 'scroll']),
     ]) {
       for (final name in maps) {
         final path = 'assets/plates/$plate/$name.png';

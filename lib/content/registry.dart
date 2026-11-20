@@ -391,18 +391,20 @@ ValidationReport validateContent(Json data) {
         error('${a.id}.inscriptions[$i] needs the Greek and a transliteration');
       }
       final letters = switch (ins.script) {
-        InscriptionScript.greek => RegExp('[A-Za-z]').hasMatch(ins.greek)
-            ? 'has Latin letters in the Greek'
-            : null,
-        InscriptionScript.runic => RegExp('[\u16A0-\u16FF]').hasMatch(ins.greek)
-            ? null
-            : 'has no runes',
-        InscriptionScript.arabic => RegExp('[\u0600-\u06FF]').hasMatch(ins.greek)
-            ? null
-            : 'has no Arabic letters',
-        InscriptionScript.latin => RegExp('[A-Za-z]').hasMatch(ins.greek)
-            ? null
-            : 'has no Latin letters',
+        InscriptionScript.greek =>
+          RegExp('[A-Za-z]').hasMatch(ins.greek)
+              ? 'has Latin letters in the Greek'
+              : null,
+        InscriptionScript.runic =>
+          RegExp('[\u16A0-\u16FF]').hasMatch(ins.greek) ? null : 'has no runes',
+        InscriptionScript.arabic =>
+          RegExp('[\u0600-\u06FF]').hasMatch(ins.greek)
+              ? null
+              : 'has no Arabic letters',
+        InscriptionScript.latin =>
+          RegExp('[A-Za-z]').hasMatch(ins.greek)
+              ? null
+              : 'has no Latin letters',
       };
       if (letters != null) error('${a.id}.inscriptions[$i] $letters');
     }

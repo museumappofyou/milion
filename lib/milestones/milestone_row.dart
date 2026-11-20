@@ -8,6 +8,7 @@ import '../design/technique.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../shell/app_scope.dart';
+import 'playable_card.dart';
 
 SlotState slotFor(
   Milestone m, {
@@ -41,6 +42,8 @@ String milestoneStatus(
   if (opened) return s.statusOpened;
   return switch (m.status) {
     MilestoneStatus.planned => s.statusPlanned,
+    // Review debt stays visible (Decisions 2026-09-27): a prototype opens,
+    // but it is not shown as finished until the owner approves it.
     MilestoneStatus.prototype => s.statusPrototype,
     MilestoneStatus.approved => s.statusApproved,
   };
@@ -66,22 +69,22 @@ class MilestoneRow extends StatelessWidget {
         c = MeasureColors.of(context),
         lang = context.language;
     final m = milestone,
-        state = slotFor(
-          m,
-          opened: opened,
-          playable: AppScope.of(context).playable(m),
-        );
+        app = AppScope.of(context),
+        kind = app.playableKind(m),
+        state = slotFor(m, opened: opened, playable: kind != null);
     return MergeSemantics(
       child: InkWell(
         key: ValueKey('milestone-${m.numeral}'),
         onTap: onTap,
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           decoration: BoxDecoration(
-            border: Border(top: BorderSide(color: c.line)),
+            border: Border(
+              top: BorderSide(color: c.line.withValues(alpha: .55)),
+            ),
           ),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Semantics(
                 label: s.milestoneNumber(m.numeral),
@@ -89,16 +92,20 @@ class MilestoneRow extends StatelessWidget {
                   child: TesseraSlot(
                     state: state,
                     label: m.numeral,
-                    width: 56,
-                    height: 48,
+                    width: 52,
+                    height: 44,
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: 14),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (kind != null) ...[
+                      PlayableTypeTag.forKind(context, kind),
+                      const SizedBox(height: 3),
+                    ],
                     Wrap(
                       spacing: 8,
                       crossAxisAlignment: WrapCrossAlignment.center,
@@ -112,25 +119,27 @@ class MilestoneRow extends StatelessWidget {
                                     : c.ink,
                               ),
                         ),
-                        if (m.flagship) const FlagshipMark(),
+                        if (m.flagship) const FlagshipMark(size: 12),
                       ],
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 3),
                     Text(
                       milestoneWhere(context, registry, m),
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 6),
                     Wrap(
-                      spacing: 12,
-                      runSpacing: 8,
+                      spacing: 10,
+                      runSpacing: 6,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
-                        TechniqueIcons(m.techniques, size: 18),
+                        if (state == SlotState.planned)
+                          TechniqueIcons(m.techniques, size: 16),
                         HonestyRange(m.honesty),
                         Text(
                           milestoneStatus(context, m, opened: opened),
                           style: TypeRole.measurement.copyWith(
+                            fontSize: 11,
                             color: state == SlotState.planned
                                 ? c.secondary
                                 : c.accent,
@@ -140,6 +149,12 @@ class MilestoneRow extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(width: 8),
+              Icon(
+                Icons.chevron_right,
+                size: 18,
+                color: state == SlotState.planned ? c.line : c.secondary,
               ),
             ],
           ),

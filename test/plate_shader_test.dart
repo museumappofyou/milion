@@ -95,7 +95,8 @@ void main() {
       compareMasked(
         base,
         await pixels(p, assets, c),
-        (await assets.images[p.flowEffect!.mask]!.toByteData())!.buffer.asUint8List(),
+        (await assets.images[p.flowEffect!.mask]!.toByteData())!.buffer
+            .asUint8List(),
       );
       c.setPaintMotion(river: false, scroll: true);
       c.effectSeconds = 4;

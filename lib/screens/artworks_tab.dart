@@ -9,8 +9,9 @@ import '../services/notes_service.dart';
 import '../shell/app_scope.dart';
 import '../widgets/artwork_sheet.dart';
 
-/// The catalogue, rendered from typed registry records. The temporary
-/// scene adapter is gone; the classifier maps predictions to artwork ids.
+/// The catalogue, rendered from typed registry records: compact search + chip
+/// strip (reclaiming viewport height), room headers, medium swatches, and an
+/// unmistakable Relief Plate badge on interactive artworks.
 class ArtworksTab extends StatefulWidget {
   const ArtworksTab({
     super.key,
@@ -65,6 +66,7 @@ class _ArtworksTabState extends State<ArtworksTab> {
     _room = null;
     _interactiveOnly = false;
   });
+
   Future<void> _open(Artwork artwork) async {
     await showModalBottomSheet<void>(
       context: context,
@@ -104,6 +106,132 @@ class _ArtworksTabState extends State<ArtworksTab> {
     final rooms =
         widget.artworks.map((a) => a.room.inLanguage(lang)).toSet().toList()
           ..sort();
+    final interactiveCount = widget.artworks.where(_interactive).length;
+    final groupByRoom = _room == null && rooms.length > 1;
+
+    final grouped = <String, List<Artwork>>{};
+    if (groupByRoom) {
+      for (final a in artworks) {
+        (grouped[a.room.inLanguage(lang)] ??= []).add(a);
+      }
+    }
+
+    Widget artworkRow(Artwork a) {
+      final isInteractive = _interactive(a);
+      final plateColor = c.accent;
+      return InkWell(
+        key: ValueKey('artwork-row-${a.id}'),
+        onTap: () => _open(a),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+          decoration: BoxDecoration(
+            border: Border(
+              top: BorderSide(color: c.line.withValues(alpha: .55)),
+            ),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Medium swatch: gold for mosaic, bole for fresco, a hairline
+              // square for anything else (inscriptions, reliefs, objects).
+              Container(
+                width: 8,
+                height: 8,
+                color: switch (a.kind) {
+                  ArtworkKind.mosaic => Pigment.gold,
+                  ArtworkKind.fresco => Pigment.bole,
+                  _ => c.line,
+                },
+              ),
+              const SizedBox(width: 12),
+              // Chora's ids are its catalogue codes (F02, M49_1);
+              // a place without codes shows none, not its slugs.
+              if (a.code != null) ...[
+                SizedBox(
+                  width: 48,
+                  child: Text(
+                    a.code!,
+                    style: TypeRole.measurement.copyWith(
+                      color: c.accent,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+              ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      a.title.inLanguage(lang),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: isInteractive
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                        fontSize: 15,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      groupByRoom
+                          ? a.surface.inLanguage(lang)
+                          : '${a.room.inLanguage(lang)} · ${a.surface.inLanguage(lang)}',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    if (isInteractive) ...[
+                      const SizedBox(height: 5),
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: c.poche,
+                          borderRadius: Space.radius,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 6,
+                            vertical: 2,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              PlanIcon(
+                                PlanSymbol.layers,
+                                size: 12,
+                                color: plateColor,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                TypeRole.capitals(s.kindReliefPlate, lang),
+                                style: TypeRole.measurement.copyWith(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: .45,
+                                  color: plateColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              if (_notedIds.contains(a.id)) ...[
+                const SizedBox(width: 8),
+                Tooltip(
+                  message: s.hasNote,
+                  child: PlanIcon(PlanSymbol.story, size: 18, color: c.accent),
+                ),
+              ],
+              const SizedBox(width: 6),
+              Icon(Icons.chevron_right, size: 18, color: c.secondary),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(s.collection),
@@ -120,31 +248,33 @@ class _ArtworksTabState extends State<ArtworksTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
             child: Text(
               s.catalogueCount(
                 '${widget.artworks.length}',
                 widget.place.inLanguage(lang),
               ),
-              style: TextStyle(color: c.secondary),
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ),
-          if (lang == 'tr')
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
-              child: Text(
-                s.contentEnglish,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
           Padding(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
             child: TextField(
+              key: const ValueKey('artworks-search'),
               controller: _search,
               onChanged: (v) => setState(() => _query = v),
               decoration: InputDecoration(
+                isDense: true,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 11,
+                ),
                 hintText: s.searchScenes,
-                prefixIcon: const Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search, size: 20),
+                prefixIconConstraints: const BoxConstraints(
+                  minWidth: 40,
+                  minHeight: 40,
+                ),
                 suffixIcon: _query.isEmpty
                     ? null
                     : IconButton(
@@ -153,37 +283,63 @@ class _ArtworksTabState extends State<ArtworksTab> {
                           _search.clear();
                           _query = '';
                         }),
-                        icon: const Icon(Icons.close),
+                        icon: const Icon(Icons.close, size: 18),
                       ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: DropdownButtonFormField<String>(
-              key: ValueKey(_room),
-              initialValue: _room ?? '',
-              isExpanded: true,
-              decoration: InputDecoration(labelText: s.room),
-              items: [
-                DropdownMenuItem(value: '', child: Text(s.allRooms)),
-                for (final r in rooms)
-                  DropdownMenuItem(
-                    value: r,
-                    child: Text(r, overflow: TextOverflow.ellipsis),
-                  ),
-              ],
-              onChanged: (v) => setState(() => _room = v == '' ? null : v),
+          if (interactiveCount > 0 || rooms.length > 1)
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+              child: Row(
+                children: [
+                  if (interactiveCount > 0)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 6),
+                      child: FilterChip(
+                        key: const ValueKey('artworks-filter-interactive'),
+                        showCheckmark: false,
+                        visualDensity: VisualDensity.compact,
+                        avatar: PlanIcon(
+                          PlanSymbol.layers,
+                          size: 14,
+                          color: _interactiveOnly ? c.accent : c.secondary,
+                        ),
+                        label: Text('${s.interactive} · $interactiveCount'),
+                        selected: _interactiveOnly,
+                        onSelected: (v) => setState(() => _interactiveOnly = v),
+                      ),
+                    ),
+                  if (rooms.length > 1) ...[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 6),
+                      child: ChoiceChip(
+                        key: const ValueKey('artworks-room-all'),
+                        showCheckmark: false,
+                        visualDensity: VisualDensity.compact,
+                        label: Text(s.allRooms),
+                        selected: _room == null,
+                        onSelected: (_) => setState(() => _room = null),
+                      ),
+                    ),
+                    for (final r in rooms)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 6),
+                        child: ChoiceChip(
+                          showCheckmark: false,
+                          visualDensity: VisualDensity.compact,
+                          label: Text(r),
+                          selected: _room == r,
+                          onSelected: (_) =>
+                              setState(() => _room = _room == r ? null : r),
+                        ),
+                      ),
+                  ],
+                ],
+              ),
             ),
-          ),
-          CheckboxListTile(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 24),
-            title: Text(s.interactive),
-            secondary: const PlanIcon(PlanSymbol.layers),
-            value: _interactiveOnly,
-            onChanged: (v) => setState(() => _interactiveOnly = v ?? false),
-          ),
-          const Divider(),
+          const Divider(height: 1),
           Expanded(
             child: artworks.isEmpty
                 ? SingleChildScrollView(
@@ -194,45 +350,48 @@ class _ArtworksTabState extends State<ArtworksTab> {
                       actionLabel: s.clearFilters,
                     ),
                   )
-                : ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                : groupByRoom
+                ? CustomScrollView(
+                    slivers: [
+                      for (final entry in grouped.entries) ...[
+                        SliverToBoxAdapter(
+                          child: Container(
+                            padding: const EdgeInsets.fromLTRB(20, 14, 20, 10),
+                            decoration: BoxDecoration(
+                              color: c.poche.withValues(alpha: .45),
+                              border: Border(
+                                top: BorderSide(
+                                  color: c.line.withValues(alpha: .6),
+                                ),
+                              ),
+                            ),
+                            child: Semantics(
+                              header: true,
+                              child: Text(
+                                '${TypeRole.capitals(entry.key, lang)} · ${entry.value.length}',
+                                style: TypeRole.measurement.copyWith(
+                                  fontSize: 11.5,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: .6,
+                                  color: c.ink,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SliverList.builder(
+                          itemCount: entry.value.length,
+                          itemBuilder: (context, i) =>
+                              artworkRow(entry.value[i]),
+                        ),
+                      ],
+                      const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                    ],
+                  )
+                : ListView.builder(
+                    padding: const EdgeInsets.only(bottom: 24),
                     itemCount: artworks.length,
-                    separatorBuilder: (_, _) => const Divider(),
-                    itemBuilder: (context, i) {
-                      final a = artworks[i];
-                      return ListTile(
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 12,
-                        ),
-                        // Chora's ids are its catalogue codes (F02, M49_1);
-                        // a place without codes shows none, not its slugs.
-                        leading: a.code != null
-                            ? SizedBox(
-                                width: 48,
-                                child: Text(
-                                  a.id,
-                                  style: TypeRole.measurement.copyWith(
-                                    color: c.accent,
-                                  ),
-                                ),
-                              )
-                            : null,
-                        title: Text(a.title.inLanguage(lang)),
-                        subtitle: Text(
-                          '${a.room.inLanguage(lang)} · ${a.surface.inLanguage(lang)}',
-                        ),
-                        trailing: _notedIds.contains(a.id)
-                            ? Tooltip(
-                                message: s.hasNote,
-                                child: const PlanIcon(
-                                  PlanSymbol.story,
-                                  size: 20,
-                                ),
-                              )
-                            : null,
-                        onTap: () => _open(a),
-                      );
-                    },
+                    itemBuilder: (context, i) => artworkRow(artworks[i]),
                   ),
           ),
         ],

@@ -70,8 +70,12 @@ Future<ByteData> fileBytes(String path) async =>
     ByteData.sublistView(File(path).readAsBytesSync());
 
 /// Milestone 0 frames at [times] (seconds), 390 × 844 at 2×, EN.
-Future<void> firstRun(WidgetTester tester, List<double> times, String dir,
-    {String Function(double t, int i)? name}) async {
+Future<void> firstRun(
+  WidgetTester tester,
+  List<double> times,
+  String dir, {
+  String Function(double t, int i)? name,
+}) async {
   await loadThemeFonts(tester);
   final registry = (await tester.runAsync(
     () => ContentRepository((p) => File(p).readAsString()).load(),
@@ -107,8 +111,9 @@ Future<void> firstRun(WidgetTester tester, List<double> times, String dir,
       ).paint(canvas, size);
       final picture = recorder.endRecording();
       final image = await picture.toImage(780, 1688);
-      File('$dir/${name?.call(t, i) ?? 'first-run-${t.toStringAsFixed(1)}'}.png')
-          .writeAsBytesSync(await encodePng(image));
+      File(
+        '$dir/${name?.call(t, i) ?? 'first-run-${t.toStringAsFixed(1)}'}.png',
+      ).writeAsBytesSync(await encodePng(image));
       image.dispose();
       picture.dispose();
     });
@@ -122,7 +127,20 @@ void main() {
   testWidgets('Milestone 0: the first run at key moments', (tester) async {
     if (only != null && only != 'first-run') return;
     await firstRun(tester, [
-      1.5, 2.4, 3.0, 3.6, 4.2, 4.6, 5.0, 5.3, 5.6, 6.4, 7.4, 8.4, 10.1, 11.6,
+      1.5,
+      2.4,
+      3.0,
+      3.6,
+      4.2,
+      4.6,
+      5.0,
+      5.3,
+      5.6,
+      6.4,
+      7.4,
+      8.4,
+      10.1,
+      11.6,
     ], '$out/first-run');
   });
 

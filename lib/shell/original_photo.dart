@@ -52,10 +52,7 @@ class OriginalPhotoPage extends StatelessWidget {
                 const HonestyLabel(Honesty.ORIGINAL),
                 const SizedBox(height: 8),
                 Text(
-                  [
-                    media.credit.inLanguage(lang),
-                    ?source,
-                  ].join(' — '),
+                  [media.credit.inLanguage(lang), ?source].join(' — '),
                   style: theme.textTheme.bodySmall,
                 ),
               ],

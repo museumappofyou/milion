@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import '../content/models.dart';
 import '../design/components.dart';
 import '../design/plan_icon.dart';
+import '../design/player_bar.dart';
 import '../design/theme.dart';
 import '../l10n/strings.dart';
 import 'assets.dart';
@@ -372,7 +373,18 @@ class PlatePlayerState extends State<PlatePlayer>
         final s = context.l10n;
         return Scaffold(
           appBar: AppBar(
-            title: Text(widget.manifest.title.inLanguage(context.language)),
+            title: Text(
+              widget.manifest.title.inLanguage(context.language),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            actions: [
+              PlayerSourcesButton(
+                key: const ValueKey('plate-appbar-sources'),
+                tooltip: s.plateSources,
+                onPressed: () => controls(PlatePanel.sources),
+              ),
+            ],
           ),
           body: Column(
             children: [
@@ -426,41 +438,30 @@ class PlatePlayerState extends State<PlatePlayer>
                     child: PlateSheet(player: this, panel: panel),
                   ),
                 ),
-              SafeArea(
-                top: false,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 8,
+              PlayerDockBar(
+                items: [
+                  PlayerDockItem(
+                    key: const ValueKey('plate-story'),
+                    symbol: PlanSymbol.story,
+                    label: s.plateStory,
+                    selected: _open == PlatePanel.story,
+                    onTap: () => controls(PlatePanel.story),
                   ),
-                  child: Wrap(
-                    alignment: WrapAlignment.center,
-                    spacing: 12,
-                    runSpacing: 4,
-                    children: [
-                      for (final item in [
-                        (PlatePanel.story, PlanSymbol.story, s.plateStory),
-                        (PlatePanel.light, PlanSymbol.light, s.light),
-                        (PlatePanel.layers, PlanSymbol.layers, s.plateLayers),
-                      ])
-                        // The open panel's button reads as pressed.
-                        TextButton.icon(
-                          key: ValueKey('plate-${item.$1.name}'),
-                          style: _open == item.$1
-                              ? TextButton.styleFrom(
-                                  backgroundColor: Theme.of(context)
-                                      .colorScheme
-                                      .primary
-                                      .withValues(alpha: .12),
-                                )
-                              : null,
-                          onPressed: () => controls(item.$1),
-                          icon: PlanIcon(item.$2),
-                          label: Text(item.$3),
-                        ),
-                    ],
+                  PlayerDockItem(
+                    key: const ValueKey('plate-light'),
+                    symbol: PlanSymbol.light,
+                    label: s.light,
+                    selected: _open == PlatePanel.light,
+                    onTap: () => controls(PlatePanel.light),
                   ),
-                ),
+                  PlayerDockItem(
+                    key: const ValueKey('plate-layers'),
+                    symbol: PlanSymbol.layers,
+                    label: s.plateLayers,
+                    selected: _open == PlatePanel.layers,
+                    onTap: () => controls(PlatePanel.layers),
+                  ),
+                ],
               ),
             ],
           ),

@@ -6,6 +6,7 @@ import '../content/geography.dart' show romanNumeral;
 import '../content/guide.dart';
 import '../content/models.dart';
 import '../content/registry.dart';
+import '../design/components.dart';
 import '../design/plan_icon.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
@@ -320,6 +321,7 @@ class _GuideScreenState extends State<GuideScreen>
                     artworks: _artworks,
                     room: _room,
                     focus: _focus,
+                    examinable: widget.examinable,
                     onRoom: (r) => setState(() => _room = r),
                     onOpen: _open,
                     onCycle: _startCycle,
@@ -393,6 +395,7 @@ class _RoomPanel extends StatelessWidget {
     required this.artworks,
     required this.room,
     required this.focus,
+    required this.examinable,
     required this.onRoom,
     required this.onOpen,
     required this.onCycle,
@@ -402,6 +405,7 @@ class _RoomPanel extends StatelessWidget {
   final Map<String, Artwork> artworks;
   final String? room;
   final String? focus;
+  final Set<String> examinable;
   final ValueChanged<String?> onRoom;
   final ValueChanged<Artwork> onOpen;
   final ValueChanged<GuideCycle> onCycle;
@@ -412,6 +416,7 @@ class _RoomPanel extends StatelessWidget {
     final s = context.l10n, lang = context.language;
     final colors = MeasureColors.of(context);
     final theme = Theme.of(context);
+    final plateColor = colors.accent;
     final shown = [
       for (final a in guide.anchors.values)
         if (room == null || a.room == room) artworks[a.artworkId]!,
@@ -421,16 +426,66 @@ class _RoomPanel extends StatelessWidget {
       (groups[_surfaceGroup(context, a)] ??= []).add(a);
     }
     Widget roomButton(String? id, String label) => Padding(
-      padding: const EdgeInsets.only(right: 8),
-      child: OutlinedButton(
+      padding: const EdgeInsets.only(right: 6),
+      child: ChoiceChip(
         key: ValueKey('guide-room-${id ?? 'all'}'),
-        style: OutlinedButton.styleFrom(
-          backgroundColor: room == id ? colors.ink : null,
-          foregroundColor: room == id ? colors.ground : colors.ink,
-          shape: const RoundedRectangleBorder(borderRadius: Space.radius),
+        showCheckmark: false,
+        visualDensity: VisualDensity.compact,
+        selected: room == id,
+        label: Text(label),
+        onSelected: (_) => onRoom(id),
+      ),
+    );
+    Widget actionCard({
+      required Key key,
+      required PlanSymbol symbol,
+      required Color symbolColor,
+      required String title,
+      String? meta,
+      required VoidCallback onTap,
+    }) => Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: Material(
+        color: colors.ground,
+        shape: RoundedRectangleBorder(
+          borderRadius: Space.radius,
+          side: BorderSide(color: colors.line),
         ),
-        onPressed: () => onRoom(id),
-        child: Text(label),
+        child: InkWell(
+          key: key,
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                PlanIcon(symbol, size: 15, color: symbolColor),
+                const SizedBox(width: 8),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      title,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: colors.ink,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    if (meta != null)
+                      Text(
+                        meta,
+                        style: TypeRole.measurement.copyWith(
+                          fontSize: 10.5,
+                          color: colors.secondary,
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
     return CustomScrollView(
@@ -438,7 +493,7 @@ class _RoomPanel extends StatelessWidget {
         SliverToBoxAdapter(
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+            padding: const EdgeInsets.fromLTRB(16, 10, 16, 6),
             child: Row(
               children: [
                 roomButton(null, s.guideAllRooms),
@@ -450,27 +505,41 @@ class _RoomPanel extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 4,
-              crossAxisAlignment: WrapCrossAlignment.center,
+            padding: const EdgeInsets.fromLTRB(20, 6, 20, 4),
+            child: Text(
+              TypeRole.capitals(s.guideCycles, lang),
+              style: TypeRole.measurement.copyWith(
+                fontSize: 10.5,
+                fontWeight: FontWeight.w600,
+                letterSpacing: .6,
+                color: colors.secondary,
+              ),
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.fromLTRB(20, 2, 20, 8),
+            child: Row(
               children: [
-                Text(s.guideCycles, style: theme.textTheme.titleSmall),
                 for (final c in guide.cycles)
-                  TextButton(
+                  actionCard(
                     key: ValueKey('guide-cycle-${c.id}'),
-                    onPressed: () => onCycle(c),
-                    child: Text(
-                      '${c.title.inLanguage(lang)} · ${c.artworkIds.length}',
-                    ),
+                    symbol: PlanSymbol.route,
+                    symbolColor: colors.accent,
+                    title: c.title.inLanguage(lang),
+                    meta: '${c.artworkIds.length}',
+                    onTap: () => onCycle(c),
                   ),
                 if (hunt != null)
-                  TextButton.icon(
+                  actionCard(
                     key: const ValueKey('guide-hunt'),
-                    onPressed: () => _showHunt(context, hunt!),
-                    icon: const PlanIcon(PlanSymbol.tessera, size: 16),
-                    label: Text(s.guideHunt),
+                    symbol: PlanSymbol.tessera,
+                    symbolColor: plateColor,
+                    title: s.guideHunt,
+                    meta: '${hunt!.items.length}',
+                    onTap: () => _showHunt(context, hunt!),
                   ),
               ],
             ),
@@ -478,13 +547,24 @@ class _RoomPanel extends StatelessWidget {
         ),
         for (final e in groups.entries) ...[
           SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(24, 16, 24, 4),
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 6),
+              decoration: BoxDecoration(
+                color: colors.poche.withValues(alpha: .4),
+                border: Border(
+                  top: BorderSide(color: colors.line.withValues(alpha: .5)),
+                ),
+              ),
               child: Semantics(
                 header: true,
                 child: Text(
-                  '${e.key} · ${e.value.length}',
-                  style: theme.textTheme.titleSmall,
+                  '${TypeRole.capitals(e.key, lang)} · ${e.value.length}',
+                  style: TypeRole.measurement.copyWith(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: .5,
+                    color: colors.ink,
+                  ),
                 ),
               ),
             ),
@@ -493,13 +573,14 @@ class _RoomPanel extends StatelessWidget {
             itemCount: e.value.length,
             itemBuilder: (context, i) {
               final a = e.value[i];
+              final isPlate = examinable.contains(a.id);
               return MergeSemantics(
                 child: InkWell(
                   key: ValueKey('guide-artwork-${a.id}'),
                   onTap: () => onOpen(a),
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
+                      horizontal: 20,
                       vertical: 10,
                     ),
                     color: a.id == focus
@@ -508,18 +589,63 @@ class _RoomPanel extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          width: 10,
-                          height: 10,
-                          color: a.kind == ArtworkKind.fresco
-                              ? Pigment.bole
-                              : Pigment.gold,
+                          width: 9,
+                          height: 9,
+                          color: switch (a.kind) {
+                            ArtworkKind.mosaic => Pigment.gold,
+                            ArtworkKind.fresco => Pigment.bole,
+                            _ => colors.line,
+                          },
                         ),
                         const SizedBox(width: 12),
                         SizedBox(
-                          width: 52,
-                          child: Text(a.id, style: TypeRole.measurement),
+                          width: 50,
+                          child: Text(
+                            a.id,
+                            style: TypeRole.measurement.copyWith(
+                              color: colors.accent,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
                         Expanded(child: Text(a.title.inLanguage(lang))),
+                        if (isPlate) ...[
+                          const SizedBox(width: 8),
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: colors.poche,
+                              borderRadius: Space.radius,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 5,
+                                vertical: 2,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  PlanIcon(
+                                    PlanSymbol.layers,
+                                    size: 12,
+                                    color: plateColor,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    TypeRole.capitals(
+                                      s.placeCapabilityPlate,
+                                      lang,
+                                    ),
+                                    style: TypeRole.measurement.copyWith(
+                                      fontSize: 9.5,
+                                      fontWeight: FontWeight.w600,
+                                      color: plateColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ],
                     ),
                   ),
@@ -544,7 +670,6 @@ void _showHunt(BuildContext context, Hunt hunt) {
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
-    showDragHandle: true,
     builder: (context) => _HuntSheet(hunt: hunt),
   );
 }
@@ -567,44 +692,51 @@ class _HuntSheetState extends State<_HuntSheet> {
       expand: false,
       initialChildSize: .75,
       maxChildSize: .95,
-      builder: (context, scroll) => ListView(
-        controller: scroll,
-        padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+      builder: (context, scroll) => Column(
         children: [
-          Text(
-            widget.hunt.title.inLanguage(lang),
-            style: theme.textTheme.titleLarge,
-          ),
-          Text(s.guideHuntIntro('${items.length}')),
-          for (final (i, item) in items.indexed)
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${romanNumeral(i + 1)} · ${item.title.inLanguage(lang)}',
-                    style: theme.textTheme.titleSmall,
-                  ),
-                  const SizedBox(height: 4),
-                  Text(item.clue.inLanguage(lang)),
-                  if (_shown.contains(i))
-                    Padding(
-                      padding: const EdgeInsets.only(top: 6),
-                      child: Text(
-                        item.answer.inLanguage(lang),
-                        style: theme.textTheme.bodySmall,
-                      ),
-                    )
-                  else
-                    TextButton(
-                      key: ValueKey('hunt-answer-$i'),
-                      onPressed: () => setState(() => _shown.add(i)),
-                      child: Text(s.guideHuntAnswer),
+          const DimensionHandle(),
+          Expanded(
+            child: ListView(
+              controller: scroll,
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+              children: [
+                Text(
+                  widget.hunt.title.inLanguage(lang),
+                  style: theme.textTheme.titleLarge,
+                ),
+                Text(s.guideHuntIntro('${items.length}')),
+                for (final (i, item) in items.indexed)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '${romanNumeral(i + 1)} · ${item.title.inLanguage(lang)}',
+                          style: theme.textTheme.titleSmall,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(item.clue.inLanguage(lang)),
+                        if (_shown.contains(i))
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6),
+                            child: Text(
+                              item.answer.inLanguage(lang),
+                              style: theme.textTheme.bodySmall,
+                            ),
+                          )
+                        else
+                          TextButton(
+                            key: ValueKey('hunt-answer-$i'),
+                            onPressed: () => setState(() => _shown.add(i)),
+                            child: Text(s.guideHuntAnswer),
+                          ),
+                      ],
                     ),
-                ],
-              ),
+                  ),
+              ],
             ),
+          ),
         ],
       ),
     );

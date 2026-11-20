@@ -11,9 +11,12 @@ import '../design/plan_icon.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
 import '../milestones/milestone_row.dart';
+import '../milestones/playable_card.dart';
 import '../services/progress_service.dart';
 import '../shell/app_scope.dart';
 import '../shell/navigation.dart';
+import '../space/catalog.dart';
+import '../space/study.dart';
 import '../widgets/artwork_sheet.dart';
 import 'city_tab.dart';
 import 'dig_gauge.dart';
@@ -173,13 +176,18 @@ class _PlaceScreenState extends State<PlaceScreen> {
                     onOpenArtworks: () => openArtworks(context, place.id),
                   ),
                 ),
+                _InteractiveHereShelf(
+                  place: place,
+                  registry: registry,
+                  progress: progress,
+                ),
                 if (place.visit != null)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: VisitCard(place: place, registry: registry),
                   ),
                 for (final milestone in registry.register.where(
-                  (m) => m.placeIds.contains(place.id),
+                  (m) => m.placeIds.contains(place.id) && !app.playable(m),
                 ))
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
@@ -230,6 +238,13 @@ class _PlaceScreenState extends State<PlaceScreen> {
                                   onOpenArtworks: () =>
                                       openArtworks(context, place.id),
                                 ),
+                              ),
+                            ),
+                            SliverToBoxAdapter(
+                              child: _InteractiveHereShelf(
+                                place: place,
+                                registry: registry,
+                                progress: progress,
                               ),
                             ),
                             for (var i = 0; i < strata.length; i++)
@@ -433,11 +448,23 @@ class PresentHeader extends StatelessWidget {
                   const PlanIcon(PlanSymbol.vitrine),
                   const SizedBox(width: 16),
                   Expanded(
-                    child: Text(
-                      s.artworksHere(artworks),
-                      style: theme.textTheme.titleMedium,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          s.artworksHere(artworks),
+                          style: theme.textTheme.titleMedium,
+                        ),
+                        if (registry.guideFor(p.id) != null)
+                          Text(
+                            s.kindFloorPlan,
+                            style: theme.textTheme.bodySmall,
+                          ),
+                      ],
                     ),
                   ),
+                  Icon(Icons.chevron_right, size: 20, color: c.secondary),
                 ],
               ),
             ),
@@ -522,5 +549,247 @@ class PresentHeader extends StatelessWidget {
     return checked == null
         ? '—'
         : DateFormat.yMMMMd(context.language).format(checked.accessedAt);
+  }
+}
+
+class _InteractiveEntry {
+  const _InteractiveEntry({
+    required this.key,
+    required this.title,
+    required this.subtitle,
+    required this.tag,
+    required this.symbol,
+    required this.onTap,
+    this.assetPath,
+    this.cornerLabel,
+    this.footerLabel,
+    this.collected = false,
+  });
+
+  final Key key;
+  final String title;
+  final String subtitle;
+  final PlayableTypeTag tag;
+  final PlanSymbol symbol;
+  final VoidCallback onTap;
+  final String? assetPath;
+  final String? cornerLabel;
+  final String? footerLabel;
+  final bool collected;
+}
+
+/// Top-of-page shelf listing every interactive experience at [place]:
+/// playable Milestones, linked & standalone 3D studies, floor-plan guides, and
+/// camera recognition — without scrolling past historical strata.
+class _InteractiveHereShelf extends StatelessWidget {
+  const _InteractiveHereShelf({
+    required this.place,
+    required this.registry,
+    required this.progress,
+  });
+
+  final Place place;
+  final ContentRegistry registry;
+  final MilestoneProgress progress;
+
+  @override
+  Widget build(BuildContext context) {
+    final app = AppScope.of(context);
+    final s = context.l10n;
+    final c = MeasureColors.of(context);
+    final lang = context.language;
+    final dark = Theme.of(context).brightness == Brightness.dark;
+
+    final milestones = app.playableMilestonesForPlace(place);
+    final coveredStudyPaths = {
+      for (final m in milestones)
+        if (m.manifestPath != null) m.manifestPath!,
+    };
+    final extraStudies = <SpaceStudy>[
+      for (final st in app.studiesForPlace(place))
+        if (!coveredStudyPaths.contains(SpaceCatalog.manifestPath(st.id))) st,
+    ];
+    final hasGuide = registry.guideFor(place.id) != null;
+    final hasScan = app.placeRecognised(place.id);
+
+    final entries = <_InteractiveEntry>[
+      for (final m in milestones)
+        () {
+          final kind = app.playableKind(m)!;
+          final study = app.studyFor(m);
+          final symbol = switch (kind) {
+            PlayableKind.space => PlanSymbol.assembly,
+            PlayableKind.walk => PlanSymbol.cistern,
+            PlayableKind.plate => PlanSymbol.layers,
+            PlayableKind.section => PlanSymbol.section,
+          };
+          final opened = progress.isOpened(m.id);
+          return _InteractiveEntry(
+            key: ValueKey('place-interactive-milestone-${m.numeral}'),
+            title: m.title.inLanguage(lang),
+            subtitle: study != null
+                ? '${studyEpochSpan(context, study)} · ${milestoneStatus(context, m, opened: opened)}'
+                : milestoneStatus(context, m, opened: opened),
+            tag: PlayableTypeTag.forKind(context, kind),
+            symbol: symbol,
+            assetPath: milestonePreviewAsset(app, registry, m),
+            cornerLabel: m.numeral,
+            footerLabel: study == null ? null : studyEpochSpan(context, study),
+            collected: opened,
+            onTap: () => openMilestone(context, m),
+          );
+        }(),
+      for (final st in extraStudies)
+        _InteractiveEntry(
+          key: ValueKey('place-interactive-study-${st.id}'),
+          title: st.title.inLanguage(lang),
+          subtitle: studyEpochSpan(context, st),
+          tag: PlayableTypeTag.forKind(context, PlayableKind.space),
+          symbol: st.placeId == null ? PlanSymbol.section : PlanSymbol.dome,
+          assetPath: studyPreviewAsset(registry, st),
+          cornerLabel: s.placeCapability3d,
+          footerLabel: studyEpochSpan(context, st),
+          onTap: () => openStudy(context, st),
+        ),
+      if (hasGuide)
+        _InteractiveEntry(
+          key: ValueKey('place-interactive-guide-${place.id}'),
+          title: s.kindFloorPlan,
+          subtitle: s.artworksHere(
+            registry.artworks.where((a) => a.placeId == place.id).length,
+          ),
+          tag: PlayableTypeTag(
+            symbol: PlanSymbol.vitrine,
+            label: s.guidePlan,
+            color: dark ? const Color(0xFF8EC5B6) : Pigment.verdigris,
+          ),
+          symbol: PlanSymbol.vitrine,
+          onTap: () => openGuide(context, place.id),
+        ),
+      if (hasScan)
+        _InteractiveEntry(
+          key: ValueKey('place-interactive-scan-${place.id}'),
+          title: s.kindCameraScan,
+          subtitle: s.recognise,
+          tag: PlayableTypeTag(
+            symbol: PlanSymbol.cameraEye,
+            label: s.kindCameraScan,
+            color: c.accent,
+          ),
+          symbol: PlanSymbol.cameraEye,
+          onTap: () => openScan(context, placeId: place.id),
+        ),
+    ];
+
+    if (entries.isEmpty) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Row(
+              children: [
+                PlanIcon(PlanSymbol.assembly, size: 15, color: c.accent),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Semantics(
+                    header: true,
+                    child: Text(
+                      '${TypeRole.capitals(s.interactiveHere, lang)} · ${entries.length}',
+                      style: TypeRole.inscription(14, color: c.ink),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
+          // One entry per row (PHASES §2 bans equal-card carousels).
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Column(
+              children: [
+                for (final entry in entries)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: _WideInteractiveCard(entry: entry),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _WideInteractiveCard extends StatelessWidget {
+  const _WideInteractiveCard({required this.entry});
+  final _InteractiveEntry entry;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = MeasureColors.of(context);
+    return Material(
+      color: c.ground,
+      shape: RoundedRectangleBorder(
+        borderRadius: Space.radius,
+        side: BorderSide(color: c.line),
+      ),
+      child: InkWell(
+        key: entry.key,
+        onTap: entry.onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              ExcludeSemantics(
+                child: ExperienceThumbnail(
+                  width: 72,
+                  height: 72,
+                  symbol: entry.symbol,
+                  assetPath: entry.assetPath,
+                  cornerLabel: entry.cornerLabel,
+                  footerLabel: entry.footerLabel,
+                  collected: entry.collected,
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    entry.tag,
+                    const SizedBox(height: 4),
+                    Text(
+                      entry.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.titleMedium
+                          ?.copyWith(fontWeight: FontWeight.w600, height: 1.25),
+                    ),
+                    if (entry.subtitle.isNotEmpty) ...[
+                      const SizedBox(height: 3),
+                      Text(
+                        entry.subtitle,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Icon(Icons.chevron_right, size: 20, color: c.secondary),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

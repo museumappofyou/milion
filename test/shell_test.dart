@@ -19,6 +19,7 @@ import 'package:milion/screens/scan_tab.dart';
 import 'package:milion/plate/player.dart';
 import 'package:milion/screens/artworks_tab.dart';
 import 'package:milion/shell/app_shell.dart';
+import 'package:milion/space/player.dart';
 import 'package:milion/today/detail_crop.dart';
 import 'package:milion/today/mile_zero_dial.dart';
 import 'package:milion/today/today_screen.dart';
@@ -380,7 +381,15 @@ void main() {
         300,
         scrollable: find.byType(Scrollable).first,
       );
+      await tester.ensureVisible(find.byKey(const ValueKey('dial-toggle')));
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const ValueKey('dial-toggle')));
+      await tester.pumpAndSettle();
+      // Default focuses the dial on reviewed & interactive landmarks;
+      // All switches to all 155 plotted places.
+      final allChip = find.byKey(const ValueKey('dial-scope-all'));
+      await tester.ensureVisible(allChip);
+      await tester.tap(allChip);
       await tester.pumpAndSettle();
       final count = dialPlaces(registry.plottablePlaces).length;
       expect(
@@ -484,35 +493,124 @@ void main() {
     });
 
     testWidgets(
-      'register: outlined planned slots, planned sheet, playable opens',
+      'register: playables first, standalone 3D studies, collapsible planned chapters',
       (tester) async {
         await pumpShell(tester);
         await tester.tap(destination('Milestones'));
         await tester.pumpAndSettle();
+        // Review debt stays visible: the register counts approval, and each
+        // playable card says Prototype until the owner approves it.
         expect(
           find.text('48 Milestones · 17 playable · 0 approved · 31 planned'),
           findsOneWidget,
         );
-        final last = find.byKey(const ValueKey('milestone-XLVII'));
-        await tester.scrollUntilVisible(
-          last,
-          500,
-          scrollable: find.byType(Scrollable).last,
+        expect(find.text('0 of 17 playable Milestones opened'), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('milestones-filter-playable')),
+          findsOneWidget,
         );
+        expect(find.text('Playable · 17'), findsOneWidget);
+        expect(
+          tester
+              .widget<Text>(find.byKey(const ValueKey('playable-status-I')))
+              .data,
+          'PROTOTYPE',
+        );
+        final verticalScroll = find
+            .byWidgetPredicate(
+              (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+            )
+            .last;
+        // Playable Milestones lead the list with zero scrolling past stubs.
+        final first = find.byKey(const ValueKey('milestone-I'));
+        await tester.scrollUntilVisible(first, 300, scrollable: verticalScroll);
+        // All 4 standalone 3D studies appear under the 3D Models filter too.
+        await tester.tap(
+          find.byKey(const ValueKey('milestones-filter-models3d')),
+        );
+        await tester.pumpAndSettle();
+        final sehzadeStudy = find.byKey(const ValueKey('study-sehzade-camii'));
+        await tester.scrollUntilVisible(
+          sehzadeStudy,
+          400,
+          scrollable: verticalScroll,
+        );
+        expect(sehzadeStudy, findsOneWidget);
+        await tester.tap(sehzadeStudy);
+        await assetsReady(tester);
+        expect(find.byType(SpacePlayer), findsOneWidget);
+        await tester.pageBack();
+        await tester.pumpAndSettle();
+        // Planned chapters stay tucked in accordions under Playable, and expand on tap.
+        final playableChip = find.byKey(
+          const ValueKey('milestones-filter-playable'),
+        );
+        await tester.scrollUntilVisible(
+          playableChip,
+          -400,
+          scrollable: verticalScroll,
+        );
+        await tester.tap(playableChip);
+        await tester.pumpAndSettle();
+        final chapterIV = find.byKey(const ValueKey('planned-chapter-IV'));
+        await tester.scrollUntilVisible(
+          chapterIV,
+          500,
+          scrollable: verticalScroll,
+        );
+        await tester.tap(chapterIV);
+        await tester.pumpAndSettle();
+        final last = find.byKey(const ValueKey('milestone-XLVII'));
+        await tester.scrollUntilVisible(last, 300, scrollable: verticalScroll);
         await tester.tap(last);
         await tester.pumpAndSettle();
         expect(find.textContaining('Planned: its reveal'), findsOneWidget);
         await tester.tapAt(const Offset(20, 20));
         await tester.pumpAndSettle();
-        final first = find.byKey(const ValueKey('milestone-I'));
         await tester.scrollUntilVisible(
           first,
           -500,
-          scrollable: find.byType(Scrollable).last,
+          scrollable: verticalScroll,
         );
         await tester.tap(first);
         await assetsReady(tester);
         expect(find.byType(PlatePlayer), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      'PlaceScreen surfaces unlinked 3D studies (Şehzade) and Mosaic opens playable 3D',
+      (tester) async {
+        await pumpShell(tester);
+        await openCityList(tester);
+        final sehzade = find.text('Şehzade Mosque');
+        await tester.scrollUntilVisible(
+          sehzade,
+          450,
+          scrollable: find.byType(Scrollable).last,
+        );
+        await tester.tap(sehzade);
+        await tester.pumpAndSettle();
+        expect(find.byType(PlaceScreen), findsOneWidget);
+        final studyCard = find.byKey(
+          const ValueKey('place-interactive-study-sehzade-camii'),
+        );
+        expect(studyCard, findsOneWidget);
+        await tester.tap(studyCard);
+        await assetsReady(tester);
+        expect(find.byType(SpacePlayer), findsOneWidget);
+        await tester.pageBack();
+        await tester.pumpAndSettle();
+        await tester.pageBack();
+        await tester.pumpAndSettle();
+        // Mosaic recognizes 3D Milestone IX as playable and opens it on tap.
+        await tester.tap(destination('Mosaic'));
+        await ready(tester);
+        final ixSlot = find.byKey(const ValueKey('mosaic-slot-IX'));
+        expect(ixSlot, findsOneWidget);
+        await tester.tap(ixSlot);
+        await assetsReady(tester);
+        expect(find.byType(SpacePlayer), findsOneWidget);
       },
     );
 
@@ -545,7 +643,10 @@ void main() {
         await tester.tap(find.byKey(const ValueKey('guide-catalogue')));
         await tester.pumpAndSettle();
         expect(find.byType(ArtworksTab), findsOneWidget);
-        expect(find.text('103 artworks · Kariye Mosque (Chora)'), findsOneWidget);
+        expect(
+          find.text('103 artworks · Kariye Mosque (Chora)'),
+          findsOneWidget,
+        );
         await tester.pageBack();
         await tester.pumpAndSettle();
         await tester.pageBack();
@@ -577,8 +678,85 @@ void main() {
       await ready(tester);
       expect(find.byType(MosaicTab), findsOneWidget);
       expect(find.text('Wrist, not hand.'), findsOneWidget);
-      expect(find.text('1 notes on Chora artworks'), findsOneWidget);
+      expect(find.text('1 saved note'), findsOneWidget);
     });
+
+    testWidgets(
+      'City search filters list & map, and Artworks interactive chip works',
+      (tester) async {
+        await pumpShell(tester);
+        await openCityList(tester);
+        // Featured sorting puts interactive/reviewed places at the top without scrolling past 140 stubs.
+        expect(find.textContaining('REVIEWED OR PLAYABLE'), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('city-straight-line')),
+          findsOneWidget,
+        );
+        // Toggle AppBar search bar and narrow the City list cleanly.
+        await tester.tap(find.byKey(const ValueKey('city-search-toggle')));
+        await tester.pumpAndSettle();
+        await tester.enterText(
+          find.byKey(const ValueKey('city-search')),
+          'Şehzade',
+        );
+        await tester.pumpAndSettle();
+        expect(
+          find.byKey(const ValueKey('city-place-sehzade')),
+          findsOneWidget,
+        );
+        expect(find.byKey(const ValueKey('city-place-chora')), findsNothing);
+        // A draft keeps its not-reviewed mark even among the featured.
+        expect(
+          find.descendant(
+            of: find.byKey(const ValueKey('city-place-sehzade')),
+            matching: find.byWidgetPredicate(
+              (w) => w is Semantics && w.properties.label == 'Not reviewed yet',
+            ),
+          ),
+          findsOneWidget,
+        );
+        // ASCII typing finds Turkish letters.
+        await tester.enterText(
+          find.byKey(const ValueKey('city-search')),
+          'sehzade',
+        );
+        await tester.pumpAndSettle();
+        expect(
+          find.byKey(const ValueKey('city-place-sehzade')),
+          findsOneWidget,
+        );
+        // Close search and test quick-filter Interactive chip.
+        await tester.tap(find.byKey(const ValueKey('city-search-toggle')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const ValueKey('city-quick-interactive')));
+        await tester.pumpAndSettle();
+        expect(
+          find.byKey(const ValueKey('city-place-hagia-sophia')),
+          findsOneWidget,
+        );
+        // Open Chora catalogue and verify compact Interactive filter chip.
+        final chora = find.text('Kariye Mosque (Chora)');
+        await tester.scrollUntilVisible(
+          chora,
+          300,
+          scrollable: find.byType(Scrollable).last,
+        );
+        await tester.tap(chora);
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const ValueKey('place-artworks')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const ValueKey('guide-catalogue')));
+        await tester.pumpAndSettle();
+        expect(find.byType(ArtworksTab), findsOneWidget);
+        await tester.tap(
+          find.byKey(const ValueKey('artworks-filter-interactive')),
+        );
+        await tester.pumpAndSettle();
+        // Chora's plates are mosaics and frescoes, not reliefs.
+        expect(find.text('PLATE'), findsWidgets);
+        expect(find.text('RELIEF PLATE'), findsNothing);
+      },
+    );
 
     for (final language in ['en', 'tr']) {
       testWidgets('layout holds at 200% text, 360 dp, $language', (

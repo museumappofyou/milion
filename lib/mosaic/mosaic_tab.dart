@@ -65,31 +65,43 @@ class _MosaicTabState extends State<MosaicTab> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Semantics(
+                    container: true,
                     label: s.mosaicProgress(
                       '${registry.register.where((m) => opened.contains(m.id)).length}',
                       '${registry.register.length}',
                     ),
-                    child: ExcludeSemantics(
-                      child: Wrap(
-                        spacing: 4,
-                        runSpacing: 4,
-                        children: [
-                          for (final m in registry.register)
-                            TesseraSlot(
-                              state: slotFor(
-                                m,
-                                opened: opened.contains(m.id),
-                                playable:
-                                    AppScope.of(context).plates
-                                        .forMilestone(m) !=
-                                    null,
+                    child: Wrap(
+                      children: [
+                        for (final m in registry.register)
+                          Semantics(
+                            button: true,
+                            label:
+                                '${m.numeral}. ${m.title.inLanguage(lang)}. '
+                                '${milestoneStatus(context, m, opened: opened.contains(m.id))}',
+                            child: InkWell(
+                              key: ValueKey('mosaic-slot-${m.numeral}'),
+                              onTap: () => openMilestone(context, m),
+                              // A 48 dp target around the 40 dp tessera.
+                              child: ExcludeSemantics(
+                                child: Container(
+                                  width: 48,
+                                  height: 48,
+                                  alignment: Alignment.center,
+                                  child: TesseraSlot(
+                                    state: slotFor(
+                                      m,
+                                      opened: opened.contains(m.id),
+                                      playable: app.playable(m),
+                                    ),
+                                    label: m.numeral,
+                                    width: 40,
+                                    height: 40,
+                                  ),
+                                ),
                               ),
-                              label: m.numeral,
-                              width: 36,
-                              height: 36,
                             ),
-                        ],
-                      ),
+                          ),
+                      ],
                     ),
                   ),
                 ),
@@ -107,7 +119,7 @@ class _MosaicTabState extends State<MosaicTab> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(24, 4, 24, 8),
                     child: Text(
-                      s.notesCount('${texts.length}'),
+                      s.notesCount(texts.length),
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ),

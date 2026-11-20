@@ -4,6 +4,7 @@ import 'package:flutter/semantics.dart';
 
 import '../design/components.dart';
 import '../design/plan_icon.dart';
+import '../design/player_bar.dart';
 import '../design/theme.dart';
 import '../design/tokens.dart';
 import '../l10n/strings.dart';
@@ -92,32 +93,108 @@ class SectionPlayerState extends State<SectionPlayer>
       final registry = AppScope.maybeOf(context)?.registry;
       return Theme(
         data: DesignTheme.marble,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                find.label.inLanguage(lang),
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const SizedBox(height: 8),
-              if (find.photo case final photo?)
-                TextButton.icon(
-                  key: ValueKey('section-photo-${find.id}'),
-                  onPressed: () =>
-                      openOriginalPhoto(context, photo, title: find.label),
-                  icon: const Icon(Icons.photo_outlined, size: 18),
-                  label: Text(context.l10n.seePhotograph),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const DimensionHandle(),
+                Text(
+                  find.label.inLanguage(lang),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
-              for (final id in find.sourceIds)
-                if (registry?.source(id) case final s?)
-                  Text(
-                    s.title.inLanguage(lang),
-                    style: Theme.of(context).textTheme.bodySmall,
+                const SizedBox(height: 8),
+                if (find.photo case final photo?)
+                  OutlinedButton.icon(
+                    key: ValueKey('section-photo-${find.id}'),
+                    onPressed: () =>
+                        openOriginalPhoto(context, photo, title: find.label),
+                    icon: const Icon(Icons.photo_outlined, size: 18),
+                    label: Text(context.l10n.seePhotograph),
                   ),
-            ],
+                const SizedBox(height: 8),
+                for (final id in find.sourceIds)
+                  if (registry?.source(id) case final s?)
+                    Text(
+                      s.title.inLanguage(lang),
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
+
+  Future<void> showSources() => showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: DesignTheme.marble.colorScheme.surface,
+    builder: (context) {
+      final s = context.l10n, lang = context.language;
+      final registry = AppScope.maybeOf(context)?.registry;
+      final ids = <String>{
+        ...widget.section.sourceIds,
+        ...widget.section.shipSourceIds,
+        for (final f in widget.section.finds) ...f.sourceIds,
+        for (final st in widget.section.strata) ...st.sourceIds,
+      };
+      return Theme(
+        data: DesignTheme.marble,
+        child: SafeArea(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.sizeOf(context).height * .75,
+            ),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const DimensionHandle(),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          s.sourcesTitle,
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ),
+                      IconButton(
+                        tooltip: s.plateClose,
+                        onPressed: () => Navigator.pop(context),
+                        icon: const Icon(Icons.close),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Text(widget.section.talkback.inLanguage(lang)),
+                  const SizedBox(height: 16),
+                  for (final id in ids)
+                    if (registry?.source(id) case final src?)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 14),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              src.title.inLanguage(lang),
+                              style: Theme.of(context).textTheme.titleSmall,
+                            ),
+                            SelectableText(
+                              src.url,
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                ],
+              ),
+            ),
           ),
         ),
       );
@@ -133,7 +210,20 @@ class SectionPlayerState extends State<SectionPlayer>
           final s = context.l10n, lang = context.language;
           final c = controller, colours = MeasureColors.of(context);
           return Scaffold(
-            appBar: AppBar(title: Text(widget.section.title.inLanguage(lang))),
+            appBar: AppBar(
+              title: Text(
+                widget.section.title.inLanguage(lang),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              actions: [
+                PlayerSourcesButton(
+                  key: const ValueKey('section-appbar-sources'),
+                  tooltip: s.sourcesTitle,
+                  onPressed: showSources,
+                ),
+              ],
+            ),
             body: Column(
               children: [
                 Expanded(
@@ -221,42 +311,23 @@ class SectionPlayerState extends State<SectionPlayer>
                     ),
                     child: SectionSheet(player: this, panel: panel),
                   ),
-                SafeArea(
-                  top: false,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
+                PlayerDockBar(
+                  items: [
+                    PlayerDockItem(
+                      key: const ValueKey('section-story'),
+                      symbol: PlanSymbol.story,
+                      label: s.plateStory,
+                      selected: _open == SectionPanel.story,
+                      onTap: () => controls(SectionPanel.story),
                     ),
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 12,
-                      children: [
-                        for (final item in [
-                          (SectionPanel.story, PlanSymbol.story, s.plateStory),
-                          (
-                            SectionPanel.ships,
-                            PlanSymbol.popup,
-                            s.sectionShips,
-                          ),
-                        ])
-                          TextButton.icon(
-                            key: ValueKey('section-${item.$1.name}'),
-                            style: _open == item.$1
-                                ? TextButton.styleFrom(
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .primary
-                                        .withValues(alpha: .12),
-                                  )
-                                : null,
-                            onPressed: () => controls(item.$1),
-                            icon: PlanIcon(item.$2),
-                            label: Text(item.$3),
-                          ),
-                      ],
+                    PlayerDockItem(
+                      key: const ValueKey('section-ships'),
+                      symbol: PlanSymbol.popup,
+                      label: s.sectionShips,
+                      selected: _open == SectionPanel.ships,
+                      onTap: () => controls(SectionPanel.ships),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
@@ -381,12 +452,13 @@ class ShipSheet extends StatelessWidget {
     ];
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Column(
           key: ValueKey('ship-sheet-${ship.yk}'),
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const DimensionHandle(),
             Text('YK ${ship.yk}', style: theme.textTheme.headlineSmall),
             const SizedBox(height: 8),
             for (final r in rows)
@@ -415,41 +487,67 @@ class ShipSheet extends StatelessWidget {
   }
 }
 
-/// The docks: Story (reveal, story, beats) and Ships (all 37, by number).
-class SectionSheet extends StatelessWidget {
+enum _ShipFilter { all, galley, round, cargo }
+
+/// The docks: Story (reveal, story, beats) and Ships (37 wrecks with type
+/// and cargo filters).
+class SectionSheet extends StatefulWidget {
   const SectionSheet({super.key, required this.player, required this.panel});
   final SectionPlayerState player;
   final SectionPanel panel;
 
   @override
+  State<SectionSheet> createState() => _SectionSheetState();
+}
+
+class _SectionSheetState extends State<SectionSheet> {
+  _ShipFilter _shipFilter = _ShipFilter.all;
+
+  @override
   Widget build(BuildContext context) {
     final s = context.l10n, lang = context.language;
-    final c = player.controller, m = c.manifest;
+    final colors = MeasureColors.of(context);
+    final c = widget.player.controller, m = c.manifest;
     final theme = Theme.of(context);
-    final rows = switch (panel) {
+
+    final galleyCount = m.ships.where((x) => x.type == ShipType.galley).length;
+    final roundCount = m.ships.where((x) => x.type == ShipType.round).length;
+    final cargoCount = m.ships.where((x) => x.cargo).length;
+    final visibleShips = [
+      for (final ship in m.ships)
+        if (switch (_shipFilter) {
+          _ShipFilter.all => true,
+          _ShipFilter.galley => ship.type == ShipType.galley,
+          _ShipFilter.round => ship.type == ShipType.round,
+          _ShipFilter.cargo => ship.cargo,
+        })
+          ship,
+    ];
+
+    final rows = switch (widget.panel) {
       SectionPanel.story => <Widget>[
         if (c.reduced) Text(s.plateStillHint, style: theme.textTheme.bodySmall),
         Wrap(
           spacing: 8,
           runSpacing: 8,
           children: [
-            OutlinedButton.icon(
-              key: const ValueKey('section-play-reveal'),
-              onPressed: () {
-                player.closeControls();
-                c.play();
-              },
-              icon: const PlanIcon(PlanSymbol.popup, size: 18),
-              label: Text(s.plateStartReveal),
-            ),
-            OutlinedButton.icon(
+            FilledButton.icon(
               key: const ValueKey('section-play-story'),
               onPressed: () {
-                player.closeControls();
+                widget.player.closeControls();
                 c.playStory();
               },
               icon: const PlanIcon(PlanSymbol.story, size: 18),
               label: Text(s.platePlay),
+            ),
+            OutlinedButton.icon(
+              key: const ValueKey('section-play-reveal'),
+              onPressed: () {
+                widget.player.closeControls();
+                c.play();
+              },
+              icon: const PlanIcon(PlanSymbol.popup, size: 18),
+              label: Text(s.plateStartReveal),
             ),
           ],
         ),
@@ -479,25 +577,74 @@ class SectionSheet extends StatelessWidget {
       ],
       SectionPanel.ships => <Widget>[
         Text(s.shipPlaced, style: theme.textTheme.bodySmall),
-        for (final ship in m.ships)
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 6,
+          runSpacing: 6,
+          children: [
+            for (final item in [
+              (_ShipFilter.all, '${s.shipFilterAll} · ${m.ships.length}'),
+              (_ShipFilter.galley, '${s.shipFilterGalleys} · $galleyCount'),
+              (_ShipFilter.round, '${s.shipFilterRound} · $roundCount'),
+              (_ShipFilter.cargo, '${s.shipFilterCargo} · $cargoCount'),
+            ])
+              ChoiceChip(
+                key: ValueKey('ship-filter-${item.$1.name}'),
+                showCheckmark: false,
+                visualDensity: VisualDensity.compact,
+                selected: _shipFilter == item.$1,
+                label: Text(item.$2),
+                onSelected: (_) => setState(() => _shipFilter = item.$1),
+              ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        for (final ship in visibleShips)
           InkWell(
             key: ValueKey('section-ship-${ship.yk}'),
-            onTap: () => player.showShip(ship),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 44),
+            onTap: () => widget.player.showShip(ship),
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 46),
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(color: colors.line.withValues(alpha: .45)),
+                ),
+              ),
               child: Row(
                 children: [
                   SizedBox(
-                    width: 56,
-                    child: Text('YK ${ship.yk}', style: TypeRole.measurement),
+                    width: 54,
+                    child: Text(
+                      'YK ${ship.yk}',
+                      style: TypeRole.measurement.copyWith(
+                        color: colors.accent,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                   Expanded(
-                    child: Text(switch (ship.type) {
-                      ShipType.galley => s.shipGalley,
-                      ShipType.round => s.shipRound,
-                      null => s.shipTypeUnknown,
-                    }),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(switch (ship.type) {
+                          ShipType.galley => s.shipGalley,
+                          ShipType.round => s.shipRound,
+                          null => s.shipTypeUnknown,
+                        }),
+                        if (ship.date != null || ship.cargo)
+                          Text(
+                            [
+                              if (ship.date != null)
+                                ship.date!.inLanguage(lang),
+                              if (ship.cargo) s.shipCargo,
+                            ].join(' · '),
+                            style: theme.textTheme.bodySmall,
+                          ),
+                      ],
+                    ),
                   ),
+                  Icon(Icons.chevron_right, size: 18, color: colors.secondary),
                 ],
               ),
             ),
@@ -506,7 +653,7 @@ class SectionSheet extends StatelessWidget {
     };
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxHeight: MediaQuery.sizeOf(context).height * .42,
+        maxHeight: MediaQuery.sizeOf(context).height * .44,
       ),
       child: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -517,14 +664,16 @@ class SectionSheet extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    panel == SectionPanel.story ? s.plateStory : s.sectionShips,
+                    widget.panel == SectionPanel.story
+                        ? s.plateStory
+                        : s.sectionShips,
                     style: theme.textTheme.titleMedium,
                   ),
                 ),
                 IconButton(
                   key: const ValueKey('section-close-controls'),
                   tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
-                  onPressed: player.closeControls,
+                  onPressed: widget.player.closeControls,
                   icon: const Icon(Icons.close, size: 20),
                 ),
               ],

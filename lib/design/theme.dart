@@ -31,11 +31,18 @@ abstract final class DesignTheme {
         ).copyWith(
           primary: c.accent,
           onPrimary: c.ground,
+          primaryContainer: c.poche,
+          onPrimaryContainer: c.ink,
           secondary: c.accent,
           onSecondary: c.ground,
+          secondaryContainer: c.poche,
+          onSecondaryContainer: c.ink,
           surface: c.ground,
           onSurface: c.ink,
           onSurfaceVariant: c.secondary,
+          surfaceContainerLow: c.ground,
+          surfaceContainer: c.poche,
+          surfaceContainerHigh: c.poche,
           surfaceContainerHighest: c.poche,
           outline: c.line,
           outlineVariant: c.line,
@@ -50,6 +57,7 @@ abstract final class DesignTheme {
       colorScheme: scheme,
       fontFamily: TypeRole.bodyFamily,
     );
+    const controlRadius = BorderRadius.all(Radius.circular(3));
     final square = RoundedRectangleBorder(
       borderRadius: Space.radius,
       side: BorderSide(color: c.line),
@@ -90,6 +98,114 @@ abstract final class DesignTheme {
       shape: WidgetStatePropertyAll(square),
       elevation: const WidgetStatePropertyAll(0),
     );
+    // Filled buttons: porphyry on marble, marble on lamp. Gold stays reserved
+    // for gold, collected items and rewards (PHASES §2), and the lamp accent
+    // is too pale to carry a fill.
+    final filledBg = brightness == Brightness.dark ? c.ink : c.accent;
+    final filledFg = c.ground;
+    final filledStyle = ButtonStyle(
+      minimumSize: const WidgetStatePropertyAll(Size(48, 48)),
+      padding: const WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+      ),
+      backgroundColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.poche : filledBg,
+      ),
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.secondary : filledFg,
+      ),
+      iconColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.secondary : filledFg,
+      ),
+      textStyle: const WidgetStatePropertyAll(
+        TextStyle(
+          fontFamily: TypeRole.bodyFamily,
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          letterSpacing: .3,
+        ),
+      ),
+      shape: const WidgetStatePropertyAll(
+        RoundedRectangleBorder(borderRadius: controlRadius),
+      ),
+      elevation: const WidgetStatePropertyAll(0),
+    );
+    final outlinedStyle = ButtonStyle(
+      minimumSize: const WidgetStatePropertyAll(Size(48, 48)),
+      padding: const WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      ),
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.secondary : c.ink,
+      ),
+      iconColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.secondary : c.ink,
+      ),
+      overlayColor: WidgetStatePropertyAll(c.poche.withValues(alpha: .7)),
+      textStyle: const WidgetStatePropertyAll(
+        TextStyle(
+          fontFamily: TypeRole.bodyFamily,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          letterSpacing: .2,
+        ),
+      ),
+      side: WidgetStateProperty.resolveWith(
+        (s) => BorderSide(
+          color: s.contains(WidgetState.disabled)
+              ? c.line.withValues(alpha: .45)
+              : s.contains(WidgetState.pressed) ||
+                    s.contains(WidgetState.focused)
+              ? c.accent
+              : c.line,
+        ),
+      ),
+      shape: const WidgetStatePropertyAll(
+        RoundedRectangleBorder(borderRadius: controlRadius),
+      ),
+      elevation: const WidgetStatePropertyAll(0),
+    );
+    final textButtonStyle = ButtonStyle(
+      minimumSize: const WidgetStatePropertyAll(Size(48, 44)),
+      padding: const WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      ),
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.secondary : c.accent,
+      ),
+      iconColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled) ? c.secondary : c.accent,
+      ),
+      overlayColor: WidgetStatePropertyAll(c.poche.withValues(alpha: .6)),
+      textStyle: const WidgetStatePropertyAll(
+        TextStyle(
+          fontFamily: TypeRole.bodyFamily,
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          letterSpacing: .2,
+        ),
+      ),
+      shape: const WidgetStatePropertyAll(
+        RoundedRectangleBorder(borderRadius: controlRadius),
+      ),
+      elevation: const WidgetStatePropertyAll(0),
+    );
+    // Navigation & utility icons sit cleanly without heavy framing boxes;
+    // explicit framed icons use IconButton.filled / filledTonal / outlined.
+    final iconStyle = ButtonStyle(
+      minimumSize: const WidgetStatePropertyAll(Size(48, 48)),
+      padding: const WidgetStatePropertyAll(EdgeInsets.all(10)),
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.disabled)
+            ? c.secondary.withValues(alpha: .5)
+            : c.ink,
+      ),
+      overlayColor: WidgetStatePropertyAll(c.poche.withValues(alpha: .7)),
+      shape: const WidgetStatePropertyAll(
+        RoundedRectangleBorder(borderRadius: controlRadius),
+      ),
+      elevation: const WidgetStatePropertyAll(0),
+    );
     return base.copyWith(
       extensions: [c],
       scaffoldBackgroundColor: c.ground,
@@ -120,21 +236,26 @@ abstract final class DesignTheme {
         surfaceTintColor: Colors.transparent,
         margin: EdgeInsets.zero,
       ),
-      filledButtonTheme: FilledButtonThemeData(style: button),
-      outlinedButtonTheme: OutlinedButtonThemeData(style: button),
-      textButtonTheme: TextButtonThemeData(
-        style: button.copyWith(
-          shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: Space.radius),
+      filledButtonTheme: FilledButtonThemeData(style: filledStyle),
+      outlinedButtonTheme: OutlinedButtonThemeData(style: outlinedStyle),
+      textButtonTheme: TextButtonThemeData(style: textButtonStyle),
+      iconButtonTheme: IconButtonThemeData(style: iconStyle),
+      chipTheme: ChipThemeData(
+        shape: const RoundedRectangleBorder(borderRadius: Space.radius),
+        side: WidgetStateBorderSide.resolveWith(
+          (s) => BorderSide(
+            color: s.contains(WidgetState.selected) ? c.accent : c.line,
+            width: s.contains(WidgetState.selected) ? 1.5 : 1,
           ),
         ),
-      ),
-      iconButtonTheme: IconButtonThemeData(style: button),
-      chipTheme: ChipThemeData(
-        shape: square,
         backgroundColor: c.ground,
         selectedColor: c.poche,
-        labelStyle: TextStyle(fontFamily: TypeRole.bodyFamily, color: c.ink),
+        checkmarkColor: c.accent,
+        labelStyle: TextStyle(
+          fontFamily: TypeRole.bodyFamily,
+          fontSize: 13,
+          color: c.ink,
+        ),
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: button.copyWith(

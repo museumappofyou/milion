@@ -251,7 +251,6 @@ class _AtlasMapState extends State<AtlasMap> with TickerProviderStateMixin {
     setState(() => _selected = place.id);
     final open = await showModalBottomSheet<bool>(
       context: context,
-      showDragHandle: true,
       builder: (_) =>
           AtlasPlaceSheet(place: place, assets: widget.assets, controller: c),
     );
@@ -430,14 +429,33 @@ class _AtlasMapState extends State<AtlasMap> with TickerProviderStateMixin {
               ),
             ),
             Positioned(
+              left: 12,
+              right: 72,
+              top: 12,
+              child: SnapshotBuilder(
+                listenable: c,
+                snapshot: () => (c.rings, c.me, c.below),
+                builder: (context) => AtlasLayerChips(
+                  controller: c,
+                  onLayers: () => showModalBottomSheet<void>(
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (_) => AtlasLayersSheet(
+                      assets: widget.assets,
+                      year: atlasYears[c.stop],
+                      below: c.below,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
               right: 12,
               top: 12,
               child: SnapshotBuilder(
                 listenable: c,
                 snapshot: () => (
-                  c.rings,
                   c.me,
-                  c.below,
                   _locating,
                   c.view.rotation.abs() % (2 * math.pi) > .01,
                   (c.view.rotation * 8).round(), // the north arrow's angle
@@ -450,16 +468,6 @@ class _AtlasMapState extends State<AtlasMap> with TickerProviderStateMixin {
                   onNorth: () => _animateView(c.view.copyWith(rotation: 0)),
                   onRecenter: () => _animateView(AtlasView.peninsula),
                   onFromMe: _fromMe,
-                  onLayers: () => showModalBottomSheet<void>(
-                    context: context,
-                    isScrollControlled: true,
-                    showDragHandle: true,
-                    builder: (_) => AtlasLayersSheet(
-                      assets: widget.assets,
-                      year: atlasYears[c.stop],
-                      below: c.below,
-                    ),
-                  ),
                 ),
               ),
             ),

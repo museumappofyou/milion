@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../city/city_tab.dart' show categoryLabel, categorySymbol;
+import '../city/city_tab.dart'
+    show PlaceCapabilityTags, categoryLabel, categorySymbol;
 import '../city/external_links.dart';
 import '../content/geography.dart';
 import '../content/models.dart';
@@ -46,6 +47,7 @@ class AtlasPlaceSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const DimensionHandle(),
             Row(
               children: [
                 PlanIcon(categorySymbol(p)),
@@ -100,6 +102,8 @@ class AtlasPlaceSheet extends StatelessWidget {
                   ),
               ],
             ),
+            const SizedBox(height: 10),
+            PlaceCapabilityTags(place: p),
             const SizedBox(height: 16),
             Row(
               children: [
@@ -175,66 +179,77 @@ class AtlasLayersSheet extends StatelessWidget {
       expand: false,
       initialChildSize: .6,
       maxChildSize: .95,
-      builder: (context, scroll) => ListView(
-        controller: scroll,
-        padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+      builder: (context, scroll) => Column(
         children: [
-          Text(s.atlasHistoricSources, style: theme.textTheme.titleLarge),
-          const SizedBox(height: 4),
-          Text(
-            '${atlasYearLabel(context, year)} · '
-            '${atlasEraCaption(context, atlasYears.indexOf(year).clamp(0, atlasYears.length - 1))}',
-            style: theme.textTheme.bodySmall,
-          ),
-          for (final f in shown)
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              decoration: BoxDecoration(
-                border: Border(top: BorderSide(color: colors.line)),
-              ),
-              child: MergeSemantics(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      f.layer == HistoricLayer.hills
-                          ? f.note.inLanguage(lang).split(RegExp(r'[:,]')).first
-                          : f.names.inLanguage(lang),
-                      style: theme.textTheme.titleSmall,
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      [
-                        span(f),
-                        certainty(f.certainty),
-                      ].where((t) => t.isNotEmpty).join(' · '),
-                      style: TypeRole.measurement.copyWith(
-                        color: colors.secondary,
-                        fontSize: 12,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      f.note.inLanguage(lang),
-                      style: theme.textTheme.bodySmall,
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      [
-                        for (final id in f.sourceIds)
-                          registry?.source(id)?.title.inLanguage(lang) ?? id,
-                      ].join(' · '),
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        color: colors.secondary,
-                        fontSize: 11,
-                      ),
-                    ),
-                  ],
+          const DimensionHandle(),
+          Expanded(
+            child: ListView(
+              controller: scroll,
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+              children: [
+                Text(s.atlasHistoricSources, style: theme.textTheme.titleLarge),
+                const SizedBox(height: 4),
+                Text(
+                  '${atlasYearLabel(context, year)} · '
+                  '${atlasEraCaption(context, atlasYears.indexOf(year).clamp(0, atlasYears.length - 1))}',
+                  style: theme.textTheme.bodySmall,
                 ),
-              ),
+                for (final f in shown)
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    decoration: BoxDecoration(
+                      border: Border(top: BorderSide(color: colors.line)),
+                    ),
+                    child: MergeSemantics(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            f.layer == HistoricLayer.hills
+                                ? f.note
+                                      .inLanguage(lang)
+                                      .split(RegExp(r'[:,]'))
+                                      .first
+                                : f.names.inLanguage(lang),
+                            style: theme.textTheme.titleSmall,
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            [
+                              span(f),
+                              certainty(f.certainty),
+                            ].where((t) => t.isNotEmpty).join(' · '),
+                            style: TypeRole.measurement.copyWith(
+                              color: colors.secondary,
+                              fontSize: 12,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            f.note.inLanguage(lang),
+                            style: theme.textTheme.bodySmall,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            [
+                              for (final id in f.sourceIds)
+                                registry?.source(id)?.title.inLanguage(lang) ??
+                                    id,
+                            ].join(' · '),
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: colors.secondary,
+                              fontSize: 11,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                const SizedBox(height: 12),
+                Text(s.atlasAttribution, style: theme.textTheme.bodySmall),
+              ],
             ),
-          const SizedBox(height: 12),
-          Text(s.atlasAttribution, style: theme.textTheme.bodySmall),
+          ),
         ],
       ),
     );
